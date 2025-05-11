@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+#app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+button {
+  padding: 12px 16px;
+  margin: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.category {
+  padding: 12px;
+  margin: 12px 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.category.locked {
+  background: #eee;
+  color: #999;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}

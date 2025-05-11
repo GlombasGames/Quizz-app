@@ -1,0 +1,151 @@
+{
+  "Geografía": {
+    "preguntas":[
+            {
+        "pregunta": "¿Cuál es el río más largo del mundo?",
+        "opciones": [
+          "Nilo",
+          "Amazonas",
+          "Yangtsé",
+          "Misisipi"
+        ],
+        "respuesta": 1
+      },
+      {
+        "pregunta": "¿En qué continente se encuentra el desierto del Sahara?",
+        "opciones": [
+          "Asia",
+          "África",
+          "América",
+          "Oceanía"
+        ],
+        "respuesta": 1
+      },
+      {
+        "pregunta": "¿Cuál es el país más grande del mundo por área?",
+        "opciones": [
+          "Canadá",
+          "China",
+          "Rusia",
+          "Estados Unidos"
+        ],
+        "respuesta": 2
+      },
+      {
+        "pregunta": "¿Qué océano es el más grande del mundo?",
+        "opciones": [
+          "Atlántico",
+          "Índico",
+          "Pacífico",
+          "Ártico"
+        ],
+        "respuesta": 2
+      },
+      {
+        "pregunta": "¿Cuál es la capital de Australia?",
+        "opciones": [
+          "Sídney",
+          "Melbourne",
+          "Canberra",
+          "Brisbane"
+        ],
+        "respuesta": 2
+      },
+      {
+        "pregunta": "¿En qué país se encuentra la Torre Eiffel?",
+        "opciones": [
+          "Italia",
+          "Francia",
+          "España",
+          "Alemania"
+        ],
+        "respuesta": 1
+      },
+      {
+        "pregunta": "¿Cuál es el país con mayor población del mundo?",
+        "opciones": [
+          "India",
+          "Estados Unidos",
+          "China",
+          "Indonesia"
+        ],
+        "respuesta": 2
+      },
+      {
+        "pregunta": "¿Qué país tiene la forma de una bota?",
+        "opciones": [
+          "España",
+          "Italia",
+          "Grecia",
+          "Portugal"
+        ],
+        "respuesta": 1
+      },
+      {
+        "pregunta": "¿Cuál es la montaña más alta del mundo?",
+        "opciones": [
+          "Monte Everest",
+          "K2",
+          "Kangchenjunga",
+          "Makalu"
+        ],
+        "respuesta": 0
+      },
+      {
+        "pregunta": "¿Qué país tiene más islas en el mundo?",
+        "opciones": [
+          "Noruega",
+          "Suecia",
+          "Filipinas",
+          "Indonesia"
+        ],
+        "respuesta": 1
+      }
+    ]
+  },
+  "Cine": {
+    "preguntas":[
+
+    ]
+  },
+  "Música": {
+    "preguntas":[
+
+    ]
+  },
+  "Historia": {
+    "preguntas":[
+
+    ]
+  },
+  "Ciencia": {
+    "preguntas":[
+
+    ]
+  },
+  "Deportes": {
+    "preguntas":[
+
+    ]
+  },
+  "Literatura": {
+    "preguntas":[
+
+    ]
+  },
+  "Arte": {
+    "preguntas":[
+
+    ]
+  },
+  "Tecnología": {
+    "preguntas":[
+
+    ]
+  },
+  "Cultura General": {
+    "preguntas":[
+
+    ]
+  }
+}

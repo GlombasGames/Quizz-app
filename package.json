@@ -1,0 +1,21 @@
+{
+  "name": "quizz-app",
+  "version": "1.0.0",
+  "description": "A simple quiz application",
+  "main": "main.js",
+  "scripts": {
+    "start": "node ./public/main.js",
+    "start-backend": "node backend/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/storage": "^1.2.5",
+    "firebase": "^11.7.1",
+    "express": "^4.18.2",
+    "body-parser": "^1.20.2",
+    "firebase-admin": "^11.10.1",
+    "cors": "^2.8.5"
+  }
+}
