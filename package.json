@@ -4,18 +4,30 @@
   "description": "A simple quiz application",
   "main": "main.js",
   "scripts": {
-    "start": "node ./public/main.js",
-    "start-backend": "node backend/index.js",
+    "start": "node backend/index.js",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Your Name",
   "license": "ISC",
   "dependencies": {
+    "@capacitor/android": "^3.9.0",
+    "@capacitor/cli": "^3.9.0",
+    "@capacitor/core": "^3.9.0",
     "@capacitor/storage": "^1.2.5",
-    "firebase": "^11.7.1",
-    "express": "^4.18.2",
     "body-parser": "^1.20.2",
-    "firebase-admin": "^11.10.1",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "firebase": "^11.7.1",
+    "firebase-admin": "^11.10.1"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.99.8",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
   }
 }

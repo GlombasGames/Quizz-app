@@ -1,0 +1,6 @@
+{
+	"appId": "com.glombagames.trivian",
+	"appName": "Trivian",
+	"webDir": "public",
+	"bundledWebRuntime": false
+}
