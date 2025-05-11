@@ -1,3 +1,5 @@
+import './style.css';
+
 let Storage;
 
 // Detección de entorno: si estamos en Capacitor, usamos su API
@@ -89,7 +91,7 @@ async function pedirNombre() {
 
 async function cargarDatosJSON() {
   // Simula la primera carga desde el servidor
-  const res = await fetch('./categorias.json');
+  const res = await fetch('/categorias.json');
   data = await res.json();
   // Guardamos localmente si es la primera vez
   if (!progreso.actualizado) {

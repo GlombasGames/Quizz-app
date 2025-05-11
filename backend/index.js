@@ -25,6 +25,18 @@ if (fs.existsSync(TOKENS_FILE)) {
     tokens = JSON.parse(fs.readFileSync(TOKENS_FILE, 'utf-8'));
 }
 
+// Middleware para servir archivos estáticos desde la carpeta dist
+app.use(express.static(path.join(__dirname, '../dist')));
+
+// Ruta para servir index.html (para aplicaciones SPA)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
+// Ruta para servir archivos JSON específicos
+app.get('/categorias.json', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/categorias.json'));
+});
+
 // Ruta para registrar nuevos tokens
 app.post('/registrar-token', (req, res) => {
     const { token } = req.body;

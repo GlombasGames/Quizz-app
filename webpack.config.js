@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './public/main.js', // Archivo principal de entrada
@@ -25,12 +26,18 @@ module.exports = {
       template: './public/index.html', // Archivo HTML base
       filename: 'index.html', // Archivo HTML generado
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './public/categorias.json', to: './categorias.json' }, // Copiar categorias.json
+        { from: './public/style.css', to: './style.css' },
+      ],
+    }),
   ],
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 8080, // Puerto del servidor de desarrollo
+    port: 3000, // Puerto del servidor de desarrollo
     open: true, // Abre automáticamente el navegador
   },
   mode: 'development', // Modo de desarrollo (puedes cambiarlo a 'production' para optimizar)
