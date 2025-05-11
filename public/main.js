@@ -6,21 +6,17 @@ document.addEventListener('DOMContentLoaded', iniciar);
 
 // Ejemplo de uso
 async function inicializarUsuario() {
+
   const datos = await Storage.get({ key: 'usuario' });
-  if (!datos.value) {
-    // Si no existe el archivo, crea uno con datos iniciales
-    const datosIniciales = {
-      nombre: 'Jugador',
-      intentos: 3,
-      puntos: {},
-      desbloqueadas: ['Geografía', 'Cine'],
-      actualizado: null,
-    };
-    await Storage.set({ key: 'usuario', value: JSON.stringify(datosIniciales) });
-    return datosIniciales;
+
+  if (!datos?.value || !JSON.parse(datos.value).nombre) {
+    // Si el archivo no existe o no tiene nombre, inicializa el progreso
+    await pedirNombre();
+    return progreso; // Devuelve el progreso inicializado por pedirNombre
   } else {
-    // Si el archivo existe, devuelve los datos
-    return JSON.parse(datos.value);
+    // Si el archivo existe, carga los datos
+    progreso = JSON.parse(datos.value);
+    return progreso;
   }
 }
 
@@ -29,7 +25,7 @@ let Storage = {
     try {
       const contenido = await Filesystem.readFile({
         path: `${key}.json`,
-        directory: Directory.Documents,
+        directory: Directory.Data, // Cambiado a Directory.Data
         encoding: Encoding.UTF8,
       });
       return { value: contenido.data };
@@ -43,7 +39,7 @@ let Storage = {
       await Filesystem.writeFile({
         path: `${key}.json`,
         data: value,
-        directory: Directory.Documents,
+        directory: Directory.Data, // Cambiado a Directory.Data
         encoding: Encoding.UTF8,
       });
       console.log(`Archivo ${key}.json guardado correctamente.`);
@@ -55,7 +51,7 @@ let Storage = {
     try {
       await Filesystem.deleteFile({
         path: `${key}.json`,
-        directory: Directory.Documents,
+        directory: Directory.Data, // Cambiado a Directory.Data
       });
       console.log(`Archivo ${key}.json eliminado correctamente.`);
     } catch (error) {
@@ -109,18 +105,10 @@ let progreso = {
 
 // Guardar progreso
 async function guardarProgreso() {
-  await Storage.set({ key: 'progreso', value: JSON.stringify(progreso) });
+  await Storage.set({ key: 'usuario', value: JSON.stringify(progreso) });
 }
 
-// Cargar progreso
-async function cargarProgreso() {
-  const datos = await Storage.get({ key: 'progreso' });
-  if (datos.value) {
-    progreso = JSON.parse(datos.value);
-  } else {
-    await pedirNombre();
-  }
-}
+
 
 async function pedirNombre() {
   const nombre = prompt('Ingresa tu nombre para comenzar:');
@@ -130,7 +118,7 @@ async function pedirNombre() {
   progreso.desbloqueadas = ['Geografía', 'Cine']; // Guardamos los nombres originales
   progreso.actualizado = null;
   await guardarProgreso();
-  iniciarNotificaciones()
+  await iniciarNotificaciones()
 }
 
 async function cargarDatosJSON() {
@@ -148,13 +136,10 @@ async function cargarDatosJSON() {
 async function iniciar() {
   // Inicializa los datos del usuario si no existen
   await inicializarUsuario();
-  
-  // Carga el progreso del usuario
-  await cargarProgreso();
-  
+
   // Carga los datos JSON de las categorías
   await cargarDatosJSON();
-  
+
   // Renderiza el menú principal
   renderMenu();
 }
