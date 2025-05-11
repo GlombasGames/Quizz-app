@@ -1,28 +1,70 @@
 import './style.css';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 
-let Storage;
+const archivoUsuario = 'usuario.json';
+document.addEventListener('DOMContentLoaded', iniciar);
 
-// Detección de entorno: si estamos en Capacitor, usamos su API
-if (window.Capacitor && window.Capacitor.isNativePlatform) {
-  import('@capacitor/storage').then(mod => {
-    Storage = mod.Storage;
-    iniciar(); // iniciamos la app después de cargar el módulo
-  });
-} else {
-  // Modo navegador: usar localStorage
-  Storage = {
-    async get({ key }) {
-      return { value: localStorage.getItem(key) };
-    },
-    async set({ key, value }) {
-      localStorage.setItem(key, value);
-    },
-    async remove({ key }) {
-      localStorage.removeItem(key);
-    }
-  };
-  iniciar(); // iniciamos la app directamente
+// Ejemplo de uso
+async function inicializarUsuario() {
+  const datos = await Storage.get({ key: 'usuario' });
+  if (!datos.value) {
+    // Si no existe el archivo, crea uno con datos iniciales
+    const datosIniciales = {
+      nombre: 'Jugador',
+      intentos: 3,
+      puntos: {},
+      desbloqueadas: ['Geografía', 'Cine'],
+      actualizado: null,
+    };
+    await Storage.set({ key: 'usuario', value: JSON.stringify(datosIniciales) });
+    return datosIniciales;
+  } else {
+    // Si el archivo existe, devuelve los datos
+    return JSON.parse(datos.value);
+  }
 }
+
+let Storage = {
+  async get({ key }) {
+    try {
+      const contenido = await Filesystem.readFile({
+        path: `${key}.json`,
+        directory: Directory.Documents,
+        encoding: Encoding.UTF8,
+      });
+      return { value: contenido.data };
+    } catch (error) {
+      console.warn(`No se pudo leer el archivo ${key}.json:`, error);
+      return { value: null }; // Si no existe el archivo, devuelve null
+    }
+  },
+  async set({ key, value }) {
+    try {
+      await Filesystem.writeFile({
+        path: `${key}.json`,
+        data: value,
+        directory: Directory.Documents,
+        encoding: Encoding.UTF8,
+      });
+      console.log(`Archivo ${key}.json guardado correctamente.`);
+    } catch (error) {
+      console.error(`Error al guardar el archivo ${key}.json:`, error);
+    }
+  },
+  async remove({ key }) {
+    try {
+      await Filesystem.deleteFile({
+        path: `${key}.json`,
+        directory: Directory.Documents,
+      });
+      console.log(`Archivo ${key}.json eliminado correctamente.`);
+    } catch (error) {
+      console.warn(`No se pudo eliminar el archivo ${key}.json:`, error);
+    }
+  },
+};
+
+
 
 let fcmToken = null;
 
@@ -65,14 +107,16 @@ let progreso = {
   actualizado: null
 };
 
+// Guardar progreso
 async function guardarProgreso() {
   await Storage.set({ key: 'progreso', value: JSON.stringify(progreso) });
 }
 
+// Cargar progreso
 async function cargarProgreso() {
-  const res = await Storage.get({ key: 'progreso' });
-  if (res.value) {
-    progreso = JSON.parse(res.value);
+  const datos = await Storage.get({ key: 'progreso' });
+  if (datos.value) {
+    progreso = JSON.parse(datos.value);
   } else {
     await pedirNombre();
   }
@@ -102,8 +146,16 @@ async function cargarDatosJSON() {
 }
 
 async function iniciar() {
+  // Inicializa los datos del usuario si no existen
+  await inicializarUsuario();
+  
+  // Carga el progreso del usuario
   await cargarProgreso();
+  
+  // Carga los datos JSON de las categorías
   await cargarDatosJSON();
+  
+  // Renderiza el menú principal
   renderMenu();
 }
 
