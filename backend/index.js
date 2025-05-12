@@ -96,24 +96,37 @@ app.post('/enviar-notificacion', async (req, res) => {
         return res.status(400).json({ success: false, error: "No hay tokens para enviar notificaciones." });
     }
 
-    const message = {
+    // Crear el mensaje base de la notificación
+    const messageBase = {
         notification: {
             title: titulo || "¡Nuevas preguntas disponibles!",
             body: cuerpo || "Entra y revisa las nuevas categorías o preguntas."
-        },
-        tokens
+        }
     };
 
-    try {
-        const response = await admin.messaging().sendMulticast(message);
-        console.log('Notificaciones enviadas:', response.successCount);
-        res.json({ success: true, enviados: response.successCount });
-    } catch (err) {
-        console.error('Error enviando notificación:', err);
-        res.status(500).json({ success: false, error: err.message });
+    let enviados = 0;
+    let fallidos = 0;
+
+    // Recorrer el array de tokens y enviar notificaciones
+    for (const token of tokens) {
+        try {
+            const response = await admin.messaging().send({ ...messageBase, token });
+            console.log(`Notificación enviada al token: ${token}, respuesta: ${response}`);
+            enviados++;
+        } catch (err) {
+            console.error(`Error enviando notificación al token: ${token}`, err);
+            fallidos++;
+        }
     }
+
+    // Responder al cliente con el resultado
+    res.json({
+        success: true,
+        enviados,
+        fallidos
+    });
 });
 
-app.listen(PORT, () => {
-    console.log(`Servidor FCM corriendo en http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Servidor FCM corriendo en http://0.0.0.0:${PORT}`);
 });

@@ -85,7 +85,7 @@ async function iniciarNotificaciones() {
     console.log('Token FCM:', token.token);
 
     // Enviar el token al servidor
-    await fetch('http://localhost:3001/registrar-token', {
+    await fetch('http://192.168.1.106:3001/registrar-token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token: token.token })
