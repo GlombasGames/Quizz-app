@@ -1,39 +1,168 @@
+/* General */
 body {
   margin: 0;
   font-family: sans-serif;
-  background: #f5f5f5;
-  color: #333;
+  background: #0D47A1;
+  /* Fondo sólido */
+  color: #FFFFFF;
+  /* Texto claro */
 }
 
 #app {
   max-width: 600px;
   margin: 0 auto;
   padding: 16px;
+  background: -webkit-linear-gradient(135deg, #0D47A1, #1565C0);
+  /* Para navegadores basados en WebKit */
+  background: -moz-linear-gradient(135deg, #0D47A1, #1565C0);
+  /* Para navegadores basados en Gecko */
+  background: linear-gradient(135deg, #0D47A1, #1565C0);
+  /* Estándar */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Botones */
 button {
   padding: 12px 16px;
   margin: 8px 0;
   font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: #2196F3;
+  /* Botón destacado */
+  color: #FFFFFF;
+  /* Texto claro */
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
+button:hover {
+  background: #64B5F6;
+  /* Más claro al pasar el mouse */
+  transform: scale(1.02);
+  /* Efecto de zoom */
+}
+
+button:active {
+  background: #1976D2;
+  /* Más oscuro al hacer clic */
+}
+
+/* Categorías */
 .category {
   padding: 12px;
   margin: 12px 0;
-  background: #fff;
-  border: 1px solid #ccc;
+  background: #64B5F6;
+  /* Fondo más claro para categorías desbloqueadas */
+  color: #FFFFFF;
+  /* Texto claro */
+  border: 1px solid #2196F3;
+  /* Borde primario */
   border-radius: 8px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.category:hover {
+  background: #BBDEFB;
+  /* Fondo aún más claro al pasar el mouse */
+  transform: scale(1.02);
+  /* Efecto de zoom */
 }
 
 .category.locked {
-  background: #eee;
-  color: #999;
+  background: #1565C0;
+  /* Fondo más oscuro para categorías bloqueadas */
+  color: #E3F2FD;
+  /* Texto claro */
 }
 
+.category-info {
+  display: flex; /* Alinea los elementos en una fila */
+  align-items: center; /* Centra verticalmente el texto, el candado y el botón */
+  justify-content: space-between; /* Espaciado entre los elementos */
+}
+
+.category-info button {
+  margin-left: 8px; /* Espacio entre el texto y el botón */
+  padding: 8px 20px; /* Ajusta el tamaño del botón */
+  font-size: 20px; /* Tamaño del texto del botón */
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: #2196F3; /* Color del botón */
+  color: #FFFFFF; /* Color del texto */
+  transition: background 0.3s ease;
+}
+
+.category-info button:hover {
+  background: #1976D2; /* Color más oscuro al pasar el mouse */
+}
+
+.lock-icon {
+  margin-left: 8px; /* Espacio entre el texto y el candado */
+  font-size: 18px; /* Tamaño del candado */
+  color: #E3F2FD; /* Color del candado */
+}
+
+/* Encabezado */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  background: #023d6dcf;
+  /* Fondo primario */
+  color: #FFFFFF;
+  /* Texto claro */
+  padding: 12px;
+  border-radius: 8px;
+  font-size: large;
+}
+
+.header div {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Enlaces */
+a {
+  color: #64B5F6;
+  /* Azul claro */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #BBDEFB;
+  /* Azul más claro al pasar el mouse */
+}
+
+.saludo {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  background: #cad3daaa;
+  /* Fondo primario */
+  color: #000000;
+  /* Texto claro */
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+
+}
+
+.btn-anuncio {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: #16a247d7;
+  /* Botón destacado */
+  color: #ffffff;
+  /* Texto claro */
+  transition: background 0.3s ease, transform 0.2s ease;
 }

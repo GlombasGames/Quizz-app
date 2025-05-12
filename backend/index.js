@@ -22,7 +22,16 @@ admin.initializeApp({
 // Cargar tokens guardados
 let tokens = [];
 if (fs.existsSync(TOKENS_FILE)) {
-    tokens = JSON.parse(fs.readFileSync(TOKENS_FILE, 'utf-8'));
+    try {
+        tokens = JSON.parse(fs.readFileSync(TOKENS_FILE, 'utf-8'));
+        console.log('Tokens cargados:', tokens);
+    } catch (err) {
+        console.error('Error al leer el archivo tokens.json:', err);
+    }
+} else {
+    // Crear el archivo si no existe
+    fs.writeFileSync(TOKENS_FILE, JSON.stringify([], null, 2));
+    console.log('Archivo tokens.json creado.');
 }
 
 // Middleware para servir archivos estáticos desde la carpeta dist
@@ -40,17 +49,46 @@ app.get('/categorias.json', (req, res) => {
 // Ruta para registrar nuevos tokens
 app.post('/registrar-token', (req, res) => {
     const { token } = req.body;
-    if (token && !tokens.includes(token)) {
-        tokens.push(token);
-        fs.writeFileSync(TOKENS_FILE, JSON.stringify(tokens, null, 2));
-        console.log('Nuevo token guardado:', token);
+
+    // Validar que el token no esté vacío
+    if (!token) {
+        console.error('Token no proporcionado.');
+        return res.status(400).json({ success: false, error: 'Token no proporcionado.' });
     }
-    res.sendStatus(200);
+
+    // Verificar si el token ya está guardado
+    if (!tokens.includes(token)) {
+        tokens.push(token);
+
+        // Guardar el token en el archivo tokens.json
+        try {
+            fs.writeFileSync(TOKENS_FILE, JSON.stringify(tokens, null, 2));
+            console.log('Nuevo token guardado:', token);
+        } catch (err) {
+            console.error('Error al guardar el token en el archivo:', err);
+            return res.status(500).json({ success: false, error: 'Error al guardar el token.' });
+        }
+    } else {
+        console.log('El token ya está registrado.');
+    }
+
+    res.status(200).json({ success: true, message: 'Token registrado correctamente.' });
 });
 
 // Ruta para enviar notificación manual
 app.post('/enviar-notificacion', async (req, res) => {
     const { titulo, cuerpo } = req.body;
+
+    // Leer los tokens actualizados desde el archivo tokens.json
+    let tokens = [];
+    if (fs.existsSync(TOKENS_FILE)) {
+        try {
+            tokens = JSON.parse(fs.readFileSync(TOKENS_FILE, 'utf-8'));
+        } catch (err) {
+            console.error('Error al leer el archivo tokens.json:', err);
+            return res.status(500).json({ success: false, error: 'Error al leer los tokens.' });
+        }
+    }
 
     // Validar que el array de tokens no esté vacío
     if (!tokens || tokens.length === 0) {

@@ -1,5 +1,7 @@
 import './style.css';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
+import { PushNotifications } from '@capacitor/push-notifications';
+import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 
 const archivoUsuario = 'usuario.json';
 document.addEventListener('DOMContentLoaded', iniciar);
@@ -65,29 +67,43 @@ let Storage = {
 let fcmToken = null;
 
 async function iniciarNotificaciones() {
-  if (!('Notification' in window)) {
-    console.log("Este navegador no soporta notificaciones.");
-    return;
-  }
-
   try {
-    const messaging = firebase.messaging();
-    await Notification.requestPermission();
+    // Solicitar permisos para notificaciones push
+    const permission = await PushNotifications.requestPermissions();
+    if (permission.receive !== 'granted') {
+      console.log('Permiso de notificaciones no concedido.');
+      return;
+    }
 
-    const registration = await navigator.serviceWorker.register('firebase-messaging-sw.js');
-    messaging.useServiceWorker(registration);
+    console.log('Permiso de notificaciones concedido.');
 
-    fcmToken = await messaging.getToken({ vapidKey: 'TU_PUBLIC_VAPID_KEY' }); // opcional
-    console.log("Token FCM:", fcmToken);
+    // Registrar el dispositivo para recibir notificaciones
+    await PushNotifications.register();
 
-    // Enviar token a tu backend para guardar y poder enviarle notificaciones después
-    await fetch('https://TU_DOMINIO/registrar-token', {
+    // Obtener el token FCM
+    const token = await FirebaseMessaging.getToken();
+    console.log('Token FCM:', token.token);
+
+    // Enviar el token al servidor
+    await fetch('http://localhost:3001/registrar-token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: fcmToken })
+      body: JSON.stringify({ token: token.token })
+    });
+
+    console.log('Token registrado correctamente en el servidor.');
+
+    // Manejar notificaciones recibidas
+    PushNotifications.addListener('pushNotificationReceived', (notification) => {
+      console.log('Notificación recibida:', notification);
+    });
+
+    // Manejar notificaciones cuando se tocan
+    PushNotifications.addListener('pushNotificationActionPerformed', (notification) => {
+      console.log('Notificación tocada:', notification);
     });
   } catch (err) {
-    console.error("Error obteniendo token FCM:", err);
+    console.error('Error al inicializar notificaciones:', err);
   }
 }
 
@@ -140,38 +156,49 @@ async function iniciar() {
   // Carga los datos JSON de las categorías
   await cargarDatosJSON();
 
+
   // Renderiza el menú principal
   renderMenu();
 }
 
 function renderMenu() {
+  const totalPuntos = Object.keys(progreso.puntos)
+    .filter(cat => progreso.desbloqueadas.includes(cat)) // Solo categorías desbloqueadas
+    .reduce((total, cat) => total + progreso.puntos[cat], 0); // Suma los puntos
+
   app.innerHTML = `
-    <div class="header">
-      <div>Hola, ${progreso.nombre}</div>
-      <div>Intentos: ${progreso.intentos}</div>
+    <div class="saludo">
+      <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>
+    <div class="header">
+      <div>Intentos: ${progreso.intentos}</div>
+      <div>Total: ${totalPuntos} pts</div>
+    </div>
+    ${progreso.intentos < 3
+      ? `<button class="btn-anuncio" tabindex="0" onclick="verAnuncio()">Ver anuncio para +1 intento</button>`
+      : ''}
     <h2>Categorías</h2>
     ${Object.keys(data).map(cat => {
-    const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Normaliza y elimina tildes
-    const desbloqueada = progreso.desbloqueadas
-      .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-      .includes(catNormalizada);
-    const puntos = progreso.puntos[cat] || 0;
-    const bloqueada = !desbloqueada;
-    const puntosNecesarios = bloqueada ? `Necesitas ${proximaMeta(cat)} pts` : `Puntos: ${puntos}`;
-    return `
+        const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Normaliza y elimina tildes
+        const desbloqueada = progreso.desbloqueadas
+          .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+          .includes(catNormalizada);
+        const puntos = progreso.puntos[cat] || 0;
+        const bloqueada = !desbloqueada;
+        const puntosNecesarios = bloqueada ? `Necesitas ${proximaMeta(cat)} pts` : `Puntos: ${puntos}`;
+        return `
         <div class="category ${bloqueada ? 'locked' : ''}">
           <strong>${cat}</strong> <br/>
-          ${puntosNecesarios} <br/>
-          ${!bloqueada && progreso.intentos > 0
-        ? `<button tabindex="0" onclick="jugar('${cat}')">Jugar</button>`
-        : ''}
+          <div class="category-info">
+            <span>${puntosNecesarios}</span>
+            ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
+            ${!bloqueada && progreso.intentos > 0
+              ? `<button tabindex="0" onclick="jugar('${cat}')">Jugar</button>`
+              : ''}
+          </div>
         </div>
       `;
-  }).join('')}
-    ${progreso.intentos < 3
-      ? `<button tabindex="0" onclick="verAnuncio()">Ver anuncio para +1 intento</button>`
-      : ''}
+      }).join('')}
   `;
 }
 
@@ -207,7 +234,7 @@ async function jugarPartida(categoria) {
 
   let puntaje = 0;
   let index = 0;
-  const tiempoLimite = 30;
+  const tiempoLimite = 60;
   let tiempoRestante = tiempoLimite;
   let timer;
 
