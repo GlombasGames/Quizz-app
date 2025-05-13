@@ -75,6 +75,10 @@ app.post('/registrar-token', (req, res) => {
     res.status(200).json({ success: true, message: 'Token registrado correctamente.' });
 });
 
+app.get('/ping', (req, res) => {
+    console.error('Ping recibido');
+  res.status(200).send('pong');
+});
 // Ruta para enviar notificación manual
 app.post('/enviar-notificacion', async (req, res) => {
     const { titulo, cuerpo } = req.body;
@@ -106,6 +110,7 @@ app.post('/enviar-notificacion', async (req, res) => {
 
     let enviados = 0;
     let fallidos = 0;
+    const tokensValidos = [];
 
     // Recorrer el array de tokens y enviar notificaciones
     for (const token of tokens) {
@@ -113,10 +118,31 @@ app.post('/enviar-notificacion', async (req, res) => {
             const response = await admin.messaging().send({ ...messageBase, token });
             console.log(`Notificación enviada al token: ${token}, respuesta: ${response}`);
             enviados++;
+            tokensValidos.push(token); // Mantener el token si el envío fue exitoso
         } catch (err) {
             console.error(`Error enviando notificación al token: ${token}`, err);
-            fallidos++;
+
+            // Verificar si el error indica que el token no es válido
+            if (
+                err.code === 'messaging/invalid-registration-token' ||
+                err.code === 'messaging/registration-token-not-registered'
+            ) {
+                console.log(`El token ${token} es inválido y será eliminado.`);
+                fallidos++;
+            } else {
+                // Si el error no está relacionado con un token inválido, mantener el token
+                tokensValidos.push(token);
+                fallidos++;
+            }
         }
+    }
+    // Guardar los tokens válidos en el archivo tokens.json
+    try {
+        fs.writeFileSync(TOKENS_FILE, JSON.stringify(tokensValidos, null, 2));
+        console.log('Tokens válidos actualizados en tokens.json', tokensValidos.length);
+    } catch (err) {
+        console.error('Error al guardar los tokens válidos en el archivo:', err);
+        return res.status(500).json({ success: false, error: 'Error al guardar los tokens válidos.' });
     }
 
     // Responder al cliente con el resultado

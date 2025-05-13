@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "node backend/index.js",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production & npx cap sync android",
+    "open": "npx cap open android",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Your Name",

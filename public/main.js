@@ -85,13 +85,16 @@ async function iniciarNotificaciones() {
     console.log('Token FCM:', token.token);
 
     // Enviar el token al servidor
-    await fetch('http://192.168.1.106:3001/registrar-token', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: token.token })
-    });
-
-    console.log('Token registrado correctamente en el servidor.');
+    if (tieneConexion()) {
+      await fetch('http://192.168.1.106:3001/registrar-token', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: token.token })
+      });
+      console.log('Token registrado correctamente en el servidor.');
+    } else {
+      console.warn('No se pudo registrar el token porque no hay conexión.');
+    }
 
     // Manejar notificaciones recibidas
     PushNotifications.addListener('pushNotificationReceived', (notification) => {
@@ -109,6 +112,7 @@ async function iniciarNotificaciones() {
 
 
 const app = document.getElementById('app');
+
 
 let data = {};
 let progreso = {
@@ -137,34 +141,78 @@ async function pedirNombre() {
   await iniciarNotificaciones()
 }
 
-async function cargarDatosJSON() {
-  // Simula la primera carga desde el servidor
-  const res = await fetch('/categorias.json');
-  data = await res.json();
-  // Guardamos localmente si es la primera vez
-  if (!progreso.actualizado) {
-    await Storage.set({ key: 'preguntas', value: JSON.stringify(data) });
-    progreso.actualizado = new Date().toISOString();
-    await guardarProgreso();
+async function verificarServidor() {
+  try {
+    const response = await fetch('http://192.168.1.106:3001/ping', { method: 'GET' });
+    return response.ok; // Devuelve true si el servidor responde correctamente
+  } catch (error) {
+    console.error('Error al verificar el servidor:', error);
+    return false; // Devuelve false si hay un error
   }
 }
 
+
+async function cargarDatosJSON(servidorDisponible) {
+  try {
+    if (servidorDisponible && tieneConexion()) {
+      // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
+      const res = await fetch('http://192.168.1.106:3001/categorias.json');
+      data = await res.json();
+
+      // Guardar los datos localmente para usarlos en modo offline
+      await Storage.set({ key: 'preguntas', value: JSON.stringify(data) });
+      progreso.actualizado = new Date().toISOString();
+      await guardarProgreso();
+    } else {
+      // Si no hay conexión o el servidor no está disponible, cargar los datos desde el almacenamiento local
+      const preguntasData = await Storage.get({ key: 'preguntas' });
+      if (preguntasData.value) {
+        data = JSON.parse(preguntasData.value);
+      } else {
+        console.error('No se encontraron datos locales para las preguntas.');
+        alert('No se puede cargar el juego sin conexión y sin datos locales.');
+        return;
+      }
+    }
+  } catch (error) {
+    console.error('Error al cargar datos JSON:', error);
+    alert('No se pudo cargar el juego. Verifica tu conexión a Internet.');
+  }
+}
+
+function tieneConexion() {
+  return navigator.onLine;
+}
+
 async function iniciar() {
-  // Inicializa los datos del usuario si no existen
-  await inicializarUsuario();
+  try {
+    // Mostrar un mensaje inicial
+    app.innerHTML = '<p>Cargando la aplicación...</p>';
 
-  // Carga los datos JSON de las categorías
-  await cargarDatosJSON();
+    // Verificar si el servidor está disponible
+    const servidorDisponible = await verificarServidor();
 
+    // Inicializa los datos del usuario si no existen
+    await inicializarUsuario();
 
-  // Renderiza el menú principal
-  renderMenu();
+    // Carga los datos JSON de las categorías
+    await cargarDatosJSON(servidorDisponible);
+
+    // Renderiza el menú principal
+    renderMenu();
+
+  } catch (error) {
+    console.error('Error al iniciar la aplicación:', error);
+    app.innerHTML = '<p>Error al cargar la aplicación. Por favor, verifica tu conexión.</p>';
+  }
 }
 
 function renderMenu() {
   const totalPuntos = Object.keys(progreso.puntos)
     .filter(cat => progreso.desbloqueadas.includes(cat)) // Solo categorías desbloqueadas
     .reduce((total, cat) => total + progreso.puntos[cat], 0); // Suma los puntos
+
+  const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
   app.innerHTML = `
     <div class="saludo">
@@ -174,31 +222,31 @@ function renderMenu() {
       <div>Intentos: ${progreso.intentos}</div>
       <div>Total: ${totalPuntos} pts</div>
     </div>
-    ${progreso.intentos < 3
-      ? `<button class="btn-anuncio" tabindex="0" onclick="verAnuncio()">Ver anuncio para +1 intento</button>`
-      : ''}
+    <button class="btn-anuncio" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
+      Ver anuncio para +1 intento
+    </button>
     <h2>Categorías</h2>
     ${Object.keys(data).map(cat => {
-        const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Normaliza y elimina tildes
-        const desbloqueada = progreso.desbloqueadas
-          .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-          .includes(catNormalizada);
-        const puntos = progreso.puntos[cat] || 0;
-        const bloqueada = !desbloqueada;
-        const puntosNecesarios = bloqueada ? `Necesitas ${proximaMeta(cat)} pts` : `Puntos: ${puntos}`;
-        return `
+    const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Normaliza y elimina tildes
+    const desbloqueada = progreso.desbloqueadas
+      .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+      .includes(catNormalizada);
+    const puntos = progreso.puntos[cat] || 0;
+    const bloqueada = !desbloqueada;
+    const puntosNecesarios = bloqueada ? `Necesitas ${proximaMeta(cat)} pts` : `Puntos: ${puntos}`;
+    return `
         <div class="category ${bloqueada ? 'locked' : ''}">
           <strong>${cat}</strong> <br/>
           <div class="category-info">
             <span>${puntosNecesarios}</span>
             ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
             ${!bloqueada && progreso.intentos > 0
-              ? `<button tabindex="0" onclick="jugar('${cat}')">Jugar</button>`
-              : ''}
+        ? `<button tabindex="0" onclick="jugar('${cat}')">Jugar</button>`
+        : ''}
           </div>
         </div>
       `;
-      }).join('')}
+  }).join('')}
   `;
 }
 
@@ -247,25 +295,44 @@ async function jugarPartida(categoria) {
     const pregunta = seleccionadas[index];
 
     app.innerHTML = `
-      <div class="header">
-        <div>Tiempo: ${tiempoRestante}s</div>
-        <div>Pregunta ${index + 1} / 10</div>
-      </div>
+    <div class="header">
+      <div>Tiempo: ${tiempoRestante}s</div>
+      <div>Pregunta ${index + 1} / 10</div>
+    </div>
+    <div class="pregunta">
       <h2>${pregunta.pregunta}</h2>
+    </div>
+    <div class="respuestas">
       ${pregunta.opcionesMezcladas.map(op => `
-        <button onclick="responder('${op}')">${op}</button>
+        <button class="respuesta" onclick="responder('${op}')">${op}</button>
       `).join('')}
-    `;
+    </div>
+  `;
+    // Asegurarse de que los botones estén habilitados
+    const botones = document.querySelectorAll('.respuesta');
+    botones.forEach(boton => {
+      boton.disabled = false;
+      boton.style.transition = 'none'; // Desactiva cualquier animación de transición
+    });
   };
 
   window.responder = (opcionSeleccionada) => {
+    // Deshabilitar todos los botones de respuesta
+    const botones = document.querySelectorAll('.respuesta');
+    botones.forEach(boton => boton.disabled = true);
+
     const pregunta = seleccionadas[index];
-    const correcta = pregunta.respuesta; // La respuesta correcta ahora es un texto
-    if (opcionSeleccionada === correcta) { // Comparar directamente el contenido
+    const correcta = pregunta.respuesta;
+
+    if (opcionSeleccionada === correcta) {
       puntaje++;
     }
-    index++;
-    renderPregunta();
+
+    // Agregar un retraso antes de avanzar a la siguiente pregunta
+    setTimeout(() => {
+      index++;
+      renderPregunta();
+    }, 300); // 300 ms de retraso
   };
 
   timer = setInterval(() => {
@@ -285,15 +352,17 @@ function terminarPartida(puntaje, categoria) {
   checkDesbloqueos();
   guardarProgreso();
 
+  const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
+
   app.innerHTML = `
     <h2>¡Fin del juego!</h2>
     <p>Obtuviste ${puntaje} puntos.</p>
     <p>Intentos disponibles: ${progreso.intentos}</p>
     <button onclick="jugar('${categoria}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Reintentar categoría</button>
+    <button class="btn-anuncio" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
+    Ver anuncio para +1 intento
+    </button>
     <button onclick="renderMenu()">Volver al menú</button>
-    ${progreso.intentos < 3
-      ? `<button onclick="verAnuncio()">Ver anuncio para +1 intento</button>`
-      : ''}
   `;
 }
 
@@ -319,7 +388,17 @@ function checkDesbloqueos() {
   }
 }
 
-window.verAnuncio = function verAnuncio() {
+window.verAnuncio = async function verAnuncio() {
+  // Verificar si hay conexión a Internet
+  if (!tieneConexion() || !(await verificarServidor())) {
+    alert('No hay conexión con el servidor. Pero puedes gastar tus intentos sin conexion.');
+    // Deshabilitar el botón dinámicamente
+    const botonVerAnuncio = app.querySelector('button[onclick^="verAnuncio"]');
+    if (botonVerAnuncio) {
+      botonVerAnuncio.disabled = true;
+    }
+    return;
+  }
   // Simulación de anuncio rewarded
   progreso.intentos += 1;
   guardarProgreso().then(() => {
