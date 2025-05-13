@@ -4,7 +4,7 @@
 	"webDir": "dist",
 	"bundledWebRuntime": false,
 	"server": {
-		"cleartext": true,
-		"url": "http://192.168.1.106:3001"
+		"cleartext": false,
+		"url": "https://glombagames.ddns.net/"
 	}
 }

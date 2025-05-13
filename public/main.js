@@ -2,7 +2,7 @@ import './style.css';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
-
+let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 const archivoUsuario = 'usuario.json';
 document.addEventListener('DOMContentLoaded', iniciar);
 
@@ -86,7 +86,7 @@ async function iniciarNotificaciones() {
 
     // Enviar el token al servidor
     if (tieneConexion()) {
-      await fetch('http://192.168.1.106:3001/registrar-token', {
+      await fetch('https://glombagames.ddns.net/registrar-token', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token: token.token })
@@ -143,7 +143,7 @@ async function pedirNombre() {
 
 async function verificarServidor() {
   try {
-    const response = await fetch('http://192.168.1.106:3001/ping', { method: 'GET' });
+    const response = await fetch('https://glombagames.ddns.net/ping', { method: 'GET' });
     return response.ok; // Devuelve true si el servidor responde correctamente
   } catch (error) {
     console.error('Error al verificar el servidor:', error);
@@ -156,7 +156,7 @@ async function cargarDatosJSON(servidorDisponible) {
   try {
     if (servidorDisponible && tieneConexion()) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
-      const res = await fetch('http://192.168.1.106:3001/categorias.json');
+      const res = await fetch('https://glombagames.ddns.net/categorias.json');
       data = await res.json();
 
       // Guardar los datos localmente para usarlos en modo offline
@@ -225,7 +225,9 @@ function renderMenu() {
     <button class="btn-anuncio" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
       Ver anuncio para +1 intento
     </button>
+    <div style="text-align: center;">
     <h2>Categorías</h2>
+    </div>
     ${Object.keys(data).map(cat => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Normaliza y elimina tildes
     const desbloqueada = progreso.desbloqueadas
@@ -235,17 +237,21 @@ function renderMenu() {
     const bloqueada = !desbloqueada;
     const puntosNecesarios = bloqueada ? `Necesitas ${proximaMeta(cat)} pts` : `Puntos: ${puntos}`;
     return `
-        <div class="category ${bloqueada ? 'locked' : ''}">
-          <strong>${cat}</strong> <br/>
-          <div class="category-info">
-            <span>${puntosNecesarios}</span>
-            ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
-            ${!bloqueada && progreso.intentos > 0
-        ? `<button tabindex="0" onclick="jugar('${cat}')">Jugar</button>`
-        : ''}
-          </div>
-        </div>
-      `;
+  <div class="category ${bloqueada ? 'locked' : ''}">
+    <div class="category-info-flex">
+      <div class="category-details">
+        <strong class="cat">${cat}</strong>
+        <span class="category-puntos">${puntosNecesarios}</span>
+      </div>
+      <div class="category-action">
+        ${bloqueada
+        ? `<span class="lock-icon">🔒</span>`
+        : `<button class="btn-jugar" tabindex="0" onclick="jugar('${cat}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Jugar</button>`
+      }
+      </div>
+    </div>
+  </div>
+`;
   }).join('')}
   `;
 }
@@ -263,6 +269,7 @@ window.jugar = function jugar(categoria) {
   jugarPartida(categoria)
 };
 async function jugarPartida(categoria) {
+  preguntasRespondidas = 0; // Reiniciar el contador de preguntas respondidas
   const preguntasData = await Storage.get({ key: 'preguntas' });
   const preguntasPorCat = JSON.parse(preguntasData.value)[categoria]?.preguntas || [];
 
@@ -286,6 +293,13 @@ async function jugarPartida(categoria) {
   let tiempoRestante = tiempoLimite;
   let timer;
 
+  const actualizarTiempo = () => {
+    const tiempoElemento = document.querySelector('.header div:first-child');
+    if (tiempoElemento) {
+      tiempoElemento.textContent = `Tiempo: ${tiempoRestante}s`;
+    }
+  };
+
   const renderPregunta = () => {
     if (index >= seleccionadas.length || tiempoRestante <= 0) {
       clearInterval(timer);
@@ -295,29 +309,24 @@ async function jugarPartida(categoria) {
     const pregunta = seleccionadas[index];
 
     app.innerHTML = `
-    <div class="header">
-      <div>Tiempo: ${tiempoRestante}s</div>
-      <div>Pregunta ${index + 1} / 10</div>
-    </div>
-    <div class="pregunta">
-      <h2>${pregunta.pregunta}</h2>
-    </div>
-    <div class="respuestas">
-      ${pregunta.opcionesMezcladas.map(op => `
-        <button class="respuesta" onclick="responder('${op}')">${op}</button>
-      `).join('')}
-    </div>
-  `;
-    // Asegurarse de que los botones estén habilitados
-    const botones = document.querySelectorAll('.respuesta');
-    botones.forEach(boton => {
-      boton.disabled = false;
-      boton.style.transition = 'none'; // Desactiva cualquier animación de transición
-    });
+      <div class="header">
+        <div>Tiempo: ${tiempoRestante}s</div>
+        <div>Pregunta ${index + 1} / 10</div>
+      </div>
+      <div class="pregunta">
+        <h2>${pregunta.pregunta}</h2>
+      </div>
+      <div class="respuestas">
+        ${pregunta.opcionesMezcladas.map(op => `
+          <button class="respuesta" onclick="responder('${op}')">${op}</button>
+        `).join('')}
+      </div>
+    `;
   };
 
   window.responder = (opcionSeleccionada) => {
-    // Deshabilitar todos los botones de respuesta
+    preguntasRespondidas++; // Incrementar el contador de preguntas respondidas
+
     const botones = document.querySelectorAll('.respuesta');
     botones.forEach(boton => boton.disabled = true);
 
@@ -328,19 +337,18 @@ async function jugarPartida(categoria) {
       puntaje++;
     }
 
-    // Agregar un retraso antes de avanzar a la siguiente pregunta
-    setTimeout(() => {
-      index++;
-      renderPregunta();
-    }, 300); // 300 ms de retraso
+    index++;
+    renderPregunta();
   };
 
   timer = setInterval(() => {
     tiempoRestante--;
+    actualizarTiempo();
+
     if (tiempoRestante <= 0) {
       clearInterval(timer);
+      terminarPartida(puntaje, categoria);
     }
-    renderPregunta();
   }, 1000);
 
   renderPregunta();
@@ -355,10 +363,13 @@ function terminarPartida(puntaje, categoria) {
   const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
   app.innerHTML = `
+    <div class="termino">
     <h2>¡Fin del juego!</h2>
-    <p>Obtuviste ${puntaje} puntos.</p>
+    <p>Respondiste ${preguntasRespondidas}/10.</p>
+    <h2>Obtuviste ${puntaje} puntos.</h2>
     <p>Intentos disponibles: ${progreso.intentos}</p>
-    <button onclick="jugar('${categoria}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Reintentar categoría</button>
+    </div>
+    <button class="btn-reintentar" onclick="jugar('${categoria}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Reintentar categoría</button>
     <button class="btn-anuncio" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
     Ver anuncio para +1 intento
     </button>

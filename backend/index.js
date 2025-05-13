@@ -7,7 +7,7 @@ const path = require('path');
 const cors = require('cors');
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
-const PORT = 3001;
+const PORT = 3100;
 
 const app = express();
 app.use(cors());

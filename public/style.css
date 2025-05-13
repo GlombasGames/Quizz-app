@@ -24,9 +24,22 @@ body {
   /* Estándar */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: flex;
-  flex-direction: column; /* Organiza los hijos en columnas */
-  height: 100%; /* Ocupa toda la altura de la pantalla */
+  display: flex;
+  flex-direction: column;
+  /* Organiza los hijos en columnas */
+  height: 100%;
+  /* Ocupa toda la altura de la pantalla */
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE y Edge */
+
+}
+
+/* Oculta la scrollbar en navegadores Webkit (Chrome, Edge, Safari) */
+#app::-webkit-scrollbar {
+  display: none;
 }
 
 /* Botones */
@@ -72,22 +85,15 @@ button:disabled {
 .category {
   padding: 12px;
   margin: 12px 0;
-  background: #64B5F6;
+  background: #06508c;
   /* Fondo más claro para categorías desbloqueadas */
   color: #FFFFFF;
   /* Texto claro */
   border: 1px solid #2196F3;
   /* Borde primario */
   border-radius: 8px;
-  transition: transform 0.2s ease, background 0.3s ease;
 }
 
-.category:hover {
-  background: #BBDEFB;
-  /* Fondo aún más claro al pasar el mouse */
-  transform: scale(1.02);
-  /* Efecto de zoom */
-}
 
 .category.locked {
   background: #1565C0;
@@ -103,6 +109,7 @@ button:disabled {
   /* Centra verticalmente el texto, el candado y el botón */
   justify-content: space-between;
   /* Espaciado entre los elementos */
+
 }
 
 .category-info button {
@@ -170,46 +177,53 @@ a:hover {
 }
 
 .saludo {
-  justify-content: space-between;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
-  background: #cad3daaa;
-  /* Fondo primario */
-  color: #000000;
-  /* Texto claro */
-  padding: 12px;
-  border-radius: 8px;
+  margin-bottom: 18px;
+  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+  color: #fff;
+  padding: 18px 0;
+  border-radius: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
+  border: 1px solid #2196f3;
+}
+.saludo div {
+  width: 100%;
   text-align: center;
-
 }
 
+/* Botón "Ver anuncio" - muy llamativo */
 .btn-anuncio {
   width: 100%;
   padding: 20px 16px;
   margin: 8px 0;
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
   border: none;
-  border-radius: 4px;
-  background: #16a247d7;
-  /* Botón destacado */
-  color: #ffffff;
-  /* Texto claro */
-  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ffe066 0%, #ffe066 60%, #ffd60a 100%);
+  color: #333;
+  box-shadow: 0 2px 8px rgba(255, 214, 10, 0.2);
+  transition: background 0.3s, transform 0.2s;
 }
-.btn-anuncio:hover {
-  background: #16a247;
-  /* Más claro al pasar el mouse */
-  transform: scale(1.02);
-  /* Efecto de zoom */
+
+.btn-anuncio:hover:enabled {
+  background: linear-gradient(90deg, #ffd60a 0%, #ffe066 100%);
+  transform: scale(1.03);
 }
+
 .btn-anuncio:active {
-  background: #0f7a2b;
-  /* Más oscuro al hacer clic */
+  background: #ffd60a;
 }
+
 /* Estilo para botones deshabilitados */
 .btn-anuncio:disabled {
-  background-color: #185c1a;
+  background-color: #d4d415d7;
   /* Mismo color de fondo */
   color: white;
   /* Mismo color de texto */
@@ -219,34 +233,52 @@ a:hover {
   /* Cambia el cursor a "no permitido" */
 }
 
+/* Animación de pulso para el botón de anuncio */
+@keyframes pulse-anuncio {
+  0% { transform: scale(1);}
+  50% { transform: scale(1.03);}
+  100% { transform: scale(1);}
+}
+
+/* Aplica la animación solo si el botón NO está deshabilitado */
+.btn-anuncio:not(:disabled) {
+  animation: pulse-anuncio 1.2s infinite;
+}
+
 .respuesta {
   width: 100%;
   height: 18%;
 }
 
 .pregunta {
-  flex: 0 0 35%; /* Ocupa el 40% de la altura del contenedor */
+  flex: 0 0 35%;
+  /* Ocupa el 40% de la altura del contenedor */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 1rem;
   color: white;
-  padding: 2px;
+  padding: 5px;
+  background: #023d6dcf;
+  border-radius: 8px;
 }
 
 .respuestas {
-  flex: 1; /* Ocupa el resto del espacio (60%) */
+  flex: 1;
+  /* Ocupa el resto del espacio (60%) */
   display: flex;
-  flex-direction: column; /* Organiza las respuestas en columnas */
+  flex-direction: column;
+  /* Organiza las respuestas en columnas */
   align-items: center;
   padding: 10px;
 }
 
 .respuesta {
-  width: 90%; /* Las respuestas ocupan el 80% del ancho del contenedor */
+  width: 90%;
+  /* Las respuestas ocupan el 80% del ancho del contenedor */
   padding: 2px;
-  background-color: #adcfea;
+  background-color: #e1e1e1e8;
   color: rgb(5, 5, 5);
   text-align: center;
   border: none;
@@ -256,16 +288,125 @@ a:hover {
 }
 
 .respuesta:hover {
-  background-color: #42A5F5; /* Cambia el color al pasar el mouse */
+  background-color: #e8e9cde8;
+  /* Cambia el color al pasar el mouse */
 }
 
 .respuesta:active {
-  background-color: #1976D2; /* Cambia el color al hacer clic */
+  background-color: #e1e1e1e8;
+  /* Cambia el color al hacer clic */
 }
 
 .respuesta:disabled {
-  background-color:  #6296c0; /* Color gris para botones deshabilitados */
-   color: white;
+  background-color: #707070e8;
+  /* Color gris para botones deshabilitados */
+  color: white;
   cursor: not-allowed;
-  transition: none; /* Desactiva cualquier animación */
+  transition: none;
+  /* Desactiva cualquier animación */
+}
+
+.termino {
+
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  background: #023d6dcf;
+  /* Fondo primario */
+  color: #FFFFFF;
+  /* Texto claro */
+  padding: 12px;
+  border-radius: 8px;
+  font-size: large;
+  text-align: center;
+
+}
+
+/* Botón "Reintentar" - verde suave */
+.btn-reintentar {
+  width: 100%;
+  padding: 20px 16px;
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #81c784 0%, #43a047 100%);
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-reintentar:hover:enabled {
+  background: linear-gradient(90deg, #43a047 0%, #81c784 100%);
+  transform: scale(1.03);
+}
+
+.btn-reintentar:active {
+  background: #388e3c;
+}
+
+/* Estilo para botones deshabilitados */
+.btn-reintentaro:disabled {
+  background-color:  #296a2d;
+  /* Mismo color de fondo */
+  color: white;
+  /* Mismo color de texto */
+  opacity: 0.5;
+  /* Más transparente */
+  cursor: not-allowed;
+  /* Cambia el cursor a "no permitido" */
+}
+
+.category-info-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:  0;
+}
+
+.category-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-puntos {
+  font-size: 1em;
+  color: #b3e5fc;
+  margin-top: 3px;
+}
+
+.category-action {
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  justify-content: flex-end;
+}
+
+/* Botón "Jugar" - azul claro/verde azulado */
+.btn-jugar {
+  font-size: 1.1em;
+  padding: 18px 28px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #29b6f6 0%, #039be5 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(41,182,246,0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-jugar:hover:enabled {
+  background: linear-gradient(90deg, #039be5 0%, #29b6f6 100%);
+  transform: scale(1.03);
+}
+
+.lock-icon {
+  font-size: 2em;
+  color: #bdbdbd;
+  margin-left: 8px;
+}
+.cat{
+  font-size: 1.5em;
 }
