@@ -30,7 +30,8 @@ module.exports = {
       patterns: [
         { from: './public/categorias.json', to: './categorias.json' }, // Copiar categorias.json
         { from: './public/style.css', to: './style.css' },
-        { from: './public/firebase-messaging-sw.js', to: './firebase-messaging-sw.js' }
+        { from: './public/firebase-messaging-sw.js', to: './firebase-messaging-sw.js' },
+        { from: './public/assets', to: './assets' }, // Copiar carpeta assets
       ],
     }),
   ],

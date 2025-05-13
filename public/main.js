@@ -215,6 +215,7 @@ function renderMenu() {
   const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
   app.innerHTML = `
+    <div class="logo"><h2>Trivian</h2></div>
     <div class="saludo">
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>

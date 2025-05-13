@@ -17,20 +17,24 @@ body {
   margin: 0 auto;
   padding: 16px;
   background: -webkit-linear-gradient(135deg, #0D47A1, #1565C0);
+  /* Para navegadores basados en WebKit */
   background: -moz-linear-gradient(135deg, #0D47A1, #1565C0);
+  /* Para navegadores basados en Gecko */
   background: linear-gradient(135deg, #0D47A1, #1565C0);
-  /* Fondo de respaldo */
-  background-image: url('./assets/fondoSelva.jpeg'), linear-gradient(135deg, #0D47A1, #1565C0);
-  background-size: cover;
-  background-position: center;
+  /* Estándar */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
+  /* Organiza los hijos en columnas */
   height: 100%;
+  /* Ocupa toda la altura de la pantalla */
   overflow-y: scroll;
   scrollbar-width: none;
+  /* Firefox */
   -ms-overflow-style: none;
+  /* IE y Edge */
+
 }
 
 /* Oculta la scrollbar en navegadores Webkit (Chrome, Edge, Safari) */
@@ -177,7 +181,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin-bottom: 18px;
-  background: #2b5c0178;
+  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
   color: #fff;
   padding: 18px 0;
   border-radius: 10px;
@@ -186,9 +190,8 @@ a:hover {
   box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
   letter-spacing: 0.5px;
   text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
-  border: 1px solid #294c0ba1;
+  border: 1px solid #2196f3;
 }
-
 .saludo div {
   width: 100%;
   text-align: center;
@@ -232,17 +235,9 @@ a:hover {
 
 /* Animación de pulso para el botón de anuncio */
 @keyframes pulse-anuncio {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.03);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1);}
+  50% { transform: scale(1.03);}
+  100% { transform: scale(1);}
 }
 
 /* Aplica la animación solo si el botón NO está deshabilitado */
@@ -352,7 +347,7 @@ a:hover {
 
 /* Estilo para botones deshabilitados */
 .btn-reintentaro:disabled {
-  background-color: #296a2d;
+  background-color:  #296a2d;
   /* Mismo color de fondo */
   color: white;
   /* Mismo color de texto */
@@ -366,7 +361,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
+  padding:  0;
 }
 
 .category-details {
@@ -398,7 +393,7 @@ a:hover {
   border: none;
   cursor: pointer;
   font-weight: bold;
-  box-shadow: 0 2px 8px rgba(41, 182, 246, 0.15);
+  box-shadow: 0 2px 8px rgba(41,182,246,0.15);
   transition: background 0.2s, transform 0.2s;
 }
 
@@ -412,29 +407,6 @@ a:hover {
   color: #bdbdbd;
   margin-left: 8px;
 }
-
-.cat {
+.cat{
   font-size: 1.5em;
-}
-
-.logo {
-  margin-bottom: 18px;
-  background-image: url('./assets/fondoSelva.jpeg');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  padding: 0;
-  border-radius: 10px;
-  font-size: 1.3em;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
-  border: 1px solid #294c0ba1;
-  margin-left: 25%;
-  width: 50%;
-  min-height: 200px; /* <-- Cambia a min-height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
