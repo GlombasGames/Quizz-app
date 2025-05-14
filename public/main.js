@@ -187,25 +187,31 @@ function tieneConexion() {
 async function iniciar() {
   try {
     // Mostrar un mensaje inicial
-    app.innerHTML = '<p>Cargando la aplicación...</p>';
-
-    // Verificar si el servidor está disponible
-    const servidorDisponible = await verificarServidor();
-
-    // Inicializa los datos del usuario si no existen
-    await inicializarUsuario();
-
-    // Carga los datos JSON de las categorías
-    await cargarDatosJSON(servidorDisponible);
-
-    // Renderiza el menú principal
-    renderMenu();
-
-  } catch (error) {
-    console.error('Error al iniciar la aplicación:', error);
-    app.innerHTML = '<p>Error al cargar la aplicación. Por favor, verifica tu conexión.</p>';
+    app.innerHTML = `<div class="cargando">
+    <img src="./assets/pajaro.png" alt="Pájaro" style="width:150px; height:220px; display:block; margin:0 auto 16px auto;">
+    <p>Glombagames</p>
+    <div>
+    `;
+    setTimeout( async() => {
+      
+      // Verificar si el servidor está disponible
+      const servidorDisponible = await verificarServidor();
+      
+      // Inicializa los datos del usuario si no existen
+      await inicializarUsuario();
+      
+      // Carga los datos JSON de las categorías
+      await cargarDatosJSON(servidorDisponible);
+      
+      // Renderiza el menú principal
+      renderMenu();
+    }, 3000);
+      
+    } catch (error) {
+      console.error('Error al iniciar la aplicación:', error);
+      app.innerHTML = '<p>Error al cargar la aplicación. Por favor, verifica tu conexión.</p>';
+    }
   }
-}
 
 function renderMenu() {
   const totalPuntos = Object.keys(progreso.puntos)

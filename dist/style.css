@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #0D47A1;
+  background: #000102;
   /* Fondo sólido */
   color: #FFFFFF;
   /* Texto claro */
@@ -435,6 +435,25 @@ a:hover {
   width: 50%;
   min-height: 200px; /* <-- Cambia a min-height */
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cargando {
+  margin-bottom: 18px;
+  background: #000102;
+  color: #fff;
+  padding: 0;
+  border-radius: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
+  border: 1px solid #294c0ba1;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;   /* <--- Esto es clave */
   align-items: center;
   justify-content: center;
 }

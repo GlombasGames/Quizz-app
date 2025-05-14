@@ -1,5 +1,5 @@
 {
-    "animales": {
+    "Animales": {
     "preguntas": [
       {
         "pregunta": "",
@@ -13,7 +13,7 @@
       }
     ]
   },
-    "plantas": {
+    "Plantas": {
     "preguntas": [
       {
         "pregunta": "",
@@ -27,7 +27,7 @@
       }
     ]
   },
-      "arboles": {
+      "Arboles": {
     "preguntas": [
       {
         "pregunta": "",
@@ -41,7 +41,7 @@
       }
     ]
   },
-      "aves": {
+      "Aves": {
     "preguntas": [
       {
         "pregunta": "",
@@ -55,7 +55,7 @@
       }
     ]
   },
-      "insectos": {
+      "Insectos": {
     "preguntas": [
       {
         "pregunta": "",
@@ -69,7 +69,7 @@
       }
     ]
   },
-      "anfibios": {
+      "Anfibios": {
     "preguntas": [
       {
         "pregunta": "",
@@ -83,7 +83,7 @@
       }
     ]
   },
-      "hongos": {
+      "Hongos": {
     "preguntas": [
       {
         "pregunta": "",
@@ -97,7 +97,7 @@
       }
     ]
   },
-      "frutas": {
+      "Frutas": {
     "preguntas": [
       {
         "pregunta": "",
@@ -111,7 +111,7 @@
       }
     ]
   },
-      "reptiles": {
+      "Reptiles": {
     "preguntas": [
       {
         "pregunta": "",
@@ -125,7 +125,7 @@
       }
     ]
   },
-      "flores": {
+      "Flores": {
     "preguntas": [
       {
         "pregunta": "",
@@ -139,7 +139,7 @@
       }
     ]
   },
-      "selvas": {
+      "Selvas": {
     "preguntas": [
       {
         "pregunta": "",
@@ -153,7 +153,7 @@
       }
     ]
   },
-      "rios": {
+      "Rios": {
     "preguntas": [
       {
         "pregunta": "",
