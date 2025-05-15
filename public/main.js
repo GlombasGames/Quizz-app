@@ -119,7 +119,7 @@ let progreso = {
   nombre: '',
   intentos: 3,
   puntos: {},
-  desbloqueadas: ['Animales','Plantas'],
+  desbloqueadas: ['Animales', 'Plantas'],
   actualizado: null
 };
 
@@ -234,8 +234,8 @@ function renderMenu() {
     <div style="text-align: center;">
     <h2>Categorías</h2>
     </div>
-    ${Object.keys(data).map(cat => {
-    const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // Normaliza y elimina tildes
+${Object.keys(data).map(cat => {
+    const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const desbloqueada = progreso.desbloqueadas
       .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
       .includes(catNormalizada);
@@ -250,18 +250,18 @@ function renderMenu() {
     tabindex="0"
     aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${cat}"
   >
-    <div class="categoria-img" style="background-image: url('./assets/${catNormalizada}.png');"></div>
+    <div class="categoria-img" style="background-image: url('./assets/${catNormalizada}.png'), url('./assets/pajaro.png');"></div>
     <div class="categoria-info-boton">
       <strong class="cat">${cat}</strong>
       <span class="category-puntos">${puntosNecesarios}</span>
       ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
     </div>
   </button>
-`;
+  `;
   }).join('')}
   `;
 }
-
+console.log(app.innerHTML) 
 // Aseguramos que renderMenu esté disponible globalmente
 window.renderMenu = renderMenu;
 
