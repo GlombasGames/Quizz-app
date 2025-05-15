@@ -121,7 +121,7 @@ button:disabled {
 }
 
 .category-info button:hover {
-  background: #d24a19;
+  background: #1976D2;
   /* Color más oscuro al pasar el mouse */
 }
 
