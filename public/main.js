@@ -154,11 +154,13 @@ async function verificarServidor() {
 
 async function cargarDatosJSON(servidorDisponible) {
   try {
-    if (servidorDisponible ) {
+    console.error('Servidor disponible:', servidorDisponible);
+    console.error('tieneConexion:', tieneConexion);
+    if (servidorDisponible && tieneConexion()) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
       const res = await fetch('https://glombagames.ddns.net/categorias.json');
       data = await res.json();
-
+      console.error('Datos cargados desde el servidor:', data);
       // Guardar los datos localmente para usarlos en modo offline
       await Storage.set({ key: 'preguntas', value: JSON.stringify(data) });
       progreso.actualizado = new Date().toISOString();
