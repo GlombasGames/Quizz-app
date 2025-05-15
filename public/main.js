@@ -119,7 +119,7 @@ let progreso = {
   nombre: '',
   intentos: 3,
   puntos: {},
-  desbloqueadas: ['Geografía', 'Cine'],
+  desbloqueadas: ['Animales','Plantas'],
   actualizado: null
 };
 
@@ -191,26 +191,26 @@ async function iniciar() {
     <img src="./assets/GlombaGames.png" alt="Pájaro" style="width:350px; height:220px; display:block; margin:0 auto 16px auto;">
     <div>
     `;
-    
+
     // Verificar si el servidor está disponible
     const servidorDisponible = await verificarServidor();
-    
+
     // Inicializa los datos del usuario si no existen
     await inicializarUsuario();
-    
+
     // Carga los datos JSON de las categorías
     await cargarDatosJSON(servidorDisponible);
-    
-    setTimeout( () => {
+
+    setTimeout(() => {
       // Renderiza el menú principal
       renderMenu();
     }, 3000);
-      
-    } catch (error) {
-      console.error('Error al iniciar la aplicación:', error);
-      app.innerHTML = '<p>Error al cargar la aplicación. Por favor, verifica tu conexión.</p>';
-    }
+
+  } catch (error) {
+    console.error('Error al iniciar la aplicación:', error);
+    app.innerHTML = '<p>Error al cargar la aplicación. Por favor, verifica tu conexión.</p>';
   }
+}
 
 function renderMenu() {
   const totalPuntos = Object.keys(progreso.puntos)
@@ -243,20 +243,20 @@ function renderMenu() {
     const bloqueada = !desbloqueada;
     const puntosNecesarios = bloqueada ? `Necesitas ${proximaMeta(cat)} pts` : `Puntos: ${puntos}`;
     return `
-  <div class="category ${bloqueada ? 'locked' : ''}">
-    <div class="category-info-flex">
-      <div class="category-details">
-        <strong class="cat">${cat}</strong>
-        <span class="category-puntos">${puntosNecesarios}</span>
-      </div>
-      <div class="category-action">
-        ${bloqueada
-        ? `<span class="lock-icon">🔒</span>`
-        : `<button class="btn-jugar" tabindex="0" onclick="jugar('${cat}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Jugar</button>`
-      }
-      </div>
+  <button
+    class="categoria-boton ${bloqueada ? 'locked' : ''}"
+    ${(!bloqueada && progreso.intentos > 0) ? `onclick="jugar('${cat}')"` : ''}
+    ${bloqueada ? 'disabled' : ''}
+    tabindex="0"
+    aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${cat}"
+  >
+    <div class="categoria-img" style="background-image: url('./assets/${catNormalizada}.png');"></div>
+    <div class="categoria-info-boton">
+      <strong class="cat">${cat}</strong>
+      <span class="category-puntos">${puntosNecesarios}</span>
+      ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
     </div>
-  </div>
+  </button>
 `;
   }).join('')}
   `;
