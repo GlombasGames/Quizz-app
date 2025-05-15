@@ -16,10 +16,7 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 16px;
-  background: -webkit-linear-gradient(135deg, #0D47A1, #1565C0);
-  background: -moz-linear-gradient(135deg, #0D47A1, #1565C0);
   background: linear-gradient(135deg, #0D47A1, #1565C0);
-  /* Fondo de respaldo */
   background-image: url('./assets/fondoSelva.jpeg'), linear-gradient(135deg, #0D47A1, #1565C0);
   background-size: cover;
   background-position: center;
@@ -28,9 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  overflow-y: auto;
 }
 
 /* Oculta la scrollbar en navegadores Webkit (Chrome, Edge, Safari) */
@@ -451,8 +446,9 @@ a:hover {
 
 /* Botón de categoría visual */
 .categoria-boton {
+  position: relative;
   width: 100%;
-  max-width: 320px;
+  max-width: 220px;
   margin: 18px auto;
   padding: 0;
   border: none;
@@ -462,10 +458,7 @@ a:hover {
   align-items: center;
   cursor: pointer;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(13, 71, 161, 0.10);
-  transition: transform 0.15s, box-shadow 0.15s;
-  position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .categoria-boton:disabled,
@@ -480,29 +473,27 @@ a:hover {
 
 .categoria-img {
   width: 100%;
-  height: 160px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px 16px 0 0;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 16px;
+  display: block;
   position: relative;
+  z-index: 1;
 }
 
 .categoria-info-boton {
   width: 100%;
-  background: #023d6dcf;
+  background: #276d02cf;
   color: #fff;
   padding: 12px 0 8px 0;
-  border-radius: 0 0 16px 16px;
+  border-radius: 16px;
   text-align: center;
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-}
-
-.categoria-boton .lock-icon {
-  font-size: 1.5em;
-  margin-top: 6px;
-  color: #E3F2FD;
+  margin-top: -40px; /* Monta más el cartel sobre la imagen */
+  position: relative;
+  z-index: 2; /* Asegura que el cartel esté por encima */
 }

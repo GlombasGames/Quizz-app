@@ -135,7 +135,7 @@ async function pedirNombre() {
   progreso.nombre = nombre || 'Jugador';
   progreso.intentos = 3;
   progreso.puntos = {};
-  progreso.desbloqueadas = ['Geografía', 'Cine']; // Guardamos los nombres originales
+  progreso.desbloqueadas = ['Animales', 'Plantas']; // Guardamos los nombres originales
   progreso.actualizado = null;
   await guardarProgreso();
   await iniciarNotificaciones()
@@ -214,8 +214,8 @@ async function iniciar() {
 
 function renderMenu() {
   const totalPuntos = Object.keys(progreso.puntos)
-    .filter(cat => progreso.desbloqueadas.includes(cat)) // Solo categorías desbloqueadas
-    .reduce((total, cat) => total + progreso.puntos[cat], 0); // Suma los puntos
+    .filter(cat => progreso.desbloqueadas.includes(cat))
+    .reduce((total, cat) => total + progreso.puntos[cat], 0);
 
   const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
@@ -234,15 +234,17 @@ function renderMenu() {
     <div style="text-align: center;">
     <h2>Categorías</h2>
     </div>
-${Object.keys(data).map(cat => {
+${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    const desbloqueada = progreso.desbloqueadas
+    const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
+    const yaDesbloqueada = progreso.desbloqueadas
       .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
       .includes(catNormalizada);
+    const desbloqueada = yaDesbloqueada || totalPuntos >= puntosRequeridos;
     const puntos = progreso.puntos[cat] || 0;
     const bloqueada = !desbloqueada;
-    const puntosNecesarios = bloqueada ? `Necesitas ${proximaMeta(cat)} pts` : `Puntos: ${puntos}`;
-    return `
+    const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
+return `
   <button
     class="categoria-boton ${bloqueada ? 'locked' : ''}"
     ${(!bloqueada && progreso.intentos > 0) ? `onclick="jugar('${cat}')"` : ''}
@@ -250,18 +252,17 @@ ${Object.keys(data).map(cat => {
     tabindex="0"
     aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${cat}"
   >
-    <div class="categoria-img" style="background-image: url('./assets/${catNormalizada}.png'), url('./assets/pajaro.png');"></div>
+    <img class="categoria-img" src="./assets/${catNormalizada}.png" alt="${cat}" onerror="this.src='./assets/pajaro.png'">
     <div class="categoria-info-boton">
       <strong class="cat">${cat}</strong>
       <span class="category-puntos">${puntosNecesarios}</span>
       ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
     </div>
   </button>
-  `;
+`;
   }).join('')}
   `;
 }
-console.log(app.innerHTML) 
 // Aseguramos que renderMenu esté disponible globalmente
 window.renderMenu = renderMenu;
 
