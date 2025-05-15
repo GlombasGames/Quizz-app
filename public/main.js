@@ -154,8 +154,6 @@ async function verificarServidor() {
 
 async function cargarDatosJSON(servidorDisponible) {
   try {
-    console.log('Servidor disponible:', servidorDisponible);
-    console.log('tieneConexion:', tieneConexion());
     if (servidorDisponible && tieneConexion()) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
       const res = await fetch('https://glombagames.ddns.net/categorias.json');
