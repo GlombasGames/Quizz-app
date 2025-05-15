@@ -401,7 +401,7 @@ function checkDesbloqueos() {
     }
 
     // Desbloquear la categoría si se cumplen los puntos necesarios
-    if (total >= necesario) {
+    if (total >= necesario && !progreso.desbloqueadas.map(normalizarNombre).includes(catNormalizada)) {
       progreso.desbloqueadas.push(cat); // Guardamos el nombre original
       alert(`¡Desbloqueaste la categoría "${cat}"!`);
     }
