@@ -188,21 +188,20 @@ async function iniciar() {
   try {
     // Mostrar un mensaje inicial
     app.innerHTML = `<div class="cargando">
-    <img src="./assets/pajaro.png" alt="Pájaro" style="width:150px; height:220px; display:block; margin:0 auto 16px auto;">
-    <p>Glombagames</p>
+    <img src="./assets/GlombaGames.png" alt="Pájaro" style="width:350px; height:220px; display:block; margin:0 auto 16px auto;">
     <div>
     `;
-    setTimeout( async() => {
-      
-      // Verificar si el servidor está disponible
-      const servidorDisponible = await verificarServidor();
-      
-      // Inicializa los datos del usuario si no existen
-      await inicializarUsuario();
-      
-      // Carga los datos JSON de las categorías
-      await cargarDatosJSON(servidorDisponible);
-      
+    
+    // Verificar si el servidor está disponible
+    const servidorDisponible = await verificarServidor();
+    
+    // Inicializa los datos del usuario si no existen
+    await inicializarUsuario();
+    
+    // Carga los datos JSON de las categorías
+    await cargarDatosJSON(servidorDisponible);
+    
+    setTimeout( () => {
       // Renderiza el menú principal
       renderMenu();
     }, 3000);
@@ -221,7 +220,7 @@ function renderMenu() {
   const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
   app.innerHTML = `
-    <div class="logo"><h2>Trivian</h2></div>
+    <div class="logo"></div>
     <div class="saludo">
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>

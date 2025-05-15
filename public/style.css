@@ -419,24 +419,15 @@ a:hover {
 
 .logo {
   margin-bottom: 18px;
-  background-image: url('./assets/fondoSelva.jpeg');
+  background-image: url('./assets/iconoTriviaSelva.png');
   background-size: cover;
   background-position: center;
   color: #fff;
   padding: 0;
   border-radius: 10px;
-  font-size: 1.3em;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
-  border: 1px solid #294c0ba1;
-  margin-left: 25%;
-  width: 50%;
-  min-height: 200px; /* <-- Cambia a min-height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-left: 30%;
+  width: 40%;
+  min-height: 250px; /* <-- Cambia a min-height */
 }
 .cargando {
   margin-bottom: 18px;
