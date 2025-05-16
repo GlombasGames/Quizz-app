@@ -12,10 +12,12 @@ async function inicializarUsuario() {
 
   let datos = await Storage.get({ key: 'usuario' });
   datos = JSON.parse(datos.value);
+  console.log(datos, datos.nombre , datos.version , datos.version !== version);
   if (!datos|| !datos.nombre || !datos.version || datos.version !== version) {
     // Si el archivo no existe o no tiene nombre, inicializa el progreso
-    console.log(datos)
+    console.log("tiene: ",datos.version, "version: ", version)
     await pedirNombre();
+    console.log("cambia: ",datos.version, "version: ", version)
     return progreso; // Devuelve el progreso inicializado por pedirNombre
   } else {
     // Si el archivo existe, carga los datos
@@ -156,8 +158,9 @@ async function verificarServidor() {
 async function verificarVersion() {
   try {
     const response = await fetch('https://glombagames.ddns.net/version');
-    version = await response.json();
-    if(version){
+    data = await response.json();
+    if(data){
+      version = data.version;
       console.log('Versión del servidor:', version, progreso.version);
     }
     return response.ok; // Devuelve true si el servidor responde correctamente
