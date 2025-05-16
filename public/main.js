@@ -12,7 +12,7 @@ async function inicializarUsuario() {
 
   let datos = await Storage.get({ key: 'usuario' });
   datos = JSON.parse(datos.value);
-  if (!datos|| !datos.nombre || !datos.version || datos.version !== version) {
+  if (!datos || !datos.nombre || !datos.version || datos.version !== version) {
     // Si el archivo no existe o no tiene nombre, inicializa el progreso
     await pedirNombre();
     // Carga los datos JSON de las categorías
@@ -86,7 +86,7 @@ async function iniciarNotificaciones() {
 
     // Obtener el token FCM
     const token = await FirebaseMessaging.getToken();
-    progreso.token = token.token; 
+    progreso.token = token.token;
     console.log('Token FCM:', token.token);
 
     // Enviar el token al servidor
@@ -111,7 +111,7 @@ async function iniciarNotificaciones() {
       console.log('Notificación tocada:', notification);
     });
   } catch (err) {
-    console.error('Error al inicializar notificaciones:', err);
+    console.error('Error al inicializar notificaciones:', err.message);
   }
 }
 
@@ -143,14 +143,11 @@ async function pedirNombre() {
   progreso.actualizado = null;
   progreso.version = version
 
-    try {
-      await iniciarNotificaciones()
-    } catch (error) {
 
-      console.log('No inicializa las notificaciones', error.message);
-    }
- 
-  console.log(progreso.nombre,'ha sido creado.');
+  await iniciarNotificaciones()
+
+
+  console.log(progreso.nombre, 'ha sido creado.');
   await guardarProgreso();
 }
 
@@ -167,7 +164,7 @@ async function verificarVersion() {
   try {
     const response = await fetch('https://glombagames.ddns.net/version');
     data = await response.json();
-    if(data){
+    if (data) {
       version = data.version;
       console.log('Versión del servidor:', version);
     }
@@ -269,7 +266,7 @@ ${Object.keys(data).map((cat, i) => {
     const puntos = progreso.puntos[cat] || 0;
     const bloqueada = !desbloqueada;
     const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
-return `
+    return `
   <button
     class="categoria-boton ${bloqueada ? 'locked' : ''}"
     ${(!bloqueada && progreso.intentos > 0) ? `onclick="jugar('${cat}')"` : ''}
