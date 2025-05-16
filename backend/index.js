@@ -109,7 +109,7 @@ app.post('/enviar-notificacion', async (req, res) => {
         },
         android: {
             notification: {
-                icon: "splash" // Nombre del archivo sin la extensión
+                icon: "icon" // Nombre del archivo sin la extensión
             }
         }
     };
