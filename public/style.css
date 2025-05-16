@@ -49,20 +49,17 @@ button {
 }
 
 button:hover {
-  background: #64B5F6;
+  background: #d5dd02;
   /* Más claro al pasar el mouse */
   transform: scale(1.02);
   /* Efecto de zoom */
 }
 
-button:active {
-  background: #1976D2;
-  /* Más oscuro al hacer clic */
-}
+
 
 /* Estilo para botones deshabilitados */
 button:disabled {
-  background-color: #456a90;
+ 
   /* Mismo color de fondo */
   color: white;
   /* Mismo color de texto */
