@@ -153,7 +153,7 @@ async function verificarServidor() {
 }
 async function verificarVersion() {
   try {
-    const response = await fetch('https://glombagames.ddns.net/version', { method: 'GET' });
+    const response = await fetch('https://glombagames.ddns.net/version');
     console.log('Versión aaaa:', response);
     version = await response.json();
     if(version){
