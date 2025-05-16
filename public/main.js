@@ -231,7 +231,7 @@ async function iniciar() {
     setTimeout(() => {
       // Renderiza el menú principal
       renderMenu();
-    }, 3000);
+    }, 1000);
 
   } catch (error) {
     console.error('Error al iniciar la aplicación:', error);
@@ -252,8 +252,8 @@ function renderMenu() {
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>
     <div class="header">
-      <div>Intentos: ${progreso.intentos}</div>
-      <div>Total: ${totalPuntos} pts</div>
+    <div>Intentos: ${progreso.intentos}</div>
+    <div>Total: ${totalPuntos} pts</div>
     </div>
     <button class="btn-anuncio" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
       Ver anuncio para +1 intento
