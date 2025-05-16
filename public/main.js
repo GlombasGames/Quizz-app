@@ -146,7 +146,8 @@ async function pedirNombre() {
     try {
       await iniciarNotificaciones()
     } catch (error) {
-      console.log('No inicializa las notificaciones', error);
+
+      console.log('No inicializa las notificaciones', error.message);
     }
  
   console.log(progreso.nombre,'ha sido creado.');
