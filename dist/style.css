@@ -420,12 +420,11 @@ a:hover {
   background-position: center; /* Centra la imagen en el contenedor */
   color: #fff;
   padding: 0;
-  border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 350px;
   aspect-ratio: 1; /* Mantiene el contenedor cuadrado */
-  max-width: 250px; /* Limita el tamaño máximo en pantallas grandes */
+  max-width: 350px; /* Limita el tamaño máximo en pantallas grandes */
 }
 .cargando {
   margin-bottom: 18px;
