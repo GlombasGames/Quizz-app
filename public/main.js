@@ -111,7 +111,7 @@ async function iniciarNotificaciones() {
       console.log('Notificación tocada:', notification);
     });
   } catch (err) {
-    console.error('Error al inicializar notificaciones:', err.message);
+    console.error('Error al inicializar notificaciones:', err.code);
   }
 }
 
