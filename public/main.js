@@ -4,6 +4,7 @@ import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 const archivoUsuario = 'usuario.json';
+let version
 document.addEventListener('DOMContentLoaded', iniciar);
 
 // Ejemplo de uso
@@ -144,6 +145,10 @@ async function pedirNombre() {
 async function verificarServidor() {
   try {
     const response = await fetch('https://glombagames.ddns.net/ping', { method: 'GET' });
+    if(response){
+      version = await response.json();
+      console.log('Versión del servidor:', version);
+    }
     return response.ok; // Devuelve true si el servidor responde correctamente
   } catch (error) {
     console.error('Error al verificar el servidor:', error);

@@ -8,6 +8,7 @@ const cors = require('cors');
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
 const PORT = 3100;
+const version = '1';
 
 const app = express();
 app.use(cors());
@@ -77,7 +78,7 @@ app.post('/registrar-token', (req, res) => {
 
 app.get('/ping', (req, res) => {
     console.error('Ping recibido');
-  res.status(200).send('pong');
+  res.status(200).send(version);
 });
 // Ruta para enviar notificación manual
 app.post('/enviar-notificacion', async (req, res) => {
