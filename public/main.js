@@ -145,14 +145,23 @@ async function pedirNombre() {
 async function verificarServidor() {
   try {
     const response = await fetch('https://glombagames.ddns.net/ping', { method: 'GET' });
+    return response.ok; // Devuelve true si el servidor responde correctamente
+  } catch (error) {
+    console.error('Error al verificar el servidor:', error);
+    return false; // Devuelve false si hay un error
+  }
+}
+async function verificarVersion() {
+  try {
+    const response = await fetch('https://glombagames.ddns.net/version', { method: 'GET' });
     console.log('Versión aaaa:', response);
-    if(response){
-      version = await response.json();
+    version = await response.json();
+    if(version){
       console.log('Versión del servidor:', version);
     }
     return response.ok; // Devuelve true si el servidor responde correctamente
   } catch (error) {
-    console.error('Error al verificar el servidor:', error);
+    console.error('Error al verificar la version:', error);
     return false; // Devuelve false si hay un error
   }
 }
@@ -199,7 +208,7 @@ async function iniciar() {
     `;
 
     // Verificar si el servidor está disponible
-    const servidorDisponible = await verificarServidor();
+    const servidorDisponible = await verificarVersion();
 
     // Inicializa los datos del usuario si no existen
     await inicializarUsuario();

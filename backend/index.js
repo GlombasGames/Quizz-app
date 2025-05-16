@@ -78,7 +78,10 @@ app.post('/registrar-token', (req, res) => {
 
 app.get('/ping', (req, res) => {
     console.error('Ping recibido');
-  res.status(200).json({version});
+  res.status(200).send('pong');
+});
+app.get('/version', (req, res) => {
+  res.status(200).json({ version });
 });
 // Ruta para enviar notificación manual
 app.post('/enviar-notificacion', async (req, res) => {
