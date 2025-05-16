@@ -413,7 +413,7 @@ a:hover {
 }
 
 .logo {
-  margin-bottom: 18px;
+  margin-bottom: 5px;
   background-image: url('./assets/iconoTriviaSelva.png');
   background-size: contain; /* Ajusta la imagen al contenedor sin recortarla */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
