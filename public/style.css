@@ -134,15 +134,18 @@ button:disabled {
 /* Encabezado */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   align-items: center;
   margin-bottom: 16px;
-  background: #023d6dcf;
+  background: #0b2d0be6;
   /* Fondo primario */
   color: #FFFFFF;
   /* Texto claro */
   padding: 12px;
   border-radius: 8px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header div {
@@ -178,6 +181,9 @@ a:hover {
   letter-spacing: 0.5px;
   text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
   border: 1px solid #294c0ba1;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .saludo div {
@@ -187,9 +193,9 @@ a:hover {
 
 /* Botón "Ver anuncio" - muy llamativo */
 .btn-anuncio {
-  width: 100%;
+  width: 80%;
   padding: 20px 16px;
-  margin: 8px 0;
+  margin: 8px auto 0 auto;
   font-size: 18px;
   font-weight: bold;
   border: none;
@@ -343,7 +349,7 @@ a:hover {
 
 /* Estilo para botones deshabilitados */
 .btn-reintentaro:disabled {
-  background-color: #296a2d;
+  background-color: #272a28;
   /* Mismo color de fondo */
   color: white;
   /* Mismo color de texto */
@@ -462,8 +468,9 @@ a:hover {
 
 .categoria-boton:disabled,
 .categoria-boton.locked {
+  background-color: #000102;
   cursor: not-allowed;
-  opacity: 0.6;
+  opacity: 1.5;
 }
 
 .categoria-boton:active:not(:disabled) {
