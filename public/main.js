@@ -10,15 +10,16 @@ document.addEventListener('DOMContentLoaded', iniciar);
 // Ejemplo de uso
 async function inicializarUsuario() {
 
-  const datos = await Storage.get({ key: 'usuario' });
-
-  if (!datos?.value || !JSON.parse(datos.value).nombre) {
+  let datos = await Storage.get({ key: 'usuario' });
+  datos = JSON.parse(datos.value);
+  if (!datos|| !datos.nombre || !datos.version || datos.version !== version) {
     // Si el archivo no existe o no tiene nombre, inicializa el progreso
+    console.log(datos)
     await pedirNombre();
     return progreso; // Devuelve el progreso inicializado por pedirNombre
   } else {
     // Si el archivo existe, carga los datos
-    progreso = JSON.parse(datos.value);
+    progreso = datos;
     return progreso;
   }
 }
@@ -138,6 +139,7 @@ async function pedirNombre() {
   progreso.puntos = {};
   progreso.desbloqueadas = ['Animales', 'Plantas']; // Guardamos los nombres originales
   progreso.actualizado = null;
+  progreso.version = version
   await guardarProgreso();
   await iniciarNotificaciones()
 }
@@ -154,10 +156,9 @@ async function verificarServidor() {
 async function verificarVersion() {
   try {
     const response = await fetch('https://glombagames.ddns.net/version');
-    console.log('Versión aaaa:', response);
     version = await response.json();
     if(version){
-      console.log('Versión del servidor:', version);
+      console.log('Versión del servidor:', version, progreso.version);
     }
     return response.ok; // Devuelve true si el servidor responde correctamente
   } catch (error) {
@@ -169,7 +170,7 @@ async function verificarVersion() {
 
 async function cargarDatosJSON(servidorDisponible) {
   try {
-    if (servidorDisponible && tieneConexion()) {
+    if (servidorDisponible && tieneConexion() && progreso.version && progreso.version !== version) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
       const res = await fetch('https://glombagames.ddns.net/categorias.json');
       data = await res.json();

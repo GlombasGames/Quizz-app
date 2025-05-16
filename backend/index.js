@@ -78,7 +78,7 @@ app.get('/ping', (req, res) => {
 });
 app.get('/version', (req, res) => {
     console.error('Version consultada', version);
-    res.status(200).json({ version: '1' });
+    res.status(200).json({ version });
 });
 // Ruta para enviar notificación manual
 app.post('/enviar-notificacion', async (req, res) => {
