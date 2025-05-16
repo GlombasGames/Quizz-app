@@ -81,6 +81,7 @@ app.get('/ping', (req, res) => {
   res.status(200).send('pong');
 });
 app.get('/version', (req, res) => {
+    console.error('Version consultada', version);
   res.status(200).json({ version });
 });
 // Ruta para enviar notificación manual
