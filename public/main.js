@@ -157,6 +157,7 @@ async function pedirNombre() {
   progreso.actualizado = null;
   progreso.version = version
   if (!esNavegadorWeb()) {
+    console.log(window.Capacitor);
     await iniciarNotificaciones()
   }else{
     console.log('Estás en un navegador web. no se inicializan las notificaciones.');
