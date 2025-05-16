@@ -145,6 +145,7 @@ async function pedirNombre() {
 async function verificarServidor() {
   try {
     const response = await fetch('https://glombagames.ddns.net/ping', { method: 'GET' });
+    console.log('Versión aaaa:', response);
     if(response){
       version = await response.json();
       console.log('Versión del servidor:', version);
