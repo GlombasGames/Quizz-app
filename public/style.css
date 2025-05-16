@@ -415,14 +415,17 @@ a:hover {
 .logo {
   margin-bottom: 18px;
   background-image: url('./assets/iconoTriviaSelva.png');
-  background-size: cover;
-  background-position: center;
+  background-size: contain; /* Ajusta la imagen al contenedor sin recortarla */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center; /* Centra la imagen en el contenedor */
   color: #fff;
   padding: 0;
   border-radius: 10px;
-  margin-left: 30%;
+  margin-left: auto;
+  margin-right: auto;
   width: 40%;
-  min-height: 250px; /* <-- Cambia a min-height */
+  aspect-ratio: 1; /* Mantiene el contenedor cuadrado */
+  max-width: 250px; /* Limita el tamaño máximo en pantallas grandes */
 }
 .cargando {
   margin-bottom: 18px;
