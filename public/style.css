@@ -468,9 +468,9 @@ a:hover {
 
 .categoria-boton:disabled,
 .categoria-boton.locked {
-  background-color: #000102;
+
   cursor: not-allowed;
-  opacity: 1.5;
+  opacity: 1;
 }
 
 .categoria-boton:active:not(:disabled) {
@@ -502,4 +502,5 @@ a:hover {
   margin-top: -40px; /* Monta más el cartel sobre la imagen */
   position: relative;
   z-index: 2; /* Asegura que el cartel esté por encima */
+  border: 1px solid #143f10;
 }
