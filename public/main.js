@@ -111,6 +111,9 @@ async function iniciarNotificaciones() {
       console.log('Notificación tocada:', notification);
     });
   } catch (err) {
+    if (err.message.includes('plugin is not implemented on web')) {
+      console.log('Notificaciones no se aplican a WEB.');
+    }
     console.error('Error al inicializar notificaciones:', err.code);
   }
 }
