@@ -425,7 +425,7 @@ a:hover {
   margin-right: auto;
   width: 50%;
   aspect-ratio: 1; /* Mantiene el contenedor cuadrado */
-  max-width: 50%; /* Limita el tamaño máximo en pantallas grandes */
+  min-width: 50%; /* Limita el tamaño máximo en pantallas grandes */
 }
 .cargando {
   margin-bottom: 18px;
