@@ -133,13 +133,6 @@ async function guardarProgreso() {
   await Storage.set({ key: 'usuario', value: JSON.stringify(progreso) });
 }
 
-function esNavegadorWeb() {
-  // Verifica si Capacitor está definido y si la plataforma es "web"
-  if (typeof window.Capacitor !== 'undefined' && window.Capacitor.getPlatform() === 'web') {
-    return true; // Es un navegador web
-  }
-  return false; // Es una aplicación nativa (APK o iOS)
-}
 
 async function pedirNombre() {
   const nombre = prompt('Ingresa tu nombre para comenzar:');
@@ -149,12 +142,13 @@ async function pedirNombre() {
   progreso.desbloqueadas = ['Animales', 'Plantas']; // Guardamos los nombres originales
   progreso.actualizado = null;
   progreso.version = version
-  if (!esNavegadorWeb()) {
-    console.log(window.Capacitor);
-    await iniciarNotificaciones()
-  }else{
-    console.log('Estás en un navegador web. no se inicializan las notificaciones.');
-  }
+
+    try {
+      await iniciarNotificaciones()
+    } catch (error) {
+      console.log('No inicializa las notificaciones', error);
+    }
+ 
   console.log(progreso.nombre,'ha sido creado.');
   await guardarProgreso();
 }
