@@ -12,14 +12,14 @@ async function inicializarUsuario() {
 
   let datos = await Storage.get({ key: 'usuario' });
   datos = JSON.parse(datos.value);
-  console.log(datos, datos.nombre , datos.version , datos.version !== version);
   if (!datos|| !datos.nombre || !datos.version || datos.version !== version) {
     // Si el archivo no existe o no tiene nombre, inicializa el progreso
-    console.log("tiene: ",datos.version, "version: ", version)
     await pedirNombre();
-    console.log("cambia: ",datos.version, "version: ", version)
+    // Carga los datos JSON de las categorías
+    await cargarDatosJSON(true);
     return progreso; // Devuelve el progreso inicializado por pedirNombre
   } else {
+    await cargarDatosJSON(false);
     // Si el archivo existe, carga los datos
     progreso = datos;
     return progreso;
@@ -86,6 +86,7 @@ async function iniciarNotificaciones() {
 
     // Obtener el token FCM
     const token = await FirebaseMessaging.getToken();
+    progreso.token = token.token; 
     console.log('Token FCM:', token.token);
 
     // Enviar el token al servidor
@@ -132,7 +133,9 @@ async function guardarProgreso() {
   await Storage.set({ key: 'usuario', value: JSON.stringify(progreso) });
 }
 
-
+function esNavegadorWeb() {
+  return typeof window.Capacitor === 'undefined';
+}
 
 async function pedirNombre() {
   const nombre = prompt('Ingresa tu nombre para comenzar:');
@@ -142,8 +145,13 @@ async function pedirNombre() {
   progreso.desbloqueadas = ['Animales', 'Plantas']; // Guardamos los nombres originales
   progreso.actualizado = null;
   progreso.version = version
+  if (!esNavegadorWeb()) {
+    await iniciarNotificaciones()
+  }else{
+    console.log('Estás en un navegador web. no se inicializan las notificaciones.');
+  }
+  console.log(progreso.nombre,'ha sido creado.');
   await guardarProgreso();
-  await iniciarNotificaciones()
 }
 
 async function verificarServidor() {
@@ -161,7 +169,7 @@ async function verificarVersion() {
     data = await response.json();
     if(data){
       version = data.version;
-      console.log('Versión del servidor:', version, progreso.version);
+      console.log('Versión del servidor:', version);
     }
     return response.ok; // Devuelve true si el servidor responde correctamente
   } catch (error) {
@@ -171,13 +179,13 @@ async function verificarVersion() {
 }
 
 
-async function cargarDatosJSON(servidorDisponible) {
+async function cargarDatosJSON(actualizar) {
   try {
-    if (servidorDisponible && tieneConexion() && progreso.version && progreso.version !== version) {
+    if (actualizar && tieneConexion()) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
       const res = await fetch('https://glombagames.ddns.net/categorias.json');
       data = await res.json();
-      console.log('Datos cargados desde el servidor:', data);
+      console.log('Categorias cargadas desde el servidor:');
       // Guardar los datos localmente para usarlos en modo offline
       await Storage.set({ key: 'preguntas', value: JSON.stringify(data) });
       progreso.actualizado = new Date().toISOString();
@@ -187,6 +195,7 @@ async function cargarDatosJSON(servidorDisponible) {
       const preguntasData = await Storage.get({ key: 'preguntas' });
       if (preguntasData.value) {
         data = JSON.parse(preguntasData.value);
+        console.log('Categorias cargadas desde Archivos locales');
       } else {
         console.error('No se encontraron datos locales para las preguntas.');
         alert('No se puede cargar el juego sin conexión y sin datos locales.');
@@ -212,13 +221,10 @@ async function iniciar() {
     `;
 
     // Verificar si el servidor está disponible
-    const servidorDisponible = await verificarVersion();
+    await verificarVersion();
 
     // Inicializa los datos del usuario si no existen
     await inicializarUsuario();
-
-    // Carga los datos JSON de las categorías
-    await cargarDatosJSON(servidorDisponible);
 
     setTimeout(() => {
       // Renderiza el menú principal
