@@ -134,18 +134,11 @@ async function guardarProgreso() {
 }
 
 function esNavegadorWeb() {
-  // Verifica si Capacitor está definido
-  if (typeof window.Capacitor === 'undefined') {
+  // Verifica si Capacitor está definido y si la plataforma es "web"
+  if (typeof window.Capacitor !== 'undefined' && window.Capacitor.getPlatform() === 'web') {
     return true; // Es un navegador web
   }
-
-  // Verifica si está ejecutándose en un entorno nativo
-  if (window.Capacitor.isNativePlatform) {
-    return false; // Es una aplicación (APK)
-  }
-
-  // Si no se cumple ninguna de las anteriores, asumimos que es un navegador
-  return true;
+  return false; // Es una aplicación nativa (APK o iOS)
 }
 
 async function pedirNombre() {
