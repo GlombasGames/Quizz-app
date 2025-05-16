@@ -146,8 +146,8 @@ async function verificarServidor() {
   try {
     const response = await fetch('https://glombagames.ddns.net/ping', { method: 'GET' });
     if(response){
-      
-      console.log('Versión del servidor:', response);
+      version = await response.json();
+      console.log('Versión del servidor:', version);
     }
     return response.ok; // Devuelve true si el servidor responde correctamente
   } catch (error) {
