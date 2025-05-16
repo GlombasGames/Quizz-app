@@ -106,6 +106,11 @@ app.post('/enviar-notificacion', async (req, res) => {
         notification: {
             title: titulo || "¡Nuevas preguntas disponibles!",
             body: cuerpo || "Entra y revisa las nuevas categorías o preguntas."
+        },
+        android: {
+            notification: {
+                icon: "splash" // Nombre del archivo sin la extensión
+            }
         }
     };
 
