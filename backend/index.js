@@ -38,10 +38,6 @@ if (fs.existsSync(TOKENS_FILE)) {
 // Middleware para servir archivos estáticos desde la carpeta dist
 app.use(express.static(path.join(__dirname, '../dist')));
 
-// Ruta para servir index.html (para aplicaciones SPA)
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist/index.html'));
-});
 // Ruta para servir archivos JSON específicos
 app.get('/categorias.json', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/categorias.json'));
@@ -78,11 +74,11 @@ app.post('/registrar-token', (req, res) => {
 
 app.get('/ping', (req, res) => {
     console.error('Ping recibido');
-  res.status(200).send('pong');
+    res.status(200).send('pong');
 });
 app.get('/version', (req, res) => {
     console.error('Version consultada', version);
- res.status(200).json({ version: '1' });
+    res.status(200).json({ version: '1' });
 });
 // Ruta para enviar notificación manual
 app.post('/enviar-notificacion', async (req, res) => {
@@ -155,6 +151,10 @@ app.post('/enviar-notificacion', async (req, res) => {
         success: true,
         enviados,
         fallidos
+    });
+    // Ruta para servir index.html (para aplicaciones SPA)
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../dist/index.html'));
     });
 });
 
