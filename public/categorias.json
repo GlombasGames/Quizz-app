@@ -1,1251 +1,3640 @@
 {
-    "Animales": {
+  "Animales": {
     "preguntas": [
       {
-        "pregunta": "1",
+        "pregunta": "¿Qué animal de la selva amazónica puede alcanzar los 6 metros de longitud y es un excelente nadador?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Boa constrictora",
+          "Anaconda",
+          "Iguana",
+          "Lagarto basilisco"
         ],
-        "respuesta": "d"
+        "respuesta": "Anaconda"
       },
       {
-        "pregunta": "2",
+        "pregunta": "¿Qué mamífero conocido por su lentitud pasa la mayor parte de su vida en los árboles?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Capibara",
+          "Mono titi",
+          "Pereza",
+          "Zarigüeya"
         ],
-        "respuesta": "d"
+        "respuesta": "Pereza"
       },
       {
-        "pregunta": "3",
+        "pregunta": "¿Qué felino manchado de tamaño mediano es nocturno y solitario?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ocelote",
+          "Jaguar",
+          "Lince",
+          "Puma"
         ],
-        "respuesta": "d"
+        "respuesta": "Ocelote"
       },
       {
-        "pregunta": "4",
+        "pregunta": "¿Qué pez de agua dulce amazónico es temido por su ferocidad al cazar en grupo?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Piraña",
+          "Dorado",
+          "Bagre",
+          "Tetra"
         ],
-        "respuesta": "d"
+        "respuesta": "Piraña"
       },
       {
-        "pregunta": "5",
+        "pregunta": "¿Qué ave tropical tiene un enorme pico de colores que le ayuda a regular su temperatura?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Loro",
+          "Tucán",
+          "Guacamayo",
+          "Flamenco"
         ],
-        "respuesta": "d"
+        "respuesta": "Tucán"
       },
       {
-        "pregunta": "6",
+        "pregunta": "¿Qué mamífero semiacuático de gran tamaño se considera el roedor más grande del mundo?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Puercoespín",
+          "Coendú",
+          "Capibara",
+          "Nutria"
         ],
-        "respuesta": "d"
+        "respuesta": "Capibara"
       },
       {
-        "pregunta": "7",
+        "pregunta": "¿Qué primate se caracteriza por su habilidad para balancearse con su cola prensil?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Mono araña",
+          "Mono aullador",
+          "Mono capuchino",
+          "Mono titi"
         ],
-        "respuesta": "d"
+        "respuesta": "Mono araña"
       },
       {
-        "pregunta": "8",
+        "pregunta": "¿Qué reptil de la selva puede caminar sobre el agua a corta distancia gracias a su velocidad?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Lagarto basilisco",
+          "Camaleón",
+          "Iguana",
+          "Salamandra"
         ],
-        "respuesta": "d"
+        "respuesta": "Lagarto basilisco"
       },
       {
-        "pregunta": "9",
+        "pregunta": "¿Qué ave rapaz es una de las más poderosas del mundo y caza monos y perezosos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Águila arpía",
+          "Halcón peregrino",
+          "Búho real",
+          "Cóndor andino"
         ],
-        "respuesta": "d"
+        "respuesta": "Águila arpía"
       },
       {
-        "pregunta": "10",
+        "pregunta": "¿Qué marsupial nocturno habita en zonas selváticas y puede colgarse con la cola?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Murciélago",
+          "Zarigüeya",
+          "Mono titi",
+          "Ardilla"
         ],
-        "respuesta": "d"
+        "respuesta": "Zarigüeya"
+      },
+      {
+        "pregunta": "¿Qué mamífero tiene una lengua extremadamente larga para alimentarse de insectos?",
+        "opciones": [
+          "Armadillo",
+          "Oso hormiguero",
+          "Tapir",
+          "Puercoespín"
+        ],
+        "respuesta": "Oso hormiguero"
+      },
+      {
+        "pregunta": "¿Qué anfibio es famoso por su piel brillante y tóxica?",
+        "opciones": [
+          "Rana dardo venenosa",
+          "Rana arborícola",
+          "Salamandra",
+          "Sapo gigante"
+        ],
+        "respuesta": "Rana dardo venenosa"
+      },
+      {
+        "pregunta": "¿Qué ave colorida de la selva sudamericana tiene gran inteligencia y capacidad para imitar sonidos?",
+        "opciones": [
+          "Loro",
+          "Búho",
+          "Colibrí",
+          "Águila"
+        ],
+        "respuesta": "Loro"
+      },
+      {
+        "pregunta": "¿Qué mamífero de la selva se reconoce por su hocico alargado y patas cortas?",
+        "opciones": [
+          "Coendú",
+          "Mono",
+          "Tapir",
+          "Puma"
+        ],
+        "respuesta": "Tapir"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva vive en colonias organizadas y corta hojas para cultivar hongos?",
+        "opciones": [
+          "Abeja melipona",
+          "Hormiga cortadora de hojas",
+          "Termita",
+          "Escarabajo pelotero"
+        ],
+        "respuesta": "Hormiga cortadora de hojas"
+      },
+      {
+        "pregunta": "¿Qué reptil tiene la capacidad de cambiar de color como camuflaje?",
+        "opciones": [
+          "Camaleón",
+          "Lagartija",
+          "Iguana",
+          "Salamandra"
+        ],
+        "respuesta": "Camaleón"
+      },
+      {
+        "pregunta": "¿Qué animal volador de la selva utiliza la ecolocalización para moverse de noche?",
+        "opciones": [
+          "Murciélago",
+          "Búho",
+          "Halcón",
+          "Loro"
+        ],
+        "respuesta": "Murciélago"
+      },
+      {
+        "pregunta": "¿Qué ave nocturna vive en huecos de árboles y caza roedores en la selva?",
+        "opciones": [
+          "Tucán",
+          "Guacamayo",
+          "Búho",
+          "Cigüeña"
+        ],
+        "respuesta": "Búho"
+      },
+      {
+        "pregunta": "¿Qué mamífero acuático rosado vive en los ríos de la selva amazónica?",
+        "opciones": [
+          "Delfín del Amazonas",
+          "Manatí",
+          "Nutria",
+          "Bagre gigante"
+        ],
+        "respuesta": "Delfín del Amazonas"
+      },
+      {
+        "pregunta": "¿Qué mamífero recubierto de placas puede enrollarse para defenderse?",
+        "opciones": [
+          "Puercoespín",
+          "Armadillo",
+          "Coendú",
+          "Zarigüeya"
+        ],
+        "respuesta": "Armadillo"
+      },
+      {
+        "pregunta": "¿Qué ave grande y colorida emite fuertes chillidos y suele vivir en pareja?",
+        "opciones": [
+          "Tucán",
+          "Guacamayo",
+          "Loro",
+          "Flamenco"
+        ],
+        "respuesta": "Guacamayo"
+      },
+      {
+        "pregunta": "¿Qué animal selvático de cuerpo cilíndrico vive enterrado y carece de patas?",
+        "opciones": [
+          "Culebra",
+          "Salamandra",
+          "Rana topo",
+          "Serpiente voladora"
+        ],
+        "respuesta": "Culebra"
+      },
+      {
+        "pregunta": "¿Qué felino de gran tamaño prefiere zonas húmedas y suele cazar en el agua?",
+        "opciones": [
+          "Jaguar",
+          "León",
+          "Chita",
+          "Lince"
+        ],
+        "respuesta": "Jaguar"
+      },
+      {
+        "pregunta": "¿Qué crustáceo pequeño vive en zonas húmedas de la selva y tiene tenazas?",
+        "opciones": [
+          "Escarabajo",
+          "Cangrejo terrestre",
+          "Alacrán",
+          "Milpiés"
+        ],
+        "respuesta": "Cangrejo terrestre"
+      },
+      {
+        "pregunta": "¿Qué ave pequeña y veloz se alimenta del néctar de las flores?",
+        "opciones": [
+          "Colibrí",
+          "Loro",
+          "Tucán",
+          "Perdiz"
+        ],
+        "respuesta": "Colibrí"
+      },
+      {
+        "pregunta": "¿Qué reptil de gran tamaño se camufla perfectamente en el agua para cazar?",
+        "opciones": [
+          "Caimán",
+          "Tortuga",
+          "Iguana",
+          "Camaleón"
+        ],
+        "respuesta": "Caimán"
+      },
+      {
+        "pregunta": "¿Qué pequeño mamífero tiene púas como defensa natural?",
+        "opciones": [
+          "Coendú",
+          "Tapir",
+          "Zarigüeya",
+          "Armadillo"
+        ],
+        "respuesta": "Coendú"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva es conocido por su zumbido y por transmitir enfermedades?",
+        "opciones": [
+          "Avispa",
+          "Mosquito",
+          "Escarabajo",
+          "Cigarra"
+        ],
+        "respuesta": "Mosquito"
+      },
+      {
+        "pregunta": "¿Qué pez amazónico de gran tamaño es capaz de respirar aire atmosférico?",
+        "opciones": [
+          "Arapaima",
+          "Piraña",
+          "Anguila eléctrica",
+          "Tetra"
+        ],
+        "respuesta": "Arapaima"
+      },
+      {
+        "pregunta": "¿Qué mamífero gigante de la selva amazónica es carnívoro y muy territorial?",
+        "opciones": [
+          "Nutria gigante",
+          "Capibara",
+          "Tapir",
+          "Zarigüeya"
+        ],
+        "respuesta": "Nutria gigante"
       }
     ]
   },
-    "Plantas": {
+  "Plantas": {
     "preguntas": [
       {
-        "pregunta": "11",
+        "pregunta": "¿Qué planta carnívora de la selva tropical atrapa insectos usando una trampa con forma de jarro?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Drosera",
+          "Venus atrapamoscas",
+          "Nepenthes",
+          "Dionea"
         ],
-        "respuesta": "d"
+        "respuesta": "Nepenthes"
       },
       {
-        "pregunta": "12",
+        "pregunta": "¿Qué árbol de la selva puede alcanzar más de 60 metros y es considerado el más alto del Amazonas?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Castaño de Pará",
+          "Árbol de caucho",
+          "Ceibo",
+          "Sumaúma"
         ],
-        "respuesta": "d"
+        "respuesta": "Sumaúma"
       },
       {
-        "pregunta": "13",
+        "pregunta": "¿Qué árbol de la selva produce una semilla venenosa utilizada tradicionalmente en dardos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Guayacán",
+          "Chilca",
+          "Curare",
+          "Cedro"
         ],
-        "respuesta": "d"
+        "respuesta": "Curare"
       },
       {
-        "pregunta": "14",
+        "pregunta": "¿Qué planta trepadora de la selva puede envolver árboles completos en su crecimiento?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Helecho arborescente",
+          "Orquídea",
+          "Liana",
+          "Palma trepadora"
         ],
-        "respuesta": "d"
+        "respuesta": "Liana"
       },
       {
-        "pregunta": "15",
+        "pregunta": "¿Qué árbol selvático es conocido por su látex, usado para fabricar caucho?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Árbol de pan",
+          "Ficus",
+          "Hevea brasiliensis",
+          "Castaño"
         ],
-        "respuesta": "d"
+        "respuesta": "Hevea brasiliensis"
       },
       {
-        "pregunta": "16",
+        "pregunta": "¿Qué planta produce una nuez rica en grasas y proteínas usada por pueblos amazónicos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Palma de açaí",
+          "Castaño de Brasil",
+          "Cocotero",
+          "Anacardo"
         ],
-        "respuesta": "d"
+        "respuesta": "Castaño de Brasil"
       },
       {
-        "pregunta": "17",
+        "pregunta": "¿Qué tipo de planta suele crecer sobre otras sin ser parásita, como muchas orquídeas y bromelias?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Trepanadora",
+          "Parasitaria",
+          "Epífita",
+          "Autótrofa"
         ],
-        "respuesta": "d"
+        "respuesta": "Epífita"
       },
       {
-        "pregunta": "18",
+        "pregunta": "¿Qué flor tropical es famosa por su belleza y suele crecer en ramas altas?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Hibisco",
+          "Orquídea",
+          "Rosa de Jericó",
+          "Flor de loto"
         ],
-        "respuesta": "d"
+        "respuesta": "Orquídea"
       },
       {
-        "pregunta": "19",
+        "pregunta": "¿Qué planta amazónica tiene hojas enormes que flotan en el agua y pueden soportar peso?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Nenúfar",
+          "Victoria amazónica",
+          "Loto",
+          "Jacinto de agua"
         ],
-        "respuesta": "d"
+        "respuesta": "Victoria amazónica"
       },
       {
-        "pregunta": "20",
+        "pregunta": "¿Qué arbusto selvático es utilizado como estimulante por los pueblos originarios y contiene cafeína?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Guaraná",
+          "Achiote",
+          "Té verde",
+          "Yacón"
         ],
-        "respuesta": "d"
+        "respuesta": "Guaraná"
+      },
+      {
+        "pregunta": "¿Qué tipo de palma amazónica se usa para producir el popular fruto açaí?",
+        "opciones": [
+          "Palma real",
+          "Palma de aceite",
+          "Euterpe oleracea",
+          "Cocotero"
+        ],
+        "respuesta": "Euterpe oleracea"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical produce una resina llamada copal, usada en rituales y como incienso?",
+        "opciones": [
+          "Palo santo",
+          "Guayaco",
+          "Bursera",
+          "Caoba"
+        ],
+        "respuesta": "Bursera"
+      },
+      {
+        "pregunta": "¿Qué planta de hojas alargadas y espinosas se usa para fabricar fibras naturales?",
+        "opciones": [
+          "Yute",
+          "Chaguar",
+          "Lino selvático",
+          "Abacá"
+        ],
+        "respuesta": "Chaguar"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical es fuente principal de madera dura roja en la selva?",
+        "opciones": [
+          "Cedro",
+          "Caoba",
+          "Lapacho",
+          "Ciprés"
+        ],
+        "respuesta": "Caoba"
+      },
+      {
+        "pregunta": "¿Qué planta se usa tradicionalmente en infusiones psicoactivas en rituales amazónicos?",
+        "opciones": [
+          "Ruda",
+          "Coca",
+          "Ayahuasca",
+          "Sangre de grado"
+        ],
+        "respuesta": "Ayahuasca"
+      },
+      {
+        "pregunta": "¿Qué enredadera amazónica tiene efectos curativos y se usa en medicina tradicional?",
+        "opciones": [
+          "Uña de gato",
+          "Mburucuyá",
+          "Chuchuhuasi",
+          "Ipecacuana"
+        ],
+        "respuesta": "Uña de gato"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical produce el fruto del cacao?",
+        "opciones": [
+          "Mangifera",
+          "Theobroma cacao",
+          "Anacardium",
+          "Persea americana"
+        ],
+        "respuesta": "Theobroma cacao"
+      },
+      {
+        "pregunta": "¿Qué arbusto selvático es fuente natural de un tinte rojo muy usado por pueblos indígenas?",
+        "opciones": [
+          "Guayusa",
+          "Achiote",
+          "Jengibre rojo",
+          "Curcuma"
+        ],
+        "respuesta": "Achiote"
+      },
+      {
+        "pregunta": "¿Qué árbol produce frutos alargados que se consumen frescos o como jugo ácido?",
+        "opciones": [
+          "Tamarindo",
+          "Carambola",
+          "Bacaba",
+          "Cupuaçu"
+        ],
+        "respuesta": "Tamarindo"
+      },
+      {
+        "pregunta": "¿Qué árbol amazónico es famoso por su corteza roja que cicatriza heridas y detiene hemorragias?",
+        "opciones": [
+          "Palo de sangre",
+          "Corteza de dragón",
+          "Sangre de grado",
+          "Palo de rosa"
+        ],
+        "respuesta": "Sangre de grado"
+      },
+      {
+        "pregunta": "¿Qué planta de la selva es fuente de almidón y produce un tubérculo comestible?",
+        "opciones": [
+          "Yuca",
+          "Papa",
+          "Batata",
+          "Ñame"
+        ],
+        "respuesta": "Yuca"
+      },
+      {
+        "pregunta": "¿Qué planta tropical se caracteriza por tener espinas y crecer en zonas húmedas?",
+        "opciones": [
+          "Palma aguijón",
+          "Bambú",
+          "Helecho espinoso",
+          "Guaraná"
+        ],
+        "respuesta": "Palma aguijón"
+      },
+      {
+        "pregunta": "¿Qué planta aromática tropical se cultiva por sus raíces, usadas en cocina y medicina?",
+        "opciones": [
+          "Cúrcuma",
+          "Jengibre",
+          "Ginseng",
+          "Yacón"
+        ],
+        "respuesta": "Jengibre"
+      },
+      {
+        "pregunta": "¿Qué árbol produce una madera resistente usada en construcción y carpintería fina?",
+        "opciones": [
+          "Teca",
+          "Lapacho",
+          "Palo santo",
+          "Cedro rojo"
+        ],
+        "respuesta": "Lapacho"
+      },
+      {
+        "pregunta": "¿Qué enredadera de flor violeta es típica de zonas selváticas y usada como calmante?",
+        "opciones": [
+          "Pasiflora",
+          "Dama de noche",
+          "Uña de gato",
+          "Verbena"
+        ],
+        "respuesta": "Pasiflora"
+      },
+      {
+        "pregunta": "¿Qué especie de bambú tropical crece rápidamente y se usa para construir viviendas?",
+        "opciones": [
+          "Bambú gigante",
+          "Bambusa vulgaris",
+          "Bambú de agua",
+          "Arundo donax"
+        ],
+        "respuesta": "Bambusa vulgaris"
+      },
+      {
+        "pregunta": "¿Qué palmera amazónica tiene frutos ricos en aceites esenciales y se usa en cosmética?",
+        "opciones": [
+          "Palma de moriche",
+          "Palma aceitera",
+          "Palma de seje",
+          "Cocotero"
+        ],
+        "respuesta": "Palma de seje"
+      },
+      {
+        "pregunta": "¿Qué planta selvática tiene espinas largas que protegen sus tallos y ramas?",
+        "opciones": [
+          "Ceibo espinoso",
+          "Acacia negra",
+          "Caña brava",
+          "Chontaduro"
+        ],
+        "respuesta": "Acacia negra"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical amazónico es fuente de vitamina C y tiene frutos amarillos ácidos?",
+        "opciones": [
+          "Camu camu",
+          "Bacaba",
+          "Tamarillo",
+          "Níspero"
+        ],
+        "respuesta": "Camu camu"
+      },
+      {
+        "pregunta": "¿Qué liana de la selva sudamericana tiene propiedades afrodisíacas y energizantes?",
+        "opciones": [
+          "Muira puama",
+          "Ayahuasca",
+          "Uña de gato",
+          "Guaraná"
+        ],
+        "respuesta": "Muira puama"
       }
     ]
   },
-      "Arboles": {
+  "Arboles": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol selvático es famoso por su gran altura y raíces tabulares visibles?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Sumaúma",
+          "Ciprés",
+          "Guayacán",
+          "Olmo"
         ],
-        "respuesta": "d"
+        "respuesta": "Sumaúma"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol amazónico es la fuente del caucho natural?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ceibo",
+          "Hevea brasiliensis",
+          "Lapacho",
+          "Algarrobo"
         ],
-        "respuesta": "d"
+        "respuesta": "Hevea brasiliensis"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol de la selva tropical produce nueces grandes ricas en grasas saludables?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Castaño de Brasil",
+          "Palma de aceite",
+          "Jacarandá",
+          "Higuera"
         ],
-        "respuesta": "d"
+        "respuesta": "Castaño de Brasil"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol produce la madera conocida como caoba, muy valiosa en ebanistería?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Cedro",
+          "Caoba",
+          "Teca",
+          "Roble"
         ],
-        "respuesta": "d"
+        "respuesta": "Caoba"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol selvático tiene corteza espinosa y flores rojas llamativas?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ceibo",
+          "Lapacho",
+          "Palo borracho",
+          "Acacia"
         ],
-        "respuesta": "d"
+        "respuesta": "Ceibo"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol tropical tiene una resina llamada sangre de grado, usada como cicatrizante?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Palo santo",
+          "Sangre de grado",
+          "Guayaco",
+          "Bálsamo de Perú"
         ],
-        "respuesta": "d"
+        "respuesta": "Sangre de grado"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol de la selva produce una fruta de la que se obtiene el chocolate?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Mango",
+          "Theobroma cacao",
+          "Café",
+          "Anacardo"
         ],
-        "respuesta": "d"
+        "respuesta": "Theobroma cacao"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol de copa amplia y raíces visibles es considerado sagrado por pueblos amazónicos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Sumaúma",
+          "Olivo",
+          "Tamarindo",
+          "Nogal"
         ],
-        "respuesta": "d"
+        "respuesta": "Sumaúma"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol de gran porte tiene un tronco blanco característico y hojas grandes?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Balsa",
+          "Higuera",
+          "Sauce",
+          "Ceibo"
         ],
-        "respuesta": "d"
+        "respuesta": "Balsa"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué árbol de la selva es usado para obtener madera dura y de color oscuro?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Nogal",
+          "Lapacho",
+          "Ébano",
+          "Jacarandá"
         ],
-        "respuesta": "d"
+        "respuesta": "Lapacho"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical produce una vaina que contiene semillas dulces comestibles?",
+        "opciones": [
+          "Tamarindo",
+          "Castaño",
+          "Guayacán",
+          "Ibirapitá"
+        ],
+        "respuesta": "Tamarindo"
+      },
+      {
+        "pregunta": "¿Qué árbol amazónico es famoso por sus propiedades medicinales y su corteza aromática?",
+        "opciones": [
+          "Chuchuhuasi",
+          "Laurel",
+          "Sauce",
+          "Cedrón"
+        ],
+        "respuesta": "Chuchuhuasi"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical tiene una floración violeta espectacular y es común en zonas cálidas?",
+        "opciones": [
+          "Lapacho",
+          "Guayacán",
+          "Jacarandá",
+          "Ciprés"
+        ],
+        "respuesta": "Jacarandá"
+      },
+      {
+        "pregunta": "¿Qué árbol amazónico puede almacenar agua en su tronco hinchado?",
+        "opciones": [
+          "Palo borracho",
+          "Ficus",
+          "Baobab",
+          "Balsa"
+        ],
+        "respuesta": "Palo borracho"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical produce frutos comestibles ricos en vitamina C llamados camu camu?",
+        "opciones": [
+          "Camu camu",
+          "Guayaba",
+          "Pitanga",
+          "Arazá"
+        ],
+        "respuesta": "Camu camu"
+      },
+      {
+        "pregunta": "¿Qué árbol tiene una madera aromática usada como incienso en rituales espirituales?",
+        "opciones": [
+          "Palo santo",
+          "Cedro rojo",
+          "Guayaco",
+          "Canela de Ceilán"
+        ],
+        "respuesta": "Palo santo"
+      },
+      {
+        "pregunta": "¿Qué árbol de la selva tiene flores grandes de colores intensos y se cultiva ornamentalmente?",
+        "opciones": [
+          "Ceibo",
+          "Flamboyán",
+          "Palo rosa",
+          "Jacarandá"
+        ],
+        "respuesta": "Flamboyán"
+      },
+      {
+        "pregunta": "¿Qué árbol produce un fruto tropical blanco y dulce conocido como chirimoya?",
+        "opciones": [
+          "Guanábana",
+          "Chirimoyo",
+          "Níspero",
+          "Carambola"
+        ],
+        "respuesta": "Chirimoyo"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical tiene frutos pequeños de color negro utilizados como pigmento y medicina?",
+        "opciones": [
+          "Mburucuyá",
+          "Urucú",
+          "Bacaba",
+          "Arazá"
+        ],
+        "respuesta": "Bacaba"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical tiene una madera rojiza resistente al agua y usada en muebles finos?",
+        "opciones": [
+          "Caoba",
+          "Palo de rosa",
+          "Lapacho",
+          "Ciprés tropical"
+        ],
+        "respuesta": "Palo de rosa"
+      },
+      {
+        "pregunta": "¿Qué árbol tiene una flor rosada que marca el inicio de la primavera en muchas regiones tropicales?",
+        "opciones": [
+          "Lapacho",
+          "Flamboyán",
+          "Guayacán",
+          "Ceibo"
+        ],
+        "respuesta": "Lapacho"
+      },
+      {
+        "pregunta": "¿Qué árbol produce una fruta ácida usada en jugos refrescantes en la Amazonía?",
+        "opciones": [
+          "Tamarindo",
+          "Cupuaçu",
+          "Bacaba",
+          "Maracuyá"
+        ],
+        "respuesta": "Cupuaçu"
+      },
+      {
+        "pregunta": "¿Qué árbol amazónico tiene frutos con forma de cápsulas llenas de pulpa blanca comestible?",
+        "opciones": [
+          "Cacao",
+          "Guaba",
+          "Níspero",
+          "Jocote"
+        ],
+        "respuesta": "Guaba"
+      },
+      {
+        "pregunta": "¿Qué árbol de la selva tiene raíces aéreas que ayudan a estabilizarlo en suelos blandos?",
+        "opciones": [
+          "Sumaúma",
+          "Manglar",
+          "Balsa",
+          "Ficus"
+        ],
+        "respuesta": "Manglar"
+      },
+      {
+        "pregunta": "¿Qué árbol amazónico se usa en medicina para aliviar dolores articulares?",
+        "opciones": [
+          "Chuchuhuasi",
+          "Sangre de grado",
+          "Lapacho",
+          "Guayaco"
+        ],
+        "respuesta": "Guayaco"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical tiene frutos amarillos comestibles que se usan en jugos y helados?",
+        "opciones": [
+          "Arazá",
+          "Guayaba",
+          "Carambola",
+          "Maracuyá"
+        ],
+        "respuesta": "Arazá"
+      },
+      {
+        "pregunta": "¿Qué árbol de la selva es considerado símbolo nacional en varios países de Sudamérica?",
+        "opciones": [
+          "Jacarandá",
+          "Ceibo",
+          "Ibirapitá",
+          "Guayacán"
+        ],
+        "respuesta": "Ceibo"
+      },
+      {
+        "pregunta": "¿Qué árbol selvático tiene semillas con alas que giran al caer, ayudando a su dispersión?",
+        "opciones": [
+          "Cedro",
+          "Maple tropical",
+          "Almendro",
+          "Caoba"
+        ],
+        "respuesta": "Almendro"
+      },
+      {
+        "pregunta": "¿Qué árbol de la selva tiene una corteza delgada que se desprende fácilmente?",
+        "opciones": [
+          "Guayaba",
+          "Gomero",
+          "Palo de agua",
+          "Balsa"
+        ],
+        "respuesta": "Balsa"
+      },
+      {
+        "pregunta": "¿Qué árbol tropical tiene una copa en forma de paraguas que ofrece gran sombra?",
+        "opciones": [
+          "Flamboyán",
+          "Ceibo",
+          "Sumaúma",
+          "Palo borracho"
+        ],
+        "respuesta": "Flamboyán"
       }
     ]
   },
-      "Aves": {
+  "Aves": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave de la selva tiene un enorme pico de colores brillantes?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Tucán",
+          "Cóndor",
+          "Gavilán",
+          "Garza"
         ],
-        "respuesta": "d"
+        "respuesta": "Tucán"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave nocturna de la selva tiene grandes ojos y un canto característico?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Lechuza",
+          "Loro",
+          "Tinamú",
+          "Guacamayo"
         ],
-        "respuesta": "d"
+        "respuesta": "Lechuza"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave de gran tamaño, color rojo y azul, habita en las selvas sudamericanas?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Guacamayo",
+          "Flamenco",
+          "Cacatúa",
+          "Pava de monte"
         ],
-        "respuesta": "d"
+        "respuesta": "Guacamayo"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave de la selva amazónica puede imitar sonidos humanos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Loro amazónico",
+          "Halcón",
+          "Cisne negro",
+          "Martín pescador"
         ],
-        "respuesta": "d"
+        "respuesta": "Loro amazónico"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave de la selva posee plumaje iridiscente y realiza complejas danzas para cortejar?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ave del paraíso",
+          "Tinamú",
+          "Pájaro campana",
+          "Águila arpía"
         ],
-        "respuesta": "d"
+        "respuesta": "Ave del paraíso"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave selvática de gran tamaño es considerada una de las más poderosas cazadoras?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Águila arpía",
+          "Tucán",
+          "Guacamayo",
+          "Garza real"
         ],
-        "respuesta": "d"
+        "respuesta": "Águila arpía"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave de pequeño tamaño tiene un pico largo y se alimenta del néctar de las flores?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Colibrí",
+          "Loro",
+          "Gavilán",
+          "Mirlo"
         ],
-        "respuesta": "d"
+        "respuesta": "Colibrí"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave de la selva produce un canto metálico parecido al de una campana?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Pájaro campana",
+          "Loro hablador",
+          "Tordo",
+          "Gallo de monte"
         ],
-        "respuesta": "d"
+        "respuesta": "Pájaro campana"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave terrestre de la selva tiene plumaje oscuro y se alimenta de frutos caídos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Pava de monte",
+          "Cisne negro",
+          "Cacatúa",
+          "Lechuza"
         ],
-        "respuesta": "d"
+        "respuesta": "Pava de monte"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué ave tropical tiene un plumaje anaranjado y cresta en forma de abanico?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Gallo de las rocas",
+          "Guacamayo azul",
+          "Colibrí esmeralda",
+          "Cálao"
         ],
-        "respuesta": "d"
+        "respuesta": "Gallo de las rocas"
+      },
+      {
+        "pregunta": "¿Qué ave de selva africana es famosa por su pico curvado y enorme, con cavidades de resonancia?",
+        "opciones": [
+          "Cálao",
+          "Tucán",
+          "Gavilán",
+          "Cotorra"
+        ],
+        "respuesta": "Cálao"
+      },
+      {
+        "pregunta": "¿Qué ave amazónica vive en bandadas y se comunica con chillidos fuertes?",
+        "opciones": [
+          "Perico",
+          "Cisne",
+          "Búho",
+          "Águila real"
+        ],
+        "respuesta": "Perico"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva posee una cola larga y es famosa por su canto elaborado?",
+        "opciones": [
+          "Ave lira",
+          "Loro",
+          "Tinamú",
+          "Trogón"
+        ],
+        "respuesta": "Ave lira"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva tiene un plumaje azul brillante y se alimenta de insectos?",
+        "opciones": [
+          "Trogón",
+          "Tucán",
+          "Garza azul",
+          "Águila crestada"
+        ],
+        "respuesta": "Trogón"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva sudamericana es conocida por formar parejas de por vida?",
+        "opciones": [
+          "Guacamayo rojo",
+          "Tinamú",
+          "Garza blanca",
+          "Lechuza"
+        ],
+        "respuesta": "Guacamayo rojo"
+      },
+      {
+        "pregunta": "¿Qué ave tropical construye nidos colgantes muy elaborados?",
+        "opciones": [
+          "Oropéndola",
+          "Cálao",
+          "Colibrí",
+          "Tinamú"
+        ],
+        "respuesta": "Oropéndola"
+      },
+      {
+        "pregunta": "¿Qué ave selvática pone sus huevos en el suelo y es muy esquiva?",
+        "opciones": [
+          "Tinamú",
+          "Águila",
+          "Garza",
+          "Pava real"
+        ],
+        "respuesta": "Tinamú"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva produce sonidos que parecen risas o carcajadas?",
+        "opciones": [
+          "Martín pescador risueño",
+          "Lechuza",
+          "Guacamayo",
+          "Loro gris"
+        ],
+        "respuesta": "Martín pescador risueño"
+      },
+      {
+        "pregunta": "¿Qué ave tropical tiene plumas que reflejan intensamente la luz del sol?",
+        "opciones": [
+          "Colibrí esmeralda",
+          "Perico",
+          "Ave lira",
+          "Pava de monte"
+        ],
+        "respuesta": "Colibrí esmeralda"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva africana se comunica con sonidos similares a los de los humanos?",
+        "opciones": [
+          "Loro gris africano",
+          "Cálao",
+          "Tucán",
+          "Ave del paraíso"
+        ],
+        "respuesta": "Loro gris africano"
+      },
+      {
+        "pregunta": "¿Qué ave de gran tamaño y coloración negra y blanca habita en zonas selváticas del sudeste asiático?",
+        "opciones": [
+          "Cálao bicorne",
+          "Pavo real",
+          "Ganso salvaje",
+          "Tucán"
+        ],
+        "respuesta": "Cálao bicorne"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva tiene plumas largas que caen en forma de capa desde su cabeza?",
+        "opciones": [
+          "Ave del paraíso real",
+          "Guacamayo",
+          "Gallo de monte",
+          "Tinamú"
+        ],
+        "respuesta": "Ave del paraíso real"
+      },
+      {
+        "pregunta": "¿Qué ave tropical es muy pequeña pero extremadamente rápida en vuelo?",
+        "opciones": [
+          "Colibrí",
+          "Canario",
+          "Golondrina",
+          "Gorrión"
+        ],
+        "respuesta": "Colibrí"
+      },
+      {
+        "pregunta": "¿Qué ave selvática se alimenta exclusivamente de peces en ríos y lagunas?",
+        "opciones": [
+          "Martín pescador",
+          "Pava de monte",
+          "Loro",
+          "Trogón"
+        ],
+        "respuesta": "Martín pescador"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva posee una cola en forma de raqueta?",
+        "opciones": [
+          "Motmot",
+          "Cálao",
+          "Lechuza",
+          "Ave del paraíso"
+        ],
+        "respuesta": "Motmot"
+      },
+      {
+        "pregunta": "¿Qué ave selvática canta de forma monótona al amanecer en la Amazonía?",
+        "opciones": [
+          "Tinamú",
+          "Perico",
+          "Colibrí",
+          "Gavilán"
+        ],
+        "respuesta": "Tinamú"
+      },
+      {
+        "pregunta": "¿Qué ave tropical tiene plumaje blanco y negro, y cresta levantada?",
+        "opciones": [
+          "Urraca selvática",
+          "Gallo de las rocas",
+          "Ave del paraíso",
+          "Tucán"
+        ],
+        "respuesta": "Urraca selvática"
+      },
+      {
+        "pregunta": "¿Qué ave tropical anida en huecos de árboles y se alimenta de frutos?",
+        "opciones": [
+          "Tucán toco",
+          "Pava de monte",
+          "Tinamú",
+          "Águila crestada"
+        ],
+        "respuesta": "Tucán toco"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva tiene hábitos carroñeros y ayuda a limpiar el ecosistema?",
+        "opciones": [
+          "Zopilote",
+          "Guacamayo",
+          "Lechuza",
+          "Trogón"
+        ],
+        "respuesta": "Zopilote"
       }
     ]
   },
-      "Insectos": {
+  "Insectos": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto de la selva es conocido por cortar hojas y llevarlas a su colonia?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Hormiga cortadora",
+          "Abeja",
+          "Termita",
+          "Saltamontes"
         ],
-        "respuesta": "d"
+        "respuesta": "Hormiga cortadora"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto emite luz en la oscuridad para atraer pareja?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Luciérnaga",
+          "Mosquito",
+          "Avispa",
+          "Cucaracha"
         ],
-        "respuesta": "d"
+        "respuesta": "Luciérnaga"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto de la selva puede picar y transmitir enfermedades como el dengue?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Mosquito",
+          "Hormiga",
+          "Grillo",
+          "Escarabajo"
         ],
-        "respuesta": "d"
+        "respuesta": "Mosquito"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto se alimenta de madera y puede causar daños en árboles y construcciones?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Termita",
+          "Abeja",
+          "Mariposa",
+          "Escorpión"
         ],
-        "respuesta": "d"
+        "respuesta": "Termita"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto de la selva posee un aguijón muy doloroso y pertenece a las avispas?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Avispa guerrera",
+          "Libélula",
+          "Ciempiés",
+          "Mosca negra"
         ],
-        "respuesta": "d"
+        "respuesta": "Avispa guerrera"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto tiene alas coloridas y pasa por una metamorfosis completa?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Mariposa",
+          "Hormiga",
+          "Mosquito",
+          "Escarabajo rinoceronte"
         ],
-        "respuesta": "d"
+        "respuesta": "Mariposa"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto puede caminar sobre el agua gracias a la tensión superficial?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Zancudo acuático",
+          "Escarabajo",
+          "Hormiga",
+          "Grillo"
         ],
-        "respuesta": "d"
+        "respuesta": "Zancudo acuático"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto de la selva tiene un cuerpo alargado y se alimenta de otros insectos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Libélula",
+          "Cucaracha",
+          "Mariposa",
+          "Termita"
         ],
-        "respuesta": "d"
+        "respuesta": "Libélula"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto emite sonidos frotando sus alas, especialmente por la noche?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Grillo",
+          "Mosquito",
+          "Escarabajo",
+          "Libélula"
         ],
-        "respuesta": "d"
+        "respuesta": "Grillo"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué insecto de la selva tiene una coraza dura y cuernos prominentes en la cabeza?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Escarabajo rinoceronte",
+          "Avispa",
+          "Ciempiés",
+          "Tarántula"
         ],
-        "respuesta": "d"
+        "respuesta": "Escarabajo rinoceronte"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva ayuda a polinizar flores y vive en colmenas organizadas?",
+        "opciones": [
+          "Abeja",
+          "Mosca",
+          "Saltamontes",
+          "Avispa"
+        ],
+        "respuesta": "Abeja"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva produce una sustancia llamada miel?",
+        "opciones": [
+          "Abeja melífera",
+          "Cucaracha",
+          "Mariposa",
+          "Grillo"
+        ],
+        "respuesta": "Abeja melífera"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene un cuerpo delgado y patas largas, y suele saltar entre la vegetación?",
+        "opciones": [
+          "Saltamontes",
+          "Ciempiés",
+          "Hormiga",
+          "Tábano"
+        ],
+        "respuesta": "Saltamontes"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene un cuerpo largo segmentado y muchas patas?",
+        "opciones": [
+          "Ciempiés",
+          "Mosquito",
+          "Grillo",
+          "Avispa"
+        ],
+        "respuesta": "Ciempiés"
+      },
+      {
+        "pregunta": "¿Qué insecto tropical es conocido por su picadura extremadamente dolorosa y se llama también 'bala'?",
+        "opciones": [
+          "Hormiga bala",
+          "Escarabajo tigre",
+          "Tábano",
+          "Libélula"
+        ],
+        "respuesta": "Hormiga bala"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene hábitos carroñeros y puede sobrevivir en condiciones extremas?",
+        "opciones": [
+          "Cucaracha",
+          "Saltamontes",
+          "Hormiga cortadora",
+          "Mosquito"
+        ],
+        "respuesta": "Cucaracha"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva tiene un aparato bucal picador y se alimenta de sangre?",
+        "opciones": [
+          "Tábano",
+          "Avispa",
+          "Abeja",
+          "Grillo"
+        ],
+        "respuesta": "Tábano"
+      },
+      {
+        "pregunta": "¿Qué insecto vive bajo tierra en grandes colonias y construye montículos de barro?",
+        "opciones": [
+          "Termita soldado",
+          "Escarabajo",
+          "Mariposa",
+          "Mosca"
+        ],
+        "respuesta": "Termita soldado"
+      },
+      {
+        "pregunta": "¿Qué insecto nocturno de la selva tiene un cuerpo peludo y alas como de murciélago?",
+        "opciones": [
+          "Polilla gigante",
+          "Abeja",
+          "Grillo",
+          "Libélula"
+        ],
+        "respuesta": "Polilla gigante"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva es un depredador veloz con fuertes mandíbulas y cuerpo brillante?",
+        "opciones": [
+          "Escarabajo tigre",
+          "Saltamontes",
+          "Hormiga",
+          "Tábano"
+        ],
+        "respuesta": "Escarabajo tigre"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva tropical se disfraza perfectamente como una hoja seca?",
+        "opciones": [
+          "Insecto hoja",
+          "Mosquito",
+          "Avispa",
+          "Ciempiés"
+        ],
+        "respuesta": "Insecto hoja"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene una forma alargada que lo hace parecer una rama o palo?",
+        "opciones": [
+          "Insecto palo",
+          "Grillo",
+          "Abeja",
+          "Polilla"
+        ],
+        "respuesta": "Insecto palo"
+      },
+      {
+        "pregunta": "¿Qué insecto tropical se agrupa en enjambres y se desplaza en enormes cantidades?",
+        "opciones": [
+          "Langosta migratoria",
+          "Cucaracha",
+          "Hormiga",
+          "Abeja"
+        ],
+        "respuesta": "Langosta migratoria"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene alas duras que cubren su cuerpo y puede enrollarse como defensa?",
+        "opciones": [
+          "Escarabajo pelotero",
+          "Libélula",
+          "Mosquito",
+          "Tábano"
+        ],
+        "respuesta": "Escarabajo pelotero"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva es especialista en camuflarse como parte del entorno vegetal?",
+        "opciones": [
+          "Insecto fantasma",
+          "Hormiga roja",
+          "Avispa negra",
+          "Saltamontes común"
+        ],
+        "respuesta": "Insecto fantasma"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva produce un sonido vibrando su abdomen contra superficies?",
+        "opciones": [
+          "Cigarra",
+          "Grillo",
+          "Mariposa",
+          "Termita"
+        ],
+        "respuesta": "Cigarra"
+      },
+      {
+        "pregunta": "¿Qué insecto suele encontrarse en las orillas de ríos cazando insectos pequeños?",
+        "opciones": [
+          "Libélula cazadora",
+          "Mosca común",
+          "Abeja reina",
+          "Escarabajo tigre"
+        ],
+        "respuesta": "Libélula cazadora"
+      },
+      {
+        "pregunta": "¿Qué insecto es considerado uno de los más rápidos en vuelo dentro de la selva?",
+        "opciones": [
+          "Libélula",
+          "Tábano",
+          "Mosquito",
+          "Ciempiés"
+        ],
+        "respuesta": "Libélula"
+      },
+      {
+        "pregunta": "¿Qué insecto selvático de colores metálicos es muy apreciado por los coleccionistas?",
+        "opciones": [
+          "Escarabajo joya",
+          "Grillo",
+          "Mosquito",
+          "Mariposa común"
+        ],
+        "respuesta": "Escarabajo joya"
+      },
+      {
+        "pregunta": "¿Qué insecto es responsable de esparcir feromonas para guiar al resto de su colonia?",
+        "opciones": [
+          "Hormiga exploradora",
+          "Cigarra",
+          "Avispa reina",
+          "Polilla gigante"
+        ],
+        "respuesta": "Hormiga exploradora"
       }
     ]
   },
-      "Anfibios": {
+  "Anfibios": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué anfibio de la selva es conocido por su piel colorida y venenosa?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Rana dardo venenosa",
+          "Sapo común",
+          "Tritón",
+          "Rana toro"
         ],
-        "respuesta": "d"
+        "respuesta": "Rana dardo venenosa"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué anfibio puede inflarse para parecer más grande ante depredadores?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Sapo gigante amazónico",
+          "Rana arborícola",
+          "Salamandra común",
+          "Cecilia"
         ],
-        "respuesta": "d"
+        "respuesta": "Sapo gigante amazónico"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué tipo de rana pone sus huevos en hojas sobre el agua?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Rana de ojos rojos",
+          "Rana toro",
+          "Sapo cururú",
+          "Tritón de fuego"
         ],
-        "respuesta": "d"
+        "respuesta": "Rana de ojos rojos"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué anfibio no tiene patas y se parece a una serpiente?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Cecilia",
+          "Tritón",
+          "Rana",
+          "Sapo"
         ],
-        "respuesta": "d"
+        "respuesta": "Cecilia"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué especie de anfibio puede regenerar partes de su cuerpo?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Salamandra",
+          "Sapo gigante",
+          "Rana venenosa",
+          "Cecilia negra"
         ],
-        "respuesta": "d"
+        "respuesta": "Salamandra"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué rana se caracteriza por tener una vocalización muy aguda y continua?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Rana coquí",
+          "Sapo amazónico",
+          "Cecilia terrestre",
+          "Tritón de vientre rojo"
         ],
-        "respuesta": "d"
+        "respuesta": "Rana coquí"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué anfibio tiene la piel rugosa y vive mayormente en tierra firme?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Sapo cururú",
+          "Rana arborícola",
+          "Tritón verde",
+          "Cecilia acuática"
         ],
-        "respuesta": "d"
+        "respuesta": "Sapo cururú"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué anfibio de la selva tiene membranas interdigitales que le permiten nadar fácilmente?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Rana nadadora",
+          "Sapo gigante",
+          "Cecilia amazónica",
+          "Salamandra terrestre"
         ],
-        "respuesta": "d"
+        "respuesta": "Rana nadadora"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué rana de la selva tiene los ojos de color rojo intenso como forma de defensa?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Rana de ojos rojos",
+          "Rana toro",
+          "Sapo común",
+          "Tritón jaspeado"
         ],
-        "respuesta": "d"
+        "respuesta": "Rana de ojos rojos"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué especie de anfibio puede cambiar de color para camuflarse?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Rana camaleónica",
+          "Sapo verde",
+          "Tritón negro",
+          "Cecilia gris"
         ],
-        "respuesta": "d"
+        "respuesta": "Rana camaleónica"
+      },
+      {
+        "pregunta": "¿Qué anfibio tiene una piel que segrega una sustancia tóxica que disuade a depredadores?",
+        "opciones": [
+          "Sapo venenoso",
+          "Rana nadadora",
+          "Tritón terrestre",
+          "Cecilia amarilla"
+        ],
+        "respuesta": "Sapo venenoso"
+      },
+      {
+        "pregunta": "¿Qué especie es considerada la rana más pequeña de la selva?",
+        "opciones": [
+          "Rana pigmea",
+          "Rana dardo",
+          "Sapo arborícola",
+          "Tritón pequeño"
+        ],
+        "respuesta": "Rana pigmea"
+      },
+      {
+        "pregunta": "¿Qué anfibio tropical es famoso por sus cantos durante la lluvia?",
+        "opciones": [
+          "Rana cantora",
+          "Sapo llanero",
+          "Tritón cantábrico",
+          "Cecilia rayada"
+        ],
+        "respuesta": "Rana cantora"
+      },
+      {
+        "pregunta": "¿Qué especie de anfibio tiene la capacidad de escalar gracias a sus patas pegajosas?",
+        "opciones": [
+          "Rana arborícola",
+          "Sapo de pantano",
+          "Cecilia trepadora",
+          "Tritón moteado"
+        ],
+        "respuesta": "Rana arborícola"
+      },
+      {
+        "pregunta": "¿Qué anfibio sudamericano puede alcanzar tamaños muy grandes y ser territorial?",
+        "opciones": [
+          "Rana toro amazónica",
+          "Sapo cururú",
+          "Cecilia negra",
+          "Tritón gigante"
+        ],
+        "respuesta": "Rana toro amazónica"
+      },
+      {
+        "pregunta": "¿Qué anfibio es capaz de excavar y vivir bajo tierra gran parte del año?",
+        "opciones": [
+          "Sapo cavador",
+          "Rana cantante",
+          "Cecilia trepadora",
+          "Tritón selvático"
+        ],
+        "respuesta": "Sapo cavador"
+      },
+      {
+        "pregunta": "¿Qué tipo de anfibio de la selva tiene una vida acuática completa y no pasa por metamorfosis externa?",
+        "opciones": [
+          "Cecilia acuática",
+          "Tritón terrestre",
+          "Rana dardo",
+          "Sapo rayado"
+        ],
+        "respuesta": "Cecilia acuática"
+      },
+      {
+        "pregunta": "¿Qué anfibio pone huevos que se desarrollan completamente en el cuerpo de la madre?",
+        "opciones": [
+          "Rana marsupial",
+          "Sapo selvático",
+          "Tritón común",
+          "Cecilia subterránea"
+        ],
+        "respuesta": "Rana marsupial"
+      },
+      {
+        "pregunta": "¿Qué rana tiene un patrón de colores que advierte a los depredadores de su toxicidad?",
+        "opciones": [
+          "Rana venenosa tricolor",
+          "Sapo arborícola",
+          "Tritón rayado",
+          "Cecilia de ojos grandes"
+        ],
+        "respuesta": "Rana venenosa tricolor"
+      },
+      {
+        "pregunta": "¿Qué especie de anfibio puede sobrevivir en climas secos gracias a una capa mucosa?",
+        "opciones": [
+          "Sapo de tierra seca",
+          "Rana arborícola",
+          "Cecilia tropical",
+          "Tritón moteado"
+        ],
+        "respuesta": "Sapo de tierra seca"
+      },
+      {
+        "pregunta": "¿Qué anfibio posee un canto grave que se escucha a largas distancias en la selva?",
+        "opciones": [
+          "Rana toro",
+          "Rana de ojos rojos",
+          "Tritón de vientre rojo",
+          "Sapo enano"
+        ],
+        "respuesta": "Rana toro"
+      },
+      {
+        "pregunta": "¿Qué tipo de anfibio de la selva presenta una piel brillante y colores intensos como señal de advertencia?",
+        "opciones": [
+          "Rana flecha venenosa",
+          "Sapo arborícola",
+          "Tritón negro",
+          "Cecilia lisa"
+        ],
+        "respuesta": "Rana flecha venenosa"
+      },
+      {
+        "pregunta": "¿Qué anfibio tiene un ciclo reproductivo que depende fuertemente de las lluvias?",
+        "opciones": [
+          "Sapo selvático",
+          "Rana trepadora",
+          "Cecilia terrestre",
+          "Tritón del Amazonas"
+        ],
+        "respuesta": "Sapo selvático"
+      },
+      {
+        "pregunta": "¿Qué especie de anfibio puede deslizarse por el aire desde los árboles?",
+        "opciones": [
+          "Rana voladora",
+          "Tritón de árbol",
+          "Cecilia arborícola",
+          "Sapo de ladera"
+        ],
+        "respuesta": "Rana voladora"
+      },
+      {
+        "pregunta": "¿Qué anfibio tiene un vientre rojo brillante y un cuerpo oscuro como camuflaje?",
+        "opciones": [
+          "Tritón de vientre rojo",
+          "Rana coquí",
+          "Cecilia amazónica",
+          "Sapo manchado"
+        ],
+        "respuesta": "Tritón de vientre rojo"
+      },
+      {
+        "pregunta": "¿Qué rana es conocida por transportar a sus crías en la espalda?",
+        "opciones": [
+          "Rana de espalda portadora",
+          "Rana toro",
+          "Cecilia negra",
+          "Sapo trepador"
+        ],
+        "respuesta": "Rana de espalda portadora"
+      },
+      {
+        "pregunta": "¿Qué anfibio amazónico tiene una cabeza ancha y ojos pequeños y puede parecer una piedra?",
+        "opciones": [
+          "Rana camuflada de roca",
+          "Tritón terrestre",
+          "Cecilia marrón",
+          "Sapo liso"
+        ],
+        "respuesta": "Rana camuflada de roca"
+      },
+      {
+        "pregunta": "¿Qué anfibio puede emitir secreciones tóxicas por su piel al sentirse amenazado?",
+        "opciones": [
+          "Sapo venenoso sudamericano",
+          "Rana trepadora",
+          "Cecilia acuática",
+          "Tritón negro"
+        ],
+        "respuesta": "Sapo venenoso sudamericano"
+      },
+      {
+        "pregunta": "¿Qué anfibio del Amazonas puede vivir bajo tierra casi toda su vida y es casi ciego?",
+        "opciones": [
+          "Cecilia amazónica",
+          "Sapo terrestre",
+          "Tritón subterráneo",
+          "Rana cantora"
+        ],
+        "respuesta": "Cecilia amazónica"
+      },
+      {
+        "pregunta": "¿Qué rana emite sonidos específicos para atraer pareja durante la noche?",
+        "opciones": [
+          "Rana llamadora",
+          "Tritón vocal",
+          "Cecilia nocturna",
+          "Sapo saltador"
+        ],
+        "respuesta": "Rana llamadora"
       }
     ]
   },
-      "Hongos": {
+  "Hongos": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo selvático es conocido por su bioluminiscencia natural?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Mycena chlorophos",
+          "Amanita muscaria",
+          "Claviceps purpurea",
+          "Boletus edulis"
         ],
-        "respuesta": "d"
+        "respuesta": "Mycena chlorophos"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo parasita insectos y controla su comportamiento?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ophiocordyceps unilateralis",
+          "Agaricus bisporus",
+          "Lentinula edodes",
+          "Lycoperdon perlatum"
         ],
-        "respuesta": "d"
+        "respuesta": "Ophiocordyceps unilateralis"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo de la selva crece sobre la madera en descomposición y tiene forma de abanico?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Trametes versicolor",
+          "Amanita caesarea",
+          "Morchella esculenta",
+          "Coprinus comatus"
         ],
-        "respuesta": "d"
+        "respuesta": "Trametes versicolor"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué tipo de hongo forma micorrizas con árboles en la selva tropical?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Boletus spp.",
+          "Clitocybe nebularis",
+          "Gyromitra esculenta",
+          "Chlorophyllum molybdites"
         ],
-        "respuesta": "d"
+        "respuesta": "Boletus spp."
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo tiene una forma similar a un cerebro y es altamente tóxico?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Gyromitra esculenta",
+          "Amanita rubescens",
+          "Pleurotus ostreatus",
+          "Cantharellus cibarius"
         ],
-        "respuesta": "d"
+        "respuesta": "Gyromitra esculenta"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo tropical es utilizado por comunidades indígenas como medicina tradicional?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ganoderma lucidum",
+          "Psilocybe cubensis",
+          "Russula emetica",
+          "Lactarius deliciosus"
         ],
-        "respuesta": "d"
+        "respuesta": "Ganoderma lucidum"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo tiene forma de esfera y libera esporas al romperse?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Lycoperdon perlatum",
+          "Amanita phalloides",
+          "Coprinellus micaceus",
+          "Boletus badius"
         ],
-        "respuesta": "d"
+        "respuesta": "Lycoperdon perlatum"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo se desintegra en tinta negra al madurar?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Coprinus comatus",
+          "Agaricus campestris",
+          "Cantharellus tubaeformis",
+          "Tricholoma equestre"
         ],
-        "respuesta": "d"
+        "respuesta": "Coprinus comatus"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo tiene colores brillantes y se considera tóxico o alucinógeno?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Amanita muscaria",
+          "Pleurotus djamor",
+          "Lepista nuda",
+          "Auricularia auricula-judae"
         ],
-        "respuesta": "d"
+        "respuesta": "Amanita muscaria"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué hongo tiene una textura gelatinosa y se encuentra en troncos húmedos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Tremella fuciformis",
+          "Cortinarius violaceus",
+          "Russula cyanoxantha",
+          "Chroogomphus rutilus"
         ],
-        "respuesta": "d"
+        "respuesta": "Tremella fuciformis"
+      },
+      {
+        "pregunta": "¿Qué hongo de la selva tiene una forma parecida a una oreja?",
+        "opciones": [
+          "Auricularia auricula-judae",
+          "Laccaria amethystina",
+          "Psathyrella candolleana",
+          "Boletus edulis"
+        ],
+        "respuesta": "Auricularia auricula-judae"
+      },
+      {
+        "pregunta": "¿Qué hongo es conocido por su olor fétido que atrae insectos?",
+        "opciones": [
+          "Phallus indusiatus",
+          "Clitocybe odora",
+          "Hygrocybe conica",
+          "Amanita virosa"
+        ],
+        "respuesta": "Phallus indusiatus"
+      },
+      {
+        "pregunta": "¿Qué hongo de la selva forma estructuras subterráneas comestibles?",
+        "opciones": [
+          "Tuber melanosporum",
+          "Psilocybe cyanescens",
+          "Inocybe spp.",
+          "Hydnellum peckii"
+        ],
+        "respuesta": "Tuber melanosporum"
+      },
+      {
+        "pregunta": "¿Qué hongo produce una red de esporas en forma de jaula?",
+        "opciones": [
+          "Clathrus ruber",
+          "Pluteus cervinus",
+          "Mycena pura",
+          "Entoloma sinuatum"
+        ],
+        "respuesta": "Clathrus ruber"
+      },
+      {
+        "pregunta": "¿Qué hongo tiene un velo que forma una especie de falda?",
+        "opciones": [
+          "Phallus duplicatus",
+          "Hygrophorus hypothejus",
+          "Lactarius torminosus",
+          "Amanita citrina"
+        ],
+        "respuesta": "Phallus duplicatus"
+      },
+      {
+        "pregunta": "¿Qué hongo es utilizado como tinte natural en algunas culturas amazónicas?",
+        "opciones": [
+          "Pycnoporus sanguineus",
+          "Agaricus blazei",
+          "Cortinarius orellanus",
+          "Omphalotus olearius"
+        ],
+        "respuesta": "Pycnoporus sanguineus"
+      },
+      {
+        "pregunta": "¿Qué hongo bioluminiscente amazónico se puede ver de noche?",
+        "opciones": [
+          "Panellus stipticus",
+          "Leucocoprinus birnbaumii",
+          "Boletus satanas",
+          "Psilocybe mexicana"
+        ],
+        "respuesta": "Panellus stipticus"
+      },
+      {
+        "pregunta": "¿Qué hongo de la selva forma parte del ciclo de descomposición del suelo?",
+        "opciones": [
+          "Marasmius spp.",
+          "Lactarius deterrimus",
+          "Tricholoma portentosum",
+          "Amanita pantherina"
+        ],
+        "respuesta": "Marasmius spp."
+      },
+      {
+        "pregunta": "¿Qué hongo alucinógeno se encuentra en climas húmedos y cálidos?",
+        "opciones": [
+          "Psilocybe cubensis",
+          "Boletus luridus",
+          "Leccinum scabrum",
+          "Russula xerampelina"
+        ],
+        "respuesta": "Psilocybe cubensis"
+      },
+      {
+        "pregunta": "¿Qué hongo forma un sombrero con superficie rugosa y color naranja?",
+        "opciones": [
+          "Lentinus tigrinus",
+          "Hebeloma crustuliniforme",
+          "Tricholoma flavovirens",
+          "Cortinarius bolaris"
+        ],
+        "respuesta": "Lentinus tigrinus"
+      },
+      {
+        "pregunta": "¿Qué hongo tiene una textura parecida al corcho y se usa en artesanías?",
+        "opciones": [
+          "Fomes fomentarius",
+          "Clavulina cristata",
+          "Hygrophoropsis aurantiaca",
+          "Amanita gemmata"
+        ],
+        "respuesta": "Fomes fomentarius"
+      },
+      {
+        "pregunta": "¿Qué hongo tiene esporas negras y forma masas sobre el suelo selvático?",
+        "opciones": [
+          "Aspergillus niger",
+          "Ganoderma applanatum",
+          "Pleurotus pulmonarius",
+          "Agaricus arvensis"
+        ],
+        "respuesta": "Aspergillus niger"
+      },
+      {
+        "pregunta": "¿Qué hongo puede crecer rápidamente después de lluvias intensas en la selva?",
+        "opciones": [
+          "Panaeolus cyanescens",
+          "Hygrocybe miniata",
+          "Inonotus hispidus",
+          "Mycena galericulata"
+        ],
+        "respuesta": "Panaeolus cyanescens"
+      },
+      {
+        "pregunta": "¿Qué hongo tropical puede formar estructuras de gran tamaño en troncos caídos?",
+        "opciones": [
+          "Polyporus giganteus",
+          "Russula nigricans",
+          "Amanita vaginata",
+          "Tricholoma terreum"
+        ],
+        "respuesta": "Polyporus giganteus"
+      },
+      {
+        "pregunta": "¿Qué hongo forma cuerpos fructíferos en forma de coral?",
+        "opciones": [
+          "Ramaria spp.",
+          "Collybia fusipes",
+          "Psathyrella hydrophila",
+          "Entoloma rhodopolium"
+        ],
+        "respuesta": "Ramaria spp."
+      },
+      {
+        "pregunta": "¿Qué hongo tiene una estructura ramificada y frágil como de esponja?",
+        "opciones": [
+          "Xylaria hypoxylon",
+          "Lactarius rufus",
+          "Suillus granulatus",
+          "Hygrophorus camarophyllus"
+        ],
+        "respuesta": "Xylaria hypoxylon"
+      },
+      {
+        "pregunta": "¿Qué hongo de la selva puede emitir compuestos antibacterianos naturales?",
+        "opciones": [
+          "Penicillium chrysogenum",
+          "Clitocybe gibba",
+          "Lepista flaccida",
+          "Agaricus silvaticus"
+        ],
+        "respuesta": "Penicillium chrysogenum"
+      },
+      {
+        "pregunta": "¿Qué hongo es blanco, pequeño, y forma grandes colonias sobre madera húmeda?",
+        "opciones": [
+          "Mycena spp.",
+          "Gymnopilus junonius",
+          "Boletus satanas",
+          "Coprinopsis atramentaria"
+        ],
+        "respuesta": "Mycena spp."
+      },
+      {
+        "pregunta": "¿Qué hongo del Amazonas tiene un sombrero viscoso y superficie brillante?",
+        "opciones": [
+          "Gliophorus laetus",
+          "Paxillus involutus",
+          "Hypholoma fasciculare",
+          "Leccinum versipelle"
+        ],
+        "respuesta": "Gliophorus laetus"
+      },
+      {
+        "pregunta": "¿Qué hongo forma filamentos blancos que parecen raíces en descomposición?",
+        "opciones": [
+          "Rhizomorpha spp.",
+          "Tylopilus felleus",
+          "Pluteus umbrosus",
+          "Amanita citrina"
+        ],
+        "respuesta": "Rhizomorpha spp."
+      },
+      {
+        "pregunta": "¿Qué hongo tropical produce un sombrero delgado y translúcido?",
+        "opciones": [
+          "Marasmiellus candidus",
+          "Lactarius indigo",
+          "Pleurotus eryngii",
+          "Hygrophorus russula"
+        ],
+        "respuesta": "Marasmiellus candidus"
       }
     ]
   },
-      "Frutas": {
+  "Frutas": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta amazónica es conocida por su alto contenido de vitamina C?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Camu camu",
+          "Maracuyá",
+          "Banana",
+          "Guayaba"
         ],
-        "respuesta": "d"
+        "respuesta": "Camu camu"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta selvática tiene una cáscara gruesa y púas exteriores?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Durio",
+          "Noni",
+          "Bacaba",
+          "Pitanga"
         ],
-        "respuesta": "d"
+        "respuesta": "Durio"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta amazónica tiene un sabor ácido y se usa en jugos refrescantes?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Arazá",
+          "Carambola",
+          "Cocona",
+          "Tamarindo"
         ],
-        "respuesta": "d"
+        "respuesta": "Arazá"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta de la selva tiene una pulpa blanca y semilla negra grande?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Guanábana",
+          "Mamey",
+          "Mango",
+          "Anona"
         ],
-        "respuesta": "d"
+        "respuesta": "Guanábana"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta silvestre amazónica es pequeña, morada y se consume en batidos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Açaí",
+          "Huito",
+          "Uvaia",
+          "Lúcuma"
         ],
-        "respuesta": "d"
+        "respuesta": "Açaí"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta amazónica tiene un sabor amargo y propiedades medicinales?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Noni",
+          "Camu camu",
+          "Cupuaçu",
+          "Acerola"
         ],
-        "respuesta": "d"
+        "respuesta": "Noni"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta de la selva tiene una cáscara gruesa y peluda, similar al cacao?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Cupuaçu",
+          "Cacao",
+          "Lúcuma",
+          "Carambola"
         ],
-        "respuesta": "d"
+        "respuesta": "Cupuaçu"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta selvática tiene forma de estrella cuando se corta?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Carambola",
+          "Maracuyá",
+          "Pitanga",
+          "Papaya"
         ],
-        "respuesta": "d"
+        "respuesta": "Carambola"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta amazónica es también conocida como maracuyá?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Fruta de la pasión",
+          "Guaba",
+          "Nance",
+          "Uvilla"
         ],
-        "respuesta": "d"
+        "respuesta": "Fruta de la pasión"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué fruta amazónica se encuentra en racimos y tiene un tono rojizo oscuro?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Bacaba",
+          "Guaraná",
+          "Araçá-boi",
+          "Mangostán"
         ],
-        "respuesta": "d"
+        "respuesta": "Bacaba"
+      },
+      {
+        "pregunta": "¿Qué fruta se usa tradicionalmente para preparar una bebida energizante amazónica?",
+        "opciones": [
+          "Guaraná",
+          "Taperibá",
+          "Huito",
+          "Mamey"
+        ],
+        "respuesta": "Guaraná"
+      },
+      {
+        "pregunta": "¿Qué fruta de la selva tiene una pulpa de color púrpura y se tiñe fácilmente la piel?",
+        "opciones": [
+          "Huito",
+          "Aguaje",
+          "Noni",
+          "Camu camu"
+        ],
+        "respuesta": "Huito"
+      },
+      {
+        "pregunta": "¿Qué fruta tropical se considera afrodisíaca y tiene alto contenido de fitoestrógenos?",
+        "opciones": [
+          "Aguaje",
+          "Lúcuma",
+          "Uchuva",
+          "Pomarrosa"
+        ],
+        "respuesta": "Aguaje"
+      },
+      {
+        "pregunta": "¿Qué fruta de la selva es pequeña, roja y tiene forma similar a una cereza?",
+        "opciones": [
+          "Pitanga",
+          "Camu camu",
+          "Uvilla",
+          "Guinda"
+        ],
+        "respuesta": "Pitanga"
+      },
+      {
+        "pregunta": "¿Qué fruta selvática se utiliza en mermeladas y tiene sabor agrio?",
+        "opciones": [
+          "Cocona",
+          "Mango",
+          "Pomarrosa",
+          "Uvaia"
+        ],
+        "respuesta": "Cocona"
+      },
+      {
+        "pregunta": "¿Qué fruta selvática tiene una semilla grande y una pulpa dulce-anaranjada?",
+        "opciones": [
+          "Mamey",
+          "Chirimoya",
+          "Uchuva",
+          "Guaba"
+        ],
+        "respuesta": "Mamey"
+      },
+      {
+        "pregunta": "¿Qué fruta tiene cáscara verde, forma de vaina y pulpa blanca dulce?",
+        "opciones": [
+          "Guaba",
+          "Camu camu",
+          "Lúcuma",
+          "Carambola"
+        ],
+        "respuesta": "Guaba"
+      },
+      {
+        "pregunta": "¿Qué fruta amazónica se parece a un pequeño tomate amarillo y es muy ácida?",
+        "opciones": [
+          "Uvilla",
+          "Uvaia",
+          "Camu camu",
+          "Taperibá"
+        ],
+        "respuesta": "Uvilla"
+      },
+      {
+        "pregunta": "¿Qué fruta tiene una cáscara rugosa y forma redonda, muy usada en jugos?",
+        "opciones": [
+          "Taperibá",
+          "Cacao",
+          "Açaí",
+          "Durio"
+        ],
+        "respuesta": "Taperibá"
+      },
+      {
+        "pregunta": "¿Qué fruta amazónica tiene semillas envueltas en una pulpa blanca mucilaginosa?",
+        "opciones": [
+          "Cacao",
+          "Araçá",
+          "Pomarrosa",
+          "Lúcuma"
+        ],
+        "respuesta": "Cacao"
+      },
+      {
+        "pregunta": "¿Qué fruta amazónica tiene una pulpa seca, sabor dulce y se usa en postres?",
+        "opciones": [
+          "Lúcuma",
+          "Cocona",
+          "Guaraná",
+          "Aguaje"
+        ],
+        "respuesta": "Lúcuma"
+      },
+      {
+        "pregunta": "¿Qué fruta selvática tiene una cáscara rosa y aroma floral?",
+        "opciones": [
+          "Pomarrosa",
+          "Pitanga",
+          "Maracuyá",
+          "Noni"
+        ],
+        "respuesta": "Pomarrosa"
+      },
+      {
+        "pregunta": "¿Qué fruta tropical amazónica puede tener propiedades antivirales?",
+        "opciones": [
+          "Acerola",
+          "Uchuva",
+          "Durio",
+          "Bacaba"
+        ],
+        "respuesta": "Acerola"
+      },
+      {
+        "pregunta": "¿Qué fruta de la selva tiene sabor agridulce y se parece a una uva grande?",
+        "opciones": [
+          "Uvaia",
+          "Maracuyá",
+          "Mangostán",
+          "Chirimoya"
+        ],
+        "respuesta": "Uvaia"
+      },
+      {
+        "pregunta": "¿Qué fruta tiene una corteza gruesa, pulpa gelatinosa y es originaria del sudeste asiático pero adaptada en la selva?",
+        "opciones": [
+          "Mangostán",
+          "Guaba",
+          "Nance",
+          "Taperibá"
+        ],
+        "respuesta": "Mangostán"
+      },
+      {
+        "pregunta": "¿Qué fruta selvática tiene un alto contenido de antioxidantes y es de color rojo intenso?",
+        "opciones": [
+          "Nance",
+          "Pitanga",
+          "Uvilla",
+          "Acerola"
+        ],
+        "respuesta": "Nance"
+      },
+      {
+        "pregunta": "¿Qué fruta amazónica tiene una piel fina y pulpa ácida usada para bebidas fermentadas?",
+        "opciones": [
+          "Araçá",
+          "Bacaba",
+          "Guaraná",
+          "Durio"
+        ],
+        "respuesta": "Araçá"
+      },
+      {
+        "pregunta": "¿Qué fruta es considerada un superalimento por sus beneficios a la visión y piel?",
+        "opciones": [
+          "Uchuva",
+          "Açaí",
+          "Pomarrosa",
+          "Guaba"
+        ],
+        "respuesta": "Uchuva"
+      },
+      {
+        "pregunta": "¿Qué fruta de la selva tiene una forma ovalada, es dulce, y se usa en helados?",
+        "opciones": [
+          "Chirimoya",
+          "Lúcuma",
+          "Mangostán",
+          "Durio"
+        ],
+        "respuesta": "Chirimoya"
+      },
+      {
+        "pregunta": "¿Qué fruta selvática, parecida al tomate, tiene un sabor entre dulce y ácido?",
+        "opciones": [
+          "Tamarillo",
+          "Carambola",
+          "Uvilla",
+          "Pomarrosa"
+        ],
+        "respuesta": "Tamarillo"
       }
     ]
   },
-      "Reptiles": {
+  "Reptiles": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué reptil selvático es conocido por su gran tamaño y hábitos acuáticos en la Amazonía?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Anaconda verde",
+          "Iguana",
+          "Boa esmeralda",
+          "Caimán negro"
         ],
-        "respuesta": "d"
+        "respuesta": "Anaconda verde"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué reptil amazónico puede alcanzar los 6 metros y es uno de los cocodrilos más grandes de Sudamérica?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Caimán negro",
+          "Tortuga matamata",
+          "Iguana",
+          "Teju"
         ],
-        "respuesta": "d"
+        "respuesta": "Caimán negro"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué reptil selvático tiene una apariencia de hoja seca y una cabeza triangular?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Tortuga matamata",
+          "Caimán",
+          "Serpiente coral",
+          "Anaconda"
         ],
-        "respuesta": "d"
+        "respuesta": "Tortuga matamata"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué lagarto selvático es excelente nadador y se camufla en los árboles?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Iguana verde",
+          "Teju",
+          "Lagarto basilisco",
+          "Camaleón"
         ],
-        "respuesta": "d"
+        "respuesta": "Iguana verde"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué reptil tiene escamas brillantes, ojos rojos y vive en la copa de los árboles en la selva tropical?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Boa esmeralda",
+          "Anaconda",
+          "Caimán",
+          "Teju"
         ],
-        "respuesta": "d"
+        "respuesta": "Boa esmeralda"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué reptil es famoso por correr sobre el agua en su hábitat selvático?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Basilisco",
+          "Iguana",
+          "Matamata",
+          "Gecko"
         ],
-        "respuesta": "d"
+        "respuesta": "Basilisco"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué reptil amazónico tiene una lengua bífida y es conocido por sus colores llamativos y venenosos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Serpiente coral",
+          "Boa arcoíris",
+          "Tortuga charapa",
+          "Camaleón"
         ],
-        "respuesta": "d"
+        "respuesta": "Serpiente coral"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué reptil amazónico tiene manchas negras sobre un fondo amarillo o verde y no es venenoso?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Boa constrictora",
+          "Serpiente coral",
+          "Iguana",
+          "Anaconda"
         ],
-        "respuesta": "d"
+        "respuesta": "Boa constrictora"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué especie de tortuga selvática es una de las más grandes de Sudamérica?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Tortuga charapa",
+          "Tortuga matamata",
+          "Tortuga mordedora",
+          "Tortuga cabeza plana"
         ],
-        "respuesta": "d"
+        "respuesta": "Tortuga charapa"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué lagarto selvático tiene lengua azul y cuerpo robusto, conocido en regiones tropicales?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Teju",
+          "Gecko",
+          "Iguana",
+          "Caimán"
         ],
-        "respuesta": "d"
+        "respuesta": "Teju"
+      },
+      {
+        "pregunta": "¿Qué reptil tiene escamas iridiscentes y vive en zonas húmedas de la selva?",
+        "opciones": [
+          "Boa arcoíris",
+          "Serpiente liana",
+          "Caimán",
+          "Lagarto basilisco"
+        ],
+        "respuesta": "Boa arcoíris"
+      },
+      {
+        "pregunta": "¿Qué reptil amazónico se caracteriza por su cuello largo y apariencia prehistórica?",
+        "opciones": [
+          "Tortuga matamata",
+          "Iguana",
+          "Camaleón",
+          "Boa constrictora"
+        ],
+        "respuesta": "Tortuga matamata"
+      },
+      {
+        "pregunta": "¿Qué lagarto selvático puede cambiar de color para camuflarse?",
+        "opciones": [
+          "Camaleón",
+          "Gecko",
+          "Basilisco",
+          "Iguana verde"
+        ],
+        "respuesta": "Camaleón"
+      },
+      {
+        "pregunta": "¿Qué pequeño reptil tiene almohadillas en los dedos que le permiten trepar superficies lisas?",
+        "opciones": [
+          "Gecko",
+          "Teju",
+          "Iguana",
+          "Lagarto basilisco"
+        ],
+        "respuesta": "Gecko"
+      },
+      {
+        "pregunta": "¿Qué reptil amazónico es conocido por su lengua pegajosa y sus ojos que se mueven de forma independiente?",
+        "opciones": [
+          "Camaleón",
+          "Gecko",
+          "Serpiente",
+          "Lagarto esmeralda"
+        ],
+        "respuesta": "Camaleón"
+      },
+      {
+        "pregunta": "¿Qué serpiente de la selva se camufla perfectamente en la vegetación por su forma y color?",
+        "opciones": [
+          "Serpiente liana",
+          "Anaconda",
+          "Boa constrictora",
+          "Cobra falsa"
+        ],
+        "respuesta": "Serpiente liana"
+      },
+      {
+        "pregunta": "¿Qué reptil sudamericano se considera un fósil viviente por su aspecto arcaico?",
+        "opciones": [
+          "Tortuga matamata",
+          "Tortuga charapa",
+          "Gecko",
+          "Boa esmeralda"
+        ],
+        "respuesta": "Tortuga matamata"
+      },
+      {
+        "pregunta": "¿Qué reptil tiene una mandíbula poderosa y se encuentra comúnmente en los ríos amazónicos?",
+        "opciones": [
+          "Caimán",
+          "Anaconda",
+          "Lagarto basilisco",
+          "Gecko"
+        ],
+        "respuesta": "Caimán"
+      },
+      {
+        "pregunta": "¿Qué serpiente no venenosa de la selva mata a sus presas por constricción?",
+        "opciones": [
+          "Boa constrictora",
+          "Serpiente coral",
+          "Serpiente liana",
+          "Cobra falsa"
+        ],
+        "respuesta": "Boa constrictora"
+      },
+      {
+        "pregunta": "¿Qué reptil puede regenerar su cola cuando la pierde como mecanismo de defensa?",
+        "opciones": [
+          "Gecko",
+          "Camaleón",
+          "Teju",
+          "Basilisco"
+        ],
+        "respuesta": "Gecko"
+      },
+      {
+        "pregunta": "¿Qué reptil amazónico se caracteriza por su gran agilidad y velocidad en el suelo?",
+        "opciones": [
+          "Teju",
+          "Iguana",
+          "Basilisco",
+          "Boa arcoíris"
+        ],
+        "respuesta": "Teju"
+      },
+      {
+        "pregunta": "¿Qué serpiente de la selva es confundida con una venenosa debido a su coloración imitadora?",
+        "opciones": [
+          "Cobra falsa",
+          "Serpiente liana",
+          "Boa esmeralda",
+          "Anaconda verde"
+        ],
+        "respuesta": "Cobra falsa"
+      },
+      {
+        "pregunta": "¿Qué reptil tiene hábitos principalmente nocturnos y vive bajo la hojarasca de la selva?",
+        "opciones": [
+          "Gecko amazónico",
+          "Caimán",
+          "Tortuga charapa",
+          "Iguana"
+        ],
+        "respuesta": "Gecko amazónico"
+      },
+      {
+        "pregunta": "¿Qué reptil pone huevos en nidos que a veces comparte con otras especies?",
+        "opciones": [
+          "Tortuga charapa",
+          "Boa",
+          "Camaleón",
+          "Caimán"
+        ],
+        "respuesta": "Tortuga charapa"
+      },
+      {
+        "pregunta": "¿Qué reptil amazónico tiene una cola prensil para sujetarse a las ramas?",
+        "opciones": [
+          "Iguana",
+          "Teju",
+          "Boa",
+          "Camaleón"
+        ],
+        "respuesta": "Iguana"
+      },
+      {
+        "pregunta": "¿Qué serpiente amazónica suele pasar la mayor parte de su vida en los árboles?",
+        "opciones": [
+          "Boa esmeralda",
+          "Anaconda",
+          "Boa arcoíris",
+          "Cobra falsa"
+        ],
+        "respuesta": "Boa esmeralda"
+      },
+      {
+        "pregunta": "¿Qué reptil amazónico se encuentra con frecuencia tomando el sol sobre troncos en los ríos?",
+        "opciones": [
+          "Caimán",
+          "Iguana",
+          "Tortuga charapa",
+          "Gecko"
+        ],
+        "respuesta": "Caimán"
+      },
+      {
+        "pregunta": "¿Qué reptil de la selva tropical puede almacenar oxígeno en su cloaca para bucear más tiempo?",
+        "opciones": [
+          "Tortuga acuática",
+          "Anaconda",
+          "Boa constrictora",
+          "Gecko"
+        ],
+        "respuesta": "Tortuga acuática"
+      },
+      {
+        "pregunta": "¿Qué reptil de la selva posee glándulas venenosas, aunque no es una serpiente?",
+        "opciones": [
+          "Lagarto venenoso",
+          "Gecko",
+          "Iguana",
+          "Tortuga matamata"
+        ],
+        "respuesta": "Lagarto venenoso"
+      },
+      {
+        "pregunta": "¿Qué reptil amazónico posee una piel con patrones que simulan la luz del sol filtrada por hojas?",
+        "opciones": [
+          "Boa arcoíris",
+          "Teju",
+          "Anaconda",
+          "Serpiente liana"
+        ],
+        "respuesta": "Boa arcoíris"
       }
     ]
   },
-      "Flores": {
+  "Flores": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor de la selva amazónica es conocida por su tamaño gigantesco y flotar en el agua?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Victoria amazónica",
+          "Heliconia",
+          "Flor de cacao",
+          "Orquídea negra"
         ],
-        "respuesta": "d"
+        "respuesta": "Victoria amazónica"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor selvática tiene una forma parecida a una garra y colores intensos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Heliconia",
+          "Bromelia",
+          "Pasiflora",
+          "Orquídea azul"
         ],
-        "respuesta": "d"
+        "respuesta": "Heliconia"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor exótica de la selva tiene pétalos morados y se asocia al fruto de la pasión?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Pasiflora",
+          "Flor de cacao",
+          "Heliconia",
+          "Flor de guayaba"
         ],
-        "respuesta": "d"
+        "respuesta": "Pasiflora"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor es parte del árbol del que se obtiene chocolate?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Flor de cacao",
+          "Flor de vainilla",
+          "Orquídea amarilla",
+          "Flor de achiote"
         ],
-        "respuesta": "d"
+        "respuesta": "Flor de cacao"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor selvática es en realidad una inflorescencia y pertenece a una familia de bromelias?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Bromelia",
+          "Heliconia",
+          "Flor de ceibo",
+          "Pasiflora"
         ],
-        "respuesta": "d"
+        "respuesta": "Bromelia"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor amazónica tiene una relación simbiótica con ciertos murciélagos polinizadores?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Flor de platanillo",
+          "Victoria amazónica",
+          "Orquídea tigre",
+          "Flor de cacao"
         ],
-        "respuesta": "d"
+        "respuesta": "Flor de platanillo"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor de la selva emite un olor fuerte para atraer polinizadores nocturnos?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Flor cadáver",
+          "Orquídea negra",
+          "Bromelia",
+          "Heliconia"
         ],
-        "respuesta": "d"
+        "respuesta": "Flor cadáver"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor selvática se distingue por su color blanco puro y es muy utilizada en medicina tradicional?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Flor de guayusa",
+          "Pasiflora",
+          "Flor de cacao",
+          "Flor de plátano"
         ],
-        "respuesta": "d"
+        "respuesta": "Flor de guayusa"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor selvática se encuentra en la planta de donde se obtiene la vainilla?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Flor de vainilla",
+          "Orquídea tigre",
+          "Flor de ceibo",
+          "Flor de achiote"
         ],
-        "respuesta": "d"
+        "respuesta": "Flor de vainilla"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué flor es símbolo nacional de Argentina y también se encuentra en regiones selváticas del norte?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Flor de ceibo",
+          "Flor de cacao",
+          "Heliconia",
+          "Pasiflora"
         ],
-        "respuesta": "d"
+        "respuesta": "Flor de ceibo"
+      },
+      {
+        "pregunta": "¿Qué flor silvestre de la selva tiene pétalos que recuerdan al rostro de un mono?",
+        "opciones": [
+          "Orquídea cara de mono",
+          "Flor de cacao",
+          "Flor de guayaba",
+          "Bromelia"
+        ],
+        "respuesta": "Orquídea cara de mono"
+      },
+      {
+        "pregunta": "¿Qué flor exótica de la selva tiene un diseño que se asemeja a un tigre?",
+        "opciones": [
+          "Orquídea tigre",
+          "Flor de cacao",
+          "Heliconia",
+          "Flor de ceibo"
+        ],
+        "respuesta": "Orquídea tigre"
+      },
+      {
+        "pregunta": "¿Qué flor amazónica crece directamente del tronco de los árboles en lugar de las ramas?",
+        "opciones": [
+          "Flor de cacao",
+          "Flor de achiote",
+          "Orquídea azul",
+          "Flor de guayusa"
+        ],
+        "respuesta": "Flor de cacao"
+      },
+      {
+        "pregunta": "¿Qué flor selvática es famosa por su forma de corazón invertido y color púrpura brillante?",
+        "opciones": [
+          "Orquídea corazón",
+          "Heliconia",
+          "Bromelia",
+          "Flor de platanillo"
+        ],
+        "respuesta": "Orquídea corazón"
+      },
+      {
+        "pregunta": "¿Qué flor de la selva es conocida por almacenar agua en su base para animales pequeños?",
+        "opciones": [
+          "Bromelia",
+          "Heliconia",
+          "Flor de cacao",
+          "Orquídea negra"
+        ],
+        "respuesta": "Bromelia"
+      },
+      {
+        "pregunta": "¿Qué flor selvática tiene propiedades medicinales y se usa para tratar problemas respiratorios?",
+        "opciones": [
+          "Flor de guayusa",
+          "Pasiflora",
+          "Orquídea azul",
+          "Flor de ceibo"
+        ],
+        "respuesta": "Flor de guayusa"
+      },
+      {
+        "pregunta": "¿Qué flor selvática se desarrolla en condiciones de sombra bajo el dosel?",
+        "opciones": [
+          "Orquídea negra",
+          "Flor de plátano",
+          "Flor de achiote",
+          "Flor de cacao"
+        ],
+        "respuesta": "Orquídea negra"
+      },
+      {
+        "pregunta": "¿Qué flor se asocia al fruto del guaraná, común en la selva brasileña?",
+        "opciones": [
+          "Flor de guaraná",
+          "Flor de guayaba",
+          "Flor de ceibo",
+          "Pasiflora"
+        ],
+        "respuesta": "Flor de guaraná"
+      },
+      {
+        "pregunta": "¿Qué flor exótica florece solo una vez al año y por pocas horas en la selva húmeda?",
+        "opciones": [
+          "Flor cadáver",
+          "Orquídea tigre",
+          "Flor de cacao",
+          "Flor de guayusa"
+        ],
+        "respuesta": "Flor cadáver"
+      },
+      {
+        "pregunta": "¿Qué flor selvática es utilizada por comunidades indígenas como tinte natural rojo?",
+        "opciones": [
+          "Flor de achiote",
+          "Flor de ceibo",
+          "Flor de plátano",
+          "Orquídea negra"
+        ],
+        "respuesta": "Flor de achiote"
+      },
+      {
+        "pregunta": "¿Qué flor selvática crece entre las hojas del plátano y sirve como ornamento en muchos países tropicales?",
+        "opciones": [
+          "Flor de plátano",
+          "Heliconia",
+          "Flor de guayaba",
+          "Flor de guaraná"
+        ],
+        "respuesta": "Flor de plátano"
+      },
+      {
+        "pregunta": "¿Qué flor amazónica se caracteriza por su simetría casi perfecta y color violeta intenso?",
+        "opciones": [
+          "Orquídea violeta",
+          "Pasiflora",
+          "Flor de cacao",
+          "Flor de ceibo"
+        ],
+        "respuesta": "Orquídea violeta"
+      },
+      {
+        "pregunta": "¿Qué flor se encuentra en la selva y tiene usos tanto decorativos como espirituales para rituales indígenas?",
+        "opciones": [
+          "Flor de guayaba",
+          "Flor de vainilla",
+          "Flor de achiote",
+          "Bromelia"
+        ],
+        "respuesta": "Flor de guayaba"
+      },
+      {
+        "pregunta": "¿Qué flor selvática puede crecer hasta 3 metros de altura y tiene forma de antorcha?",
+        "opciones": [
+          "Flor antorcha",
+          "Flor de cacao",
+          "Heliconia",
+          "Flor de guaraná"
+        ],
+        "respuesta": "Flor antorcha"
+      },
+      {
+        "pregunta": "¿Qué flor es famosa por su uso en perfumería y tiene origen selvático?",
+        "opciones": [
+          "Flor de vainilla",
+          "Flor de ceibo",
+          "Flor de plátano",
+          "Orquídea negra"
+        ],
+        "respuesta": "Flor de vainilla"
+      },
+      {
+        "pregunta": "¿Qué flor se encuentra en lianas y emite un aroma dulce durante la noche?",
+        "opciones": [
+          "Flor de bejuco",
+          "Flor de cacao",
+          "Pasiflora",
+          "Heliconia"
+        ],
+        "respuesta": "Flor de bejuco"
+      },
+      {
+        "pregunta": "¿Qué flor silvestre de la selva tiene un diseño natural en espiral?",
+        "opciones": [
+          "Flor espiral",
+          "Bromelia",
+          "Flor de cacao",
+          "Orquídea violeta"
+        ],
+        "respuesta": "Flor espiral"
+      },
+      {
+        "pregunta": "¿Qué flor de la selva tiene un color azul eléctrico poco común en la naturaleza?",
+        "opciones": [
+          "Orquídea azul",
+          "Heliconia",
+          "Flor de ceibo",
+          "Flor de plátano"
+        ],
+        "respuesta": "Orquídea azul"
+      },
+      {
+        "pregunta": "¿Qué flor selvática forma parte de un sistema ecológico clave para ranas, insectos y aves pequeñas?",
+        "opciones": [
+          "Bromelia",
+          "Flor de guayaba",
+          "Flor de cacao",
+          "Flor de achiote"
+        ],
+        "respuesta": "Bromelia"
       }
     ]
   },
-      "Selvas": {
+  "Selvas": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Cuál es la selva tropical más grande del mundo?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Amazonas",
+          "Congo",
+          "Sundarbans",
+          "Daintree"
         ],
-        "respuesta": "d"
+        "respuesta": "Amazonas"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿En qué continente se encuentra la selva del Congo?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "África",
+          "Asia",
+          "Sudamérica",
+          "Oceanía"
         ],
-        "respuesta": "d"
+        "respuesta": "África"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué selva forma el delta fluvial más grande del mundo y se encuentra entre India y Bangladesh?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Sundarbans",
+          "Amazonas",
+          "Daintree",
+          "Congo"
         ],
-        "respuesta": "d"
+        "respuesta": "Sundarbans"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué selva tropical se considera una de las más antiguas del planeta y está en Australia?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Daintree",
+          "Amazonas",
+          "Borneo",
+          "Sundarbans"
         ],
-        "respuesta": "d"
+        "respuesta": "Daintree"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué selva se encuentra principalmente en la isla de Borneo?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Selva de Borneo",
+          "Amazonas",
+          "Congo",
+          "Chocó"
         ],
-        "respuesta": "d"
+        "respuesta": "Selva de Borneo"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué selva tropical se extiende por Colombia, Panamá y Ecuador?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Chocó",
+          "Amazonas",
+          "Sundarbans",
+          "Yungas"
         ],
-        "respuesta": "d"
+        "respuesta": "Chocó"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué selva se encuentra al este de los Andes y cubre gran parte del norte argentino?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Yungas",
+          "Amazonas",
+          "Congo",
+          "Daintree"
         ],
-        "respuesta": "d"
+        "respuesta": "Yungas"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Cuál es la principal amenaza actual para las selvas del mundo?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Deforestación",
+          "Erupciones volcánicas",
+          "Plagas naturales",
+          "Tormentas solares"
         ],
-        "respuesta": "d"
+        "respuesta": "Deforestación"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué tipo de clima predomina en las selvas tropicales?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Húmedo y cálido",
+          "Seco y frío",
+          "Árido",
+          "Templado"
         ],
-        "respuesta": "d"
+        "respuesta": "Húmedo y cálido"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué porcentaje de las especies del planeta se estima que vive en las selvas tropicales?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Más del 50%",
+          "Alrededor del 20%",
+          "Menos del 10%",
+          "Cerca del 70%"
         ],
-        "respuesta": "d"
+        "respuesta": "Más del 50%"
+      },
+      {
+        "pregunta": "¿Qué selva se extiende por varios países de América del Sur?",
+        "opciones": [
+          "Amazonas",
+          "Chocó",
+          "Yungas",
+          "Mato Grosso"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿Qué importante río fluye a través de la selva amazónica?",
+        "opciones": [
+          "Amazonas",
+          "Orinoco",
+          "Nilo",
+          "Yangtsé"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿Cuál es una de las principales funciones ecológicas de las selvas?",
+        "opciones": [
+          "Captura de carbono",
+          "Producción de hielo",
+          "Emisión de CO₂",
+          "Creación de desiertos"
+        ],
+        "respuesta": "Captura de carbono"
+      },
+      {
+        "pregunta": "¿Qué selva tropical alberga tigres de Bengala y manglares?",
+        "opciones": [
+          "Sundarbans",
+          "Congo",
+          "Amazonas",
+          "Borneo"
+        ],
+        "respuesta": "Sundarbans"
+      },
+      {
+        "pregunta": "¿Qué selva del sudeste asiático es conocida por su biodiversidad y amenaza por plantaciones de palma?",
+        "opciones": [
+          "Borneo",
+          "Congo",
+          "Yungas",
+          "Amazonas"
+        ],
+        "respuesta": "Borneo"
+      },
+      {
+        "pregunta": "¿Qué característica define a una selva primaria?",
+        "opciones": [
+          "Nunca ha sido alterada por humanos",
+          "Tiene muchas plantaciones",
+          "Es un desierto húmedo",
+          "Es usada para agricultura"
+        ],
+        "respuesta": "Nunca ha sido alterada por humanos"
+      },
+      {
+        "pregunta": "¿Qué selva se encuentra en la región noreste de Australia?",
+        "opciones": [
+          "Daintree",
+          "Congo",
+          "Sundarbans",
+          "Amazonas"
+        ],
+        "respuesta": "Daintree"
+      },
+      {
+        "pregunta": "¿Cuál es una selva tropical presente en América Central?",
+        "opciones": [
+          "Bosque del Darién",
+          "Congo",
+          "Daintree",
+          "Yungas"
+        ],
+        "respuesta": "Bosque del Darién"
+      },
+      {
+        "pregunta": "¿Qué selva tropical ha sido considerada el ‘pulmón del planeta’?",
+        "opciones": [
+          "Amazonas",
+          "Congo",
+          "Chocó",
+          "Yungas"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿Cuál de estas selvas se encuentra en África Central?",
+        "opciones": [
+          "Congo",
+          "Sundarbans",
+          "Amazonas",
+          "Daintree"
+        ],
+        "respuesta": "Congo"
+      },
+      {
+        "pregunta": "¿Qué selva de América del Sur es conocida por sus lluvias constantes y biodiversidad?",
+        "opciones": [
+          "Amazonas",
+          "Yungas",
+          "Chocó",
+          "Congo"
+        ],
+        "respuesta": "Chocó"
+      },
+      {
+        "pregunta": "¿Qué es una selva secundaria?",
+        "opciones": [
+          "Selva regenerada después de haber sido intervenida",
+          "Selva sin árboles",
+          "Desierto húmedo",
+          "Área urbanizada"
+        ],
+        "respuesta": "Selva regenerada después de haber sido intervenida"
+      },
+      {
+        "pregunta": "¿Qué producto comercial se extrae comúnmente de las selvas tropicales?",
+        "opciones": [
+          "Látex",
+          "Trigo",
+          "Cobre",
+          "Cemento"
+        ],
+        "respuesta": "Látex"
+      },
+      {
+        "pregunta": "¿Qué país contiene la mayor parte de la selva amazónica?",
+        "opciones": [
+          "Brasil",
+          "Colombia",
+          "Perú",
+          "Venezuela"
+        ],
+        "respuesta": "Brasil"
+      },
+      {
+        "pregunta": "¿Qué problema ecológico afecta más a las selvas tropicales actualmente?",
+        "opciones": [
+          "Tala ilegal",
+          "Erupciones volcánicas",
+          "Tormentas eléctricas",
+          "Migración animal"
+        ],
+        "respuesta": "Tala ilegal"
+      },
+      {
+        "pregunta": "¿Qué tipo de flora es más común en las selvas tropicales?",
+        "opciones": [
+          "Árboles altos y densos",
+          "Pinos",
+          "Cactus",
+          "Hierbas secas"
+        ],
+        "respuesta": "Árboles altos y densos"
+      },
+      {
+        "pregunta": "¿Qué país africano contiene una gran parte de la selva del Congo?",
+        "opciones": [
+          "República Democrática del Congo",
+          "Sudáfrica",
+          "Etiopía",
+          "Marruecos"
+        ],
+        "respuesta": "República Democrática del Congo"
+      },
+      {
+        "pregunta": "¿Qué tipo de suelos suelen tener las selvas tropicales?",
+        "opciones": [
+          "Pobres en nutrientes",
+          "Ricos en minerales",
+          "Suelos helados",
+          "Volcánicos"
+        ],
+        "respuesta": "Pobres en nutrientes"
+      },
+      {
+        "pregunta": "¿Qué causa que las copas de los árboles en la selva formen una capa densa?",
+        "opciones": [
+          "Competencia por la luz",
+          "Falta de lluvia",
+          "Animales pesados",
+          "Tormentas constantes"
+        ],
+        "respuesta": "Competencia por la luz"
+      },
+      {
+        "pregunta": "¿Qué característica del clima hace que las selvas mantengan tanta biodiversidad?",
+        "opciones": [
+          "Alta humedad y temperatura constante",
+          "Heladas frecuentes",
+          "Tormentas de nieve",
+          "Vientos secos"
+        ],
+        "respuesta": "Alta humedad y temperatura constante"
       }
     ]
   },
-      "Rios": {
+  "Rios": {
     "preguntas": [
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río atraviesa la selva amazónica y es uno de los más caudalosos del mundo?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Amazonas",
+          "Orinoco",
+          "Ucayali",
+          "Negro"
         ],
-        "respuesta": "d"
+        "respuesta": "Amazonas"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río recorre la selva del Congo en África central?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Congo",
+          "Nilo",
+          "Zambeze",
+          "Niger"
         ],
-        "respuesta": "d"
+        "respuesta": "Congo"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río se considera uno de los principales afluentes del Amazonas desde Perú?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ucayali",
+          "Madeira",
+          "Putumayo",
+          "Japurá"
         ],
-        "respuesta": "d"
+        "respuesta": "Ucayali"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río cruza la densa selva del Darién entre Panamá y Colombia?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Tuira",
+          "Magdalena",
+          "San Juan",
+          "Atrato"
         ],
-        "respuesta": "d"
+        "respuesta": "Tuira"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río forma un gran delta en la selva de manglares de los Sundarbans?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ganges",
+          "Brahmaputra",
+          "Indo",
+          "Irrawaddy"
         ],
-        "respuesta": "d"
+        "respuesta": "Ganges"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río atraviesa parte de la selva tropical del sudeste asiático y pasa por Laos, Tailandia y Camboya?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Mekong",
+          "Salween",
+          "Chao Phraya",
+          "Irrawaddy"
         ],
-        "respuesta": "d"
+        "respuesta": "Mekong"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río de África central fluye por una región de selva densa antes de desembocar en el Atlántico?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Ogooué",
+          "Congo",
+          "Limpopo",
+          "Kasai"
         ],
-        "respuesta": "d"
+        "respuesta": "Ogooué"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río forma parte de la cuenca amazónica y nace en Colombia, cruzando selvas densas?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Putumayo",
+          "Meta",
+          "Cauca",
+          "Magdalena"
         ],
-        "respuesta": "d"
+        "respuesta": "Putumayo"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río pasa por la selva tropical del sur de Venezuela y contribuye al Orinoco?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Caura",
+          "Caroní",
+          "Apure",
+          "Guaviare"
         ],
-        "respuesta": "d"
+        "respuesta": "Caura"
       },
       {
-        "pregunta": "",
+        "pregunta": "¿Qué río recorre la selva de la región amazónica del Ecuador?",
         "opciones": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Napo",
+          "Marañón",
+          "Ucayali",
+          "Tocantins"
         ],
-        "respuesta": "d"
+        "respuesta": "Napo"
+      },
+      {
+        "pregunta": "¿Qué río brasileño atraviesa la selva amazónica oriental antes de desembocar en el Atlántico?",
+        "opciones": [
+          "Tocantins",
+          "São Francisco",
+          "Paraná",
+          "Araguaia"
+        ],
+        "respuesta": "Tocantins"
+      },
+      {
+        "pregunta": "¿Qué río alimenta la selva pantanosa de los Llanos del Orinoco?",
+        "opciones": [
+          "Apure",
+          "Guaviare",
+          "Meta",
+          "Caquetá"
+        ],
+        "respuesta": "Apure"
+      },
+      {
+        "pregunta": "¿Qué río africano fluye por la región selvática de Guinea Ecuatorial y Gabón?",
+        "opciones": [
+          "Mbini",
+          "Zambeze",
+          "Ubangi",
+          "Kasai"
+        ],
+        "respuesta": "Mbini"
+      },
+      {
+        "pregunta": "¿Qué río conecta varias selvas entre Bolivia y Brasil?",
+        "opciones": [
+          "Guaporé",
+          "Mamore",
+          "Madeira",
+          "Tapajós"
+        ],
+        "respuesta": "Guaporé"
+      },
+      {
+        "pregunta": "¿Qué río nace en la selva tropical de los Andes peruanos y se une al Amazonas?",
+        "opciones": [
+          "Marañón",
+          "Ucayali",
+          "Napo",
+          "Putumayo"
+        ],
+        "respuesta": "Marañón"
+      },
+      {
+        "pregunta": "¿Qué río fluye por la selva tropical del Chocó en Colombia?",
+        "opciones": [
+          "Atrato",
+          "Magdalena",
+          "San Juan",
+          "Meta"
+        ],
+        "respuesta": "Atrato"
+      },
+      {
+        "pregunta": "¿Qué río se considera uno de los afluentes más largos de la cuenca del Congo?",
+        "opciones": [
+          "Kasai",
+          "Ubangi",
+          "Zambeze",
+          "Ogooué"
+        ],
+        "respuesta": "Kasai"
+      },
+      {
+        "pregunta": "¿Qué río de Venezuela fluye por regiones selváticas y es navegable en parte?",
+        "opciones": [
+          "Caroní",
+          "Apure",
+          "Caura",
+          "Meta"
+        ],
+        "respuesta": "Caroní"
+      },
+      {
+        "pregunta": "¿Qué río atraviesa la selva tropical entre Bolivia y Perú?",
+        "opciones": [
+          "Madre de Dios",
+          "Mamoré",
+          "Beni",
+          "Desaguadero"
+        ],
+        "respuesta": "Madre de Dios"
+      },
+      {
+        "pregunta": "¿Qué río de África fluye por las selvas de Camerún y la República Centroafricana?",
+        "opciones": [
+          "Ubangi",
+          "Volta",
+          "Senegal",
+          "Nilo Blanco"
+        ],
+        "respuesta": "Ubangi"
+      },
+      {
+        "pregunta": "¿Qué río fluye entre las selvas tropicales de Guyana y Brasil?",
+        "opciones": [
+          "Essequibo",
+          "Negro",
+          "Tocantins",
+          "Amazonas"
+        ],
+        "respuesta": "Essequibo"
+      },
+      {
+        "pregunta": "¿Qué río surca la selva amazónica desde el norte de Brasil y es afluente del Amazonas?",
+        "opciones": [
+          "Negro",
+          "Juruá",
+          "Purus",
+          "Madeira"
+        ],
+        "respuesta": "Negro"
+      },
+      {
+        "pregunta": "¿Qué río forma parte de la selva atlántica entre Paraguay y Brasil?",
+        "opciones": [
+          "Paraná",
+          "Pilcomayo",
+          "Iguazú",
+          "Uruguay"
+        ],
+        "respuesta": "Iguazú"
+      },
+      {
+        "pregunta": "¿Qué río fluye por la selva del norte de Bolivia y forma parte de la cuenca amazónica?",
+        "opciones": [
+          "Beni",
+          "Desaguadero",
+          "Mamore",
+          "Guaporé"
+        ],
+        "respuesta": "Beni"
+      },
+      {
+        "pregunta": "¿Qué río atraviesa selvas de manglares en la costa pacífica de Colombia?",
+        "opciones": [
+          "San Juan",
+          "Atrato",
+          "Putumayo",
+          "Guapi"
+        ],
+        "respuesta": "San Juan"
+      },
+      {
+        "pregunta": "¿Qué río nace en la selva alta de Perú y se une al Ucayali para formar el Amazonas?",
+        "opciones": [
+          "Tambo",
+          "Urubamba",
+          "Napo",
+          "Marañón"
+        ],
+        "respuesta": "Tambo"
+      },
+      {
+        "pregunta": "¿Qué río recorre la selva tropical de Kalimantan en la isla de Borneo?",
+        "opciones": [
+          "Kapuas",
+          "Mahakam",
+          "Barito",
+          "Rajang"
+        ],
+        "respuesta": "Kapuas"
+      },
+      {
+        "pregunta": "¿Qué río malasio fluye por la selva de Sarawak en Borneo?",
+        "opciones": [
+          "Rajang",
+          "Kinabatangan",
+          "Kapuas",
+          "Mahakam"
+        ],
+        "respuesta": "Rajang"
+      },
+      {
+        "pregunta": "¿Qué río forma parte de la selva tropical del estado de Sabah, en Malasia?",
+        "opciones": [
+          "Kinabatangan",
+          "Rajang",
+          "Baram",
+          "Pahang"
+        ],
+        "respuesta": "Kinabatangan"
+      },
+      {
+        "pregunta": "¿Qué río recorre la selva amazónica desde Bolivia hacia Brasil y es navegable en su tramo bajo?",
+        "opciones": [
+          "Mamoré",
+          "Guaporé",
+          "Beni",
+          "Madeira"
+        ],
+        "respuesta": "Mamoré"
       }
     ]
   }
-
 }
