@@ -130,7 +130,7 @@ let progreso = {
   puntos: {},
   desbloqueadas: ['Animales', 'Plantas'],
   actualizado: null,
-  termino: false 
+  termino: false
 };
 
 // Guardar progreso
@@ -254,10 +254,10 @@ function renderMenu() {
     <div class="header">
     <div>Intentos: ${progreso.intentos}</div>
     <div>Total: ${totalPuntos} pts</div>
-    </div>
-    <button class="btn-anuncio" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-      Ver anuncio para +1 intento
+     <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
+      Ver anuncio
     </button>
+    </div>
     <div style="text-align: center;">
     <h2>Categorías</h2>
     </div>

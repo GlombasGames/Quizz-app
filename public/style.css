@@ -519,3 +519,11 @@ a:hover {
   /* Asegura que el cartel esté por encima */
   border: 1px solid #143f10;
 }
+
+.btn-anuncio-header {
+  font-size: 12px; /* Tamaño de texto más pequeño */
+  padding: 4px 8px; /* Reducir el relleno */
+  height: auto; /* Ajustar la altura */
+  width: auto; /* Ajustar el ancho */
+  margin-left: 8px; /* Separación del resto del contenido */
+}
