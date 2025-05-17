@@ -4,7 +4,7 @@ import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 const archivoUsuario = 'usuario.json';
-  const tiempoLimite = 90;
+  const tiempoLimite = 120;
 let version
 document.addEventListener('DOMContentLoaded', iniciar);
 
