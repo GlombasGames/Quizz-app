@@ -13,6 +13,7 @@ body {
 }
 
 #app {
+  margin-top: 60px;
   max-width: 600px;
   margin: 0 auto;
   padding: 16px;
@@ -59,7 +60,7 @@ button:hover {
 
 /* Estilo para botones deshabilitados */
 button:disabled {
- 
+
   /* Mismo color de fondo */
   color: white;
   /* Mismo color de texto */
@@ -133,19 +134,25 @@ button:disabled {
 
 /* Encabezado */
 .header {
-  display: flex;
-  justify-content:space-around;
-  align-items: center;
-  margin-bottom: 16px;
+  position: fixed;
+  /* Fija el encabezado en la parte superior */
+  top: 0;
+  /* Alinea el encabezado al borde superior */
+  left: 0;
+  /* Alinea el encabezado al borde izquierdo */
+  width: 100%;
+  /* Asegura que ocupe todo el ancho de la pantalla */
+  z-index: 1000;
+  /* Asegura que esté por encima de otros elementos */
   background: #0b2d0be6;
   /* Fondo primario */
   color: #FFFFFF;
   /* Texto claro */
   padding: 12px;
-  border-radius: 8px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 0;
+  /* Elimina bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Agrega una sombra para destacar */
 }
 
 .header div {
@@ -417,18 +424,23 @@ a:hover {
 .logo {
   margin-bottom: 5px;
   background-image: url('./assets/iconoTriviaSelva.png');
-  background-size: contain; /* Ajusta la imagen al contenedor sin recortarla */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center; /* Centra la imagen en el contenedor */
+  background-size: contain;
+  /* Ajusta la imagen al contenedor sin recortarla */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
+  background-position: center;
+  /* Centra la imagen en el contenedor */
   color: #fff;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  aspect-ratio: 1; /* Mantiene el contenedor cuadrado */
+  aspect-ratio: 1;
+  /* Mantiene el contenedor cuadrado */
   max-width: 300px;
   margin-top: -20px;
 }
+
 .cargando {
   margin-bottom: 18px;
   background: #000102;
@@ -444,7 +456,8 @@ a:hover {
   width: 100%;
   min-height: 100%;
   display: flex;
-  flex-direction: column;   /* <--- Esto es clave */
+  flex-direction: column;
+  /* <--- Esto es clave */
   align-items: center;
   justify-content: center;
 }
@@ -499,8 +512,10 @@ a:hover {
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  margin-top: -40px; /* Monta más el cartel sobre la imagen */
+  margin-top: -40px;
+  /* Monta más el cartel sobre la imagen */
   position: relative;
-  z-index: 2; /* Asegura que el cartel esté por encima */
+  z-index: 2;
+  /* Asegura que el cartel esté por encima */
   border: 1px solid #143f10;
 }
