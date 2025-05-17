@@ -4,7 +4,7 @@ import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 const archivoUsuario = 'usuario.json';
-  const tiempoLimite = 120;
+const tiempoLimite = 120;
 let version
 document.addEventListener('DOMContentLoaded', iniciar);
 
@@ -91,16 +91,14 @@ async function iniciarNotificaciones() {
     console.log('Token FCM:', token.token);
 
     // Enviar el token al servidor
-    if (tieneConexion()) {
-      await fetch('https://glombagames.ddns.net/registrar-token', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token: token.token })
-      });
-      console.log('Token registrado correctamente en el servidor.');
-    } else {
-      console.warn('No se pudo registrar el token porque no hay conexión.');
-    }
+
+    await fetch('https://glombagames.ddns.net/registrar-token', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: token.token })
+    });
+    console.log('Token registrado correctamente en el servidor.');
+
 
     // Manejar notificaciones recibidas
     PushNotifications.addListener('pushNotificationReceived', (notification) => {
@@ -114,7 +112,7 @@ async function iniciarNotificaciones() {
   } catch (err) {
     if (err.code === 'UNIMPLEMENTED') {
       console.log('Notificaciones no se aplican a WEB.');
-    }else{
+    } else {
       console.error('Error al inicializar notificaciones:', err);
     }
   }
