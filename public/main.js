@@ -253,10 +253,10 @@ function renderMenu() {
     </div>
     <div class="header">
     <div>Intentos: ${progreso.intentos}</div>
-    <div>Total: ${totalPuntos} pts</div>
      <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
       Ver anuncio
     </button>
+    <div>Total: ${totalPuntos} pts</div>
     </div>
     <div style="text-align: center;">
     <h2>Categorías</h2>

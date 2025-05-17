@@ -134,6 +134,7 @@ button:disabled {
 
 /* Encabezado */
 .header {
+  display: flex;
   position: fixed;
   /* Fija el encabezado en la parte superior */
   top: 0;
