@@ -216,6 +216,11 @@ function tieneConexion() {
 
 async function iniciar() {
   try {
+    // Mostrar un mensaje inicial
+    app.innerHTML = `<div class="cargando">
+    <img src="./assets/GlombaGames.png" alt="Pájaro" style="width:60%; height:220px; min-width:300px; display:block; margin:0 auto 16px auto;">
+    <div>
+    `;
 
     // Verificar si el servidor está disponible
     await verificarVersion();
