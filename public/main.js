@@ -252,9 +252,12 @@ function renderMenu() {
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>
     <div class="header">
-    <div>Intentos: ${progreso.intentos}</div>
-     <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-      Ver anuncio
+    <div style="display: flex;"> 
+    <img class="categoria-img" src="./assets/coin.png" alt="${cat}" onerror="this.src='./assets/pajaro.png'">
+    <p>${progreso.intentos}</p>
+    </div>
+    <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
+    Ver anuncio
     </button>
     <div>Total: ${totalPuntos} pts</div>
     </div>
