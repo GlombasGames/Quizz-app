@@ -315,10 +315,20 @@ async function jugarPartida(categoria) {
   const seleccionadas = preguntasPorCat
     .sort(() => Math.random() - 0.5)
     .slice(0, 10)
-    .map(pregunta => ({
-      ...pregunta,
-      opcionesMezcladas: [...pregunta.opciones].sort(() => Math.random() - 0.5) // Mezclar opciones una sola vez
-    }));
+    .map(pregunta => {
+      const opcionesMezcladas = [...pregunta.opciones].sort(() => Math.random() - 0.5);
+
+      // Verificar que la respuesta correcta esté incluida en las opciones mezcladas
+      if (!opcionesMezcladas.includes(pregunta.respuesta)) {
+        opcionesMezcladas.push(pregunta.respuesta);
+        opcionesMezcladas.sort(() => Math.random() - 0.5); // Mezclar nuevamente
+      }
+
+      return {
+        ...pregunta,
+        opcionesMezcladas
+      };
+    });
 
   let puntaje = 0;
   let index = 0;
@@ -342,19 +352,21 @@ async function jugarPartida(categoria) {
     const pregunta = seleccionadas[index];
 
     app.innerHTML = `
-      <div class="header">
-        <div>Tiempo: ${tiempoRestante}s</div>
-        <div>Pregunta ${index + 1} / 10</div>
-      </div>
-      <div class="pregunta">
-        <h2>${pregunta.pregunta}</h2>
-      </div>
-      <div class="respuestas">
-        ${pregunta.opcionesMezcladas.map(op => `
-          <button class="respuesta" onclick="responder('${op}')">${op}</button>
-        `).join('')}
-      </div>
-    `;
+    <div class="header">
+      <div>Tiempo: ${tiempoRestante}s</div>
+      <div>Pregunta ${index + 1} / 10</div>
+    </div>
+    <div class="pregunta">
+      <h2>${pregunta.pregunta}</h2>
+    </div>
+    <div class="respuestas">
+      ${pregunta.opcionesMezcladas.map(op => `
+        <button class="respuesta" onclick="responder('${op}')">
+          ${op === pregunta.respuesta ? `${op} <--correcta` : op}
+        </button>
+      `).join('')}
+    </div>
+  `;
   };
 
   window.responder = (opcionSeleccionada) => {
