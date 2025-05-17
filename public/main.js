@@ -145,7 +145,7 @@ async function pedirNombre() {
   progreso.nombre = nombre || 'Jugador';
   progreso.intentos = 3;
   progreso.puntos = {};
-  progreso.desbloqueadas = ['Animales', 'Plantas']; // Guardamos los nombres originales
+  progreso.desbloqueadas = ['Animales', 'Frutas']; // Guardamos los nombres originales
   progreso.actualizado = null;
   progreso.version = version
 
