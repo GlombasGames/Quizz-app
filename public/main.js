@@ -130,7 +130,7 @@ let progreso = {
   puntos: {},
   desbloqueadas: ['Animales', 'Plantas'],
   actualizado: null,
-  termino: false
+  termino: false 
 };
 
 // Guardar progreso
@@ -442,16 +442,6 @@ function checkDesbloqueos() {
       progreso.desbloqueadas.push(cat); // Guardamos el nombre original
       alert(`¡Desbloqueaste la categoría "${cat}"!`);
     }
-  }
-
-  // Verificar si todas las categorías están desbloqueadas
-  const todasDesbloqueadas = Object.keys(data).every(cat =>
-    progreso.desbloqueadas.includes(cat)
-  );
-
-  if (todasDesbloqueadas && !progreso.termino) {
-    alert("¡Felicitaciones terminaste la trivia!");
-    progreso.termino = true; // Marcar como completado
   }
 }
 
