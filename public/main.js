@@ -258,9 +258,6 @@ function renderMenu() {
     </button>
     <div>Total: ${totalPuntos} pts</div>
     </div>
-    <div style="text-align: center;">
-    <h2>Categorías</h2>
-    </div>
 ${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
