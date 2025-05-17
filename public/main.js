@@ -231,7 +231,7 @@ async function iniciar() {
     setTimeout(() => {
       // Renderiza el menú principal
       renderMenu();
-    }, 1000);
+    }, 2000);
 
   } catch (error) {
     console.error('Error al iniciar la aplicación:', error);
