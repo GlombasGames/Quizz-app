@@ -4,6 +4,7 @@ import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 const archivoUsuario = 'usuario.json';
+  const tiempoLimite = 90;
 let version
 document.addEventListener('DOMContentLoaded', iniciar);
 
@@ -323,7 +324,7 @@ async function jugarPartida(categoria) {
 
   let puntaje = 0;
   let index = 0;
-  const tiempoLimite = 60;
+
   let tiempoRestante = tiempoLimite;
   let timer;
 
