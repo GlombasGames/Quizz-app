@@ -149,7 +149,6 @@ button:disabled {
   padding: 0; /* Elimina el relleno interno */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   height: 60px; /* Altura fija para el header */
-  border-radius: 10px;
 }
 
 .header-item {
@@ -157,8 +156,6 @@ button:disabled {
   display: flex; /* Activa Flexbox dentro del div */
   align-items: center; /* Centra verticalmente los elementos internos */
   justify-content: center; /* Centra horizontalmente los elementos internos */
-  font-size: 1.5em;
-  font-weight: bold;
   margin: 0; /* Elimina márgenes */
   padding: 0; /* Elimina rellenos */
   height: 100%; /* Asegura que el contenedor tenga una altura consistente */
@@ -181,7 +178,7 @@ button:disabled {
   height: 100%; /* Ocupa toda la altura del contenedor */
   width: auto; /* Ajusta el ancho automáticamente */
   background: linear-gradient(90deg, #ffe066 0%, #ffd60a 100%);
-  border-radius: 8px;
+  border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex; /* Asegura que el contenido interno del botón esté centrado */
   align-items: center; /* Centra verticalmente el texto dentro del botón */
