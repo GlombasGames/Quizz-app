@@ -534,8 +534,7 @@ button:disabled {
 .categoria-boton {
   position: relative;
   width: 90%;
-  /* Relativo al contenedor */
-  max-width: 220px;
+ 
   /* Tamaño máximo */
   margin: 18px auto;
   padding: 0;
