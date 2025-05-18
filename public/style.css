@@ -147,7 +147,7 @@ button:disabled {
   /* Hace que el encabezado sea sticky */
   top: 0;
   /* Se queda pegado en la parte superior */
-  width: 100%;
+  width: (100%-32px);
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1000;
   /* Asegura que esté por encima de otros elementos */
