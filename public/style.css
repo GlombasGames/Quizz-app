@@ -194,9 +194,9 @@ button:disabled {
 .btn-anuncio-header {
   flex: 1.3; /* El botón ocupa más espacio que los textos */
   font-size: 14px; /* Tamaño de texto */
-  padding: 12px 8px; /* Ajusta el relleno */
+  padding: 20px 8px; /* Ajusta el relleno */
   margin: 0; /* Espaciado horizontal */
-  height: 10px; /* Ajusta la altura automáticamente */
+  height: auto; /* Ajusta la altura automáticamente */
   width: auto; /* Ajusta el ancho automáticamente */
   background: linear-gradient(90deg, #ffe066 0%, #ffd60a 100%); /* Fondo del botón */
   border-radius: 8px; /* Bordes redondeados */
