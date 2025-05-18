@@ -53,9 +53,9 @@ button {
 }
 
 button:hover {
-  background: #d5dd02;
+
   /* Más claro al pasar el mouse */
-  transform: scale(1.02);
+  transform: scale(1.04);
   /* Efecto de zoom */
 }
 
