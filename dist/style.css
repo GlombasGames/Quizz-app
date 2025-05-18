@@ -525,7 +525,5 @@ a:hover {
 .btn-anuncio-header {
   font-size: 12px; /* Tamaño de texto más pequeño */
   padding: 8px 12px; /* Reducir el relleno */
-  height: auto; /* Ajustar la altura */
-  width: auto; /* Ajustar el ancho */
   margin-left: 8px; /* Separación del resto del contenido */
 }
