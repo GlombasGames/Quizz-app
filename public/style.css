@@ -271,13 +271,17 @@ button:disabled {
 /* Estilo para botones deshabilitados */
 .btn-anuncio:disabled {
   background-color: #d4d415d7;
-  /* Mismo color de fondo */
+  /* Color de fondo para el estado deshabilitado */
   color: white;
-  /* Mismo color de texto */
+  /* Color del texto */
   opacity: 0.5;
   /* Más transparente */
   cursor: not-allowed;
   /* Cambia el cursor a "no permitido" */
+  box-shadow: none;
+  /* Elimina el resplandor */
+  transition: none;
+  /* Desactiva las transiciones */
 }
 
 /* Animación de pulso para el botón de anuncio */
