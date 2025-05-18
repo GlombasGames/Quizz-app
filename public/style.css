@@ -199,7 +199,7 @@ button:disabled {
   /* Ajusta el relleno */
   margin: 0 5%;
   /* Espaciado horizontal */
-  background: linear-gradient(90deg, #ffe066 0%, #ffd60a 100%);
+  background: linear-gradient(90deg, #74e338 0%, #ffd60a 100%);
   /* Fondo del botón */
   border-radius: 50px;
   /* Bordes redondeados */
