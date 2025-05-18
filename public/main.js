@@ -253,7 +253,7 @@ function renderMenu() {
           <img src="./assets/coin.png" alt="coin">
         </div>
         <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-          Ver anuncio x 1
+          Ver anuncio + 1 
           <img src="./assets/coin.png" alt="coin">
         </button>
         <div class="header-item header-right">
