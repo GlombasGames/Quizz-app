@@ -179,6 +179,8 @@ button:disabled {
    flex: 1.2;
   justify-content: center; /* Alinea el texto a la derecha */
   padding-right: 16px; /* Espaciado desde el borde derecho */
+  font-size: 1.5em; /* Tamaño de texto más grande */
+  font-weight: bold;
 }
 
 .saludo {

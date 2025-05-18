@@ -260,7 +260,7 @@ function renderMenu() {
           Ver anuncio
         </button>
         <div class="header-item header-right">
-          <p>Total: ${totalPuntos} pts</p>
+        ${totalPuntos} pts
         </div>
       </div>
 ${Object.keys(data).map((cat, i) => {
