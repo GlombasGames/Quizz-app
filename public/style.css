@@ -563,8 +563,7 @@ button:disabled {
   width: 100%;
   /* Ocupa todo el ancho del botón */
   height: auto;
-  /* Mantiene la proporción de la imagen */
-  max-height: 180px;
+
   /* Limita la altura máxima */
   object-fit: contain;
   border-radius: 16px;
