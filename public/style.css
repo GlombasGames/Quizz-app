@@ -541,14 +541,20 @@ button:disabled {
   /* Asegurar que esté por encima de otros elementos */
   text-align: center;
 }
+.categorias {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las categorías se ajusten en varias filas */
+  justify-content: space-between; /* Espaciado uniforme entre las categorías */
+  gap: 16px; /* Espaciado entre las categorías */
+  margin-top: 16px;
+}
 
 /* Botón de categoría visual */
 .categoria-boton {
   position: relative;
-  width: 90%;
-  max-width: 45%;
-  /* Tamaño máximo */
-  margin: 18px auto;
+  flex: 0 1 calc(50% - 16px); /* Cada botón ocupa el 50% del ancho menos el espacio del gap */
+  max-width: calc(50% - 16px); /* Limita el ancho máximo */
+  margin: 0; /* Elimina márgenes adicionales */
   padding: 0;
   border: none;
   background: none;
@@ -557,7 +563,7 @@ button:disabled {
   align-items: center;
   cursor: pointer;
   border-radius: 16px;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .categoria-boton:disabled,
@@ -572,12 +578,9 @@ button:disabled {
 }
 
 .categoria-img {
-  width: 100%;
-  /* Ocupa todo el ancho del botón */
-  height: auto;
-
-  /* Limita la altura máxima */
-  object-fit: contain;
+  width: 100%; /* Ocupa todo el ancho del botón */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: contain; /* Ajusta la imagen dentro del contenedor */
   border-radius: 16px;
   display: block;
   position: relative;
@@ -596,10 +599,8 @@ button:disabled {
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  margin-top: -40px;
-  /* Monta más el cartel sobre la imagen */
+  margin-top: -40px; /* Monta más el cartel sobre la imagen */
   position: relative;
-  z-index: 2;
-  /* Asegura que el cartel esté por encima */
+  z-index: 2; /* Asegura que el cartel esté por encima */
   border: 1px solid #143f10;
 }

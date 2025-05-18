@@ -264,7 +264,8 @@ function renderMenu() {
     <div class="saludo">
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>
-${Object.keys(data).map((cat, i) => {
+    <div class="categorias">
+      ${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
     const yaDesbloqueada = progreso.desbloqueadas
@@ -275,22 +276,23 @@ ${Object.keys(data).map((cat, i) => {
     const bloqueada = !desbloqueada;
     const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
     return `
-  <button
-    class="categoria-boton ${bloqueada ? 'locked' : ''}"
-    ${(!bloqueada) ? `onclick="jugar('${cat}')"` : ''}
-    ${bloqueada ? 'disabled' : ''}
-    tabindex="0"
-    aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${cat}"
-  >
-    <img class="categoria-img" src="./assets/${catNormalizada}.png" alt="${cat}" onerror="this.src='./assets/pajaro.png'">
-    <div class="categoria-info-boton">
-      <strong class="cat">${cat}</strong>
-      <span class="category-puntos">${puntosNecesarios}</span>
-      ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
-    </div>
-  </button>
-`;
+      <button
+        class="categoria-boton ${bloqueada ? 'locked' : ''}"
+        ${(!bloqueada) ? `onclick="jugar('${cat}')"` : ''}
+        ${bloqueada ? 'disabled' : ''}
+        tabindex="0"
+        aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${cat}"
+      >
+        <img class="categoria-img" src="./assets/${catNormalizada}.png" alt="${cat}" onerror="this.src='./assets/pajaro.png'">
+        <div class="categoria-info-boton">
+          <strong class="cat">${cat}</strong>
+          <span class="category-puntos">${puntosNecesarios}</span>
+          ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
+        </div>
+      </button>
+    `;
   }).join('')}
+    </div>
   `;
 }
 // Aseguramos que renderMenu esté disponible globalmente
