@@ -242,8 +242,8 @@ button:disabled {
 /* Botón "Ver anuncio" - muy llamativo */
 .btn-anuncio {
   width: 80%;
-  padding: 20px 16px;
-  margin: 10px;
+  padding: 16px 16px;
+  margin: 0;
   font-size: 18px;
   font-weight: bold;
   border: none;
