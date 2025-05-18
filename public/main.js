@@ -277,7 +277,7 @@ ${Object.keys(data).map((cat, i) => {
     return `
   <button
     class="categoria-boton ${bloqueada ? 'locked' : ''}"
-    ${(!bloqueada && progreso.intentos > 0) ? `onclick="jugar('${cat}')"` : ''}
+    ${(!bloqueada) ? `onclick="jugar('${cat}')"` : ''}
     ${bloqueada ? 'disabled' : ''}
     tabindex="0"
     aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${cat}"
@@ -451,7 +451,7 @@ function terminarPartida(puntaje, categoria) {
     <h2>Obtuviste ${puntaje} puntos.</h2>
     <p>Intentos disponibles: ${progreso.intentos}</p>
     </div>
-    <button class="btn-reintentar" onclick="jugar('${categoria}')">Reintentar categoría</button>
+    <button class="btn-reintentar" onclick="jugar('${categoria}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Reintentar categoría</button>
     <button class="btn-anuncio" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
     Ver anuncio para +1 intento
     </button>
