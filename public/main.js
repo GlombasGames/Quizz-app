@@ -247,11 +247,7 @@ function renderMenu() {
   const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
   app.innerHTML = `
-    <div class="logo"></div>
-    <div class="saludo">
-      <div>¡Bienvenido, ${progreso.nombre}!</div>
-    </div>
-      <div class="header">
+    <div class="header">
         <div class="header-item">
           <p>${progreso.intentos}</p>
           <img src="./assets/coin.png" alt="coin">
@@ -262,7 +258,11 @@ function renderMenu() {
         <div class="header-item header-right">
         ${totalPuntos} pts
         </div>
-      </div>
+    </div>
+    <div class="logo"></div>
+    <div class="saludo">
+      <div>¡Bienvenido, ${progreso.nombre}!</div>
+    </div>
 ${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
