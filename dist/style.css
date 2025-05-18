@@ -198,7 +198,7 @@ button:disabled {
   height: auto; /* Ajusta la altura automáticamente */
   width: auto; /* Ajusta el ancho automáticamente */
   background: linear-gradient(90deg, #ffe066 0%, #ffd60a 100%); /* Fondo del botón */
-  border-radius: 10%; /* Bordes redondeados */
+  border-radius: 50%; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
   display: flex; /* Asegura que el contenido interno del botón esté centrado */
   align-items: center; /* Centra verticalmente el texto dentro del botón */
