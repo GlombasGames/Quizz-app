@@ -451,14 +451,14 @@ function terminarPartida(puntaje, categoria) {
 
   app.innerHTML = `
     <div class="termino">
-    <h2>¡Fin del juego!</h2>
-    <p>Respondiste ${preguntasRespondidas}/10.</p>
-    <h2>Obtuviste ${puntaje} puntos.</h2>
-    <p>Intentos disponibles: ${progreso.intentos}</p>
+      <h2>¡Fin del juego!</h2>
+      <p>Respondiste ${preguntasRespondidas}/10.</p>
+      <h2>Obtuviste ${puntaje} puntos.</h2>
+      <p>Intentos disponibles: ${progreso.intentos}</p>
     </div>
     <button class="btn-reintentar" onclick="jugar('${categoria}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Reintentar categoría</button>
     <button class="btn-anuncio" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-    Ver anuncio para +1 intento
+      Ver anuncio para +1 intento
     </button>
     <button onclick="renderMenu()">Volver al menú</button>
   `;
