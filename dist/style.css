@@ -191,15 +191,18 @@ button:disabled {
 }
 
 .btn-anuncio-header {
-  padding: 12px 24px; /* Ajusta el tamaño del botón */
-  font-size: 16px; /* Tamaño del texto */
+  flex: 1; /* El botón ocupa más espacio que los textos */
+  font-size: 1.3em; /* Tamaño de texto */
+  padding: 5% 2%; /* Ajusta el relleno */
+  margin: 0 5%; /* Espaciado horizontal */
+  height: auto; /* Ajusta la altura automáticamente */
+  width: auto; /* Ajusta el ancho automáticamente */
   background: linear-gradient(90deg, #ffe066 0%, #ffd60a 100%); /* Fondo del botón */
-  color: #333; /* Color del texto */
-  border: none; /* Sin bordes */
-  border-radius: 50px; /* Convierte el rectángulo en un óvalo */
+  border-radius: 50px; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  transition: background 0.3s ease, transform 0.2s ease; /* Animaciones */
+  display: flex; /* Asegura que el contenido interno del botón esté centrado */
+  align-items: center; /* Centra verticalmente el texto dentro del botón */
+  justify-content: center; /* Centra horizontalmente el texto dentro del botón */
 }
 
 
