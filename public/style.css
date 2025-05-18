@@ -136,16 +136,20 @@ button:disabled {
 }
 
 /* Encabezado */
-.header-item {
-  flex: 1; /* Cada div ocupa el mismo espacio por defecto */
-  display: flex; /* Activa Flexbox dentro del div */
-  align-items: center; /* Centra verticalmente los elementos internos */
-  justify-content: center; /* Centra horizontalmente los elementos internos */
-  font-size: 1.5em; /* Tamaño de texto más grande */
-  font-weight: bold;
-  margin: 0; /* Elimina márgenes */
-  padding: 0; /* Elimina rellenos */
-  height: 100%; /* Asegura que el contenedor tenga una altura consistente */
+.header {
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between; /* Espacia los elementos horizontalmente */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #0b2d0be6;
+  color: #FFFFFF;
+  padding: 0; /* Elimina el relleno interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  height: 60px; /* Altura fija para el header */
+  border-radius: 10px;
 }
 
 .header-item {
