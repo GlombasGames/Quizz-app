@@ -306,6 +306,7 @@ window.jugar = function jugar(categoria) {
   if (progreso.intentos <= 0) {
     // Seleccionar el botón que fue presionado
     const botonesCategorias = document.querySelectorAll('.categoria-boton');
+    console.log(botonesCategorias); 
     botonesCategorias.forEach(boton => {
       const categoriaTexto = boton.querySelector('.cat')?.textContent.trim();
       console.log(categoriaTexto, categoria); 
