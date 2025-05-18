@@ -476,7 +476,7 @@ button:disabled {
   aspect-ratio: 1;
   /* Mantiene el contenedor cuadrado */
   max-width: 300px;
-  margin-top: 20px;
+  margin-top: 80px;
 }
 
 .cargando {
