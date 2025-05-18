@@ -252,9 +252,9 @@ function renderMenu() {
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>
     <div class="header">
-    <div style="display: flex;"> 
+    <div style="display: flex; align-items: center;"> 
     <p>${progreso.intentos}</p>
-    <img src="./assets/coin.png" width="30px" height="30px" alt="coin" style="margin: 5px;">
+    <img src="./assets/coin.png" width="40px" height="40px" alt="coin" style="margin: 5px;">
     </div>
     <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
     Ver anuncio
