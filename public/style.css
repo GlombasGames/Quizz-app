@@ -243,7 +243,7 @@ button:disabled {
 .btn-anuncio {
   width: 80%;
   padding: 20px 16px;
-  margin: 0 auto 0 auto;
+  margin: auto;
   font-size: 18px;
   font-weight: bold;
   border: none;
