@@ -252,6 +252,7 @@ button:disabled {
   /* Resplandor amarillo */
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 }
+
 .btn-anuncio-ancho {
   padding: 20px 16px;
   margin: auto;
@@ -571,7 +572,6 @@ button:disabled {
 }
 
 .categoria-img {
-    background: #d6dd020c;
   width: 100%;
   /* Ocupa todo el ancho del botón */
   height: auto;
@@ -582,6 +582,9 @@ button:disabled {
   display: block;
   position: relative;
   z-index: 1;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 95%, rgba(0, 0, 0, 0) 100%);
 }
 
 .categoria-info-boton {
