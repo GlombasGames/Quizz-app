@@ -317,7 +317,7 @@ window.jugar = function jugar(categoria) {
           mensaje.className = 'mensaje-overlay';
           mensaje.innerHTML = `
             <span>No tienes suficientes</span>
-            <img src="./assets/coin.png" alt="coin" style="width: 24px; height: 24px;">
+            <img src="./assets/coin.png" alt="coin" style="width: 40px; height: 40px;">
           `;
           boton.appendChild(mensaje); // Agregar el mensaje al botón
         }
