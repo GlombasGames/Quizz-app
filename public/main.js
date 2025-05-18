@@ -308,6 +308,7 @@ window.jugar = function jugar(categoria) {
     const botonesCategorias = document.querySelectorAll('.categoria-boton');
     botonesCategorias.forEach(boton => {
       const categoriaTexto = boton.querySelector('.cat')?.textContent.trim();
+      console.log(categoriaTexto, categoria); 
       if (categoriaTexto === categoria) {
         // Mostrar el mensaje en el botón
         boton.innerHTML = `
