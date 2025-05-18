@@ -184,9 +184,9 @@ button:disabled {
 
 .header-item img {
 
-  width: 40px;
+  width: 50%;
   /* Tamaño fijo de la imagen */
-  height: 40px;
+  height: 50%;
   /* Tamaño fijo de la imagen */
 }
 
