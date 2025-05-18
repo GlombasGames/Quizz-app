@@ -247,7 +247,6 @@ function renderMenu() {
   const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
   app.innerHTML = `
-    <div>
     <div class="header">
         <div class="header-item">
           <p>${progreso.intentos}</p>
@@ -259,7 +258,6 @@ function renderMenu() {
         <div class="header-item header-right">
         ${totalPuntos} pts
         </div>
-    </div>
     </div>
     <div class="logo"></div>
     <div class="saludo">
