@@ -169,7 +169,7 @@ button:disabled {
   /* Cada div ocupa el mismo espacio por defecto */
   display: flex;
   /* Activa Flexbox dentro del div */
-  align-items: center;
+  align-items: baseline;
   /* Centra verticalmente los elementos internos */
   justify-content: center;
   /* Centra horizontalmente los elementos internos */
