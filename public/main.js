@@ -309,6 +309,11 @@ window.jugar = function jugar(categoria) {
     botonesCategorias.forEach(boton => {
       const categoriaTexto = boton.querySelector('.cat')?.textContent.trim();
       if (categoriaTexto === categoria) {
+        // Verificar si ya existe un mensaje superpuesto
+        if (boton.querySelector('.mensaje-overlay')) {
+          return; // Si ya existe, no hacer nada
+        }
+
         // Agregar el mensaje superpuesto
         const mensaje = document.createElement('div');
         mensaje.className = 'mensaje-overlay';
@@ -318,9 +323,9 @@ window.jugar = function jugar(categoria) {
         `;
         boton.appendChild(mensaje); // Agregar el mensaje al botón
 
-
+        // Eliminar el mensaje después de 2 segundos
         setTimeout(() => {
-          mensaje.remove(); // Eliminar el mensaje después de 2 segundos
+          mensaje.remove();
         }, 2000);
       }
     });
