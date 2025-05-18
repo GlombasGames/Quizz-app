@@ -526,4 +526,5 @@ a:hover {
   font-size: 12px; /* Tamaño de texto más pequeño */
   padding: 20px 4px; /* Reducir el relleno */
   margin-left: 8px; /* Separación del resto del contenido */
+  width: 100px;
 }
