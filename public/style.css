@@ -465,7 +465,7 @@ button:disabled {
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 80%;
   aspect-ratio: 1;
   /* Mantiene el contenedor cuadrado */
   max-width: 300px;
