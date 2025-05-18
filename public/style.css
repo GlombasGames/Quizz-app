@@ -133,30 +133,19 @@ button:disabled {
 
 /* Encabezado */
 .header {
-  display: flex;
-  /* Activa Flexbox */
-  align-items: center;
-  /* Centra los elementos verticalmente */
-  justify-content: space-between;
-  /* Espacia los elementos horizontalmente */
-  position: fixed;
-  /* Fija el encabezado en la parte superior */
+  display: flex; /* Activa Flexbox */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacia los elementos horizontalmente */
+  position: sticky; /* Fija el encabezado en la parte superior dentro de #app */
   top: 0;
-  left: 0;
-  width: 100%;
-  /* Ocupa todo el ancho */
-  z-index: 1000;
-  /* Asegura que esté por encima de otros elementos */
-  background: #0b2d0be6;
-  /* Fondo primario */
-  color: #FFFFFF;
-  /* Texto claro */
-  padding: 8px 16px;
-  /* Reduce el espacio interno */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
-  height: auto;
-  /* Ajusta la altura al contenido */
+  width: 100%; /* Ocupa todo el ancho del contenedor padre (#app) */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  background: #0b2d0be6; /* Fondo primario */
+  color: #FFFFFF; /* Texto claro */
+  padding: 8px 16px; /* Espaciado interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  height: auto; /* Ajusta la altura al contenido */
+  max-width: 100%; /* Asegura que no se desborde */
 }
 
 .header-item {
