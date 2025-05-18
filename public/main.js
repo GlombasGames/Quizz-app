@@ -457,7 +457,7 @@ function terminarPartida(puntaje, categoria) {
       <p>Intentos disponibles: ${progreso.intentos}</p>
     </div>
     <button class="btn-reintentar" onclick="jugar('${categoria}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Reintentar categoría</button>
-    <button class="btn-anuncio" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
+    <button class="btn-anuncio btn-anuncio-ancho" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
       Ver anuncio para +1 intento
     </button>
     <button onclick="renderMenu()">Volver al menú</button>
