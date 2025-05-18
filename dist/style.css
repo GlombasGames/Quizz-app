@@ -135,6 +135,7 @@ button:disabled {
 .header {
   display: flex;
   /* Activa Flexbox */
+  align-items: center;
   /* Centra los elementos verticalmente */
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
@@ -165,7 +166,7 @@ button:disabled {
   /* Activa Flexbox dentro del div */
   align-items: center;
   /* Centra verticalmente los elementos internos */
-  justify-content: flex-start;
+  justify-content: center;
   /* Alinea los elementos a la izquierda */
   font-size: 1.5em;
   /* Tamaño de texto más grande */
