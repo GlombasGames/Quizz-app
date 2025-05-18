@@ -259,7 +259,7 @@ function renderMenu() {
     <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
     Ver anuncio
     </button>
-    <div style="align-items: center;">Total: ${totalPuntos} pts</div>
+    <div>Total: ${totalPuntos} pts</div>
     </div>
 ${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
