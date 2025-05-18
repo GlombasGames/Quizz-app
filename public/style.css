@@ -543,7 +543,6 @@ button:disabled {
 
 /* Botón de categoría visual */
 .categoria-boton {
-  background: #0707009b;
   position: relative;
   width: 90%;
   max-width: 45%;
@@ -572,6 +571,7 @@ button:disabled {
 }
 
 .categoria-img {
+    background: #d6dd020c;
   width: 100%;
   /* Ocupa todo el ancho del botón */
   height: auto;
