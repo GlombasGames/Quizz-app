@@ -199,7 +199,7 @@ button:disabled {
   /* Ajusta el relleno */
   margin: 0 5%;
   /* Espaciado horizontal */
-  background: linear-gradient(90deg, #e3c138 0%, #186507 100%);
+  background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
   /* Fondo del botón */
   border-radius: 50px;
   /* Bordes redondeados */
@@ -250,17 +250,22 @@ button:disabled {
   border-radius: 6px;
   background: linear-gradient(90deg, #ffe066 0%, #ffe066 60%, #ffd60a 100%);
   color: #333;
-  box-shadow: 0 2px 8px rgba(255, 214, 10, 0.2);
-  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 214, 10, 0.4), 0 0 15px rgba(255, 214, 10, 0.6);
+  /* Resplandor amarillo */
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .btn-anuncio:hover:enabled {
   background: linear-gradient(90deg, #ffd60a 0%, #ffe066 100%);
   transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(255, 214, 10, 0.6), 0 0 20px rgba(255, 214, 10, 0.8);
+  /* Resplandor más intenso al pasar el mouse */
 }
 
 .btn-anuncio:active {
   background: #ffd60a;
+  box-shadow: 0 2px 6px rgba(255, 214, 10, 0.5), 0 0 10px rgba(255, 214, 10, 0.7);
+  /* Resplandor más tenue al hacer clic */
 }
 
 /* Estilo para botones deshabilitados */
