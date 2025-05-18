@@ -253,7 +253,7 @@ function renderMenu() {
             <img src="./assets/coin.png" alt="coin">
           </div>
           <div class="header-item">
-            <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()">
+            <button class="btn-anuncio-header" tabindex="0" onclick="verAnuncio()">
               Ver anuncio
             </button>
           </div>

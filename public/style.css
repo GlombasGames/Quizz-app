@@ -138,9 +138,10 @@ button:disabled {
 /* Encabezado */
 .header {
   display: flex;
-
+  /* Activa Flexbox */
+  align-items: center;
   /* Centra los elementos verticalmente */
-
+  justify-content: space-between;
   /* Espacia los elementos horizontalmente */
   position: sticky;
   /* Hace que el encabezado sea sticky */
