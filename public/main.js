@@ -510,7 +510,13 @@ window.verAnuncio = async function verAnuncio() {
       if (intentosDisponibles) {
         intentosDisponibles.textContent = `Intentos disponibles: ${progreso.intentos}`;
       }
-
+      // Ocultar el botón "Ver anuncio" si los intentos son 3 o más
+      if (progreso.intentos >= 3) {
+        const botonVerAnuncio = app.querySelector('button[onclick^="verAnuncio"]');
+        if (botonVerAnuncio) {
+          botonVerAnuncio.disabled = true;
+        }
+      }
     } else {
       renderMenu(); // Si no, redirigir al menú principal
     }
