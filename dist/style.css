@@ -15,7 +15,6 @@ body {
 #app {
   max-width: 600px;
   margin: 0 auto;
-  margin-top: 60px;
   padding: 16px;
   background: linear-gradient(135deg, #0D47A1, #1565C0);
   background-image: url('./assets/fondoSelva.jpeg'), linear-gradient(135deg, #0D47A1, #1565C0);
@@ -477,7 +476,7 @@ button:disabled {
   aspect-ratio: 1;
   /* Mantiene el contenedor cuadrado */
   max-width: 300px;
-  margin-top: -20px;
+  margin-top: 20px;
 }
 
 .cargando {
