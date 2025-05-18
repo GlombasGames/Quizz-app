@@ -249,11 +249,11 @@ function renderMenu() {
   app.innerHTML = `
     <div class="header">
         <div class="header-item">
+        <img src="./assets/coin.png" alt="coin">
           ${progreso.intentos}
-          <img src="./assets/coin.png" alt="coin">
         </div>
         <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-          Ver anuncio + 1 
+          Ver AD + 1 
           <img src="./assets/coin.png" alt="coin">
         </button>
         <div class="header-item header-right">
