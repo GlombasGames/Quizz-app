@@ -256,7 +256,7 @@ function renderMenu() {
           Ver AD + 1 
           <img src="./assets/coin.png" alt="coin">
         </button>
-        <div class="header-item header-right">
+        <div class="header-item">
         ${totalPuntos} pts
         </div>
     </div>
