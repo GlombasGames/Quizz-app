@@ -228,8 +228,8 @@ button:disabled {
   box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
   letter-spacing: 0.5px;
   text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
-  border: 1px solid #294c0ba1;
-  width: 60%;
+  border: 1px solid #070e02a1;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
