@@ -134,43 +134,51 @@ button:disabled {
 
 /* Encabezado */
 .header {
-  display: flex;
-  /* Activa Flexbox */
-  align-items: center;
-  /* Centra los elementos verticalmente */
-  justify-content: space-between;
-  /* Espacia los elementos horizontalmente */
-  position: fixed;
-  /* Fija el encabezado en la parte superior */
+  display: flex; /* Activa Flexbox */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacia los elementos horizontalmente */
+  position: fixed; /* Fija el encabezado en la parte superior */
   top: 0;
   left: 0;
-  width: 100%;
-  /* Ocupa todo el ancho */
-  z-index: 1000;
-  /* Asegura que esté por encima de otros elementos */
-  background: #0b2d0be6;
-  /* Fondo primario */
-  color: #FFFFFF;
-  /* Texto claro */
-  padding: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
+  width: 100%; /* Ocupa todo el ancho */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  background: #0b2d0be6; /* Fondo primario */
+  color: #FFFFFF; /* Texto claro */
+  padding: 8px 16px; /* Reduce el espacio interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+  height: auto; /* Ajusta la altura al contenido */
 }
 
 .header-item {
-  flex: 1;
-  /* Cada div ocupa el mismo espacio por defecto */
-  text-align: center;
-  /* Centra el texto dentro del div */
-  font-size: 14px;
-  /* Ajusta el tamaño del texto */
-  display: flex;
-  /* Activa Flexbox dentro del div */
-  align-items: center;
-  /* Centra verticalmente los elementos internos */
-  justify-content: center;
-  /* Centra horizontalmente los elementos internos */
+  flex: 1; /* Cada div ocupa el mismo espacio por defecto */
+  display: flex; /* Activa Flexbox dentro del div */
+  align-items: center; /* Centra verticalmente los elementos internos */
+  justify-content: flex-start; /* Alinea los elementos a la izquierda */
+  font-size: 14px; /* Ajusta el tamaño del texto */
 }
+
+.header-item.header-right {
+  justify-content: flex-end; /* Alinea el texto a la derecha */
+  padding-right: 16px; /* Espaciado desde el borde derecho */
+}
+
+.btn-anuncio-header {
+  flex: 1.5; /* El botón ocupa más espacio que los textos */
+  font-size: 14px; /* Tamaño de texto más grande */
+  padding: 12px 16px; /* Ajusta el relleno */
+  margin: 0 8px; /* Espaciado horizontal */
+  height: auto; /* Ajusta la altura automáticamente */
+  width: auto; /* Ajusta el ancho automáticamente */
+  background: linear-gradient(90deg, #ffe066 0%, #ffd60a 100%); /* Fondo del botón */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+.header img {
+  margin-left: 8px; /* Espaciado entre el texto y la imagen */
+  width: 24px; /* Tamaño de la imagen */
+  height: 24px; /* Tamaño de la imagen */
+}
+
 
 .header div {
   font-size: 1.5em;
@@ -537,17 +545,3 @@ a:hover {
   border: 1px solid #143f10;
 }
 
-.btn-anuncio-header {
-  flex: 1.8;
-  /* El botón ocupa el doble de espacio que los otros elementos */
-  font-size: 12px;
-  /* Tamaño de texto más pequeño */
-  padding: 8px 12px;
-  /* Ajusta el relleno */
-  margin: 0 8px;
-  /* Espaciado horizontal */
-  height: auto;
-  /* Ajusta la altura automáticamente */
-  width: auto;
-  /* Ajusta el ancho automáticamente */
-}

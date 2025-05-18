@@ -251,18 +251,18 @@ function renderMenu() {
     <div class="saludo">
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>
-    <div class="header">
-      <div class="header-item">
-        <p>${progreso.intentos}</p>
-        <img src="./assets/coin.png" width="40px" height="40px" alt="coin" style="margin-left: 8px;">
+      <div class="header">
+        <div class="header-item">
+          <p>${progreso.intentos}</p>
+          <img src="./assets/coin.png" width="24px" height="24px" alt="coin" style="margin-left: 8px;">
+        </div>
+        <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
+          Ver anuncio
+        </button>
+        <div class="header-item header-right">
+          <p>Total: ${totalPuntos} pts</p>
+        </div>
       </div>
-      <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-        Ver anuncio
-      </button>
-      <div class="header-item">
-        <p>Total: ${totalPuntos} pts</p>
-      </div>
-    </div>
 ${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
