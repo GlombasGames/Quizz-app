@@ -303,7 +303,7 @@ function proximaMeta(cat) {
 }
 
 window.jugar = function jugar(categoria) {
-  console.log(progreso.intentos); 
+  console.log("HOLAAA", progreso.intentos); 
   if (progreso.intentos <= 0) {
     // Seleccionar el botón que fue presionado
     const botonesCategorias = document.querySelectorAll('.categoria-boton');
