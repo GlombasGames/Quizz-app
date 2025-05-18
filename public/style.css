@@ -13,8 +13,10 @@ body {
 }
 
 #app {
-  max-width: 600px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  max-width: 600px;
+  /* Ancho máximo del contenedor */
+  margin: 0 auto;
+  /* Centra el contenedor horizontalmente */
   padding: 16px;
   background: linear-gradient(135deg, #0D47A1, #1565C0);
   background-image: url('./assets/fondoSelva.jpeg'), linear-gradient(135deg, #0D47A1, #1565C0);
@@ -26,7 +28,8 @@ body {
   flex-direction: column;
   height: 95%;
   overflow-y: auto;
-  position: relative; /* Asegura que los elementos sticky se comporten correctamente */
+  position: relative;
+  /* Asegura que los elementos sticky se comporten correctamente */
 }
 
 /* Oculta la scrollbar en navegadores Webkit (Chrome, Edge, Safari) */
@@ -134,18 +137,31 @@ button:disabled {
 
 /* Encabezado */
 .header {
-  display: flex; /* Activa Flexbox */
-  align-items: center; /* Centra los elementos verticalmente */
-  justify-content: space-between; /* Espacia los elementos horizontalmente */
-  position: sticky; /* Hace que el encabezado sea sticky */
-  top: 0; /* Se queda pegado en la parte superior */
-  width: (100%-32px); /* Ocupa todo el ancho del contenedor padre (#app) */
-  z-index: 1000; /* Asegura que esté por encima de otros elementos */
-  background: #0b2d0be6; /* Fondo primario */
-  color: #FFFFFF; /* Texto claro */
-  padding: 8px 16px; /* Espaciado interno */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
-  height: auto; /* Ajusta la altura al contenido */
+  display: flex;
+  /* Activa Flexbox */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  justify-content: space-between;
+  /* Espacia los elementos horizontalmente */
+  position: sticky;
+  /* Hace que el encabezado sea sticky */
+  top: 0;
+  /* Se queda pegado en la parte superior */
+  width: (100%-32px);
+  /* Ocupa todo el ancho del contenedor padre (#app) */
+  z-index: 1000;
+  /* Asegura que esté por encima de otros elementos */
+  background: #0b2d0be6;
+  /* Fondo primario */
+  color: #FFFFFF;
+  /* Texto claro */
+  padding: 8px 16px;
+  /* Espaciado interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Sombra */
+  height: auto;
+  /* Ajusta la altura al contenido */
+  border-radius: 10px;
 }
 
 .header-item {
