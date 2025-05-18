@@ -254,7 +254,7 @@ function renderMenu() {
       <div class="header">
         <div class="header-item">
           <p>${progreso.intentos}</p>
-          <img src="./assets/coin.png" width="24px" height="24px" alt="coin" style="margin-left: 8px;">
+          <img src="./assets/coin.png" alt="coin">
         </div>
         <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
           Ver anuncio

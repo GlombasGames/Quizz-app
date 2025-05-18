@@ -157,9 +157,10 @@ button:disabled {
   font-size: 14px; /* Ajusta el tamaño del texto */
 }
 
-.header-item.header-right {
-  justify-content: flex-end; /* Alinea el texto a la derecha */
-  padding-right: 16px; /* Espaciado desde el borde derecho */
+.header-item img {
+  margin-left: 8px; /* Espaciado entre el texto y la imagen */
+  width: 40px; /* Tamaño fijo de la imagen */
+  height: 40px; /* Tamaño fijo de la imagen */
 }
 
 .btn-anuncio-header {
@@ -173,29 +174,10 @@ button:disabled {
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
 }
-.header img {
-  margin-left: 8px; /* Espaciado entre el texto y la imagen */
-  width: 24px; /* Tamaño de la imagen */
-  height: 24px; /* Tamaño de la imagen */
-}
 
-
-.header div {
-  font-size: 1.5em;
-  font-weight: bold;
-}
-
-/* Enlaces */
-a {
-  color: #64B5F6;
-  /* Azul claro */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #BBDEFB;
-  /* Azul más claro al pasar el mouse */
+.header-item.header-right {
+  justify-content: flex-end; /* Alinea el texto a la derecha */
+  padding-right: 16px; /* Espaciado desde el borde derecho */
 }
 
 .saludo {
