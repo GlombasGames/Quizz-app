@@ -318,11 +318,9 @@ window.jugar = function jugar(categoria) {
         `;
         boton.appendChild(mensaje); // Agregar el mensaje al botón
 
-        // Deshabilitar el botón temporalmente
-        boton.disabled = true;
+
         setTimeout(() => {
           mensaje.remove(); // Eliminar el mensaje después de 2 segundos
-          boton.disabled = false; // Habilitar el botón nuevamente
         }, 2000);
       }
     });
