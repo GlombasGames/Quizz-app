@@ -150,7 +150,7 @@ button:disabled {
 }
 
 .header-item {
-  flex: 1; /* Cada div ocupa el mismo espacio por defecto */
+  flex: 0.8; /* Cada div ocupa el mismo espacio por defecto */
   display: flex; /* Activa Flexbox dentro del div */
   align-items: center; /* Centra verticalmente los elementos internos */
   justify-content: flex-start; /* Alinea los elementos a la izquierda */
@@ -176,6 +176,7 @@ button:disabled {
 }
 
 .header-item.header-right {
+   flex: 1.2;
   justify-content: flex-end; /* Alinea el texto a la derecha */
   padding-right: 16px; /* Espaciado desde el borde derecho */
 }
