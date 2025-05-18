@@ -55,7 +55,7 @@ button {
 button:hover {
 
   /* Más claro al pasar el mouse */
-  transform: scale(1.04);
+  transform: scale(1.05);
   /* Efecto de zoom */
 }
 
@@ -543,6 +543,7 @@ button:disabled {
 
 /* Botón de categoría visual */
 .categoria-boton {
+  background: #d6dd020c;
   position: relative;
   width: 90%;
   max-width: 45%;
