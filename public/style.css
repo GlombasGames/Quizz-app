@@ -15,7 +15,7 @@ body {
 #app {
   max-width: 600px;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 80px;
   padding: 16px;
   background: linear-gradient(135deg, #0D47A1, #1565C0);
   background-image: url('./assets/fondoSelva.jpeg'), linear-gradient(135deg, #0D47A1, #1565C0);
@@ -156,7 +156,7 @@ button:disabled {
   /* Reduce el espacio interno */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   /* Sombra */
-  height: auto;
+  height: 80px;
   /* Ajusta la altura al contenido */
 }
 
