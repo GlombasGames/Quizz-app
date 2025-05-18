@@ -252,14 +252,16 @@ function renderMenu() {
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>
     <div class="header">
-    <div style="display: flex; align-items: center;"> 
-    <p>${progreso.intentos}</p>
-    <img src="./assets/coin.png" width="40px" height="40px" alt="coin" style="margin: 5px;">
-    </div>
-    <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-    Ver anuncio
-    </button>
-    <div>Total: ${totalPuntos} pts</div>
+      <div class="header-item">
+        <p>${progreso.intentos}</p>
+        <img src="./assets/coin.png" width="40px" height="40px" alt="coin" style="margin-left: 8px;">
+      </div>
+      <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
+        Ver anuncio
+      </button>
+      <div class="header-item">
+        <p>Total: ${totalPuntos} pts</p>
+      </div>
     </div>
 ${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');

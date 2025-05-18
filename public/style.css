@@ -134,16 +134,18 @@ button:disabled {
 
 /* Encabezado */
 .header {
-  align-items: center;
   display: flex;
+  /* Activa Flexbox */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  justify-content: space-between;
+  /* Espacia los elementos horizontalmente */
   position: fixed;
   /* Fija el encabezado en la parte superior */
   top: 0;
-  /* Alinea el encabezado al borde superior */
   left: 0;
-  /* Alinea el encabezado al borde izquierdo */
   width: 100%;
-  /* Asegura que ocupe todo el ancho de la pantalla */
+  /* Ocupa todo el ancho */
   z-index: 1000;
   /* Asegura que esté por encima de otros elementos */
   background: #0b2d0be6;
@@ -151,10 +153,23 @@ button:disabled {
   color: #FFFFFF;
   /* Texto claro */
   padding: 12px;
-  border-radius: 0;
-  /* Elimina bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Agrega una sombra para destacar */
+  /* Sombra */
+}
+
+.header-item {
+  flex: 1;
+  /* Cada div ocupa el mismo espacio por defecto */
+  text-align: center;
+  /* Centra el texto dentro del div */
+  font-size: 14px;
+  /* Ajusta el tamaño del texto */
+  display: flex;
+  /* Activa Flexbox dentro del div */
+  align-items: center;
+  /* Centra verticalmente los elementos internos */
+  justify-content: center;
+  /* Centra horizontalmente los elementos internos */
 }
 
 .header div {
@@ -523,8 +538,16 @@ a:hover {
 }
 
 .btn-anuncio-header {
-  font-size: 12px; /* Tamaño de texto más pequeño */
-  padding: 20px 4px; /* Reducir el relleno */
-  margin-left: 8px; /* Separación del resto del contenido */
-  width: 100px;
+  flex: 2;
+  /* El botón ocupa el doble de espacio que los otros elementos */
+  font-size: 12px;
+  /* Tamaño de texto más pequeño */
+  padding: 8px 12px;
+  /* Ajusta el relleno */
+  margin: 0 8px;
+  /* Espaciado horizontal */
+  height: auto;
+  /* Ajusta la altura automáticamente */
+  width: auto;
+  /* Ajusta el ancho automáticamente */
 }
