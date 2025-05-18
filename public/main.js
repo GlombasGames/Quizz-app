@@ -310,23 +310,30 @@ window.jugar = function jugar(categoria) {
       const categoriaTexto = boton.querySelector('.cat')?.textContent.trim();
       if (categoriaTexto === categoria) {
         // Verificar si ya existe un mensaje superpuesto
-        if (boton.querySelector('.mensaje-overlay')) {
-          return; // Si ya existe, no hacer nada
+        let mensaje = boton.querySelector('.mensaje-overlay');
+        if (!mensaje) {
+          // Si no existe, crear el mensaje
+          mensaje = document.createElement('div');
+          mensaje.className = 'mensaje-overlay';
+          mensaje.innerHTML = `
+            <span>No tienes suficientes</span>
+            <img src="./assets/coin.png" alt="coin" style="width: 24px; height: 24px;">
+          `;
+          boton.appendChild(mensaje); // Agregar el mensaje al botón
         }
 
-        // Agregar el mensaje superpuesto
-        const mensaje = document.createElement('div');
-        mensaje.className = 'mensaje-overlay';
-        mensaje.innerHTML = `
-          <span>No tienes suficientes</span>
-          <img src="./assets/coin.png" alt="coin" style="width: 24px; height: 24px;">
-        `;
-        boton.appendChild(mensaje); // Agregar el mensaje al botón
+        // Reiniciar el temporizador si ya existe
+        if (boton._mensajeTimeout) {
+          clearTimeout(boton._mensajeTimeout); // Cancelar el temporizador anterior
+        }
 
-        // Eliminar el mensaje después de 2 segundos
-        setTimeout(() => {
+        // Crear un nuevo temporizador para eliminar el mensaje
+        boton._mensajeTimeout = setTimeout(() => {
           mensaje.remove();
+          boton._mensajeTimeout = null; // Limpiar la referencia al temporizador
         }, 2000);
+
+        return;
       }
     });
     return;
