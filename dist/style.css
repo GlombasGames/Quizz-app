@@ -197,7 +197,7 @@ button:disabled {
   /* Tamaño de texto */
   padding: 5% 2%;
   /* Ajusta el relleno */
-  margin: 0 5%;
+  margin: 5% 5%;
   /* Espaciado horizontal */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
   /* Fondo del botón */
