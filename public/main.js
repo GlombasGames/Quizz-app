@@ -303,33 +303,27 @@ function proximaMeta(cat) {
 }
 
 window.jugar = function jugar(categoria) {
-  console.log("HOLAAA", progreso.intentos); 
   if (progreso.intentos <= 0) {
     // Seleccionar el botón que fue presionado
     const botonesCategorias = document.querySelectorAll('.categoria-boton');
-    console.log(botonesCategorias); 
     botonesCategorias.forEach(boton => {
       const categoriaTexto = boton.querySelector('.cat')?.textContent.trim();
-      console.log(categoriaTexto, categoria); 
       if (categoriaTexto === categoria) {
-        // Mostrar el mensaje en el botón
-        boton.innerHTML = `
-          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
-            <span>No tienes suficientes</span>
-            <img src="./assets/coin.png" alt="coin" style="width: 24px; height: 24px;">
-          </div>
+        // Agregar el mensaje superpuesto
+        const mensaje = document.createElement('div');
+        mensaje.className = 'mensaje-overlay';
+        mensaje.innerHTML = `
+          <span>No tienes suficientes</span>
+          <img src="./assets/coin.png" alt="coin" style="width: 24px; height: 24px;">
         `;
-        boton.disabled = true; // Deshabilitar el botón temporalmente
+        boton.appendChild(mensaje); // Agregar el mensaje al botón
+
+        // Deshabilitar el botón temporalmente
+        boton.disabled = true;
         setTimeout(() => {
-          boton.innerHTML = `
-            <img class="categoria-img" src="./assets/${categoria.toLowerCase()}.png" alt="${categoria}" onerror="this.src='./assets/pajaro.png'">
-            <div class="categoria-info-boton">
-              <strong class="cat">${categoria}</strong>
-              <span class="category-puntos">Puntos: ${progreso.puntos[categoria] || 0}</span>
-            </div>
-          `;
+          mensaje.remove(); // Eliminar el mensaje después de 2 segundos
           boton.disabled = false; // Habilitar el botón nuevamente
-        }, 2000); // Restaurar el botón después de 2 segundos
+        }, 2000);
       }
     });
     return;
@@ -338,6 +332,7 @@ window.jugar = function jugar(categoria) {
   // Si tiene intentos, iniciar la partida
   jugarPartida(categoria);
 };
+
 async function jugarPartida(categoria) {
   preguntasRespondidas = 0; // Reiniciar el contador de preguntas respondidas
   const preguntasData = await Storage.get({ key: 'preguntas' });

@@ -493,6 +493,23 @@ button:disabled {
   justify-content: center;
 }
 
+.mensaje-overlay {
+  position: absolute; /* Superponer al contenido del botón */
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Ajustar el centro exacto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  color: #fff; /* Texto blanco */
+  padding: 8px 12px;
+  border-radius: 8px; /* Bordes redondeados */
+  z-index: 10; /* Asegurar que esté por encima de otros elementos */
+  text-align: center;
+}
+
 /* Botón de categoría visual */
 .categoria-boton {
   position: relative;
