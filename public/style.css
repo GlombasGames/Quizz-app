@@ -196,7 +196,7 @@ button:disabled {
   font-size: 14px; /* Tamaño de texto */
   padding: 12px 16px; /* Ajusta el relleno */
   margin: 0 8px; /* Espaciado horizontal */
-  height: auto; /* Ajusta la altura automáticamente */
+  height: 10px; /* Ajusta la altura automáticamente */
   width: auto; /* Ajusta el ancho automáticamente */
   background: linear-gradient(90deg, #ffe066 0%, #ffd60a 100%); /* Fondo del botón */
   border-radius: 8px; /* Bordes redondeados */
