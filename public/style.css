@@ -466,19 +466,18 @@ button:disabled {
   margin-bottom: 5px;
   background-image: url('./assets/iconoTriviaSelva.png');
   background-size: contain;
-  /* Ajusta la imagen al contenedor sin recortarla */
   background-repeat: no-repeat;
-  /* Evita que la imagen se repita */
   background-position: center;
-  /* Centra la imagen en el contenedor */
   color: #fff;
   padding: 0;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+  /* Mantén el tamaño relativo al contenedor */
+  max-width: 300px;
+  /* Limita el tamaño máximo */
   aspect-ratio: 1;
   /* Mantiene el contenedor cuadrado */
-  max-width: 300px;
   margin-top: 20px;
 }
 
@@ -534,8 +533,10 @@ button:disabled {
 /* Botón de categoría visual */
 .categoria-boton {
   position: relative;
-  width: 100%;
+  width: 90%;
+  /* Relativo al contenedor */
   max-width: 220px;
+  /* Tamaño máximo */
   margin: 18px auto;
   padding: 0;
   border: none;
@@ -561,7 +562,11 @@ button:disabled {
 
 .categoria-img {
   width: 100%;
-  height: 180px;
+  /* Ocupa todo el ancho del botón */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  max-height: 180px;
+  /* Limita la altura máxima */
   object-fit: contain;
   border-radius: 16px;
   display: block;
