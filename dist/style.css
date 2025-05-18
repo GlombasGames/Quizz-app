@@ -538,7 +538,7 @@ a:hover {
 }
 
 .btn-anuncio-header {
-  flex: 2;
+  flex: 1.8;
   /* El botón ocupa el doble de espacio que los otros elementos */
   font-size: 12px;
   /* Tamaño de texto más pequeño */
