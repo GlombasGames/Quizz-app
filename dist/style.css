@@ -13,8 +13,8 @@ body {
 }
 
 #app {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 600px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
   padding: 16px;
   background: linear-gradient(135deg, #0D47A1, #1565C0);
   background-image: url('./assets/fondoSelva.jpeg'), linear-gradient(135deg, #0D47A1, #1565C0);
@@ -26,6 +26,7 @@ body {
   flex-direction: column;
   height: 95%;
   overflow-y: auto;
+  position: relative; /* Asegura que los elementos sticky se comporten correctamente */
 }
 
 /* Oculta la scrollbar en navegadores Webkit (Chrome, Edge, Safari) */
