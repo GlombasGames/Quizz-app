@@ -253,7 +253,7 @@ function renderMenu() {
     </div>
     <div class="header">
     <div style="display: flex;"> 
-    <img class="categoria-img" src="./assets/coin.png" alt="${cat}" onerror="this.src='./assets/pajaro.png'">
+    <img src="./assets/coin.png">
     <p>${progreso.intentos}</p>
     </div>
     <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
