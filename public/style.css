@@ -160,7 +160,7 @@ button:disabled {
 }
 
 .header-item {
-  flex: 0.8;
+  flex: 1;
   /* Cada div ocupa el mismo espacio por defecto */
   display: flex;
   /* Activa Flexbox dentro del div */
@@ -183,7 +183,7 @@ button:disabled {
 }
 
 .btn-anuncio-header {
-  flex: 1.5;
+  flex: 1.4;
   /* El botón ocupa más espacio que los textos */
   font-size: 14px;
   /* Tamaño de texto más grande */
