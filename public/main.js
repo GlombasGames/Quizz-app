@@ -307,7 +307,8 @@ window.jugar = function jugar(categoria) {
     // Seleccionar el botón que fue presionado
     const botonesCategorias = document.querySelectorAll('.categoria-boton');
     botonesCategorias.forEach(boton => {
-      if (boton.textContent.includes(categoria)) {
+      const categoriaTexto = boton.querySelector('.cat')?.textContent.trim();
+      if (categoriaTexto === categoria) {
         // Mostrar el mensaje en el botón
         boton.innerHTML = `
           <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
