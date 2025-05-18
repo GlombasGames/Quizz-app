@@ -148,7 +148,6 @@ button:disabled {
   top: 0;
   /* Se queda pegado en la parte superior */
   width: (100%-32px);
-  height: 50px;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1000;
   /* Asegura que esté por encima de otros elementos */
@@ -177,6 +176,8 @@ button:disabled {
   font-size: 1.5em;
   /* Tamaño de texto más grande */
   font-weight: bold;
+
+  height: 100%;
 }
 
 .header-item img {
