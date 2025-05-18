@@ -303,7 +303,36 @@ function proximaMeta(cat) {
 }
 
 window.jugar = function jugar(categoria) {
-  jugarPartida(categoria)
+  if (progreso.intentos <= 0) {
+    // Seleccionar el botón que fue presionado
+    const botonesCategorias = document.querySelectorAll('.categoria-boton');
+    botonesCategorias.forEach(boton => {
+      if (boton.textContent.includes(categoria)) {
+        // Mostrar el mensaje en el botón
+        boton.innerHTML = `
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;">
+            <span>No tienes suficientes</span>
+            <img src="./assets/coin.png" alt="coin" style="width: 24px; height: 24px;">
+          </div>
+        `;
+        boton.disabled = true; // Deshabilitar el botón temporalmente
+        setTimeout(() => {
+          boton.innerHTML = `
+            <img class="categoria-img" src="./assets/${categoria.toLowerCase()}.png" alt="${categoria}" onerror="this.src='./assets/pajaro.png'">
+            <div class="categoria-info-boton">
+              <strong class="cat">${categoria}</strong>
+              <span class="category-puntos">Puntos: ${progreso.puntos[categoria] || 0}</span>
+            </div>
+          `;
+          boton.disabled = false; // Habilitar el botón nuevamente
+        }, 2000); // Restaurar el botón después de 2 segundos
+      }
+    });
+    return;
+  }
+
+  // Si tiene intentos, iniciar la partida
+  jugarPartida(categoria);
 };
 async function jugarPartida(categoria) {
   preguntasRespondidas = 0; // Reiniciar el contador de preguntas respondidas
