@@ -193,7 +193,7 @@ button:disabled {
   /* Centra horizontalmente los elementos internos */
   text-align: center;
   /* Asegura que el texto esté centrado */
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1rem, 4vw, 3rem);
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2.5rem */
   font-weight: bold;
   position: relative;
@@ -217,7 +217,7 @@ button:disabled {
   display: block;
   flex: 1.5;
   /* El botón ocupa más espacio que los textos */
-  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-size: clamp(1rem, 4vw, 3rem);
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2.5rem */
   /* Tamaño de texto */
   padding: auto;
