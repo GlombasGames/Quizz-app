@@ -162,12 +162,9 @@ button:disabled {
   /* Texto claro */
   padding: 12px 16px;
   /* Espaciado interno */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
   height: auto;
   /* Ajusta la altura al contenido */
-  border-radius: 10px;
-  /* Bordes redondeados */
+
 }
 
 .header-item {
