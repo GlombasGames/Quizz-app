@@ -154,7 +154,7 @@ button:disabled {
   /* Evita que la imagen se repita */
   color: #FFFFFF;
   
-  
+  background-color: #000102;
 }
 
 .header-item {
@@ -173,7 +173,7 @@ button:disabled {
   font-weight: bold;
   /* Asegura que los elementos hijos se posicionen correctamente */
   margin: 5%;
-  background-color: #000102;
+  background-color: #0b3d6e;
 }
 
 .header-item img {
