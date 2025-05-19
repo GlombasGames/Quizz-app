@@ -157,7 +157,7 @@ button:disabled {
   left: 2%;
   width: 100%; /* Ajusta el ancho de la imagen */
   height: 100%; /* Deja que el alto se ajuste automáticamente */
-  aspect-ratio: 16 / 6; /* Mantiene una relación de aspecto de 16:9 */
+  aspect-ratio: 16 / 16; /* Mantiene una relación de aspecto de 16:9 */
   object-fit: contain; /* Asegura que la imagen no se deforme */
 }
 
