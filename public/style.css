@@ -202,7 +202,7 @@ button:disabled {
 }
 
 .btn-anuncio-header {
-  flex: 1;
+  flex: 1.5;
   /* El botón ocupa más espacio que los textos */
   font-size: 1.3em;
   /* Tamaño de texto */
