@@ -152,7 +152,7 @@ button:disabled {
   /* Asegura que esté por encima de otros elementos */
   background-image: url('./assets/boton1.png');
   /* Imagen de fondo */
-  background-size: 120% 120%;
+  background-size: 100% 120%;
   /* Sobredimensiona la imagen para cubrir los bordes transparentes */
   background-position: center;
   /* Centra la imagen */
