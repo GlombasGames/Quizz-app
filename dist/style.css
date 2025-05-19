@@ -513,7 +513,7 @@ button:disabled {
   /* Limita el tamaño máximo */
   aspect-ratio: 1;
   /* Mantiene el contenedor cuadrado */
-  margin-top: 20%;
+  margin-top: 18%;
 }
 
 .cargando {
