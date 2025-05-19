@@ -150,6 +150,14 @@ button:disabled {
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1000;
   /* Asegura que esté por encima de otros elementos */
+  background-image: url('./assets/boton1.png');
+  /* Imagen de fondo */
+  background-size: 120% 120%;
+  /* Sobredimensiona la imagen para cubrir los bordes transparentes */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita que la imagen se repita */
   color: #FFFFFF;
   /* Texto claro */
   padding: 14px 16px;
@@ -175,14 +183,6 @@ button:disabled {
   /* Elimina márgenes */
   padding: 0;
   /* Elimina rellenos */
-  background-image: url('./assets/boton5.png');
-  /* Imagen de fondo */
-  background-size: 120% 135%;
-  /* Sobredimensiona la imagen para cubrir los bordes transparentes */
-  background-position: center;
-  /* Centra la imagen */
-  background-repeat: no-repeat;
-  /* Evita que la imagen se repita */
 }
 
 .header-item img {
