@@ -194,7 +194,7 @@ button:disabled {
   position: relative;
   /* Asegura que la imagen se posicione dentro de su contenedor */
 }
-.header-item p img {
+.coin {
   width: 50%;
 
   /* Tamaño máximo para pantallas grandes */
