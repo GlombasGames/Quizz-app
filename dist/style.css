@@ -185,7 +185,7 @@ button:disabled {
 .header-item {
   flex: 1; /* Cada div ocupa el mismo espacio */
   display: flex; /* Activa Flexbox dentro del div */
-  align-items: center; /* Centra verticalmente los elementos internos */
+  align-items: baseline; /* Centra verticalmente los elementos internos */
   justify-content: center; /* Centra horizontalmente los elementos internos */
   text-align: center; /* Asegura que el texto esté centrado */
   font-size: 1.6em; /* Tamaño del texto */
