@@ -188,7 +188,7 @@ button:disabled {
   align-items: center; /* Centra verticalmente los elementos internos */
   justify-content: center; /* Centra horizontalmente los elementos internos */
   text-align: center; /* Asegura que el texto esté centrado */
-  font-size: 1.2em; /* Tamaño del texto */
+  font-size: 1.6em; /* Tamaño del texto */
   font-weight: bold;
   position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
 }
