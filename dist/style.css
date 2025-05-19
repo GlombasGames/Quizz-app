@@ -158,7 +158,7 @@ button:disabled {
 
 .header-item {
   width: 33%; /* Cada div ocupa un tercio del ancho del header */
-  height: 200px; /* Asegura que el contenedor ocupe toda la altura del header */
+  height: 20%; /* Asegura que el contenedor ocupe toda la altura del header */
   display: flex; /* Activa Flexbox dentro del div */
   align-items: center; /* Centra verticalmente los elementos internos */
   justify-content: center; /* Centra horizontalmente los elementos internos */
