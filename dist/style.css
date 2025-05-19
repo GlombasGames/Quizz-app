@@ -163,7 +163,7 @@ button:disabled {
 
 /* Encabezado */
 .header {
-  display: absolute;
+  display: flex;
   align-items: center;
   /* Centra los elementos verticalmente */
   justify-content: space-between;
