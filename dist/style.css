@@ -211,30 +211,18 @@ button:disabled {
 }
 
 .btn-anuncio-header {
-  display: block;
-  flex: 1.5;
-  /* El botón ocupa más espacio que los textos */
-  font-size: clamp(1rem, 4vw, 2rem);
-  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2.5rem */
-  /* Tamaño de texto */
-  padding: auto;
-  /* Ajusta el relleno */
-  margin: 0 5%;
-  /* Espaciado horizontal */
+  width: 30%; /* El botón ocupará el 30% del ancho del contenedor */
+  max-width: 150px; /* Tamaño máximo para pantallas grandes */
+  height: auto; /* Mantiene la proporción del contenido interno */
+  font-size: clamp(1rem, 2vw, 1.5rem); /* Tamaño del texto responsivo */
+  padding: 8px; /* Ajusta el relleno interno */
+  margin: 0 auto; /* Centra el botón horizontalmente */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
-  /* Fondo del botón */
   border-radius: 50px;
-  /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
   display: flex;
-  /* Asegura que el contenido interno del botón esté centrado */
   align-items: center;
-  /* Centra verticalmente el texto dentro del botón */
   justify-content: center;
-  /* Centra horizontalmente el texto dentro del botón */
-  max-height: 50%;
-  max-width: 50%;
 }
 
 .btn-anuncio-header img {
