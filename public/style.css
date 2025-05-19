@@ -136,7 +136,7 @@ button:disabled {
 }
 
 .header-container {
-   position: relative;
+  position: relative;
   align-items: center;
   /* Centra los elementos verticalmente */
   justify-content: space-between;
@@ -183,29 +183,42 @@ button:disabled {
 }
 
 .header-item {
-  flex: 0.75; /* Cada div ocupa el mismo espacio */
-  display: flex; /* Activa Flexbox dentro del div */
-  align-items: baseline; /* Centra verticalmente los elementos internos */
-  justify-content: center; /* Centra horizontalmente los elementos internos */
-  text-align: center; /* Asegura que el texto esté centrado */
-  font-size: 1.6em; /* Tamaño del texto */
+  flex: 0.75;
+  /* Cada div ocupa el mismo espacio */
+  display: flex;
+  /* Activa Flexbox dentro del div */
+  align-items: baseline;
+  /* Centra verticalmente los elementos internos */
+  justify-content: center;
+  /* Centra horizontalmente los elementos internos */
+  text-align: center;
+  /* Asegura que el texto esté centrado */
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2.5rem */
   font-weight: bold;
-  position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
+  position: relative;
+  /* Asegura que los elementos hijos se posicionen correctamente */
 }
 
 .header-item img {
-  width: 70%; /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
-  max-width: 60px; /* Tamaño máximo para pantallas grandes */
-  height: auto; /* Mantiene la proporción de la imagen */
-  object-fit: contain; /* Asegura que la imagen no se deforme */
-  position: relative; /* Asegura que la imagen se posicione dentro de su contenedor */
+  width: 70%;
+  /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
+  max-width: 60px;
+  /* Tamaño máximo para pantallas grandes */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  /* Asegura que la imagen no se deforme */
+  position: relative;
+  /* Asegura que la imagen se posicione dentro de su contenedor */
 }
 
 .btn-anuncio-header {
   display: block;
   flex: 1.5;
   /* El botón ocupa más espacio que los textos */
-  font-size: 1.3em;
+  font-size: clamp(1rem, 2vw, 2.5rem);
+  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2.5rem */
   /* Tamaño de texto */
   padding: auto;
   /* Ajusta el relleno */
@@ -225,12 +238,18 @@ button:disabled {
   /* Centra horizontalmente el texto dentro del botón */
   max-height: 70px;
 }
+
 .btn-anuncio-header img {
-  width: 50%; /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
-  max-width: 40px; /* Tamaño máximo para pantallas grandes */
-  height: auto; /* Mantiene la proporción de la imagen */
-  object-fit: contain; /* Asegura que la imagen no se deforme */
-  position: relative; /* Asegura que la imagen se posicione dentro de su contenedor */
+  width: 50%;
+  /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
+  max-width: 40px;
+  /* Tamaño máximo para pantallas grandes */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  /* Asegura que la imagen no se deforme */
+  position: relative;
+  /* Asegura que la imagen se posicione dentro de su contenedor */
 }
 
 .saludo {
