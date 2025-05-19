@@ -148,7 +148,7 @@ button:disabled {
   /* Espacia los elementos horizontalmente */
   width: (100%-32px);
   margin: 0;
-  height: 100%;
+  height: 200px;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
