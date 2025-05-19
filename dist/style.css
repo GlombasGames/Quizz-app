@@ -164,7 +164,7 @@ button:disabled {
   /* Activa Flexbox dentro del div */
   align-items: baseline;
   /* Centra verticalmente los elementos internos */
-  justify-content: space-between;
+  justify-content: center;
   /* Centra horizontalmente los elementos internos */
   text-align: center;
   /* Asegura que el texto esté centrado */
