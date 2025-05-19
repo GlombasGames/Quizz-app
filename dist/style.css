@@ -178,7 +178,7 @@ button:disabled {
 }
 
 .header-item {
-  flex: 1.2;
+  flex: 1;
   /* Cada div ocupa el mismo espacio */
   display: flex;
   /* Activa Flexbox dentro del div */
@@ -209,7 +209,7 @@ button:disabled {
 }
 
 .btn-anuncio-header {
-  flex: 1;
+  flex: 1.2;
   width: 30%; /* El botón ocupará el 30% del ancho del contenedor */
   max-width: 150px; /* Tamaño máximo para pantallas grandes */
   height: auto; /* Mantiene la proporción del contenido interno */
