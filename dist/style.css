@@ -140,6 +140,8 @@ button:disabled {
 /* Encabezado */
 .header {
   background-image: url('./assets/cartelHeader.png');
+  background-repeat: no-repeat;
+  background-size: contain;
   display: flex;
   align-items: center;
   /* Centra los elementos verticalmente */
