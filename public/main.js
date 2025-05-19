@@ -249,6 +249,7 @@ function renderMenu() {
   app.innerHTML = `
     <div class="header-container">
     <img src="./assets/cartelHeader.png" alt="hoja1" >
+    </div>
       <div class="header">
         <div class="header-item">
           <img src="./assets/coin.png" alt="coin">
@@ -262,7 +263,6 @@ function renderMenu() {
           ${totalPuntos} pts
         </div>
       </div>
-    </div>
     <div class="logo"></div>
     <div class="saludo">
       <div>¡Bienvenido, ${progreso.nombre}!</div>
