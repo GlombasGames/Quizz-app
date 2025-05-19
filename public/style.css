@@ -152,7 +152,7 @@ button:disabled {
   /* Asegura que esté por encima de otros elementos */
   background-image: url('./assets/cartelHeader.png');
   /* Imagen de fondo */
-  background-size: 100% 100%;
+  background-size: 80% 100%;
   /* Sobredimensiona la imagen para cubrir los bordes transparentes */
   background-position: center;
   /* Centra la imagen */
