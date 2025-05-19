@@ -146,8 +146,8 @@ button:disabled {
   /* Centra los elementos verticalmente */
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
-  width: (95%-32px);
-  margin: 0 10%;
+  width: (100%-32px);
+  margin: 0 auto;
   height: 100%;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
