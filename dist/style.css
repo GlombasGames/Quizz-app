@@ -169,18 +169,6 @@ button:disabled {
 }
 
 
-.header-item img {
-  width: 50%;
-  vertical-align: middle; 
-  /* Tamaño máximo para pantallas grandes */
-  height: auto;
-  /* Mantiene la proporción de la imagen */
-  object-fit: contain;
-  /* Asegura que la imagen no se deforme */
-  position: relative;
-  /* Asegura que la imagen se posicione dentro de su contenedor */
-}
-
 .btn-anuncio-header {
   width: 100%; /* El botón ocupará el 30% del ancho del contenedor */
   height: 60%; /* Mantiene la proporción del contenido interno */
@@ -197,6 +185,17 @@ button:disabled {
 
 .btn-anuncio-header p img {
   width: 30%;
+
+  /* Tamaño máximo para pantallas grandes */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  /* Asegura que la imagen no se deforme */
+  position: relative;
+  /* Asegura que la imagen se posicione dentro de su contenedor */
+}
+.header-item p img {
+  width: 50%;
 
   /* Tamaño máximo para pantallas grandes */
   height: auto;
