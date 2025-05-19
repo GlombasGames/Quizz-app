@@ -157,75 +157,40 @@ button:disabled {
 
 /* Encabezado */
 .header {
+  position: relative; /* Permite posicionar los elementos dentro del header */
   display: flex;
-  align-items: center;
-  /* Centra los elementos verticalmente */
-  justify-content: space-between;
-  /* Espacia los elementos horizontalmente */
-  position: sticky;
-  /* Hace que el encabezado sea sticky */
-  top: 0;
-  /* Se queda pegado en la parte superior */
-  width: (100%-32px);
-  /* Ocupa todo el ancho del contenedor padre (#app) */
-  z-index: 1000;
-  /* Evita que la imagen se repita */
-  color: #FFFFFF;
-  /* Texto claro */
-  padding: 20px 16px;
-  /* Espaciado interno */
-  height: auto;
-  /* Ajusta la altura al contenido */
-
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacia los elementos horizontalmente */
+  width: 90%; /* Ajusta el ancho del contenido */
+  max-width: 600px; /* Limita el ancho máximo */
+  padding: 0 5%; /* Espaciado interno en porcentaje */
+  z-index: 1; /* Asegura que los elementos estén encima del fondo */
 }
 
 .header-item {
-  flex: 1.2;
-  /* Cada div ocupa el mismo espacio por defecto */
+  flex: 1; /* Cada elemento ocupa el mismo espacio */
   display: flex;
-  /* Activa Flexbox dentro del div */
-  align-items: baseline;
-  /* Centra verticalmente los elementos internos */
-  justify-content: center;
-  /* Centra horizontalmente los elementos internos */
-  font-size: 1.5em;
-  /* Tamaño de texto más grande */
+  align-items: center; /* Centra verticalmente los elementos internos */
+  justify-content: center; /* Centra horizontalmente los elementos internos */
+  font-size: 1.2em; /* Tamaño de texto */
   font-weight: bold;
-  margin: 0;
-  /* Elimina márgenes */
-  padding: 0;
-  /* Elimina rellenos */
 }
 
 .header-item img {
-
-  width: 50%;
-  /* Tamaño fijo de la imagen */
-  height: 50%;
-  /* Tamaño fijo de la imagen */
+  width: 30%; /* Ajusta el tamaño de las imágenes en porcentaje */
+  height: auto; /* Mantiene la proporción de las imágenes */
 }
 
 .btn-anuncio-header {
-  flex: 1;
-  /* El botón ocupa más espacio que los textos */
-  font-size: 1.3em;
-  /* Tamaño de texto */
-  padding: 8px 16px;
-  /* Ajusta el relleno */
-  margin: 0 5%;
-  /* Espaciado horizontal */
+  flex: 1.5; /* El botón ocupa más espacio que los textos */
+  font-size: 1em; /* Tamaño de texto */
+  padding: 8px 16px; /* Ajusta el relleno */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
-  /* Fondo del botón */
-  border-radius: 50px;
-  /* Bordes redondeados */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
+  border-radius: 50px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
   display: flex;
-  /* Asegura que el contenido interno del botón esté centrado */
-  align-items: center;
-  /* Centra verticalmente el texto dentro del botón */
-  justify-content: center;
-  /* Centra horizontalmente el texto dentro del botón */
+  align-items: center; /* Centra verticalmente el texto dentro del botón */
+  justify-content: center; /* Centra horizontalmente el texto dentro del botón */
 }
 
 
