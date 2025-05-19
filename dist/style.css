@@ -190,10 +190,10 @@ button:disabled {
 .btn-anuncio-header {
   width: 100%; /* El botón ocupará el 30% del ancho del contenedor */
   max-width: 180px; /* Tamaño máximo para pantallas grandes */
-  height: 70%; /* Mantiene la proporción del contenido interno */
+  height: 60%; /* Mantiene la proporción del contenido interno */
   font-size: clamp(0.8rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
   padding: 8px; /* Ajusta el relleno interno */
-  margin: 0 auto; /* Centra el botón horizontalmente */
+  margin:auto; /* Centra el botón horizontalmente */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
   border-radius: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
