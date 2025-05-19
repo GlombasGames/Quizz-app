@@ -171,7 +171,7 @@ button:disabled {
   font-size: clamp(1rem, 4vw, 2rem);
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2.5rem */
   font-weight: bold;
-  position: relative;
+  margin: auto;
   /* Asegura que los elementos hijos se posicionen correctamente */
 }
 
