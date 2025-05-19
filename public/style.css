@@ -152,9 +152,11 @@ button:disabled {
 }
 
 .header-container img {
-  width: 100%; /* La imagen ocupará todo el ancho del contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  object-fit: contain; /* Asegura que la imagen no se deforme */
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 100%; /* Ajusta el ancho de la imagen */
+  height: 130%; /* Deja que el alto se ajuste automáticamente */
 }
 
 /* Encabezado */
