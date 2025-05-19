@@ -145,12 +145,13 @@ button:disabled {
   width: 100%; /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1000; /* Asegura que esté por encima de otros elementos */
   background-image: url('./assets/cartelHeader.png'); /* Imagen de fondo */
-  background-size: contain; /* Ajusta la imagen para que se mantenga dentro del contenedor */
+  background-size: 100% auto; /* Ajusta el ancho al 100% y la altura proporcional */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
-  padding: 40px 16px; /* Ajusta el espacio interno para que los elementos queden dentro del cartel */
-  height: 120px; /* Altura fija para que el cartel tenga espacio suficiente */
+  padding: 60px 16px 20px; /* Ajusta el espacio interno para que los elementos queden dentro del cartel */
+  height: 140px; /* Ajusta la altura del header */
   box-sizing: border-box; /* Incluye el padding en el cálculo del tamaño */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde */
 }
 
 .header-item {

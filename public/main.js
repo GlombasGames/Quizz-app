@@ -249,7 +249,7 @@ function renderMenu() {
   app.innerHTML = `
     <div class="header">
         <div class="header-item">
-        <img src="./assets/coin.png" alt="coin">
+          <img src="./assets/coin.png" alt="coin">
           ${progreso.intentos}
         </div>
         <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
@@ -257,7 +257,7 @@ function renderMenu() {
           <img src="./assets/coin.png" alt="coin">
         </button>
         <div class="header-item">
-        ${totalPuntos} pts
+          ${totalPuntos} pts
         </div>
     </div>
     <div class="logo"></div>
@@ -266,16 +266,16 @@ function renderMenu() {
     </div>
     <div class="categorias">
       ${Object.keys(data).map((cat, i) => {
-    const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
-    const yaDesbloqueada = progreso.desbloqueadas
-      .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-      .includes(catNormalizada);
-    const desbloqueada = yaDesbloqueada || totalPuntos >= puntosRequeridos;
-    const puntos = progreso.puntos[cat] || 0;
-    const bloqueada = !desbloqueada;
-    const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
-    return `
+        const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
+        const yaDesbloqueada = progreso.desbloqueadas
+          .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+          .includes(catNormalizada);
+        const desbloqueada = yaDesbloqueada || totalPuntos >= puntosRequeridos;
+        const puntos = progreso.puntos[cat] || 0;
+        const bloqueada = !desbloqueada;
+        const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
+        return `
       <button
         class="categoria-boton ${bloqueada ? 'locked' : ''}"
         ${(!bloqueada) ? `onclick="jugar('${cat}')"` : ''}
@@ -291,7 +291,7 @@ function renderMenu() {
         </div>
       </button>
     `;
-  }).join('')}
+      }).join('')}
     </div>
   `;
 }
