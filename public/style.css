@@ -206,7 +206,7 @@ button:disabled {
   /* El botón ocupa más espacio que los textos */
   font-size: 1.3em;
   /* Tamaño de texto */
-  padding: 20px 16px;
+  padding: auto;
   /* Ajusta el relleno */
   margin: 0 5%;
   /* Espaciado horizontal */
