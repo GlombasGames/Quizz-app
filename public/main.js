@@ -247,7 +247,8 @@ function renderMenu() {
   const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
   app.innerHTML = `
-    <div class="header">
+    <div class="header-container">
+      <div class="header">
         <div class="header-item">
           <img src="./assets/coin.png" alt="coin">
           ${progreso.intentos}
@@ -259,6 +260,7 @@ function renderMenu() {
         <div class="header-item">
           ${totalPuntos} pts
         </div>
+      </div>
     </div>
     <div class="logo"></div>
     <div class="saludo">
