@@ -205,7 +205,7 @@ button:disabled {
 }
 
 .btn-anuncio-header img {
-  width: 70%;
+  width: 40%;
 
   /* Tamaño máximo para pantallas grandes */
   height: auto;
