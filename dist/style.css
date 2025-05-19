@@ -170,7 +170,7 @@ button:disabled {
   /* Espacia los elementos horizontalmente */
   width: 70%;
   margin: auto;
-  margin-top: 13%;
+  margin-top: 25%;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
