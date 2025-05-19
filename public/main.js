@@ -249,8 +249,7 @@ function renderMenu() {
   app.innerHTML = `
     <div class="header">
     <div class="header-item">
-          <img src="./assets/coin.png" alt="coin">
-          ${progreso.intentos}
+        <p><img src="./assets/coin.png" alt="coin"> ${progreso.intentos}</p>
         </div>
         <div class="header-item">
         <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
