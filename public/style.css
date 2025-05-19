@@ -178,7 +178,7 @@ button:disabled {
 
 .header-item img {
   width: 50%;
-  margin: auto;
+ 
   /* Tamaño máximo para pantallas grandes */
   height: auto;
   /* Mantiene la proporción de la imagen */
