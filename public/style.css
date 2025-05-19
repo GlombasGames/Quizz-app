@@ -147,6 +147,7 @@ button:disabled {
   display: flex;
   align-items: center; /* Centra el contenido verticalmente */
   justify-content: center; /* Centra el contenido horizontalmente */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
   overflow: hidden; /* Oculta cualquier contenido que sobresalga */
 }
 
