@@ -136,6 +136,7 @@ button:disabled {
 }
 
 .header-container {
+   position: relative;
   align-items: center;
   /* Centra los elementos verticalmente */
   justify-content: space-between;
