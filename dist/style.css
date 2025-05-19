@@ -186,7 +186,7 @@ button:disabled {
   height: 60%; /* Mantiene la proporción del contenido interno */
   font-size: clamp(1rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
   padding: 8px; /* Ajusta el relleno interno */
-  margin:auto; /* Centra el botón horizontalmente */
+   /* Centra el botón horizontalmente */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
   border-radius: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
