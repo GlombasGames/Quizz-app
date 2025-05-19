@@ -137,39 +137,29 @@ button:disabled {
 
 /* Encabezado */
 .header-container {
-  position: relative;
-  width: 100%;
-  height: 160px;
-  /* Ajusta según las dimensiones del cartel */
-  background-image: url('./assets/cartelHeader.png');
-  /* Imagen del cartel */
-  background-size: contain;
-  /* Ajusta la imagen al contenedor */
+  position: sticky; /* Hace que el contenedor sea sticky */
+  top: 0; /* Se queda pegado en la parte superior */
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+  height: 160px; /* Ajusta según las dimensiones del cartel */
+  background-image: url('./assets/cartelHeader.png'); /* Imagen del cartel */
+  background-size: contain; /* Ajusta la imagen al contenedor */
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
-  /* Centra el contenido verticalmente */
-  justify-content: center;
-  /* Centra el contenido horizontalmente */
-  overflow: hidden;
-  /* Oculta cualquier contenido que sobresalga */
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
 }
 
 .header {
   display: flex;
-  align-items: center;
-  /* Centra los elementos verticalmente */
-  justify-content: space-between;
-  /* Espacia los elementos horizontalmente */
-  width: 90%;
-  /* Ajusta el ancho del contenido */
-  max-width: 600px;
-  /* Limita el ancho máximo */
-  padding: 0 16px;
-  /* Espaciado interno */
-  box-sizing: border-box;
-  /* Incluye el padding en el cálculo del tamaño */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacia los elementos horizontalmente */
+  width: 90%; /* Ajusta el ancho del contenido */
+  max-width: 600px; /* Limita el ancho máximo */
+  padding: 0 16px; /* Espaciado interno */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del tamaño */
 }
 
 /* Ajustes para los elementos del header */
