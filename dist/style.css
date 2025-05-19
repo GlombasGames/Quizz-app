@@ -154,7 +154,7 @@ button:disabled {
 .header-container img {
   position: absolute;
   /* Permite mover la imagen en relación con el contenedor padre */
-  top: -25%;
+  top: -20%;
   /* Mueve la imagen hacia arriba */
   
   /* Mueve la imagen hacia la izquierda */
