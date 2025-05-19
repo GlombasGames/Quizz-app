@@ -146,17 +146,19 @@ button:disabled {
   top: 0;
   /* Se queda pegado en la parte superior */
   width: (100%-32px);
-  height: auto;
+  height: 200px;
   overflow: visible;
   z-index: 1000;
 }
 
 .header-container img {
   position: absolute;
-  top: -5%;
-  left: -5%;
-  width: 100%; /* Ajusta el ancho de la imagen */
-  height: 130%; /* Deja que el alto se ajuste automáticamente */
+  top: 0;
+  left: 2%;
+  width: 90%; /* Ajusta el ancho de la imagen */
+  height: auto; /* Deja que el alto se ajuste automáticamente */
+  aspect-ratio: 16 / 9; /* Mantiene una relación de aspecto de 16:9 */
+  object-fit: contain; /* Asegura que la imagen no se deforme */
 }
 
 /* Encabezado */
@@ -166,9 +168,8 @@ button:disabled {
   /* Centra los elementos verticalmente */
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
-  width: 80%;
-  margin: 10% auto;
-  height: 100%;
+  width: 70%;
+  margin: auto;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
@@ -178,7 +179,7 @@ button:disabled {
 }
 
 .header-item {
-  flex: 1.2;
+  flex: 0.75;
   /* Cada div ocupa el mismo espacio */
   display: flex;
   /* Activa Flexbox dentro del div */
@@ -209,7 +210,6 @@ button:disabled {
 }
 
 .btn-anuncio-header {
-  flex: 1;
   width: 30%; /* El botón ocupará el 30% del ancho del contenedor */
   max-width: 150px; /* Tamaño máximo para pantallas grandes */
   height: auto; /* Mantiene la proporción del contenido interno */
