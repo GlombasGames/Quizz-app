@@ -158,22 +158,15 @@ button:disabled {
 }
 
 .header-item {
-   width: 33%;
-   height: 100%;
-  /* Cada div ocupa el mismo espacio */
-  display: flex;
-  /* Activa Flexbox dentro del div */
-  align-items: baseline;
-  /* Centra verticalmente los elementos internos */
-  justify-content: center;
-  /* Centra horizontalmente los elementos internos */
-  text-align: center;
-  /* Asegura que el texto esté centrado */
-  font-size: clamp(1rem, 4vw, 2rem);
-  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2.5rem */
+  width: 33%; /* Cada div ocupa un tercio del ancho del header */
+  height: 100%; /* Asegura que el contenedor ocupe toda la altura del header */
+  display: flex; /* Activa Flexbox dentro del div */
+  align-items: center; /* Centra verticalmente los elementos internos */
+  justify-content: center; /* Centra horizontalmente los elementos internos */
+  text-align: center; /* Asegura que el texto esté centrado */
+  font-size: clamp(1rem, 4vw, 2rem); /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
-  /* Asegura que los elementos hijos se posicionen correctamente */
-  background-color: #0b3d6e;
+  background-color: #0b3d6e; /* Solo para depuración visual */
 }
 
 .header-item img {
