@@ -166,7 +166,7 @@ button:disabled {
   /* Centra los elementos verticalmente */
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
-  width: 70%;
+  width: 80%;
   margin: 10% auto;
   height: 100%;
   /* Ocupa todo el ancho del contenedor padre (#app) */
