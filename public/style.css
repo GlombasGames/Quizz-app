@@ -192,7 +192,7 @@ button:disabled {
 .btn-anuncio-header {
   width: 40%; /* El botón ocupará el 30% del ancho del contenedor */
   max-width: 150px; /* Tamaño máximo para pantallas grandes */
-  height: 50%; /* Mantiene la proporción del contenido interno */
+  height: 60%; /* Mantiene la proporción del contenido interno */
   font-size: clamp(0.8rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
   padding: 8px; /* Ajusta el relleno interno */
   margin: 0 auto; /* Centra el botón horizontalmente */
