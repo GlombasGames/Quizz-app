@@ -155,7 +155,7 @@ button:disabled {
   position: absolute;
   top: -5%;
   left: -5%;
-  width: 110%; /* Ajusta el ancho de la imagen */
+  width: 105%; /* Ajusta el ancho de la imagen */
   height: 135%; /* Deja que el alto se ajuste automáticamente */
 }
 
