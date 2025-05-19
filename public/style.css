@@ -164,18 +164,13 @@ button:disabled {
 /* Encabezado */
 .header {
   display: flex;
-  align-items: center;
-  /* Centra los elementos verticalmente */
-  justify-content: space-between;
-  /* Espacia los elementos horizontalmente */
-  width: 70%;
-  margin: 20% auto;
-  /* Ocupa todo el ancho del contenedor padre (#app) */
-  z-index: 1001;
-  /* Evita que la imagen se repita */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacia los elementos horizontalmente */
+  width: 90%; /* El header ocupará el 90% del ancho del contenedor */
+  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
+  margin: 0 auto; /* Centra el header horizontalmente */
+  z-index: 1001; /* Asegura que esté por encima de la imagen de fondo */
   color: #FFFFFF;
-
-
 }
 
 .header-item {
