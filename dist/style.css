@@ -197,6 +197,7 @@ button:disabled {
   /* Elimina márgenes */
   padding: 0;
   /* Elimina rellenos */
+  z-index: 1001;
 }
 
 .header-item img {
