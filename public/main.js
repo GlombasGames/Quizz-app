@@ -247,9 +247,8 @@ function renderMenu() {
   const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
 
   app.innerHTML = `
-    <div class="header">
-    <img src="./assets/cartelHeader.png" alt="hoja1" >
     <div class="header-item">
+          <img src="./assets/coin.png" alt="coin">
           ${progreso.intentos}
         </div>
         <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
@@ -259,7 +258,7 @@ function renderMenu() {
         <div class="header-item">
           ${totalPuntos} pts
         </div>
-      </div>
+    </div>
     <div class="logo"></div>
     <div class="saludo">
       <div>¡Bienvenido, ${progreso.nombre}!</div>
