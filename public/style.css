@@ -169,7 +169,7 @@ button:disabled {
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
   width: 70%;
-  margin-top: 40%;
+  margin: 20% auto;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
