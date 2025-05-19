@@ -160,7 +160,7 @@ button:disabled {
   /* Mueve la imagen hacia la izquierda */
   width: 85%;
   /* Tamaño fijo de la imagen */
-  height: 220px;
+  height: 200px;
   /* Tamaño fijo de la imagen */
 }
 
@@ -173,7 +173,7 @@ button:disabled {
   /* Espacia los elementos horizontalmente */
   width: 70%;
   margin: auto;
-  margin-top: 13%;
+  margin-top: 11%;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
