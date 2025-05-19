@@ -186,7 +186,7 @@ button:disabled {
   width: 100%; /* El botón ocupará el 30% del ancho del contenedor */
   max-width: 180px; /* Tamaño máximo para pantallas grandes */
   height: 60%; /* Mantiene la proporción del contenido interno */
-  font-size: clamp(0.5rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
+  font-size: clamp(1rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
   padding: 8px; /* Ajusta el relleno interno */
   margin:auto; /* Centra el botón horizontalmente */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
