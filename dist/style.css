@@ -223,7 +223,13 @@ button:disabled {
   justify-content: center;
   /* Centra horizontalmente el texto dentro del botón */
 }
-
+.btn-anuncio-header img {
+  width: 30%; /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
+  max-width: 40px; /* Tamaño máximo para pantallas grandes */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: contain; /* Asegura que la imagen no se deforme */
+  position: relative; /* Asegura que la imagen se posicione dentro de su contenedor */
+}
 
 .saludo {
   display: flex;
