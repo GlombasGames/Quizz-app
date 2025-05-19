@@ -207,14 +207,14 @@ button:disabled {
   font-size: 1.3em;
   /* Tamaño de texto */
 
-  height: 20px;
-  width: 16px;
+  height: 60px;
+  width: 60px;
   /* Ajusta el relleno */
   margin: 0 5%;
   /* Espaciado horizontal */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
   /* Fondo del botón */
-  border-radius: 50px;
+  border-radius: 50%;
   /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   /* Sombra */
