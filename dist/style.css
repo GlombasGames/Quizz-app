@@ -211,6 +211,7 @@ button:disabled {
 }
 
 .btn-anuncio-header {
+  flex: 1.6;
   width: 30%; /* El botón ocupará el 30% del ancho del contenedor */
   max-width: 150px; /* Tamaño máximo para pantallas grandes */
   height: auto; /* Mantiene la proporción del contenido interno */
