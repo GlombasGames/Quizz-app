@@ -148,6 +148,7 @@ button:disabled {
   width: (100%-32px);
   height: 100%;
   overflow: visible;
+  z-index: 1000;
 }
 
 .header-container img {
