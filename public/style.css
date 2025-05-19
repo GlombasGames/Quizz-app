@@ -135,30 +135,24 @@ button:disabled {
   /* Color del candado */
 }
 
-.header-container {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 160px; /* Altura del contenedor */
-  display: flex;
+.header-container{
   align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
-  position: relative; /* Necesario para el pseudo-elemento */
+  /* Centra los elementos verticalmente */
+  justify-content: space-between;
+  /* Espacia los elementos horizontalmente */
+  position: sticky;
+  /* Hace que el encabezado sea sticky */
+  top: 0;
+  /* Se queda pegado en la parte superior */
+  width: (100%-32px);
+  height: 100%;
+  overflow: visible;
 }
-.header-container::before {
-  content: '';
-  position: absolute;
-  top: -20px; /* Mueve la imagen hacia arriba */
-  left: -10%; /* Mueve la imagen hacia la izquierda */
-  width: 120%; /* Sobredimensiona el ancho */
-  height: 200px; /* Sobredimensiona la altura */
-  background-image: url('./assets/cartelHeader.png');
-  background-size: contain; /* Ajusta la imagen al pseudo-elemento */
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1; /* Envía el pseudo-elemento detrás del contenido */
+.header-container img {
+  width: 100%;
+  /* Tamaño fijo de la imagen */
+  height: 100%;
+  /* Tamaño fijo de la imagen */
 }
 
 /* Encabezado */

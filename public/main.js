@@ -248,6 +248,7 @@ function renderMenu() {
 
   app.innerHTML = `
     <div class="header-container">
+    <img src="./assets/cartelHeader.png" alt="hoja1" >
       <div class="header">
         <div class="header-item">
           <img src="./assets/coin.png" alt="coin">
