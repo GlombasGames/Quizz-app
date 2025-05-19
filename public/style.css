@@ -234,6 +234,7 @@ button:disabled {
   justify-content: center;
   /* Centra horizontalmente el texto dentro del botón */
   max-height: 70px;
+  max-width: 70px;
 }
 
 .btn-anuncio-header img {
