@@ -185,7 +185,7 @@ button:disabled {
 
 .btn-anuncio-header p img {
   width: 30%;
-
+  vertical-align: middle;
   /* Tamaño máximo para pantallas grandes */
   height: auto;
   /* Mantiene la proporción de la imagen */
