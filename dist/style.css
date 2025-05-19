@@ -160,7 +160,6 @@ button:disabled {
 .header-item {
    width: 33%;
    height: 100%;
-   margin: auto;
   /* Cada div ocupa el mismo espacio */
   display: flex;
   /* Activa Flexbox dentro del div */
@@ -179,7 +178,7 @@ button:disabled {
 
 .header-item img {
   width: 50%;
- 
+  margin: auto;
   /* Tamaño máximo para pantallas grandes */
   height: auto;
   /* Mantiene la proporción de la imagen */
