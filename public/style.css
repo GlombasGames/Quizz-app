@@ -154,7 +154,6 @@ button:disabled {
 .header-container img {
   position: absolute;
   top: -7%;
-  left: -4%;
   width: 45%; /* Ajusta el ancho de la imagen */
   height: 100%; /* Deja que el alto se ajuste automáticamente */
 }
@@ -167,7 +166,7 @@ button:disabled {
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
   width: (95%-32px);
-  margin: 5% 10%;
+  margin: 0 10%;
   height: 100%;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
