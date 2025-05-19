@@ -154,8 +154,9 @@ button:disabled {
   color: #FFFFFF;
   
   background-image: url('./assets/cartelTopIguana.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .header-item {
