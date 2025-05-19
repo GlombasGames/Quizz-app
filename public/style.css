@@ -146,7 +146,7 @@ button:disabled {
   top: 0;
   /* Se queda pegado en la parte superior */
   width: (100%-32px);
-  height: auto;
+  height: 20%;
   overflow: visible;
   z-index: 1000;
 }
