@@ -165,7 +165,6 @@ button:disabled {
   text-align: center; /* Asegura que el texto esté centrado */
   font-size: 2em; /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
-  background-color: #0b3d6e; /* Solo para depuración visual */
 }
 
 
