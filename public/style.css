@@ -135,7 +135,7 @@ button:disabled {
   /* Color del candado */
 }
 
-.header-container{
+.header-container {
   align-items: center;
   /* Centra los elementos verticalmente */
   justify-content: space-between;
@@ -148,12 +148,18 @@ button:disabled {
   height: 100%;
   overflow: visible;
 }
+
 .header-container img {
-  position: absolute; /* Permite mover la imagen en relación con el contenedor padre */
-  top: -10%; /* Mueve la imagen hacia arriba */
-  left: -5%; /* Mueve la imagen hacia la izquierda */
-  width: 110%; /* Ajusta el ancho de la imagen para que sobresalga un poco */
-  height: auto; /* Mantiene la proporción de la imagen */
+  position: absolute;
+  /* Permite mover la imagen en relación con el contenedor padre */
+  top: -10%;
+  /* Mueve la imagen hacia arriba */
+  left: -5%;
+  /* Mueve la imagen hacia la izquierda */
+  width: 100%;
+  /* Tamaño fijo de la imagen */
+  height: 40%;
+  /* Tamaño fijo de la imagen */
 }
 
 /* Encabezado */
