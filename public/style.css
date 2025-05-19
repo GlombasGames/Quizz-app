@@ -167,7 +167,7 @@ button:disabled {
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
   width: (95%-32px);
-  margin: 12% 10%;
+  margin: 13% 10%;
   height: 100%;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
@@ -212,7 +212,7 @@ button:disabled {
   flex: 1.2;
   width: 30%; /* El botón ocupará el 30% del ancho del contenedor */
   max-width: 150px; /* Tamaño máximo para pantallas grandes */
-  height: auto; /* Mantiene la proporción del contenido interno */
+  height: 50%; /* Mantiene la proporción del contenido interno */
   font-size: clamp(0.8rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
   padding: 8px; /* Ajusta el relleno interno */
   margin: 0 auto; /* Centra el botón horizontalmente */
