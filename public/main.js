@@ -250,7 +250,6 @@ function renderMenu() {
     <div class="header">
     <img src="./assets/cartelHeader.png" alt="hoja1" >
     <div class="header-item">
-          <img src="./assets/coin.png" alt="coin">
           ${progreso.intentos}
         </div>
         <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>

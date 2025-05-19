@@ -139,6 +139,7 @@ button:disabled {
 
 /* Encabezado */
 .header {
+  background-image: url('./assets/cartelHeader.png');
   display: flex;
   align-items: center;
   /* Centra los elementos verticalmente */
@@ -153,11 +154,6 @@ button:disabled {
   color: #FFFFFF;
   
   
-}
-.header img {
-  position: absolute;
-  width: 45%; /* Ajusta el ancho de la imagen */
-  height: 20%; /* Deja que el alto se ajuste automáticamente */
 }
 
 .header-item {
