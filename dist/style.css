@@ -154,7 +154,7 @@ button:disabled {
 .header-container img {
   position: absolute;
   top: -5%;
-  left: -5%;
+  left: -7.5%;
   width: 105%; /* Ajusta el ancho de la imagen */
   height: 135%; /* Deja que el alto se ajuste automáticamente */
 }
