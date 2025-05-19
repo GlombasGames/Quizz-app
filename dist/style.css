@@ -161,13 +161,14 @@ button:disabled {
 
 .header-item {
   width: 33%; /* Cada div ocupa un tercio del ancho del header */
-  height: 150px; /* Asegura que el contenedor ocupe toda la altura del header */
+  height: 130px; /* Asegura que el contenedor ocupe toda la altura del header */
   display: flex; /* Activa Flexbox dentro del div */
   align-items: center; /* Centra verticalmente los elementos internos */
   justify-content: center; /* Centra horizontalmente los elementos internos */
   text-align: center; /* Asegura que el texto esté centrado */
   font-size: 2em; /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
+  margin-top: 10%;
 }
 
 
