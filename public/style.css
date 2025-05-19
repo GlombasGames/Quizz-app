@@ -172,7 +172,7 @@ button:disabled {
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2.5rem */
   font-weight: bold;
   /* Asegura que los elementos hijos se posicionen correctamente */
-  
+  margin: 5%;
 }
 
 .header-item img {
