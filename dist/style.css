@@ -173,6 +173,7 @@ button:disabled {
   font-weight: bold;
   /* Asegura que los elementos hijos se posicionen correctamente */
   margin: 5%;
+  background-color: #000102;
 }
 
 .header-item img {
