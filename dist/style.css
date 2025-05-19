@@ -544,7 +544,7 @@ button:disabled {
 .categorias {
   display: flex;
   flex-wrap: wrap; /* Permite que las categorías se ajusten en varias filas */
-  justify-content: space-between; /* Espaciado uniforme entre las categorías */
+  justify-content: center; /* Espaciado uniforme entre las categorías */
   gap: 16px; /* Espaciado entre las categorías */
   margin-top: 16px;
 }
@@ -552,8 +552,8 @@ button:disabled {
 /* Botón de categoría visual */
 .categoria-boton {
   position: relative;
-  flex: 0 1 calc(50% - 16px); /* Cada botón ocupa el 50% del ancho menos el espacio del gap */
-  max-width: calc(50% - 16px); /* Limita el ancho máximo */
+  flex: 0 1 calc(45%); /* Cada botón ocupa el 45% del ancho del contenedor */
+  max-width: 200px; /* Limita el ancho máximo de los botones */
   margin: 0; /* Elimina márgenes adicionales */
   padding: 0;
   border: none;
