@@ -135,6 +135,19 @@ button:disabled {
   /* Color del candado */
 }
 
+.header-container {
+  background-color: #000102;
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  justify-content: space-between;
+  /* Espacia los elementos horizontalmente */
+  position: sticky;
+  /* Hace que el encabezado sea sticky */
+  top: 0;
+  /* Se queda pegado en la parte superior */
+  width: (100%-32px);
+}
+
 /* Encabezado */
 .header {
   display: flex;
