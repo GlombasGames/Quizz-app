@@ -137,11 +137,18 @@ button:disabled {
 
 .header-container {
   position: relative;
-  width: 100%; /* Ocupa todo el ancho del contenedor principal */
-  max-width: 600px; /* Limita el ancho máximo */
-  height: auto; /* Ajusta la altura automáticamente */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  justify-content: space-between;
+  /* Espacia los elementos horizontalmente */
+  position: sticky;
+  /* Hace que el encabezado sea sticky */
+  top: 0;
+  /* Se queda pegado en la parte superior */
+  width: (100%-32px);
+  height: 200px;
+  overflow: visible;
+  z-index: 1000;
 }
 
 .header-container img {
@@ -157,13 +164,19 @@ button:disabled {
 /* Encabezado */
 .header {
   display: flex;
-  align-items: center; /* Centra los elementos verticalmente */
-  justify-content: space-between; /* Espacia los elementos horizontalmente */
-  width: 90%; /* El header ocupará el 90% del ancho del contenedor */
-  max-width: 100%; /* Asegura que no exceda el ancho del contenedor */
-  margin: 0 auto; /* Centra el header horizontalmente */
-  z-index: 1001; /* Asegura que esté por encima de la imagen de fondo */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  justify-content: space-between;
+  /* Espacia los elementos horizontalmente */
+  width: 70%;
+  margin: 0 auto;
+  height: 100%;
+  /* Ocupa todo el ancho del contenedor padre (#app) */
+  z-index: 1001;
+  /* Evita que la imagen se repita */
   color: #FFFFFF;
+
+
 }
 
 .header-item {
