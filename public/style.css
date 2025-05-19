@@ -156,9 +156,9 @@ button:disabled {
   /* Permite mover la imagen en relación con el contenedor padre */
   top: -15%;
   /* Mueve la imagen hacia arriba */
-  left: 3%;
+  left: 4%;
   /* Mueve la imagen hacia la izquierda */
-  width: 85%;
+  width: 80%;
   /* Tamaño fijo de la imagen */
   height: 200px;
   /* Tamaño fijo de la imagen */
