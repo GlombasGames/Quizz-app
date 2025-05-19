@@ -135,35 +135,10 @@ button:disabled {
   /* Color del candado */
 }
 
-.header-container {
-  position: relative;
-  align-items: center;
-  /* Centra los elementos verticalmente */
-  justify-content: space-between;
-  /* Espacia los elementos horizontalmente */
-  position: sticky;
-  /* Hace que el encabezado sea sticky */
-  top: 0;
-  /* Se queda pegado en la parte superior */
-  width: (100%-32px);
-  height: 20%;
-  overflow: visible;
-  z-index: 1000;
-}
 
-.header-container img {
-  width: 45%;
-  /* Ajusta el ancho de la imagen */
-  height: 100%;
-  /* Deja que el alto se ajuste automáticamente */
-}
 
 /* Encabezado */
 .header {
-  position: relative;
-  position: sticky;
-  /* Hace que el encabezado sea sticky */
-  top: 0;
   display: flex;
   align-items: center;
   /* Centra los elementos verticalmente */
@@ -176,8 +151,12 @@ button:disabled {
   z-index: 1001;
   /* Evita que la imagen se repita */
   color: #FFFFFF;
-
-
+  
+  
+}
+.header img {
+  width: 45%; /* Ajusta el ancho de la imagen */
+  height: 100%; /* Deja que el alto se ajuste automáticamente */
 }
 
 .header-item {
@@ -213,18 +192,12 @@ button:disabled {
 
 .btn-anuncio-header {
   flex: 1.2;
-  width: 30%;
-  /* El botón ocupará el 30% del ancho del contenedor */
-  max-width: 150px;
-  /* Tamaño máximo para pantallas grandes */
-  height: 50%;
-  /* Mantiene la proporción del contenido interno */
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
-  /* Tamaño del texto responsivo */
-  padding: 8px;
-  /* Ajusta el relleno interno */
-  margin: 0 auto;
-  /* Centra el botón horizontalmente */
+  width: 30%; /* El botón ocupará el 30% del ancho del contenedor */
+  max-width: 150px; /* Tamaño máximo para pantallas grandes */
+  height: 50%; /* Mantiene la proporción del contenido interno */
+  font-size: clamp(0.8rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
+  padding: 8px; /* Ajusta el relleno interno */
+  margin: 0 auto; /* Centra el botón horizontalmente */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
   border-radius: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
