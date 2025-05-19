@@ -149,9 +149,9 @@ button:disabled {
   overflow: visible;
 }
 .header-container img {
-  width: 100%;
+  width: (100% -32px);
   /* Tamaño fijo de la imagen */
-  height: 20%;
+  height: 35%;
   /* Tamaño fijo de la imagen */
 }
 
