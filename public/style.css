@@ -177,7 +177,7 @@ button:disabled {
   /* Elimina rellenos */
   background-image: url('./assets/boton5.png');
   /* Imagen de fondo */
-  background-size: 120% 150%;
+  background-size: 120% 135%;
   /* Sobredimensiona la imagen para cubrir los bordes transparentes */
   background-position: center;
   /* Centra la imagen */
