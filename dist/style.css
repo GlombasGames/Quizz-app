@@ -195,7 +195,7 @@ button:disabled {
   justify-content: center;
 }
 
-.btn-anuncio-header img {
+.btn-anuncio-header p img {
   width: 30%;
 
   /* Tamaño máximo para pantallas grandes */
