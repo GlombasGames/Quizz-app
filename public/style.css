@@ -138,82 +138,49 @@ button:disabled {
 /* Encabezado */
 .header {
   display: flex;
-  align-items: center;
-  /* Centra los elementos verticalmente */
-  justify-content: space-between;
-  /* Espacia los elementos horizontalmente */
-  position: sticky;
-  /* Hace que el encabezado sea sticky */
-  top: 0;
-  /* Se queda pegado en la parte superior */
-  width: (100%-32px);
-  /* Ocupa todo el ancho del contenedor padre (#app) */
-  z-index: 1000;
-  /* Asegura que esté por encima de otros elementos */
-  background-image: url('./assets/cartelHeader.png');
-  /* Imagen de fondo */
-  background-size: 90% 100%;
-  /* Sobredimensiona la imagen para cubrir los bordes transparentes */
-  background-position: center;
-  /* Centra la imagen */
-  background-repeat: no-repeat;
-  /* Evita que la imagen se repita */
-  color: #FFFFFF;
-  /* Texto claro */
-  padding: 20px 16px;
-  /* Espaciado interno */
-  height: auto;
-  /* Ajusta la altura al contenido */
-
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Espacia los elementos horizontalmente */
+  position: sticky; /* Hace que el encabezado sea sticky */
+  top: 0; /* Se queda pegado en la parte superior */
+  width: 100%; /* Ocupa todo el ancho del contenedor padre (#app) */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  background-image: url('./assets/cartelHeader.png'); /* Imagen de fondo */
+  background-size: contain; /* Ajusta la imagen para que se mantenga dentro del contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  padding: 40px 16px; /* Ajusta el espacio interno para que los elementos queden dentro del cartel */
+  height: 120px; /* Altura fija para que el cartel tenga espacio suficiente */
+  box-sizing: border-box; /* Incluye el padding en el cálculo del tamaño */
 }
 
 .header-item {
-  flex: 1.2;
-  /* Cada div ocupa el mismo espacio por defecto */
-  display: flex;
-  /* Activa Flexbox dentro del div */
-  align-items: baseline;
-  /* Centra verticalmente los elementos internos */
-  justify-content: center;
-  /* Centra horizontalmente los elementos internos */
-  font-size: 1.5em;
-  /* Tamaño de texto más grande */
+  flex: 1; /* Cada elemento ocupa el mismo espacio */
+  display: flex; /* Activa Flexbox dentro del div */
+  align-items: center; /* Centra verticalmente los elementos internos */
+  justify-content: center; /* Centra horizontalmente los elementos internos */
+  font-size: 1.2em; /* Tamaño de texto */
   font-weight: bold;
   margin: 0;
-  /* Elimina márgenes */
   padding: 0;
-  /* Elimina rellenos */
 }
 
 .header-item img {
-
-  width: 50%;
-  /* Tamaño fijo de la imagen */
-  height: 50%;
-  /* Tamaño fijo de la imagen */
+  width: 40px; /* Tamaño fijo de la imagen */
+  height: 40px; /* Tamaño fijo de la imagen */
+  object-fit: contain; /* Asegura que la imagen mantenga su proporción */
 }
 
 .btn-anuncio-header {
   flex: 1;
-  /* El botón ocupa más espacio que los textos */
-  font-size: 1.3em;
-  /* Tamaño de texto */
-  padding: 8px 16px;
-  /* Ajusta el relleno */
-  margin: 0 5%;
-  /* Espaciado horizontal */
+  font-size: 1em; /* Tamaño de texto */
+  padding: 8px 16px; /* Ajusta el relleno */
+  margin: 0 5%; /* Espaciado horizontal */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
-  /* Fondo del botón */
-  border-radius: 50px;
-  /* Bordes redondeados */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* Sombra */
+  border-radius: 50px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
   display: flex;
-  /* Asegura que el contenido interno del botón esté centrado */
-  align-items: center;
-  /* Centra verticalmente el texto dentro del botón */
-  justify-content: center;
-  /* Centra horizontalmente el texto dentro del botón */
+  align-items: center; /* Centra verticalmente el texto dentro del botón */
+  justify-content: center; /* Centra horizontalmente el texto dentro del botón */
 }
 
 
