@@ -196,7 +196,6 @@ button:disabled {
 .header-item img {
   width: 70%; /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
   max-width: 60px; /* Tamaño máximo para pantallas grandes */
-  min-width: 60px; /* Tamaño máximo para pantallas grandes */
   height: auto; /* Mantiene la proporción de la imagen */
   object-fit: contain; /* Asegura que la imagen no se deforme */
   position: relative; /* Asegura que la imagen se posicione dentro de su contenedor */
@@ -229,7 +228,6 @@ button:disabled {
 .btn-anuncio-header img {
   width: 50%; /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
   max-width: 40px; /* Tamaño máximo para pantallas grandes */
-  min-width: 40px; /* Tamaño máximo para pantallas grandes */
   height: auto; /* Mantiene la proporción de la imagen */
   object-fit: contain; /* Asegura que la imagen no se deforme */
   position: relative; /* Asegura que la imagen se posicione dentro de su contenedor */
