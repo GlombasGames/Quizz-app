@@ -177,7 +177,7 @@ button:disabled {
 }
 
 .header-item img {
-  width: 100%;
+  width: 80%;
  
   /* Tamaño máximo para pantallas grandes */
   height: auto;
