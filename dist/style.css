@@ -168,23 +168,7 @@ button:disabled {
   font-weight: bold;
   background-color: #0b3d6e; /* Solo para depuración visual */
 }
-.header-item .der {
-  display: flex; /* Activa Flexbox dentro del div */
-  align-items: center; /* Centra verticalmente los elementos internos */
-  justify-content: center; /* Centra horizontalmente los elementos internos */
-  text-align: center; /* Asegura que el texto esté centrado */
-  font-size: clamp(1rem, 4vw, 2rem); /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
-  font-weight: bold;
-}
-.header-item .izq p{
 
-  display: flex; /* Activa Flexbox dentro del div */
-  align-items: center; /* Centra verticalmente los elementos internos */
-  justify-content: baseline; /* Centra horizontalmente los elementos internos */
-  text-align: center; /* Asegura que el texto esté centrado */
-  font-size: clamp(1rem, 4vw, 2rem); /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
-  font-weight: bold;
-}
 
 .header-item img {
   width: 50%;
@@ -202,7 +186,7 @@ button:disabled {
   width: 100%; /* El botón ocupará el 30% del ancho del contenedor */
   max-width: 180px; /* Tamaño máximo para pantallas grandes */
   height: 60%; /* Mantiene la proporción del contenido interno */
-  font-size: clamp(0.8rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
+  font-size: clamp(0.5rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
   padding: 8px; /* Ajusta el relleno interno */
   margin:auto; /* Centra el botón horizontalmente */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
