@@ -223,7 +223,7 @@ button:disabled {
   /* Centra verticalmente el texto dentro del botón */
   justify-content: center;
   /* Centra horizontalmente el texto dentro del botón */
-  max-height: 30px;
+  max-height: 50px;
 }
 .btn-anuncio-header img {
   width: 50%; /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
