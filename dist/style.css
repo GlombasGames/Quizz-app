@@ -146,7 +146,7 @@ button:disabled {
   top: 0;
   /* Se queda pegado en la parte superior */
   width: (100%-32px);
-  height: 60%;
+  height: 200px;
   overflow: visible;
   z-index: 1000;
 }
@@ -155,9 +155,9 @@ button:disabled {
   position: absolute;
   top: 0;
   left: 2%;
-  width: 100%; /* Ajusta el ancho de la imagen */
+  width: 90%; /* Ajusta el ancho de la imagen */
   height: 100%; /* Deja que el alto se ajuste automáticamente */
-  aspect-ratio: 16 / 16; /* Mantiene una relación de aspecto de 16:9 */
+  aspect-ratio: 16 / 9; /* Mantiene una relación de aspecto de 16:9 */
   object-fit: contain; /* Asegura que la imagen no se deforme */
 }
 
