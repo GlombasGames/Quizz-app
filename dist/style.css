@@ -145,7 +145,7 @@ button:disabled {
   top: 0;
   /* Se queda pegado en la parte superior */
   width: (100%-32px);
-  height: 80%;
+  height: 100%;
     /* Asegura que esté por encima de otros elementos */
   background-image: url('./assets/cartelHeader.png');
   /* Imagen de fondo */
