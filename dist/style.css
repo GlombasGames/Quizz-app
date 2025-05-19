@@ -148,7 +148,6 @@ button:disabled {
   /* Espacia los elementos horizontalmente */
   width: (100%-32px);
   margin: 0;
-  height: 400px;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
@@ -159,7 +158,7 @@ button:disabled {
 
 .header-item {
   width: 33%; /* Cada div ocupa un tercio del ancho del header */
-  height: 100%; /* Asegura que el contenedor ocupe toda la altura del header */
+  height: 200px; /* Asegura que el contenedor ocupe toda la altura del header */
   display: flex; /* Activa Flexbox dentro del div */
   align-items: center; /* Centra verticalmente los elementos internos */
   justify-content: center; /* Centra horizontalmente los elementos internos */
