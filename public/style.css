@@ -206,15 +206,13 @@ button:disabled {
   /* El botón ocupa más espacio que los textos */
   font-size: 1.3em;
   /* Tamaño de texto */
-
-  height: 60px;
-  width: 40px;
+  padding: 20px 16px;
   /* Ajusta el relleno */
   margin: 0 5%;
   /* Espaciado horizontal */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
   /* Fondo del botón */
-  border-radius: 50%;
+  border-radius: 50px;
   /* Bordes redondeados */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   /* Sombra */
