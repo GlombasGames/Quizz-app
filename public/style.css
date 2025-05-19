@@ -166,9 +166,9 @@ button:disabled {
   /* Centra los elementos verticalmente */
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
-  width: (100%-32px);
-  margin: 13% auto;
-  height: 90%;
+  width: (95%-32px);
+  margin: 10% auto;
+  height: 100%;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
