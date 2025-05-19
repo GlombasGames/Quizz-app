@@ -155,6 +155,7 @@ button:disabled {
   
 }
 .header img {
+  position: absolute;
   width: 45%; /* Ajusta el ancho de la imagen */
   height: 100%; /* Deja que el alto se ajuste automáticamente */
 }
