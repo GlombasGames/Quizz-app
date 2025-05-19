@@ -180,7 +180,7 @@ button:disabled {
 }
 
 .header-item {
-  flex: 1;
+  flex: 1.2;
   /* Cada div ocupa el mismo espacio */
   display: flex;
   /* Activa Flexbox dentro del div */
