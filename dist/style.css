@@ -166,7 +166,7 @@ button:disabled {
 
 /* Encabezado */
 .header {
-  margin-top: 50%;
+  margin-top: 10%;
   display: flex;
   align-items: center;
   /* Centra los elementos verticalmente */
