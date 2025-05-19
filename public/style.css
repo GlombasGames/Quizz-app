@@ -136,7 +136,6 @@ button:disabled {
 }
 
 .header-container {
-  background-color: #000102;
   align-items: center;
   /* Centra los elementos verticalmente */
   justify-content: space-between;
@@ -146,6 +145,14 @@ button:disabled {
   top: 0;
   /* Se queda pegado en la parte superior */
   width: (100%-32px);
+    /* Asegura que esté por encima de otros elementos */
+  background-image: url('./assets/cartelHeader.png');
+  /* Imagen de fondo */
+  background-size: 100% 100%;
+  /* Sobredimensiona la imagen para cubrir los bordes transparentes */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
 }
 
 /* Encabezado */
@@ -162,14 +169,6 @@ button:disabled {
   width: (100%-32px);
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1000;
-  /* Asegura que esté por encima de otros elementos */
-  background-image: url('./assets/cartelHeader.png');
-  /* Imagen de fondo */
-  background-size: 100% 100%;
-  /* Sobredimensiona la imagen para cubrir los bordes transparentes */
-  background-position: center;
-  /* Centra la imagen */
-  background-repeat: no-repeat;
   /* Evita que la imagen se repita */
   color: #FFFFFF;
   /* Texto claro */
