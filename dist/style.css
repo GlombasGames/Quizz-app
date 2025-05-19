@@ -205,9 +205,9 @@ button:disabled {
 }
 
 .btn-anuncio-header img {
-  width: 50%;
+  width: 70%;
   /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
-  max-width: 60px;
+  max-width: 40px;
   /* Tamaño máximo para pantallas grandes */
   height: auto;
   /* Mantiene la proporción de la imagen */
