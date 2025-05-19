@@ -154,7 +154,7 @@ button:disabled {
 .header-container img {
   position: absolute;
   /* Permite mover la imagen en relación con el contenedor padre */
-  top: -10%;
+  top: 0;
   /* Mueve la imagen hacia arriba */
   left: 4%;
   /* Mueve la imagen hacia la izquierda */
@@ -528,7 +528,7 @@ button:disabled {
   /* Limita el tamaño máximo */
   aspect-ratio: 1;
   /* Mantiene el contenedor cuadrado */
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .cargando {
