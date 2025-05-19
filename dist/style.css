@@ -183,30 +183,22 @@ button:disabled {
 }
 
 .header-item {
-  flex: 1.2;
-  /* Cada div ocupa el mismo espacio por defecto */
-  display: flex;
-  /* Activa Flexbox dentro del div */
-  align-items: baseline;
-  /* Centra verticalmente los elementos internos */
-  justify-content: center;
-  /* Centra horizontalmente los elementos internos */
-  font-size: 1.5em;
-  /* Tamaño de texto más grande */
+  flex: 1; /* Cada div ocupa el mismo espacio */
+  display: flex; /* Activa Flexbox dentro del div */
+  align-items: center; /* Centra verticalmente los elementos internos */
+  justify-content: center; /* Centra horizontalmente los elementos internos */
+  text-align: center; /* Asegura que el texto esté centrado */
+  font-size: 1.2em; /* Tamaño del texto */
   font-weight: bold;
-  margin: 0;
-  /* Elimina márgenes */
-  padding: 0;
-  /* Elimina rellenos */
-  z-index: 1001;
+  position: relative; /* Asegura que los elementos hijos se posicionen correctamente */
 }
 
 .header-item img {
-
-  width: 40px;
-  /* Tamaño fijo de la imagen */
-  height: 40px;
-  /* Tamaño fijo de la imagen */
+  width: 20%; /* Ajusta el tamaño de la moneda en porcentaje para que sea responsivo */
+  max-width: 40px; /* Tamaño máximo para pantallas grandes */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: contain; /* Asegura que la imagen no se deforme */
+  position: relative; /* Asegura que la imagen se posicione dentro de su contenedor */
 }
 
 .btn-anuncio-header {
