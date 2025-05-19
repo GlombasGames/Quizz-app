@@ -145,7 +145,7 @@ button:disabled {
   top: 0;
   /* Se queda pegado en la parte superior */
   width: (100%-32px);
-  height: 40%;
+  height: 80%;
     /* Asegura que esté por encima de otros elementos */
   background-image: url('./assets/cartelHeader.png');
   /* Imagen de fondo */
@@ -154,6 +154,7 @@ button:disabled {
   background-position: center;
   /* Centra la imagen */
   background-repeat: no-repeat;
+  background-position: -10% -10%;
 }
 
 /* Encabezado */
