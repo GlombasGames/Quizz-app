@@ -153,7 +153,7 @@ button:disabled {
   /* Evita que la imagen se repita */
   color: #FFFFFF;
   
-  background-color: #000102;
+  background-image: url('./assets/cartelTopIguana.png');
 }
 
 .header-item {
