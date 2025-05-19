@@ -163,13 +163,13 @@ button:disabled {
 
 /* Encabezado */
 .header {
-  display: flex;
+  display: absolute;
   align-items: center;
   /* Centra los elementos verticalmente */
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
   width: 70%;
-  margin: auto;
+  margin-top: 40%;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
