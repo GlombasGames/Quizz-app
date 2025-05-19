@@ -154,7 +154,8 @@ button:disabled {
   background-position: center;
   /* Centra la imagen */
   background-repeat: no-repeat;
-  background-position: -10% -10%;
+  background-position: -40% -40%;
+  overflow: visible;
 }
 
 /* Encabezado */
