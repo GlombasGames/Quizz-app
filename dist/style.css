@@ -136,24 +136,18 @@ button:disabled {
 }
 
 .header-container {
-  align-items: center;
-  /* Centra los elementos verticalmente */
-  justify-content: space-between;
-  /* Espacia los elementos horizontalmente */
-  position: sticky;
-  /* Hace que el encabezado sea sticky */
-  top: 0;
-  /* Se queda pegado en la parte superior */
-  width: (100%-32px);
-  height: 40%;
-    /* Asegura que esté por encima de otros elementos */
-  background-image: url('./assets/cartelHeader.png');
-  /* Imagen de fondo */
-  background-size: 100% 100%;
-  /* Sobredimensiona la imagen para cubrir los bordes transparentes */
-  background-position: center;
-  /* Centra la imagen */
-  background-repeat: no-repeat;
+  position: sticky; /* Hace que el contenedor sea sticky */
+  top: 0; /* Se queda pegado en la parte superior */
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+  height: 180px; /* Aumenta la altura del contenedor */
+  background-image: url('./assets/cartelHeader.png'); /* Imagen del cartel */
+  background-size: 120% 120%; /* Sobredimensiona la imagen para que sea más alta */
+  background-position: -10% -10%; /* Mueve la imagen hacia la izquierda (-10%) y hacia arriba (-10%) */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
 }
 
 /* Encabezado */
