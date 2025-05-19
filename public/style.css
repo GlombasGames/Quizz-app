@@ -169,7 +169,7 @@ button:disabled {
   justify-content: space-between;
   /* Espacia los elementos horizontalmente */
   width: 70%;
-  margin: 25% auto;
+  margin: 0 auto;
   /* Ocupa todo el ancho del contenedor padre (#app) */
   z-index: 1001;
   /* Evita que la imagen se repita */
@@ -179,7 +179,7 @@ button:disabled {
 }
 
 .header-item {
-  flex: 0.75;
+  flex: 1;
   /* Cada div ocupa el mismo espacio */
   display: flex;
   /* Activa Flexbox dentro del div */
