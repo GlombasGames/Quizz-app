@@ -255,8 +255,9 @@ function renderMenu() {
           ${progreso.intentos}
         </div>
         <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-          Ver AD + 1 
+          <p>Ver AD</p> 
           <img src="./assets/coin.png" alt="coin">
+          <p>+1</p>
         </button>
         <div class="header-item">
           ${totalPuntos} pts
