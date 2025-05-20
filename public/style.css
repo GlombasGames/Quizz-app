@@ -144,7 +144,7 @@ button:disabled {
   display: flex;
   align-items: center;
   /* Centra los elementos verticalmente */
-  justify-content: space-between;
+  justify-content: center;
   /* Espacia los elementos horizontalmente */
   width: (100%-32px);
   margin: 0;
@@ -160,7 +160,7 @@ button:disabled {
 }
 
 .header-item {
-  width: 33%; /* Cada div ocupa un tercio del ancho del header */
+  width: 25%; /* Cada div ocupa un tercio del ancho del header */
   height: 130px; /* Asegura que el contenedor ocupe toda la altura del header */
   display: flex; /* Activa Flexbox dentro del div */
   align-items: center; /* Centra verticalmente los elementos internos */
