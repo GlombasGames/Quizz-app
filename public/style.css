@@ -686,7 +686,7 @@ button.btn-nosotros {
    background-color: transparent !important; /* Fuerza el fondo transparente */
 }
 
-button.btn-jugar {
+button.btn-jugar-ppal {
   background-image: url('./assets/jugar.png');
 }
 
