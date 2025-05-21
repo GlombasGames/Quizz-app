@@ -660,3 +660,8 @@ display: flex;
 justify-content: column;
 align-items: center;
 }
+
+.btn-jugar{
+  width: 100%;
+  height: auto;
+}
