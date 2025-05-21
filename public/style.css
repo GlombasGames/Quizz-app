@@ -654,20 +654,7 @@ button:disabled {
 }
 
 .ppal {
-
-  margin-bottom: 5px;
-  background-image: url('./assets/iconoTriviaSelva.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: #fff;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-  max-width: 200px;
-  aspect-ratio: 1;
-  margin-top: 5%;
-  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.1));
-
+display: flex;
+justify-content: column;
+align-items: center;
 }

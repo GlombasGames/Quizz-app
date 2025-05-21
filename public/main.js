@@ -13,6 +13,7 @@ const assetsList = [
   './assets/ad.png',
   './assets/GlombaGames.png',
   './assets/pajaro.png',
+  './assets/trivian.png',
   // Agrega aquí todas las imágenes de la carpeta
 ];
 
@@ -335,7 +336,12 @@ function renderPrincipal() {
   app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
 
   app.innerHTML = `
-  <div class="ppal"></div>
+  <div class="ppal">
+  <img src="./assets/trivian.png" >
+  <button class="btn-jugar" onclick="renderMenu()" tabindex="0">
+  <button class="btn-otras-trivias" onclick="renderMenu()" tabindex="0">
+  <button class="btn-nosotros" onclick="renderMenu()" tabindex="0">
+  </div>
   `;
 }
 
