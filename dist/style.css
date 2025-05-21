@@ -676,8 +676,8 @@ button.btn-jugar,
 button.btn-otras-trivias,
 button.btn-nosotros {
   width: 80%; /* Ajusta el ancho del botón */
-  height: 60px; /* Ajusta la altura del botón */
-  background-size: cover; /* Asegura que la imagen cubra todo el botón */
+  height: 80px; /* Ajusta la altura del botón */
+  background-size: 100% 100%; /* Asegura que la imagen cubra todo el botón */
   background-repeat: no-repeat;
   background-position: center;
   border: none;
