@@ -234,7 +234,7 @@ async function iniciar() {
 
     setTimeout(() => {
       // Renderiza el menú principal
-      renderMenu();
+      renderPrincipal();
     }, 2000);
 
   } catch (error) {
@@ -244,6 +244,7 @@ async function iniciar() {
 }
 
 function renderMenu() {
+  app.style.backgroundImage = 'url(./assets/fondoSelvaMarco.png)';
   const totalPuntos = Object.keys(progreso.puntos)
     .filter(cat => progreso.desbloqueadas.includes(cat))
     .reduce((total, cat) => total + progreso.puntos[cat], 0);
@@ -270,16 +271,16 @@ function renderMenu() {
     </div>
     <div class="categorias">
       ${Object.keys(data).map((cat, i) => {
-        const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
-        const yaDesbloqueada = progreso.desbloqueadas
-          .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-          .includes(catNormalizada);
-        const desbloqueada = yaDesbloqueada || totalPuntos >= puntosRequeridos;
-        const puntos = progreso.puntos[cat] || 0;
-        const bloqueada = !desbloqueada;
-        const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
-        return `
+    const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
+    const yaDesbloqueada = progreso.desbloqueadas
+      .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+      .includes(catNormalizada);
+    const desbloqueada = yaDesbloqueada || totalPuntos >= puntosRequeridos;
+    const puntos = progreso.puntos[cat] || 0;
+    const bloqueada = !desbloqueada;
+    const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
+    return `
       <button
         class="categoria-boton ${bloqueada ? 'locked' : ''}"
         ${(!bloqueada) ? `onclick="jugar('${cat}')"` : ''}
@@ -295,12 +296,18 @@ function renderMenu() {
         </div>
       </button>
     `;
-      }).join('')}
+  }).join('')}
     </div>
   `;
 }
-// Aseguramos que renderMenu esté disponible globalmente
-window.renderMenu = renderMenu;
+
+function renderPrincipal() {
+  app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
+
+  app.innerHTML = `
+  `;
+}
+
 
 function proximaMeta(cat) {
   const orden = Object.keys(data);
