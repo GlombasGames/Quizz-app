@@ -663,5 +663,6 @@ align-items: center;
 
 .btn-jugar{
   width: 100%;
+  background-image: url('./assets/jugar.png');
   height: auto;
 }
