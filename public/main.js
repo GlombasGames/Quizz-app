@@ -14,6 +14,7 @@ const assetsList = [
   './assets/GlombaGames.png',
   './assets/pajaro.png',
   './assets/trivian.png',
+  './assets/cartel.png',
   // Agrega aquí todas las imágenes de la carpeta
 ];
 
