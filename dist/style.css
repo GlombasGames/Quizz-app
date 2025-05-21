@@ -672,7 +672,7 @@ button:disabled {
   background-repeat: no-repeat;
 }
 
-button.btn-jugar,
+button.btn-jugar-ppal,
 button.btn-otras-trivias,
 button.btn-nosotros {
   width: 80%; /* Ajusta el ancho del botón */
