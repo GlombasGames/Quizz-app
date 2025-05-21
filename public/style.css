@@ -675,3 +675,17 @@ align-items: center;
   background-repeat: no-repeat;
   height: auto;
 }
+.btn-otras-trivias{
+  width: 100%;
+  background-image: url('./assets/otrasTrivias.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: auto;
+}
+.btn-nosotros{
+  width: 100%;
+  background-image: url('./assets/nosotros.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: auto;
+}
