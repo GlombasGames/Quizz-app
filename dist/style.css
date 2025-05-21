@@ -668,7 +668,7 @@ button:disabled {
   height: 20%;
   margin: 0 auto;
   background-image: url('./assets/trivian.png');
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
