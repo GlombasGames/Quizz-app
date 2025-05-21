@@ -336,7 +336,6 @@ function renderMenu() {
 window.renderMenu = renderMenu;
 
 window.otrasTrivias = `
-      <h2>Cartel de otras trivias</h2>
       <div class="trivias-caja">
       <div class="trivia"><div>
       <div class="trivia"><div>
