@@ -355,7 +355,7 @@ function renderCartel(contenido) {
 
   app.innerHTML = `
   <div class="cartel">
-  <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
+  <button class="btn-volver-cartel" onclick="renderPrincipal()" tabindex="0"></button>
   ${contenido}
   </div>
   `;
