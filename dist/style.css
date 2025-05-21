@@ -150,7 +150,7 @@ button:disabled {
   z-index: 1001;
   /* Evita que la imagen se repita */
   color: #FFFFFF;
-  
+
   background-image: url('./assets/cartelTopIguana.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -158,24 +158,36 @@ button:disabled {
 }
 
 .header-item {
-  width: 25%; /* Cada div ocupa un tercio del ancho del header */
-  height: 130px; /* Asegura que el contenedor ocupe toda la altura del header */
-  display: flex; /* Activa Flexbox dentro del div */
-  align-items: center; /* Centra verticalmente los elementos internos */
-  justify-content: center; /* Centra horizontalmente los elementos internos */
-  text-align: center; /* Asegura que el texto esté centrado */
-  font-size: clamp(1.2rem, 2vw, 1.8rem); /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
+  width: 25%;
+  /* Cada div ocupa un tercio del ancho del header */
+  height: 130px;
+  /* Asegura que el contenedor ocupe toda la altura del header */
+  display: flex;
+  /* Activa Flexbox dentro del div */
+  align-items: center;
+  /* Centra verticalmente los elementos internos */
+  justify-content: center;
+  /* Centra horizontalmente los elementos internos */
+  text-align: center;
+  /* Asegura que el texto esté centrado */
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
   margin-top: 7%;
 }
 
 
 .btn-anuncio-header {
-  width: 100%; /* El botón ocupará el 30% del ancho del contenedor */
-  height: 55%; /* Mantiene la proporción del contenido interno */
-  font-size: clamp(1rem, 2vw, 1.2rem); /* Tamaño del texto responsivo */
-  padding: 8px; /* Ajusta el relleno interno */
-  margin:auto; /* Centra el botón horizontalmente */
+  width: 100%;
+  /* El botón ocupará el 30% del ancho del contenedor */
+  height: 55%;
+  /* Mantiene la proporción del contenido interno */
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  /* Tamaño del texto responsivo */
+  padding: 8px;
+  /* Ajusta el relleno interno */
+  margin: auto;
+  /* Centra el botón horizontalmente */
   background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
   border-radius: 50px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -195,6 +207,7 @@ button:disabled {
   position: relative;
   /* Asegura que la imagen se posicione dentro de su contenedor */
 }
+
 .coin {
   width: 100%;
 
@@ -561,6 +574,10 @@ button:disabled {
   cursor: pointer;
   border-radius: 16px;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  /* Elimina el efecto de resaltado en móviles */
+  outline: none;
+  /* Asegura que no haya bordes al hacer clic */
 }
 
 .categoria-boton:disabled,
