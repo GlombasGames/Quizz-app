@@ -337,7 +337,7 @@ function renderPrincipal() {
 
   app.innerHTML = `
   <div class="ppal">
-  <div class="trivian"></div>
+  <div ></div>
   <button class="btn-jugar" onclick="renderMenu()" tabindex="0">
   <button class="btn-otras-trivias" onclick="renderMenu()" tabindex="0">
   <button class="btn-nosotros" onclick="renderMenu()" tabindex="0">

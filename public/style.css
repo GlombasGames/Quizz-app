@@ -660,7 +660,7 @@ display: flex;
 justify-content: column;
 align-items: center;
 }
-.trivian {
+.ppal div {
   width: 100%;
   height: auto;
   background-image: url('./assets/trivian.png');
