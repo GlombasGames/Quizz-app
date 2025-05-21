@@ -672,7 +672,8 @@ button:disabled {
   width: 100%;
   max-width: 400px;
   height: 25%;
-  margin: 10% auto;
+  margin: 0 auto;
+  margin-bottom: 5% ;
   background-image: url('./assets/trivian.png');
   background-size: 100% 100%;
   background-position: center;
@@ -715,7 +716,7 @@ button.btn-nosotros {
   background-color: transparent !important;
   /* Fuerza el fondo transparente */
   margin: 0 auto;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 button.btn-jugar-ppal {
