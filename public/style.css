@@ -779,5 +779,12 @@ width: 80%;
 height: 50%;
 margin: 0 auto;
 margin-top: 10%;
+overflow-y: scroll;
+}
 
+.trivia {
+  background-color: #000102;
+  width: 30%;
+  height: 30%;
+  margin: 0 auto;
 }
