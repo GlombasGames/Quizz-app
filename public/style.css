@@ -209,7 +209,7 @@ button:disabled {
 }
 
 .coin img {
-  width: 40px;
+  width: 50%;
 
   /* Tamaño máximo para pantallas grandes */
   height: auto;
