@@ -199,7 +199,7 @@ button:disabled {
   width: auto;
   object-fit: contain;
   position: relative;
-  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
