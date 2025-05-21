@@ -753,6 +753,22 @@ button.btn-volver {
   /* Aplica la sombra negra */
 }
 
+button.btn-volver-cartel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent !important;
+  background-image: url('./assets/flecha.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 10%;
+  min-width: 40px;
+  height: 10%;
+  cursor: pointer;
+  filter: drop-shadow(0 0 5px rgb(169, 169, 8));
+  /* Aplica la sombra negra */
+}
+
 .cartel {
   background-image: url('./assets/cartel.png');
   align-items: center;
