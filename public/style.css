@@ -736,6 +736,7 @@ button.btn-nosotros {
 button.btn-volver {
   position: absolute;
   top: -10%;
+  right: 0;
   background-color: transparent !important;
   background-image: url('./assets/flecha.png');
   background-size: 100% 100%;
