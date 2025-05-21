@@ -20,7 +20,7 @@ body {
   padding: 16px;
   background: linear-gradient(135deg, #0D47A1, #1565C0);
   background-image: url('./assets/fondoSelvaMarco.png');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -141,18 +141,22 @@ button:disabled {
 .header {
   position: sticky;
   top: 0;
-  z-index: 1001;
   display: flex;
   align-items: center;
+  /* Centra los elementos verticalmente */
   justify-content: center;
-  width: 100%;
+  /* Espacia los elementos horizontalmente */
+  width: (100%-32px);
+  margin: 0;
+  /* Ocupa todo el ancho del contenedor padre (#app) */
+  z-index: 1001;
+  /* Evita que la imagen se repita */
+  color: #FFFFFF;
+  
   background-image: url('./assets/cartelTopIguana.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-
-  /* Recorta el área visible */
-  clip-path: inset(0 0 0 0);
 }
 
 .header-item {
