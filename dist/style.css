@@ -187,8 +187,7 @@ button:disabled {
   padding: 8px;
   /* Ajusta el relleno interno */
   margin: auto;
-  /* Centra el botón horizontalmente */
-  background: linear-gradient(90deg, #e3c138 0%, #ffd60a 100%);
+
 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
