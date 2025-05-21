@@ -655,28 +655,22 @@ button:disabled {
 
 .ppal {
   display: flex;
-  flex-direction: column;
-  /* Asegura que los elementos estén en columna */
-  align-items: center;
-  /* Centra los elementos horizontalmente */
-  justify-content: center;
-  /* Centra los elementos verticalmente */
-  gap: 16px;
-  /* Espaciado entre los botones */
+  flex-direction: column; /* Asegura que los elementos estén en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  gap: 16px; /* Espaciado entre los botones */
   width: 100%;
   height: 90%;
   background-color: #000102b5;
 }
-
 .ppal div {
   width: 90%;
+  max-width: 400px;
+  max-height: 130px;
   height: 25%;
   margin: 5% auto;
   background-image: url('./assets/trivian.png');
-  aspect-ratio: 3 / 1;
-  /* Relación de aspecto 3:1 */
-  background-size: cover;
-  /* Asegura que la imagen de fondo cubra todo el botón */
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -684,21 +678,17 @@ button:disabled {
 button.btn-jugar-ppal,
 button.btn-otras-trivias,
 button.btn-nosotros {
-  width: 80%;
-  /* El ancho será el 80% del contenedor */
-  aspect-ratio: 3 / 1;
-  /* Relación de aspecto 3:1 */
-  background-size: cover;
-  /* Asegura que la imagen de fondo cubra todo el botón */
+  width: 80%; /* Ajusta el ancho del botón */
+  height: 20%; /* Ajusta la altura del botón */
+  max-width: 300px;
+  background-size: 100% 100%; /* Asegura que la imagen cubra todo el botón */
   background-repeat: no-repeat;
   background-position: center;
   border: none;
   cursor: pointer;
-  border-radius: 8px;
-  /* Opcional: bordes redondeados */
-  background-color: transparent;
-  /* Fondo transparente */
-  margin: 0 auto;
+  border-radius: 8px; /* Opcional: bordes redondeados */
+   background-color: transparent !important; /* Fuerza el fondo transparente */
+   margin: 0 auto;
 }
 
 button.btn-jugar-ppal {
