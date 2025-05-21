@@ -691,7 +691,7 @@ button.btn-otras-trivias {
   /* Ajusta el ancho del botón */
   height: 15%;
   /* Ajusta la altura del botón */
-  max-width: 300px;
+  max-width: 280px;
   background-size: 100% 100%;
   /* Asegura que la imagen cubra todo el botón */
   background-repeat: no-repeat;
@@ -751,4 +751,8 @@ button.btn-volver {
   cursor: pointer;
   filter: drop-shadow(0 0 5px rgb(169, 169, 8));
   /* Aplica la sombra negra */
+}
+
+.cartel {
+  background-image: url('./assets/cartel.png');
 }

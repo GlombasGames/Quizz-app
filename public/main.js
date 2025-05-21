@@ -348,6 +348,16 @@ function renderPrincipal() {
 }
 window.renderPrincipal = renderPrincipal;
 
+function renderCartel() {
+
+  app.innerHTML = `
+  <div class="cartel">
+  contenido del cartel
+  </div>
+  `;
+}
+window.renderCartel = renderCartel;
+
 function proximaMeta(cat) {
   const orden = Object.keys(data);
   const index = orden.indexOf(cat);
