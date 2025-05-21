@@ -337,12 +337,12 @@ window.renderMenu = renderMenu;
 
 window.otrasTrivias = `
       <div class="trivias-caja">
-      <div class="trivia"><div>
-      <div class="trivia"><div>
-      <div class="trivia"><div>
-      <div class="trivia"><div>
-      <div class="trivia"><div>
-      <div class="trivia"><div>
+      <div class="trivia"></div>
+      <div class="trivia"></div>
+      <div class="trivia"></div>
+      <div class="trivia"></div>
+      <div class="trivia"></div>
+      <div class="trivia"></div>
       </div>
       <p>¡Pronto más novedades!</p>
       <p>¡Gracias por jugar!</p>
