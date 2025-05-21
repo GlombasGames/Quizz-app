@@ -179,6 +179,7 @@ button:disabled {
 
 .btn-anuncio-header {
   background-color: #00010200;
+  border: 0;
   width: 100%;
   /* El botón ocupará el 30% del ancho del contenedor */
   height: 55%;
