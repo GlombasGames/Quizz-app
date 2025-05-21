@@ -151,9 +151,8 @@ button:disabled {
   background-repeat: no-repeat;
   background-position: center;
 
-  /* Máscara para ocultar contenido detrás */
-  -webkit-mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
+  /* Recorta el área visible */
+  clip-path: inset(0 0 0 0);
 }
 
 .header-item {
