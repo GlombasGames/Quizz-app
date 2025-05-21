@@ -5,6 +5,9 @@ import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 const archivoUsuario = 'usuario.json';
 const tiempoLimite = 120;
+const coin = 'escarabajo.png'; // Nombre del archivo de la moneda
+
+
 let version
 document.addEventListener('DOMContentLoaded', iniciar);
 
@@ -249,11 +252,11 @@ function renderMenu() {
   app.innerHTML = `
     <div class="header">
      <div class="header-item">
-         <p class="coin"><img src="./assets/coin.png" alt="coin"> ${progreso.intentos}</p>
+         <p class="coin"><img src="./assets/${coin}" alt="coin"> ${progreso.intentos}</p>
      </div>
      <div class="header-item">
       <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-       <p>Ver AD <img src="./assets/coin.png" alt="coin"> +1</p>       
+       <p>Ver AD <img src="./assets/${coin}" alt="coin"> +1</p>       
       </button>
      </div>
      <div class="header-item">
@@ -319,7 +322,7 @@ window.jugar = function jugar(categoria) {
           mensaje.className = 'mensaje-overlay';
           mensaje.innerHTML = `
             <span>No tienes suficientes</span>
-            <img src="./assets/coin.png" alt="coin" style="width: 40px; height: 40px;">
+            <img src="./assets/${coin}" alt="coin" style="width: 40px; height: 40px;">
           `;
           boton.appendChild(mensaje); // Agregar el mensaje al botón
         }
