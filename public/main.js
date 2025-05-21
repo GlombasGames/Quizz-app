@@ -2,13 +2,40 @@ import './style.css';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
-let preguntasRespondidas = 0; // Contador global para preguntas respondidas
-const archivoUsuario = 'usuario.json';
+
+
 const tiempoLimite = 120;
+
+const assetsList = [
+  './assets/fondoPrincipal.png',
+  './assets/fondoSelvaMarco.png',
+  './assets/escarabajo.png',
+  './assets/ad.png',
+  './assets/GlombaGames.png',
+  './assets/pajaro.png',
+  // Agrega aquí todas las imágenes de la carpeta
+];
+
+async function precargarImagenes(rutas) {
+  return Promise.all(
+    rutas.map((ruta) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = ruta;
+        img.onload = resolve; // Resuelve la promesa cuando la imagen se carga
+        img.onerror = reject; // Rechaza la promesa si hay un error
+      });
+    })
+  );
+}
+
+
+
 const coin = 'escarabajo.png'; // Nombre del archivo de la moneda
 const coins = 'ad.png'; // Nombre del archivo de la moneda
 
 
+let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 let version
 document.addEventListener('DOMContentLoaded', iniciar);
 
@@ -220,6 +247,9 @@ function tieneConexion() {
 
 async function iniciar() {
   try {
+        // Precargar imágenes
+    await precargarImagenes(assetsList);
+    console.log('Imágenes precargadas correctamente.');
     // Mostrar un mensaje inicial
     app.innerHTML = `<div class="cargando">
     <img src="./assets/GlombaGames.png" alt="Pájaro" style="width:60%; height:220px; min-width:300px; display:block; margin:0 auto 16px auto;">
