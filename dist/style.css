@@ -672,7 +672,7 @@ button:disabled {
   width: 100%;
   max-width: 400px;
   height: 25%;
-  margin: 0 auto;
+  margin: 10% auto;
   background-image: url('./assets/trivian.png');
   background-size: 100% 100%;
   background-position: center;
@@ -696,7 +696,7 @@ button.btn-otras-trivias {
   /* Opcional: bordes redondeados */
   background-color: transparent !important;
   /* Fuerza el fondo transparente */
-  margin: 5% auto;
+  margin: 0 auto;
 }
 button.btn-nosotros {
   width: 60%;
