@@ -761,8 +761,8 @@ button.btn-volver {
   background-color: transparent !important;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   margin: auto;
   cursor: pointer;
 }

@@ -341,22 +341,26 @@ function renderPrincipal() {
   <div class="ppal">
   <div></div>
   <button class="btn-jugar-ppal" onclick="renderMenu()" tabindex="0">
-  <button class="btn-otras-trivias" onclick="renderCartel()" tabindex="0">
-  <button class="btn-nosotros" onclick="renderCartel()" tabindex="0">
+  <button class="btn-otras-trivias" onclick="renderCartel(${otrasTrivias})" tabindex="0">
+  <button class="btn-nosotros" onclick="renderCartel(${nosotros})" tabindex="0">
   </div>
   `;
 }
 window.renderPrincipal = renderPrincipal;
 
-function renderCartel() {
+function renderCartel(contenido) {
 
   app.innerHTML = `
   <div class="cartel">
-  contenido del cartel
+  <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
+  ${contenido}
   </div>
   `;
 }
 window.renderCartel = renderCartel;
+
+const nosotros = `Cartel de nosotros`;
+const otrasTrivias = `Cartel de otras trivias`;
 
 function proximaMeta(cat) {
   const orden = Object.keys(data);
