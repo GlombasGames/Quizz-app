@@ -141,22 +141,19 @@ button:disabled {
 .header {
   position: sticky;
   top: 0;
+  z-index: 1001;
   display: flex;
   align-items: center;
-  /* Centra los elementos verticalmente */
   justify-content: center;
-  /* Espacia los elementos horizontalmente */
-  width: (100%-32px);
-  margin: 0;
-  /* Ocupa todo el ancho del contenedor padre (#app) */
-  z-index: 1001;
-  /* Evita que la imagen se repita */
-  color: #FFFFFF;
-  
+  width: 100%;
   background-image: url('./assets/cartelTopIguana.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
+
+  /* Máscara para ocultar contenido detrás */
+  -webkit-mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 100%, transparent 100%);
 }
 
 .header-item {
