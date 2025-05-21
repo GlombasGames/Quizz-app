@@ -680,13 +680,30 @@ button:disabled {
 }
 
 button.btn-jugar-ppal,
-button.btn-otras-trivias,
-button.btn-nosotros {
+button.btn-otras-trivias {
   width: 80%;
   /* Ajusta el ancho del botón */
   height: 15%;
   /* Ajusta la altura del botón */
   max-width: 300px;
+  background-size: 100% 100%;
+  /* Asegura que la imagen cubra todo el botón */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  /* Opcional: bordes redondeados */
+  background-color: transparent !important;
+  /* Fuerza el fondo transparente */
+  margin: 0 auto;
+}
+button.btn-nosotros {
+  width: 60%;
+  /* Ajusta el ancho del botón */
+  height: 10%;
+  /* Ajusta la altura del botón */
+  max-width: 200px;
   background-size: 100% 100%;
   /* Asegura que la imagen cubra todo el botón */
   background-repeat: no-repeat;
