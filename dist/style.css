@@ -664,8 +664,8 @@ button:disabled {
   background-color: #000102b5;
 }
 .ppal div {
-  width: 80%;
-  max-width: 300px;
+  width: 100%;
+  max-width: 400px;
   height: 25%;
   margin: 0 auto;
   background-image: url('./assets/trivian.png');
