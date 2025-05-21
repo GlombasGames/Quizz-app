@@ -657,13 +657,13 @@ button:disabled {
   width: 100%;
   height: auto;
 display: flex;
-justify-content: center;
+justify-content: column;
 align-items: center;
 }
-.ppal img {
-  width: 100%;
-  height: auto;
-align-items: center;
+.trivian {
+  background-image: url('./assets/trivian.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .btn-jugar{
