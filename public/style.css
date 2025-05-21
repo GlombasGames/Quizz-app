@@ -45,7 +45,6 @@ button {
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background: #2196F3;
   /* Botón destacado */
   color: #FFFFFF;
   /* Texto claro */
@@ -114,7 +113,6 @@ button:disabled {
   cursor: pointer;
   border: none;
   border-radius: 4px;
-  background: #2196F3;
   /* Color del botón */
   color: #FFFFFF;
   /* Color del texto */
@@ -122,7 +120,7 @@ button:disabled {
 }
 
 .category-info button:hover {
-  background: #1976D2;
+
   /* Color más oscuro al pasar el mouse */
 }
 
