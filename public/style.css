@@ -775,6 +775,7 @@ text-align: center;
 justify-content: center;
 background-color: yellowgreen;
 width: 80%;
+min-width: 400px;
 height: 50%;
 margin: 0 auto;
 margin-top: 10%;
