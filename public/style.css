@@ -768,3 +768,13 @@ button.btn-volver-cartel {
   margin: auto;
   cursor: pointer;
 }
+
+.contenido-cartel {
+text-align: center;
+justify-content: center;
+background-color: yellowgreen;
+width: 80%;
+height: 80%;
+margin: auto;
+
+}
