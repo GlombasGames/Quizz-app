@@ -178,13 +178,7 @@ button:disabled {
 
 
 .btn-anuncio-header {
-  background: none; /* Fondo transparente */
-  border: none; /* Elimina cualquier borde */
-  padding: 0; /* Elimina el relleno interno */
-  margin: 0; /* Elimina márgenes externos */
-  outline: none; /* Elimina el contorno al hacer clic */
-  box-shadow: none; /* Elimina cualquier sombra */
-  -webkit-tap-highlight-color: transparent; /* Elimina el efecto de resaltado en móviles */
+  background-color: #00010200;
   width: 100%;
   /* El botón ocupará el 30% del ancho del contenedor */
   height: 55%;
@@ -195,8 +189,6 @@ button:disabled {
   /* Ajusta el relleno interno */
   margin: auto;
 
-
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
