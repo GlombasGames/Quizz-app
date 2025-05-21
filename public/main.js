@@ -356,6 +356,12 @@ function renderCartel(contenido) {
   app.innerHTML = `
   <div class="cartel">
   <button class="btn-volver-cartel" onclick="renderPrincipal()" tabindex="0"></button>
+    <div class="cartel-contenido">
+      <h2>${contenido}</h2>
+      <p>¡Pronto más novedades!</p>
+      <p>¡Gracias por jugar!</p>
+      <p>GlombaGames</p>
+    </div>
   ${contenido}
   </div>
   `;
