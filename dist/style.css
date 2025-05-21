@@ -661,6 +661,8 @@ justify-content: column;
 align-items: center;
 }
 .trivian {
+  width: 100%;
+  height: auto;
   background-image: url('./assets/trivian.png');
   background-size: contain;
   background-repeat: no-repeat;
