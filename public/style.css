@@ -675,7 +675,7 @@ button:disabled {
 button.btn-jugar-ppal,
 button.btn-otras-trivias,
 button.btn-nosotros {
-  width: 80%; /* Ajusta el ancho del botón */
+  width: 50%; /* Ajusta el ancho del botón */
   height: 80px; /* Ajusta la altura del botón */
   background-size: 100% 100%; /* Asegura que la imagen cubra todo el botón */
   background-repeat: no-repeat;
@@ -684,6 +684,7 @@ button.btn-nosotros {
   cursor: pointer;
   border-radius: 8px; /* Opcional: bordes redondeados */
    background-color: transparent !important; /* Fuerza el fondo transparente */
+   margin: 0 auto;
 }
 
 button.btn-jugar-ppal {
