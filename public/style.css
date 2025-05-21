@@ -744,6 +744,6 @@ button.btn-volver {
   width: 10%;
   min-width: 40px;
   height: 25%;
-  /* Tamaño del ícono */
   cursor: pointer;
+  filter: drop-shadow(0 0 5px rgb(19, 71, 3)); /* Aplica la sombra negra */
 }
