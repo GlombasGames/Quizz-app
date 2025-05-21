@@ -252,7 +252,8 @@ function renderMenu() {
          <p class="coin"><img src="./assets/coin.png" alt="coin"> ${progreso.intentos}</p>
      </div>
      <div class="header-item">
-      <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>      
+      <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
+       <p>Ver AD <img src="./assets/coin.png" alt="coin"> +1</p>       
       </button>
      </div>
      <div class="header-item">
