@@ -6,6 +6,7 @@ let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 const archivoUsuario = 'usuario.json';
 const tiempoLimite = 120;
 const coin = 'escarabajo.png'; // Nombre del archivo de la moneda
+const coins = 'ad.png'; // Nombre del archivo de la moneda
 
 
 let version
@@ -256,7 +257,7 @@ function renderMenu() {
      </div>
      <div class="header-item">
       <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-       <p><img src="./assets/${coin}" alt="coin"> +1</p>       
+       <img src="./assets/${coins}" alt="coin">    
       </button>
      </div>
      <div class="header-item">
