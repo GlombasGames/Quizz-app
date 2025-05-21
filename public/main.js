@@ -248,7 +248,7 @@ function tieneConexion() {
 
 async function iniciar() {
   try {
-        // Precargar imágenes
+    // Precargar imágenes
     await precargarImagenes(assetsList);
     console.log('Imágenes precargadas correctamente.');
     // Mostrar un mensaje inicial
@@ -341,12 +341,12 @@ function renderPrincipal() {
 
   app.innerHTML = `
   <div class="ppal">
-  <div></div>
-  <button class="btn-jugar-ppal" onclick="renderMenu()" tabindex="0">
-  <button class="btn-otras-trivias" onclick="renderCartel(otrasTrivias)" tabindex="0">
-  <button class="btn-nosotros" onclick="renderCartel(nosotros)" tabindex="0">
+    <div></div>
+    <button class="btn-jugar-ppal" onclick="renderMenu()" tabindex="0"></button>
+    <button class="btn-otras-trivias" onclick="renderCartel(otrasTrivias)" tabindex="0"></button>
+    <button class="btn-nosotros" onclick="renderCartel(nosotros)" tabindex="0"></button>
   </div>
-  `;
+`;
 }
 window.renderPrincipal = renderPrincipal;
 
