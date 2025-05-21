@@ -6,7 +6,7 @@ let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 const archivoUsuario = 'usuario.json';
 const tiempoLimite = 120;
 const coin = 'escarabajo.png'; // Nombre del archivo de la moneda
-const coins = 'ad.png'; // Nombre del archivo de la moneda
+const coins = 'adv.png'; // Nombre del archivo de la moneda
 
 
 let version
