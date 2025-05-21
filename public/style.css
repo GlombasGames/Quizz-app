@@ -756,7 +756,7 @@ button.btn-volver {
 button.btn-volver-cartel {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10;
   background-color: transparent !important;
   background-image: url('./assets/flecha.png');
   background-size: 100% 100%;
