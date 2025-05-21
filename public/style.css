@@ -735,8 +735,8 @@ button.btn-nosotros {
 
 button.btn-volver {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -10px;
+  right: -10px;
   background-color: rgb(17, 60, 2);
   font-size: 24px;
   /* Tamaño del ícono */
