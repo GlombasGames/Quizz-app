@@ -789,7 +789,6 @@ button.btn-volver-cartel {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  flex-direction: column;
 }
 
 .trivia {
