@@ -654,11 +654,13 @@ button:disabled {
 }
 
 .ppal {
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos estén en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  gap: 16px; /* Espaciado entre los botones */
   width: 100%;
-  height: auto;
-display: flex;
-justify-content: column;
-align-items: center;
+  height: 100%;
 }
 .ppal div {
   width: 100%;
@@ -668,24 +670,27 @@ align-items: center;
   background-repeat: no-repeat;
 }
 
-.btn-jugar{
-  width: 100%;
+button.btn-jugar,
+button.btn-otras-trivias,
+button.btn-nosotros {
+  width: 80%; /* Ajusta el ancho del botón */
+  height: 60px; /* Ajusta la altura del botón */
+  background-size: cover; /* Asegura que la imagen cubra todo el botón */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
+button.btn-jugar {
   background-image: url('./assets/jugar.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: auto;
 }
-.btn-otras-trivias{
-  width: 100%;
+
+button.btn-otras-trivias {
   background-image: url('./assets/otrasTrivias.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: auto;
 }
-.btn-nosotros{
-  width: 100%;
+
+button.btn-nosotros {
   background-image: url('./assets/nosotros.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  height: auto;
 }
