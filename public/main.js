@@ -334,8 +334,13 @@ function renderMenu() {
 }
 window.renderMenu = renderMenu;
 
-window.otrasTrivias = `Cartel de otras trivias`;
-window.nosotros = `Cartel de nosotros`;
+window.otrasTrivias = `
+      <h2>Cartel de otras trivias</h2>
+      <p>¡Pronto más novedades!</p>
+      <p>¡Gracias por jugar!</p>
+      <p>GlombaGames</p>
+      `;
+window.nosotros = `<div>Cartel de nosotros</div>`;
 
 function renderPrincipal() {
   app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
@@ -357,10 +362,7 @@ function renderCartel(contenido) {
   <div class="cartel">
   <button class="btn-volver-cartel" onclick="renderPrincipal()" tabindex="0"></button>
     <div class="cartel-contenido">
-      <h2>${contenido}</h2>
-      <p>¡Pronto más novedades!</p>
-      <p>¡Gracias por jugar!</p>
-      <p>GlombaGames</p>
+      ${contenido}
     </div>
   </div>
   `;
