@@ -483,7 +483,7 @@ button:disabled {
   max-width: 300px;
   aspect-ratio: 1;
   margin-top: 5%;
-  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.1));
 }
 
 .cargando {
