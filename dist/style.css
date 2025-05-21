@@ -660,6 +660,11 @@ display: flex;
 justify-content: column;
 align-items: center;
 }
+.ppal img {
+  width: 100%;
+  height: auto;
+align-items: center;
+}
 
 .btn-jugar{
   width: 100%;
