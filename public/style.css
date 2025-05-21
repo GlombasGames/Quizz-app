@@ -180,6 +180,10 @@ button:disabled {
 .btn-anuncio-header {
   background-color: #00010200;
   border: none;
+  outline: none;
+  /* Elimina el contorno al hacer clic */
+  box-shadow: none;
+  /* Elimina cualquier sombra */
   width: 100%;
   /* El botón ocupará el 30% del ancho del contenedor */
   height: 55%;
