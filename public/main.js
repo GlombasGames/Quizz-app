@@ -284,7 +284,7 @@ function renderMenu() {
 
   app.innerHTML = `
     <div class="header">
-    <button class="btn-menu" onclick="renderPrincipal()" tabindex="0">principal</button>
+    <button class="btn-volver" onclick="renderPrincipal()" tabindex="0">principal</button>
      <div class="header-item">
          <p class="coin"><img src="./assets/${coin}" alt="coin"> ${progreso.intentos}</p>
      </div>

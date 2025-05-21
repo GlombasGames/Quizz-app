@@ -731,3 +731,9 @@ button.btn-otras-trivias {
 button.btn-nosotros {
   background-image: url('./assets/nosotros.png');
 }
+
+button.btn-volver {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
