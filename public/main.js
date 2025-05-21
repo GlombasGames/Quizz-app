@@ -334,8 +334,9 @@ function renderMenu() {
 }
 window.renderMenu = renderMenu;
 
-const nosotros = `Cartel de nosotros`;
-const otrasTrivias = `Cartel de otras trivias`;
+window.otrasTrivias = `Cartel de otras trivias`;
+window.nosotros = `Cartel de nosotros`;
+
 function renderPrincipal() {
   app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
 
