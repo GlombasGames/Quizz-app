@@ -284,6 +284,7 @@ function renderMenu() {
 
   app.innerHTML = `
     <div class="header">
+    <button class="btn-menu" onclick="renderPrincipal()" tabindex="0">principal</button>
      <div class="header-item">
          <p class="coin"><img src="./assets/${coin}" alt="coin"> ${progreso.intentos}</p>
      </div>
@@ -340,12 +341,12 @@ function renderPrincipal() {
   <div class="ppal">
   <div></div>
   <button class="btn-jugar-ppal" onclick="renderMenu()" tabindex="0">
-  <button class="btn-otras-trivias" onclick="renderMenu()" tabindex="0">
-  <button class="btn-nosotros" onclick="renderMenu()" tabindex="0">
+  <button class="btn-otras-trivias" onclick="" tabindex="0">
+  <button class="btn-nosotros" onclick="" tabindex="0">
   </div>
   `;
 }
-
+window.renderPrincipal = renderPrincipal;
 
 function proximaMeta(cat) {
   const orden = Object.keys(data);
