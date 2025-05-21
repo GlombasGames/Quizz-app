@@ -252,9 +252,7 @@ button:disabled {
   font-weight: bold;
   border: none;
   border-radius: 6px;
-  background-image: url('./assets/verAd.png');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background: linear-gradient(90deg, #ffe066 0%, #ffe066 60%, #ffd60a 100%);
   color: #333;
   box-shadow: 0 2px 8px rgba(255, 214, 10, 0.4), 0 0 15px rgba(255, 214, 10, 0.6);
   /* Resplandor amarillo */
