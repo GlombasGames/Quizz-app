@@ -256,7 +256,7 @@ function renderMenu() {
      </div>
      <div class="header-item">
       <button class="btn-anuncio btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-       <p>Ver AD <img src="./assets/${coin}" alt="coin"> +1</p>       
+       <p><img src="./assets/${coin}" alt="coin"> +1</p>       
       </button>
      </div>
      <div class="header-item">
