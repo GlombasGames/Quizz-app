@@ -208,7 +208,7 @@ button:disabled {
   /* Asegura que la imagen se posicione dentro de su contenedor */
 }
 
-.coin {
+.coin img {
   width: 40px;
 
   /* Tamaño máximo para pantallas grandes */
