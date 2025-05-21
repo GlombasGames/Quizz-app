@@ -776,6 +776,7 @@ justify-content: center;
 background-color: yellowgreen;
 width: 80%;
 height: 50%;
-margin: 35% auto;
+margin: 0 auto;
+margin-top: 35%;
 
 }
