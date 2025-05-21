@@ -480,12 +480,10 @@ button:disabled {
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  /* Mantén el tamaño relativo al contenedor */
   max-width: 300px;
-  /* Limita el tamaño máximo */
   aspect-ratio: 1;
-  /* Mantiene el contenedor cuadrado */
   margin-top: 5%;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
 }
 
 .cargando {
