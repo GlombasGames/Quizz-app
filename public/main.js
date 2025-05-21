@@ -410,7 +410,7 @@ async function jugarPartida(categoria) {
     <div class="respuestas">
       ${pregunta.opcionesMezcladas.map(op => `
         <button class="respuesta" onclick="responder('${op}')">
-          ${op === pregunta.respuesta ? `${op} <--correcta` : op}
+          ${op === pregunta.respuesta ? `${op}` : op}
         </button>
       `).join('')}
     </div>

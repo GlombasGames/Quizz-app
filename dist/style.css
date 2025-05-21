@@ -274,7 +274,7 @@ button:disabled {
 
 /* Botón "Ver anuncio" - muy llamativo */
 .btn-anuncio {
-  width: 80%;
+  width: 100%;
   font-size: 18px;
   font-weight: bold;
   border: none;
