@@ -196,7 +196,7 @@ button:disabled {
   justify-content: center;
 }
 
-.btn-anuncio-header p img {
+.btn-anuncio-header img {
   width: 30%;
   vertical-align: middle;
   /* Tamaño máximo para pantallas grandes */
