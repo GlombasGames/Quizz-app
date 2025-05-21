@@ -189,7 +189,8 @@ button:disabled {
   margin: auto;
   /* Centra el botón horizontalmente */
   background-image: url('./assets/verAd.png');
-  background-size: contain;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
