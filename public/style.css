@@ -654,6 +654,8 @@ button:disabled {
 }
 
 .ppal {
+  width: 100%;
+  height: auto;
 display: flex;
 justify-content: column;
 align-items: center;
