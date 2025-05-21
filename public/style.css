@@ -770,6 +770,7 @@ button.btn-volver-cartel {
 }
 
 .contenido-cartel {
+  position: relative;
 text-align: center;
 justify-content: center;
 background-color: yellowgreen;
