@@ -690,9 +690,9 @@ button.btn-jugar {
 }
 
 button.btn-otras-trivias {
-  background-image: url('./assets/otrasTrivias.png');
+  background-image: url('./assets/jugar.png');
 }
 
 button.btn-nosotros {
-  background-image: url('./assets/nosotros.png');
+  background-image: url('./assets/jugar.png');
 }
