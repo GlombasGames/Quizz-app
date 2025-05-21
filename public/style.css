@@ -184,6 +184,8 @@ button:disabled {
   /* Elimina el contorno al hacer clic */
   box-shadow: none;
   /* Elimina cualquier sombra */
+  -webkit-tap-highlight-color: transparent;
+  /* Elimina el efecto de resaltado en móviles */
   width: 100%;
   /* El botón ocupará el 30% del ancho del contenedor */
   height: 55%;
