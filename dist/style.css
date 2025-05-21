@@ -735,14 +735,14 @@ button.btn-nosotros {
 
 button.btn-volver {
   position: absolute;
-  top: -19px;
-  right: -13px;
+  top: -10px;
+  right: -5px;
   background-color: transparent !important;
   background-image: url('./assets/flecha.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 10%;
-  height: auto;
+  height: 10%;
   /* Tamaño del ícono */
   cursor: pointer;
 }
