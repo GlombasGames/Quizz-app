@@ -335,7 +335,7 @@ function renderPrincipal() {
   app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
 
   app.innerHTML = `
-  <div class="logo"></div>
+  <div class="logo ppal"></div>
   `;
 }
 

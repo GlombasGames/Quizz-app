@@ -649,3 +649,7 @@ button:disabled {
   /* Asegura que el cartel esté por encima */
   border: 1px solid #143f10;
 }
+
+.ppal{
+  width: 50%;
+}
