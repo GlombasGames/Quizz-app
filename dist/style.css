@@ -679,7 +679,7 @@ button.btn-jugar-ppal,
 button.btn-otras-trivias,
 button.btn-nosotros {
   width: 80%; /* Ajusta el ancho del botón */
-  height: auto; /* Ajusta la altura del botón */
+  height: 20%; /* Ajusta la altura del botón */
   max-width: 300px;
   background-size: 100% 100%; /* Asegura que la imagen cubra todo el botón */
   background-repeat: no-repeat;
