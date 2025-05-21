@@ -343,8 +343,8 @@ function renderPrincipal() {
   <div class="ppal">
   <div></div>
   <button class="btn-jugar-ppal" onclick="renderMenu()" tabindex="0">
-  <button class="btn-otras-trivias" onclick="renderCartel(${otrasTrivias})" tabindex="0">
-  <button class="btn-nosotros" onclick="renderCartel(${nosotros})" tabindex="0">
+  <button class="btn-otras-trivias" onclick="renderCartel(otrasTrivias)" tabindex="0">
+  <button class="btn-nosotros" onclick="renderCartel(nosotros)" tabindex="0">
   </div>
   `;
 }
