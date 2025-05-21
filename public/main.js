@@ -362,7 +362,6 @@ function renderCartel(contenido) {
       <p>¡Gracias por jugar!</p>
       <p>GlombaGames</p>
     </div>
-  ${contenido}
   </div>
   `;
 }
