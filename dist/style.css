@@ -737,8 +737,10 @@ button.btn-volver {
   position: absolute;
   top: -19px;
   right: -13px;
-  background-color: rgb(17, 60, 2);
-  font-size: 24px;
+background-image: url('./assets/flecha.png');
+background-size: cover;
+background-repeat: no-repeat;
+
   /* Tamaño del ícono */
   cursor: pointer;
 }
