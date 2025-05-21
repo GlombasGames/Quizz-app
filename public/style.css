@@ -715,6 +715,7 @@ button.btn-nosotros {
   background-color: transparent !important;
   /* Fuerza el fondo transparente */
   margin: 0 auto;
+  margin-top: 20%;
 }
 
 button.btn-jugar-ppal {
