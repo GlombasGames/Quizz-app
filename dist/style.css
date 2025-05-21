@@ -209,7 +209,8 @@ button:disabled {
 }
 
 .coin img {
-  width: 50%;
+  width: 40%;
+  min-width: 50px;
 
   /* Tamaño máximo para pantallas grandes */
   height: auto;
