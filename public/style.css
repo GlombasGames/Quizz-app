@@ -19,7 +19,7 @@ body {
   /* Centra el contenedor horizontalmente */
   padding: 16px;
   background: linear-gradient(135deg, #0D47A1, #1565C0);
-  background-image: url('./assets/fondoSelva.jpeg'), linear-gradient(135deg, #0D47A1, #1565C0);
+  background-image: url('./assets/fondoSelvaMarco.png');
   background-size: cover;
   background-position: center;
   border-radius: 8px;
