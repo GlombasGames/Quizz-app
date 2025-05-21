@@ -329,11 +329,13 @@ function renderMenu() {
       </button>
     `;
   }).join('')}
-    </div>
+  </div>
   `;
 }
 window.renderMenu = renderMenu;
 
+const nosotros = `Cartel de nosotros`;
+const otrasTrivias = `Cartel de otras trivias`;
 function renderPrincipal() {
   app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
 
@@ -359,8 +361,6 @@ function renderCartel(contenido) {
 }
 window.renderCartel = renderCartel;
 
-const nosotros = `Cartel de nosotros`;
-const otrasTrivias = `Cartel de otras trivias`;
 
 function proximaMeta(cat) {
   const orden = Object.keys(data);
