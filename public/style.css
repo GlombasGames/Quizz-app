@@ -182,7 +182,7 @@ button:disabled {
   height: 55%;
   font-size: clamp(1rem, 2vw, 1.2rem);
   padding: 8px;
-  margin: auto;
+  margin: 10% auto;
   display: flex;
   align-items: center;
   justify-content: center;
