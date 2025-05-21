@@ -664,7 +664,7 @@ button:disabled {
 }
 .ppal div {
   width: 100%;
-  height: 100%;
+  height: 30%;
   background-image: url('./assets/trivian.png');
   background-size: contain;
   background-repeat: no-repeat;
