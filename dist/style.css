@@ -166,7 +166,7 @@ button:disabled {
   align-items: center; /* Centra verticalmente los elementos internos */
   justify-content: center; /* Centra horizontalmente los elementos internos */
   text-align: center; /* Asegura que el texto esté centrado */
-  font-size: clamp(1rem, 2vw, 1.2rem); /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
+  font-size: clamp(1.2rem, 2vw, 1.8rem); /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
   margin-top: 7%;
 }
