@@ -20,8 +20,7 @@ body {
   padding: 16px;
   background: linear-gradient(135deg, #0D47A1, #1565C0);
   background-image: url('./assets/fondoSelvaMarco.png');
-  background-size: cover contain;
-  background-repeat: no-repeat; 
+  background-size: cover;
   background-position: center;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
