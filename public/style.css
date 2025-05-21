@@ -696,7 +696,7 @@ button.btn-otras-trivias {
   /* Opcional: bordes redondeados */
   background-color: transparent !important;
   /* Fuerza el fondo transparente */
-  margin: 0 auto;
+  margin: 5% auto;
 }
 button.btn-nosotros {
   width: 60%;
