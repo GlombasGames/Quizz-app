@@ -331,6 +331,7 @@ function renderMenu() {
     </div>
   `;
 }
+window.renderMenu = renderMenu;
 
 function renderPrincipal() {
   app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
