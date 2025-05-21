@@ -664,7 +664,7 @@ button:disabled {
   background-color: #000102b5;
 }
 .ppal div {
-  width: 100%;
+  width: 90%;
   max-width: 400px;
   height: 25%;
   margin: 5% auto;
