@@ -745,5 +745,5 @@ button.btn-volver {
   min-width: 40px;
   height: 25%;
   cursor: pointer;
-  filter: drop-shadow(0 0 5px rgb(19, 71, 3)); /* Aplica la sombra negra */
+  filter: drop-shadow(0 0 5px rgb(124, 124, 6)); /* Aplica la sombra negra */
 }
