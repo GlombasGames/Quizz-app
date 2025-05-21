@@ -657,7 +657,7 @@ button:disabled {
   width: 100%;
   height: auto;
 display: flex;
-justify-content: column;
+justify-content: center;
 align-items: center;
 }
 .ppal img {
