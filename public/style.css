@@ -869,3 +869,14 @@ button.btn-volver-cartel {
   justify-content: center;
   /* Opcional: centra horizontalmente el contenido */
 }
+.trivia img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.trivia p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
