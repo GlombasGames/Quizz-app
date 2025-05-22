@@ -215,8 +215,8 @@ button:disabled {
 }
 
 .btn-anuncio-header img {
-  width: clamp(70%, 90%, 100%); /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
-  height: clamp(70%, 90%, 100%); /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
+  width: clamp(70%, 90%, 90%); /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
+  height: clamp(70%, 90%, 90%); /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
   object-fit: contain;
   position: relative;
   filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
