@@ -801,7 +801,6 @@ button.btn-volver-cartel {
   display: grid; /* Activa el grid layout */
   grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual ancho */
   gap: 16px; /* Espaciado entre los elementos */
-  background-color: #cc8708;
   width: 100%; /* Asegura que no exceda el 100% del contenedor */
   max-width: 100%; /* Evita que se desborde horizontalmente */
   height: 100%; /* Ocupa todo el alto disponible */
