@@ -188,7 +188,7 @@ button:disabled {
   color: #d4af37; /* Color base dorado más cálido */
   text-shadow: 
     0 1px 0 #8c6e2f, /* Sombra interna oscura */
-    0 -1px 0 #7b6303, /* Relieve superior brillante */
+    0 -1px 0 #524202, /* Relieve superior brillante */
     1px 1px 2px rgba(0, 0, 0, 0.5), /* Sombra externa para profundidad */
     -1px -1px 2px rgba(255, 255, 255, 0.3), /* Brillo sutil */
     0 0 6px rgba(212, 175, 55, 0.5); /* Resplandor dorado suave */
