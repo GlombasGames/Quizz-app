@@ -804,7 +804,7 @@ button.btn-volver-cartel {
   width: 100%; /* Asegura que no exceda el 100% del contenedor */
   max-width: 100%; /* Evita que se desborde horizontalmente */
   height: 100%; /* Ocupa todo el alto disponible */
-  max-height: 80%; /* Limita el alto máximo */
+  max-height: 100%; /* Limita el alto máximo */
   margin: 0 auto;
   padding: 16px; /* Opcional: Espaciado interno */
   overflow-y: auto; /* Habilita el scroll vertical */
