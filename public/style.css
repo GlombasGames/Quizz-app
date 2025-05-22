@@ -858,7 +858,7 @@ button.btn-volver-cartel {
   height: 100%; /* La imagen ocupa todo el alto */
   object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortarla */
   z-index: 1; /* Coloca la imagen detrás del texto */
-  background-color: #d4d4d4; /* Opcional: color de fondo para rellenar espacios vacíos */
+  background-color: #211204; /* Opcional: color de fondo para rellenar espacios vacíos */
 }
 
 .trivia p {
