@@ -747,7 +747,7 @@ button.btn-volver-cartel {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 70px;
-  height: 40px;
+  height: 50px;
   cursor: pointer;
   filter: drop-shadow(0 0 5px rgb(169, 169, 8));
   z-index: 1100;
