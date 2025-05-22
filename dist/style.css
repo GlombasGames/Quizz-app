@@ -184,14 +184,14 @@ button:disabled {
 
   margin-top: 7%;
   font-family: 'miFuente', sans-serif;
-  color: #ffe066; /* Amarillo suave */
-  /* Blanco para contraste */
-  letter-spacing: 0.5px;
-  /* Ajusta el espaciado entre letras */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7),
-    /* Sombra principal */
-    0 -1px 0 rgba(124, 114, 2, 0.536);
-  /* Efecto de relieve */
+  background: linear-gradient(90deg, #FFD700, #FFC107, #FF8C00); /* Gradiente dorado */
+  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
+  text-shadow: 
+    0 1px 2px rgba(0, 0, 0, 0.8), /* Sombra principal para profundidad */
+    0 2px 4px rgba(255, 255, 255, 0.3), /* Efecto de brillo */
+    0 -1px 0 rgba(255, 255, 255, 0.2); /* Relieve superior */
+  letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
 
 }
 
