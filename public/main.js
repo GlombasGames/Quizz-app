@@ -354,7 +354,7 @@ window.nosotros = `
 <h3>¿Qué hacemos?</h3>
 <p>Nos especializamos en el desarrollo de juegos móviles y de escritorio, con un enfoque en la jugabilidad, la narrativa y la estética visual. Nos encanta experimentar con nuevas ideas y mecánicas de juego, y siempre estamos buscando formas de innovar y mejorar nuestras creaciones.</p>
 <h3>¿Cómo puedes contactarnos?</h3>
-<p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes encontrarnos en nuestras redes sociales:<hr> <a href="www.facebook.com/glombagames">www.facebook.com/GlombaGames</a><hr> <a href="www.instagram.com/glombagames">@GlombaGames</a><hr> o enviarnos un correo electrónico a:<hr> <a href="mailto:glombagames@gmail.com">glombagames@gmail.com</a></p><hr>
+<p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes encontrarnos en nuestras redes sociales:<hr> <a href="www.facebook.com/glombagames">/GlombaGames</a><hr> <a href="www.instagram.com/glombagames">@GlombaGames</a><hr> o enviarnos un correo electrónico a:<hr> <a href="mailto:glombagames@gmail.com">glombagames@gmail.com</a></p><hr>
 <p>¡Gracias por jugar a nuestros juegos y por ser parte de la comunidad de Glomba Games!</p>
 <h3>¿Cómo puedes ayudarnos?</h3>
 <p>Si te gusta nuestro juego, ¡ayúdanos a correr la voz! Comparte el juego con tus amigos y familiares, y déjanos una reseña en la tienda de aplicaciones. Tu apoyo significa mucho para nosotros y nos ayuda a seguir creando juegos increíbles.</p>
