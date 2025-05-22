@@ -3,7 +3,7 @@
     "nombre": "Trivia de la selva",
     "imagenUrl": "./assets/iconoTriviaSelva.png",
     "url": "https://glombagames.ddns.net/",
-    "estado": "Jugar"
+    "estado": ""
   },
   {
     "nombre": "Trivia de Películas",
