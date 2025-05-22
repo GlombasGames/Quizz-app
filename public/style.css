@@ -746,9 +746,8 @@ button.btn-volver-cartel {
   background-image: url('./assets/flecha.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 10%;
-  min-width: 60px;
-  height: 10%;
+  width: 70px;
+  height: 40px;
   cursor: pointer;
   filter: drop-shadow(0 0 5px rgb(169, 169, 8));
   z-index: 1100;
