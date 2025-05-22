@@ -824,7 +824,7 @@ button.btn-volver-cartel {
 
 .trivias-caja {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Ajusta el número de columnas automáticamente */
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta el número de columnas automáticamente */
   gap: 16px; /* Espaciado entre las tarjetas */
   width: 100%; /* Asegura que no exceda el ancho del contenedor */
   max-width: 100%; /* Evita desbordes horizontales */
