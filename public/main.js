@@ -344,9 +344,6 @@ window.otrasTrivias = `
       <div class="trivia">5</div>
       <div class="trivia">6</div>
       </div>
-      <p>¡Pronto más novedades!</p>
-      <p>¡Gracias por jugar!</p>
-      <p>GlombaGames</p>
       `;
 window.nosotros = `<div>Cartel de nosotros</div>`;
 
