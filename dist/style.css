@@ -809,6 +809,7 @@ button.btn-volver-cartel {
   padding: 16px; /* Opcional: Espaciado interno */
   overflow-y: auto; /* Habilita el scroll vertical */
   box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  border-radius: 12px; /* Bordes redondeados */
 }
 
 .trivia {
