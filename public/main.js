@@ -343,6 +343,8 @@ window.otrasTrivias = `
       <div class="trivia">4</div>
       <div class="trivia">5</div>
       <div class="trivia">6</div>
+      <div class="trivia">7</div>
+      <div class="trivia">8</div>
       </div>
       `;
 window.nosotros = `<div>Cartel de nosotros</div>`;
@@ -354,18 +356,19 @@ function renderPrincipal() {
   <div class="ppal">
     <div></div>
     <button class="btn-jugar-ppal" onclick="renderMenu()" tabindex="0"></button>
-    <button class="btn-otras-trivias" onclick="renderCartel(otrasTrivias)" tabindex="0"></button>
-    <button class="btn-nosotros" onclick="renderCartel(nosotros)" tabindex="0"></button>
+    <button class="btn-otras-trivias" onclick="renderCartel(otrasTrivias, 'Nuestras otras Trivias')" tabindex="0"></button>
+    <button class="btn-nosotros" onclick="renderCartel(nosotros, 'Mas sobre nosotros')" tabindex="0"></button>
   </div>
 `;
 }
 window.renderPrincipal = renderPrincipal;
 
-function renderCartel(contenido) {
+function renderCartel(contenido, titulo) {
 
   app.innerHTML = `
   <div class="cartel">
   <button class="btn-volver-cartel" onclick="renderPrincipal()" tabindex="0"></button>
+    <h2>${titulo}</h2>
     <div class="contenido-cartel">
       ${contenido}
     </div>
