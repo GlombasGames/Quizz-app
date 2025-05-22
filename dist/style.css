@@ -177,13 +177,12 @@ button:disabled {
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
   margin-top: 7%;
-  background: linear-gradient(90deg, #FFD700, #FFC107, #FF8C00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #4b2e05; /* Color marrón oscuro para simular el grabado */
   text-shadow: 
-    0 1px 0 #B8860B, 
-    0 2px 4px rgba(0, 0, 0, 0.7);
-  letter-spacing: 0.5px;
+    1px 1px 0 #000000, /* Sombra interna oscura */
+    -1px -1px 0 #000000, /* Sombra interna oscura */
+    0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra externa para profundidad */
+  letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
 }
 
 
