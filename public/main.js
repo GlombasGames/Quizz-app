@@ -337,14 +337,14 @@ window.renderMenu = renderMenu;
 
 window.otrasTrivias = `
       <div class="trivias-caja">
-      <div class="trivia">1</div>
-      <div class="trivia">2</div>
-      <div class="trivia">3</div>
-      <div class="trivia">4</div>
-      <div class="trivia">5</div>
-      <div class="trivia">6</div>
-      <div class="trivia">7</div>
-      <div class="trivia">8</div>
+      <div class="trivia">Proximamente</div>
+      <div class="trivia">Proximamente</div>
+      <div class="trivia">Proximamente</div>
+      <div class="trivia">Proximamente</div>
+      <div class="trivia">Proximamente</div>
+      <div class="trivia">Proximamente</div>
+      <div class="trivia">Proximamente</div>
+      <div class="trivia">Proximamente</div>
       </div>
       `;
 window.nosotros = `
