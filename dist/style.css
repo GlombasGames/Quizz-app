@@ -190,8 +190,7 @@ button:disabled {
     0 1px 0 #8c6e2f, /* Sombra interna oscura */
     0 -1px 0 #cda60c, /* Relieve superior brillante */
     1px 1px 2px rgba(0, 0, 0, 0.5), /* Sombra externa para profundidad */
-    -1px -1px 2px rgba(255, 255, 255, 0.3), /* Brillo sutil */
-    0 0 6px rgba(212, 175, 55, 0.5); /* Resplandor dorado suave */
+    -1px -1px 2px rgba(255, 255, 255, 0.3); /* Resplandor dorado suave */
   letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
 
 }
