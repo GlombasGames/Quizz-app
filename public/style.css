@@ -806,7 +806,8 @@ button.btn-volver-cartel {
   
 }
 .contenido-cartel h3 p{
-  margin: 15px;
+  width: 80%;
+  margin: auto;
   
 }
 
