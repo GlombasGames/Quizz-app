@@ -184,13 +184,16 @@ button:disabled {
 
   margin-top: 7%;
   font-family: 'miFuente', sans-serif;
+  color: #FFD700; /* Color base dorado */
   background: linear-gradient(90deg, #FFD700, #FFC107, #FF8C00); /* Gradiente dorado */
   -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
   -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
   text-shadow: 
     0 1px 2px rgba(0, 0, 0, 0.8), /* Sombra principal para profundidad */
     0 2px 4px rgba(255, 255, 255, 0.3), /* Efecto de brillo */
-    0 -1px 0 rgba(255, 255, 255, 0.2); /* Relieve superior */
+    0 -1px 0 rgba(255, 255, 255, 0.2), /* Relieve superior */
+    0 0 10px rgba(255, 215, 0, 0.5), /* Resplandor suave */
+    0 0 20px rgba(255, 215, 0, 0.3); /* Resplandor adicional */
   letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
 
 }
