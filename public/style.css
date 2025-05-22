@@ -867,8 +867,7 @@ button.btn-volver-cartel {
   align-items: center;
   /* Opcional: centra verticalmente el contenido */
   justify-content: center;
-  /* Opcional: centra horizontalmente el contenido */
-  max-width: 50%;
+
 }
 .trivia img {
   width: 100%;
