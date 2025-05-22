@@ -1,7 +1,7 @@
 [
   {
     "nombre": "Trivia de la selva",
-    "imagenUrl": "./assets/triviaDeLaSelva.png",
+    "imagenUrl": "./assets/iconoTriviaSelva.png",
     "url": "https://glombagames.ddns.net/",
     "estado": "Jugar"
   },
