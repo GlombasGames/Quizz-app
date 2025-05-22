@@ -780,7 +780,7 @@ button.btn-volver-cartel {
   min-width: 320px;
   height: 450px;
   margin: auto;
-  cursor: pointer;
+  
 }
 
 .cartel h2 {
@@ -847,6 +847,7 @@ button.btn-volver-cartel {
   align-items: center; /* Centra verticalmente */
   justify-content: center; /* Centra horizontalmente */
   overflow: hidden; /* Evita que el contenido desborde */
+  cursor: pointer;
 }
 
 .trivia img {
