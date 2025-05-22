@@ -772,7 +772,7 @@ button.btn-volver-cartel {
   cursor: pointer;
 }
 .cartel h2 {
-  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  font-size: clamp(1rem, 2vw, 1.5rem);
   color: #fff;
   text-align: center;
   margin: 0;
