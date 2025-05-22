@@ -348,6 +348,7 @@ window.otrasTrivias = `
       </div>
       `;
 window.nosotros = `
+div class="contenido-cartel-texto">
 <h3>¿Quiénes somos?</h3>
 <p>Glomba Games es un estudio de desarrollo de videojuegos independiente,  Nuestro objetivo es crear experiencias únicas y entretenidas para jugadores de todas las edades.</p>
 <h3>¿Qué hacemos?</h3>
@@ -363,6 +364,7 @@ window.nosotros = `
 <p>Si te gusta nuestro juego, ¡ayúdanos a correr la voz! Comparte el juego con tus amigos y familiares, y déjanos una reseña en la tienda de aplicaciones. Tu apoyo significa mucho para nosotros y nos ayuda a seguir creando juegos increíbles.</p>
 <h3>¿Cómo puedes seguirnos?</h3>
 <p>Sigue nuestras redes sociales para estar al tanto de nuestras últimas noticias, lanzamientos y actualizaciones. Nos encantaría saber de ti y escuchar tus comentarios sobre nuestros juegos.</p>
+</div>
 `;
 
 function renderPrincipal() {
@@ -373,7 +375,7 @@ function renderPrincipal() {
     <div></div>
     <button class="btn-jugar-ppal" onclick="renderMenu()" tabindex="0"></button>
     <button class="btn-otras-trivias" onclick="renderCartel(otrasTrivias, 'Nuestras otras Trivias')" tabindex="0"></button>
-    <button class="btn-nosotros" onclick="renderCartel(nosotros, 'Mas sobre nosotros')" tabindex="0"></button>
+    <button class="btn-nosotros" onclick="renderCartel(nosotros, 'Nosotros')" tabindex="0"></button>
   </div>
 `;
 }
