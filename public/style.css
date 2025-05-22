@@ -180,7 +180,7 @@ button:disabled {
   /* Asegura que el texto esté centrado */
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
-  font-weight: bold;
+
 
   margin-top: 7%;
   font-family: 'miFuente', sans-serif;
