@@ -177,6 +177,17 @@ button:disabled {
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
   margin-top: 7%;
+  color: #ffe066; /* Amarillo suave */
+  /* Blanco para contraste */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  /* Agrega una sombra para integración */
+  letter-spacing: 0.5px;
+  /* Ajusta el espaciado entre letras */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7),
+    /* Sombra principal */
+    0 -1px 0 rgba(255, 255, 255, 0.3);
+  /* Efecto de relieve */
+   -webkit-text-stroke: 1px #000; /* Contorno negro */
 }
 
 
@@ -780,7 +791,7 @@ button.btn-volver-cartel {
   min-width: 320px;
   height: 450px;
   margin: auto;
-  
+
 }
 
 .cartel h2 {
@@ -824,48 +835,76 @@ button.btn-volver-cartel {
 
 .trivias-caja {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ajusta el número de columnas automáticamente */
-  gap: 16px; /* Espaciado entre las tarjetas */
-  width: 100%; /* Asegura que no exceda el ancho del contenedor */
-  max-width: 100%; /* Evita desbordes horizontales */
-  height: auto; /* Ajusta la altura automáticamente */
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  /* Ajusta el número de columnas automáticamente */
+  gap: 16px;
+  /* Espaciado entre las tarjetas */
+  width: 100%;
+  /* Asegura que no exceda el ancho del contenedor */
+  max-width: 100%;
+  /* Evita desbordes horizontales */
+  height: auto;
+  /* Ajusta la altura automáticamente */
   margin: 0 auto;
-  padding: 16px; /* Espaciado interno */
-  overflow-y: auto; /* Habilita el scroll vertical si es necesario */
-  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
-  border-radius: 12px; /* Bordes redondeados */
+  padding: 16px;
+  /* Espaciado interno */
+  overflow-y: auto;
+  /* Habilita el scroll vertical si es necesario */
+  box-sizing: border-box;
+  /* Incluye padding y border en el tamaño total */
+  border-radius: 12px;
+  /* Bordes redondeados */
 }
 
 .trivia {
-  position: relative; /* Necesario para posicionar elementos hijos */
+  position: relative;
+  /* Necesario para posicionar elementos hijos */
   background-color: #473005;
   color: #ffffff;
   text-align: center;
-  border-radius: 12px; /* Bordes redondeados */
-  aspect-ratio: 1 / 1; /* Mantiene la relación de aspecto cuadrada */
-  display: flex; /* Centra el contenido */
-  align-items: center; /* Centra verticalmente */
-  justify-content: center; /* Centra horizontalmente */
-  overflow: hidden; /* Evita que el contenido desborde */
+  border-radius: 12px;
+  /* Bordes redondeados */
+  aspect-ratio: 1 / 1;
+  /* Mantiene la relación de aspecto cuadrada */
+  display: flex;
+  /* Centra el contenido */
+  align-items: center;
+  /* Centra verticalmente */
+  justify-content: center;
+  /* Centra horizontalmente */
+  overflow: hidden;
+  /* Evita que el contenido desborde */
   cursor: pointer;
 }
 
 .trivia img {
-  position: absolute; /* Posiciona la imagen detrás del contenido */
+  position: absolute;
+  /* Posiciona la imagen detrás del contenido */
   top: 0;
   left: 0;
-  width: 100%; /* La imagen ocupa todo el ancho */
-  height: 100%; /* La imagen ocupa todo el alto */
-  object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortarla */
-  z-index: 1; /* Coloca la imagen detrás del texto */
-  background-color: #211204; /* Opcional: color de fondo para rellenar espacios vacíos */
+  width: 100%;
+  /* La imagen ocupa todo el ancho */
+  height: 100%;
+  /* La imagen ocupa todo el alto */
+  object-fit: contain;
+  /* Ajusta la imagen dentro del contenedor sin recortarla */
+  z-index: 1;
+  /* Coloca la imagen detrás del texto */
+  background-color: #211204;
+  /* Opcional: color de fondo para rellenar espacios vacíos */
 }
 
 .trivia p {
-  position: relative; /* Permite que el texto se posicione sobre la imagen */
-  z-index: 2; /* Coloca el texto por encima de la imagen */
-  margin: 0; /* Elimina márgenes */
-  font-size: 16px; /* Ajusta el tamaño del texto */
-  color: #ffffff; /* Asegura que el texto sea visible */
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); /* Agrega un sombreado para mejor visibilidad */
+  position: relative;
+  /* Permite que el texto se posicione sobre la imagen */
+  z-index: 2;
+  /* Coloca el texto por encima de la imagen */
+  margin: 0;
+  /* Elimina márgenes */
+  font-size: 16px;
+  /* Ajusta el tamaño del texto */
+  color: #ffffff;
+  /* Asegura que el texto sea visible */
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  /* Agrega un sombreado para mejor visibilidad */
 }
