@@ -12,6 +12,24 @@
     "estado": "Próximamente"
   },
   {
+    "nombre": "Trivia de Civilizaciones",
+    "imagenUrl": "./assets/triviaDeCivilizaciones.png",
+    "url": "",
+    "estado": "Próximamente"
+  },
+  {
+    "nombre": "Trivia de Tecnologia",
+    "imagenUrl": "./assets/triviaDeTecnologia.png",
+    "url": "",
+    "estado": "Próximamente"
+  },
+  {
+    "nombre": "Trivia de Historia",
+    "imagenUrl": "./assets/triviaDeHistoria.png",
+    "url": "",
+    "estado": "Próximamente"
+  },
+  {
     "nombre": "Trivia de Geografía",
     "imagenUrl": "./assets/triviaDeGeografia.png",
     "url": "",
