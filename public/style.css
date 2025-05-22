@@ -215,8 +215,8 @@ button:disabled {
 }
 
 .btn-anuncio-header img {
-  height: 100%;
-  min-height: 80px;
+  height: 80%;
+  min-height: 50px;
   width: auto;
   object-fit: contain;
   position: relative;
