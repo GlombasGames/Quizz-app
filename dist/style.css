@@ -767,7 +767,7 @@ button.btn-volver-cartel {
   min-width: 320px;
   height: 80%;
   min-height: 300px;
-  max-height: 300px;
+  max-height: 450px;
   margin: auto;
   cursor: pointer;
 }
