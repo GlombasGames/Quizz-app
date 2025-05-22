@@ -179,13 +179,11 @@ button:disabled {
   margin-top: 7%;
   color: #ffe066; /* Amarillo suave */
   /* Blanco para contraste */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-  /* Agrega una sombra para integración */
   letter-spacing: 0.5px;
   /* Ajusta el espaciado entre letras */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7),
     /* Sombra principal */
-    0 -1px 0 rgba(255, 255, 255, 0.3);
+    0 -1px 0 rgba(124, 114, 2, 0.536);
   /* Efecto de relieve */
    -webkit-text-stroke: 1px #000; /* Contorno negro */
 }
