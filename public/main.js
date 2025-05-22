@@ -358,7 +358,7 @@ window.nosotros = `
 <h3>¿Por qué lo hacemos?</h3>
 <p>Creemos que los videojuegos son una forma poderosa de contar historias y conectar con las personas. Nos apasiona crear experiencias que hagan reír, llorar y reflexionar a nuestros jugadores. Queremos que nuestros juegos sean más que solo entretenimiento; queremos que sean memorables.</p>
 <h3>¿Cómo puedes contactarnos?</h3>
-<p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes encontrarnos en nuestras redes sociales o enviarnos un correo electrónico a <a href="mailto:glombagames@gmail.com"></a></p>
+<p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes encontrarnos en nuestras redes sociales o enviarnos un correo electrónico a <a href="mailto:glombagames@gmail.com">glombagames@gmail.com</a></p>
 <p>¡Gracias por jugar a nuestros juegos y por ser parte de la comunidad de Glomba Games!</p>
 <h3>¿Cómo puedes ayudarnos?</h3>
 <p>Si te gusta nuestro juego, ¡ayúdanos a correr la voz! Comparte el juego con tus amigos y familiares, y déjanos una reseña en la tienda de aplicaciones. Tu apoyo significa mucho para nosotros y nos ayuda a seguir creando juegos increíbles.</p>
