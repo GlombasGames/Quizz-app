@@ -2,7 +2,7 @@ import './style.css';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
-
+import misTrivias from './trivias.json';
 
 const tiempoLimite = 120;
 
@@ -335,18 +335,33 @@ function renderMenu() {
 }
 window.renderMenu = renderMenu;
 
-window.otrasTrivias = `
-      <div class="trivias-caja">
-      <div class="trivia">Proximamente</div>
-      <div class="trivia">Proximamente</div>
-      <div class="trivia">Proximamente</div>
-      <div class="trivia">Proximamente</div>
-      <div class="trivia">Proximamente</div>
-      <div class="trivia">Proximamente</div>
-      <div class="trivia">Proximamente</div>
-      <div class="trivia">Proximamente</div>
-      </div>
-      `;
+// Función para generar el contenido de otrasTrivias
+function generarOtrasTrivias(trivias) {
+  return `
+    <div class="trivias-caja">
+      ${trivias
+        .map(
+          (trivia) => `
+        <div class="trivia">
+          ${
+            trivia.url
+              ? `<a href="${trivia.url}" target="_blank">
+                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}">
+                </a>`
+              : `<img src="${trivia.imagenUrl}" alt="${trivia.nombre}">`
+          }
+          <p>${trivia.estado}</p>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+// Generar el contenido dinámicamente
+window.otrasTrivias = generarOtrasTrivias(misTrivias);
+
 window.nosotros = `
 <div class="contenido-cartel-texto">
 <h3>¿Quiénes somos?</h3>

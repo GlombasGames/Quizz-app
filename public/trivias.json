@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "Trivia de la selva",
+    "imagenUrl": "./assets/triviaDeLaSelva.png",
+    "url": "https://glombagames.ddns.net/",
+    "estado": "Jugar"
+  },
+  {
+    "nombre": "Trivia de Películas",
+    "imagenUrl": "./assets/triviaDePeliculas.png",
+    "url": "",
+    "estado": "Próximamente"
+  },
+  {
+    "nombre": "Trivia de Geografía",
+    "imagenUrl": "./assets/triviaDeGeografia.png",
+    "url": "",
+    "estado": "Próximamente"
+  }
+]
