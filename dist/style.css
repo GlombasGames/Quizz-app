@@ -789,7 +789,7 @@ button.btn-volver-cartel {
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.52);
   width: 80%;
-  height: 50%;
+  height:300px;
   max-height: 300px;
 
   margin: 0 auto;
@@ -805,6 +805,7 @@ button.btn-volver-cartel {
   max-width: 100%; /* Evita que se desborde horizontalmente */
   height: 100%; /* Ocupa todo el alto disponible */
   max-height: 100%; /* Limita el alto máximo */
+  min-height: 100%; /* Limita el alto máximo */
   margin: 0 auto;
   padding: 16px; /* Opcional: Espaciado interno */
   overflow-y: auto; /* Habilita el scroll vertical */
