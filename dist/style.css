@@ -11,7 +11,12 @@ body {
   color: #FFFFFF;
   /* Texto claro */
 }
-
+@font-face {
+  font-family: 'woodcutter'; /* Nombre personalizado para la fuente */
+  src: url('./assets/fonts/woodcutter.ttf') format('truetype'); /* Ruta a tu archivo .ttf */
+  font-weight: normal; /* Opcional: define el peso de la fuente */
+  font-style: normal; /* Opcional: define el estilo de la fuente */
+}
 #app {
   max-width: 600px;
   /* Ancho máximo del contenedor */
@@ -177,7 +182,7 @@ button:disabled {
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
   margin-top: 7%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'woodcutter', sans-serif;
   color: #ffe066; /* Amarillo suave */
   /* Blanco para contraste */
   letter-spacing: 0.5px;
