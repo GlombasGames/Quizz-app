@@ -347,7 +347,23 @@ window.otrasTrivias = `
       <div class="trivia">8</div>
       </div>
       `;
-window.nosotros = `<div>Cartel de nosotros</div>`;
+window.nosotros = `
+<h3>¿Quiénes somos?</h3>
+<p>Glomba Games es un estudio de desarrollo de videojuegos independiente,  Nuestro objetivo es crear experiencias únicas y entretenidas para jugadores de todas las edades.</p>
+<h3>¿Qué hacemos?</h3>
+<p>Nos especializamos en el desarrollo de juegos móviles y de escritorio, con un enfoque en la jugabilidad, la narrativa y la estética visual. Nos encanta experimentar con nuevas ideas y mecánicas de juego, y siempre estamos buscando formas de innovar y mejorar nuestras creaciones.</p>
+<h3>¿Cómo lo hacemos?</h3>
+<p>Utilizamos tecnologías modernas y herramientas de desarrollo de vanguardia para crear juegos de alta calidad. Nuestro equipo está compuesto por diseñadores, programadores y artistas apasionados por los videojuegos, que trabajan juntos para dar vida a nuestras ideas.</p>
+<h3>¿Por qué lo hacemos?</h3>
+<p>Creemos que los videojuegos son una forma poderosa de contar historias y conectar con las personas. Nos apasiona crear experiencias que hagan reír, llorar y reflexionar a nuestros jugadores. Queremos que nuestros juegos sean más que solo entretenimiento; queremos que sean memorables.</p>
+<h3>¿Cómo puedes contactarnos?</h3>
+<p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes encontrarnos en nuestras redes sociales o enviarnos un correo electrónico a <a href="mailto:glombagames@gmail.com"></a></p>
+<p>¡Gracias por jugar a nuestros juegos y por ser parte de la comunidad de Glomba Games!</p>
+<h3>¿Cómo puedes ayudarnos?</h3>
+<p>Si te gusta nuestro juego, ¡ayúdanos a correr la voz! Comparte el juego con tus amigos y familiares, y déjanos una reseña en la tienda de aplicaciones. Tu apoyo significa mucho para nosotros y nos ayuda a seguir creando juegos increíbles.</p>
+<h3>¿Cómo puedes seguirnos?</h3>
+<p>Sigue nuestras redes sociales para estar al tanto de nuestras últimas noticias, lanzamientos y actualizaciones. Nos encantaría saber de ti y escuchar tus comentarios sobre nuestros juegos.</p>
+`;
 
 function renderPrincipal() {
   app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
