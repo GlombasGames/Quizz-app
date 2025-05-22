@@ -13,8 +13,8 @@ body {
 }
 @font-face {
   font-family: 'miFuente'; /* Nombre personalizado para la fuente */
-  src: url('./assets/fonts/LearnThing.ttf') format('truetype'); /* Ruta a tu archivo .ttf */
-  font-weight: bold; /* Opcional: define el peso de la fuente */
+  src: url('./assets/fonts/JungleAdventurer.ttf') format('truetype'); /* Ruta a tu archivo .ttf */
+  font-weight: normal; /* Opcional: define el peso de la fuente */
   font-style: normal; /* Opcional: define el estilo de la fuente */
 }
 #app {
