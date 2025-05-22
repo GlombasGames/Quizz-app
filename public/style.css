@@ -740,7 +740,7 @@ button.btn-nosotros {
 
 button.btn-volver {
   position: absolute;
-  top: 80%;
+  top: 90%;
   right: 5px;
   background-color: transparent !important;
   background-image: url('./assets/flecha.png');
@@ -749,7 +749,6 @@ button.btn-volver {
   width: 70px;
   height: 50px;
   cursor: pointer;
-  filter: drop-shadow(0 0 5px rgb(169, 169, 8));
   z-index: 1100;
   /* Aplica la sombra negra */
 }
@@ -764,7 +763,6 @@ button.btn-volver-cartel {
   width: 70px;
   height: 50px;
   cursor: pointer;
-  filter: drop-shadow(0 0 5px rgb(169, 169, 8));
   z-index: 1100;
   /* Aplica la sombra negra */
 }
