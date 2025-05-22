@@ -173,7 +173,6 @@ button:disabled {
   /* Centra horizontalmente los elementos internos */
   text-align: center;
   /* Asegura que el texto esté centrado */
-  font-family: sans-serif;
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   font-weight: bold;
   background: linear-gradient(90deg, #4b2e05, #6b4e2e);
