@@ -769,6 +769,14 @@ button.btn-volver-cartel {
   margin: auto;
   cursor: pointer;
 }
+.cartel h2 {
+  font-size: 2em;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
+}
 
 .contenido-cartel {
   position: relative;
