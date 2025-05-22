@@ -802,6 +802,7 @@ button.btn-volver-cartel {
   height:220px;
 
   margin: 0 auto;
+  overflow-y: scroll;
   
 }
 
