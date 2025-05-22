@@ -184,14 +184,13 @@ button:disabled {
 
   margin-top: 7%;
   font-family: 'miFuente', sans-serif;
-  color: #FFD700; /* Color base dorado */
-  background: linear-gradient(90deg, #FFDF00, #FFD700, #FFC107, #FF8C00); /* Gradiente dorado más brillante */
-  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
-  -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
+  font-weight: bold;
+  color: #b38e00; /* Color base dorado */
   text-shadow: 
-    0 1px 1px rgba(255, 255, 255, 0.6), /* Relieve superior brillante */
-    0 2px 2px rgba(255, 215, 0, 0.8), /* Sombra dorada */
-    0 4px 4px rgba(0, 0, 0, 0.4); /* Sombra oscura para profundidad */
+    0 1px 0 #806000, /* Sombra interna oscura */
+    0 -1px 0 #ffe066, /* Relieve superior brillante */
+    1px 1px 2px rgba(0, 0, 0, 0.5), /* Sombra externa para profundidad */
+    -1px -1px 2px rgba(255, 255, 255, 0.3); /* Brillo sutil */
   letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
 
 }
