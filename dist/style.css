@@ -767,12 +767,12 @@ button.btn-volver-cartel {
   min-width: 320px;
   height: 80%;
   min-height: 300px;
-  max-height: 450px;
+  max-height: 500px;
   margin: auto;
   cursor: pointer;
 }
 .cartel h2 {
-  font-size: 2em;
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
   color: #fff;
   text-align: center;
   margin: 0;
