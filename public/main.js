@@ -346,9 +346,9 @@ function generarOtrasTrivias(trivias) {
           ${
             trivia.url
               ? `<a href="${trivia.url}" target="_blank">
-                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.style.display='none'">
+                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/pajaro.png'">
                 </a>`
-              : `<img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.style.display='none'">`
+              : `<img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/pajaro.png'">`
           }
           <p>${trivia.estado}</p>
         </div>
