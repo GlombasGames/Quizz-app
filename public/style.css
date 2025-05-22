@@ -809,10 +809,12 @@ button.btn-volver-cartel {
   padding: 16px; /* Opcional: Espaciado interno */
   overflow-y: auto; /* Habilita el scroll vertical */
   box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  background-color: rgba(0, 0, 0, 0.52); /* Fondo negro translúcido */
+  border-radius: 12px; /* Bordes redondeados */
 }
 
 .trivia {
-  background-color: #0d467f;
+  background-color: #062543;
   color: #ffffff;
   text-align: center;
   padding: 16px; /* Espaciado interno */
