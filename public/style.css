@@ -173,16 +173,16 @@ button:disabled {
   /* Centra horizontalmente los elementos internos */
   text-align: center;
   /* Asegura que el texto esté centrado */
+  font-family: sans-serif;
   font-size: clamp(1.2rem, 2vw, 1.8rem);
-  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
-  margin-top: 7%;
-  color: #6b4e2e;
-  /* Marrón más claro */
-  text-shadow:
-    1px 1px 0 #3e2a14,
-    -1px -1px 0 #3e2a14,
-    0 2px 4px rgba(0, 0, 0, 0.8);
+  background: linear-gradient(90deg, #4b2e05, #6b4e2e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 
+    1px 1px 0 #000000, 
+    -1px -1px 0 #000000, 
+    0 2px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: 0.5px;
   /* Ajusta el espaciado entre letras */
 }
