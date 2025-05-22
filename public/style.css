@@ -183,14 +183,10 @@ button:disabled {
 
   margin-top: 7%;
   font-family: 'woodcutter', sans-serif;
-  color: #462e05; /* Amarillo suave */
+  color: #070500; /* Amarillo suave */
   /* Blanco para contraste */
   letter-spacing: 0.5px;
-  /* Ajusta el espaciado entre letras */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7),
-    /* Sombra principal */
-    0 -1px 0 rgba(124, 114, 2, 0.536);
-  /* Efecto de relieve */
+
 }
 
 
