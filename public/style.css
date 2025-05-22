@@ -806,6 +806,7 @@ button.btn-volver-cartel {
   margin: 0 auto;
   overflow-y: scroll;
   scrollbar-width: none;
+  border-radius: 12px;
   /* Firefox */
 }
 
