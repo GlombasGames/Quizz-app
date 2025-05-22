@@ -177,14 +177,12 @@ button:disabled {
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
   font-weight: bold;
   margin-top: 7%;
-  color: #ffe066; /* Amarillo suave */
-  /* Blanco para contraste */
-  letter-spacing: 0.5px;
-  /* Ajusta el espaciado entre letras */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7),
-    /* Sombra principal */
-    0 -1px 0 rgba(124, 114, 2, 0.536);
-  /* Efecto de relieve */
+  color: #FFD700; /* Color base dorado */
+  text-shadow: 
+    0 1px 0 #B8860B, /* Sombra interna más oscura */
+    0 2px 4px rgba(0, 0, 0, 0.7), /* Sombra principal */
+    0 -1px 0 rgba(255, 255, 255, 0.3); /* Efecto de relieve */
+  letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
 }
 
 
