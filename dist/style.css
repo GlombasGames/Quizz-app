@@ -183,8 +183,8 @@ button:disabled {
 
 
   margin-top: 7%;
-  font-family: 'miFuente', sans-serif;
-  font-weight: lighter;
+  font-family: sans-serif;
+  font-weight: bold;
   color: #b38e00; /* Color base dorado */
   text-shadow: 
     0 1px 0 #806000, /* Sombra interna oscura */
