@@ -740,7 +740,7 @@ button.btn-nosotros {
 
 button.btn-volver {
   position: absolute;
-  top: 50px;
+  top: 80%;
   right: 5px;
   background-color: transparent !important;
   background-image: url('./assets/flecha.png');
