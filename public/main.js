@@ -350,7 +350,7 @@ window.otrasTrivias = `
 window.nosotros = `
 <div class="contenido-cartel-texto">
 <h3>¿Quiénes somos?</h3>
-<p><strong>Glomba Games<strong> es un estudio de desarrollo de videojuegos independiente,  Nuestro objetivo es crear experiencias únicas y entretenidas para jugadores de todas las edades.</p>
+<p><strong>Glomba Games</strong> es un estudio de desarrollo de videojuegos independiente,  Nuestro objetivo es crear experiencias únicas y entretenidas para jugadores de todas las edades.</p>
 <h3>¿Qué hacemos?</h3>
 <p>Nos especializamos en el desarrollo de juegos móviles y de escritorio, con un enfoque en la jugabilidad, la narrativa y la estética visual. Nos encanta experimentar con nuevas ideas y mecánicas de juego, y siempre estamos buscando formas de innovar y mejorar nuestras creaciones.</p>
 <h3>¿Cómo puedes contactarnos?</h3>
