@@ -340,21 +340,20 @@ function generarOtrasTrivias(trivias) {
   return `
     <div class="trivias-caja">
       ${trivias
-        .map(
-          (trivia) => `
+      .map(
+        (trivia) => `
         <div class="trivia">
-          ${
-            trivia.url
-              ? `<a href="${trivia.url}" target="_blank">
-                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/pajaro.png'">
+          ${trivia.url
+            ? `<a href="${trivia.url}" target="_blank">
+                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}">
                 </a>`
-              : `<img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/pajaro.png'">`
+            : `<img src="${trivia.imagenUrl}" alt="${trivia.nombre}">`
           }
           <p>${trivia.estado}</p>
         </div>
       `
-        )
-        .join("")}
+      )
+      .join("")}
     </div>
   `;
 }
