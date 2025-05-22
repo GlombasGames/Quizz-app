@@ -838,7 +838,7 @@ button.btn-volver-cartel {
 
 .trivia {
   position: relative; /* Necesario para posicionar elementos hijos */
-  background-color: #402b05;
+  background-color: #3a3a39;
   color: #ffffff;
   text-align: center;
   border-radius: 12px; /* Bordes redondeados */
