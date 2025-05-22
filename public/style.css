@@ -759,7 +759,7 @@ button.btn-volver-cartel {
   background-image: url('./assets/cartel.png');
   align-items: center;
   justify-content: center;
-  display: flex;
+  display: block;
   background-color: transparent !important;
   background-size: 100% 100%;
   background-repeat: no-repeat;
