@@ -17,6 +17,16 @@ body {
   font-weight: normal; /* Opcional: define el peso de la fuente */
   font-style: normal; /* Opcional: define el estilo de la fuente */
 }
+a {
+  color: yellow; /* Cambia el color del texto del enlace a amarillo */
+  text-decoration: none; /* Opcional: elimina el subrayado */
+}
+
+a:hover {
+  color: #FFD700; /* Cambia el color al pasar el mouse (opcional) */
+  text-decoration: underline; /* Opcional: agrega subrayado al pasar el mouse */
+}
+
 #app {
   max-width: 600px;
   /* Ancho máximo del contenedor */
@@ -127,10 +137,6 @@ button:disabled {
   transition: background 0.3s ease;
 }
 
-.category-info button:hover {
-
-  /* Color más oscuro al pasar el mouse */
-}
 
 .lock-icon {
   margin-left: 8px;
