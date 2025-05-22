@@ -805,6 +805,10 @@ button.btn-volver-cartel {
   overflow-y: scroll;
   
 }
+.contenido-cartel h3 p{
+  margin: 15px;
+  
+}
 
 
 .trivias-caja {
