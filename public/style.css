@@ -808,16 +808,15 @@ button.btn-volver-cartel {
   margin: 0 auto;
   padding: 16px; /* Opcional: Espaciado interno */
   overflow-y: auto; /* Habilita el scroll vertical */
-  border-radius: 12px; /* Bordes redondeados */
   box-sizing: border-box; /* Incluye padding y border en el tamaño total */
 }
 
 .trivia {
-  background-color: #000102;
+  background-color: #0d467f;
   color: #ffffff;
   text-align: center;
   padding: 16px; /* Espaciado interno */
-  border-radius: 8px; /* Bordes redondeados */
+  border-radius: 12px; /* Bordes redondeados */
   aspect-ratio: 1 / 1; /* Mantiene una relación de aspecto 1:1 (cuadrado) */
   display: flex; /* Opcional: para centrar contenido */
   align-items: center; /* Opcional: centra verticalmente el contenido */
