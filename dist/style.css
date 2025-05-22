@@ -861,6 +861,7 @@ button.btn-volver-cartel {
   border-radius: 12px;
   /* Bordes redondeados */
   aspect-ratio: 1 / 1;
+  width: 45%;
   /* Mantiene una relación de aspecto 1:1 (cuadrado) */
   display: flex;
   /* Opcional: para centrar contenido */
