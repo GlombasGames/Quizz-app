@@ -846,6 +846,7 @@ button.btn-volver-cartel {
   /* Habilita el scroll vertical */
   box-sizing: border-box;
   /* Incluye padding y border en el tamaño total */
+  border-radius: 12px;
 }
 .trivias-caja::-webkit-scrollbar {
   display: none;
