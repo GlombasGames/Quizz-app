@@ -904,22 +904,17 @@ button.btn-volver-cartel {
   /* Opcional: color de fondo para rellenar espacios vacíos */
 }
 
-.trivia-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.trivia p {
+  position: relative;
+  /* Permite que el texto se posicione sobre la imagen */
   z-index: 2;
-  font-size: 18px;
-  font-weight: bold;
+  /* Coloca el texto por encima de la imagen */
+  margin: 0;
+  /* Elimina márgenes */
+  font-size: 16px;
+  /* Ajusta el tamaño del texto */
   color: #ffffff;
+  /* Asegura que el texto sea visible */
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-}
-
-.trivia-nombre {
-  margin-top: 8px;
-  font-size: 14px;
-  color: #ffffff;
-  text-align: center;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  /* Agrega un sombreado para mejor visibilidad */
 }

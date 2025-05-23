@@ -343,11 +343,14 @@ function generarOtrasTrivias(trivias) {
         .map(
           (trivia) => `
         <div class="trivia">
-          <div class="trivia-contenedor">
-            <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png';">
-            ${trivia.estado ? `<div class="trivia-overlay">${trivia.estado}</div>` : ""}
-          </div>
-          <p class="trivia-nombre">${trivia.nombre}</p>
+          ${trivia.url
+            ? `<a href="${trivia.url}" target="_blank">
+                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png'; this.alt='${trivia.nombre}'">
+                </a>`
+            : `<img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png'; this.alt='${trivia.nombre}'">`
+          }
+          <p>${trivia.estado}</p>
+          <p>${trivia.nombre}</p>
         </div>
       `
         )
