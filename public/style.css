@@ -805,9 +805,15 @@ button.btn-volver-cartel {
 }
 
 .cartel h2 {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  color: #fff;
-  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.5rem); /* Tamaño dinámico: mínimo 1.5rem, ideal 3vw, máximo 2.5rem */
+  color: #FFD700; /* Color dorado para destacar */
+  text-align: center; /* Centra el texto */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
+  font-weight: bold; /* Hace el texto más grueso */
+  font-family: 'miFuente', sans-serif; /* Usa una fuente personalizada si está disponible */
+  background: linear-gradient(90deg, #FFD700, #FFA500); /* Gradiente dorado */
+  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
   margin: 0;
   margin-top: 100px;
   margin-bottom: 30px;
