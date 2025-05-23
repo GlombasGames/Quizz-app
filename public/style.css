@@ -883,8 +883,9 @@ button.btn-volver-cartel {
 
 .trivia-contenedor {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 100%;
+  margin: auto;
 }
 
 .trivia img {
