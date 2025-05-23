@@ -345,11 +345,12 @@ function generarOtrasTrivias(trivias) {
         <div class="trivia">
           ${trivia.url
             ? `<a href="${trivia.url}" target="_blank">
-                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png'; this.alt='${trivia.nombre}'">
+                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png';">
                 </a>`
-            : `<img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png'; this.alt='${trivia.nombre}'">`
+            : `<img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png';">`
           }
-          <p>${trivia.estado}</p>
+          <p>${trivia.nombre}</p> <!-- Muestra el nombre de la trivia -->
+          <p>${trivia.estado}</p> <!-- Muestra el estado de la trivia -->
         </div>
       `
         )
