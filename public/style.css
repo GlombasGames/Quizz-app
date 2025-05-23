@@ -864,6 +864,7 @@ button.btn-volver-cartel {
   /* Incluye padding y border en el tamaño total */
   border-radius: 12px;
   /* Bordes redondeados */
+  border: #473005 solid 2px;
 }
 
 .trivia {
