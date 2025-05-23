@@ -803,7 +803,7 @@ button.btn-volver-cartel {
 }
 
 .cartel h2 {
-font-size: clamp(1.1rem, 0.8rem + 1vw, 2rem); /* Ajusta el tamaño dinámico */
+font-size: clamp(1.1rem, 1rem + 1vw, 2rem); /* Ajusta el tamaño dinámico */
   color: #FFD700; /* Color dorado para destacar */
   text-align: center; /* Centra el texto */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
