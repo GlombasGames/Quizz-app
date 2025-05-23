@@ -817,13 +817,13 @@ button.btn-volver-cartel {
 
 .contenido-cartel {
   position: relative;
-  bottom: 0;
   text-align: center;
   justify-content: center;
   background-color: rgb(0, 0, 0);
   width: 80%;
   height: 220px;
   margin: 0 auto;
+  bottom: 0;
   overflow-y: scroll;
   scrollbar-width: none;
   border-radius: 12px;
