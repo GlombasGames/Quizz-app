@@ -11,20 +11,30 @@ body {
   color: #FFFFFF;
   /* Texto claro */
 }
+
 @font-face {
-  font-family: 'miFuente'; /* Nombre personalizado para la fuente */
-  src: url('./assets/fonts/JungleAdventurer.ttf') format('truetype'); /* Ruta a tu archivo .ttf */
-  font-weight: normal; /* Opcional: define el peso de la fuente */
-  font-style: normal; /* Opcional: define el estilo de la fuente */
+  font-family: 'miFuente';
+  /* Nombre personalizado para la fuente */
+  src: url('./assets/fonts/JungleAdventurer.ttf') format('truetype');
+  /* Ruta a tu archivo .ttf */
+  font-weight: normal;
+  /* Opcional: define el peso de la fuente */
+  font-style: normal;
+  /* Opcional: define el estilo de la fuente */
 }
+
 a {
-  color: yellow; /* Cambia el color del texto del enlace a amarillo */
-  text-decoration: none; /* Opcional: elimina el subrayado */
+  color: yellow;
+  /* Cambia el color del texto del enlace a amarillo */
+  text-decoration: none;
+  /* Opcional: elimina el subrayado */
 }
 
 a:hover {
-  color: #FFD700; /* Cambia el color al pasar el mouse (opcional) */
-  text-decoration: underline; /* Opcional: agrega subrayado al pasar el mouse */
+  color: #FFD700;
+  /* Cambia el color al pasar el mouse (opcional) */
+  text-decoration: underline;
+  /* Opcional: agrega subrayado al pasar el mouse */
 }
 
 #app {
@@ -182,19 +192,28 @@ button:disabled {
   /* Centra verticalmente los elementos internos */
   justify-content: center;
   /* Centra horizontalmente los elementos internos */
-
+  text-align: center;
+  /* Asegura que el texto esté centrado */
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
 
 
   margin-top: 7%;
-    font-size: clamp(1.5rem, 3vw, 2.5rem); /* Tamaño dinámico: mínimo 1.5rem, ideal 3vw, máximo 2.5rem */
-  color: #FFD700; /* Color dorado para destacar */
-  text-align: center; /* Centra el texto */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
-  font-weight: lighter;
-  font-family: 'miFuente', sans-serif; /* Usa una fuente personalizada si está disponible */
-  background: linear-gradient(90deg, #FFD700, #FFA500); /* Gradiente dorado */
-  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
-  -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
+  font-family: sans-serif;
+
+  color: #ecda9c;
+  /* Color base dorado más cálido */
+  text-shadow:
+    0 1px 0 #8c6e2f,
+    /* Sombra interna oscura */
+    0 -1px 0 #cda60c,
+    /* Relieve superior brillante */
+    1px 1px 2px rgba(0, 0, 0, 0.5),
+    /* Sombra externa para profundidad */
+    -1px -1px 2px rgba(255, 255, 255, 0.3);
+  /* Resplandor dorado suave */
+  letter-spacing: 0.5px;
+  /* Ajusta el espaciado entre letras */
 
 }
 
@@ -218,8 +237,10 @@ button:disabled {
 }
 
 .btn-anuncio-header img {
-  width: clamp(70%, 90%, 90%); /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
-  height: clamp(70%, 90%, 90%); /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
+  width: clamp(70%, 90%, 90%);
+  /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
+  height: clamp(70%, 90%, 90%);
+  /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
   object-fit: contain;
   position: relative;
   filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
@@ -773,7 +794,7 @@ button.btn-volver {
 
 button.btn-volver-cartel {
   position: absolute;
-  top: 30px;
+  top: 0;
   right: 1%;
   background-color: transparent !important;
   background-image: url('./assets/flecha.png');
@@ -799,20 +820,30 @@ button.btn-volver-cartel {
   min-width: 320px;
   height: 450px;
   margin: auto;
-  box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total */
+  box-sizing: border-box;
+  /* Asegura que padding y border se incluyan en el tamaño total */
 }
 
 .cartel h2 {
-font-size: clamp(1.1rem, 1rem + 1vw, 2rem); /* Ajusta el tamaño dinámico */
-  color: #FFD700; /* Color dorado para destacar */
-  text-align: center; /* Centra el texto */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
+  font-size: clamp(1.1rem, 1rem + 1vw, 2rem);
+  /* Ajusta el tamaño dinámico */
+  color: #FFD700;
+  /* Color dorado para destacar */
+  text-align: center;
+  /* Centra el texto */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  /* Sombra para darle profundidad */
   font-weight: lighter;
-  font-family: 'miFuente', sans-serif; /* Usa una fuente personalizada si está disponible */
-  background: linear-gradient(90deg, #FFD700, #FFA500); /* Gradiente dorado */
-  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
-  -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
-  margin: 110px 0 16px 0; /* Espaciado inferior */
+  font-family: 'miFuente', sans-serif;
+  /* Usa una fuente personalizada si está disponible */
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  /* Gradiente dorado */
+  -webkit-background-clip: text;
+  /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent;
+  /* Hace que el fondo del texto sea transparente */
+  margin: 110px 0 16px 0;
+  /* Espaciado inferior */
 }
 
 .contenido-cartel {
@@ -828,7 +859,8 @@ font-size: clamp(1.1rem, 1rem + 1vw, 2rem); /* Ajusta el tamaño dinámico */
   scrollbar-width: none;
   border-radius: 12px;
   border: #473005 solid 2px;
-  box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total */
+  box-sizing: border-box;
+  /* Asegura que padding y border se incluyan en el tamaño total */
 }
 
 .contenido-cartel-texto {
@@ -845,14 +877,21 @@ font-size: clamp(1.1rem, 1rem + 1vw, 2rem); /* Ajusta el tamaño dinámico */
 
 .trivias-caja {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajusta el número de columnas automáticamente */
-  gap: 16px; /* Espaciado entre las tarjetas */
-  width: 100%; /* Asegura que no exceda el ancho del contenedor */
-  max-width: 100%; /* Evita desbordes horizontales */
-  height: auto; /* Ajusta la altura automáticamente */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  /* Ajusta el número de columnas automáticamente */
+  gap: 16px;
+  /* Espaciado entre las tarjetas */
+  width: 100%;
+  /* Asegura que no exceda el ancho del contenedor */
+  max-width: 100%;
+  /* Evita desbordes horizontales */
+  height: auto;
+  /* Ajusta la altura automáticamente */
   margin: 0 auto;
-  padding: 16px; /* Espaciado interno */
-  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  padding: 16px;
+  /* Espaciado interno */
+  box-sizing: border-box;
+  /* Incluye padding y border en el tamaño total */
 }
 
 .trivia {
@@ -890,7 +929,8 @@ font-size: clamp(1.1rem, 1rem + 1vw, 2rem); /* Ajusta el tamaño dinámico */
 
 .trivia-overlay {
   position: absolute;
-  bottom: 10%; /* Posiciona el texto cerca de la parte inferior */
+  bottom: 10%;
+  /* Posiciona el texto cerca de la parte inferior */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
