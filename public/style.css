@@ -182,22 +182,19 @@ button:disabled {
   /* Centra verticalmente los elementos internos */
   justify-content: center;
   /* Centra horizontalmente los elementos internos */
-  text-align: center;
-  /* Asegura que el texto esté centrado */
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
+
 
 
   margin-top: 7%;
-  font-family: sans-serif;
-
-  color: #ecda9c; /* Color base dorado más cálido */
-  text-shadow: 
-    0 1px 0 #8c6e2f, /* Sombra interna oscura */
-    0 -1px 0 #cda60c, /* Relieve superior brillante */
-    1px 1px 2px rgba(0, 0, 0, 0.5), /* Sombra externa para profundidad */
-    -1px -1px 2px rgba(255, 255, 255, 0.3); /* Resplandor dorado suave */
-  letter-spacing: 0.5px; /* Ajusta el espaciado entre letras */
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* Tamaño dinámico: mínimo 1.5rem, ideal 3vw, máximo 2.5rem */
+  color: #FFD700; /* Color dorado para destacar */
+  text-align: center; /* Centra el texto */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
+  font-weight: lighter;
+  font-family: 'miFuente', sans-serif; /* Usa una fuente personalizada si está disponible */
+  background: linear-gradient(90deg, #FFD700, #FFA500); /* Gradiente dorado */
+  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
 
 }
 
