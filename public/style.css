@@ -904,18 +904,10 @@ button.btn-volver-cartel {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  font-size: 18px; /* Tamaño inicial */
+  font-size: min(18px, 5vw);
   font-weight: bold;
   color: #ffffff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-  text-align: center;
-  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-  max-width: 90%; /* Asegura que el texto no supere el 90% del ancho del contenedor */
-  overflow: hidden; /* Oculta cualquier desbordamiento */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: min(18px, 5vw); /* Reduce dinámicamente el tamaño del texto */
 }
 
 .trivia-nombre {
