@@ -806,13 +806,16 @@ button.btn-volver-cartel {
 }
 
 .cartel h2 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem); /* Tamaño dinámico */
-  color: #FFD700; /* Color dorado */
-  text-align: center;
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* Tamaño dinámico: mínimo 1.5rem, ideal 3vw, máximo 2.5rem */
+  color: #FFD700; /* Color dorado para destacar */
+  text-align: center; /* Centra el texto */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
+  font-weight: lighter;
+  font-family: 'miFuente', sans-serif; /* Usa una fuente personalizada si está disponible */
+  background: linear-gradient(90deg, #FFD700, #FFA500); /* Gradiente dorado */
+  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
   margin: 100px 0 16px 0; /* Espaciado inferior */
-  font-weight: bold;
-  font-family: 'miFuente', sans-serif;
 }
 
 .contenido-cartel {
