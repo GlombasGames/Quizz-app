@@ -809,7 +809,7 @@ button.btn-volver-cartel {
   color: #FFD700; /* Color dorado para destacar */
   text-align: center; /* Centra el texto */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
-  font-weight: bold; /* Hace el texto más grueso */
+  font-weight: lighter;
   font-family: 'miFuente', sans-serif; /* Usa una fuente personalizada si está disponible */
   background: linear-gradient(90deg, #FFD700, #FFA500); /* Gradiente dorado */
   -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
