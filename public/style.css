@@ -900,7 +900,7 @@ button.btn-volver-cartel {
 
 .trivia-overlay {
   position: absolute;
-  top: 50%;
+  bottom: 10%; /* Posiciona el texto cerca de la parte inferior */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
