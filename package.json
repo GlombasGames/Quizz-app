@@ -7,7 +7,12 @@
     "start": "node backend/index.js",
     "build": "webpack --mode production & npx cap sync android",
     "open": "npx cap open android",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:selva": "TRIVIA=selva webpack serve --config webpack.config.js",
+    "build:selva": "TRIVIA=selva webpack --mode production --config webpack.config.js && npm run copy:selva && npm run sync",
+    "copy:selva": "powershell -Command \"Remove-Item -Recurse -Force android/app/src/main/assets/public; New-Item -ItemType Directory -Path android/app/src/main/assets/public; Copy-Item -Recurse dist/selva/* android/app/src/main/assets/public/\"",
+    "sync": "npx cap sync android",
+    "build:all": "node build-all.js"
   },
   "author": "Your Name",
   "license": "ISC",

@@ -1,21 +1,25 @@
+
+const triviaName = window.TRIVIA_ID || 'selva'; // Por defecto, selva
+const baseURL = `/${triviaName}`; // /selva, /mitologia, etc.
+
+
 import './style.css';
 import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
-import misTrivias from './trivias.json';
+import misTrivias from '../trivias.json';
 
 const tiempoLimite = 120;
 
 const assetsList = [
-  './assets/fondoPrincipal.png',
-  './assets/fondoSelvaMarco.png',
-  './assets/escarabajo.png',
-  './assets/ad.png',
-  './assets/GlombaGames.png',
-  './assets/pajaro.png',
-  './assets/trivian.png',
-  './assets/cartel.png',
-  // Agrega aquí todas las imágenes de la carpeta
+  `${baseURL}/assets/fondoPrincipal.png`,
+  `${baseURL}/assets/fondoSelvaMarco.png`,
+  `${baseURL}/assets/escarabajo.png`,
+  `${baseURL}/assets/ad.png`,
+  `${baseURL}/assets/GlombaGames.png`,
+  `${baseURL}/assets/pajaro.png`,
+  `${baseURL}/assets/trivian.png`,
+  `${baseURL}/assets/cartel.png`,
 ];
 
 async function precargarImagenes(rutas) {
@@ -218,7 +222,7 @@ async function cargarDatosJSON(actualizar) {
   try {
     if (actualizar && tieneConexion()) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
-      const res = await fetch('https://glombagames.ddns.net/categorias.json');
+      const res = await fetch(`${baseURL}/categorias.json`);
       data = await res.json();
       console.log('Categorias cargadas desde el servidor:');
       // Guardar los datos localmente para usarlos en modo offline
@@ -254,7 +258,7 @@ async function iniciar() {
     console.log('Imágenes precargadas correctamente.');
     // Mostrar un mensaje inicial
     app.innerHTML = `<div class="cargando">
-    <img src="./assets/GlombaGames.png" alt="Pájaro" style="width:60%; height:220px; min-width:300px; display:block; margin:0 auto 16px auto;">
+    <img src="${baseURL}/assets/GlombaGames.png" alt="Pájaro" style="width:60%; height:220px; min-width:300px; display:block; margin:0 auto 16px auto;">
     <div>
     `;
 
@@ -276,7 +280,7 @@ async function iniciar() {
 }
 
 function renderMenu() {
-  app.style.backgroundImage = 'url(./assets/fondoSelvaMarco.png)';
+  app.style.backgroundImage = `url(${baseURL}/assets/fondoSelvaMarco.png)`;
   const totalPuntos = Object.keys(progreso.puntos)
     .filter(cat => progreso.desbloqueadas.includes(cat))
     .reduce((total, cat) => total + progreso.puntos[cat], 0);
@@ -287,11 +291,11 @@ function renderMenu() {
   <div class="header">
   <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
      <div class="header-item">
-         <p class="coin"><img src="./assets/${coin}" alt="coin"> ${progreso.intentos}</p>
+         <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${progreso.intentos}</p>
      </div>
      <div class="header-item">
       <button class="btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-       <img src="./assets/${coins}" alt="coin">    
+       <img src="${baseURL}/assets/${coins}" alt="coin">    
       </button>
      </div>
      <div class="header-item">
@@ -321,7 +325,7 @@ function renderMenu() {
         tabindex="0"
         aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${cat}"
       >
-        <img class="categoria-img" src="./assets/${catNormalizada}.png" alt="${cat}" onerror="this.src='./assets/pajaro.png'">
+        <img class="categoria-img" src="${baseURL}/assets/${catNormalizada}.png" alt="${cat}" onerror="this.src='${baseURL}/assets/pajaro.png'">
         <div class="categoria-info-boton">
           <strong class="cat">${cat}</strong>
           <span class="category-puntos">${puntosNecesarios}</span>
@@ -345,11 +349,11 @@ function generarOtrasTrivias(trivias) {
         <div class="trivia">
           ${trivia.url
             ? `<a href="${trivia.url}" target="_blank">
-                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png';">
+                  <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='${baseURL}/assets/proximamente.png';">
                 </a>`
             : `
               <div class="trivia-contenedor">
-                <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png';">
+                <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='${baseURL}/assets/proximamente.png';">
                 ${trivia.estado ? `<div class="trivia-overlay">${trivia.estado}</div>` : ""}
               </div>
               <p class="trivia-nombre">${trivia.nombre}</p>
@@ -380,7 +384,7 @@ window.nosotros = `
 `;
 
 function renderPrincipal() {
-  app.style.backgroundImage = 'url(./assets/fondoPrincipal.png)';
+  app.style.backgroundImage = `url(${baseURL}/assets/fondoPrincipal.png)`;
 
   app.innerHTML = `
   <div class="ppal">
@@ -429,7 +433,7 @@ window.jugar = function jugar(categoria) {
           mensaje.className = 'mensaje-overlay';
           mensaje.innerHTML = `
             <span>No tienes suficientes</span>
-            <img src="./assets/${coin}" alt="coin" style="width: 40px; height: 40px;">
+            <img src="${baseURL}/assets/${coin}" alt="coin" style="width: 40px; height: 40px;">
           `;
           boton.appendChild(mensaje); // Agregar el mensaje al botón
         }

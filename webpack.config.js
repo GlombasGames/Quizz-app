@@ -1,46 +1,76 @@
 const path = require('path');
+const fs = require('fs');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+// Detectamos qué trivia vamos a construir (default: selva)
+const triviaId = process.env.TRIVIA || 'selva';
+const configPath = path.resolve(__dirname, `configs/${triviaId}.json`);
+
+if (!fs.existsSync(configPath)) {
+  throw new Error(`No se encontró el archivo de configuración: ${configPath}`);
+}
+
+const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+
 module.exports = {
-  entry: './public/main.js', // Archivo principal de entrada
+  mode: 'development', // podés cambiar a 'production' para release
+
+  entry: './public/core/main.js',
+
   output: {
-    path: path.resolve(__dirname, 'dist'), // Carpeta de salida
-    filename: 'bundle.js', // Archivo JavaScript empaquetado
-    clean: true, // Limpia la carpeta dist antes de cada build
+    path: path.resolve(__dirname, `dist/${triviaId}`),
+    filename: 'bundle.js',
+    clean: true,
   },
+
   module: {
     rules: [
       {
-        test: /\.html$/, // Procesar archivos HTML
-        use: ['html-loader'],
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.css$/, // Procesar archivos CSS
-        use: ['style-loader', 'css-loader'],
+        test: /\.json$/,
+        type: 'json',
       },
     ],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // Archivo HTML base
-      filename: 'index.html', // Archivo HTML generado
+      template: './public/core/index.html',
+      filename: 'index.html',
+      title: config.nombre || 'Trivia',
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: './public/categorias.json', to: './categorias.json' }, // Copiar categorias.json
-        { from: './public/style.css', to: './style.css' },
-        { from: './public/firebase-messaging-sw.js', to: './firebase-messaging-sw.js' },
-        { from: './public/assets', to: './assets' }, // Copiar carpeta assets
+        // Estos archivos son iguales para todos
+        { from: './public/core/style.css', to: './style.css' },
+        { from: './public/core/firebase-messaging-sw.js', to: './firebase-messaging-sw.js' },
+
+        // Estos archivos cambian por trivia
+        {
+          from: `./public/${triviaId}/categorias.json`,
+          to: './categorias.json',
+        },
+        {
+          from: `./public/${triviaId}/assets`,
+          to: './assets',
+        },
       ],
     }),
+    new webpack.DefinePlugin({
+      'window.TRIVIA_ID': JSON.stringify(config.triviaId),
+    }),
   ],
+
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, `dist/${triviaId}`),
     },
-    port: 3000, // Puerto del servidor de desarrollo
-    open: true, // Abre automáticamente el navegador
+    port: 3000,
+    open: true,
   },
-  mode: 'development', // Modo de desarrollo (puedes cambiarlo a 'production' para optimizar)
 };
