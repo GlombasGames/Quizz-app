@@ -810,20 +810,20 @@ button.btn-volver-cartel {
   color: #FFD700; /* Color dorado */
   text-align: center;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
-  margin: 0 0 16px 0; /* Espaciado inferior */
+  margin: 100px 0 16px 0; /* Espaciado inferior */
   font-weight: bold;
   font-family: 'miFuente', sans-serif;
 }
 
 .contenido-cartel {
   position: relative;
+  bottom: 0;
   text-align: center;
   justify-content: center;
   background-color: rgb(0, 0, 0);
   width: 80%;
   height: 220px;
   margin: 0 auto;
-  bottom: 0;
   overflow-y: scroll;
   scrollbar-width: none;
   border-radius: 12px;
