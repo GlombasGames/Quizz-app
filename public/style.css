@@ -192,7 +192,7 @@ button:disabled {
   /* Centra verticalmente los elementos internos */
   justify-content: center;
   /* Centra horizontalmente los elementos internos */
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
+   font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem); /* Tamaño dinámico ajustado */
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
 
 
