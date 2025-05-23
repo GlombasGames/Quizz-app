@@ -879,6 +879,7 @@ button.btn-volver-cartel {
   justify-content: flex-start;
   overflow: hidden;
   cursor: pointer;
+  border: #473005 solid 2px;
 }
 
 .trivia-contenedor {
