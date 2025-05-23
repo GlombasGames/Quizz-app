@@ -904,7 +904,7 @@ button.btn-volver-cartel {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  font-size: min(18px, 5vw);
+  font-size: min(13px, 5vw);
   font-weight: bold;
   color: #ffffff;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
