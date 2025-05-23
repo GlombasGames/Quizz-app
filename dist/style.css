@@ -188,6 +188,8 @@ button:disabled {
   /* Asegura que el contenedor ocupe toda la altura del header */
   display: flex;
   /* Activa Flexbox dentro del div */
+  align-items: center;
+  /* Centra verticalmente los elementos internos */
   justify-content: center;
   /* Centra horizontalmente los elementos internos */
   font-size: clamp(1.2rem, 2vw, 1.8rem);
