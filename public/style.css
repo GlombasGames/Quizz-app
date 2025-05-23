@@ -868,53 +868,52 @@ button.btn-volver-cartel {
 
 .trivia {
   position: relative;
-  /* Necesario para posicionar elementos hijos */
   background-color: #473005;
   color: #ffffff;
   text-align: center;
   border-radius: 12px;
-  /* Bordes redondeados */
   aspect-ratio: 1 / 1;
-  /* Mantiene la relación de aspecto cuadrada */
   display: flex;
-  /* Centra el contenido */
+  flex-direction: column;
   align-items: center;
-  /* Centra verticalmente */
-  justify-content: center;
-  /* Centra horizontalmente */
+  justify-content: flex-start;
   overflow: hidden;
-  /* Evita que el contenido desborde */
   cursor: pointer;
+}
+
+.trivia-contenedor {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .trivia img {
   position: absolute;
-  /* Posiciona la imagen detrás del contenido */
   top: 0;
   left: 0;
   width: 100%;
-  /* La imagen ocupa todo el ancho */
   height: 100%;
-  /* La imagen ocupa todo el alto */
   object-fit: contain;
-  /* Ajusta la imagen dentro del contenedor sin recortarla */
   z-index: 1;
-  /* Coloca la imagen detrás del texto */
   background-color: #211204;
-  /* Opcional: color de fondo para rellenar espacios vacíos */
 }
 
-.trivia p {
-  position: relative;
-  /* Permite que el texto se posicione sobre la imagen */
+.trivia-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
-  /* Coloca el texto por encima de la imagen */
-  margin: 0;
-  /* Elimina márgenes */
-  font-size: 16px;
-  /* Ajusta el tamaño del texto */
+  font-size: 18px;
+  font-weight: bold;
   color: #ffffff;
-  /* Asegura que el texto sea visible */
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-  /* Agrega un sombreado para mejor visibilidad */
+}
+
+.trivia-nombre {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
