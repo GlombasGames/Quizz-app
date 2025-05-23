@@ -800,6 +800,7 @@ button.btn-volver-cartel {
   height: 450px;
   margin: auto;
   box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total */
+  word-wrap: break-word;
 }
 
 .cartel h2 {
@@ -813,7 +814,6 @@ button.btn-volver-cartel {
   -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
   -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
   margin: 110px 30px 16px 30px; /* Espaciado inferior */
-  text-wrap: break-word; /* Permite que el texto se ajuste a la línea */
 }
 
 .contenido-cartel {
