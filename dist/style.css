@@ -790,10 +790,11 @@ button.btn-volver-cartel {
 }
 
 .cartel {
-  background-image: url('./assets/cartel.png');
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  display: block;
+  justify-content: flex-start;
+  background-image: url('./assets/cartel.png');
   background-color: transparent !important;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -801,23 +802,17 @@ button.btn-volver-cartel {
   min-width: 320px;
   height: 450px;
   margin: auto;
-
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total */
 }
 
 .cartel h2 {
-  font-size: clamp(1.5rem, 3vw, 2.5rem); /* Tamaño dinámico: mínimo 1.5rem, ideal 3vw, máximo 2.5rem */
-  color: #FFD700; /* Color dorado para destacar */
-  text-align: center; /* Centra el texto */
+  font-size: clamp(1.5rem, 3vw, 2.5rem); /* Tamaño dinámico */
+  color: #FFD700; /* Color dorado */
+  text-align: center;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para darle profundidad */
-  font-weight: lighter;
-  font-family: 'miFuente', sans-serif; /* Usa una fuente personalizada si está disponible */
-  background: linear-gradient(90deg, #FFD700, #FFA500); /* Gradiente dorado */
-  -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
-  -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
-  margin: 0;
-  margin-top: 20%;
-  margin-bottom: 2%;
-  padding: 0;
+  margin: 0 0 16px 0; /* Espaciado inferior */
+  font-weight: bold;
+  font-family: 'miFuente', sans-serif;
 }
 
 .contenido-cartel {
@@ -828,13 +823,12 @@ button.btn-volver-cartel {
   background-color: rgb(0, 0, 0);
   width: 80%;
   height: 220px;
-
   margin: 0 auto;
   overflow-y: scroll;
   scrollbar-width: none;
   border-radius: 12px;
   border: #473005 solid 2px;
-  /* Firefox */
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total */
 }
 
 .contenido-cartel-texto {
@@ -851,25 +845,14 @@ button.btn-volver-cartel {
 
 .trivias-caja {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  /* Ajusta el número de columnas automáticamente */
-  gap: 16px;
-  /* Espaciado entre las tarjetas */
-  width: 100%;
-  /* Asegura que no exceda el ancho del contenedor */
-  max-width: 100%;
-  /* Evita desbordes horizontales */
-  height: auto;
-  /* Ajusta la altura automáticamente */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Ajusta el número de columnas automáticamente */
+  gap: 16px; /* Espaciado entre las tarjetas */
+  width: 100%; /* Asegura que no exceda el ancho del contenedor */
+  max-width: 100%; /* Evita desbordes horizontales */
+  height: auto; /* Ajusta la altura automáticamente */
   margin: 0 auto;
-  padding: 16px;
-  /* Espaciado interno */
-  overflow-y: auto;
-  /* Habilita el scroll vertical si es necesario */
-  box-sizing: border-box;
-  /* Incluye padding y border en el tamaño total */
-  border-radius: 12px;
-  /* Bordes redondeados */
+  padding: 16px; /* Espaciado interno */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
 }
 
 .trivia {
