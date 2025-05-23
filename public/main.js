@@ -351,8 +351,8 @@ function generarOtrasTrivias(trivias) {
               <div class="trivia-contenedor">
                 <img src="${trivia.imagenUrl}" alt="${trivia.nombre}" onerror="this.src='./assets/proximamente.png';">
                 ${trivia.estado ? `<div class="trivia-overlay">${trivia.estado}</div>` : ""}
-              </div>
-              <p class="trivia-nombre">${trivia.nombre}</p>
+                <p class="trivia-nombre">${trivia.nombre}</p>
+                </div>
             `
           }
         </div>
