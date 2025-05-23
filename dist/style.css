@@ -812,7 +812,7 @@ button.btn-volver-cartel {
   background: linear-gradient(90deg, #FFD700, #FFA500); /* Gradiente dorado */
   -webkit-background-clip: text; /* Aplica el gradiente solo al texto */
   -webkit-text-fill-color: transparent; /* Hace que el fondo del texto sea transparente */
-  margin: 110px 20% 16px 20%; /* Espaciado inferior */
+  margin: 110px 0 16px 0; /* Espaciado inferior */
 }
 
 .contenido-cartel {
