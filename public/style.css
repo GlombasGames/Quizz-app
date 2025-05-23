@@ -911,6 +911,7 @@ button.btn-volver-cartel {
 }
 
 .trivia-nombre {
+  margin: 0 5px;
   margin-top: 8px;
   font-size: 14px;
   color: #ffffff;
