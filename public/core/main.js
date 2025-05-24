@@ -250,7 +250,7 @@ async function cargarDatosJSON(actualizar) {
   try {
     if (actualizar && tieneConexion()) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
-      const res = await fetch(`https://glombagames.ddns.net/api/categorias.json?triviaId=${baseURL}`);
+      const res = await fetch(`https://glombagames.ddns.net/api/categorias.json?triviaId=`+baseURL);
       data = await res.json();
       console.log('Categorias cargadas desde el servidor:');
       // Guardar los datos localmente para usarlos en modo offline
