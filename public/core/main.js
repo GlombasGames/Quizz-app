@@ -4,7 +4,7 @@ const baseURL = `/${triviaName}`; // /selva, /mitologia, etc.
 
 
 
-
+console.log("Entraste a tivia: ", triviaName)
 
 
 
