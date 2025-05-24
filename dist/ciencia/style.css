@@ -1,0 +1,947 @@
+/* General */
+html,
+body {
+  height: 100%;
+  /* Asegura que el HTML y el body ocupen toda la pantalla */
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #000102;
+  /* Fondo sólido */
+  color: #FFFFFF;
+  /* Texto claro */
+}
+
+@font-face {
+  font-family: 'miFuente';
+  /* Nombre personalizado para la fuente */
+  src: url('./fonts/JungleAdventurer.ttf') format('truetype');
+  /* Ruta a tu archivo .ttf */
+  font-weight: normal;
+  /* Opcional: define el peso de la fuente */
+  font-style: normal;
+  /* Opcional: define el estilo de la fuente */
+}
+
+a {
+  color: yellow;
+  /* Cambia el color del texto del enlace a amarillo */
+  text-decoration: none;
+  /* Opcional: elimina el subrayado */
+}
+
+a:hover {
+  color: #FFD700;
+  /* Cambia el color al pasar el mouse (opcional) */
+  text-decoration: underline;
+  /* Opcional: agrega subrayado al pasar el mouse */
+}
+
+#app {
+  max-width: 600px;
+  /* Ancho máximo del contenedor */
+  margin: 0 auto;
+  /* Centra el contenedor horizontalmente */
+  background-color: #000102;
+  padding: 16px;
+  background-size: 100% 100%;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  overflow-y: auto;
+  position: relative;
+  /* Asegura que los elementos sticky se comporten correctamente */
+}
+
+/* Oculta la scrollbar en navegadores Webkit (Chrome, Edge, Safari) */
+#app::-webkit-scrollbar {
+  display: none;
+}
+
+/* Botones */
+button {
+  padding: 12px 16px;
+  margin: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  /* Botón destacado */
+  color: #FFFFFF;
+  /* Texto claro */
+  -webkit-tap-highlight-color: transparent;
+  /* Elimina el efecto de resaltado en móviles */
+  outline: none;
+  /* Asegura que no haya bordes al hacer clic */
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+
+  /* Más claro al pasar el mouse */
+  transform: scale(1.05);
+  /* Efecto de zoom */
+}
+
+
+
+/* Estilo para botones deshabilitados */
+button:disabled {
+
+  /* Mismo color de fondo */
+  color: white;
+  /* Mismo color de texto */
+  opacity: 0.5;
+  /* Más transparente */
+  cursor: not-allowed;
+  /* Cambia el cursor a "no permitido" */
+}
+
+/* Categorías */
+.category {
+  padding: 12px;
+  margin: 12px 0;
+  background: #06508c;
+  /* Fondo más claro para categorías desbloqueadas */
+  color: #FFFFFF;
+  /* Texto claro */
+  border: 1px solid #2196F3;
+  /* Borde primario */
+  border-radius: 8px;
+}
+
+
+.category.locked {
+  background: #1565C0;
+  /* Fondo más oscuro para categorías bloqueadas */
+  color: #E3F2FD;
+  /* Texto claro */
+}
+
+.category-info {
+  display: flex;
+  /* Alinea los elementos en una fila */
+  align-items: center;
+  /* Centra verticalmente el texto, el candado y el botón */
+  justify-content: space-between;
+  /* Espaciado entre los elementos */
+
+}
+
+.category-info button {
+  margin-left: 8px;
+  /* Espacio entre el texto y el botón */
+  padding: 8px 20px;
+  /* Ajusta el tamaño del botón */
+  font-size: 20px;
+  /* Tamaño del texto del botón */
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  /* Color del botón */
+  color: #FFFFFF;
+  /* Color del texto */
+  transition: background 0.3s ease;
+}
+
+
+.lock-icon {
+  margin-left: 8px;
+  /* Espacio entre el texto y el candado */
+  font-size: 18px;
+  /* Tamaño del candado */
+  color: #E3F2FD;
+  /* Color del candado */
+}
+
+
+
+/* Encabezado */
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  justify-content: center;
+  /* Espacia los elementos horizontalmente */
+  width: (100%-32px);
+  margin: 0;
+  /* Ocupa todo el ancho del contenedor padre (#app) */
+  z-index: 1001;
+  /* Evita que la imagen se repita */
+  color: #FFFFFF;
+
+  background-image: url('/__TRIVIA__/assets/cartelTopIguana.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header-item {
+  width: 25%;
+  /* Cada div ocupa un tercio del ancho del header */
+  height: 130px;
+  /* Asegura que el contenedor ocupe toda la altura del header */
+  display: flex;
+  /* Activa Flexbox dentro del div */
+  align-items: center;
+  /* Centra verticalmente los elementos internos */
+  justify-content: center;
+  /* Centra horizontalmente los elementos internos */
+   font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem); /* Tamaño dinámico ajustado */
+  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
+
+
+  margin-top: 7%;
+  /* Ajusta el tamaño dinámico */
+  color: #FFD700;
+  /* Color dorado para destacar */
+  text-align: center;
+  /* Centra el texto */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  /* Sombra para darle profundidad */
+  font-weight: lighter;
+  font-family: 'miFuente', sans-serif;
+  /* Usa una fuente personalizada si está disponible */
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  /* Gradiente dorado */
+  -webkit-background-clip: text;
+  /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent;
+
+}
+
+
+.btn-anuncio-header {
+  background-color: #00010200;
+  width: 100%;
+  height: 90%;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  padding: 8px;
+  margin: 0 auto;
+  margin-bottom: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn-anuncio-header img {
+  width: clamp(70%, 90%, 90%);
+  /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
+  height: clamp(70%, 90%, 90%);
+  /* Tamaño mínimo: 70%, ideal: 90%, máximo: 100% */
+  object-fit: contain;
+  position: relative;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Animación de resplandor dorado */
+@keyframes golden-glow {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+  }
+
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5)) drop-shadow(0 0 30px rgba(255, 215, 0, 7));
+  }
+
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+  }
+}
+
+/* Botón activo */
+.btn-anuncio-header:enabled {
+  animation: golden-glow 1.5s infinite;
+}
+
+/* Botón deshabilitado */
+.btn-anuncio-header:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-anuncio-header:disabled img {
+  filter: none;
+  /* Elimina el resplandor */
+}
+
+.coin img {
+  width: 40%;
+  min-width: 40px;
+
+  /* Tamaño máximo para pantallas grandes */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  /* Asegura que la imagen no se deforme */
+  position: relative;
+  /* Asegura que la imagen se posicione dentro de su contenedor */
+}
+
+.saludo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+  background: #122501ba;
+  color: #fff;
+  padding: 18px 0;
+  border-radius: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
+  border: 1px solid #070e02a1;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.saludo div {
+  width: 100%;
+  text-align: center;
+}
+
+/* Botón "Ver anuncio" - muy llamativo */
+.btn-anuncio {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #ffe066 0%, #ffe066 60%, #ffd60a 100%);
+  color: #333;
+  box-shadow: 0 2px 8px rgba(255, 214, 10, 0.4), 0 0 15px rgba(255, 214, 10, 0.6);
+  /* Resplandor amarillo */
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.btn-anuncio-ancho {
+  padding: 20px 16px;
+  margin: auto;
+}
+
+.btn-anuncio:hover:enabled {
+  background: linear-gradient(90deg, #ffd60a 0%, #ffe066 100%);
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(255, 214, 10, 0.6), 0 0 20px rgba(255, 214, 10, 0.8);
+  /* Resplandor más intenso al pasar el mouse */
+}
+
+.btn-anuncio:active {
+  background: #ffd60a;
+  box-shadow: 0 2px 6px rgba(255, 214, 10, 0.5), 0 0 10px rgba(255, 214, 10, 0.7);
+  /* Resplandor más tenue al hacer clic */
+}
+
+/* Estilo para botones deshabilitados */
+.btn-anuncio:disabled {
+  background-color: #d4d415d7;
+  /* Color de fondo para el estado deshabilitado */
+  color: white;
+  /* Color del texto */
+  opacity: 0.5;
+  /* Más transparente */
+  cursor: not-allowed;
+  /* Cambia el cursor a "no permitido" */
+  box-shadow: none;
+  /* Elimina el resplandor */
+  transition: none;
+  /* Desactiva las transiciones */
+}
+
+/* Animación de pulso para el botón de anuncio */
+@keyframes pulse-anuncio {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Aplica la animación solo si el botón NO está deshabilitado */
+.btn-anuncio:not(:disabled) {
+  animation: pulse-anuncio 1.2s infinite;
+}
+
+.respuesta {
+  width: 100%;
+  height: 18%;
+}
+
+.pregunta {
+  flex: 0 0 35%;
+  /* Ocupa el 40% de la altura del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  padding: 5px;
+  background: #023d6dcf;
+  border-radius: 8px;
+}
+
+.respuestas {
+  flex: 1;
+  /* Ocupa el resto del espacio (60%) */
+  display: flex;
+  flex-direction: column;
+  /* Organiza las respuestas en columnas */
+  align-items: center;
+  padding: 10px;
+}
+
+.respuesta {
+  width: 90%;
+  /* Las respuestas ocupan el 80% del ancho del contenedor */
+  padding: 2px;
+  background-color: #e1e1e1e8;
+  color: rgb(5, 5, 5);
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.respuesta:hover {
+  background-color: #e8e9cde8;
+  /* Cambia el color al pasar el mouse */
+}
+
+.respuesta:active {
+  background-color: #e1e1e1e8;
+  /* Cambia el color al hacer clic */
+}
+
+.respuesta:disabled {
+  background-color: #707070e8;
+  /* Color gris para botones deshabilitados */
+  color: white;
+  cursor: not-allowed;
+  transition: none;
+  /* Desactiva cualquier animación */
+}
+
+.termino {
+
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  background: #023d6dcf;
+  /* Fondo primario */
+  color: #FFFFFF;
+  /* Texto claro */
+  padding: 12px;
+  border-radius: 8px;
+  font-size: large;
+  text-align: center;
+
+}
+
+/* Botón "Reintentar" - verde suave */
+.btn-reintentar {
+  width: 100%;
+  padding: 20px 16px;
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #81c784 0%, #43a047 100%);
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-reintentar:hover:enabled {
+  background: linear-gradient(90deg, #43a047 0%, #81c784 100%);
+  transform: scale(1.03);
+}
+
+.btn-reintentar:active {
+  background: #388e3c;
+}
+
+/* Estilo para botones deshabilitados */
+.btn-reintentaro:disabled {
+  background-color: #272a28;
+  /* Mismo color de fondo */
+  color: white;
+  /* Mismo color de texto */
+  opacity: 0.5;
+  /* Más transparente */
+  cursor: not-allowed;
+  /* Cambia el cursor a "no permitido" */
+}
+
+.category-info-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.category-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-puntos {
+  font-size: 1em;
+  color: #b3e5fc;
+  margin-top: 3px;
+}
+
+.category-action {
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+  justify-content: flex-end;
+}
+
+/* Botón "Jugar" - azul claro/verde azulado */
+.btn-jugar {
+  font-size: 1.1em;
+  padding: 18px 28px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #29b6f6 0%, #039be5 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(41, 182, 246, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-jugar:hover:enabled {
+  transform: scale(1.03);
+}
+
+.lock-icon {
+  font-size: 2em;
+  color: #bdbdbd;
+  margin-left: 8px;
+}
+
+.cat {
+  font-size: 1.5em;
+}
+
+.logo {
+  margin-bottom: 5px;
+  background-image: url('/__TRIVIA__/assets/iconoTriviaSelva.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  max-width: 300px;
+  aspect-ratio: 1;
+  margin-top: 5%;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3)) drop-shadow(0 0 20px rgba(255, 215, 0, 0.1));
+}
+
+.cargando {
+  margin-bottom: 18px;
+  background: #000102;
+  color: #fff;
+  padding: 0;
+  border-radius: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.10);
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 4px rgba(13, 71, 161, 0.15);
+  border: 1px solid #294c0ba1;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* <--- Esto es clave */
+  align-items: center;
+  justify-content: center;
+}
+
+.mensaje-overlay {
+  position: absolute;
+  /* Superponer al contenido del botón */
+  top: 50%;
+  /* Centrar verticalmente */
+  left: 50%;
+  /* Centrar horizontalmente */
+  transform: translate(-50%, -50%);
+  /* Ajustar el centro exacto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  /* Fondo semitransparente */
+  color: #fff;
+  /* Texto blanco */
+  padding: 16px 24px;
+  /* Aumenta el espacio interno */
+  font-size: 1.2em;
+  /* Aumenta el tamaño del texto */
+  border-radius: 8px;
+  /* Bordes redondeados */
+  z-index: 10;
+  /* Asegurar que esté por encima de otros elementos */
+  text-align: center;
+}
+
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  /* Permite que las categorías se ajusten en varias filas */
+  justify-content: center;
+  /* Espaciado uniforme entre las categorías */
+  gap: 16px;
+  /* Espaciado entre las categorías */
+  margin-top: 16px;
+}
+
+/* Botón de categoría visual */
+.categoria-boton {
+  position: relative;
+  flex: 0 1 calc(45%);
+  /* Cada botón ocupa el 45% del ancho del contenedor */
+  max-width: 200px;
+  /* Limita el ancho máximo de los botones */
+  margin: 0;
+  /* Elimina márgenes adicionales */
+  padding: 0;
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+  /* Elimina el efecto de resaltado en móviles */
+  outline: none;
+  /* Asegura que no haya bordes al hacer clic */
+}
+
+.categoria-boton:disabled,
+.categoria-boton.locked {
+
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.categoria-boton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.categoria-img {
+  width: 100%;
+  /* Ocupa todo el ancho del botón */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  object-fit: contain;
+  /* Ajusta la imagen dentro del contenedor */
+  border-radius: 16px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.categoria-info-boton {
+  width: 100%;
+  background: #0d2401cf;
+  color: #fff;
+  padding: 12px 0 8px 0;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: -40px;
+  /* Monta más el cartel sobre la imagen */
+  position: relative;
+  z-index: 2;
+  /* Asegura que el cartel esté por encima */
+  border: 1px solid #143f10;
+}
+
+.ppal {
+  display: flex;
+  flex-direction: column;
+  /* Asegura que los elementos estén en columna */
+  align-items: center;
+  /* Centra los elementos horizontalmente */
+  justify-content: center;
+  /* Centra los elementos verticalmente */
+  gap: 16px;
+  /* Espaciado entre los botones */
+  width: 100%;
+  height: 90%;
+}
+
+.ppal div {
+  width: 100%;
+  max-width: 400px;
+  height: 25%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  background-image: url('/__TRIVIA__/assets/trivian.png');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+button.btn-jugar-ppal,
+button.btn-otras-trivias {
+  width: 80%;
+  /* Ajusta el ancho del botón */
+  height: 15%;
+  /* Ajusta la altura del botón */
+  max-width: 250px;
+  background-size: 100% 100%;
+  /* Asegura que la imagen cubra todo el botón */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  /* Opcional: bordes redondeados */
+  background-color: transparent !important;
+  /* Fuerza el fondo transparente */
+  margin: 0 auto;
+}
+
+button.btn-nosotros {
+  width: 60%;
+  /* Ajusta el ancho del botón */
+  height: 10%;
+  /* Ajusta la altura del botón */
+  max-width: 200px;
+  background-size: 100% 100%;
+  /* Asegura que la imagen cubra todo el botón */
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  /* Opcional: bordes redondeados */
+  background-color: transparent !important;
+  /* Fuerza el fondo transparente */
+  margin: 0 auto;
+  margin-top: 10%;
+}
+
+button.btn-jugar-ppal {
+  background-image: url('/__TRIVIA__/assets/jugar.png');
+}
+
+button.btn-otras-trivias {
+  background-image: url('/__TRIVIA__/assets/otrasTrivias.png');
+}
+
+button.btn-nosotros {
+  background-image: url('/__TRIVIA__/assets/nosotros.png');
+}
+
+
+button.btn-volver {
+  position: absolute;
+  top: 95%;
+  right: 5px;
+  background-color: transparent !important;
+  background-image: url('/__TRIVIA__/assets/flecha.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1100;
+  /* Aplica la sombra negra */
+}
+
+button.btn-volver-cartel {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  background-color: transparent !important;
+  background-image: url('/__TRIVIA__/assets/flecha.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1100;
+  /* Aplica la sombra negra */
+}
+
+.cartel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url('/__TRIVIA__/assets/cartel.png');
+  background-color: transparent !important;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 80%;
+  min-width: 320px;
+  height: 450px;
+  margin: auto;
+  box-sizing: border-box;
+  /* Asegura que padding y border se incluyan en el tamaño total */
+}
+
+.cartel h2 {
+  font-size: clamp(1.1rem, 1rem + 1vw, 2rem);
+  /* Ajusta el tamaño dinámico */
+  color: #FFD700;
+  /* Color dorado para destacar */
+  text-align: center;
+  /* Centra el texto */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  /* Sombra para darle profundidad */
+  font-weight: lighter;
+  font-family: 'miFuente', sans-serif;
+  /* Usa una fuente personalizada si está disponible */
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  /* Gradiente dorado */
+  -webkit-background-clip: text;
+  /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent;
+  /* Hace que el fondo del texto sea transparente */
+  margin: 110px 0 16px 0;
+  /* Espaciado inferior */
+}
+
+.contenido-cartel {
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+  width: 80%;
+  height: 220px;
+  margin: 0 auto;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  border-radius: 12px;
+  border: #473005 solid 2px;
+  box-sizing: border-box;
+  /* Asegura que padding y border se incluyan en el tamaño total */
+}
+
+.contenido-cartel-texto {
+  width: 80%;
+  margin: auto;
+
+}
+
+/* Oculta la barra de scroll en navegadores basados en Webkit (Chrome, Edge, Safari) */
+.contenido-cartel::-webkit-scrollbar {
+  display: none;
+}
+
+
+.trivias-caja {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  /* Ajusta el número de columnas automáticamente */
+  gap: 16px;
+  /* Espaciado entre las tarjetas */
+  width: 100%;
+  /* Asegura que no exceda el ancho del contenedor */
+  max-width: 100%;
+  /* Evita desbordes horizontales */
+  height: auto;
+  /* Ajusta la altura automáticamente */
+  margin: 0 auto;
+  padding: 16px;
+  /* Espaciado interno */
+  box-sizing: border-box;
+  /* Incluye padding y border en el tamaño total */
+}
+
+.trivia {
+  position: relative;
+  background-color: #473005;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  cursor: pointer;
+  border: #473005 solid 2px;
+}
+
+.trivia-contenedor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.trivia img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  background-color: #211204;
+}
+
+.trivia-overlay {
+  position: absolute;
+  bottom: 10%;
+  /* Posiciona el texto cerca de la parte inferior */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: min(11px, 5vw);
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.trivia-nombre {
+  margin: 2px 5px;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
