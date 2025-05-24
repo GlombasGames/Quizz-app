@@ -152,7 +152,7 @@ async function iniciarNotificaciones() {
 
     // Enviar el token al servidor
 
-    await fetch('https://glombagames.ddns.net/registrar-token', {
+    await fetch('https://glombagames.ddns.net/api/registrar-token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ token: token.token })
@@ -218,7 +218,7 @@ async function pedirNombre() {
 
 async function verificarServidor() {
   try {
-    const response = await fetch('https://glombagames.ddns.net/ping', { method: 'GET' });
+    const response = await fetch('https://glombagames.ddns.net/api/ping', { method: 'GET' });
     return response.ok; // Devuelve true si el servidor responde correctamente
   } catch (error) {
     console.error('Error al verificar el servidor:', error);
@@ -227,7 +227,7 @@ async function verificarServidor() {
 }
 async function verificarVersion() {
   try {
-    const response = await fetch('https://glombagames.ddns.net/version');
+    const response = await fetch('https://glombagames.ddns.net/api/version');
     data = await response.json();
     if (data) {
       version = data.version;
