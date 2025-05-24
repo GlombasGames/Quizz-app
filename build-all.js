@@ -10,7 +10,7 @@ triviaFiles.forEach(file => {
   console.log(`\n▶️  Building trivia: ${triviaId}`);
 
   // 1. Compilar con Webpack
-  execSync(`TRIVIA=${triviaId} webpack --mode production --config webpack.config.js`, { stdio: 'inherit' });
+  execSync(`npx cross-env TRIVIA=${triviaId} webpack --mode production --config webpack.config.js`, { stdio: 'inherit' });
 
   // 2. Copiar al folder de Capacitor
   const distPath = path.join(__dirname, `dist/${triviaId}`);

@@ -15,7 +15,7 @@ body {
 @font-face {
   font-family: 'miFuente';
   /* Nombre personalizado para la fuente */
-  src: url('./assets/fonts/JungleAdventurer.ttf') format('truetype');
+  src: url('./fonts/JungleAdventurer.ttf') format('truetype');
   /* Ruta a tu archivo .ttf */
   font-weight: normal;
   /* Opcional: define el peso de la fuente */
@@ -174,8 +174,6 @@ button:disabled {
   z-index: 1001;
   /* Evita que la imagen se repita */
   color: #FFFFFF;
-
-  background-image: url('./assets/cartelTopIguana.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -553,7 +551,6 @@ button:disabled {
 
 .logo {
   margin-bottom: 5px;
-  background-image: url('./assets/iconoTriviaSelva.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -716,7 +713,6 @@ button:disabled {
   height: 25%;
   margin: 0 auto;
   margin-bottom: 5%;
-  background-image: url('./assets/trivian.png');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -762,25 +758,12 @@ button.btn-nosotros {
   margin-top: 10%;
 }
 
-button.btn-jugar-ppal {
-  background-image: url('./assets/jugar.png');
-}
-
-button.btn-otras-trivias {
-  background-image: url('./assets/otrasTrivias.png');
-}
-
-button.btn-nosotros {
-  background-image: url('./assets/nosotros.png');
-}
-
 
 button.btn-volver {
   position: absolute;
   top: 95%;
   right: 5px;
   background-color: transparent !important;
-  background-image: url('./assets/flecha.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 70px;
@@ -795,7 +778,6 @@ button.btn-volver-cartel {
   top: 0;
   right: 1%;
   background-color: transparent !important;
-  background-image: url('./assets/flecha.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 70px;
@@ -810,7 +792,6 @@ button.btn-volver-cartel {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-image: url('./assets/cartel.png');
   background-color: transparent !important;
   background-size: 100% 100%;
   background-repeat: no-repeat;
