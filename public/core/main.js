@@ -250,7 +250,7 @@ async function verificarVersion() {
 
 async function cargarDatosJSON(actualizar) {
   try {
-    if (actualizar && tieneConexion()) {
+    if (actualizar) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
       const res = await fetch(`https://glombagames.ddns.net/api/categorias.json?triviaId=` + baseURL);
       data = await res.json();
