@@ -29,8 +29,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'string-replace-loader',
+            options: {
+              search: '__TRIVIA__',
+              replace: 'public/'+triviaId,
+              flags: 'g',
+            },
+          },
+        ],
       },
       {
         test: /\.json$/,
@@ -50,6 +61,7 @@ module.exports = {
         // Estos archivos son iguales para todos
         { from: './public/core/style.css', to: './style.css' },
         { from: './public/core/firebase-messaging-sw.js', to: './firebase-messaging-sw.js' },
+        { from: './public/core/fonts', to: './fonts' },
 
         // Estos archivos cambian por trivia
         {
@@ -64,6 +76,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       'window.TRIVIA_ID': JSON.stringify(config.triviaId),
+      __TRIVIA__: JSON.stringify(triviaId),
     }),
   ],
 

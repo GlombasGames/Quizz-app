@@ -49,6 +49,7 @@ const coins = 'ad.png'; // Nombre del archivo de la moneda
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 let version
 document.addEventListener('DOMContentLoaded', () => {
+  iniciar()
   //cargo dinamicamente todos los assets 
   const volverBtn = document.querySelector('.btn-volver');
   volverBtn.style.backgroundImage = `url('${baseURL}/assets/flecha.png')`;
@@ -70,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
   cartelDiv.style.backgroundImage = `url('${baseURL}/assets/trivian.png')`;
 
 
-  iniciar()
 });
 
 // Ejemplo de uso
