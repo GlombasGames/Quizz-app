@@ -1,5 +1,5 @@
 
-const triviaName = window.TRIVIA_ID || 'selva'; // Por defecto, selva
+const triviaName = window.TRIVIA_ID || 'sinNombre'; // Por defecto, selva
 const baseURL = `/${triviaName}`; // /selva, /mitologia, etc.
 
 
