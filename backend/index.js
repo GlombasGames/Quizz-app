@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
 const PORT = 3100;
-const version = '1.0.1';
+const version = '1.0.2';
 
 const app = express();
 app.use(cors());
@@ -40,8 +40,15 @@ app.use(express.static(path.join(__dirname, '../dist')));
 
 // Ruta para servir archivos JSON específicos
 app.get('/api/categorias.json', (req, res) => {
-    const triviaId = req.query.triviaId || '/default'; // Obtener el ID de trivia del query string
-    res.sendFile(path.join(__dirname, `../dist${triviaId}/categorias.json`));
+  const triviaId = (req.query.triviaId || 'default').replace(/^\//, ''); // quita la barra inicial
+  const filePath = path.join(__dirname, `../dist/${triviaId}/categorias.json`);
+
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error('Error enviando categorias.json:', err);
+      res.status(404).json({ error: 'Archivo no encontrado para esa trivia.' });
+    }
+  });
 });
 
 // Ruta para registrar nuevos tokens
