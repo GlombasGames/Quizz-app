@@ -92,42 +92,44 @@ async function inicializarUsuario() {
   }
 }
 
+const buildPath = (key) => `${triviaName}/${key}.json`;
+
 let Storage = {
   async get({ key }) {
     try {
+      const path = buildPath(key);
       const contenido = await Filesystem.readFile({
-        path: `${key}.json`,
-        directory: Directory.Data, // Cambiado a Directory.Data
+        path,
+        directory: Directory.Data,
         encoding: Encoding.UTF8,
       });
       return { value: contenido.data };
     } catch (error) {
-      console.warn(`No se pudo leer el archivo ${key}.json:`, error);
-      return { value: null }; // Si no existe el archivo, devuelve null
+      return { value: null };
     }
   },
   async set({ key, value }) {
     try {
+      const path = buildPath(key);
       await Filesystem.writeFile({
-        path: `${key}.json`,
+        path,
         data: value,
-        directory: Directory.Data, // Cambiado a Directory.Data
+        directory: Directory.Data,
         encoding: Encoding.UTF8,
       });
-      console.log(`Archivo ${key}.json guardado correctamente.`);
     } catch (error) {
-      console.error(`Error al guardar el archivo ${key}.json:`, error);
+      console.error('Error al guardar:', error);
     }
   },
   async remove({ key }) {
     try {
+      const path = buildPath(key);
       await Filesystem.deleteFile({
-        path: `${key}.json`,
-        directory: Directory.Data, // Cambiado a Directory.Data
+        path,
+        directory: Directory.Data,
       });
-      console.log(`Archivo ${key}.json eliminado correctamente.`);
     } catch (error) {
-      console.warn(`No se pudo eliminar el archivo ${key}.json:`, error);
+      console.warn('No se pudo eliminar:', error);
     }
   },
 };
@@ -250,7 +252,7 @@ async function cargarDatosJSON(actualizar) {
   try {
     if (actualizar && tieneConexion()) {
       // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
-      const res = await fetch(`https://glombagames.ddns.net/api/categorias.json?triviaId=`+baseURL);
+      const res = await fetch(`https://glombagames.ddns.net/api/categorias.json?triviaId=` + baseURL);
       data = await res.json();
       console.log('Categorias cargadas desde el servidor:');
       // Guardar los datos localmente para usarlos en modo offline
