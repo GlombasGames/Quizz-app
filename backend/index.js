@@ -39,12 +39,13 @@ if (fs.existsSync(TOKENS_FILE)) {
 app.use(express.static(path.join(__dirname, '../dist')));
 
 // Ruta para servir archivos JSON específicos
-app.get('/categorias.json', (req, res) => {
-    res.sendFile(path.join(__dirname, '../dist/categorias.json'));
+app.get('/api/categorias.json', (req, res) => {
+    const triviaId = req.query.triviaId || '/default'; // Obtener el ID de trivia del query string
+    res.sendFile(path.join(__dirname, `../dist${triviaId}/categorias.json`));
 });
 
 // Ruta para registrar nuevos tokens
-app.post('/registrar-token', (req, res) => {
+app.post('/api/registrar-token', (req, res) => {
     const { token } = req.body;
     console.log('Token recibido:', token);
     // Validar que el token no esté vacío
@@ -72,16 +73,16 @@ app.post('/registrar-token', (req, res) => {
     res.status(200).json({ success: true, message: 'Token registrado correctamente.' });
 });
 
-app.get('/ping', (req, res) => {
+app.get('/api/ping', (req, res) => {
     console.error('Ping recibido');
     res.status(200).send('pong');
 });
-app.get('/version', (req, res) => {
+app.get('/api/version', (req, res) => {
     console.error('Version consultada', version);
     res.status(200).json({ version });
 });
 // Ruta para enviar notificación manual
-app.post('/enviar-notificacion', async (req, res) => {
+app.post('/api/enviar-notificacion', async (req, res) => {
     const { titulo, cuerpo } = req.body;
 
     // Leer los tokens actualizados desde el archivo tokens.json
