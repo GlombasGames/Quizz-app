@@ -3,25 +3,7 @@ const triviaName = window.TRIVIA_ID || 'selva'; // Por defecto, selva
 const baseURL = `/${triviaName}`; // /selva, /mitologia, etc.
 
 
-//cargo dinamicamente todos los assets 
-const volverBtn = document.querySelector('.btn-volver');
-volverBtn.style.backgroundImage = `url('${baseURL}/assets/flecha.png')`;
-const volverBtnCartel = document.querySelector('.btn-volver-cartel');
-volverBtnCartel.style.backgroundImage = `url('${baseURL}/assets/flecha.png')`;
-const cartel = document.querySelector('.cartel');
-cartel.style.backgroundImage = `url('${baseURL}/assets/cartel.png')`;
-const header = document.querySelector('.header');
-header.style.backgroundImage = `url('${baseURL}/assets/cartelTopIguana.png')`;
-const logo = document.querySelector('.logo');
-logo.style.backgroundImage = `url('${baseURL}/assets/iconoTriviaSelva.png')`;
-const btnJugarPpal = document.querySelector('.btn-jugar-ppal');
-btnJugarPpal.style.backgroundImage = `url('${baseURL}/assets/jugar.png')`;
-const btnOtrasTrivias = document.querySelector('.btn-otras-trivias');
-btnOtrasTrivias.style.backgroundImage = `url('${baseURL}/assets/otrasTrivias.png')`;
-const btnNosotros = document.querySelector('.btn-nosotros');
-btnNosotros.style.backgroundImage = `url('${baseURL}/assets/nosotros.png')`;
-const cartelDiv = document.querySelector('.ppal div');
-cartelDiv.style.backgroundImage = `url('${baseURL}/assets/trivian.png')`;
+
 
 
 
@@ -66,7 +48,30 @@ const coins = 'ad.png'; // Nombre del archivo de la moneda
 
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 let version
-document.addEventListener('DOMContentLoaded', iniciar);
+document.addEventListener('DOMContentLoaded', () => {
+  //cargo dinamicamente todos los assets 
+  const volverBtn = document.querySelector('.btn-volver');
+  volverBtn.style.backgroundImage = `url('${baseURL}/assets/flecha.png')`;
+  const volverBtnCartel = document.querySelector('.btn-volver-cartel');
+  volverBtnCartel.style.backgroundImage = `url('${baseURL}/assets/flecha.png')`;
+  const cartel = document.querySelector('.cartel');
+  cartel.style.backgroundImage = `url('${baseURL}/assets/cartel.png')`;
+  const header = document.querySelector('.header');
+  header.style.backgroundImage = `url('${baseURL}/assets/cartelTopIguana.png')`;
+  const logo = document.querySelector('.logo');
+  logo.style.backgroundImage = `url('${baseURL}/assets/iconoTriviaSelva.png')`;
+  const btnJugarPpal = document.querySelector('.btn-jugar-ppal');
+  btnJugarPpal.style.backgroundImage = `url('${baseURL}/assets/jugar.png')`;
+  const btnOtrasTrivias = document.querySelector('.btn-otras-trivias');
+  btnOtrasTrivias.style.backgroundImage = `url('${baseURL}/assets/otrasTrivias.png')`;
+  const btnNosotros = document.querySelector('.btn-nosotros');
+  btnNosotros.style.backgroundImage = `url('${baseURL}/assets/nosotros.png')`;
+  const cartelDiv = document.querySelector('.ppal div');
+  cartelDiv.style.backgroundImage = `url('${baseURL}/assets/trivian.png')`;
+
+
+  iniciar()
+});
 
 // Ejemplo de uso
 async function inicializarUsuario() {
@@ -367,8 +372,8 @@ function generarOtrasTrivias(trivias) {
   return `
     <div class="trivias-caja">
       ${trivias
-        .map(
-          (trivia) => `
+      .map(
+        (trivia) => `
         <div class="trivia">
           ${trivia.url
             ? `<a href="${trivia.url}" target="_blank">
@@ -384,8 +389,8 @@ function generarOtrasTrivias(trivias) {
           }
         </div>
       `
-        )
-        .join("")}
+      )
+      .join("")}
     </div>
   `;
 }
