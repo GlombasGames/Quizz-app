@@ -22,6 +22,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, `dist/${triviaId}`),
     filename: 'bundle.js',
+    publicPath: '',
     clean: true,
   },
 
