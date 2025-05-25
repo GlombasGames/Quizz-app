@@ -1,10 +1,10 @@
 {
-  "appId": "com.glombagames.trivian",
-  "appName": "Trivian",
+  "appId": "com.glombagames.triviaselva",
+  "appName": "Selva",
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": {
     "cleartext": false,
-    "url": "https://glombagames.ddns.net/selva"
+    "url": "https://glombagames.ddns.net/"
   }
 }

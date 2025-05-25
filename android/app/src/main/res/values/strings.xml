@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Trivian</string>
-    <string name="title_activity_main">Trivian</string>
-    <string name="package_name">com.glombagames.trivian</string>
-    <string name="custom_url_scheme">com.glombagames.trivian</string>
-</resources>

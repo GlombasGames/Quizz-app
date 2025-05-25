@@ -1,6 +1,6 @@
 
 const triviaName = window.TRIVIA_ID || 'sinNombre'; // Por defecto, selva
-const baseURL = `/${triviaName}`; // /selva, /mitologia, etc.
+const baseURL = `/${triviaId}`//`/${triviaName}`; // /selva, /mitologia, etc.
 
 
 
@@ -92,7 +92,7 @@ async function inicializarUsuario() {
   }
 }
 
-const buildPath = (key) => `${triviaName}/${key}.json`;
+const buildPath = (key) => `${triviaId}/${key}.json`;
 
 let Storage = {
   async get({ key }) {
@@ -111,25 +111,10 @@ let Storage = {
   async set({ key, value }) {
     try {
       const path = buildPath(key);
-      const directory = Directory.Data;
-
-      // Asegúrate de que el directorio padre exista
-      const parentFolder = path.substring(0, path.lastIndexOf('/'));
-      await Filesystem.mkdir({
-        path: parentFolder,
-        directory,
-        recursive: true, // Crea directorios intermedios si no existen
-      }).catch((err) => {
-        if (err.message !== 'Directory already exists') {
-          throw err; // Lanza el error si no es porque el directorio ya existe
-        }
-      });
-
-      // Escribe el archivo
       await Filesystem.writeFile({
         path,
         data: value,
-        directory,
+        directory: Directory.Data,
         encoding: Encoding.UTF8,
       });
     } catch (error) {

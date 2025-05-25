@@ -2,7 +2,7 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const capacitorConfigPath = path.join(__dirname, '../capacitor.config.json');
-const capacitorConfig = JSON.parse(fs.readFileSync(capacitorConfigPath, 'utf-8'));
+let capacitorConfig = JSON.parse(fs.readFileSync(capacitorConfigPath, 'utf-8'));
 
 
 const triviaId = process.argv[2];
@@ -31,13 +31,14 @@ try {
   fs.cpSync(distPath, androidPath, { recursive: true });
 
   // Modificar solo el campo 'server.url'
-  capacitorConfig.server = {
-    ...capacitorConfig.server,
-    url: `https://glombagames.ddns.net/${triviaId}`
+  capacitorConfig = {
+    ...capacitorConfig,
+    appId: `com.glombagames.${triviaId}`,
+    webDir: `dist/${triviaId}`,
+    appName: `${triviaId}`
   };
   fs.writeFileSync(capacitorConfigPath, JSON.stringify(capacitorConfig, null, 2));
-  console.log(`📦 capacitor.config.json actualizado con URL: ${capacitorConfig.server.url}`);
-
+  console.log(`📦 capacitor.config.json actualizado con URL: ${capacitorConfig.webDir}`);
 
   // 3. Sincronizar con Capacitor
   execSync(`npx cap sync android`, { stdio: 'inherit' });

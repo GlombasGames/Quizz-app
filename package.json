@@ -8,7 +8,7 @@
     "build": "node scripts/build-one.js",
     "open": "npx cap open android",
     "sync": "npx cap sync android",
-    "build:all": "node build-all.js"
+    "build:all": "node build-all-web.js"
   },
   "author": "Your Name",
   "license": "ISC",
