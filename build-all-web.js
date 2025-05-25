@@ -28,8 +28,8 @@ triviaFiles.forEach(file => {
   // ✅ Parchear main.js si es necesario
   const mainJsPath = path.join(__dirname, 'public', 'core', 'main.js');
   let mainContent = fs.readFileSync(mainJsPath, 'utf8');
-  mainContent = mainContent.replace("const baseURL = ''", "const baseURL = `/${triviaId}`");
-  mainContent = mainContent.replace("const buildPath = (key) => `${key}.json`;", "const buildPath = (key) => `${triviaId}/${key}.json`;");
+  mainContent = mainContent.replace("const baseURL = ''", "const baseURL = `/${triviaName}`");
+  mainContent = mainContent.replace("const buildPath = (key) => `${key}.json`;", "const buildPath = (key) => `${triviaName}/${key}.json`;");
   fs.writeFileSync(mainJsPath, mainContent, 'utf8');
   console.log('🛠️  main.js modificado para build web');
 
