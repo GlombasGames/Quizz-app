@@ -92,7 +92,7 @@ async function inicializarUsuario() {
   }
 }
 
-const buildPath = (key) => `${triviaId}/${key}.json`;
+const buildPath = (key) => `${triviaName}/${key}.json`;
 
 let Storage = {
   async get({ key }) {
