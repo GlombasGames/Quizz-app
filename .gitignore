@@ -133,3 +133,5 @@ backend/firebase-admin-config.json
 # Android Studio files
 android/
 android*/
+distAndroid/
+capacitor.config.json
