@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
 const PORT = 3100;
-const version = '1.1';
+const version = '1.2';
 
 const app = express();
 app.use(cors());
@@ -127,7 +127,8 @@ app.post('/api/enviar-notificacion', async (req, res) => {
     const tokensValidos = [];
 
     // Recorrer el array de tokens y enviar notificaciones
-    for (const token of tokens) {
+    for (const {token, coin, triviaName} of tokens) {
+        messageBase.notification.body.replace('COIN', `dist/${triviaName}/${coin}` || 'noCoin'); // Reemplazar 'coin' si está presente
         try {
             const response = await admin.messaging().send({ ...messageBase, token });
             console.log(`Notificación enviada al token: ${token}, respuesta: ${response}`);

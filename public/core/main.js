@@ -163,7 +163,14 @@ async function iniciarNotificaciones() {
     await fetch('https://glombagames.ddns.net/api/registrar-token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: token.token })
+      body: JSON.stringify({
+        nombre: progreso.nombre,
+        token: token.token,
+        triviaId: triviaName,
+        coin,
+        fecha: new Date().toISOString(),
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone // Captura la zona horaria del usuario
+      })
     });
     console.log('Token registrado correctamente en el servidor.');
 
