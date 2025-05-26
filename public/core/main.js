@@ -1,7 +1,7 @@
 
 const triviaName = window.TRIVIA_ID || 'sinNombre'; // Por defecto, selva
-const isAndroid = __IS_ANDROID__ 
-const baseURL = isAndroid? '': `/${triviaName}`
+const isAndroid = __IS_ANDROID__
+const baseURL = isAndroid ? '' : `/${triviaName}`
 
 
 
@@ -93,7 +93,7 @@ async function inicializarUsuario() {
   }
 }
 
-const buildPath = (key) => isAndroid? `${key}.json`:`${triviaName}/${key}.json`;
+const buildPath = (key) => isAndroid ? `${key}.json` : `${triviaName}/${key}.json`;
 
 let Storage = {
   async get({ key }) {
@@ -196,7 +196,7 @@ let progreso = {
   nombre: '',
   intentos: 3,
   puntos: {},
-  desbloqueadas: ['Animales', 'Plantas'],
+  desbloqueadas: [],
   actualizado: null,
   termino: false
 };
@@ -212,7 +212,7 @@ async function pedirNombre() {
   progreso.nombre = nombre || 'Jugador';
   progreso.intentos = 3;
   progreso.puntos = {};
-  progreso.desbloqueadas = ['Animales', 'Frutas']; // Guardamos los nombres originales
+  progreso.desbloqueadas = []; // Guardamos los nombres originales
   progreso.actualizado = null;
   progreso.version = version
 
@@ -259,7 +259,6 @@ async function cargarDatosJSON(actualizar) {
       // Guardar los datos localmente para usarlos en modo offline
       await Storage.set({ key: 'preguntas', value: JSON.stringify(data) });
       progreso.actualizado = new Date().toISOString();
-      await guardarProgreso();
     } else {
       // Si no hay conexión o el servidor no está disponible, cargar los datos desde el almacenamiento local
       const preguntasData = await Storage.get({ key: 'preguntas' });
@@ -272,6 +271,21 @@ async function cargarDatosJSON(actualizar) {
         return;
       }
     }
+
+    // Actualizar las categorías desbloqueadas con las primeras dos categorías del archivo JSON
+    const categorias = Object.keys(data);
+    const primerasCategorias = categorias.slice(0, 2); // Tomar las primeras dos categorías
+
+    // Asegurarse de que las primeras dos categorías estén en progreso.desbloqueadas
+    primerasCategorias.forEach((categoria) => {
+      if (!progreso.desbloqueadas.includes(categoria)) {
+        progreso.desbloqueadas.push(categoria); // Agregar solo si no está ya en el array
+      }
+    });
+
+    console.log('Categorías desbloqueadas:', progreso.desbloqueadas);
+
+    await guardarProgreso();
   } catch (error) {
     console.error('Error al cargar datos JSON:', error);
     alert('No se pudo cargar el juego. Verifica tu conexión a Internet.');
