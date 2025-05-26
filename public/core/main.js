@@ -52,7 +52,6 @@ const coin = 'coin.png'; // Nombre del archivo de la moneda
 const coinName = coinsNames[triviaName]; // Nombre de la moneda según la trivia
 const coins = 'ad.png'; // Nombre del archivo de la moneda
 
-
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 let version
 document.addEventListener('DOMContentLoaded', () => {

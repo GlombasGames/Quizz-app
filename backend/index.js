@@ -201,14 +201,15 @@ app.post('/api/enviar-notificacion', async (req, res) => {
         // Recorrer el array de tokens y enviar notificaciones
 
         for (const tokenDevice of tokens) {
-            cuerpo = cuerpo.replace('COIN', tokenDevice.coinName + 's');
-            titulo = titulo.replace('COIN', tokenDevice.coinName + 's');
-            console.log(titulo,cuerpo)
+            const cuerpoM = cuerpo
+            const tituloM = titulo
+            cuerpoM = cuerpoM.replace('COIN', tokenDevice.coinName + 's');
+            tituloM = tituloM.replace('COIN', tokenDevice.coinName + 's');
             const payload = {
                 message: {
                     notification: {
-                        title: titulo || "¡Nuevas preguntas disponibles!",
-                        body: cuerpo || "Entra y revisa las nuevas categorías o preguntas.",
+                        title: tituloM || "¡Nuevas preguntas disponibles!",
+                        body: cuerpoM || "Entra y revisa las nuevas categorías o preguntas.",
                         image: `https://glombagames.ddns.net/api/${tokenDevice.triviaId}/${tokenDevice.coinName}`//imageUrl, // URL de la imagen
                     },
                     android: {
