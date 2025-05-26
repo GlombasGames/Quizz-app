@@ -165,7 +165,7 @@ app.get('/api/:triviaName/:nombre', (req, res) => {
 
 // Ruta para enviar notificación manual
 app.post('/api/enviar-notificacion', async (req, res) => {
-    const { titulo, cuerpo } = req.body;
+    let { titulo, cuerpo } = req.body;
 
     // Leer los tokens actualizados desde el archivo tokens.json
     let tokens = [];
