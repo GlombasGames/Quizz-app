@@ -475,6 +475,9 @@ function proximaMeta(cat) {
   const index = orden.indexOf(cat);
   return index < 2 ? 0 : (index - 1) * 10; // Las primeras dos categorías requieren 0 puntos, las siguientes empiezan en 10
 }
+function normalizarCategoria(categoria) {
+    return categoria.replace(/-/g, ' '); // Reemplaza los guiones por espacios
+}
 
 window.jugar = function jugar(categoria) {
   if (progreso.intentos <= 0) {
@@ -482,7 +485,7 @@ window.jugar = function jugar(categoria) {
     const botonesCategorias = document.querySelectorAll('.categoria-boton');
     botonesCategorias.forEach(boton => {
       const categoriaTexto = boton.querySelector('.cat')?.textContent.trim();
-      if (categoriaTexto === categoria) {
+      if (normalizarCategoria(categoriaTexto) === normalizarCategoria(categoria)) {
         // Verificar si ya existe un mensaje superpuesto
         let mensaje = boton.querySelector('.mensaje-overlay');
         if (!mensaje) {
