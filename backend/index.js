@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
 const PORT = 3100;
-const version = '1.2';
+const version = '1.3';
 
 const app = express();
 app.use(cors());
