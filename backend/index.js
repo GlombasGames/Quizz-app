@@ -53,10 +53,10 @@ app.get('/api/categorias.json', (req, res) => {
 
 // Ruta para registrar nuevos tokens
 app.post('/api/registrar-token', (req, res) => {
-    const { token } = req.body;
+    const  token  = req.body;
     console.log('Token recibido:', token);
     // Validar que el token no esté vacío
-    if (!token) {
+    if (!token.token) {
         console.error('Token no proporcionado.');
         return res.status(400).json({ success: false, error: 'Token no proporcionado.' });
     }
