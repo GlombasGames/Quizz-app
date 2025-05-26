@@ -44,8 +44,8 @@ async function precargarImagenes(rutas) {
 const coinsNames = {
   selva: 'escarabajo',
   mitologia: 'libro',
-  cliencia: 'lupas',
-  peliculas: 'pochoclos'
+  ciencia: 'lupa',
+  peliculas: 'pochoclo'
 }
 
 const coin = 'coin.png'; // Nombre del archivo de la moneda
