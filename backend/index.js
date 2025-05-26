@@ -160,6 +160,7 @@ app.get('/api/:triviaName/:nombre', (req, res) => {
     const nombre = req.params.nombre;
     const triviaName = req.params.triviaName;
     const filePath = path.join(__dirname, `../dist/${triviaName}/assets/coin.png`);
+    console.log('Ruta solicitada:', filePath);
     res.sendFile(filePath, (err) => {
         if (err) {
             console.error('Error al enviar la imagen:', err);
@@ -202,7 +203,7 @@ app.post('/api/enviar-notificacion', async (req, res) => {
         for (const tokenDevice of tokens) {
             cuerpo = cuerpo.replace('COIN', tokenDevice.coinName + 's');
             titulo = titulo.replace('COIN', tokenDevice.coinName + 's');
-
+            console.log(titulo,cuerpo)
             const payload = {
                 message: {
                     notification: {
