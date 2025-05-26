@@ -171,7 +171,7 @@ app.get('/api/:triviaName/:nombre', (req, res) => {
 
 // Ruta para enviar notificación manual
 app.post('/api/enviar-notificacion', async (req, res) => {
-    let { titulo, cuerpo } = req.body;
+    const { titulo, cuerpo } = req.body;
 
     // Leer los tokens actualizados desde el archivo tokens.json
     let tokens = [];
@@ -201,8 +201,8 @@ app.post('/api/enviar-notificacion', async (req, res) => {
         // Recorrer el array de tokens y enviar notificaciones
 
         for (const tokenDevice of tokens) {
-            const cuerpoM = cuerpo
-            const tituloM = titulo
+            let cuerpoM = cuerpo
+            let tituloM = titulo
             cuerpoM = cuerpoM.replace('COIN', tokenDevice.coinName + 's');
             tituloM = tituloM.replace('COIN', tokenDevice.coinName + 's');
             const payload = {
