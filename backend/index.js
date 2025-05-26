@@ -40,20 +40,20 @@ app.use(express.static(path.join(__dirname, '../dist')));
 
 // Ruta para servir archivos JSON específicos
 app.get('/api/categorias.json', (req, res) => {
-  const triviaId = (req.query.triviaId || 'default').replace(/^\//, ''); // quita la barra inicial
-  const filePath = path.join(__dirname, `../dist/${triviaId}/categorias.json`);
+    const triviaId = (req.query.triviaId || 'default').replace(/^\//, ''); // quita la barra inicial
+    const filePath = path.join(__dirname, `../dist/${triviaId}/categorias.json`);
 
-  res.sendFile(filePath, (err) => {
-    if (err) {
-      console.error('Error enviando categorias.json:', err);
-      res.status(404).json({ error: 'Archivo no encontrado para esa trivia.' });
-    }
-  });
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            console.error('Error enviando categorias.json:', err);
+            res.status(404).json({ error: 'Archivo no encontrado para esa trivia.' });
+        }
+    });
 });
 
 // Ruta para registrar nuevos tokens
 app.post('/api/registrar-token', (req, res) => {
-    const  token  = req.body;
+    const token = req.body;
     console.log('Token recibido:', token);
     // Validar que el token no esté vacío
     if (!token.token) {
@@ -119,7 +119,8 @@ app.post('/api/enviar-notificacion', async (req, res) => {
             notification: {
                 icon: "icon" // Nombre del archivo sin la extensión
             }
-        }
+        },
+        image: "" // Aquí se incluirá la URL de la imagen
     };
 
     let enviados = 0;
@@ -129,9 +130,10 @@ app.post('/api/enviar-notificacion', async (req, res) => {
     // Recorrer el array de tokens y enviar notificaciones
     for (const token of tokens) {
         console.error(`dist/${token.triviaId}/${token.coin}`);
-        if(token.triviaId && token.coin){
-
-           messageBase.notification.body = messageBase.notification.body.replace('COIN', `./dist/${token.triviaId}/${token.coin}` || 'noCoin'); // Reemplazar 'coin' si está presente
+        if (token.triviaId && token.coin) {
+            // Construir la URL de la imagen
+            const imageUrl = `https://glombagames.ddns.net/dist/${token.triviaId}/${token.coin}`;
+            messageBase.image = imageUrl; // Asignar la URL de la imagen al campo `image`
         }
         try {
             const response = await admin.messaging().send({ ...messageBase, token: token.token });
