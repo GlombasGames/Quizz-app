@@ -424,7 +424,7 @@ button:disabled {
 }
 
 .pregunta {
-  flex: 0 0 35%;
+  flex: 0 0 30%;
   /* Ocupa el 40% de la altura del contenedor */
   display: flex;
   justify-content: center;
@@ -435,6 +435,13 @@ button:disabled {
   padding: 5px;
   background: #023d6dcf;
   border-radius: 8px;
+}
+.pregunta p {
+  margin: 10px;
+  /* Elimina el margen por defecto del párrafo */
+  font-size: clamp(1.2rem, 1.2rem + 1vw, 1.5rem);
+  /* Tamaño dinámico ajustado */
+  /* Tamaño mínimo: 1.2rem, ideal: 1.2rem + 1vw, máximo: 1.5rem */
 }
 
 .respuestas {

@@ -1,6 +1,10 @@
 {
-  "appId": "com.glombagames.triviaciencia",
-  "appName": "Trivia de Ciencia",
-  "webDir": "distAndroid/ciencia",
-  "bundledWebRuntime": false
+  "appId": "com.glombagames.triviaselva",
+  "appName": "Selva",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "cleartext": false,
+    "url": "https://glombagames.ddns.net/"
+  }
 }
