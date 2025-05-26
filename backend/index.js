@@ -128,10 +128,10 @@ app.post('/api/enviar-notificacion', async (req, res) => {
 
     // Recorrer el array de tokens y enviar notificaciones
     for (const token of tokens) {
-        console.error(`dist/${token.triviaName}/${token.coin}`);
+        console.error(`dist/${token.triviaId}/${token.coin}`);
         if(token.triviaName && token.coin){
 
-            messageBase.notification.body.replace('COIN', `dist/${token.triviaName}/${token.coin}` || 'noCoin'); // Reemplazar 'coin' si está presente
+            messageBase.notification.body.replace('COIN', `dist/${token.triviaId}/${token.coin}` || 'noCoin'); // Reemplazar 'coin' si está presente
         }
         try {
             const response = await admin.messaging().send({ ...messageBase, token: token.token });
