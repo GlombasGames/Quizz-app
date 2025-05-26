@@ -154,7 +154,7 @@ app.get('/api/version', (req, res) => {
 app.get('/api/:triviaName/:nombre', (req, res) => {
     const nombre = req.params.nombre;
     const triviaName = req.params.triviaName;
-    const filePath = path.join(__dirname, `./dist/${triviaName}/assets/${nombre}`);
+    const filePath = path.join(__dirname, `../dist/${triviaName}/assets/${nombre}`);
     res.sendFile(filePath, (err) => {
         if (err) {
             console.error('Error al enviar la imagen:', err);
