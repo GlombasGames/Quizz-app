@@ -214,6 +214,39 @@ button:disabled {
   -webkit-text-fill-color: transparent;
 
 }
+.header-item-p {
+  width: 45%;
+  /* Cada div ocupa un tercio del ancho del header */
+  height: 130px;
+  /* Asegura que el contenedor ocupe toda la altura del header */
+  display: flex;
+  /* Activa Flexbox dentro del div */
+  align-items: center;
+  /* Centra verticalmente los elementos internos */
+  justify-content: center;
+  /* Centra horizontalmente los elementos internos */
+   font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem); /* Tamaño dinámico ajustado */
+  /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
+
+
+  margin-top: 7%;
+  /* Ajusta el tamaño dinámico */
+  color: #FFD700;
+  /* Color dorado para destacar */
+  text-align: center;
+  /* Centra el texto */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  /* Sombra para darle profundidad */
+  font-weight: lighter;
+  font-family: 'miFuente', sans-serif;
+  /* Usa una fuente personalizada si está disponible */
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  /* Gradiente dorado */
+  -webkit-background-clip: text;
+  /* Aplica el gradiente solo al texto */
+  -webkit-text-fill-color: transparent;
+
+}
 
 
 .btn-anuncio-header {
