@@ -165,7 +165,7 @@ app.get('/api/:triviaName/:nombre', (req, res) => {
 
 // Ruta para enviar notificación manual
 app.post('/api/enviar-notificacion', async (req, res) => {
-    const { titulo, cuerpo, imageUrl } = req.body;
+    const { titulo, cuerpo } = req.body;
 
     // Leer los tokens actualizados desde el archivo tokens.json
     let tokens = [];
@@ -199,7 +199,7 @@ app.post('/api/enviar-notificacion', async (req, res) => {
                     notification: {
                         title: titulo || "¡Nuevas preguntas disponibles!",
                         body: cuerpo || "Entra y revisa las nuevas categorías o preguntas.",
-                        image: imageUrl, // URL de la imagen
+                        image: `https://glombagames.ddns.net/api/${tokenDevice.triviaId}/${tokenDevice.coin}`//imageUrl, // URL de la imagen
                     },
                     android: {
                         notification: {
