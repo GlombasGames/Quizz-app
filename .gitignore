@@ -128,7 +128,7 @@ out
 .pnp.*
 
 # Firebase admin config
-backend/firebase-admin-config.json
+backend/firebase*
 
 # Android Studio files
 android/
