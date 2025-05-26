@@ -193,6 +193,7 @@ app.post('/api/enviar-notificacion', async (req, res) => {
         const token = await getAccessToken();
 
         // Recorrer el array de tokens y enviar notificaciones
+        
         for (const tokenDevice of tokens) {
             cuerpo = cuerpo.replace('COIN', tokenDevice.coinName+'s');
             titulo = titulo.replace('COIN', tokenDevice.coinName+'s');
