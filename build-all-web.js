@@ -25,13 +25,6 @@ triviaFiles.forEach(file => {
   fs.writeFileSync(path.join(__dirname, 'capacitor.config.json'), JSON.stringify(capacitorConfig, null, 2));
   console.log('⚙️  capacitor.config.json actualizado');
 
-  // ✅ Parchear main.js si es necesario
-  const mainJsPath = path.join(__dirname, 'public', 'core', 'main.js');
-  let mainContent = fs.readFileSync(mainJsPath, 'utf8');
-  mainContent = mainContent.replace("const baseURL = ''", "const baseURL = `/${triviaName}`");
-  mainContent = mainContent.replace("const buildPath = (key) => `${key}.json`;", "const buildPath = (key) => `${triviaName}/${key}.json`;");
-  fs.writeFileSync(mainJsPath, mainContent, 'utf8');
-  console.log('🛠️  main.js modificado para build web');
 
   // 🛠️ Compilar con Webpack
   execSync(`npx cross-env TRIVIA=${triviaId} webpack --mode production --config webpack.config.js`, { stdio: 'inherit' });

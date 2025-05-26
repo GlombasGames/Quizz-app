@@ -135,3 +135,5 @@ android/
 android*/
 distAndroid/
 capacitor.config.json
+resources/icon.png
+resources/splash.png

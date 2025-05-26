@@ -20,19 +20,17 @@ const googleServicesDst = path.join(androidBase, 'app/google-services.json');
 console.log(`
 🚀 Generando proyecto Android para la trivia: ${triviaId}`);
 
-// 🔁 Restaurar configuraciones de main.js para Android
-const mainJsPath = path.join(__dirname, 'public', 'core', 'main.js');
-let mainContent = fs.readFileSync(mainJsPath, 'utf8');
-mainContent = mainContent.replace("const baseURL = `/${triviaName}`", "const baseURL = ''");
-mainContent = mainContent.replace("const buildPath = (key) => `${triviaName}/${key}.json`;", "const buildPath = (key) => `${key}.json`;");
-fs.writeFileSync(mainJsPath, mainContent, 'utf8');
-console.log('🔄 main.js restaurado para uso en APK');
+
+// Paso 0.5: Build con Webpack para Android
+console.log('⚙️ Compilando Webpack para Android...');
+execSync(`npx cross-env TRIVIA=${triviaId} IS_ANDROID=true webpack --mode production --config webpack.config.js`, { stdio: 'inherit' });
+console.log('✅ Webpack compilado correctamente para Android');
 
 // Paso 1: Modificar capacitor.config.json
 const newConfig = {
   appId: `com.glombagames.trivia${triviaId}`,
-  appName: triviaNameCapitalized,
-  webDir: `dist/${triviaId}`,
+  appName: `Trivia de ${triviaNameCapitalized}`,
+  webDir: `distAndroid/${triviaId}`,
   bundledWebRuntime: false
 };
 fs.writeFileSync(configPath, JSON.stringify(newConfig, null, 2));

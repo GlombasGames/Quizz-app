@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // Detectamos qué trivia vamos a construir (default: selva)
 const triviaId = process.env.TRIVIA || 'selva';
+const isAndroid = process.env.IS_ANDROID === 'true';
 const configPath = path.resolve(__dirname, `configs/${triviaId}.json`);
 
 if (!fs.existsSync(configPath)) {
@@ -20,9 +21,9 @@ module.exports = {
   entry: './public/core/main.js',
 
   output: {
-    path: path.resolve(__dirname, `dist/${triviaId}`),
+    path: path.resolve(__dirname, isAndroid ? `distAndroid/${triviaId}` : `dist/${triviaId}`),
     filename: 'bundle.js',
-    publicPath: '',
+    publicPath: isAndroid ? '' : `/${triviaId}/`,
     clean: true,
   },
 
@@ -77,6 +78,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'window.TRIVIA_ID': JSON.stringify(config.triviaId),
       __TRIVIA__: JSON.stringify(triviaId),
+      __IS_ANDROID__: JSON.stringify(process.env.IS_ANDROID === 'true'),
     }),
   ],
 

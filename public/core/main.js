@@ -1,6 +1,7 @@
 
 const triviaName = window.TRIVIA_ID || 'sinNombre'; // Por defecto, selva
-const baseURL = `/${triviaName}`//`/${triviaName}`; // /selva, /mitologia, etc.
+const isAndroid = __IS_ANDROID__ 
+const baseURL = isAndroid? '': `/${triviaName}`
 
 
 
@@ -92,7 +93,7 @@ async function inicializarUsuario() {
   }
 }
 
-const buildPath = (key) => `${triviaName}/${key}.json`;
+const buildPath = (key) => isAndroid? `${key}.json`:`${triviaName}/${key}.json`;
 
 let Storage = {
   async get({ key }) {
