@@ -194,6 +194,9 @@ app.post('/api/enviar-notificacion', async (req, res) => {
 
         // Recorrer el array de tokens y enviar notificaciones
         for (const tokenDevice of tokens) {
+            cuerpo = cuerpo.replace('COIN', tokenDevice.coin.split('.')[0]+'s');
+            titulo = titulo.replace('COIN', tokenDevice.coin.split('.')[0]+'s');
+
             const payload = {
                 message: {
                     notification: {
