@@ -215,7 +215,7 @@ button:disabled {
 
 }
 .header-item-p {
-  width: 45%;
+  width: 40%;
   /* Cada div ocupa un tercio del ancho del header */
   height: 130px;
   /* Asegura que el contenedor ocupe toda la altura del header */
