@@ -165,10 +165,10 @@ app.post('/api/enviar-notificacion', async (req, res) => {
         enviados,
         fallidos
     });
-    // Ruta para servir index.html (para aplicaciones SPA)
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../dist/index.html'));
-    });
+});
+// Ruta para servir index.html (para aplicaciones SPA)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(PORT, '0.0.0.0', () => {
