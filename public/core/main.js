@@ -362,17 +362,18 @@ function renderMenu() {
     const puntos = progreso.puntos[cat] || 0;
     const bloqueada = !desbloqueada;
     const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
+    const nombreConEspacios = cat.replace(/-/g, ' '); // Reemplazar "-" por " "
     return `
       <button
         class="categoria-boton ${bloqueada ? 'locked' : ''}"
         ${(!bloqueada) ? `onclick="jugar('${cat}')"` : ''}
         ${bloqueada ? 'disabled' : ''}
         tabindex="0"
-        aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${cat}"
+        aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${nombreConEspacios}"
       >
-        <img class="categoria-img" src="${baseURL}/assets/${catNormalizada}.png" alt="${cat}" onerror="this.src='${baseURL}/assets/pajaro.png'">
+        <img class="categoria-img" src="${baseURL}/assets/${catNormalizada}.png" alt="${nombreConEspacios}" onerror="this.src='${baseURL}/assets/pajaro.png'">
         <div class="categoria-info-boton">
-          <strong class="cat">${cat}</strong>
+          <strong class="cat">${nombreConEspacios}</strong>
           <span class="category-puntos">${puntosNecesarios}</span>
           ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
         </div>
