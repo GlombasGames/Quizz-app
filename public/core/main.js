@@ -20,7 +20,7 @@ const tiempoLimite = 120;
 const assetsList = [
   `${baseURL}/assets/fondoPrincipal.png`,
   `${baseURL}/assets/fondoSelvaMarco.png`,
-  `${baseURL}/assets/escarabajo.png`,
+  `${baseURL}/assets/coin.png`,
   `${baseURL}/assets/ad.png`,
   `${baseURL}/assets/GlombaGames.png`,
   `${baseURL}/assets/pajaro.png`,
@@ -48,7 +48,7 @@ const coinsNames = {
   peliculas: 'pochoclos'
 }
 
-const coin = 'escarabajo.png'; // Nombre del archivo de la moneda
+const coin = 'coin.png'; // Nombre del archivo de la moneda
 const coinName = coinsNames[triviaName]; // Nombre de la moneda según la trivia
 const coins = 'ad.png'; // Nombre del archivo de la moneda
 
@@ -173,7 +173,6 @@ async function iniciarNotificaciones() {
         nombre: progreso.nombre,
         token: token.token,
         triviaId: triviaName,
-        coin,
         coinName,
         fecha: new Date().toISOString(),
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone // Captura la zona horaria del usuario
