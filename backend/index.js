@@ -50,14 +50,14 @@ async function enviarNotificacion(tokens, titulo, cuerpo, imageUrl) {
                 message: {
                     notification: {
                         title: titulo || "¡Nuevas preguntas disponibles!",
-                        body: cuerpo || "Entra y revisa las nuevas categorías o preguntas."
+                        body: cuerpo || "Entra y revisa las nuevas categorías o preguntas.",
+                        image: imageUrl, // URL de la imagen
                     },
                     android: {
                         notification: {
                             icon: "icon" // Nombre del archivo sin la extensión
                         }
                     },
-                    image: imageUrl, // URL de la imagen
                     token: tokenDevice // Token del dispositivo
                 }
             };
@@ -185,14 +185,14 @@ app.post('/api/enviar-notificacion', async (req, res) => {
                 message: {
                     notification: {
                         title: titulo || "¡Nuevas preguntas disponibles!",
-                        body: cuerpo || "Entra y revisa las nuevas categorías o preguntas."
+                        body: cuerpo || "Entra y revisa las nuevas categorías o preguntas.",
+                        image: imageUrl, // URL de la imagen
                     },
                     android: {
                         notification: {
                             icon: "icon" // Nombre del archivo sin la extensión
                         }
                     },
-                    image: imageUrl, // URL de la imagen
                     token: tokenDevice.token // Token del dispositivo
                 }
             };
