@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const admin = require('firebase-admin');
+const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
@@ -14,11 +15,72 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// Inicializar Firebase Admin SDK
+// Inicializar Firebase Admin con tu archivo de configuración
 const serviceAccount = require('./firebase-admin-config.json');
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-});
+if (!admin.apps.length) {
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+    });
+}
+
+// Variable para almacenar el token de acceso
+let accessToken = null;
+let tokenExpirationTime = null;
+
+// Función para obtener o reutilizar el token de acceso
+async function getAccessToken() {
+    const now = Date.now();
+    if (!accessToken || now >= tokenExpirationTime) {
+        console.log('Generando un nuevo token de acceso...');
+        const token = await admin.credential.applicationDefault().getAccessToken();
+        accessToken = token.access_token;
+        tokenExpirationTime = now + 3600 * 1000; // El token es válido por 1 hora
+    }
+    return accessToken;
+}
+
+// Función para enviar notificaciones
+async function enviarNotificacion(tokens, titulo, cuerpo, imageUrl) {
+    try {
+        // Obtener el token de acceso (reutilizar si es válido)
+        const token = await getAccessToken();
+
+        for (const tokenDevice of tokens) {
+            const payload = {
+                message: {
+                    notification: {
+                        title: titulo || "¡Nuevas preguntas disponibles!",
+                        body: cuerpo || "Entra y revisa las nuevas categorías o preguntas."
+                    },
+                    android: {
+                        notification: {
+                            icon: "icon" // Nombre del archivo sin la extensión
+                        }
+                    },
+                    image: imageUrl, // URL de la imagen
+                    token: tokenDevice // Token del dispositivo
+                }
+            };
+
+            // Enviar la notificación usando la API HTTP v1
+            const response = await axios.post(
+                `https://fcm.googleapis.com/v1/projects/${serviceAccount.project_id}/messages:send`,
+                payload,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+
+            console.log(`Notificación enviada al token: ${tokenDevice}, respuesta:`, response.data);
+        }
+    } catch (err) {
+        console.error('Error enviando notificación:', err.response ? err.response.data : err.message);
+    }
+}
+
 
 // Cargar tokens guardados
 let tokens = [];
@@ -90,7 +152,7 @@ app.get('/api/version', (req, res) => {
 });
 // Ruta para enviar notificación manual
 app.post('/api/enviar-notificacion', async (req, res) => {
-    const { titulo, cuerpo } = req.body;
+    const { titulo, cuerpo, imageUrl } = req.body;
 
     // Leer los tokens actualizados desde el archivo tokens.json
     let tokens = [];
@@ -109,69 +171,84 @@ app.post('/api/enviar-notificacion', async (req, res) => {
         return res.status(400).json({ success: false, error: "No hay tokens para enviar notificaciones." });
     }
 
-    // Crear el mensaje base de la notificación
-    const messageBase = {
-        notification: {
-            title: titulo || "¡Nuevas preguntas disponibles!",
-            body: cuerpo || "Entra y revisa las nuevas categorías o preguntas."
-        },
-        android: {
-            notification: {
-                icon: "icon" // Nombre del archivo sin la extensión
-            }
-        },
-        image: "" // Aquí se incluirá la URL de la imagen
-    };
-
     let enviados = 0;
     let fallidos = 0;
     const tokensValidos = [];
 
-    // Recorrer el array de tokens y enviar notificaciones
-    for (const token of tokens) {
-        console.error(`dist/${token.triviaId}/${token.coin}`);
-        if (token.triviaId && token.coin) {
-            // Construir la URL de la imagen
-            const imageUrl = `https://glombagames.ddns.net/dist/${token.triviaId}/${token.coin}`;
-            messageBase.image = imageUrl; // Asignar la URL de la imagen al campo `image`
-        }
-        try {
-            const response = await admin.messaging().send({ ...messageBase, token: token.token });
-            console.log(`Notificación enviada al token: ${token}, respuesta: ${response}`);
-            enviados++;
-            tokensValidos.push(token); // Mantener el token si el envío fue exitoso
-        } catch (err) {
-            console.error(`Error enviando notificación al token: ${token}`, err);
+    try {
+        // Obtener el token de acceso (reutilizar si es válido)
+        const token = await getAccessToken();
 
-            // Verificar si el error indica que el token no es válido
-            if (
-                err.code === 'messaging/invalid-registration-token' ||
-                err.code === 'messaging/registration-token-not-registered'
-            ) {
-                console.log(`El token ${token} es inválido y será eliminado.`);
-                fallidos++;
-            } else {
-                // Si el error no está relacionado con un token inválido, mantener el token
-                tokensValidos.push(token);
-                fallidos++;
+        // Recorrer el array de tokens y enviar notificaciones
+        for (const tokenDevice of tokens) {
+            const payload = {
+                message: {
+                    notification: {
+                        title: titulo || "¡Nuevas preguntas disponibles!",
+                        body: cuerpo || "Entra y revisa las nuevas categorías o preguntas."
+                    },
+                    android: {
+                        notification: {
+                            icon: "icon" // Nombre del archivo sin la extensión
+                        }
+                    },
+                    image: imageUrl, // URL de la imagen
+                    token: tokenDevice.token // Token del dispositivo
+                }
+            };
+
+            try {
+                const response = await axios.post(
+                    `https://fcm.googleapis.com/v1/projects/${serviceAccount.project_id}/messages:send`,
+                    payload,
+                    {
+                        headers: {
+                            'Authorization': `Bearer ${token}`,
+                            'Content-Type': 'application/json'
+                        }
+                    }
+                );
+
+                console.log(`Notificación enviada al token: ${tokenDevice.token}, respuesta:`, response.data);
+                enviados++;
+                tokensValidos.push(tokenDevice); // Mantener el token si el envío fue exitoso
+            } catch (err) {
+                console.error(`Error enviando notificación al token: ${tokenDevice.token}`, err.response ? err.response.data : err.message);
+
+                // Verificar si el error indica que el token no es válido
+                if (
+                    err.response &&
+                    (err.response.data.error.code === 404 || err.response.data.error.message.includes('registration-token-not-registered'))
+                ) {
+                    console.log(`El token ${tokenDevice.token} es inválido y será eliminado.`);
+                    fallidos++;
+                } else {
+                    // Si el error no está relacionado con un token inválido, mantener el token
+                    tokensValidos.push(tokenDevice);
+                    fallidos++;
+                }
             }
         }
-    }
-    // Guardar los tokens válidos en el archivo tokens.json
-    try {
-        fs.writeFileSync(TOKENS_FILE, JSON.stringify(tokensValidos, null, 2));
-        console.log('Tokens válidos actualizados en tokens.json', tokensValidos.length);
-    } catch (err) {
-        console.error('Error al guardar los tokens válidos en el archivo:', err);
-        return res.status(500).json({ success: false, error: 'Error al guardar los tokens válidos.' });
-    }
 
-    // Responder al cliente con el resultado
-    res.json({
-        success: true,
-        enviados,
-        fallidos
-    });
+        // Guardar los tokens válidos en el archivo tokens.json
+        try {
+            fs.writeFileSync(TOKENS_FILE, JSON.stringify(tokensValidos, null, 2));
+            console.log('Tokens válidos actualizados en tokens.json', tokensValidos.length);
+        } catch (err) {
+            console.error('Error al guardar los tokens válidos en el archivo:', err);
+            return res.status(500).json({ success: false, error: 'Error al guardar los tokens válidos.' });
+        }
+
+        // Responder al cliente con el resultado
+        res.json({
+            success: true,
+            enviados,
+            fallidos
+        });
+    } catch (err) {
+        console.error('Error general al enviar notificaciones:', err);
+        res.status(500).json({ success: false, error: 'Error general al enviar notificaciones.' });
+    }
 });
 // Ruta para servir index.html (para aplicaciones SPA)
 app.get('*', (req, res) => {
