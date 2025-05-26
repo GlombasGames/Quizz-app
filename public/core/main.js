@@ -41,9 +41,15 @@ async function precargarImagenes(rutas) {
   );
 }
 
-
+const coinsNames = {
+  selva: 'escarabajo',
+  mitologia: 'libro',
+  cliencia: 'lupas',
+  peliculas: 'pochoclos'
+}
 
 const coin = 'escarabajo.png'; // Nombre del archivo de la moneda
+const coinName = coinsNames[triviaName]; // Nombre de la moneda según la trivia
 const coins = 'ad.png'; // Nombre del archivo de la moneda
 
 
@@ -168,6 +174,7 @@ async function iniciarNotificaciones() {
         token: token.token,
         triviaId: triviaName,
         coin,
+        coinName,
         fecha: new Date().toISOString(),
         timezone: Intl.DateTimeFormat().resolvedOptions().timeZone // Captura la zona horaria del usuario
       })

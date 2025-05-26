@@ -154,7 +154,7 @@ app.get('/api/version', (req, res) => {
 app.get('/api/:triviaName/:nombre', (req, res) => {
     const nombre = req.params.nombre;
     const triviaName = req.params.triviaName;
-    const filePath = path.join(__dirname, `../dist/${triviaName}/assets/${nombre}`);
+    const filePath = path.join(__dirname, `../dist/${triviaName}/assets/coin.png`);
     res.sendFile(filePath, (err) => {
         if (err) {
             console.error('Error al enviar la imagen:', err);
@@ -194,15 +194,15 @@ app.post('/api/enviar-notificacion', async (req, res) => {
 
         // Recorrer el array de tokens y enviar notificaciones
         for (const tokenDevice of tokens) {
-            cuerpo = cuerpo.replace('COIN', tokenDevice.coin.split('.')[0]+'s');
-            titulo = titulo.replace('COIN', tokenDevice.coin.split('.')[0]+'s');
+            cuerpo = cuerpo.replace('COIN', tokenDevice.coinName+'s');
+            titulo = titulo.replace('COIN', tokenDevice.coinName+'s');
 
             const payload = {
                 message: {
                     notification: {
                         title: titulo || "¡Nuevas preguntas disponibles!",
                         body: cuerpo || "Entra y revisa las nuevas categorías o preguntas.",
-                        image: `https://glombagames.ddns.net/api/${tokenDevice.triviaId}/${tokenDevice.coin}`//imageUrl, // URL de la imagen
+                        image: `https://glombagames.ddns.net/api/${tokenDevice.triviaId}/${tokenDevice.coinName}`//imageUrl, // URL de la imagen
                     },
                     android: {
                         notification: {
