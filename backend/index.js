@@ -17,11 +17,11 @@ app.use(bodyParser.json());
 
 // Inicializar Firebase Admin con tu archivo de configuración
 const serviceAccount = require('./firebase-admin-config.json');
-if (!admin.apps.length) {
-    admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount)
-    });
-}
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
+
 
 // Variable para almacenar el token de acceso
 let accessToken = null;
@@ -193,10 +193,10 @@ app.post('/api/enviar-notificacion', async (req, res) => {
         const token = await getAccessToken();
 
         // Recorrer el array de tokens y enviar notificaciones
-        
+
         for (const tokenDevice of tokens) {
-            cuerpo = cuerpo.replace('COIN', tokenDevice.coinName+'s');
-            titulo = titulo.replace('COIN', tokenDevice.coinName+'s');
+            cuerpo = cuerpo.replace('COIN', tokenDevice.coinName + 's');
+            titulo = titulo.replace('COIN', tokenDevice.coinName + 's');
 
             const payload = {
                 message: {
