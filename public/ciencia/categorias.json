@@ -1,5 +1,5 @@
 {
-    "Cuerpo-Curioso": {
+    "Cuerpo-curioso": {
         "preguntas": [
             {
                 "pregunta": "¿Qué parte del cuerpo humano nunca deja de crecer durante toda la vida?",
@@ -303,7 +303,7 @@
             }
         ]
     },
-    "Animales-Increibles": {
+    "Animales-increibles": {
         "preguntas": [
             {
                 "pregunta": "¿Qué animal puede dormir hasta 22 horas al día?",
@@ -607,7 +607,7 @@
             }
         ]
     },
-    "Planeta-Asombroso": {
+    "Planeta-asombroso": {
         "preguntas": [
             {
                 "pregunta": "¿Cuál es el desierto más grande del mundo?",
@@ -911,7 +911,7 @@
             }
         ]
     },
-    "Viaje-Espacial": {
+    "Viaje-espacial": {
         "preguntas": [
             {
                 "pregunta": "¿Qué planeta es conocido como el planeta rojo?",
@@ -1215,7 +1215,7 @@
             }
         ]
     },
-    "Ciencia-Cotidiana": {
+    "Ciencia-cotidiana": {
         "preguntas": [
             {
                 "pregunta": "¿Qué provoca que el pan crezca en el horno?",
@@ -1519,7 +1519,7 @@
             }
         ]
     },
-    "Mundo-Prehistorico": {
+    "Mundo-prehistorico": {
         "preguntas": [
             {
                 "pregunta": "¿Qué significa la palabra 'dinosaurio'?",
@@ -1823,7 +1823,7 @@
             }
         ]
     },
-    "Inventos-que-cambiaron-Todo": {
+    "Inventos-que-cambiaron-todo": {
         "preguntas": [
             {
                 "pregunta": "¿Qué invento revolucionó la forma de imprimir libros en el siglo XV?",
@@ -2127,7 +2127,7 @@
             }
         ]
     },
-    "Lo-Invisible": {
+    "Lo-invisible": {
         "preguntas": [
             {
                 "pregunta": "¿Qué microorganismo es famoso por causar resfriados comunes?",
