@@ -32,8 +32,8 @@ async function getAccessToken() {
     const now = Date.now();
     if (!accessToken || now >= tokenExpirationTime) {
         console.log('Generando un nuevo token de acceso...');
-        const token = await admin.credential.cert(serviceAccount).getAccessToken();
-        accessToken = token.access_token;
+        const token = admin.credential
+        accessToken = token;
         tokenExpirationTime = now + 3600 * 1000; // El token es válido por 1 hora
     }
     return accessToken;
