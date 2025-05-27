@@ -375,7 +375,7 @@ function renderMenu() {
      </div>
     </div>
     <div class="logo"></div>
-    <div class="saludo">
+    <div class="saludo" style="background: ${backgroundColor}; border: 1px solid ${borderColor};">
       <div>¡Bienvenido, ${progreso.nombre}!</div>
     </div>
     <div class="categorias">
