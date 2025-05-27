@@ -4,17 +4,17 @@ const isAndroid = __IS_ANDROID__
 const baseURL = isAndroid ? '' : `/${triviaName}`
 
 const backgroundColors = {
-  selva: " #0d2401cf",
-  mitologia: "rgba(36, 34, 1, 0.81)",
-  ciencia: "rgba(1, 25, 36, 0.81)",
-  peliculas: "rgba(36, 1, 1, 0.81)",
-  jaz: "rgba(14, 36, 1, 0.81)",
+  selva: "#0d2401cf",
+  mitologia: "#242201",
+  ciencia: "#011924",
+  peliculas: "#240101",
+  jaz: "#0e2401",
 }
 const borderColors = {
-  selva: " #143f10",
-  mitologia: "rgb(63, 57, 16)",
-  ciencia: "rgb(16, 31, 63)",
-  peliculas: "rgb(63, 16, 16)",
+  selva: "#143f10",
+  mitologia: "#3f3910",
+  ciencia: "#101f3f",
+  peliculas: "#3f1010",
 }
 
 
@@ -400,7 +400,7 @@ function renderMenu() {
         aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${nombreConEspacios}"
       >
         <img class="categoria-img" src="${baseURL}/assets/${catNormalizada}.png" alt="${nombreConEspacios}" onerror="this.src='${baseURL}/assets/pajaro.png'">
-        <div class="categoria-info-boton" style="background: ${backgroundColor};border: 1px solid${borderColor};">
+        <div class="categoria-info-boton" style="background: ${backgroundColor};border: 1px solid ${borderColor};">
           <strong class="cat">${nombreConEspacios}</strong>
           <span class="category-puntos">${puntosNecesarios}</span>
           ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
