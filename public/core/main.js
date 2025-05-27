@@ -4,11 +4,10 @@ const isAndroid = __IS_ANDROID__
 const baseURL = isAndroid ? '' : `/${triviaName}`
 
 const backgroundColors = {
-  selva: "#0d2401cf",
-  mitologia: "#242201",
-  ciencia: "#011924",
-  peliculas: "#240101",
-  jaz: "#0e2401",
+  selva: " #0d2401cf",
+  mitologia: "rgba(36, 34, 1, 0.83)",
+  ciencia: "rgba(1, 25, 36, 0.82)",
+  peliculas: "rgba(36, 1, 1, 0.85)",
 }
 const borderColors = {
   selva: "#143f10",
