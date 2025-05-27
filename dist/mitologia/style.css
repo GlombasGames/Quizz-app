@@ -231,7 +231,6 @@ button:disabled {
 
 
   margin-top: 7%;
-  margin-bottom: 10%;
   /* Ajusta el tamaño dinámico */
   color: #FFD700;
   /* Color dorado para destacar */
@@ -258,7 +257,6 @@ button:disabled {
   font-size: clamp(1rem, 2vw, 1.2rem);
   padding: 8px;
   margin: 0 auto;
-  margin-bottom: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
