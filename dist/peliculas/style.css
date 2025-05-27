@@ -192,15 +192,17 @@ button:disabled {
   /* Centra verticalmente los elementos internos */
   justify-content: center;
   /* Centra horizontalmente los elementos internos */
-   font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem); /* Tamaño dinámico ajustado */
+  font-size: clamp(1.5rem, 1.5rem + 1vw, 2rem);
+  /* Tamaño dinámico ajustado */
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
-
+  color: white;
 
   margin-top: 7%;
   margin-bottom: 2%;
   /* Color dorado para destacar */
   text-align: center;
   /* Centra el texto */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
   /* Sombra para darle profundidad */
   font-weight: lighter;
   font-family: 'miFuente', sans-serif;
@@ -210,6 +212,7 @@ button:disabled {
   -webkit-text-fill-color: transparent;
 
 }
+
 .header-item-p {
   width: 40%;
   /* Cada div ocupa un tercio del ancho del header */
@@ -221,7 +224,8 @@ button:disabled {
   /* Centra verticalmente los elementos internos */
   justify-content: center;
   /* Centra horizontalmente los elementos internos */
-   font-size: clamp(1.2rem, 1.1rem + 1vw, 2rem); /* Tamaño dinámico ajustado */
+  font-size: clamp(1.2rem, 1.1rem + 1vw, 2rem);
+  /* Tamaño dinámico ajustado */
   /* Tamaño mínimo: 1rem, ideal: 2vw, máximo: 2rem */
 
 
@@ -427,6 +431,7 @@ button:disabled {
   background: #023d6dcf;
   border-radius: 8px;
 }
+
 .pregunta p {
   margin: 10px;
   /* Elimina el margen por defecto del párrafo */
