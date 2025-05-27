@@ -201,7 +201,6 @@ button:disabled {
   /* Color dorado para destacar */
   text-align: center;
   /* Centra el texto */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
   /* Sombra para darle profundidad */
   font-weight: lighter;
   font-family: 'miFuente', sans-serif;
