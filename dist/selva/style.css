@@ -198,8 +198,6 @@ button:disabled {
 
   margin-top: 7%;
   margin-bottom: 2%;
-  /* Ajusta el tamaño dinámico */
-  color: #FFD700;
   /* Color dorado para destacar */
   text-align: center;
   /* Centra el texto */
@@ -207,8 +205,6 @@ button:disabled {
   /* Sombra para darle profundidad */
   font-weight: lighter;
   font-family: 'miFuente', sans-serif;
-  /* Usa una fuente personalizada si está disponible */
-  background: linear-gradient(90deg, #FFD700, #FFA500);
   /* Gradiente dorado */
   -webkit-background-clip: text;
   /* Aplica el gradiente solo al texto */
@@ -232,8 +228,6 @@ button:disabled {
 
   margin-top: 7%;
   /* Ajusta el tamaño dinámico */
-  color: #FFD700;
-  /* Color dorado para destacar */
   text-align: center;
   /* Centra el texto */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
@@ -241,8 +235,6 @@ button:disabled {
   font-weight: lighter;
   font-family: 'miFuente', sans-serif;
   /* Usa una fuente personalizada si está disponible */
-  background: linear-gradient(90deg, #FFD700, #FFA500);
-  /* Gradiente dorado */
   -webkit-background-clip: text;
   /* Aplica el gradiente solo al texto */
   -webkit-text-fill-color: transparent;

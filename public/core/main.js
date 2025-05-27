@@ -5,7 +5,7 @@ const baseURL = isAndroid ? '' : `/${triviaName}`
 
 const backgroundColors = {
   selva: " #0d2401cf",
-  mitologia: "rgba(36, 34, 1, 0.83)",
+  mitologia: "rgba(69, 66, 5, 0.83)",
   ciencia: "rgba(1, 25, 36, 0.82)",
   peliculas: "rgba(36, 1, 1, 0.85)",
 }
@@ -15,11 +15,19 @@ const borderColors = {
   ciencia: "#101f3f",
   peliculas: "#3f1010",
 }
-
+const fontColors = {
+  selva: ["#FFD700", "#FFD700", "#FFA500"],
+  mitologia: ["#221803"],
+  ciencia: ["#ffffff"],
+  peliculas: ["#000000"],
+}
+//color: #FFD700;
+// background: linear-gradient(90deg, #FFD700, #FFA500);
 
 const backgroundColor = backgroundColors[triviaName];
 const borderColor = borderColors[triviaName];
-
+const fontColor = fontColors[triviaName] ; // Color por defecto si no se encuentra el color específico
+const cambioFontColor = fontColor[1] && fontColor[2]?`background: linear-gradient(90deg, ${fontColor[1]},${fontColor[2]});`:''; // Color por defecto si no se encuentra el color específico
 console.log("Entraste a tivia: ", triviaName)
 
 
@@ -362,15 +370,15 @@ function renderMenu() {
   app.innerHTML = `
   <div class="header">
   <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
-     <div class="header-item">
+     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
          <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${progreso.intentos}</p>
      </div>
-     <div class="header-item">
+     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
       <button class="btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
        <img src="${baseURL}/assets/${coins}" alt="coin">    
       </button>
      </div>
-     <div class="header-item">
+     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
      ${totalPuntos} pts
      </div>
     </div>
@@ -587,8 +595,8 @@ async function jugarPartida(categoria) {
 
     app.innerHTML = `
     <div class="header">
-      <div class="header-item-p">Tiempo: ${tiempoRestante}s</div>
-      <div class="header-item-p">Pregunta ${index + 1} / 10</div>
+      <div class="header-item-p" style="color:${fontColor[0]}; ${cambioFontColor}">Tiempo: ${tiempoRestante}s</div>
+      <div class="header-item-p" style="color:${fontColor[0]}; ${cambioFontColor}">Pregunta ${index + 1} / 10</div>
     </div>
     <div class="pregunta">
       <h2>${pregunta.pregunta}</h2>
