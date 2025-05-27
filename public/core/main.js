@@ -3,7 +3,23 @@ const triviaName = window.TRIVIA_ID || 'sinNombre'; // Por defecto, selva
 const isAndroid = __IS_ANDROID__
 const baseURL = isAndroid ? '' : `/${triviaName}`
 
+const backgroundColors = {
+  selva: " #0d2401cf",
+  mitologia: "rgba(36, 34, 1, 0.81)",
+  ciencia: "rgba(1, 25, 36, 0.81)",
+  peliculas: "rgba(36, 1, 1, 0.81)",
+  jaz: "rgba(14, 36, 1, 0.81)",
+}
+const borderColors = {
+  selva: " #143f10",
+  mitologia: "rgb(63, 57, 16)",
+  ciencia: "rgb(16, 31, 63)",
+  peliculas: "rgb(63, 16, 16)",
+}
 
+
+const backgroundColor = backgroundColors[triviaName];
+const borderColor = borderColors[triviaName];
 
 console.log("Entraste a tivia: ", triviaName)
 
@@ -384,7 +400,7 @@ function renderMenu() {
         aria-label="${bloqueada ? 'Bloqueada' : 'Jugar'} ${nombreConEspacios}"
       >
         <img class="categoria-img" src="${baseURL}/assets/${catNormalizada}.png" alt="${nombreConEspacios}" onerror="this.src='${baseURL}/assets/pajaro.png'">
-        <div class="categoria-info-boton">
+        <div class="categoria-info-boton" style="background: ${backgroundColor};border: 1px solid${borderColor};">
           <strong class="cat">${nombreConEspacios}</strong>
           <span class="category-puntos">${puntosNecesarios}</span>
           ${bloqueada ? `<span class="lock-icon">🔒</span>` : ''}
@@ -476,7 +492,7 @@ function proximaMeta(cat) {
   return index < 2 ? 0 : (index - 1) * 10; // Las primeras dos categorías requieren 0 puntos, las siguientes empiezan en 10
 }
 function normalizarCategoria(categoria) {
-    return categoria.replace(/-/g, ' '); // Reemplaza los guiones por espacios
+  return categoria.replace(/-/g, ' '); // Reemplaza los guiones por espacios
 }
 
 window.jugar = function jugar(categoria) {
