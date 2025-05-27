@@ -175,7 +175,7 @@ button:disabled {
   /* Evita que la imagen se repita */
   color: #FFFFFF;
 
-  background-image: url('/__TRIVIA__/assets/cartelTopIguana.png');
+  background-image: url('/__TRIVIA__/assets/cartelTop.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;

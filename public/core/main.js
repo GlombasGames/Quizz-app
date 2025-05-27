@@ -19,7 +19,7 @@ const tiempoLimite = 120;
 
 const assetsList = [
   `${baseURL}/assets/fondoPrincipal.png`,
-  `${baseURL}/assets/fondoSelvaMarco.png`,
+  `${baseURL}/assets/fondoApp.png`,
   `${baseURL}/assets/coin.png`,
   `${baseURL}/assets/ad.png`,
   `${baseURL}/assets/GlombaGames.png`,
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartel = document.querySelector('.cartel');
   cartel.style.backgroundImage = `url('${baseURL}/assets/cartel.png')`;
   const header = document.querySelector('.header');
-  header.style.backgroundImage = `url('${baseURL}/assets/cartelTopIguana.png')`;
+  header.style.backgroundImage = `url('${baseURL}/assets/cartelTop.png')`;
   const logo = document.querySelector('.logo');
   logo.style.backgroundImage = `url('${baseURL}/assets/iconoTriviaSelva.png')`;
   const btnJugarPpal = document.querySelector('.btn-jugar-ppal');
@@ -337,7 +337,7 @@ async function iniciar() {
 }
 
 function renderMenu() {
-  app.style.backgroundImage = `url(${baseURL}/assets/fondoSelvaMarco.png)`;
+  app.style.backgroundImage = `url(${baseURL}/assets/fondoApp.png)`;
   const totalPuntos = Object.keys(progreso.puntos)
     .filter(cat => progreso.desbloqueadas.includes(cat))
     .reduce((total, cat) => total + progreso.puntos[cat], 0);
