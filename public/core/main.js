@@ -6,13 +6,13 @@ const baseURL = isAndroid ? '' : `/${triviaName}`
 const backgroundColors = {
   selva: " #0d2401cf",
   mitologia: "rgba(69, 66, 5, 0.83)",
-  ciencia: "rgba(1, 31, 36, 0.82)",
+  ciencia: "rgba(1, 44, 36, 0.82)",
   peliculas: "rgba(36, 1, 1, 0.85)",
 }
 const borderColors = {
   selva: "#143f10",
   mitologia: "#3f3910",
-  ciencia: "rgb(4, 22, 28)",
+  ciencia: "rgb(4, 41, 29)",
   peliculas: "#3f1010",
 }
 const fontColors = {
