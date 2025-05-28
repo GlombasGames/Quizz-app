@@ -207,9 +207,6 @@ button:disabled {
   font-weight: lighter;
   font-family: 'miFuente', sans-serif;
   /* Gradiente dorado */
-  -webkit-background-clip: text;
-  /* Aplica el gradiente solo al texto */
-  -webkit-text-fill-color: transparent;
 
 }
 
