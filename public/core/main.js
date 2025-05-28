@@ -596,8 +596,8 @@ async function jugarPartida(categoria) {
 
     app.innerHTML = `
     <div class="header">
-      <div class="header-item-p" style="color:${fontColor[0]}; ${cambioFontColor}">Tiempo: ${tiempoRestante}s</div>
-      <div class="header-item-p" style="color:${fontColor[0]}; ${cambioFontColor}">Pregunta ${index + 1} / 10</div>
+      <div class="header-item-p" style="color:${fontColor[0]};${cambioFontColor}">Tiempo: ${tiempoRestante}s</div>
+      <div class="header-item-p" style="color:${fontColor[0]};${cambioFontColor}">Pregunta ${index + 1} / 10</div>
     </div>
     <div class="pregunta">
       <h2>${pregunta.pregunta}</h2>
