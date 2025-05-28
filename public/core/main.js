@@ -16,7 +16,7 @@ const borderColors = {
   peliculas: "#3f1010",
 }
 const fontColors = {
-  selva: ["#FFD700", "text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"],
+  selva: ["#FFD700", "background: linear-gradient(90deg, #FFD700, #FFA500); text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"],
   mitologia: ["#221803"],
   ciencia: ["#ffffff"],
   peliculas: ["#000000"],
