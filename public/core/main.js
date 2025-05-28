@@ -16,18 +16,19 @@ const borderColors = {
   peliculas: "#3f1010",
 }
 const fontColors = {
-  selva: ["#FFD700", "#FFD700", "#FFA500"],
+  selva: ["#FFD700", "text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"],
   mitologia: ["#221803"],
   ciencia: ["#ffffff"],
   peliculas: ["#000000"],
 }
 //color: #FFD700;
 // background: linear-gradient(90deg, #FFD700, #FFA500);
+// text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 
 const backgroundColor = backgroundColors[triviaName];
 const borderColor = borderColors[triviaName];
 const fontColor = fontColors[triviaName] ; // Color por defecto si no se encuentra el color específico
-const cambioFontColor = fontColor[1] && fontColor[2]?`background: linear-gradient(90deg, ${fontColor[1]},${fontColor[2]});`:''; // Color por defecto si no se encuentra el color específico
+const cambioFontColor = fontColor[1]?fontColor[1]:''; // Color por defecto si no se encuentra el color específico
 console.log("Entraste a tivia: ", triviaName)
 
 
