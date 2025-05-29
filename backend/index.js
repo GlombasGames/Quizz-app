@@ -138,6 +138,22 @@ app.get("/usuario/:id", async (req, res) => {
     if (!usuario) return res.status(404).json({ error: "No encontrado" });
     res.json(usuario);
 });
+// Obtener todos los usuarios
+app.get("/usuarios", async (req, res) => {
+    try {
+        const db = await connectDB();
+        const usuarios = await db.collection("usuarios").find({}).toArray();
+
+        if (usuarios.length === 0) {
+            return res.status(404).json({ error: "No hay usuarios" });
+        }
+
+        res.json(usuarios);
+    } catch (err) {
+        console.error("Error al obtener usuarios:", err);
+        res.status(500).json({ error: "Error interno del servidor" });
+    }
+});
 
 // Agregar logro a usuario
 app.post("/usuario/:id/logro", async (req, res) => {
