@@ -39,7 +39,7 @@ a:hover {
 #banner {
   width: 100%;
   height: 100px;
-  background-color: #000102;
+  background-color: #011f3d;
   /* Fondo del banner */
   color: #FFFFFF;
   /* Texto claro */
@@ -54,7 +54,7 @@ a:hover {
   /* Ancho máximo del contenedor */
   margin: 0 auto;
   /* Centra el contenedor horizontalmente */
-  background-color: #000102;
+  background-color: #000000;
   padding: 16px;
   background-size: 100% 100%;
   background-position: center;

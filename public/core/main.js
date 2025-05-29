@@ -224,7 +224,6 @@ async function iniciarNotificaciones() {
 
 
 const app = document.getElementById('app');
-const body = document.getElementById('body');
 
 
 let data = {};
