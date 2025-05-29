@@ -26,8 +26,22 @@ async function run() {
         const db = client.db("triviasDB");
         const users = db.collection("usuarios");
 
-        const ejemplo = await users.findOne();
-        console.log("Usuario encontrado:", ejemplo);
+        const existe = await users.findOne();
+        
+        
+        if (!existe) {
+            await users.insertOne({
+                nombre: "Juan",
+                puntaje: 1500,
+                pais: "AR",
+                triviasJugadas: ["ciencia"],
+                logros: ["primer_ganada"],
+            });
+            console.log("Usuario insertado por primera vez");
+        }else{
+            console.log("Usuario encontrado:", existe);
+            
+        }
     } catch (err) {
         console.error("Error al conectar:", err);
     } finally {
@@ -119,7 +133,7 @@ let tokens = [];
 if (fs.existsSync(TOKENS_FILE)) {
     try {
         tokens = JSON.parse(fs.readFileSync(TOKENS_FILE, 'utf-8'));
-        console.log('Tokens cargados:', tokens);
+        // console.log('Tokens cargados:', tokens);
     } catch (err) {
         console.error('Error al leer el archivo tokens.json:', err);
     }
