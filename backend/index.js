@@ -6,6 +6,7 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
+const connectDB = require("./db");
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
 const PORT = 3100;
@@ -14,45 +15,6 @@ const version = '1.3';
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
-const { MongoClient } = require("mongodb");
-
-const uri = "mongodb://localhost:27017"; // conexión local
-const client = new MongoClient(uri);
-
-async function run() {
-    try {
-        await client.connect();
-        const db = client.db("triviasDB");
-        const users = db.collection("usuarios");
-
-        const existe = await users.findOne();
-        
-        
-        if (!existe) {
-            await users.insertOne({
-                nombre: "Juan",
-                puntaje: 1500,
-                pais: "AR",
-                triviasJugadas: ["ciencia"],
-                logros: ["primer_ganada"],
-            });
-            console.log("Usuario insertado por primera vez");
-        }else{
-            console.log("Usuario encontrado:", existe);
-            
-        }
-    } catch (err) {
-        console.error("Error al conectar:", err);
-    } finally {
-        await client.close();
-    }
-}
-
-run();
-
-
-
 
 
 
@@ -145,6 +107,87 @@ if (fs.existsSync(TOKENS_FILE)) {
 
 // Middleware para servir archivos estáticos desde la carpeta dist
 app.use(express.static(path.join(__dirname, '../dist')));
+
+// Crear nuevo usuario
+app.post("/usuario", async (req, res) => {
+    const db = await connectDB();
+    const users = db.collection("usuarios");
+
+    const { nombre, pais } = req.body;
+    const nuevo = {
+        nombre,
+        pais,
+        puntaje: 0,
+        triviasJugadas: [],
+        logros: [],
+        creado: new Date(),
+    };
+
+    const result = await users.insertOne(nuevo);
+    res.json({ ok: true, id: result.insertedId });
+});
+
+// Obtener datos de usuario por ID
+app.get("/usuario/:id", async (req, res) => {
+    const db = await connectDB();
+    const users = db.collection("usuarios");
+
+    const { ObjectId } = require("mongodb");
+    const usuario = await users.findOne({ _id: new ObjectId(req.params.id) });
+
+    if (!usuario) return res.status(404).json({ error: "No encontrado" });
+    res.json(usuario);
+});
+
+// Agregar logro a usuario
+app.post("/usuario/:id/logro", async (req, res) => {
+    const db = await connectDB();
+    const users = db.collection("usuarios");
+
+    const { ObjectId } = require("mongodb");
+    const { logro } = req.body;
+
+    await users.updateOne(
+        { _id: new ObjectId(req.params.id) },
+        { $addToSet: { logros: logro } }
+    );
+
+    res.json({ ok: true });
+});
+
+// Actualizar puntaje del usuario
+app.post("/usuario/:id/puntaje", async (req, res) => {
+    const db = await connectDB();
+    const users = db.collection("usuarios");
+
+    const { ObjectId } = require("mongodb");
+    const { puntos } = req.body;
+
+    await users.updateOne(
+        { _id: new ObjectId(req.params.id) },
+        { $inc: { puntaje: puntos } }
+    );
+
+    res.json({ ok: true });
+});
+
+// Agregar trivia jugada
+app.post("/usuario/:id/trivia", async (req, res) => {
+    const db = await connectDB();
+    const users = db.collection("usuarios");
+
+    const { ObjectId } = require("mongodb");
+    const { trivia } = req.body;
+
+    await users.updateOne(
+        { _id: new ObjectId(req.params.id) },
+        { $addToSet: { triviasJugadas: trivia } }
+    );
+
+    res.json({ ok: true });
+});
+
+
 
 // Ruta para servir archivos JSON específicos
 app.get('/api/categorias.json', (req, res) => {
