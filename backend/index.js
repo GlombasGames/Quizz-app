@@ -15,6 +15,33 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const { MongoClient } = require("mongodb");
+
+const uri = "mongodb://localhost:27017"; // conexión local
+const client = new MongoClient(uri);
+
+async function run() {
+    try {
+        await client.connect();
+        const db = client.db("triviasDB");
+        const users = db.collection("usuarios");
+
+        const ejemplo = await users.findOne();
+        console.log("Usuario encontrado:", ejemplo);
+    } catch (err) {
+        console.error("Error al conectar:", err);
+    } finally {
+        await client.close();
+    }
+}
+
+run();
+
+
+
+
+
+
 // Inicializar Firebase Admin con tu archivo de configuración
 const serviceAccount = require('./firebase-admin-config.json');
 
