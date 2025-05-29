@@ -128,7 +128,7 @@ app.post("/usuario", async (req, res) => {
 });
 
 // Obtener datos de usuario por ID
-app.get("/usuario/:id", async (req, res) => {
+app.get("/api/usuario/:id", async (req, res) => {
     const db = await connectDB();
     const users = db.collection("usuarios");
 
@@ -139,7 +139,7 @@ app.get("/usuario/:id", async (req, res) => {
     res.json(usuario);
 });
 // Obtener todos los usuarios
-app.get("/usuarios", async (req, res) => {
+app.get("/api/usuarios", async (req, res) => {
     try {
         const db = await connectDB();
         const usuarios = await db.collection("usuarios").find({}).toArray();
@@ -156,7 +156,7 @@ app.get("/usuarios", async (req, res) => {
 });
 
 // Agregar logro a usuario
-app.post("/usuario/:id/logro", async (req, res) => {
+app.post("/api/usuario/:id/logro", async (req, res) => {
     const db = await connectDB();
     const users = db.collection("usuarios");
 
@@ -172,7 +172,7 @@ app.post("/usuario/:id/logro", async (req, res) => {
 });
 
 // Actualizar puntaje del usuario
-app.post("/usuario/:id/puntaje", async (req, res) => {
+app.post("/api/usuario/:id/puntaje", async (req, res) => {
     const db = await connectDB();
     const users = db.collection("usuarios");
 
@@ -188,7 +188,7 @@ app.post("/usuario/:id/puntaje", async (req, res) => {
 });
 
 // Agregar trivia jugada
-app.post("/usuario/:id/trivia", async (req, res) => {
+app.post("/api/usuario/:id/trivia", async (req, res) => {
     const db = await connectDB();
     const users = db.collection("usuarios");
 
