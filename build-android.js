@@ -70,17 +70,32 @@ console.log('✅ google-services.json copiado');
 // Paso 5: Sincronizar con Capacitor
 execSync('npx cap sync android', { stdio: 'inherit' });
 
+//agrego admob
+const manifestPath = path.join(androidBase, 'app', 'src', 'main', 'AndroidManifest.xml');
+let manifestContent = fs.readFileSync(manifestPath, 'utf8');
+const appIdReal = 'ca-app-pub-3940256099942544~3347511713'; // Usa ID de prueba o por app
+
+if (!manifestContent.includes('com.google.android.gms.ads.APPLICATION_ID')) {
+  manifestContent = manifestContent.replace(
+    /<application([\s\S]*?)>/,
+    `<application$1>\n        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="${appIdReal}" />`
+  );
+  fs.writeFileSync(manifestPath, manifestContent, 'utf8');
+  console.log('✅ APPLICATION_ID agregado a AndroidManifest.xml');
+}
+
 // Paso 5.5: Agregar Firebase dependencies si no están en build.gradle
 const gradlePath = path.join(androidBase, 'app', 'build.gradle');
 let gradleContent = fs.readFileSync(gradlePath, 'utf8');
 
 const firebaseBom = `    implementation platform('com.google.firebase:firebase-bom:32.1.1')`;
 const firebaseMessaging = `    implementation 'com.google.firebase:firebase-messaging'`;
+const admob = `    implementation 'com.google.android.gms:play-services-ads:24.3.0'`;
 
 if (!gradleContent.includes(firebaseMessaging)) {
   gradleContent = gradleContent.replace(
     /dependencies\s*{/,
-    match => `${match}\n${firebaseBom}\n${firebaseMessaging}`
+    match => `${match}\n${firebaseBom}\n${firebaseMessaging}\n${admob}`
   );
   fs.writeFileSync(gradlePath, gradleContent, 'utf8');
   console.log('✅ Firebase Messaging agregado a build.gradle');

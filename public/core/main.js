@@ -2,6 +2,7 @@
 const triviaName = window.TRIVIA_ID || 'sinNombre'; // Por defecto, selva
 const isAndroid = __IS_ANDROID__
 const baseURL = isAndroid ? '' : `/${triviaName}`
+const tiempoLimite = 120;
 
 const backgroundColors = {
   selva: " #0d2401cf",
@@ -27,8 +28,8 @@ const fontColors = {
 
 const backgroundColor = backgroundColors[triviaName];
 const borderColor = borderColors[triviaName];
-const fontColor = fontColors[triviaName] ; // Color por defecto si no se encuentra el color específico
-const cambioFontColor = fontColor[1]?fontColor[1]:''; // Color por defecto si no se encuentra el color específico
+const fontColor = fontColors[triviaName]; // Color por defecto si no se encuentra el color específico
+const cambioFontColor = fontColor[1] ? fontColor[1] : ''; // Color por defecto si no se encuentra el color específico
 console.log("Entraste a tivia: ", triviaName)
 
 
@@ -38,8 +39,13 @@ import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 import misTrivias from './trivias.json';
+import { initAdMob, showBanner, showRewarded } from './admob.js';
 
-const tiempoLimite = 120;
+document.addEventListener('deviceready', async () => {
+  await initAdMob();
+  await showBanner();
+});
+
 
 const assetsList = [
   `${baseURL}/assets/fondoPrincipal.png`,
@@ -687,40 +693,47 @@ function checkDesbloqueos() {
 }
 
 window.verAnuncio = async function verAnuncio() {
-  // Verificar si hay conexión a Internet
+  const botonVerAnuncio = app.querySelector('button[onclick^="verAnuncio"]');
   if (!tieneConexion() || !(await verificarServidor())) {
-    alert('No hay conexión con el servidor. Pero puedes gastar tus intentos sin conexion.');
-    // Deshabilitar el botón dinámicamente
-    const botonVerAnuncio = app.querySelector('button[onclick^="verAnuncio"]');
-    if (botonVerAnuncio) {
-      botonVerAnuncio.disabled = true;
-    }
+    alert('No hay conexión con el servidor.');
+    if (botonVerAnuncio) botonVerAnuncio.disabled = true;
     return;
   }
-  // Simulación de anuncio rewarded
-  progreso.intentos += 1;
-  guardarProgreso().then(() => {
-    // Si estamos en la pantalla de "Fin del juego", recargarla
-    if (app.innerHTML.includes('¡Fin del juego!')) {
-      const botonReintentar = app.querySelector('button[onclick^="jugar"]');
-      if (botonReintentar) {
-        botonReintentar.disabled = false; // Habilitar el botón
-      }
-      const intentosDisponibles = app.querySelector('p:nth-of-type(2)');
-      if (intentosDisponibles) {
-        intentosDisponibles.textContent = `Intentos disponibles: ${progreso.intentos}`;
-      }
-      // Ocultar el botón "Ver anuncio" si los intentos son 3 o más
-      if (progreso.intentos >= 3) {
-        const botonVerAnuncio = app.querySelector('button[onclick^="verAnuncio"]');
-        if (botonVerAnuncio) {
-          botonVerAnuncio.disabled = true;
+
+  try {
+    botonVerAnuncio.disabled = true; // Deshabilitar el botón mientras se muestra el anuncio
+    app.style.pointerEvents = 'none'; // Deshabilitar interacciones con la app mientras se muestra el anuncio
+    const visto = await showRewarded(); // devuelve true si fue completado
+    app.style.pointerEvents = 'auto'; // Habilitar interacciones con la app después de mostrar el anuncio
+    botonVerAnuncio.disabled = false; // Habilitar el botón después de mostrar el anuncio
+
+    if (visto) {
+      progreso.intentos += 1;
+      await guardarProgreso();
+
+      if (app.innerHTML.includes('¡Fin del juego!')) {
+        const botonReintentar = app.querySelector('button[onclick^="jugar"]');
+        if (botonReintentar) botonReintentar.disabled = false;
+
+        const intentosDisponibles = app.querySelector('p:nth-of-type(2)');
+        if (intentosDisponibles) {
+          intentosDisponibles.textContent = `Intentos disponibles: ${progreso.intentos}`;
         }
+
+        if (progreso.intentos >= 3) {
+          const botonVerAnuncio = app.querySelector('button[onclick^="verAnuncio"]');
+          if (botonVerAnuncio) botonVerAnuncio.disabled = true;
+        }
+      } else {
+        renderMenu();
       }
     } else {
-      renderMenu(); // Si no, redirigir al menú principal
+      alert("Debes ver el anuncio completo para recibir una recompensa.");
     }
-  });
+  } catch (e) {
+    console.error("Error mostrando el anuncio:", e);
+    alert("No se pudo mostrar el anuncio.");
+  }
 };
 
 function normalizarNombre(nombre) {

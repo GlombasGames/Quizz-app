@@ -13,6 +13,7 @@
   "author": "Your Name",
   "license": "ISC",
   "dependencies": {
+    "@capacitor-community/admob": "^7.0.3",
     "@capacitor-firebase/messaging": "^7.2.0",
     "@capacitor/android": "^7.2.0",
     "@capacitor/cli": "^7.2.0",
