@@ -75,13 +75,17 @@ const manifestPath = path.join(androidBase, 'app', 'src', 'main', 'AndroidManife
 let manifestContent = fs.readFileSync(manifestPath, 'utf8');
 const appIdReal = 'ca-app-pub-3940256099942544~3347511713'; // Usa ID de prueba o por app
 
+// Insertar meta-datos para AdMob y Firebase Analytics
+const admobMeta = `<meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="${appIdReal}" />`;
+const analyticsMeta = `<meta-data android:name="firebase_analytics_collection_enabled" android:value="true" />`;
+
 if (!manifestContent.includes('com.google.android.gms.ads.APPLICATION_ID')) {
   manifestContent = manifestContent.replace(
     /<application([\s\S]*?)>/,
-    `<application$1>\n        <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="${appIdReal}" />`
+    `<application$1>\n        ${admobMeta}\n        ${analyticsMeta}`
   );
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');
-  console.log('✅ APPLICATION_ID agregado a AndroidManifest.xml');
+  console.log('✅ Meta-data de AdMob y Firebase Analytics agregados a AndroidManifest.xml');
 }
 
 // Paso 5.5: Agregar Firebase dependencies si no están en build.gradle
@@ -90,12 +94,13 @@ let gradleContent = fs.readFileSync(gradlePath, 'utf8');
 
 const firebaseBom = `    implementation platform('com.google.firebase:firebase-bom:32.1.1')`;
 const firebaseMessaging = `    implementation 'com.google.firebase:firebase-messaging'`;
+const firebaseAnalytics = `    implementation 'com.google.firebase:firebase-analytics'`;
 const admob = `    implementation 'com.google.android.gms:play-services-ads:24.3.0'`;
 
 if (!gradleContent.includes(firebaseMessaging)) {
   gradleContent = gradleContent.replace(
     /dependencies\s*{/,
-    match => `${match}\n${firebaseBom}\n${firebaseMessaging}\n${admob}`
+    match => `${match}\n${firebaseBom}\n${firebaseMessaging}\n${admob}\n${firebaseAnalytics}`
   );
   fs.writeFileSync(gradlePath, gradleContent, 'utf8');
   console.log('✅ Firebase Messaging agregado a build.gradle');
