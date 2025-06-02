@@ -1048,13 +1048,14 @@ button.btn-volver-cartel {
   flex: 1; /* Ocupa el espacio restante */
   overflow-y: auto; /* Scroll vertical */
   display: grid; /* Usamos CSS Grid */
-  grid-template-columns: repeat(auto-fill, minmax(80px, 80px)); /* Columnas de tamaño fijo */
-  gap: 16px; /* Espaciado entre ítems */
-  padding: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Columnas de tamaño fijo */
+  gap: 8px; /* Espaciado reducido entre ítems */
+  padding: 8px; /* Espaciado interno del contenedor */
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #f9f9f9;
-  margin-top: 40px;
+  margin-top: 0; /* Elimina márgenes superiores */
+  align-content: start; /* Asegura que las filas se alineen al inicio */
 }
 
 .inventario-item {
