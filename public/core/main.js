@@ -744,6 +744,10 @@ function abrirInventario() {
   const inventario = [
     { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🎒", cantidad: 3 },
     { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
+    { nombre: "Poción mágica", descripcion: "Restaura un intento fallido", icono: "🧪", cantidad: 2 },
+    { nombre: "Llave dorada", descripcion: "Desbloquea una categoría especial", icono: "🔑", cantidad: 1 },
+    { nombre: "Mapa", descripcion: "Muestra pistas adicionales", icono: "🗺️", cantidad: 5 },
+    { nombre: "Reloj", descripcion: "Añade tiempo extra", icono: "⏰", cantidad: 3 },
   ];
 
   const inventarioHTML = inventario.map((item, index) => `
@@ -778,6 +782,10 @@ function seleccionarItem(index) {
   const inventario = [
     { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🎒", cantidad: 3 },
     { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
+    { nombre: "Poción mágica", descripcion: "Restaura un intento fallido", icono: "🧪", cantidad: 2 },
+    { nombre: "Llave dorada", descripcion: "Desbloquea una categoría especial", icono: "🔑", cantidad: 1 },
+    { nombre: "Mapa", descripcion: "Muestra pistas adicionales", icono: "🗺️", cantidad: 5 },
+    { nombre: "Reloj", descripcion: "Añade tiempo extra", icono: "⏰", cantidad: 3 },
   ];
 
   const item = inventario[index];
