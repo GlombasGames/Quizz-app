@@ -1069,6 +1069,7 @@ button.btn-volver-cartel {
   align-items: center;
   cursor: pointer;
   position: relative;
+  margin: 0; /* Elimina márgenes adicionales */
 }
 
 .inventario-item.seleccionado {
