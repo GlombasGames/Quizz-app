@@ -3,36 +3,49 @@
     "nombre": "Trivia de la selva",
     "imagenUrl": "./assets/iconoTriviaSelva.png",
     "url": "https://glombagames.ddns.net/",
-    "estado": ""
+    "estado": "",
+    "coin": "Escarabajo"
   },
   {
     "nombre": "Trivia de Películas",
     "imagenUrl": "./assets/triviaDePeliculas.png",
     "url": "",
-    "estado": "Próximamente"
+    "estado": "Próximamente",
+    "coin": "Ticket"
   },
   {
     "nombre": "Trivia de Civilizaciones",
     "imagenUrl": "./assets/triviaDeCivilizaciones.png",
     "url": "",
-    "estado": "Próximamente"
+    "estado": "Próximamente",
+    "coin": "Moneda"
+  },
+  {
+    "nombre": "Trivia de Ciencia",
+    "imagenUrl": "./assets/triviaDeCiencia.png",
+    "url": "",
+    "estado": "Próximamente",
+    "coin": "Lupa"
   },
   {
     "nombre": "Trivia de Tecnologia",
     "imagenUrl": "./assets/triviaDeTecnologia.png",
     "url": "",
-    "estado": "Próximamente"
+    "estado": "Próximamente",
+    "coin": "Chip"
   },
   {
     "nombre": "Trivia de Historia",
     "imagenUrl": "./assets/triviaDeHistoria.png",
     "url": "",
-    "estado": "Próximamente"
+    "estado": "Próximamente",
+    "coin": "Libro"
   },
   {
     "nombre": "Trivia de Geografía",
     "imagenUrl": "./assets/triviaDeGeografia.png",
     "url": "",
-    "estado": "Próximamente"
+    "estado": "Próximamente",
+    "coin": "Mapa"
   }
 ]

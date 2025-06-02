@@ -742,10 +742,10 @@ function normalizarNombre(nombre) {
 }
 
 const inventario = [
-  { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🐞", cantidad: 3 },
-  { nombre: "Lupa", descripcion: "Puede usarse en la trivia de ciencia", icono: "🔍", cantidad: 3 },
-  { nombre: "Moneda", descripcion: "Puede usarse en la trivia de mitología", icono: "💰", cantidad: 3 },
-  { nombre: "Ticket", descripcion: "Puede usarse en la trivia de películas", icono: "🎟️", cantidad: 3 },
+  { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🐞", cantidad: 3, coin: true },
+  { nombre: "Lupa", descripcion: "Puede usarse en la trivia de ciencia", icono: "🔍", cantidad: 3, coin: true  },
+  { nombre: "Moneda", descripcion: "Puede usarse en la trivia de mitología", icono: "💰", cantidad: 3, coin: true  },
+  { nombre: "Ticket", descripcion: "Puede usarse en la trivia de películas", icono: "🎟️", cantidad: 3, coin: true  },
   { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
   { nombre: "Poción mágica", descripcion: "Restaura un intento fallido", icono: "🧪", cantidad: 2 },
   { nombre: "Llave dorada", descripcion: "Desbloquea una categoría especial", icono: "🔑", cantidad: 1 },
@@ -785,7 +785,6 @@ function cerrarInventario() {
 }
 window.cerrarInventario = cerrarInventario;
 function seleccionarItem(index) {
-
   const item = inventario[index];
   const descripcionDiv = document.querySelector('.inventario-descripcion');
   const items = document.querySelectorAll('.inventario-item');
@@ -799,6 +798,48 @@ function seleccionarItem(index) {
 
   // Mostrar descripción
   if (descripcionDiv) descripcionDiv.textContent = `${item.nombre}: ${item.descripcion}`;
+
+  // Limpiar botones previos
+  const botonesDiv = document.querySelector('.inventario-botones');
+  if (botonesDiv) botonesDiv.remove();
+
+  // Si el ítem tiene coin: true, mostrar los botones
+  if (item.coin) {
+    // Buscar la trivia correspondiente en trivias.json
+    const trivia = misTrivias.find(trivia => trivia.coin === item.nombre);
+
+    if (trivia) {
+      // Crear contenedor para los botones
+      const botonesContainer = document.createElement('div');
+      botonesContainer.className = 'inventario-botones';
+      botonesContainer.style.display = 'flex';
+      botonesContainer.style.justifyContent = 'space-between';
+      botonesContainer.style.marginTop = '8px';
+
+      // Botón "Ir a trivia"
+      const irATriviaBtn = document.createElement('button');
+      irATriviaBtn.textContent = 'Ir a trivia';
+      irATriviaBtn.className = 'btn-ir-a-trivia';
+      irATriviaBtn.style.flex = '1';
+      irATriviaBtn.style.marginRight = '4px';
+      irATriviaBtn.onclick = () => jugar(trivia.nombre);
+
+      // Botón "Descargar Trivia"
+      const descargarTriviaBtn = document.createElement('button');
+      descargarTriviaBtn.textContent = 'Descargar Trivia';
+      descargarTriviaBtn.className = 'btn-descargar-trivia';
+      descargarTriviaBtn.style.flex = '1';
+      descargarTriviaBtn.style.marginLeft = '4px';
+      descargarTriviaBtn.onclick = () => window.open(trivia.url, '_blank');
+
+      // Agregar botones al contenedor
+      botonesContainer.appendChild(irATriviaBtn);
+      botonesContainer.appendChild(descargarTriviaBtn);
+
+      // Insertar los botones en el DOM, justo antes de la descripción
+      descripcionDiv.parentNode.insertBefore(botonesContainer, descripcionDiv);
+    }
+  }
 }
 window.seleccionarItem = seleccionarItem;
 

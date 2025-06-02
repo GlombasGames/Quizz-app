@@ -1128,3 +1128,21 @@ button.btn-volver-cartel {
   justify-content: center;
   color: #FFD700; /* Color dorado para el emoji */
 }
+.inventario-botones button {
+  padding: 8px;
+  font-size: 14px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.inventario-botones button:hover {
+  background-color: #45a049;
+}
+
+.inventario-botones button:active {
+  background-color: #3e8e41;
+}
