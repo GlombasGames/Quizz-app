@@ -1048,7 +1048,7 @@ button.btn-volver-cartel {
   flex: 1; /* Ocupa el espacio restante */
   overflow-y: auto; /* Scroll vertical */
   display: grid; /* Usamos CSS Grid */
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ítems responsivos */
+  grid-template-columns: repeat(auto-fill, minmax(80px, 80px)); /* Columnas de tamaño fijo */
   gap: 16px; /* Espaciado entre ítems */
   padding: 8px;
   border: 1px solid #ddd;
