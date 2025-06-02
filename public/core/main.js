@@ -39,6 +39,7 @@ import { PushNotifications } from '@capacitor/push-notifications';
 import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 import misTrivias from './trivias.json';
 import { initAdMob, showBanner, showRewarded } from './admob.js';
+import { AppLauncher } from '@capacitor/app-launcher';
 
 document.addEventListener('deviceready', async () => {
   await initAdMob();
@@ -824,16 +825,30 @@ function seleccionarItem(index) {
       irATriviaBtn.style.margin = '0 4px';
 
       // Intentar abrir la app instalada o redirigir al store
-      irATriviaBtn.onclick = () => {
+      irATriviaBtn.onclick = async () => {
         const packageName = `com.glombagames.trivia${trivia.triviaName.toLowerCase()}`; // Nombre del paquete de la app
-        const appUrl = `${packageName}://abrir-trivia`; // Esquema personalizado
+        console.log(`Intentando abrir la app: ${packageName}`);
         const fallbackUrl = trivia.url; // URL del store o página web
 
-        // Construir el intent
-        const intentUrl = `intent://abrir-trivia#Intent;scheme=${appUrl};package=${packageName};S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
-
-        // Intentar abrir la app o redirigir al fallback
-        window.location.href = intentUrl;
+        try {
+          // Verificar si la app está instalada
+          const canOpen = await AppLauncher.canOpenUrl({ url: packageName });
+          console.warn({canOpen});
+          if (canOpen.value) {
+            console.log(`✅ Aplicación encontrada: ${canOpen.value}`);
+            // Abrir la app instalada
+            await AppLauncher.openUrl({ url: packageName });
+            console.log(`✅ Aplicación abierta: ${packageName}`);
+          } else {
+            // Redirigir al store si la app no está instalada
+            console.log(`⚠️ Aplicación no instalada, redirigiendo a: ${fallbackUrl}`);
+            window.location.href = fallbackUrl;
+          }
+        } catch (error) {
+          console.error('❌ Error al intentar abrir la aplicación:', error);
+          // Redirigir al store como último recurso
+          window.location.href = fallbackUrl;
+        }
       };
 
       // Agregar el botón al contenedor

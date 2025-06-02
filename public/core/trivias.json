@@ -2,7 +2,7 @@
   {
     "nombre": "Trivia de la selva",
     "imagenUrl": "./assets/iconoTriviaSelva.png",
-    "url": "https://glombagames.ddns.net/selva",
+    "url": "com.glombagames.triviaselva",
     "estado": "",
     "coin": "Escarabajo",
     "triviaName": "selva"
@@ -18,7 +18,7 @@
   {
     "nombre": "Trivia de Mitologia",
     "imagenUrl": "./assets/triviaDeCivilizaciones.png",
-    "url": "https://glombagames.ddns.net/mitologia",
+    "url": "com.glombagames.triviamitologia",
     "estado": "Próximamente",
     "coin": "Moneda",
     "triviaName": "mitologia"
@@ -34,7 +34,7 @@
   {
     "nombre": "Trivia de Ciencia",
     "imagenUrl": "./assets/triviaDeCiencia.png",
-    "url": "https://glombagames.ddns.net/ciencia",
+    "url": "com.glombagames.triviaciencia",
     "estado": "Próximamente",
     "coin": "Lupa",
     "triviaName": "ciencia"

@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
@@ -89,22 +88,29 @@ if (!manifestContent.includes('com.google.android.gms.ads.APPLICATION_ID')) {
   console.log('✅ Meta-data de AdMob y Firebase Analytics agregados a AndroidManifest.xml');
 }
 // Líneas que queremos agregar dentro del <intent-filter>
-const intentFilterData = `
-    <action android:name="android.intent.action.VIEW" />
-    <category android:name="android.intent.category.DEFAULT" />
-    <category android:name="android.intent.category.BROWSABLE" />
-    <data android:scheme="${appId}" android:host="abrir-trivia" />
-`;
-// Verificar si ya existe el esquema que queremos agregar
-if (!manifestContent.includes(`<data android:scheme="${appId}"`)) {
-  // Buscar el <intent-filter> existente y agregar las líneas dentro de él
+const permission = `
+                <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />`;
+
+// Buscar el <intent-filter> existente y agregar las líneas dentro de él
+if (!manifestContent.includes(`<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />`)) {
   manifestContent = manifestContent.replace(
-    /<intent-filter>([\s\S]*?)<\/intent-filter>/,
-    match => `${match.trim()}\n${intentFilterData}`
+    `<uses-permission android:name="android.permission.INTERNET" />`,`<uses-permission android:name="android.permission.INTERNET" />${permission}`
   );
-  console.log('✅ Líneas agregadas al <intent-filter> en AndroidManifest.xml');
+  fs.writeFileSync(manifestPath, manifestContent, 'utf8');
+  console.log(`✅ Elementos agregados al <intent-filter> existente en AndroidManifest.xml`);
 } else {
-  console.log('ℹ️ Las líneas ya estaban presentes en el <intent-filter> del AndroidManifest.xml');
+  console.log('ℹ️ Los elementos ya estaban presentes en el <intent-filter> del AndroidManifest.xml');
+}
+// Reemplazar el atributo package en la etiqueta <manifest> usando appId
+if (!manifestContent.includes(`package="${appId}"`)) {
+  manifestContent = manifestContent.replace(
+    /<manifest([\s\S]*?)>/,
+    `<manifest$1 package="${appId}">`
+  );
+  fs.writeFileSync(manifestPath, manifestContent, 'utf8');
+  console.log(`✅ Nombre del paquete actualizado en AndroidManifest.xml: ${appId}`);
+} else {
+  console.log(`ℹ️ El nombre del paquete ya estaba configurado: ${appId}`);
 }
 // Paso 5.5: Agregar Firebase dependencies si no están en build.gradle
 const gradlePath = path.join(androidBase, 'app', 'build.gradle');
