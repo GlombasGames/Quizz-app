@@ -1056,6 +1056,7 @@ button.btn-volver-cartel {
   background: #f9f9f9;
   margin-top: 0; /* Elimina márgenes superiores */
   align-content: start; /* Asegura que las filas se alineen al inicio */
+  margin-top: 60px;
 }
 
 .inventario-item {
