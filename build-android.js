@@ -27,8 +27,9 @@ execSync(`npx cross-env TRIVIA=${triviaId} IS_ANDROID=true webpack --mode produc
 console.log('✅ Webpack compilado correctamente para Android');
 
 // Paso 1: Modificar capacitor.config.json
+const appId = `com.glombagames.trivia${triviaId}`
 const newConfig = {
-  appId: `com.glombagames.trivia${triviaId}`,
+  appId,
   appName: `Trivia de ${triviaNameCapitalized}`,
   webDir: `distAndroid/${triviaId}`,
   bundledWebRuntime: false
@@ -87,7 +88,24 @@ if (!manifestContent.includes('com.google.android.gms.ads.APPLICATION_ID')) {
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');
   console.log('✅ Meta-data de AdMob y Firebase Analytics agregados a AndroidManifest.xml');
 }
-
+// Líneas que queremos agregar dentro del <intent-filter>
+const intentFilterData = `
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data android:scheme="${appId}" android:host="abrir-trivia" />
+`;
+// Verificar si ya existe el esquema que queremos agregar
+if (!manifestContent.includes(`<data android:scheme="${appId}"`)) {
+  // Buscar el <intent-filter> existente y agregar las líneas dentro de él
+  manifestContent = manifestContent.replace(
+    /<intent-filter>([\s\S]*?)<\/intent-filter>/,
+    match => `${match.trim()}\n${intentFilterData}`
+  );
+  console.log('✅ Líneas agregadas al <intent-filter> en AndroidManifest.xml');
+} else {
+  console.log('ℹ️ Las líneas ya estaban presentes en el <intent-filter> del AndroidManifest.xml');
+}
 // Paso 5.5: Agregar Firebase dependencies si no están en build.gradle
 const gradlePath = path.join(androidBase, 'app', 'build.gradle');
 let gradleContent = fs.readFileSync(gradlePath, 'utf8');

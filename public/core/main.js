@@ -743,9 +743,9 @@ function normalizarNombre(nombre) {
 
 const inventario = [
   { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🐞", cantidad: 3, coin: true },
-  { nombre: "Lupa", descripcion: "Puede usarse en la trivia de ciencia", icono: "🔍", cantidad: 3, coin: true  },
-  { nombre: "Moneda", descripcion: "Puede usarse en la trivia de mitología", icono: "💰", cantidad: 3, coin: true  },
-  { nombre: "Ticket", descripcion: "Puede usarse en la trivia de películas", icono: "🎟️", cantidad: 3, coin: true  },
+  { nombre: "Lupa", descripcion: "Puede usarse en la trivia de ciencia", icono: "🔍", cantidad: 3, coin: true },
+  { nombre: "Moneda", descripcion: "Puede usarse en la trivia de mitología", icono: "💰", cantidad: 3, coin: true },
+  { nombre: "Ticket", descripcion: "Puede usarse en la trivia de películas", icono: "🎟️", cantidad: 3, coin: true },
   { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
   { nombre: "Poción mágica", descripcion: "Restaura un intento fallido", icono: "🧪", cantidad: 2 },
   { nombre: "Llave dorada", descripcion: "Desbloquea una categoría especial", icono: "🔑", cantidad: 1 },
@@ -803,17 +803,17 @@ function seleccionarItem(index) {
   const botonesDiv = document.querySelector('.inventario-botones');
   if (botonesDiv) botonesDiv.remove();
 
-  // Si el ítem tiene coin: true, mostrar los botones
+  // Si el ítem tiene coin: true, mostrar el botón "Ir a trivia"
   if (item.coin) {
     // Buscar la trivia correspondiente en trivias.json
     const trivia = misTrivias.find(trivia => trivia.coin === item.nombre);
 
     if (trivia) {
-      // Crear contenedor para los botones
+      // Crear contenedor para el botón
       const botonesContainer = document.createElement('div');
       botonesContainer.className = 'inventario-botones';
       botonesContainer.style.display = 'flex';
-      botonesContainer.style.justifyContent = 'space-between';
+      botonesContainer.style.justifyContent = 'center';
       botonesContainer.style.marginTop = '8px';
 
       // Botón "Ir a trivia"
@@ -821,22 +821,25 @@ function seleccionarItem(index) {
       irATriviaBtn.textContent = 'Ir a trivia';
       irATriviaBtn.className = 'btn-ir-a-trivia';
       irATriviaBtn.style.flex = '1';
-      irATriviaBtn.style.marginRight = '4px';
-      irATriviaBtn.onclick = () => jugar(trivia.nombre);
+      irATriviaBtn.style.margin = '0 4px';
 
-      // Botón "Descargar Trivia"
-      const descargarTriviaBtn = document.createElement('button');
-      descargarTriviaBtn.textContent = 'Descargar Trivia';
-      descargarTriviaBtn.className = 'btn-descargar-trivia';
-      descargarTriviaBtn.style.flex = '1';
-      descargarTriviaBtn.style.marginLeft = '4px';
-      descargarTriviaBtn.onclick = () => window.open(trivia.url, '_blank');
+      // Intentar abrir la app instalada o redirigir al store
+      irATriviaBtn.onclick = () => {
+        const packageName = `com.glombagames.trivia${trivia.triviaName.toLowerCase()}`; // Nombre del paquete de la app
+        const appUrl = `${packageName}://abrir-trivia`; // Esquema personalizado
+        const fallbackUrl = trivia.url; // URL del store o página web
 
-      // Agregar botones al contenedor
+        // Construir el intent
+        const intentUrl = `intent://abrir-trivia#Intent;scheme=${appUrl};package=${packageName};S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
+
+        // Intentar abrir la app o redirigir al fallback
+        window.location.href = intentUrl;
+      };
+
+      // Agregar el botón al contenedor
       botonesContainer.appendChild(irATriviaBtn);
-      botonesContainer.appendChild(descargarTriviaBtn);
 
-      // Insertar los botones en el DOM, justo antes de la descripción
+      // Insertar el contenedor en el DOM, justo antes de la descripción
       descripcionDiv.parentNode.insertBefore(botonesContainer, descripcionDiv);
     }
   }
