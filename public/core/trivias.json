@@ -2,49 +2,56 @@
   {
     "nombre": "Trivia de la selva",
     "imagenUrl": "./assets/iconoTriviaSelva.png",
-    "url": "https://glombagames.ddns.net/",
+    "url": "https://glombagames.ddns.net/selva",
     "estado": "",
     "coin": "Escarabajo"
   },
   {
     "nombre": "Trivia de Películas",
     "imagenUrl": "./assets/triviaDePeliculas.png",
-    "url": "",
+    "url": "https://glombagames.ddns.net/peliculas",
     "estado": "Próximamente",
     "coin": "Ticket"
   },
   {
-    "nombre": "Trivia de Civilizaciones",
+    "nombre": "Trivia de Mitologia",
     "imagenUrl": "./assets/triviaDeCivilizaciones.png",
-    "url": "",
+    "url": "https://glombagames.ddns.net/mitologia",
     "estado": "Próximamente",
     "coin": "Moneda"
   },
   {
+    "nombre": "Trivia de Civilizaciones",
+    "imagenUrl": "./assets/triviaDeCivilizaciones.png",
+    "url": "https://glombagames.ddns.net/civilizaciones",
+    "estado": "Próximamente",
+    "coin": "Totem"
+  },
+  {
     "nombre": "Trivia de Ciencia",
     "imagenUrl": "./assets/triviaDeCiencia.png",
-    "url": "",
+    "url": "https://glombagames.ddns.net/ciencia",
     "estado": "Próximamente",
     "coin": "Lupa"
   },
   {
     "nombre": "Trivia de Tecnologia",
     "imagenUrl": "./assets/triviaDeTecnologia.png",
-    "url": "",
+    "url": "https://glombagames.ddns.net/tecnologia",
     "estado": "Próximamente",
     "coin": "Chip"
   },
   {
     "nombre": "Trivia de Historia",
     "imagenUrl": "./assets/triviaDeHistoria.png",
-    "url": "",
+    "url": "https://glombagames.ddns.net/historia",
     "estado": "Próximamente",
     "coin": "Libro"
   },
   {
     "nombre": "Trivia de Geografía",
     "imagenUrl": "./assets/triviaDeGeografia.png",
-    "url": "",
+    "url": "https://glombagames.ddns.net/geografia",
     "estado": "Próximamente",
     "coin": "Mapa"
   }
