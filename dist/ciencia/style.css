@@ -1052,7 +1052,7 @@ button.btn-volver-cartel {
   flex: 1; /* Ocupa el espacio restante */
   overflow-y: auto; /* Scroll vertical */
   display: grid; /* Usamos CSS Grid */
-  grid-template-columns: repeat(auto-fit, minmax(80px, max-content)); /* Columnas de tamaño fijo */
+  grid-template-columns: repeat(auto-fit, minmax(60px, max-content)); /* Columnas de tamaño fijo */
   gap: 8px; /* Espaciado reducido entre ítems */
   padding: 8px; /* Espaciado interno del contenedor */
   border: 1px solid #4d4d4d;
@@ -1064,7 +1064,7 @@ button.btn-volver-cartel {
 }
 
 .inventario-item {
-  width: 80px; /* Ancho fijo */
+  width: 60px; /* Ancho fijo */
   aspect-ratio: 1 / 1; /* Mantiene la proporción 1:1 (cuadrado) */
   background: #f0f0f0;
   border: 2px solid transparent;
