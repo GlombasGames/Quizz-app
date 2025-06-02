@@ -1,4 +1,3 @@
-
 const triviaName = window.TRIVIA_ID || 'sinNombre'; // Por defecto, selva
 const isAndroid = __IS_ANDROID__
 const baseURL = isAndroid ? '' : `/${triviaName}`
@@ -375,25 +374,26 @@ function renderMenu() {
 
   app.innerHTML = `
   <div class="header">
-  <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
-     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
-         <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${progreso.intentos}</p>
-     </div>
-     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
+    <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
+    <button class="btn-mochila" onclick="abrirInventario()" tabindex="0"></button>
+    <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
+      <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${progreso.intentos}</p>
+    </div>
+    <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
       <button class="btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
-       <img src="${baseURL}/assets/${coins}" alt="coin">    
+        <img src="${baseURL}/assets/${coins}" alt="coin">    
       </button>
-     </div>
-     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
-     ${totalPuntos} pts
-     </div>
     </div>
-    <div class="logo"></div>
-    <div class="saludo" style="background: ${backgroundColor}; border: 1px solid ${borderColor};">
-      <div>¡Bienvenido, ${progreso.nombre}!</div>
+    <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
+      ${totalPuntos} pts
     </div>
-    <div class="categorias">
-      ${Object.keys(data).map((cat, i) => {
+  </div>
+  <div class="logo"></div>
+  <div class="saludo" style="background: ${backgroundColor}; border: 1px solid ${borderColor};">
+    <div>¡Bienvenido, ${progreso.nombre}!</div>
+  </div>
+  <div class="categorias">
+    ${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
     const yaDesbloqueada = progreso.desbloqueadas
@@ -738,6 +738,60 @@ window.verAnuncio = async function verAnuncio() {
 
 function normalizarNombre(nombre) {
   return nombre.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function abrirInventario() {
+  const inventario = [
+    { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🎒", cantidad: 3 },
+    { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
+  ];
+
+  const inventarioHTML = inventario.map((item, index) => `
+    <div class="inventario-item" onclick="seleccionarItem(${index})" data-index="${index}">
+      <div class="inventario-icon">${item.icono}</div>
+      <div class="inventario-cantidad">${item.cantidad}</div>
+    </div>
+  `).join('');
+
+  app.innerHTML += `
+    <div class="inventario-overlay">
+      <div class="inventario">
+        <button class="btn-cerrar-inventario" onclick="cerrarInventario()">✖</button>
+        <div class="inventario-items">
+          ${inventarioHTML}
+        </div>
+        <div class="inventario-descripcion">
+          Toca un objeto para saber más
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function cerrarInventario() {
+  const overlay = document.querySelector('.inventario-overlay');
+  if (overlay) overlay.remove();
+}
+
+function seleccionarItem(index) {
+  const inventario = [
+    { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🎒", cantidad: 3 },
+    { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
+  ];
+
+  const item = inventario[index];
+  const descripcionDiv = document.querySelector('.inventario-descripcion');
+  const items = document.querySelectorAll('.inventario-item');
+
+  // Quitar selección previa
+  items.forEach(item => item.classList.remove('seleccionado'));
+
+  // Agregar borde amarillo al seleccionado
+  const seleccionado = document.querySelector(`.inventario-item[data-index="${index}"]`);
+  if (seleccionado) seleccionado.classList.add('seleccionado');
+
+  // Mostrar descripción
+  if (descripcionDiv) descripcionDiv.textContent = `${item.nombre}: ${item.descripcion}`;
 }
 
 

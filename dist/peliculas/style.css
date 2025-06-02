@@ -10,6 +10,8 @@ body {
   /* Fondo sólido */
   color: #FFFFFF;
   /* Texto claro */
+  display: flex;
+  flex-direction: column;
 }
 
 @font-face {
@@ -38,11 +40,10 @@ a:hover {
 }
 #banner {
   width: 100%;
-  height: 100px;
+  height: 0px;
+  /* Tamaño fijo del banner */
   background-color: #011f3d;
-  /* Fondo del banner */
   color: #FFFFFF;
-  /* Texto claro */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,10 +51,10 @@ a:hover {
   /* Asegura que el banner esté por encima de otros elementos */
 }
 #app {
-  max-width: 600px;
-  /* Ancho máximo del contenedor */
-  margin: 0 auto;
-  /* Centra el contenedor horizontalmente */
+  flex: 1;
+  /* Ocupa el espacio restante */
+  overflow-y: auto;
+  /* Solo este contenedor tiene scroll */
   background-color: #000000;
   padding: 16px;
   background-size: 100% 100%;
@@ -62,10 +63,6 @@ a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  height: 90%;
-  overflow-y: auto;
-  position: relative;
-  /* Asegura que los elementos sticky se comporten correctamente */
 }
 
 /* Oculta la scrollbar en navegadores Webkit (Chrome, Edge, Safari) */
@@ -602,7 +599,7 @@ button:disabled {
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 50%;
   max-width: 300px;
   aspect-ratio: 1;
   margin-top: 5%;
@@ -985,4 +982,101 @@ button.btn-volver-cartel {
   color: #ffffff;
   text-align: center;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Botón de la mochila */
+.btn-mochila {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: #FFD700;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/107/107831.png'); /* Icono de mochila */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Inventario superpuesto */
+.inventario-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.inventario {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-cerrar-inventario {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.inventario-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.inventario-item {
+  width: 80px;
+  height: 80px;
+  background: #f0f0f0;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.inventario-item.seleccionado {
+  border-color: yellow;
+}
+
+.inventario-icon {
+  font-size: 32px;
+}
+
+.inventario-cantidad {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.inventario-descripcion {
+  margin-top: 16px;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
 }

@@ -1,6 +1,10 @@
 {
   "appId": "com.glombagames.triviaselva",
-  "appName": "Trivia de Selva",
-  "webDir": "distAndroid/selva",
-  "bundledWebRuntime": false
+  "appName": "Selva",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "cleartext": false,
+    "url": "https://glombagames.ddns.net/"
+  }
 }
