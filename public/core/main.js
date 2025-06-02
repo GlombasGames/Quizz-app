@@ -767,12 +767,13 @@ function abrirInventario() {
     </div>
   `;
 }
+window.abrirInventario = abrirInventario;
 
 function cerrarInventario() {
   const overlay = document.querySelector('.inventario-overlay');
   if (overlay) overlay.remove();
 }
-
+window.cerrarInventario = cerrarInventario;
 function seleccionarItem(index) {
   const inventario = [
     { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🎒", cantidad: 3 },
@@ -793,5 +794,7 @@ function seleccionarItem(index) {
   // Mostrar descripción
   if (descripcionDiv) descripcionDiv.textContent = `${item.nombre}: ${item.descripcion}`;
 }
+window.seleccionarItem = seleccionarItem;
+
 
 
