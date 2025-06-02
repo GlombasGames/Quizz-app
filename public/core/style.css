@@ -987,15 +987,15 @@ button.btn-volver-cartel {
 /* Botón de la mochila */
 .btn-mochila {
   position: absolute;
-  left: 5px;
+  left: 0;
   top: 95%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: transparent; /* Sin fondo */
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 24px; /* Tamaño del emoji */
+  font-size: 40px; /* Tamaño del emoji */
   display: flex;
   align-items: center;
   justify-content: center;
