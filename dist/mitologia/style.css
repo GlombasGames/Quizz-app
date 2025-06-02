@@ -988,14 +988,14 @@ button.btn-volver-cartel {
 .btn-mochila {
   position: absolute;
   left: 0;
-  top: 95%;
+  top: 96%;
   width: 40px;
   height: 40px;
   background-color: transparent; /* Sin fondo */
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 40px; /* Tamaño del emoji */
+  font-size: 35px; /* Tamaño del emoji */
   display: flex;
   align-items: center;
   justify-content: center;
