@@ -988,7 +988,7 @@ button.btn-volver-cartel {
 .btn-mochila {
   position: absolute;
   left: 16px;
-  top: 16px;
+  top: 95%;
   width: 40px;
   height: 40px;
   background-color: transparent; /* Sin fondo */
