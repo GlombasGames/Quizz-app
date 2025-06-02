@@ -1015,7 +1015,7 @@ button.btn-volver-cartel {
 }
 
 .inventario {
-  background: #000000;
+  background: #fff;
   border-radius: 8px;
   padding: 16px;
   width: 90%;
@@ -1047,10 +1047,9 @@ button.btn-volver-cartel {
 .inventario-items {
   flex: 1; /* Ocupa el espacio restante */
   overflow-y: auto; /* Scroll vertical */
-  display: flex;
-  flex-direction: column; /* Alinea las filas en una columna */
-  gap: 8px; /* Espaciado entre filas */
-  justify-content: flex-start; /* Alinea las filas al inicio */
+  display: grid; /* Usamos CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Ítems responsivos */
+  gap: 16px; /* Espaciado entre ítems */
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 8px;
