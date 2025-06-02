@@ -740,15 +740,20 @@ function normalizarNombre(nombre) {
   return nombre.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
+const inventario = [
+  { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🐞", cantidad: 3 },
+  { nombre: "Lupa", descripcion: "Puede usarse en la trivia de ciencia", icono: "🔍", cantidad: 3 },
+  { nombre: "Moneda", descripcion: "Puede usarse en la trivia de mitología", icono: "💰", cantidad: 3 },
+  { nombre: "Ticket", descripcion: "Puede usarse en la trivia de películas", icono: "🎟️", cantidad: 3 },
+  { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
+  { nombre: "Poción mágica", descripcion: "Restaura un intento fallido", icono: "🧪", cantidad: 2 },
+  { nombre: "Llave dorada", descripcion: "Desbloquea una categoría especial", icono: "🔑", cantidad: 1 },
+  { nombre: "Mapa", descripcion: "Muestra pistas adicionales", icono: "🗺️", cantidad: 5 },
+  { nombre: "Reloj", descripcion: "Añade tiempo extra", icono: "⏰", cantidad: 3 },
+];
+window.inventario = inventario; // Exponer el inventario globalmente
+
 function abrirInventario() {
-  const inventario = [
-    { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🎒", cantidad: 3 },
-    { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
-    { nombre: "Poción mágica", descripcion: "Restaura un intento fallido", icono: "🧪", cantidad: 2 },
-    { nombre: "Llave dorada", descripcion: "Desbloquea una categoría especial", icono: "🔑", cantidad: 1 },
-    { nombre: "Mapa", descripcion: "Muestra pistas adicionales", icono: "🗺️", cantidad: 5 },
-    { nombre: "Reloj", descripcion: "Añade tiempo extra", icono: "⏰", cantidad: 3 },
-  ];
 
   const inventarioHTML = inventario.map((item, index) => `
     <div class="inventario-item" onclick="seleccionarItem(${index})" data-index="${index}">
@@ -779,17 +784,6 @@ function cerrarInventario() {
 }
 window.cerrarInventario = cerrarInventario;
 function seleccionarItem(index) {
-const inventario = [
-  { nombre: "Escarabajo", descripcion: "Puede usarse en la trivia de la selva", icono: "🐞", cantidad: 3 },
-  { nombre: "Lupa", descripcion: "Puede usarse en la trivia de ciencia", icono: "🔍", cantidad: 3 },
-  { nombre: "Moneda", descripcion: "Puede usarse en la trivia de mitología", icono: "💰", cantidad: 3 },
-  { nombre: "Ticket", descripcion: "Puede usarse en la trivia de películas", icono: "🎟️", cantidad: 3 },
-  { nombre: "Eliminar respuesta", descripcion: "Elimina una respuesta incorrecta de las posibles respuestas", icono: "❌", cantidad: 1 },
-  { nombre: "Poción mágica", descripcion: "Restaura un intento fallido", icono: "🧪", cantidad: 2 },
-  { nombre: "Llave dorada", descripcion: "Desbloquea una categoría especial", icono: "🔑", cantidad: 1 },
-  { nombre: "Mapa", descripcion: "Muestra pistas adicionales", icono: "🗺️", cantidad: 5 },
-  { nombre: "Reloj", descripcion: "Añade tiempo extra", icono: "⏰", cantidad: 3 },
-];
 
   const item = inventario[index];
   const descripcionDiv = document.querySelector('.inventario-descripcion');
