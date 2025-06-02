@@ -1114,8 +1114,8 @@ button.btn-volver-cartel {
 
 .btn-logros {
   position: absolute;
-  left: 0px;
-  top: 100%;
+  left: 40px;
+  top: 96%;
   width: 40px;
   height: 40px;
   background-color: transparent; /* Sin fondo */
