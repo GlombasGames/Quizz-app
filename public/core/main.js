@@ -376,6 +376,7 @@ function renderMenu() {
   <div class="header">
     <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
     <button class="btn-mochila" onclick="abrirInventario()" tabindex="0">🎒</button>
+    <button class="btn-logros" onclick="abrirLogros()" tabindex="0">🏅</button>
     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
       <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${progreso.intentos}</p>
     </div>
@@ -801,5 +802,50 @@ function seleccionarItem(index) {
 }
 window.seleccionarItem = seleccionarItem;
 
+const logros = [
+  { nombre: "Primer paso", descripcion: "Completaste tu primera trivia", icono: "🥇" },
+  { nombre: "Explorador", descripcion: "Jugaste en todas las categorías", icono: "🌍" },
+  { nombre: "Maestro", descripcion: "Obtuviste 100 puntos en total", icono: "🏆" },
+  { nombre: "Velocidad", descripcion: "Completaste una trivia en menos de 1 minuto", icono: "⏱️" },
+];
 
+function abrirLogros() {
+  const logrosHTML = logros.map((logro, index) => `
+    <div class="inventario-item" onclick="seleccionarLogro(${index})" data-index="${index}">
+      <div class="inventario-icon">${logro.icono}</div>
+    </div>
+  `).join('');
+
+  app.innerHTML += `
+    <div class="inventario-overlay">
+      <div class="inventario">
+        <button class="btn-cerrar-inventario" onclick="cerrarInventario()">✖</button>
+        <div class="inventario-items">
+          ${logrosHTML}
+        </div>
+        <div class="inventario-descripcion">
+          Toca un logro para saber más
+        </div>
+      </div>
+    </div>
+  `;
+}
+window.abrirLogros = abrirLogros;
+
+function seleccionarLogro(index) {
+  const logro = logros[index];
+  const descripcionDiv = document.querySelector('.inventario-descripcion');
+  const items = document.querySelectorAll('.inventario-item');
+
+  // Quitar selección previa
+  items.forEach(item => item.classList.remove('seleccionado'));
+
+  // Agregar borde amarillo al seleccionado
+  const seleccionado = document.querySelector(`.inventario-item[data-index="${index}"]`);
+  if (seleccionado) seleccionado.classList.add('seleccionado');
+
+  // Mostrar descripción
+  if (descripcionDiv) descripcionDiv.textContent = `${logro.nombre}: ${logro.descripcion}`;
+}
+window.seleccionarLogro = seleccionarLogro;
 

@@ -1099,7 +1099,7 @@ button.btn-volver-cartel {
 
 /* Descripción del inventario */
 .inventario-descripcion {
-  height: 40px; /* Altura fija para dos líneas */
+  height: 60px; /* Altura fija para dos líneas */
   margin-top: 16px;
   font-size: 16px;
   text-align: center;
@@ -1110,4 +1110,21 @@ button.btn-volver-cartel {
   justify-content: center;
   padding: 4px;
   border-top: 1px solid #ddd;
+}
+
+.btn-logros {
+  position: absolute;
+  left: 60px;
+  top: 96%;
+  width: 40px;
+  height: 40px;
+  background-color: transparent; /* Sin fondo */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 35px; /* Tamaño del emoji */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700; /* Color dorado para el emoji */
 }
