@@ -1054,11 +1054,12 @@ button.btn-volver-cartel {
   border: 1px solid #ddd;
   border-radius: 8px;
   background: #f9f9f9;
+  margin-top: 40px;
 }
 
 .inventario-item {
-  width: 80px;
-  height: 80px;
+  width: 80px; /* Ancho fijo */
+  aspect-ratio: 1 / 1; /* Mantiene la proporción 1:1 (cuadrado) */
   background: #f0f0f0;
   border: 2px solid transparent;
   border-radius: 8px;
