@@ -1050,15 +1050,15 @@ button.btn-volver-cartel {
   flex: 1; /* Ocupa el espacio restante */
   overflow-y: auto; /* Scroll vertical */
   display: grid; /* Usamos CSS Grid */
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); /* Columnas de tamaño fijo */
+  grid-template-columns: repeat(auto-fit, minmax(80px, max-content)); /* Columnas de tamaño fijo */
   gap: 8px; /* Espaciado reducido entre ítems */
   padding: 8px; /* Espaciado interno del contenedor */
   border: 1px solid #4d4d4d;
   border-radius: 8px;
   background: #000000;
   margin-top: 60px;
+  justify-content: center; /* Centra las columnas horizontalmente */
   align-content: start; /* Asegura que las filas se alineen al inicio */
-  justify-content: center; /* Distribuye los ítems horizontalmente */
 }
 
 .inventario-item {
