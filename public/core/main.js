@@ -375,7 +375,7 @@ function renderMenu() {
   app.innerHTML = `
   <div class="header">
     <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
-    <button class="btn-mochila" onclick="abrirInventario()" tabindex="0"></button>
+    <button class="btn-mochila" onclick="abrirInventario()" tabindex="0">🎒</button>
     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
       <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${progreso.intentos}</p>
     </div>
