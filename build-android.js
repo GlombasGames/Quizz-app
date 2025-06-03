@@ -67,9 +67,6 @@ if (!fs.existsSync(googleServicesSrc)) {
 fs.copyFileSync(googleServicesSrc, googleServicesDst);
 console.log('✅ google-services.json copiado');
 
-// Paso 5: Sincronizar con Capacitor
-execSync('npx cap sync android', { stdio: 'inherit' });
-
 //agrego admob
 const manifestPath = path.join(androidBase, 'app', 'src', 'main', 'AndroidManifest.xml');
 let manifestContent = fs.readFileSync(manifestPath, 'utf8');
@@ -94,7 +91,7 @@ const permission = `
 // Buscar el <intent-filter> existente y agregar las líneas dentro de él
 if (!manifestContent.includes(`<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />`)) {
   manifestContent = manifestContent.replace(
-    `<uses-permission android:name="android.permission.INTERNET" />`,`<uses-permission android:name="android.permission.INTERNET" />${permission}`
+    `<uses-permission android:name="android.permission.INTERNET" />`, `<uses-permission android:name="android.permission.INTERNET" />${permission}`
   );
   fs.writeFileSync(manifestPath, manifestContent, 'utf8');
   console.log(`✅ Elementos agregados al <intent-filter> existente en AndroidManifest.xml`);
@@ -112,6 +109,9 @@ if (!manifestContent.includes(`package="${appId}"`)) {
 } else {
   console.log(`ℹ️ El nombre del paquete ya estaba configurado: ${appId}`);
 }
+// Paso 5: Sincronizar con Capacitor
+execSync('npx cap sync android', { stdio: 'inherit' });
+
 // Paso 5.5: Agregar Firebase dependencies si no están en build.gradle
 const gradlePath = path.join(androidBase, 'app', 'build.gradle');
 let gradleContent = fs.readFileSync(gradlePath, 'utf8');
