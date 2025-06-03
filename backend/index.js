@@ -108,102 +108,113 @@ if (fs.existsSync(TOKENS_FILE)) {
 // Middleware para servir archivos estáticos desde la carpeta dist
 app.use(express.static(path.join(__dirname, '../dist')));
 
-// Crear nuevo usuario
-app.post("/usuario", async (req, res) => {
+
+//nuevas apis
+app.post("/api/getUser", async (req, res) => {
     const db = await connectDB();
     const users = db.collection("usuarios");
+    const { nombre } = req.body;
 
-    const { nombre, pais } = req.body;
-    const nuevo = {
-        nombre,
-        pais,
-        puntaje: 0,
-        triviasJugadas: [],
-        logros: [],
-        creado: new Date(),
-    };
+    if (!nombre) {
+        return res.status(400).json({ error: "Nombre requerido" });
+    }
 
-    const result = await users.insertOne(nuevo);
-    res.json({ ok: true, id: result.insertedId });
-});
+    let usuario = await users.findOne({ nombre });
 
-// Obtener datos de usuario por ID
-app.get("/api/usuario/:id", async (req, res) => {
-    const db = await connectDB();
-    const users = db.collection("usuarios");
+    if (!usuario) {
+        // Crear uno nuevo con estado mínimo
+        const nuevoUsuario = {
+            nombre,
+            intentos: 3,
+            puntos: {},
+            desbloqueadas: [],
+            logros: [],
+            creado: new Date(),
+            actualizado: new Date(),
+            version: '1.0'
+        };
+        const result = await users.insertOne(nuevoUsuario);
+        usuario = { ...nuevoUsuario, _id: result.insertedId };
+    }
 
-    const { ObjectId } = require("mongodb");
-    const usuario = await users.findOne({ _id: new ObjectId(req.params.id) });
-
-    if (!usuario) return res.status(404).json({ error: "No encontrado" });
     res.json(usuario);
 });
-// Obtener todos los usuarios
-app.get("/api/usuarios", async (req, res) => {
-    try {
-        const db = await connectDB();
-        const usuarios = await db.collection("usuarios").find({}).toArray();
 
-        if (usuarios.length === 0) {
-            return res.status(404).json({ error: "No hay usuarios" });
-        }
+app.post("/api/syncUserDelta", async (req, res) => {
+    const db = await connectDB();
+    const users = db.collection("usuarios");
 
-        res.json(usuarios);
-    } catch (err) {
-        console.error("Error al obtener usuarios:", err);
-        res.status(500).json({ error: "Error interno del servidor" });
+    const { nombre, delta } = req.body;
+
+    if (!nombre || !delta || typeof delta !== 'object') {
+        return res.status(400).json({ error: "Faltan datos o delta inválido" });
     }
+
+    // Construimos el objeto de actualización con dot notation
+    const setUpdates = {};
+    for (const key in delta) {
+        setUpdates[key] = delta[key];
+    }
+    setUpdates.actualizado = new Date();
+
+    const result = await users.updateOne(
+        { nombre },
+        { $set: setUpdates }
+    );
+
+    if (result.matchedCount === 0) {
+        return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    res.json({ ok: true, actualizado: true });
 });
 
-// Agregar logro a usuario
-app.post("/api/usuario/:id/logro", async (req, res) => {
+app.get("/api/verUsuario/:nombre", async (req, res) => {
     const db = await connectDB();
     const users = db.collection("usuarios");
 
-    const { ObjectId } = require("mongodb");
-    const { logro } = req.body;
+    const nombre = req.params.nombre;
 
-    await users.updateOne(
-        { _id: new ObjectId(req.params.id) },
-        { $addToSet: { logros: logro } }
-    );
+    if (!nombre) {
+        return res.status(400).json({ error: "Nombre requerido" });
+    }
 
-    res.json({ ok: true });
+    const usuario = await users.findOne({ nombre });
+
+    if (!usuario) {
+        return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    res.json(usuario);
 });
 
-// Actualizar puntaje del usuario
-app.post("/api/usuario/:id/puntaje", async (req, res) => {
+app.delete("/api/eliminarUsuario/:nombre", async (req, res) => {
     const db = await connectDB();
     const users = db.collection("usuarios");
 
-    const { ObjectId } = require("mongodb");
-    const { puntos } = req.body;
+    const nombre = req.params.nombre;
 
-    await users.updateOne(
-        { _id: new ObjectId(req.params.id) },
-        { $inc: { puntaje: puntos } }
-    );
+    if (!nombre) {
+        return res.status(400).json({ error: "Nombre requerido" });
+    }
 
-    res.json({ ok: true });
+    const result = await users.deleteOne({ nombre });
+
+    if (result.deletedCount === 0) {
+        return res.status(404).json({ error: "Usuario no encontrado o ya eliminado" });
+    }
+
+    res.json({ ok: true, eliminado: nombre });
 });
 
-// Agregar trivia jugada
-app.post("/api/usuario/:id/trivia", async (req, res) => {
+app.get("/api/listarUsuarios", async (req, res) => {
     const db = await connectDB();
     const users = db.collection("usuarios");
 
-    const { ObjectId } = require("mongodb");
-    const { trivia } = req.body;
+    const lista = await users.find({}).toArray();
 
-    await users.updateOne(
-        { _id: new ObjectId(req.params.id) },
-        { $addToSet: { triviasJugadas: trivia } }
-    );
-
-    res.json({ ok: true });
+    res.json(lista);
 });
-
-
 
 // Ruta para servir archivos JSON específicos
 app.get('/api/categorias.json', (req, res) => {

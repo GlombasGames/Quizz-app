@@ -2,6 +2,8 @@ const triviaName = window.TRIVIA_ID || 'sinNombre'; // Por defecto, selva
 const isAndroid = __IS_ANDROID__
 const baseURL = isAndroid ? '' : `/${triviaName}`
 const tiempoLimite = 120;
+let usuarioActual = null;
+let batchDelta = {};
 
 const backgroundColors = {
   selva: " #0d2401cf",
@@ -44,6 +46,7 @@ import { AppLauncher } from '@capacitor/app-launcher';
 document.addEventListener('deviceready', async () => {
   await initAdMob();
   await showBanner();
+
 });
 
 
@@ -109,23 +112,84 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Ejemplo de uso
-async function inicializarUsuario() {
-
-  let datos = await Storage.get({ key: 'usuario' });
-  datos = JSON.parse(datos.value);
-  if (!datos || !datos.nombre || !datos.version || datos.version !== version) {
-    // Si el archivo no existe o no tiene nombre, inicializa el progreso
-    await pedirNombre();
-    // Carga los datos JSON de las categorías
-    await cargarDatosJSON();
-    return progreso; // Devuelve el progreso inicializado por pedirNombre
-  } else {
-    await cargarDatosJSON();
-    // Si el archivo existe, carga los datos
-    progreso = datos;
-    return progreso;
+function aplicarDelta(obj, delta) {
+  for (const key in delta) {
+    const partes = key.split('.');
+    let destino = obj;
+    for (let i = 0; i < partes.length - 1; i++) {
+      if (!destino[partes[i]]) destino[partes[i]] = {};
+      destino = destino[partes[i]];
+    }
+    destino[partes[partes.length - 1]] = delta[key];
   }
+}
+
+function actualizarJugador(path, valor) {
+  const partes = path.split('.');
+  let destino = usuarioActual;
+  for (let i = 0; i < partes.length - 1; i++) {
+    if (!destino[partes[i]]) destino[partes[i]] = {};
+    destino = destino[partes[i]];
+  }
+  destino[partes[partes.length - 1]] = valor;
+
+  // Guardar en el delta
+  batchDelta[path] = valor;
+  Storage.set({ key: 'batch_delta', value: JSON.stringify(batchDelta) });
+}
+
+async function inicializarUsuario() {
+  // 1. Recuperar nombre guardado
+  const guardado = await Storage.get({ key: 'usuario_nombre' });
+  let nombre = guardado.value;
+
+  // 2. Si no existe, lo pedimos
+  if (!nombre) {
+    nombre = prompt('Ingresá tu nombre:');
+    await Storage.set({ key: 'usuario_nombre', value: nombre });
+  }
+
+  // 3. Guardamos estructura mínima en usuarioActual
+  usuarioActual = { nombre };
+
+  // 4. Pedimos estado completo al backend
+  const response = await fetch('https://glombagames.ddns.net/api/getUser', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nombre })
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error en la API: ${response.status} ${response.statusText}`);
+  }
+
+  try {
+    const userData = await response.json();
+    usuarioActual = userData;
+  } catch (error) {
+    console.error('Error al parsear JSON:', error);
+    throw new Error('La respuesta no es un JSON válido.');
+  }
+
+  // 5. Aplicar delta si quedó alguno pendiente
+  const deltaGuardado = await Storage.get({ key: 'batch_delta' });
+  if (deltaGuardado.value) {
+    const delta = JSON.parse(deltaGuardado.value);
+    aplicarDelta(usuarioActual, delta);
+    await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre: usuarioActual.nombre, delta })
+    });
+    await Storage.remove({ key: 'batch_delta' });
+  }
+
+  // 6. Preparar estructura delta vacía
+  batchDelta = {};
+
+  // 7. Continuás con el resto del flujo
+  await cargarDatosJSON();
+  return usuarioActual;
 }
 
 const buildPath = (key) => isAndroid ? `${key}.json` : `${triviaName}/${key}.json`;
@@ -190,7 +254,7 @@ async function iniciarNotificaciones() {
 
     // Obtener el token FCM
     const token = await FirebaseMessaging.getToken();
-    progreso.token = token.token;
+    usuarioActual.token = token.token;
     console.log('Token FCM:', token.token);
 
     // Enviar el token al servidor
@@ -199,7 +263,7 @@ async function iniciarNotificaciones() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        nombre: progreso.nombre,
+        nombre: usuarioActual.nombre,
         token: token.token,
         triviaId: triviaName,
         coinName,
@@ -233,36 +297,25 @@ const app = document.getElementById('app');
 
 
 let data = {};
-let progreso = {
-  nombre: '',
-  intentos: 3,
-  puntos: {},
-  desbloqueadas: [],
-  actualizado: null,
-  termino: false
-};
-
-// Guardar progreso
-async function guardarProgreso() {
-  await Storage.set({ key: 'usuario', value: JSON.stringify(progreso) });
-}
 
 
 async function pedirNombre() {
   const nombre = prompt('Ingresa tu nombre para comenzar:');
-  progreso.nombre = nombre || 'Jugador';
-  progreso.intentos = 3;
-  progreso.puntos = {};
-  progreso.desbloqueadas = []; // Guardamos los nombres originales
-  progreso.actualizado = null;
-  progreso.version = version
+  usuarioActual = {
+    nombre: nombre || 'Jugador',
+    intentos: 3,
+    puntos: {},
+    desbloqueadas: [],
+    actualizado: null,
+    version
+  };
 
 
   await iniciarNotificaciones()
 
 
-  console.log(progreso.nombre, 'ha sido creado.');
-  await guardarProgreso();
+  console.log(usuarioActual.nombre, 'ha sido creado.');
+
 }
 
 async function verificarServidor() {
@@ -292,24 +345,34 @@ async function verificarVersion() {
 
 async function cargarDatosJSON() {
   try {
-    // Cargar los datos desde el archivo JSON local
-    const res = await fetch('/categorias.json');
-    data = await res.json();
-    console.log('Categorías cargadas desde el archivo local:', data);
+    const preguntasData = await Storage.get({ key: 'categorias' });
+    if (preguntasData.value) {
+      data = JSON.parse(preguntasData.value);
+      console.log('Categorías cargadas desde almacenamiento local:', data);
+    } else {
+      const res = await fetch('/categorias.json');
+      if (!res.ok) {
+        throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
+      }
+      data = await res.json();
+      console.log('Categorías cargadas desde el archivo local:', data);
+
+      await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
+    }
     // Actualizar las categorías desbloqueadas con las primeras dos categorías del archivo JSON
     const categorias = Object.keys(data);
     const primerasCategorias = categorias.slice(0, 2); // Tomar las primeras dos categorías
 
-    // Asegurarse de que las primeras dos categorías estén en progreso.desbloqueadas
+    // Asegurarse de que las primeras dos categorías estén en usuarioActual.desbloqueadas
     primerasCategorias.forEach((categoria) => {
-      if (!progreso.desbloqueadas.includes(categoria)) {
-        progreso.desbloqueadas.push(categoria); // Agregar solo si no está ya en el array
+      if (!usuarioActual.desbloqueadas.includes(categoria)) {
+        usuarioActual.desbloqueadas.push(categoria); // Agregar solo si no está ya en el array
       }
     });
 
-    console.log('Categorías desbloqueadas:', progreso.desbloqueadas);
+    console.log('Categorías desbloqueadas:', usuarioActual.desbloqueadas);
 
-    await guardarProgreso();
+
   } catch (error) {
     console.error('Error al desbloquear categorias basicas:', error);
   }
@@ -353,11 +416,11 @@ async function iniciar() {
 
 function renderMenu() {
   app.style.backgroundImage = `url(${baseURL}/assets/fondoApp.png)`;
-  const totalPuntos = Object.keys(progreso.puntos)
-    .filter(cat => progreso.desbloqueadas.includes(cat))
-    .reduce((total, cat) => total + progreso.puntos[cat], 0);
+  const totalPuntos = Object.keys(usuarioActual.puntos)
+    .filter(cat => usuarioActual.desbloqueadas.includes(cat))
+    .reduce((total, cat) => total + usuarioActual.puntos[cat], 0);
 
-  const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
+  const botonAnuncioDisabled = !tieneConexion() || usuarioActual.intentos >= 3;
 
   app.innerHTML = `
   <div class="header">
@@ -366,7 +429,7 @@ function renderMenu() {
     <button class="btn-logros" onclick="abrirLogros()" tabindex="0">🏅</button>
     <button class="btn-misiones" onclick="abrirMisiones()" tabindex="0">📋</button>
     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
-      <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${progreso.intentos}</p>
+      <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${usuarioActual.intentos}</p>
     </div>
     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
       <button class="btn-anuncio-header" tabindex="0" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
@@ -379,17 +442,17 @@ function renderMenu() {
   </div>
   <div class="logo"></div>
   <div class="saludo" style="background: ${backgroundColor}; border: 1px solid ${borderColor};">
-    <div>¡Bienvenido, ${progreso.nombre}!</div>
+    <div>¡Bienvenido, ${usuarioActual.nombre}!</div>
   </div>
   <div class="categorias">
     ${Object.keys(data).map((cat, i) => {
     const catNormalizada = cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     const puntosRequeridos = i < 2 ? 0 : (i - 1) * 10;
-    const yaDesbloqueada = progreso.desbloqueadas
+    const yaDesbloqueada = usuarioActual.desbloqueadas
       .map(c => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
       .includes(catNormalizada);
     const desbloqueada = yaDesbloqueada || totalPuntos >= puntosRequeridos;
-    const puntos = progreso.puntos[cat] || 0;
+    const puntos = usuarioActual.puntos[cat] || 0;
     const bloqueada = !desbloqueada;
     const puntosNecesarios = bloqueada ? `Necesitas ${puntosRequeridos} pts` : `Puntos: ${puntos}`;
     const nombreConEspacios = cat.replace(/-/g, ' '); // Reemplazar "-" por " "
@@ -498,7 +561,7 @@ function normalizarCategoria(categoria) {
 }
 
 window.jugar = function jugar(categoria) {
-  if (progreso.intentos <= 0) {
+  if (usuarioActual.intentos <= 0) {
     // Seleccionar el botón que fue presionado
     const botonesCategorias = document.querySelectorAll('.categoria-boton');
     botonesCategorias.forEach(boton => {
@@ -637,21 +700,21 @@ async function jugarPartida(categoria) {
 }
 
 function terminarPartida(puntaje, categoria) {
-  progreso.intentos -= 1;
-  progreso.puntos[categoria] = puntaje; // Sobrescribe el puntaje en lugar de sumarlo
+  actualizarJugador('intentos', usuarioActual.intentos - 1);
+  actualizarJugador(`puntos.${categoria}`, puntaje);
   checkDesbloqueos();
-  guardarProgreso();
 
-  const botonAnuncioDisabled = !tieneConexion() || progreso.intentos >= 3;
+
+  const botonAnuncioDisabled = !tieneConexion() || usuarioActual.intentos >= 3;
 
   app.innerHTML = `
     <div class="termino">
       <h2>¡Fin del juego!</h2>
       <p>Respondiste ${preguntasRespondidas}/10.</p>
       <h2>Obtuviste ${puntaje} puntos.</h2>
-      <p>Intentos disponibles: ${progreso.intentos}</p>
+      <p>Intentos disponibles: ${usuarioActual.intentos}</p>
     </div>
-    <button class="btn-reintentar" onclick="jugar('${categoria}')" ${progreso.intentos > 0 ? '' : 'disabled'}>Reintentar categoría</button>
+    <button class="btn-reintentar" onclick="jugar('${categoria}')" ${usuarioActual.intentos > 0 ? '' : 'disabled'}>Reintentar categoría</button>
     <button class="btn-anuncio btn-anuncio-ancho" onclick="verAnuncio()" ${botonAnuncioDisabled ? 'disabled' : ''}>
       Ver anuncio para +1 intento
     </button>
@@ -660,7 +723,7 @@ function terminarPartida(puntaje, categoria) {
 }
 
 function checkDesbloqueos() {
-  const total = Object.values(progreso.puntos).reduce((acc, pts) => acc + pts, 0);
+  const total = Object.values(usuarioActual.puntos).reduce((acc, pts) => acc + pts, 0);
   const orden = Object.keys(data);
 
   for (let i = 0; i < orden.length; i++) {
@@ -669,13 +732,13 @@ function checkDesbloqueos() {
     const necesario = i < 2 ? 0 : (i - 1) * 10; // Las primeras dos categorías no requieren puntos, la tercera empieza en 10
 
     // Si ya está desbloqueada, no hacer nada
-    if (progreso.desbloqueadas.map(normalizarNombre).includes(catNormalizada)) {
+    if (usuarioActual.desbloqueadas.map(normalizarNombre).includes(catNormalizada)) {
       continue;
     }
 
     // Desbloquear la categoría si se cumplen los puntos necesarios
-    if (total >= necesario && !progreso.desbloqueadas.map(normalizarNombre).includes(catNormalizada)) {
-      progreso.desbloqueadas.push(cat); // Guardamos el nombre original
+    if (total >= necesario && !usuarioActual.desbloqueadas.map(normalizarNombre).includes(catNormalizada)) {
+      usuarioActual.desbloqueadas.push(cat); // Guardamos el nombre original
       alert(`¡Desbloqueaste la categoría "${cat}"!`);
     }
   }
@@ -697,8 +760,7 @@ window.verAnuncio = async function verAnuncio() {
     botonVerAnuncio.disabled = false; // Habilitar el botón después de mostrar el anuncio
 
     if (visto) {
-      progreso.intentos += 1;
-      await guardarProgreso();
+      actualizarJugador('intentos', usuarioActual.intentos + 1);
 
       if (app.innerHTML.includes('¡Fin del juego!')) {
         const botonReintentar = app.querySelector('button[onclick^="jugar"]');
@@ -706,10 +768,10 @@ window.verAnuncio = async function verAnuncio() {
 
         const intentosDisponibles = app.querySelector('p:nth-of-type(2)');
         if (intentosDisponibles) {
-          intentosDisponibles.textContent = `Intentos disponibles: ${progreso.intentos}`;
+          intentosDisponibles.textContent = `Intentos disponibles: ${usuarioActual.intentos}`;
         }
 
-        if (progreso.intentos >= 3) {
+        if (usuarioActual.intentos >= 3) {
           const botonVerAnuncio = app.querySelector('button[onclick^="verAnuncio"]');
           if (botonVerAnuncio) botonVerAnuncio.disabled = true;
         }
@@ -956,3 +1018,14 @@ function reclamarPremio(nombreMision) {
 }
 window.reclamarPremio = reclamarPremio;
 
+setInterval(async () => {
+  if (Object.keys(batchDelta).length > 0) {
+    await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre: usuarioActual.nombre, delta: batchDelta })
+    });
+    batchDelta = {};
+    await Storage.remove({ key: 'batch_delta' });
+  }
+}, 5 * 60 * 1000); // Cada 5 minutos
