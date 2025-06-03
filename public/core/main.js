@@ -118,10 +118,10 @@ async function inicializarUsuario() {
     // Si el archivo no existe o no tiene nombre, inicializa el progreso
     await pedirNombre();
     // Carga los datos JSON de las categorías
-    await cargarDatosJSON(true);
+    await cargarDatosJSON();
     return progreso; // Devuelve el progreso inicializado por pedirNombre
   } else {
-    await cargarDatosJSON(false);
+    await cargarDatosJSON();
     // Si el archivo existe, carga los datos
     progreso = datos;
     return progreso;
@@ -290,29 +290,12 @@ async function verificarVersion() {
 }
 
 
-async function cargarDatosJSON(actualizar) {
+async function cargarDatosJSON() {
   try {
-    if (actualizar) {
-      // Si hay conexión y el servidor está disponible, intenta cargar los datos desde el servidor
-      const res = await fetch(`https://glombagames.ddns.net/api/categorias.json?triviaId=${triviaName}`);
-      data = await res.json();
-      console.log('Categorias cargadas desde el servidor:');
-      // Guardar los datos localmente para usarlos en modo offline
-      await Storage.set({ key: 'preguntas', value: JSON.stringify(data) });
-      progreso.actualizado = new Date().toISOString();
-    } else {
-      // Si no hay conexión o el servidor no está disponible, cargar los datos desde el almacenamiento local
-      const preguntasData = await Storage.get({ key: 'preguntas' });
-      if (preguntasData.value) {
-        data = JSON.parse(preguntasData.value);
-        console.log('Categorias cargadas desde Archivos locales');
-      } else {
-        console.error('No se encontraron datos locales para las preguntas.');
-        alert('No se puede cargar el juego sin conexión y sin datos locales.');
-        return;
-      }
-    }
-
+    // Cargar los datos desde el archivo JSON local
+    const res = await fetch('/categorias.json');
+    data = await res.json();
+    console.log('Categorías cargadas desde el archivo local:', data);
     // Actualizar las categorías desbloqueadas con las primeras dos categorías del archivo JSON
     const categorias = Object.keys(data);
     const primerasCategorias = categorias.slice(0, 2); // Tomar las primeras dos categorías
@@ -328,8 +311,7 @@ async function cargarDatosJSON(actualizar) {
 
     await guardarProgreso();
   } catch (error) {
-    console.error('Error al cargar datos JSON:', error);
-    alert('No se pudo cargar el juego. Verifica tu conexión a Internet.');
+    console.error('Error al desbloquear categorias basicas:', error);
   }
 }
 
@@ -340,7 +322,9 @@ function tieneConexion() {
 async function iniciar() {
   try {
     // Precargar imágenes
+    console.time('cargarImagenes');
     await precargarImagenes(assetsList);
+    console.timeEnd('cargarImagenes');
     console.log('Imágenes precargadas correctamente.');
     // Mostrar un mensaje inicial
     app.innerHTML = `<div class="cargando">
@@ -348,11 +332,13 @@ async function iniciar() {
     <div>
     `;
 
-    // Verificar si el servidor está disponible
+    console.time('verificarVersion');
     await verificarVersion();
+    console.timeEnd('verificarVersion');
 
-    // Inicializa los datos del usuario si no existen
+    console.time('inicializarUsuario');
     await inicializarUsuario();
+    console.timeEnd('inicializarUsuario');
 
     setTimeout(() => {
       // Renderiza el menú principal
@@ -378,6 +364,7 @@ function renderMenu() {
     <button class="btn-volver" onclick="renderPrincipal()" tabindex="0"></button>
     <button class="btn-mochila" onclick="abrirInventario()" tabindex="0">🎒</button>
     <button class="btn-logros" onclick="abrirLogros()" tabindex="0">🏅</button>
+    <button class="btn-misiones" onclick="abrirMisiones()" tabindex="0">📋</button>
     <div class="header-item" style="color:${fontColor[0]}; ${cambioFontColor}">
       <p class="coin"><img src="${baseURL}/assets/${coin}" alt="coin"> ${progreso.intentos}</p>
     </div>
@@ -833,7 +820,7 @@ function seleccionarItem(index) {
         try {
           // Verificar si la app está instalada
           const canOpen = await AppLauncher.canOpenUrl({ url: packageName });
-          console.warn({canOpen});
+          console.warn({ canOpen });
           if (canOpen.value) {
             console.log(`✅ Aplicación encontrada: ${canOpen.value}`);
             // Abrir la app instalada
@@ -907,4 +894,65 @@ function seleccionarLogro(index) {
   if (descripcionDiv) descripcionDiv.textContent = `${logro.nombre}: ${logro.descripcion}`;
 }
 window.seleccionarLogro = seleccionarLogro;
+
+function abrirMisiones() {
+  const misiones = [
+    { nombre: "Consumí escarabajos I", progreso: 15, objetivo: 30, icono: "✅", premio: 11 },
+    { nombre: "Consumí lupas I", progreso: 15, objetivo: 30, icono: "⏱️", premio: 11 },
+    { nombre: "Consumí tickets I", progreso: 15, objetivo: 30, icono: "❌", premio: 11 },
+    { nombre: "Consumí monedas I", progreso: 15, objetivo: 30, icono: "⏱️", premio: 11 },
+    { nombre: "Consume un Boost I", progreso: 2, objetivo: 5, icono: "🪙", premio: 1 },
+    { nombre: "Desbloquea una categoria I", progreso: 0, objetivo: 15, icono: "❌", premio: 1 },
+    { nombre: "Jugá PvP I", progreso: 0, objetivo: 40, icono: "⏱️", premio: 1 },
+    { nombre: "Consumí escarabajos II", progreso: 15, objetivo: 50, icono: "🎁", premio: 21 },
+    { nombre: "Consumí lupas II", progreso: 15, objetivo: 50, icono: "⏱️", premio: 21 },
+    { nombre: "Consumí tickets II", progreso: 15, objetivo: 50, icono: "❌", premio: 21 },
+    { nombre: "Consumí monedas II", progreso: 15, objetivo: 50, icono: "🎁", premio: 21 },
+    { nombre: "Consume un Boost II", progreso: 2, objetivo: 15, icono: "✅", premio: 2 },
+    { nombre: "Desbloquea una categoria II", progreso: 0, objetivo: 25, icono: "❌", premio: 2 },
+    { nombre: "Jugá PvP II", progreso: 0, objetivo: 50, icono: "⏱️", premio: 2 },
+    { nombre: "Consumí escarabajos III", progreso: 15, objetivo: 80, icono: "🔑", premio: 31 },
+    { nombre: "Consumí lupas III", progreso: 15, objetivo: 80, icono: "🪙", premio: 31 },
+    { nombre: "Consumí tickets III", progreso: 15, objetivo: 80, icono: "⏱️", premio: 31 },
+    { nombre: "Consumí monedas III", progreso: 15, objetivo: 80, icono: "🔑", premio: 31 },
+    { nombre: "Consume un Boost III", progreso: 2, objetivo: 35, icono: "🎁", premio: 3 },
+    { nombre: "Desbloquea una categoria III", progreso: 0, objetivo: 55, icono: "❌", premio: 3 },
+    { nombre: "Jugá PvP III", progreso: 0, objetivo: 80, icono: "🪙", premio: 3 },
+  ];
+
+  app.innerHTML = `
+    <div class="misiones">
+      <button class="btn-volver" onclick="renderMenu()" tabindex="0" style="top:50px">Volver</button>
+      <h2>Misiones Semanales</h2>
+      ${misiones.map((mision) => {
+    const completada = mision.progreso >= mision.objetivo;
+    return `
+          <div class="mision">
+            <div class="mision-detalles">
+              <div class="mision-nombre">${mision.nombre}</div>
+              <div class="mision-progreso">
+                <progress value="${mision.progreso}" max="${mision.objetivo}"></progress>
+                <span>${mision.progreso} / ${mision.objetivo}</span>
+              </div>
+            </div>
+            <div class="mision-premio">
+              <div class="mision-icono">${mision.icono}</div>
+              <span>${mision.premio}</span>
+            </div>
+            <div class="mision-boton">
+              <button class="btn-reclamar" ${completada ? '' : 'disabled'} onclick="reclamarPremio('${mision.nombre}')">Reclamar</button>
+            </div>
+          </div>
+        `;
+  }).join('')}
+    </div>
+  `;
+}
+window.abrirMisiones = abrirMisiones;
+
+function reclamarPremio(nombreMision) {
+  alert(`Premio de la misión "${nombreMision}" reclamado.`);
+  // Aquí puedes agregar la lógica para actualizar el progreso o dar el premio al jugador
+}
+window.reclamarPremio = reclamarPremio;
 

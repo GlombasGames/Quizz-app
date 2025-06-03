@@ -1,0 +1,22 @@
+[
+  {
+    "id": "mis_01",
+    "tipo": "consumir_monedas",
+    "niveles": [
+      { "objetivo": 30, "premio": { "boost": "eliminar_opcion", "cantidad": 1 } },
+      { "objetivo": 60, "premio": { "boost": "mas_tiempo", "cantidad": 1 } },
+      { "objetivo": 100, "premio": { "boost": "respuesta_correcta", "cantidad": 1 } }
+    ]
+  },
+  {
+    "id": "mis_02",
+    "tipo": "jugar_pvp",
+    "niveles": [
+      { "objetivo": 5, "premio": { "boost": "mas_tiempo", "cantidad": 1 } },
+      { "objetivo": 15, "premio": { "boost": "eliminar_opcion", "cantidad": 1 } },
+      { "objetivo": 40, "premio": { "boost": "respuesta_correcta", "cantidad": 1 } },
+      { "objetivo": 65, "premio": { "boost": "aleatorio", "cantidad": 1 } },
+      { "objetivo": 100, "premio": { "boost": "aleatorio", "cantidad": 2 } }
+    ]
+  }
+]
