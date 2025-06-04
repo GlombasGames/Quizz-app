@@ -166,12 +166,17 @@ async function inicializarUsuario() {
   try {
     const userData = await response.json();
     usuarioActual = userData;
-    
+
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');
   }
-  
+  usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
+  if (!usuarioActual.monedas?.[triviaName]) {
+    actualizarJugador(`monedas.${triviaName}`, 3);
+  }
+
+  await cargarDatosJSON();
   // 5. Aplicar delta si quedó alguno pendiente
   const deltaGuardado = await Storage.get({ key: 'batch_delta' });
   if (deltaGuardado.value) {
@@ -184,13 +189,11 @@ async function inicializarUsuario() {
     });
     await Storage.remove({ key: 'batch_delta' });
   }
-  
-  usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
+
   // 6. Preparar estructura delta vacía
   batchDelta = {};
 
   // 7. Continuás con el resto del flujo
-  await cargarDatosJSON();
   return usuarioActual;
 }
 
@@ -346,14 +349,12 @@ async function cargarDatosJSON() {
     const categorias = Object.keys(data);
     const primerasCategorias = categorias.slice(0, 2); // Tomar las primeras dos categorías
 
-    // Asegurarse de que las primeras dos categorías estén en usuarioActual.desbloqueadas
-    primerasCategorias.forEach((categoria) => {
-      if (!usuarioActual.desbloqueadas.includes(categoria)) {
-        usuarioActual.desbloqueadas.push(categoria); // Agregar solo si no está ya en el array
-      }
-    });
-    // Después del bucle, actualizar el array completo en el delta:
-    actualizarJugador("desbloqueadas", usuarioActual.desbloqueadas);
+    // Fusionar desbloqueadas sin perder las anteriores
+    const nuevasCategorias = primerasCategorias.filter(cat => !usuarioActual.desbloqueadas.includes(cat));
+    if (nuevasCategorias.length > 0) {
+      usuarioActual.desbloqueadas.push(...nuevasCategorias);
+      actualizarJugador("desbloqueadas", usuarioActual.desbloqueadas);
+    }
     console.log('Categorías desbloqueadas:', usuarioActual.desbloqueadas);
 
 
@@ -401,7 +402,7 @@ async function iniciar() {
 function renderMenu() {
   app.style.backgroundImage = `url(${baseURL}/assets/fondoApp.png)`;
   const totalPuntos = Object.keys(usuarioActual.puntos)
-    .filter(cat => usuarioActual.desbloqueadas.includes(cat))
+    .filter(cat => Object.keys(data).includes(cat)) // Filtrar categorías que pertenecen a esta trivia
     .reduce((total, cat) => total + usuarioActual.puntos[cat], 0);
 
   const botonAnuncioDisabled = !tieneConexion() || usuarioActual.intentos >= 3;
@@ -708,7 +709,9 @@ function terminarPartida(puntaje, categoria) {
 }
 
 function checkDesbloqueos() {
-  const total = Object.values(usuarioActual.puntos).reduce((acc, pts) => acc + pts, 0);
+  const total = Object.keys(usuarioActual.puntos)
+    .filter(cat => Object.keys(data).includes(cat)) // Filtrar categorías que pertenecen a esta trivia
+    .reduce((acc, cat) => acc + usuarioActual.puntos[cat], 0);
   const orden = Object.keys(data);
 
   for (let i = 0; i < orden.length; i++) {
@@ -724,6 +727,7 @@ function checkDesbloqueos() {
     // Desbloquear la categoría si se cumplen los puntos necesarios
     if (total >= necesario && !usuarioActual.desbloqueadas.map(normalizarNombre).includes(catNormalizada)) {
       usuarioActual.desbloqueadas.push(cat); // Guardamos el nombre original
+      actualizarJugador("desbloqueadas", usuarioActual.desbloqueadas);
       alert(`¡Desbloqueaste la categoría "${cat}"!`);
     }
   }
@@ -866,6 +870,18 @@ function seleccionarItem(index) {
         const fallbackUrl = trivia.url; // URL del store o página web
 
         try {
+          // 5. Aplicar delta si quedó alguno pendiente
+          const deltaGuardado = await Storage.get({ key: 'batch_delta' });
+          if (deltaGuardado.value) {
+            const delta = JSON.parse(deltaGuardado.value);
+            aplicarDelta(usuarioActual, delta);
+            await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ nombre: usuarioActual.nombre, delta })
+            });
+            await Storage.remove({ key: 'batch_delta' });
+          }
           // Verificar si la app está instalada
           const canOpen = await AppLauncher.canOpenUrl({ url: packageName });
           console.warn({ canOpen });

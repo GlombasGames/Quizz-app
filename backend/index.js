@@ -27,6 +27,10 @@ async function connectarDB() {
     users.createIndex({ nombre: 1 }, { unique: true })
         .then(() => console.log("✅ Índice único en 'nombre' creado"))
         .catch((e) => console.error("❌ Error al crear índice:", e));
+    // Crear índice para puntajeTotal
+    users.createIndex({ puntajeTotal: -1 })
+        .then(() => console.log("✅ Índice en 'puntajeTotal' creado"))
+        .catch((e) => console.error("❌ Error al crear índice puntajeTotal:", e));
 }
 connectarDB()
 
@@ -167,17 +171,36 @@ app.post("/api/syncUserDelta", async (req, res) => {
 
     const { nombre, delta } = req.body;
 
-    if (!nombre || !delta || typeof delta !== 'object') {
+    if (!nombre || !delta || typeof delta !== "object") {
         return res.status(400).json({ error: "Faltan datos o delta inválido" });
     }
 
-    // Construimos el objeto de actualización con dot notation
-    const setUpdates = {};
-    for (const key in delta) {
-        setUpdates[key] = delta[key];
-    }
+    // 1. Construir setUpdates con todo el delta
+    const setUpdates = { ...delta };
     setUpdates.actualizado = new Date();
 
+    // 2. Si hay cambios en puntos, recalcular puntajeTotal
+    const hayCambiosDePuntos = Object.keys(delta).some(k => k.startsWith("puntos."));
+    if (hayCambiosDePuntos) {
+        const usuario = await users.findOne({ nombre });
+        if (!usuario) {
+            return res.status(404).json({ error: "Usuario no encontrado" });
+        }
+
+        // Reconstruir puntos completos
+        const puntosActualizados = { ...usuario.puntos };
+        for (const clave in delta) {
+            if (clave.startsWith("puntos.")) {
+                const categoria = clave.split(".")[1];
+                puntosActualizados[categoria] = delta[clave];
+            }
+        }
+
+        const total = Object.values(puntosActualizados).reduce((a, b) => a + b, 0);
+        setUpdates.puntajeTotal = total;
+    }
+
+    // 3. Aplicar todos los updates juntos
     const result = await users.updateOne(
         { nombre },
         { $set: setUpdates }
@@ -189,6 +212,50 @@ app.post("/api/syncUserDelta", async (req, res) => {
 
     res.json({ ok: true, actualizado: true });
 });
+
+
+app.get("/api/ranking", async (req, res) => {
+
+    let limit = parseInt(req.query.limit, 10);
+    if (isNaN(limit) || limit <= 0 || limit > 1000) {
+        limit = 10;
+    }
+
+    const nombreBuscado = req.query.nombre;
+
+    try {
+        // 1. Obtener top jugadores
+        const topUsuarios = await users
+            .find({ puntajeTotal: { $gt: 0 } })
+            .project({ _id: 0, nombre: 1, puntajeTotal: 1 })
+            .sort({ puntajeTotal: -1 })
+            .limit(limit)
+            .toArray();
+
+        // 2. Si se pasó un nombre, calcular su ranking
+        let posicionUsuario = null;
+        if (nombreBuscado) {
+            const usuario = await users.findOne({ nombre: nombreBuscado });
+            if (usuario && typeof usuario.puntajeTotal === "number") {
+                const cuenta = await users.countDocuments({
+                    puntajeTotal: { $gt: usuario.puntajeTotal }
+                });
+                posicionUsuario = cuenta + 1; // +1 porque arranca en posición 1
+            }
+        }
+
+        res.json({
+            ranking: topUsuarios,
+            posicion: posicionUsuario
+        });
+
+    } catch (error) {
+        console.error("Error al obtener ranking:", error);
+        res.status(500).json({ error: "Error interno al obtener ranking" });
+    }
+});
+
+
 
 app.get("/api/verUsuario/:nombre", async (req, res) => {
 
