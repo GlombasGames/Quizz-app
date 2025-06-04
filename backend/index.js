@@ -335,7 +335,8 @@ app.get("/api/ranking", async (req, res) => {
 
         res.json({
             ranking: topUsuarios,
-            jugador: player
+            jugador: player,
+            lastRankingTime
         });
 
     } catch (error) {
