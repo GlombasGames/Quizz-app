@@ -166,6 +166,8 @@ async function inicializarUsuario() {
   try {
     const userData = await response.json();
     usuarioActual = userData;
+    usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 0;
+
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');
@@ -298,25 +300,6 @@ const app = document.getElementById('app');
 
 let data = {};
 
-
-async function pedirNombre() {
-  const nombre = prompt('Ingresa tu nombre para comenzar:');
-  usuarioActual = {
-    nombre: nombre || 'Jugador',
-    intentos: 3,
-    puntos: {},
-    desbloqueadas: [],
-    actualizado: null,
-    version
-  };
-
-
-  await iniciarNotificaciones()
-
-
-  console.log(usuarioActual.nombre, 'ha sido creado.');
-
-}
 
 async function verificarServidor() {
   try {
@@ -701,7 +684,7 @@ async function jugarPartida(categoria) {
 }
 
 function terminarPartida(puntaje, categoria) {
-  actualizarJugador('intentos', usuarioActual.intentos - 1);
+  actualizarJugador(`monedas.${triviaActual}`, usuarioActual.intentos -1);
   actualizarJugador(`puntos.${categoria}`, puntaje);
   checkDesbloqueos();
 
@@ -761,7 +744,7 @@ window.verAnuncio = async function verAnuncio() {
     botonVerAnuncio.disabled = false; // Habilitar el botón después de mostrar el anuncio
 
     if (visto) {
-      actualizarJugador('intentos', usuarioActual.intentos + 1);
+      actualizarJugador(`monedas.${triviaActual}`, usuarioActual.intentos + 1);
 
       if (app.innerHTML.includes('¡Fin del juego!')) {
         const botonReintentar = app.querySelector('button[onclick^="jugar"]');
