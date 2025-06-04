@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 const connectDB = require("./db");
+const serviceAccount = require('./firebase-admin-config.json');
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
 const PORT = 3100;
@@ -16,17 +17,18 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const db = await connectDB();
-const users = db.collection("usuarios");
-
-// Esto lo ejecutás solo una vez al inicio del servidor
-users.createIndex({ nombre: 1 }, { unique: true })
-    .then(() => console.log("✅ Índice único en 'nombre' creado"))
-    .catch((e) => console.error("❌ Error al crear índice:", e));
-
+async function connectarDB() {
+    const db = await connectDB();
+    const users = db.collection("usuarios");
+    console.log("Conectado a MongoDB ✅");
+    // Esto lo ejecutás solo una vez al inicio del servidor
+    users.createIndex({ nombre: 1 }, { unique: true })
+        .then(() => console.log("✅ Índice único en 'nombre' creado"))
+        .catch((e) => console.error("❌ Error al crear índice:", e));
+}
+connectarDB()
 
 // Inicializar Firebase Admin con tu archivo de configuración
-const serviceAccount = require('./firebase-admin-config.json');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
