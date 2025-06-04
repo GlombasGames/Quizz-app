@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkquizz_app=self.webpackChunkquizz_app||[]).push([[895],{895:(e,n,p)=>{p.r(n),p.d(n,{AppLauncherWeb:()=>r});var a=p(546);class r extends a.E_{async canOpenUrl(e){return{value:!0}}async openUrl(e){return window.open(e.url,"_blank"),{completed:!0}}}}}]);

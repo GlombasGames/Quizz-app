@@ -40,6 +40,7 @@ a:hover {
 }
 #banner {
   width: 100%;
+  max-width: 600px;
   height: 0px;
   /* Tamaño fijo del banner */
   background-color: #011f3d;
@@ -52,6 +53,7 @@ a:hover {
 }
 #app {
   flex: 1;
+  max-width: 600px;
   /* Ocupa el espacio restante */
   overflow-y: auto;
   /* Solo este contenedor tiene scroll */

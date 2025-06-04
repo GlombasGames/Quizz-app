@@ -40,6 +40,7 @@ a:hover {
 }
 #banner {
   width: 100%;
+  max-width: 600px;
   height: 0px;
   /* Tamaño fijo del banner */
   background-color: #011f3d;
@@ -52,6 +53,7 @@ a:hover {
 }
 #app {
   flex: 1;
+  max-width: 600px;
   /* Ocupa el espacio restante */
   overflow-y: auto;
   /* Solo este contenedor tiene scroll */
@@ -1052,7 +1054,7 @@ button.btn-volver-cartel {
   flex: 1; /* Ocupa el espacio restante */
   overflow-y: auto; /* Scroll vertical */
   display: grid; /* Usamos CSS Grid */
-  grid-template-columns: repeat(auto-fit, minmax(60px, max-content)); /* Columnas de tamaño fijo */
+  grid-template-columns: repeat(auto-fit, minmax(70px, max-content)); /* Columnas de tamaño fijo */
   gap: 8px; /* Espaciado reducido entre ítems */
   padding: 8px; /* Espaciado interno del contenedor */
   border: 1px solid #4d4d4d;
@@ -1064,7 +1066,7 @@ button.btn-volver-cartel {
 }
 
 .inventario-item {
-  width: 60px; /* Ancho fijo */
+  width: 70px; /* Ancho fijo */
   aspect-ratio: 1 / 1; /* Mantiene la proporción 1:1 (cuadrado) */
   background: #f0f0f0;
   border: 2px solid transparent;
@@ -1128,6 +1130,25 @@ button.btn-volver-cartel {
   justify-content: center;
   color: #FFD700; /* Color dorado para el emoji */
 }
+
+/* Botón "Misiones" */
+.btn-misiones {
+  position: absolute;
+  left: 80px; /* Ajusta la posición según sea necesario */
+  top: 96%;
+  width: 40px;
+  height: 40px;
+  background-color: transparent; /* Sin fondo */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 35px; /* Tamaño del emoji */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFD700; /* Color dorado para el emoji */
+}
+
 .inventario-botones button {
   padding: 8px;
   font-size: 14px;
@@ -1145,4 +1166,96 @@ button.btn-volver-cartel {
 
 .inventario-botones button:active {
   background-color: #3e8e41;
+}
+
+.misiones {
+  padding: 16px;
+}
+.misiones h2 {
+  text-align: center;
+}
+.mision {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  color: #000; /* Texto negro para fondo blanco */
+  font-size: clamp(14px, 1.5vw, 16px); /* Tamaño de fuente responsivo */
+}
+
+.mision-detalles {
+  flex: 0 0 50%; /* Ocupa el 50% del ancho */
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Espaciado entre elementos */
+}
+
+.mision-nombre {
+  font-weight: bold;
+  font-size: clamp(16px, 2vw, 18px); /* Tamaño de fuente responsivo */
+  text-align: center;
+}
+
+.mision-progreso {
+  display: flex;
+  flex-direction: column; /* Cambia a columna para que el texto esté debajo */
+  gap: 4px; /* Espaciado entre la barra y el texto */
+}
+
+.mision-progreso progress {
+  width: 100%; /* La barra ocupa todo el ancho disponible */
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mision-progreso span {
+  font-size: clamp(12px, 1.2vw, 14px); /* Tamaño de fuente responsivo */
+  text-align: center; /* Centra el texto horizontalmente */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  display: block; /* Asegura que el texto se comporte como un bloque */
+}
+
+.mision-premio {
+  flex: 0 0 20%; /* Ocupa el 20% del ancho */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px; /* Espaciado entre el icono y la cantidad */
+}
+
+.mision-icono {
+  font-size: clamp(20px, 2vw, 24px); /* Tamaño de fuente responsivo */
+}
+
+.mision-premio span {
+  font-size: clamp(12px, 1.2vw, 14px); /* Tamaño de fuente responsivo */
+}
+
+.mision-boton {
+  flex: 0 0 30%; /* Ocupa el 30% del ancho */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-reclamar {
+  padding: 8px 12px;
+  font-size: clamp(12px, 1.2vw, 14px); /* Tamaño de fuente responsivo */
+  border: none;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  width: 100%; /* Asegura que el botón ocupe todo el ancho disponible */
+}
+
+.btn-reclamar:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
