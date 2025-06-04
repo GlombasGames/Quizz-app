@@ -684,7 +684,7 @@ async function jugarPartida(categoria) {
 }
 
 function terminarPartida(puntaje, categoria) {
-  actualizarJugador(`monedas.${triviaActual}`, usuarioActual.intentos -1);
+  actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos -1);
   actualizarJugador(`puntos.${categoria}`, puntaje);
   checkDesbloqueos();
 
@@ -744,7 +744,7 @@ window.verAnuncio = async function verAnuncio() {
     botonVerAnuncio.disabled = false; // Habilitar el botón después de mostrar el anuncio
 
     if (visto) {
-      actualizarJugador(`monedas.${triviaActual}`, usuarioActual.intentos + 1);
+      actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos + 1);
 
       if (app.innerHTML.includes('¡Fin del juego!')) {
         const botonReintentar = app.querySelector('button[onclick^="jugar"]');
