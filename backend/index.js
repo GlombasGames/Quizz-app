@@ -233,20 +233,23 @@ app.get("/api/ranking", async (req, res) => {
             .toArray();
 
         // 2. Si se pasó un nombre, calcular su ranking
-        let posicionUsuario = null;
+        let player = {};
         if (nombreBuscado) {
             const usuario = await users.findOne({ nombre: nombreBuscado });
             if (usuario && typeof usuario.puntajeTotal === "number") {
                 const cuenta = await users.countDocuments({
                     puntajeTotal: { $gt: usuario.puntajeTotal }
                 });
-                posicionUsuario = cuenta + 1; // +1 porque arranca en posición 1
+                player = {
+                    posicion: cuenta + 1, // +1 porque arranca en posición 1
+                    puntaje: usuario.puntajeTotal || null
+                }
             }
         }
 
         res.json({
             ranking: topUsuarios,
-            posicion: posicionUsuario
+            jugador: player ? player : 'no encontrado'
         });
 
     } catch (error) {
