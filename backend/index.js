@@ -126,8 +126,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 
 //nuevas apis
 app.post("/api/getUser", async (req, res) => {
-    const db = await connectDB();
-    const users = db.collection("usuarios");
+
     const { nombre } = req.body;
 
     if (!nombre) {
@@ -214,8 +213,6 @@ app.post("/api/syncUserDelta", async (req, res) => {
 });
 
 app.get("/api/CrearUsuario", async (req, res) => {
-    const db = await connectDB();
-    const users = db.collection("usuarios");
 
     const nombre = req.query.nombre;
     if (!nombre) {
@@ -290,25 +287,36 @@ app.get("/api/CrearUsuario", async (req, res) => {
     res.json({ ok: true, nombre, delta: setUpdates });
 });
 
-app.get("/api/ranking", async (req, res) => {
+let cachedRanking = null;
+let lastRankingTime = 0;
 
+app.get("/api/ranking", async (req, res) => {
     let limit = parseInt(req.query.limit, 10);
     if (isNaN(limit) || limit <= 0 || limit > 1000) {
         limit = 10;
     }
 
     const nombreBuscado = req.query.nombre;
+    const ahora = Date.now();
+    const DURACION_CACHE_MS = 2 * 60 * 1000; // 2 minutos
 
     try {
-        // 1. Obtener top jugadores
-        const topUsuarios = await users
-            .find({ puntajeTotal: { $gt: 0 } })
-            .project({ _id: 0, nombre: 1, puntajeTotal: 1 })
-            .sort({ puntajeTotal: -1 })
-            .limit(limit)
-            .toArray();
+        // 1. Si cache expiró o no existe, volver a calcular
+        if (!cachedRanking || ahora - lastRankingTime > DURACION_CACHE_MS) {
+            cachedRanking = await users
+                .find({ puntajeTotal: { $gt: 0 } })
+                .project({ _id: 0, nombre: 1, puntajeTotal: 1 })
+                .sort({ puntajeTotal: -1 })
+                .limit(1000) // cacheamos hasta 1000
+                .toArray();
 
-        // 2. Si se pasó un nombre, calcular su ranking
+            lastRankingTime = ahora;
+        }
+
+        // 2. Tomar solo los top solicitados (ej: top 10 o top 100)
+        const topUsuarios = cachedRanking.slice(0, limit);
+
+        // 3. Calcular posición del jugador si se pidió
         let player = {};
         if (nombreBuscado) {
             const usuario = await users.findOne({ nombre: nombreBuscado });
@@ -317,15 +325,17 @@ app.get("/api/ranking", async (req, res) => {
                     puntajeTotal: { $gt: usuario.puntajeTotal }
                 });
                 player = {
-                    posicion: cuenta + 1, // +1 porque arranca en posición 1
-                    puntaje: usuario.puntajeTotal || null
-                }
+                    posicion: cuenta + 1,
+                    puntaje: usuario.puntajeTotal
+                };
+            } else {
+                player = { posicion: null, puntaje: null };
             }
         }
 
         res.json({
             ranking: topUsuarios,
-            jugador: player ? player : 'no encontrado'
+            jugador: player
         });
 
     } catch (error) {
