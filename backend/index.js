@@ -17,9 +17,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+let users
+let db
 async function connectarDB() {
-    const db = await connectDB();
-    const users = db.collection("usuarios");
+    db = await connectDB();
+    users = db.collection("usuarios");
     console.log("Conectado a MongoDB ✅");
     // Esto lo ejecutás solo una vez al inicio del servidor
     users.createIndex({ nombre: 1 }, { unique: true })
