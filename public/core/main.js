@@ -369,7 +369,8 @@ async function cargarDatosJSON() {
         usuarioActual.desbloqueadas.push(categoria); // Agregar solo si no está ya en el array
       }
     });
-
+    // Después del bucle, actualizar el array completo en el delta:
+    actualizarJugador("desbloqueadas", usuarioActual.desbloqueadas);
     console.log('Categorías desbloqueadas:', usuarioActual.desbloqueadas);
 
 
@@ -603,7 +604,7 @@ window.jugar = function jugar(categoria) {
 
 async function jugarPartida(categoria) {
   preguntasRespondidas = 0; // Reiniciar el contador de preguntas respondidas
-  const preguntasData = await Storage.get({ key: 'preguntas' });
+  const preguntasData = await Storage.get({ key: 'categorias' });
   const preguntasPorCat = JSON.parse(preguntasData.value)[categoria]?.preguntas || [];
 
   if (preguntasPorCat.length < 10) {

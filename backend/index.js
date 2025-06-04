@@ -16,6 +16,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const db = await connectDB();
+const users = db.collection("usuarios");
+
+// Esto lo ejecutás solo una vez al inicio del servidor
+users.createIndex({ nombre: 1 }, { unique: true })
+    .then(() => console.log("✅ Índice único en 'nombre' creado"))
+    .catch((e) => console.error("❌ Error al crear índice:", e));
 
 
 // Inicializar Firebase Admin con tu archivo de configuración
@@ -119,20 +126,34 @@ app.post("/api/getUser", async (req, res) => {
         return res.status(400).json({ error: "Nombre requerido" });
     }
 
+    // Buscar si ya existe
     let usuario = await users.findOne({ nombre });
 
     if (!usuario) {
-        // Crear uno nuevo con estado mínimo
+        // Crear estructura base
         const nuevoUsuario = {
             nombre,
-            intentos: 3,
+            monedas: {
+                selva: 3,      // Primer trivia, podés cambiar o parametrizar esto
+                ciencia: 0
+            },
+            boosts: {
+                eliminar_opcion: 0,
+                mas_tiempo: 0,
+                respuesta_correcta: 0
+            },
             puntos: {},
-            desbloqueadas: [],
+            desbloqueadas: ["fauna", "arte"],  // Primeras categorías que se desbloquean
             logros: [],
+            misiones: {
+                consumir_monedas: 0,
+                jugar_pvp: 0
+            },
             creado: new Date(),
             actualizado: new Date(),
-            version: '1.0'
+            version: "1.0"
         };
+
         const result = await users.insertOne(nuevoUsuario);
         usuario = { ...nuevoUsuario, _id: result.insertedId };
     }
@@ -141,8 +162,7 @@ app.post("/api/getUser", async (req, res) => {
 });
 
 app.post("/api/syncUserDelta", async (req, res) => {
-    const db = await connectDB();
-    const users = db.collection("usuarios");
+
 
     const { nombre, delta } = req.body;
 
@@ -170,8 +190,7 @@ app.post("/api/syncUserDelta", async (req, res) => {
 });
 
 app.get("/api/verUsuario/:nombre", async (req, res) => {
-    const db = await connectDB();
-    const users = db.collection("usuarios");
+
 
     const nombre = req.params.nombre;
 
@@ -189,8 +208,7 @@ app.get("/api/verUsuario/:nombre", async (req, res) => {
 });
 
 app.delete("/api/eliminarUsuario/:nombre", async (req, res) => {
-    const db = await connectDB();
-    const users = db.collection("usuarios");
+
 
     const nombre = req.params.nombre;
 
@@ -208,8 +226,7 @@ app.delete("/api/eliminarUsuario/:nombre", async (req, res) => {
 });
 
 app.get("/api/listarUsuarios", async (req, res) => {
-    const db = await connectDB();
-    const users = db.collection("usuarios");
+
 
     const lista = await users.find({}).toArray();
 
