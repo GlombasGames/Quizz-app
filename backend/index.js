@@ -209,7 +209,20 @@ app.post("/api/syncUserDelta", async (req, res) => {
         return res.status(404).json({ error: "Usuario no encontrado" });
     }
 
-    res.json({ ok: true, actualizado: true });
+    // 🔁 4. Revisar si hay retorno pendiente
+    const usuarioActualizado = await users.findOne({ nombre });
+    const retornoDelta = usuarioActualizado?.retorno || null;
+
+    // Si existe, lo devolvemos y lo eliminamos para que no se repita
+    if (retornoDelta) {
+        await users.updateOne({ nombre }, { $unset: { retorno: "" } });
+    }
+
+    res.json({
+        ok: true,
+        actualizado: true,
+        ...(retornoDelta ? { retornoDelta } : {})
+    });
 });
 
 app.get("/api/CrearUsuario", async (req, res) => {
@@ -287,9 +300,6 @@ app.get("/api/CrearUsuario", async (req, res) => {
     res.json({ ok: true, nombre, delta: setUpdates });
 });
 
-let cachedRanking = null;
-let lastRankingTime = 0;
-
 app.get("/api/ranking", async (req, res) => {
     let limit = parseInt(req.query.limit, 10);
     if (isNaN(limit) || limit <= 0 || limit > 1000) {
@@ -297,36 +307,44 @@ app.get("/api/ranking", async (req, res) => {
     }
 
     const nombreBuscado = req.query.nombre;
+    const tipoRanking = req.query.tipo === "actividad" ? "actividadTotal" : "puntajeTotal";
+
     const ahora = Date.now();
-    const DURACION_CACHE_MS = 2 * 60 * 1000; // 2 minutos
+    const DURACION_CACHE_MS = 2 * 60 * 1000;
 
     try {
-        // 1. Si cache expiró o no existe, volver a calcular
-        if (!cachedRanking || ahora - lastRankingTime > DURACION_CACHE_MS) {
-            cachedRanking = await users
-                .find({ puntajeTotal: { $gt: 0 } })
-                .project({ _id: 0, nombre: 1, puntajeTotal: 1 })
-                .sort({ puntajeTotal: -1 })
-                .limit(1000) // cacheamos hasta 1000
+        // Cacheamos por tipo de ranking
+        if (!global.cachedRankings) global.cachedRankings = {};
+        if (!global.lastRankingTimes) global.lastRankingTimes = {};
+
+        const cache = global.cachedRankings[tipoRanking];
+        const lastTime = global.lastRankingTimes[tipoRanking] || 0;
+
+        if (!cache || ahora - lastTime > DURACION_CACHE_MS) {
+            const top = await users
+                .find({ [tipoRanking]: { $gt: 0 } })
+                .project({ _id: 0, nombre: 1, [tipoRanking]: 1 })
+                .sort({ [tipoRanking]: -1 })
+                .limit(1000)
                 .toArray();
 
-            lastRankingTime = ahora;
+            global.cachedRankings[tipoRanking] = top;
+            global.lastRankingTimes[tipoRanking] = ahora;
         }
 
-        // 2. Tomar solo los top solicitados (ej: top 10 o top 100)
-        const topUsuarios = cachedRanking.slice(0, limit);
+        const topUsuarios = global.cachedRankings[tipoRanking].slice(0, limit);
 
-        // 3. Calcular posición del jugador si se pidió
+        // Ranking del jugador si se especifica nombre
         let player = {};
         if (nombreBuscado) {
             const usuario = await users.findOne({ nombre: nombreBuscado });
-            if (usuario && typeof usuario.puntajeTotal === "number") {
+            if (usuario && typeof usuario[tipoRanking] === "number") {
                 const cuenta = await users.countDocuments({
-                    puntajeTotal: { $gt: usuario.puntajeTotal }
+                    [tipoRanking]: { $gt: usuario[tipoRanking] }
                 });
                 player = {
                     posicion: cuenta + 1,
-                    puntaje: usuario.puntajeTotal
+                    puntaje: usuario[tipoRanking]
                 };
             } else {
                 player = { posicion: null, puntaje: null };
@@ -334,9 +352,10 @@ app.get("/api/ranking", async (req, res) => {
         }
 
         res.json({
+            tipo: tipoRanking,
             ranking: topUsuarios,
             jugador: player,
-            lastRankingTime
+            lastRankingTime: global.lastRankingTimes[tipoRanking]
         });
 
     } catch (error) {
@@ -344,6 +363,7 @@ app.get("/api/ranking", async (req, res) => {
         res.status(500).json({ error: "Error interno al obtener ranking" });
     }
 });
+
 
 
 

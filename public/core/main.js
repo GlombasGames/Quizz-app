@@ -138,6 +138,26 @@ function actualizarJugador(path, valor) {
   Storage.set({ key: 'batch_delta', value: JSON.stringify(batchDelta) });
 }
 
+
+async function aplicarDeltaPendiente() {
+
+  const deltaGuardado = await Storage.get({ key: 'batch_delta' });
+  if (deltaGuardado.value) {
+    const delta = JSON.parse(deltaGuardado.value);
+    aplicarDelta(usuarioActual, delta);
+    const res = await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre: usuarioActual.nombre, delta })
+    });
+    const data = await res.json();
+    if (data.retornoDelta) {
+      aplicarDelta(usuarioActual, data.retornoDelta);
+    }
+    await Storage.remove({ key: 'batch_delta' });
+  }
+}
+
 async function inicializarUsuario() {
   // 1. Recuperar nombre guardado
   const guardado = await Storage.get({ key: 'usuario_nombre' });
@@ -178,18 +198,7 @@ async function inicializarUsuario() {
 
   await cargarDatosJSON();
   // 5. Aplicar delta si quedó alguno pendiente
-  const deltaGuardado = await Storage.get({ key: 'batch_delta' });
-  if (deltaGuardado.value) {
-    const delta = JSON.parse(deltaGuardado.value);
-    aplicarDelta(usuarioActual, delta);
-    await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ nombre: usuarioActual.nombre, delta })
-    });
-    await Storage.remove({ key: 'batch_delta' });
-  }
-
+  aplicarDeltaPendiente();
   // 6. Preparar estructura delta vacía
   batchDelta = {};
 
@@ -501,7 +510,7 @@ window.nosotros = `
 <h3>¿Qué hacemos?</h3>
 <p>Nos especializamos en el desarrollo de juegos móviles y de escritorio, con un enfoque en la jugabilidad, la narrativa y la estética visual. Nos encanta experimentar con nuevas ideas y mecánicas de juego, y siempre estamos buscando formas de innovar y mejorar nuestras creaciones.</p>
 <h3>¿Cómo puedes contactarnos?</h3>
-<p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes encontrarnos en nuestras redes sociales:<hr> <a href="www.facebook.com/glombagames">/GlombaGames</a><hr> <a href="www.instagram.com/glombagames">@GlombaGames</a><hr> o enviarnos un correo electrónico a:<hr> <a href="mailto:glombagames@gmail.com">glombagames@gmail.com</a></p><hr>
+<p>Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros. Puedes encontrarnos en nuestras redes sociales:<hr> <a href="www.facebook.com/glombagames">/GlombaGames</a><hr> <a href="www.instagram.com/glombagames">@GlombaGames</a><hr> o enviarnos un correo electrónico a:<hr> <a href="mailto:glombagamesok@gmail.com">glombagamesok@gmail.com</a></p><hr>
 <p>¡Gracias por jugar a nuestros juegos y por ser parte de la comunidad de Glomba Games!</p>
 <h3>¿Cómo puedes ayudarnos?</h3>
 <p>Si te gusta nuestro juego, ¡ayúdanos a correr la voz! Comparte el juego con tus amigos y familiares, y déjanos una reseña en la tienda de aplicaciones. Tu apoyo significa mucho para nosotros y nos ayuda a seguir creando juegos increíbles.</p>
@@ -870,18 +879,8 @@ function seleccionarItem(index) {
         const fallbackUrl = trivia.url; // URL del store o página web
 
         try {
-          // 5. Aplicar delta si quedó alguno pendiente
-          const deltaGuardado = await Storage.get({ key: 'batch_delta' });
-          if (deltaGuardado.value) {
-            const delta = JSON.parse(deltaGuardado.value);
-            aplicarDelta(usuarioActual, delta);
-            await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ nombre: usuarioActual.nombre, delta })
-            });
-            await Storage.remove({ key: 'batch_delta' });
-          }
+          //  Aplicar delta si quedó alguno pendiente
+          aplicarDeltaPendiente();
           // Verificar si la app está instalada
           const canOpen = await AppLauncher.canOpenUrl({ url: packageName });
           console.warn({ canOpen });
@@ -1022,12 +1021,18 @@ window.reclamarPremio = reclamarPremio;
 
 setInterval(async () => {
   if (Object.keys(batchDelta).length > 0) {
-    await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
+    const res = await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nombre: usuarioActual.nombre, delta: batchDelta })
     });
     batchDelta = {};
+    const data = await res.json();
+    if (data.retornoDelta) {
+      usuarioActual.buzon = [...(usuarioActual.buzon || []), ...data.retornoDelta];
+      actualizarJugador('buzon', usuarioActual.buzon);
+      alert(`Tienes ${data.retornoDelta.length} nuevos mensajes en tu buzón.`); //mejorar
+    }
     await Storage.remove({ key: 'batch_delta' });
   }
 }, 5 * 60 * 1000); // Cada 5 minutos
