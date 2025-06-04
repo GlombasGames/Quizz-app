@@ -213,6 +213,82 @@ app.post("/api/syncUserDelta", async (req, res) => {
     res.json({ ok: true, actualizado: true });
 });
 
+app.get("/api/CrearUsuario", async (req, res) => {
+    const db = await connectDB();
+    const users = db.collection("usuarios");
+
+    const nombre = req.query.nombre;
+    if (!nombre) {
+        return res.status(400).json({ error: "Falta el nombre en la query" });
+    }
+
+    // Paso 1: Buscar o crear usuario si no existe
+    let usuario = await users.findOne({ nombre });
+
+    if (!usuario) {
+        usuario = {
+            nombre,
+            monedas: { selva: 0, ciencia: 0 },
+            boosts: {
+                eliminar_opcion: 0,
+                mas_tiempo: 0,
+                respuesta_correcta: 0
+            },
+            puntos: {},
+            desbloqueadas: [],
+            logros: [],
+            misiones: {
+                consumir_monedas: 0,
+                jugar_pvp: 0
+            },
+            creado: new Date(),
+            actualizado: new Date(),
+            version: "1.0"
+        };
+        const result = await users.insertOne(usuario);
+        usuario._id = result.insertedId;
+    }
+
+    // Paso 2: Generar datos aleatorios para simular progreso
+    const categorias = ["fauna", "arte", "historia", "cuerpo humano", "electricidad"];
+    const triviaNames = ["selva", "ciencia"];
+
+    const delta = {};
+
+    // puntos
+    categorias.forEach(cat => {
+        const puntos = Math.floor(Math.random() * 200) + 20;
+        delta[`puntos.${cat}`] = puntos;
+    });
+
+    // desbloqueadas (3 aleatorias)
+    const desbloqueadas = categorias.sort(() => 0.5 - Math.random()).slice(0, 3);
+    delta["desbloqueadas"] = Array.from(new Set([...usuario.desbloqueadas, ...desbloqueadas]));
+
+    // monedas (aleatorias entre 0 y 5 por trivia)
+    triviaNames.forEach(trivia => {
+        const monedas = Math.floor(Math.random() * 6);
+        delta[`monedas.${trivia}`] = monedas;
+    });
+
+    // Paso 3: Enviar delta usando la lógica existente
+    const setUpdates = { ...delta, actualizado: new Date() };
+
+    // Si modificamos puntos, actualizar también puntajeTotal
+    const puntosActualizados = { ...usuario.puntos };
+    for (const key in delta) {
+        if (key.startsWith("puntos.")) {
+            const categoria = key.split(".")[1];
+            puntosActualizados[categoria] = delta[key];
+        }
+    }
+    const total = Object.values(puntosActualizados).reduce((a, b) => a + b, 0);
+    setUpdates.puntajeTotal = total;
+
+    await users.updateOne({ nombre }, { $set: setUpdates });
+
+    res.json({ ok: true, nombre, delta: setUpdates });
+});
 
 app.get("/api/ranking", async (req, res) => {
 
