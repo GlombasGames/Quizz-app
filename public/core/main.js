@@ -166,13 +166,12 @@ async function inicializarUsuario() {
   try {
     const userData = await response.json();
     usuarioActual = userData;
-    usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 0;
-
+    
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');
   }
-
+  
   // 5. Aplicar delta si quedó alguno pendiente
   const deltaGuardado = await Storage.get({ key: 'batch_delta' });
   if (deltaGuardado.value) {
@@ -185,7 +184,8 @@ async function inicializarUsuario() {
     });
     await Storage.remove({ key: 'batch_delta' });
   }
-
+  
+  usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
   // 6. Preparar estructura delta vacía
   batchDelta = {};
 
@@ -684,7 +684,8 @@ async function jugarPartida(categoria) {
 }
 
 function terminarPartida(puntaje, categoria) {
-  actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos -1);
+  usuarioActual.intentos -= 1;
+  actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos);
   actualizarJugador(`puntos.${categoria}`, puntaje);
   checkDesbloqueos();
 
@@ -744,7 +745,8 @@ window.verAnuncio = async function verAnuncio() {
     botonVerAnuncio.disabled = false; // Habilitar el botón después de mostrar el anuncio
 
     if (visto) {
-      actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos + 1);
+      usuarioActual.intentos += 1;
+      actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos);
 
       if (app.innerHTML.includes('¡Fin del juego!')) {
         const botonReintentar = app.querySelector('button[onclick^="jugar"]');

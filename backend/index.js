@@ -137,17 +137,14 @@ app.post("/api/getUser", async (req, res) => {
         // Crear estructura base
         const nuevoUsuario = {
             nombre,
-            monedas: {
-                selva: 3,      // Primer trivia, podés cambiar o parametrizar esto
-                ciencia: 0
-            },
+            monedas: {},
             boosts: {
                 eliminar_opcion: 0,
                 mas_tiempo: 0,
                 respuesta_correcta: 0
             },
             puntos: {},
-            desbloqueadas: ["fauna", "arte"],  // Primeras categorías que se desbloquean
+            desbloqueadas: [],  // Primeras categorías que se desbloquean
             logros: [],
             misiones: {
                 consumir_monedas: 0,
