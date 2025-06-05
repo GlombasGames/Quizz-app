@@ -225,6 +225,66 @@ app.post("/api/syncUserDelta", async (req, res) => {
     });
 });
 
+app.post("/api/entregarPremios", async (req, res) => {
+    const tipo = req.body.tipo === "actividad" ? "actividadTotal" : "puntajeTotal";
+    const limit = 100;
+
+    try {
+        // 1. Obtener el ranking
+        const response = await fetch(`http://localhost:3000/api/ranking?limit=${limit}&tipo=${tipo}`);
+        const data = await response.json();
+        const ranking = data.ranking;
+
+        if (!ranking || ranking.length === 0) {
+            return res.status(400).json({ error: "Ranking vacío o inválido." });
+        }
+
+        // 2. Preparar premios
+        const premiosTop10 = {
+            msg: `¡Felicidades! Top 10 del ranking semanal de ${tipo}.`,
+            items: {
+                "cofre especial": 1,
+                "eliminar_pregunta": 2,
+                "moneda_selva": 2
+            }
+        };
+
+        const premiosTop100 = {
+            msg: `¡Buen trabajo! Estás en el Top 100 del ranking semanal de ${tipo}.`,
+            items: {
+                "cofre comun": 1,
+                "moneda_selva": 1
+            }
+        };
+
+        // 3. Premiar jugadores
+        let entregados = 0;
+        for (let i = 0; i < ranking.length; i++) {
+            const jugador = ranking[i];
+            const premio = i < 10 ? premiosTop10 : premiosTop100;
+
+            const usuario = await users.findOne({ nombre: jugador.nombre });
+            if (!usuario) continue;
+
+            const retornoActual = Array.isArray(usuario.retorno) ? usuario.retorno : [];
+
+            await users.updateOne(
+                { nombre: jugador.nombre },
+                { $set: { retorno: [...retornoActual, premio] } }
+            );
+
+            entregados++;
+        }
+
+        res.json({ ok: true, entregados, tipo });
+
+    } catch (error) {
+        console.error("❌ Error al entregar premios:", error);
+        res.status(500).json({ error: "Error interno al entregar premios" });
+    }
+});
+
+
 app.get("/api/CrearUsuario", async (req, res) => {
 
     const nombre = req.query.nombre;

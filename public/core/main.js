@@ -138,6 +138,12 @@ function actualizarJugador(path, valor) {
   Storage.set({ key: 'batch_delta', value: JSON.stringify(batchDelta) });
 }
 
+async function gastarCoin() {
+  usuarioActual.intentos -= 1;
+  actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos);
+  usuarioActual.actividadTotal += 1;
+  actualizarJugador('actividadTotal', usuarioActual.actividadTotal);
+}
 
 async function aplicarDeltaPendiente() {
 
@@ -596,6 +602,7 @@ window.jugar = function jugar(categoria) {
 };
 
 async function jugarPartida(categoria) {
+  await gastarCoin(); // Gastar una moneda al iniciar la partida
   preguntasRespondidas = 0; // Reiniciar el contador de preguntas respondidas
   const preguntasData = await Storage.get({ key: 'categorias' });
   const preguntasPorCat = JSON.parse(preguntasData.value)[categoria]?.preguntas || [];
@@ -694,8 +701,6 @@ async function jugarPartida(categoria) {
 }
 
 function terminarPartida(puntaje, categoria) {
-  usuarioActual.intentos -= 1;
-  actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos);
   actualizarJugador(`puntos.${categoria}`, puntaje);
   checkDesbloqueos();
 
