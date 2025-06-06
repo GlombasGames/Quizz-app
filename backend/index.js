@@ -300,9 +300,9 @@ app.get("/api/CrearUsuario", async (req, res) => {
             nombre,
             monedas: { selva: 0, ciencia: 0 },
             boosts: {
-                eliminar_opcion: 0,
-                mas_tiempo: 0,
-                respuesta_correcta: 0
+                eliminar_opcion: 1,
+                mas_tiempo: 2,
+                respuesta_correcta: 1
             },
             puntos: {},
             desbloqueadas: [],
@@ -311,6 +311,8 @@ app.get("/api/CrearUsuario", async (req, res) => {
                 consumir_monedas: 0,
                 jugar_pvp: 0
             },
+            actividadTotal: 0,
+            puntajeTotal: 0,
             creado: new Date(),
             actualizado: new Date(),
             version: "1.0"
