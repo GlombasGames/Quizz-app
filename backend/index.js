@@ -150,8 +150,13 @@ app.post("/api/getUser", async (req, res) => {
             desbloqueadas: [],  // Primeras categorías que se desbloquean
             logros: [],
             misiones: {
-                consumir_monedas: 0,
-                jugar_pvp: 0
+                escarabajosConsumidos: 32,
+                lupasConsumidos: 13,
+                ticketsConsumidos: 57,
+                monedasConsumidos: 5,
+                boostConsumidos: 15,
+                categoriasDesbloqueadas: 2,
+                pvpJugados: 3
             },
             creado: new Date(),
             actualizado: new Date(),
