@@ -308,8 +308,13 @@ app.get("/api/CrearUsuario", async (req, res) => {
             desbloqueadas: [],
             logros: [],
             misiones: {
-                consumir_monedas: 0,
-                jugar_pvp: 0
+                escarabajosConsumidos: 32,
+                lupasConsumidos: 13,
+                ticketsConsumidos: 57,
+                monedasConsumidos: 5,
+                boostConsumidos: 15,
+                categoriasDesbloqueadas: 2,
+                pvpJugados: 3
             },
             actividadTotal: 0,
             puntajeTotal: 0,

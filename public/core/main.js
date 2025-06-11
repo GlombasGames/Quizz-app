@@ -85,6 +85,19 @@ const coin = 'coin.png'; // Nombre del archivo de la moneda
 const coinName = coinsNames[triviaName]; // Nombre de la moneda según la trivia
 const coins = 'ad.png'; // Nombre del archivo de la moneda
 
+const items = {
+  respuesta_correcta: { icono: "✅", descripcion: "Te da una respuesta correcta en la trivia." },
+  mas_tiempo: { icono: "⏱️", descripcion: "Te da más tiempo para responder en la trivia." },
+  eliminar_opcion: { icono: "❌", descripcion: "Elimina una opción incorrecta de las posibles respuestas." },
+  cofre_normal: { icono: "🎁", descripcion: "Te da un cofre normal con recompensas aleatorias." },
+  cofre_pequeño: { icono: "🪙", descripcion: "Te da un cofre pequeño con recompensas aleatorias." },
+  cofre_grande: { icono: "🎁", descripcion: "Te da un cofre grande con recompensas aleatorias." },
+  llave: { icono: "🔑", descripcion: "Te da una llave para desbloquear una categoría especial." }
+}
+
+window.items = items;
+
+
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 let version
 document.addEventListener('DOMContentLoaded', () => {
@@ -317,6 +330,7 @@ const app = document.getElementById('app');
 
 
 let data = {};
+let dataMisiones = {};
 
 
 async function verificarServidor() {
@@ -372,6 +386,31 @@ async function cargarDatosJSON() {
     }
     console.log('Categorías desbloqueadas:', usuarioActual.desbloqueadas);
 
+    // Cargar misiones
+    const misionesData = await Storage.get({ key: 'misiones' });
+    if (misionesData.value) {
+      // Recuperar misiones desde el almacenamiento local
+      dataMisiones = JSON.parse(misionesData.value);
+      console.log('Misiones cargadas desde almacenamiento local:', dataMisiones);
+    } else {
+      // Cargar misiones desde el archivo JSON
+      const res = await fetch('/misiones.json');
+      if (!res.ok) {
+        throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
+      }
+      dataMisiones = await res.json();
+      console.log('Misiones cargadas desde el archivo local:', dataMisiones);
+      // Si fechaReinicio está vacía, calcular una nueva fecha de reinicio
+      if (dataMisiones.fechaReinicio === "") {
+        const fechaActual = new Date();
+        const nuevaFechaReinicio = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000); // Sumar 7 días
+        dataMisiones.fechaReinicio = nuevaFechaReinicio.toISOString(); // Guardar en formato ISO
+        console.log('Nueva fecha de reinicio calculada:', dataMisiones.fechaReinicio);
+      }
+      // Guardar misiones en el almacenamiento local
+      await Storage.set({ key: 'misiones', value: JSON.stringify(dataMisiones) });
+    }
+    console.warn('Misiones cargadas:', dataMisiones);
 
   } catch (error) {
     console.error('Error al desbloquear categorias basicas:', error);
@@ -963,58 +1002,46 @@ function seleccionarLogro(index) {
 }
 window.seleccionarLogro = seleccionarLogro;
 
-function abrirMisiones() {
-  const misiones = [
-    { nombre: "Consumí escarabajos I", progreso: 15, objetivo: 30, icono: "✅", premio: 11 },
-    { nombre: "Consumí lupas I", progreso: 15, objetivo: 30, icono: "⏱️", premio: 11 },
-    { nombre: "Consumí tickets I", progreso: 15, objetivo: 30, icono: "❌", premio: 11 },
-    { nombre: "Consumí monedas I", progreso: 15, objetivo: 30, icono: "⏱️", premio: 11 },
-    { nombre: "Consume un Boost I", progreso: 2, objetivo: 5, icono: "🪙", premio: 1 },
-    { nombre: "Desbloquea una categoria I", progreso: 0, objetivo: 15, icono: "❌", premio: 1 },
-    { nombre: "Jugá PvP I", progreso: 0, objetivo: 40, icono: "⏱️", premio: 1 },
-    { nombre: "Consumí escarabajos II", progreso: 15, objetivo: 50, icono: "🎁", premio: 21 },
-    { nombre: "Consumí lupas II", progreso: 15, objetivo: 50, icono: "⏱️", premio: 21 },
-    { nombre: "Consumí tickets II", progreso: 15, objetivo: 50, icono: "❌", premio: 21 },
-    { nombre: "Consumí monedas II", progreso: 15, objetivo: 50, icono: "🎁", premio: 21 },
-    { nombre: "Consume un Boost II", progreso: 2, objetivo: 15, icono: "✅", premio: 2 },
-    { nombre: "Desbloquea una categoria II", progreso: 0, objetivo: 25, icono: "❌", premio: 2 },
-    { nombre: "Jugá PvP II", progreso: 0, objetivo: 50, icono: "⏱️", premio: 2 },
-    { nombre: "Consumí escarabajos III", progreso: 15, objetivo: 80, icono: "🔑", premio: 31 },
-    { nombre: "Consumí lupas III", progreso: 15, objetivo: 80, icono: "🪙", premio: 31 },
-    { nombre: "Consumí tickets III", progreso: 15, objetivo: 80, icono: "⏱️", premio: 31 },
-    { nombre: "Consumí monedas III", progreso: 15, objetivo: 80, icono: "🔑", premio: 31 },
-    { nombre: "Consume un Boost III", progreso: 2, objetivo: 35, icono: "🎁", premio: 3 },
-    { nombre: "Desbloquea una categoria III", progreso: 0, objetivo: 55, icono: "❌", premio: 3 },
-    { nombre: "Jugá PvP III", progreso: 0, objetivo: 80, icono: "🪙", premio: 3 },
-  ];
+async function abrirMisiones() {
+  if (!Array.isArray(dataMisiones.misiones) || dataMisiones.misiones.length === 0) {
+
+    app.innerHTML = '<p>No hay misiones disponibles en este momento.</p>';
+    return;
+  }
+  const fechaReinicio = new Date(dataMisiones.fechaReinicio);
+  const tiempoRestante = fechaReinicio - new Date();
+  const dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
   app.innerHTML = `
-    <div class="misiones">
-      <button class="btn-volver" onclick="renderMenu()" tabindex="0" style="top:50px">Volver</button>
-      <h2>Misiones Semanales</h2>
-      ${misiones.map((mision) => {
-    const completada = mision.progreso >= mision.objetivo;
+  <div class="misiones">
+    <button class="btn-volver" onclick="renderMenu()" tabindex="0" style="top:50px">Volver</button>
+    <h2>Misiones Semanales</h2>
+    <p>Próximo reinicio: ${dias} días y ${horas} horas</p>
+    ${dataMisiones.misiones.map((mision) => {
+    const completada = usuarioActual.misiones[mision.progreso] >= mision.objetivo;
+    const icono = items[mision.nombre]?.icono || '❓';
     return `
-          <div class="mision">
-            <div class="mision-detalles">
-              <div class="mision-nombre">${mision.nombre}</div>
-              <div class="mision-progreso">
-                <progress value="${mision.progreso}" max="${mision.objetivo}"></progress>
-                <span>${mision.progreso} / ${mision.objetivo}</span>
-              </div>
-            </div>
-            <div class="mision-premio">
-              <div class="mision-icono">${mision.icono}</div>
-              <span>${mision.premio}</span>
-            </div>
-            <div class="mision-boton">
-              <button class="btn-reclamar" ${completada ? '' : 'disabled'} onclick="reclamarPremio('${mision.nombre}')">Reclamar</button>
+        <div class="mision">
+          <div class="mision-detalles">
+            <div class="mision-nombre">${mision.nombre}</div>
+            <div class="mision-progreso">
+              <progress value="${usuarioActual.misiones[mision.progreso]|| 0}" max="${mision.objetivo}"></progress>
+              <span>${usuarioActual.misiones[mision.progreso]|| 0} / ${mision.objetivo}</span>
             </div>
           </div>
-        `;
+          <div class="mision-premio">
+            <div class="mision-icono">${icono}</div>
+            <span>${mision.cantidad}</span>
+          </div>
+          <div class="mision-boton">
+            <button class="btn-reclamar" ${completada ? '' : 'disabled'} onclick="reclamarPremio('${mision.nombre}')">Reclamar</button>
+          </div>
+        </div>
+      `;
   }).join('')}
-    </div>
-  `;
+  </div>
+`;
 }
 window.abrirMisiones = abrirMisiones;
 

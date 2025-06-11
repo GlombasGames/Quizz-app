@@ -1,0 +1,152 @@
+{   
+    "fechaReinicio": "",
+    "misiones": [
+        {
+            "nombre": "Consumí escarabajos I",
+            "progreso": "escarabajosConsumidos",
+            "objetivo": 30,
+            "cantidad": 11,
+            "premio": "respuesta_correcta"
+        },
+        {
+            "nombre": "Consumí lupas I",
+            "progreso": "lupasConsumidos",
+            "objetivo": 30,
+            "cantidad": 11,
+            "premio": "mas_tiempo"
+        },
+        {
+            "nombre": "Consumí tickets I",
+            "progreso": "ticketsConsumidos",
+            "objetivo": 30,
+            "cantidad": 11,
+            "premio": "eliminar_opcion"
+        },
+        {
+            "nombre": "Consumí monedas I",
+            "progreso": "monedasConsumidos",
+            "objetivo": 30,
+            "cantidad": 11,
+            "premio": "mas_tiempo"
+        },
+        {
+            "nombre": "Consume un Boost I",
+            "progreso": "boostConsumidos",
+            "objetivo": 5,
+            "cantidad": 1,
+            "premio": "cofre_normal"
+        },
+        {
+            "nombre": "Desbloquea una categoria I",
+            "progreso": "categoriasDesbloqueadas",
+            "objetivo": 15,
+            "cantidad": 1,
+            "premio": "eliminar_opcion"
+        },
+        {
+            "nombre": "Jugá PvP I",
+            "progreso": "pvpJugados",
+            "objetivo": 40,
+            "cantidad": 1,
+            "premio": "mas_tiempo"
+        },
+        {
+            "nombre": "Consumí escarabajos II",
+            "progreso": "escarabajosConsumidos",
+            "objetivo": 50,
+            "cantidad": 21,
+            "premio": "cofre_normal"
+        },
+        {
+            "nombre": "Consumí lupas II",
+            "progreso": "lupasConsumidos",
+            "objetivo": 50,
+            "cantidad": 21,
+            "premio": "mas_tiempo"
+        },
+        {
+            "nombre": "Consumí tickets II",
+            "progreso": "ticketsConsumidos",
+            "objetivo": 50,
+            "cantidad": 21,
+            "premio": "eliminar_opcion"
+        },
+        {
+            "nombre": "Consumí monedas II",
+            "progreso": "monedasConsumidos",
+            "objetivo": 50,
+            "cantidad": 21,
+            "premio": "cofre_normal"
+        },
+        {
+            "nombre": "Consume un Boost II",
+            "progreso": "boostConsumidos",
+            "objetivo": 15,
+            "cantidad": 2,
+            "premio": "respuesta_correcta"
+        },
+        {
+            "nombre": "Desbloquea una categoria II",
+            "progreso": "categoriasDesbloqueadas",
+            "objetivo": 25,
+            "cantidad": 2,
+            "premio": "eliminar_opcion"
+        },
+        {
+            "nombre": "Jugá PvP II",
+            "progreso": "pvpJugados",
+            "objetivo": 50,
+            "cantidad": 2,
+            "premio": "mas_tiempo"
+        },
+        {
+            "nombre": "Consumí escarabajos III",
+            "progreso": "escarabajosConsumidos",
+            "objetivo": 80,
+            "cantidad": 31,
+            "premio": "llave"
+        },
+        {
+            "nombre": "Consumí lupas III",
+            "progreso": "lupasConsumidos",
+            "objetivo": 80,
+            "cantidad": 31,
+            "premio": "cofre_pequeño"
+        },
+        {
+            "nombre": "Consumí tickets III",
+            "progreso": "ticketsConsumidos",
+            "objetivo": 80,
+            "cantidad": 31,
+            "premio": "mas_tiempo"
+        },
+        {
+            "nombre": "Consumí monedas III",
+            "progreso": "monedasConsumidos",
+            "objetivo": 80,
+            "cantidad": 31,
+            "premio": "llave"
+        },
+        {
+            "nombre": "Consume un Boost III",
+            "progreso": "boostConsumidos",
+            "objetivo": 35,
+            "cantidad": 3,
+            "premio": "cofre_normal"
+        },
+        {
+            "nombre": "Desbloquea una categoria III",
+            "progreso": "categoriasDesbloqueadas",
+            "objetivo": 55,
+            "cantidad": 3,
+            "premio": "eliminar_opcion"
+        },
+        {
+            "nombre": "Jugá PvP III",
+            "progreso": "pvpJugados",
+            "objetivo": 80,
+            "cantidad": 3,
+            "premio": "cofre_grande"
+        }
+    ]
+}

@@ -61,6 +61,7 @@ module.exports = {
       patterns: [
         // Estos archivos son iguales para todos
         { from: './public/core/style.css', to: './style.css' },
+        { from: './public/core/misiones.json', to: './misiones.json' },
         { from: './public/core/firebase-messaging-sw.js', to: './firebase-messaging-sw.js' },
         { from: './public/core/fonts', to: './fonts' },
 
