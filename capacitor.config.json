@@ -1,6 +1,6 @@
 {
-  "appId": "com.glombagames.triviaciencia",
-  "appName": "Trivia de Ciencia",
-  "webDir": "distAndroid/ciencia",
+  "appId": "com.glombagames.triviaselva",
+  "appName": "Trivia de Selva",
+  "webDir": "distAndroid/selva",
   "bundledWebRuntime": false
 }

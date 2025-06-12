@@ -180,22 +180,20 @@ async function aplicarDeltaPendiente() {
 async function inicializarUsuario() {
   // 1. Recuperar nombre guardado
   const guardado = await Storage.get({ key: 'usuario_nombre' });
-  let nombre = guardado.value;
+  let nombre = guardado.value.nombre;
+  let password = guardado.value.password;
 
-  // 2. Si no existe, lo pedimos
-  if (!nombre) {
-    nombre = prompt('Ingresá tu nombre:');
-    await Storage.set({ key: 'usuario_nombre', value: nombre });
+  if (!nombre || !password) {
+    console.warn("No hay usuario guardado, se requiere login");
+    renderLogin();
+    throw new Error("Login requerido"); // Detiene el flujo hasta que se loguee
   }
-
-  // 3. Guardamos estructura mínima en usuarioActual
-  usuarioActual = { nombre };
 
   // 4. Pedimos estado completo al backend
   const response = await fetch('https://glombagames.ddns.net/api/getUser', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ nombre })
+    body: JSON.stringify({ nombre, password })
   });
 
   if (!response.ok) {
@@ -205,15 +203,14 @@ async function inicializarUsuario() {
   try {
     const userData = await response.json();
     usuarioActual = userData;
-
+    await Storage.set({ key: 'usuario_nombre', value: { nombre, password } });
+    console.warn("Login existoso:", nombre)
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');
   }
-  usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
-  if (!usuarioActual.monedas?.[triviaName]) {
-    actualizarJugador(`monedas.${triviaName}`, 3);
-  }
+
+  !usuarioActual? renderLogin(): ""
 
   await cargarDatosJSON();
   // 5. Aplicar delta si quedó alguno pendiente
@@ -1104,9 +1101,9 @@ async function abrirMisiones() {
 window.abrirMisiones = abrirMisiones;
 
 async function reclamarPremio(nombreMision) {
-  alert(`Premio de la misión "${nombreMision}" reclamado.`);
   dataMisiones.misiones = dataMisiones.misiones.map(mision => {
     if (mision.nombre === nombreMision) {
+      alert(`Premio de la misión "${nombreMision}" reclamado.`);
       if (!usuarioActual.reclamadas.includes(mision.nombre)) {
         usuarioActual.reclamadas.push(mision.nombre); // Agregar la misión reclamada si no existe
         actualizarJugador('reclamadas', usuarioActual.reclamadas);
@@ -1114,21 +1111,105 @@ async function reclamarPremio(nombreMision) {
     }
     return mision;
   });
-  await Storage.set({ key: 'misiones', value: JSON.stringify(dataMisiones) });
   abrirMisiones(); // Volver a abrir las misiones para reflejar el cambio
 }
 
+function renderLogin() {
+  app.style.backgroundImage = `url(${baseURL}/assets/fondoApp.png)`;
 
+  app.innerHTML = `
+    <div class="login-container" style="display: flex; flex-direction: column; align-items: center; padding: 40px; color: white;">
+      <h2 style="margin-bottom: 20px;">Iniciar Sesión</h2>
+      
+      <input id="login-nombre" placeholder="Usuario" style="padding: 10px; margin-bottom: 10px; width: 80%; max-width: 300px;" />
+      <input id="login-password" type="password" placeholder="Contraseña" style="padding: 10px; margin-bottom: 20px; width: 80%; max-width: 300px;" />
+      
+      <button onclick="loginUsuario()" style="padding: 10px 20px; margin-bottom: 10px;">Entrar</button>
+      <button onclick="crearCuenta()" style="padding: 10px 20px;">Crear cuenta</button>
+    </div>
+  `;
+}
+
+window.renderLogin = renderLogin;
+
+window.loginUsuario = async function loginUsuario() {
+  const nombre = document.getElementById('login-nombre').value.trim();
+  const password = document.getElementById('login-password').value;
+
+  if (!nombre || !password) {
+    alert("Debes completar ambos campos.");
+    return;
+  }
+
+  console.log("Intentando iniciar sesión con:", { nombre, password });
+  // Acá irá la lógica de validación contra backend
+  // 3. Guardamos estructura mínima en usuarioActual
+  usuarioActual = { nombre };
+
+  // 4. Pedimos estado completo al backend
+  const response = await fetch('https://glombagames.ddns.net/api/getUser', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nombre, password })
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error en la API: ${response.status} ${response.statusText}`);
+  }
+
+  try {
+    const userData = await response.json();
+    usuarioActual = userData;
+    await Storage.set({ key: 'usuario_nombre', value: { nombre, password } });
+    console.warn("Login existoso:", nombre)
+  } catch (error) {
+    console.error('Error al parsear JSON:', error);
+    throw new Error('La respuesta no es un JSON válido.');
+  }
+
+};
+
+window.crearCuenta = async function crearCuenta() {
+  const nombre = document.getElementById('login-nombre').value.trim();
+  const password = document.getElementById('login-password').value;
+
+  if (!nombre || !password) {
+    alert("Debes completar ambos campos.");
+    return;
+  }
+
+  console.log("Intentando crear cuenta con:", { nombre, password });
+  // Acá irá la lógica para crear usuario en el backend
+  const response = await fetch('https://glombagames.ddns.net/api/createUser', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nombre, password })
+  });
+  try {
+    const userData = await response.json();
+    usuarioActual = userData;
+    await Storage.set({ key: 'usuario_nombre', value: { nombre, password } });
+    console.warn("Login existoso:", nombre)
+  } catch (error) {
+    console.error('Error al parsear JSON:', error);
+    throw new Error('La respuesta no es un JSON válido.');
+  }
+  usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
+  if (!usuarioActual.monedas?.[triviaName]) {
+    actualizarJugador(`monedas.${triviaName}`, 3);
+  }
+};
+
+
+// Función para aplicar el delta pendiente al pausar la app
 window.reclamarPremio = reclamarPremio;
 document.addEventListener('pause', async () => {
-  console.warn('Aplicando delta pendiente al pausar la app');
-await aplicarDeltaPendiente()
+  await aplicarDeltaPendiente()
 })
-
+// Función para volver a cargar el usuario actual y cargar pantalla menu al reanudar la app
 document.addEventListener('resume', async () => {
- await inicializarUsuario();
- renderMenu()
- console.warn('Aplicando inicializarUsuario Resumed la app');
+  await inicializarUsuario();
+  renderMenu()
 })
 
 

@@ -127,10 +127,34 @@ app.use(express.static(path.join(__dirname, '../dist')));
 //nuevas apis
 app.post("/api/getUser", async (req, res) => {
 
-    const { nombre } = req.body;
+    const { nombre, password } = req.body;
 
-    if (!nombre) {
-        return res.status(400).json({ error: "Nombre requerido" });
+    if (!nombre || !password) {
+        return res.status(400).json({ error: "Nombre o contraseña no llegan" });
+    }
+
+    // Buscar si ya existe
+    let usuario = await users.findOne({ nombre });
+
+    if (!usuario) {
+        console.warn("Usuario no existe:", nombre); 
+        return res.status(404).json({ error: "Usuario no existe" });
+    }
+
+    if( usuario.password !== password) {
+        console.warn("Contraseña incorrecta para el usuario:", nombre);
+        return res.status(401).json({ error: "Contraseña incorrecta" });
+    }
+    delete usuario.password; // No enviar la contraseña al cliente
+    res.json(usuario);
+});
+
+app.post("/api/createUser", async (req, res) => {
+
+    const { nombre, password } = req.body;
+
+    if (!nombre || !password) {
+        return res.status(400).json({ error: "Nombre o contraseña no llegan" });
     }
 
     // Buscar si ya existe
@@ -140,6 +164,7 @@ app.post("/api/getUser", async (req, res) => {
         // Crear estructura base
         const nuevoUsuario = {
             nombre,
+            password, // Guardar la contraseña (en producción deberías encriptarla)
             monedas: {},
             boosts: {
                 eliminar_opcion: 0,
@@ -168,7 +193,7 @@ app.post("/api/getUser", async (req, res) => {
         const result = await users.insertOne(nuevoUsuario);
         usuario = { ...nuevoUsuario, _id: result.insertedId };
     }
-
+    delete usuario.password; // No enviar la contraseña al cliente
     res.json(usuario);
 });
 
