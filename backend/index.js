@@ -128,7 +128,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.post("/api/getUser", async (req, res) => {
 
     const { nombre, password } = req.body;
-
+    console.error("getUser", nombre, password);
     if (!nombre || !password) {
         return res.status(400).json({ error: "Nombre o contraseña no llegan" });
     }

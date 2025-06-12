@@ -179,9 +179,10 @@ async function aplicarDeltaPendiente() {
 
 async function inicializarUsuario() {
   // 1. Recuperar nombre guardado
-  const guardado = await Storage.get({ key: 'usuario_nombre' });
-  let nombre = guardado.value.nombre;
-  let password = guardado.value.password;
+  let guardado = await Storage.get({ key: 'usuario_nombre' });
+  guardado = JSON.parse(guardado.value);
+  let nombre = JSON.parse(guardado.nombre);
+  let password = JSON.parse(guardado.password);
 
   if (!nombre || !password) {
     console.warn("No hay usuario guardado, se requiere login");
@@ -210,7 +211,7 @@ async function inicializarUsuario() {
     throw new Error('La respuesta no es un JSON válido.');
   }
 
-  !usuarioActual? renderLogin(): ""
+  !usuarioActual ? renderLogin() : ""
 
   await cargarDatosJSON();
   // 5. Aplicar delta si quedó alguno pendiente
