@@ -97,7 +97,14 @@ const items = {
 
 window.items = items;
 
-
+let viendoAd = false; // Variable para controlar si se está viendo un anuncio
+let seleccionadas = [];
+let timer = null;
+let categoriaActual = null;
+let puntaje = 0;
+let index = 0;
+let tiempoRestante = 0
+let preguntaExtra = false;
 let preguntasRespondidas = 0; // Contador global para preguntas respondidas
 let version
 document.addEventListener('DOMContentLoaded', () => {
@@ -184,9 +191,9 @@ async function inicializarUsuario() {
   let password = null
   if (guardado.value) {
     guardado = JSON.parse(guardado.value);
-    console.warn("levanta de guardado:", guardado);
-    nombre = JSON.parse(guardado.nombre);
-    password = JSON.parse(guardado.password);
+    console.warn("levanta de guardado:", guardado.nombre, guardado.password);
+    nombre = guardado.nombre;
+    password = guardado.password;
   }
 
   if (!nombre || !password) {
@@ -215,18 +222,25 @@ async function inicializarUsuario() {
     throw new Error('La respuesta no es un JSON válido.');
   }
 
-  !usuarioActual ? renderLogin() : ""
+  if (!usuarioActual) {
+    renderLogin();
+  } else {
+    if (usuarioActual.monedas?.[triviaName] === undefined) {
+      usuarioActual.intentos = 3
+      actualizarJugador(`monedas.${triviaName}`, 3);
+    } else {
+      usuarioActual.intentos = usuarioActual.monedas?.[triviaName];
+    }
+    await cargarDatosJSON();
+    // 5. Aplicar delta si quedó alguno pendiente
+    aplicarDeltaPendiente();
+    // 6. Preparar estructura delta vacía
+    batchDelta = {};
 
-
-  await cargarDatosJSON();
-  // 5. Aplicar delta si quedó alguno pendiente
-  aplicarDeltaPendiente();
-  // 6. Preparar estructura delta vacía
-  batchDelta = {};
-
-  renderPrincipal();
-  // 7. Continuás con el resto del flujo
-  return usuarioActual;
+    renderPrincipal();
+    // 7. Continuás con el resto del flujo
+    return usuarioActual;
+  }
 }
 
 const buildPath = (key) => isAndroid ? `${key}.json` : `${triviaName}/${key}.json`;
@@ -643,20 +657,24 @@ window.jugar = function jugar(categoria) {
 };
 
 async function jugarPartida(categoria) {
-  await gastarCoin(); // Gastar una moneda al iniciar la partida
+  categoriaActual = categoria;
+  index = 0;
+  puntaje = 0;
+  preguntaExtra = false;
   preguntasRespondidas = 0; // Reiniciar el contador de preguntas respondidas
   const preguntasData = await Storage.get({ key: 'categorias' });
   const preguntasPorCat = JSON.parse(preguntasData.value)[categoria]?.preguntas || [];
 
-  if (preguntasPorCat.length < 10) {
+  if (preguntasPorCat.length < 11) {
     alert('No hay suficientes preguntas en esta categoría.');
     return renderMenu();
   }
+  await gastarCoin(); // Gastar una moneda al iniciar la partida
 
   // Seleccionar y mezclar preguntas
-  const seleccionadas = preguntasPorCat
+  seleccionadas = preguntasPorCat
     .sort(() => Math.random() - 0.5)
-    .slice(0, 10)
+    .slice(0, 11)
     .map(pregunta => {
       const opcionesMezcladas = [...pregunta.opciones].sort(() => Math.random() - 0.5);
 
@@ -672,11 +690,8 @@ async function jugarPartida(categoria) {
       };
     });
 
-  let puntaje = 0;
-  let index = 0;
+  tiempoRestante = tiempoLimite;
 
-  let tiempoRestante = tiempoLimite;
-  let timer;
 
   const actualizarTiempo = () => {
     const tiempoElemento = document.querySelector('.header div:first-child');
@@ -685,10 +700,26 @@ async function jugarPartida(categoria) {
     }
   };
 
+  window.actualizarTiempo = actualizarTiempo;
+
   const renderPregunta = () => {
-    if (index >= seleccionadas.length || tiempoRestante <= 0) {
+    if ((index >= 10 && !preguntaExtra) || (index >= 11) || tiempoRestante <= 0) {
       clearInterval(timer);
-      return terminarPartida(puntaje, categoria);
+
+      if (!preguntaExtra) {
+        // Preguntar si quiere ver anuncio para 1 pregunta más
+        app.innerHTML = `
+      <div class="termino">
+        <h2>¡Fin del juego!</h2>
+        <p>Respondiste ${preguntasRespondidas}/10.</p>
+        <p>Obtuviste ${puntaje} puntos.</p>
+        <p>¿Querés una pregunta más?</p>
+        <button onclick="verPreguntaExtra()">Ver anuncio y seguir</button>
+        <button onclick="terminarPartida(${puntaje}, '${categoria}')">Terminar</button>
+      </div>
+    `;
+      }
+      return;
     }
 
     const pregunta = seleccionadas[index];
@@ -696,7 +727,7 @@ async function jugarPartida(categoria) {
     app.innerHTML = `
     <div class="header">
       <div class="header-item-p" style="color:${fontColor[0]};${cambioFontColor}">Tiempo: ${tiempoRestante}s</div>
-      <div class="header-item-p" style="color:${fontColor[0]};${cambioFontColor}">Pregunta ${index + 1} / 10</div>
+      <div class="header-item-p" style="color:${fontColor[0]};${cambioFontColor}">Pregunta ${!preguntaExtra ? index + 1 : preguntasRespondidas + 1} / ${preguntaExtra ? 11 : 10}</div>
     </div>
     <div class="pregunta">
       <h2>${pregunta.pregunta}</h2>
@@ -711,6 +742,9 @@ async function jugarPartida(categoria) {
   `;
   };
 
+  window.renderPregunta = renderPregunta;
+
+
   window.responder = (opcionSeleccionada) => {
     preguntasRespondidas++; // Incrementar el contador de preguntas respondidas
 
@@ -723,7 +757,11 @@ async function jugarPartida(categoria) {
     if (opcionSeleccionada === correcta) {
       puntaje++;
     }
-
+    if (preguntaExtra) {
+      clearInterval(timer);
+      terminarPartida(puntaje, categoriaActual);
+      return
+    }
     index++;
     renderPregunta();
   };
@@ -734,12 +772,52 @@ async function jugarPartida(categoria) {
 
     if (tiempoRestante <= 0) {
       clearInterval(timer);
-      terminarPartida(puntaje, categoria);
+      // Mostrar la opción para ver el anuncio si no es pregunta extra
+      app.innerHTML = `
+      <div class="termino">
+        <h2>¡Fin del juego!</h2>
+        <p>Respondiste ${preguntasRespondidas}/${preguntaExtra ? 11 : 10}.</p>
+        <p>Obtuviste ${puntaje} puntos.</p>
+        <p>¿Querés una pregunta más?</p>
+        <button onclick="verPreguntaExtra()">Ver anuncio y seguir</button>
+        <button onclick="terminarPartida(${puntaje}, '${categoria}')">Terminar</button>
+      </div>
+    `;
+
     }
   }, 1000);
 
   renderPregunta();
 }
+
+window.verPreguntaExtra = async function verPreguntaExtra() {
+  viendoAd = true; // Indicar que se está viendo un anuncio
+  const visto = await showRewarded();
+
+  if (!visto) {
+    alert("Debes ver el anuncio completo para continuar.");
+    terminarPartida(puntaje, categoriaActual);
+    return;
+  }
+
+  // Configurar para 1 pregunta extra
+  preguntaExtra = true;
+  tiempoRestante = 30;
+  index = 10; // Mostrar la pregunta 11
+  timer = setInterval(() => {
+    tiempoRestante--;
+    actualizarTiempo();
+
+    if (tiempoRestante <= 0) {
+      clearInterval(timer);
+
+      terminarPartida(puntaje, categoriaActual);
+
+    }
+  }, 1000);
+
+  renderPregunta(); // Mostrar la nueva pregunta
+};
 
 function terminarPartida(puntaje, categoria) {
   actualizarJugador(`puntos.${categoria}`, puntaje);
@@ -751,7 +829,7 @@ function terminarPartida(puntaje, categoria) {
   app.innerHTML = `
     <div class="termino">
       <h2>¡Fin del juego!</h2>
-      <p>Respondiste ${preguntasRespondidas}/10.</p>
+      <p>Respondiste ${preguntasRespondidas}/${preguntaExtra ? 11 : 10}.</p>
       <h2>Obtuviste ${puntaje} puntos.</h2>
       <p>Intentos disponibles: ${usuarioActual.intentos}</p>
     </div>
@@ -761,7 +839,10 @@ function terminarPartida(puntaje, categoria) {
     </button>
     <button onclick="renderMenu()">Volver al menú</button>
   `;
+
+  preguntaExtra = false; // Reiniciar la pregunta extra
 }
+window.terminarPartida = terminarPartida;
 
 function checkDesbloqueos() {
   const total = Object.keys(usuarioActual.puntos)
@@ -797,6 +878,7 @@ window.verAnuncio = async function verAnuncio() {
   }
 
   try {
+    viendoAd = true; // Indicar que se está viendo un anuncio
     botonVerAnuncio.disabled = true; // Deshabilitar el botón mientras se muestra el anuncio
     app.style.pointerEvents = 'none'; // Deshabilitar interacciones con la app mientras se muestra el anuncio
     const visto = await showRewarded(); // devuelve true si fue completado
@@ -1166,7 +1248,7 @@ window.loginUsuario = async function loginUsuario() {
     const userData = await response.json();
     usuarioActual = userData;
     const usuario = { nombre, password }
-    await Storage.set({ key: 'usuario_nombre', value: { usuario } });
+    await Storage.set({ key: 'usuario_nombre', value: JSON.stringify(usuario) });
     console.warn("Login existoso:", nombre)
   } catch (error) {
     console.error('Error al parsear JSON:', error);
@@ -1175,9 +1257,11 @@ window.loginUsuario = async function loginUsuario() {
   if (!usuarioActual) {
     renderLogin();
   } else {
-    usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
-    if (!usuarioActual.monedas?.[triviaName]) {
+    if (usuarioActual.monedas?.[triviaName] === undefined) {
+      usuarioActual.intentos = 3
       actualizarJugador(`monedas.${triviaName}`, 3);
+    } else {
+      usuarioActual.intentos = usuarioActual.monedas?.[triviaName];
     }
     await cargarDatosJSON();
     // 5. Aplicar delta si quedó alguno pendiente
@@ -1209,7 +1293,7 @@ window.crearCuenta = async function crearCuenta() {
     const userData = await response.json();
     usuarioActual = userData;
     const usuario = { nombre, password }
-    await Storage.set({ key: 'usuario_nombre', value: { usuario } });
+    await Storage.set({ key: 'usuario_nombre', value: JSON.stringify(usuario) });
     console.warn("Crear cuenta existoso:", nombre)
   } catch (error) {
     console.error('Error al parsear JSON:', error);
@@ -1218,9 +1302,11 @@ window.crearCuenta = async function crearCuenta() {
   if (!usuarioActual) {
     renderLogin();
   } else {
-    usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
-    if (!usuarioActual.monedas?.[triviaName]) {
+    if (usuarioActual.monedas?.[triviaName] === undefined) {
+      usuarioActual.intentos = 3
       actualizarJugador(`monedas.${triviaName}`, 3);
+    } else {
+      usuarioActual.intentos = usuarioActual.monedas?.[triviaName];
     }
     await cargarDatosJSON();
     // 5. Aplicar delta si quedó alguno pendiente
@@ -1240,8 +1326,13 @@ document.addEventListener('pause', async () => {
 })
 // Función para volver a cargar el usuario actual y cargar pantalla menu al reanudar la app
 document.addEventListener('resume', async () => {
-  await inicializarUsuario();
-  renderMenu()
+  if (!viendoAd) {
+    await aplicarDeltaPendiente()
+    await inicializarUsuario();
+    renderMenu()
+  } else {
+    viendoAd = false; // Reiniciar el estado de viendoAd al reanudar
+  }
 })
 
 
