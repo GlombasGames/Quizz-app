@@ -180,16 +180,20 @@ async function aplicarDeltaPendiente() {
 async function inicializarUsuario() {
   // 1. Recuperar nombre guardado
   let guardado = await Storage.get({ key: 'usuario_nombre' });
-  guardado = JSON.parse(guardado.value);
-  let nombre = JSON.parse(guardado.nombre);
-  let password = JSON.parse(guardado.password);
+  let nombre = null
+  let password = null
+  if (guardado.value) {
+    guardado = JSON.parse(guardado.value);
+    console.warn("levanta de guardado:", guardado);
+    nombre = JSON.parse(guardado.nombre);
+    password = JSON.parse(guardado.password);
+  }
 
   if (!nombre || !password) {
     console.warn("No hay usuario guardado, se requiere login");
     renderLogin();
-    throw new Error("Login requerido"); // Detiene el flujo hasta que se loguee
+    return;
   }
-
   // 4. Pedimos estado completo al backend
   const response = await fetch('https://glombagames.ddns.net/api/getUser', {
     method: 'POST',
@@ -198,13 +202,13 @@ async function inicializarUsuario() {
   });
 
   if (!response.ok) {
-    throw new Error(`Error en la API: ${response.status} ${response.statusText}`);
+    console.warn("No se encuentra usuario en DB, se requiere login");
+    renderLogin();
   }
 
   try {
     const userData = await response.json();
     usuarioActual = userData;
-    await Storage.set({ key: 'usuario_nombre', value: { nombre, password } });
     console.warn("Login existoso:", nombre)
   } catch (error) {
     console.error('Error al parsear JSON:', error);
@@ -213,12 +217,14 @@ async function inicializarUsuario() {
 
   !usuarioActual ? renderLogin() : ""
 
+
   await cargarDatosJSON();
   // 5. Aplicar delta si quedó alguno pendiente
   aplicarDeltaPendiente();
   // 6. Preparar estructura delta vacía
   batchDelta = {};
 
+  renderPrincipal();
   // 7. Continuás con el resto del flujo
   return usuarioActual;
 }
@@ -437,12 +443,10 @@ async function iniciar() {
     console.timeEnd('verificarVersion');
 
     console.time('inicializarUsuario');
-    await inicializarUsuario();
     console.timeEnd('inicializarUsuario');
 
     setTimeout(() => {
-      // Renderiza el menú principal
-      renderPrincipal();
+      inicializarUsuario();
     }, 2000);
 
   } catch (error) {
@@ -1161,13 +1165,28 @@ window.loginUsuario = async function loginUsuario() {
   try {
     const userData = await response.json();
     usuarioActual = userData;
-    await Storage.set({ key: 'usuario_nombre', value: { nombre, password } });
+    const usuario = { nombre, password }
+    await Storage.set({ key: 'usuario_nombre', value: { usuario } });
     console.warn("Login existoso:", nombre)
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');
   }
+  if (!usuarioActual) {
+    renderLogin();
+  } else {
+    usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
+    if (!usuarioActual.monedas?.[triviaName]) {
+      actualizarJugador(`monedas.${triviaName}`, 3);
+    }
+    await cargarDatosJSON();
+    // 5. Aplicar delta si quedó alguno pendiente
+    aplicarDeltaPendiente();
+    // 6. Preparar estructura delta vacía
+    batchDelta = {};
 
+    renderPrincipal();
+  }
 };
 
 window.crearCuenta = async function crearCuenta() {
@@ -1189,15 +1208,27 @@ window.crearCuenta = async function crearCuenta() {
   try {
     const userData = await response.json();
     usuarioActual = userData;
-    await Storage.set({ key: 'usuario_nombre', value: { nombre, password } });
-    console.warn("Login existoso:", nombre)
+    const usuario = { nombre, password }
+    await Storage.set({ key: 'usuario_nombre', value: { usuario } });
+    console.warn("Crear cuenta existoso:", nombre)
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');
   }
-  usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
-  if (!usuarioActual.monedas?.[triviaName]) {
-    actualizarJugador(`monedas.${triviaName}`, 3);
+  if (!usuarioActual) {
+    renderLogin();
+  } else {
+    usuarioActual.intentos = usuarioActual.monedas?.[triviaName] || 3;
+    if (!usuarioActual.monedas?.[triviaName]) {
+      actualizarJugador(`monedas.${triviaName}`, 3);
+    }
+    await cargarDatosJSON();
+    // 5. Aplicar delta si quedó alguno pendiente
+    aplicarDeltaPendiente();
+    // 6. Preparar estructura delta vacía
+    batchDelta = {};
+
+    renderPrincipal();
   }
 };
 
