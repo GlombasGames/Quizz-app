@@ -158,6 +158,8 @@ app.post("/api/getUser", async (req, res) => {
                 categoriasDesbloqueadas: 2,
                 pvpJugados: 3
             },
+            reclamadas: [],
+            fechaReinicio: "",
             creado: new Date(),
             actualizado: new Date(),
             version: "1.0"

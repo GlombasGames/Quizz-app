@@ -400,18 +400,18 @@ async function cargarDatosJSON() {
       }
       dataMisiones = await res.json();
       console.log('Misiones cargadas desde el archivo local:', dataMisiones);
-      // Si fechaReinicio está vacía, calcular una nueva fecha de reinicio
-      if (dataMisiones.fechaReinicio === "") {
-        const fechaActual = new Date();
-        const nuevaFechaReinicio = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000); // Sumar 7 días
-        dataMisiones.fechaReinicio = nuevaFechaReinicio.toISOString(); // Guardar en formato ISO
-        console.log('Nueva fecha de reinicio calculada:', dataMisiones.fechaReinicio);
-      }
       // Guardar misiones en el almacenamiento local
       await Storage.set({ key: 'misiones', value: JSON.stringify(dataMisiones) });
     }
     console.warn('Misiones cargadas:', dataMisiones);
-
+    // Si fechaReinicio está vacía, calcular una nueva fecha de reinicio
+    if (!usuarioActual.fechaReinicio) {
+      const fechaActual = new Date();
+      const nuevaFechaReinicio = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000); // Sumar 7 días
+      usuarioActual.fechaReinicio = nuevaFechaReinicio.toISOString(); // Guardar en formato ISO
+      actualizarJugador('fechaReinicio', usuarioActual.fechaReinicio);
+      console.log('Nueva fecha de reinicio calculada:', usuarioActual.fechaReinicio);
+    }
   } catch (error) {
     console.error('Error al desbloquear categorias basicas:', error);
   }
@@ -1002,32 +1002,90 @@ function seleccionarLogro(index) {
 }
 window.seleccionarLogro = seleccionarLogro;
 
+function testFechaReinicio() {
+  const nuevaFechaReinicio = new Date(Date.now() - 1); // Sumar 8 días a la fecha actual
+  usuarioActual.fechaReinicio = nuevaFechaReinicio.toISOString();
+  actualizarJugador('fechaReinicio', usuarioActual.fechaReinicio); // Guardar la nueva fecha de reinicio
+  abrirMisiones(); // Llamar a la función para reflejar el cambio
+}
+window.testFechaReinicio = testFechaReinicio;
+
+function agregarPuntos() {
+  Object.keys(usuarioActual.misiones).forEach((key) => {
+    usuarioActual.misiones[key] += 5;
+  });
+  actualizarJugador('misiones', usuarioActual.misiones);
+  abrirMisiones(); // Llamar a la función para reflejar el cambio
+}
+window.agregarPuntos = agregarPuntos;
+
+
+
 async function abrirMisiones() {
   if (!Array.isArray(dataMisiones.misiones) || dataMisiones.misiones.length === 0) {
-
-    app.innerHTML = '<p>No hay misiones disponibles en este momento.</p>';
+    app.innerHTML = `
+    <button class="btn-volver" onclick="renderMenu()" tabindex="0" style="top:50px">Volver</button>
+    <p>No hay misiones disponibles en este momento.</p>`;
     return;
   }
-  const fechaReinicio = new Date(dataMisiones.fechaReinicio);
-  const tiempoRestante = fechaReinicio - new Date();
+
+  // Asegurarse de que usuarioActual.reclamadas esté inicializado como un array
+  if (!Array.isArray(usuarioActual.reclamadas)) {
+    usuarioActual.reclamadas = [];
+    actualizarJugador('reclamadas', usuarioActual.reclamadas); // Guardar el cambio
+  }
+
+  let fechaReinicio = new Date(usuarioActual.fechaReinicio);
+  const fechaActual = new Date();
+
+  // Verificar si la fecha de reinicio ya pasó
+  if (fechaReinicio < fechaActual) {
+    // Recorrer el objeto usuarioActual.misiones y poner todas sus propiedades en 0
+    Object.keys(usuarioActual.misiones).forEach((key) => {
+      usuarioActual.misiones[key] = 0;
+    });
+    // Actualizar la información usando la función actualizarJugador
+    actualizarJugador('misiones', usuarioActual.misiones);
+    usuarioActual.reclamadas = []; // Reiniciar las misiones reclamadas
+    actualizarJugador('reclamadas', usuarioActual.reclamadas);
+
+
+    // Sumar 7 días a la fecha de reinicio
+    const nuevaFechaReinicio = new Date(fechaReinicio.getTime() + 7 * 24 * 60 * 60 * 1000);
+    usuarioActual.fechaReinicio = nuevaFechaReinicio.toISOString();
+    actualizarJugador('fechaReinicio', usuarioActual.fechaReinicio); // Guardar la nueva fecha de reinicio
+    fechaReinicio = nuevaFechaReinicio; // Actualizar la variable fechaReinicio
+  }
+
+  const tiempoRestante = fechaReinicio - fechaActual;
   const dias = Math.floor(tiempoRestante / (1000 * 60 * 60 * 24));
   const horas = Math.floor((tiempoRestante % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
 
   app.innerHTML = `
   <div class="misiones">
+    <button class="btn-test-fecha-reinicio" onclick="testFechaReinicio()" style="position:fixed; bottom:20px; right:20px; z-index:1000;">
+    Test Fecha Reinicio
+    </button>
+    <button onclick="agregarPuntos()" style="position:fixed; bottom:20px; left:20px; z-index:1000;">
+    Agregar
+    </button>
     <button class="btn-volver" onclick="renderMenu()" tabindex="0" style="top:50px">Volver</button>
     <h2>Misiones Semanales</h2>
-    <p>Próximo reinicio: ${dias} días y ${horas} horas</p>
+    <p>Próximo reinicio: ${dias} días, ${horas} horas, ${minutos} minutos</p>
     ${dataMisiones.misiones.map((mision) => {
     const completada = usuarioActual.misiones[mision.progreso] >= mision.objetivo;
-    const icono = items[mision.nombre]?.icono || '❓';
+    const reclamada = usuarioActual.reclamadas.includes(mision.nombre);
+    const icono = items[mision.premio]?.icono || '❓';
+    let progreso = usuarioActual.misiones[mision.progreso] || 0;
+    progreso = progreso > mision.objetivo ? mision.objetivo : progreso
     return `
         <div class="mision">
           <div class="mision-detalles">
             <div class="mision-nombre">${mision.nombre}</div>
             <div class="mision-progreso">
-              <progress value="${usuarioActual.misiones[mision.progreso]|| 0}" max="${mision.objetivo}"></progress>
-              <span>${usuarioActual.misiones[mision.progreso]|| 0} / ${mision.objetivo}</span>
+              <progress value="${progreso}" max="${mision.objetivo}"></progress>
+              <span>${progreso} / ${mision.objetivo}</span>
             </div>
           </div>
           <div class="mision-premio">
@@ -1035,7 +1093,7 @@ async function abrirMisiones() {
             <span>${mision.cantidad}</span>
           </div>
           <div class="mision-boton">
-            <button class="btn-reclamar" ${completada ? '' : 'disabled'} onclick="reclamarPremio('${mision.nombre}')">Reclamar</button>
+            <button class="btn-reclamar" ${completada && !reclamada ? '' : 'disabled'}  ${reclamada ? `style="background-color:rgb(146, 9, 9);"` : ""} onclick="reclamarPremio('${mision.nombre}')">${!reclamada ? "Reclamar" : "Reclamada"}</button>
           </div>
         </div>
       `;
@@ -1045,11 +1103,34 @@ async function abrirMisiones() {
 }
 window.abrirMisiones = abrirMisiones;
 
-function reclamarPremio(nombreMision) {
+async function reclamarPremio(nombreMision) {
   alert(`Premio de la misión "${nombreMision}" reclamado.`);
-  // Aquí puedes agregar la lógica para actualizar el progreso o dar el premio al jugador
+  dataMisiones.misiones = dataMisiones.misiones.map(mision => {
+    if (mision.nombre === nombreMision) {
+      if (!usuarioActual.reclamadas.includes(mision.nombre)) {
+        usuarioActual.reclamadas.push(mision.nombre); // Agregar la misión reclamada si no existe
+        actualizarJugador('reclamadas', usuarioActual.reclamadas);
+      }
+    }
+    return mision;
+  });
+  await Storage.set({ key: 'misiones', value: JSON.stringify(dataMisiones) });
+  abrirMisiones(); // Volver a abrir las misiones para reflejar el cambio
 }
+
+
 window.reclamarPremio = reclamarPremio;
+document.addEventListener('pause', async () => {
+  console.warn('Aplicando delta pendiente al pausar la app');
+await aplicarDeltaPendiente()
+})
+
+document.addEventListener('resume', async () => {
+ await inicializarUsuario();
+ renderMenu()
+ console.warn('Aplicando inicializarUsuario Resumed la app');
+})
+
 
 setInterval(async () => {
   if (Object.keys(batchDelta).length > 0) {

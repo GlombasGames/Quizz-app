@@ -1171,7 +1171,9 @@ button.btn-volver-cartel {
 .misiones {
   padding: 16px;
 }
-.misiones h2 {
+.misiones h2, p {
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: center;
 }
 .mision {
