@@ -116,7 +116,7 @@ if (grid) {
 const fixedBtn = document.querySelector(".btn-mobile-fixed");
 const triggerBtn = document.querySelector(".hero .btn-download");
 
-if (fixedBtn && triggerBtn && window.innerWidth <= 768) {
+if (fixedBtn && triggerBtn && !isDesktop) {
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (!entry.isIntersecting) {
