@@ -196,10 +196,6 @@ footer {
   }
 }
 
-.btn-mobile-fixed {
-  display: none;
-}
-
 @media (max-width: 768px) {
   .btn-mobile-fixed {
     display: block;
