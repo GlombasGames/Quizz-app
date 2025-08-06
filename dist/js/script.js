@@ -128,5 +128,5 @@ if (fixedBtn && triggerBtn && !isDesktop) {
     { threshold: 0.1 }
   );
 
-  observer.observe(triggerBtn);
+  //observer.observe(triggerBtn);
 }
