@@ -60,26 +60,55 @@ if (isDesktop) {
   if (p) p.textContent = narrativaCompleta;
 }
 
-// Placeholder de Cámaras (para desarrollo)
+// Cámaras del Compendio
 const camaras = [
-  { nombre: "Cámara de Civilizaciones", estado: "Activa" },
-  { nombre: "Cámara de Mitología", estado: "Inactiva" },
-  { nombre: "Cámara de Halloween", estado: "Inactiva" },
-  { nombre: "Cámara de Mundo", estado: "Activa" },
-  { nombre: "Cámara de Ciencia", estado: "Inactiva" },
-  { nombre: "Cámara de Cine", estado: "Activa" },
+  {
+    nombre: "Cámara de Mitología",
+    estado: "Activa",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camarademitologia",
+    imagen: "img/camaras/mitologia.png"
+  },
+  {
+    nombre: "Cámara de Cine",
+    estado: "Activa",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradecine",
+    imagen: "img/camaras/cine.png"
+  },
+  {
+    nombre: "Cámara de Selva",
+    estado: "Inactiva",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradeselva",
+    imagen: "img/camaras/selva.png"
+  },
+  {
+    nombre: "Cámara de Mundo",
+    estado: "Activa",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camarademundo",
+    imagen: "img/camaras/mundo.png"
+  }
 ];
 
 const grid = document.querySelector(".camaras-grid");
 if (grid) {
   camaras.forEach((c) => {
-    const card = document.createElement("div");
-    card.className = "camara";
-    card.style.background = c.estado === "Activa" ? "#2e8b57" : "#555";
-    card.style.padding = "1rem";
-    card.style.borderRadius = "8px";
-    card.style.textAlign = "center";
-    card.innerHTML = `<h3>${c.nombre}</h3><p>${c.estado}</p>`;
+    const card = document.createElement("a");
+    card.className = "camara-card";
+    card.href = c.estado === "Activa" ? c.url : "#";
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+    if (c.estado !== "Activa") {
+      card.style.opacity = "0.5";
+      card.style.pointerEvents = "none";
+    }
+
+    card.innerHTML = `
+      <div class="card-img" style="background-image: url('${c.imagen}');"></div>
+      <div class="card-text">
+        <h3>${c.nombre}</h3>
+        <p>${c.estado}</p>
+      </div>
+    `;
+
     grid.appendChild(card);
   });
 }
