@@ -10,6 +10,13 @@ body {
   background-color: #0e0e0e;
   color: #f0f0f0;
   line-height: 1.6;
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
 }
 
 header {
@@ -21,6 +28,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .logo {
@@ -73,6 +82,8 @@ header {
   font-weight: bold;
   border-radius: 4px;
   transition: background 0.3s;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 .btn-download:hover {
@@ -87,6 +98,11 @@ section {
   max-width: 800px;
   margin: 0 auto;
   white-space: pre-line;
+}
+
+.lore h2 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .compendio .camaras-grid {
@@ -112,12 +128,18 @@ section {
   background-color: #1c1c1c;
 }
 
+.cta-final h2 {
+  margin-bottom: 1rem;
+}
+
 footer {
   text-align: center;
   padding: 2rem;
   font-size: 0.9rem;
   color: #666;
   background-color: #0e0e0e;
+  width: 100%;
+  max-width: 1200px;
 }
 
 @media (max-width: 768px) {
