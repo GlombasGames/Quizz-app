@@ -199,9 +199,25 @@ footer {
 
 .btn-mobile-fixed {
   display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background-color: #ffdd57;
+  color: #1c1c1c;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 1500;
+  transition: opacity 0.3s;
+  opacity: 0;
 }
 
 @media (max-width: 768px) {
+  .btn-mobile-fixed.visible {
+    display: block;
+    opacity: 1;
+  }
   .btn-mobile-fixed {
     display: block;
     position: fixed;
@@ -214,8 +230,5 @@ footer {
     border-radius: 4px;
     text-decoration: none;
     z-index: 1500;
-  }
-  .btn-hide-on-mobile {
-    display: none;
   }
 }

@@ -93,7 +93,7 @@ if (grid) {
   camaras.forEach((c) => {
     const card = document.createElement("a");
     card.className = "camara-card";
-    card.href =  c.url ;
+    card.href = c.url;
     card.target = "_blank";
     card.rel = "noopener noreferrer";
     if (c.estado !== "Activa") {
@@ -110,4 +110,23 @@ if (grid) {
 
     grid.appendChild(card);
   });
+}
+
+// Mostrar botón flotante solo al hacer scroll más allá del botón principal en mobile
+const fixedBtn = document.querySelector(".btn-mobile-fixed");
+const triggerBtn = document.querySelector(".hero .btn-download");
+
+if (fixedBtn && triggerBtn && window.innerWidth <= 768) {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) {
+        fixedBtn.classList.add("visible");
+      } else {
+        fixedBtn.classList.remove("visible");
+      }
+    },
+    { threshold: 0.1 }
+  );
+
+  observer.observe(triggerBtn);
 }
