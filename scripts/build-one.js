@@ -33,7 +33,7 @@ try {
   // Modificar solo el campo 'server.url'
   capacitorConfig = {
     ...capacitorConfig,
-    appId: `com.glombagames.${triviaId}`,
+    appId: `com.triviantis.${triviaId}`,
     webDir: `dist/${triviaId}`,
     appName: `${triviaId}`
   };
