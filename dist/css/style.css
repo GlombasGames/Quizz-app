@@ -192,8 +192,13 @@ footer {
   }
 
   .nav {
-    display: none; /* Se puede activar como menú hamburguesa en el futuro */
+    display: none;
+    /* Se puede activar como menú hamburguesa en el futuro */
   }
+}
+
+.btn-mobile-fixed {
+  display: none;
 }
 
 @media (max-width: 768px) {
