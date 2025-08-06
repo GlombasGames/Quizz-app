@@ -7,44 +7,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:757616151217:android:ba5fc2c6d2e18c4524f090",
-        "android_client_info": {
-          "package_name": "com.glombagames.triviaciencia"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDNXCP5qxHGuL3ZvZRu-cR_0Eq1V9tkqWE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:757616151217:android:b3f00ca64c3e1f4424f090",
-        "android_client_info": {
-          "package_name": "com.glombagames.triviamitologia"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDNXCP5qxHGuL3ZvZRu-cR_0Eq1V9tkqWE"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:757616151217:android:86b761bb3c0ab4b624f090",
         "android_client_info": {
           "package_name": "com.glombagames.trivian"
@@ -64,9 +26,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:757616151217:android:1181ceab58004d8924f090",
+        "mobilesdk_app_id": "1:757616151217:android:29baf4ea1338a0ef24f090",
         "android_client_info": {
-          "package_name": "com.glombagames.triviapeliculas"
+          "package_name": "com.triviantis.camaradeciencia"
         }
       },
       "oauth_client": [],
@@ -83,9 +45,66 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:757616151217:android:d54ac401175c347f24f090",
+        "mobilesdk_app_id": "1:757616151217:android:c4c0b9c5f78f9c6124f090",
         "android_client_info": {
-          "package_name": "com.glombagames.triviaselva"
+          "package_name": "com.triviantis.camaradecine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNXCP5qxHGuL3ZvZRu-cR_0Eq1V9tkqWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757616151217:android:27955da67c1e5f5e24f090",
+        "android_client_info": {
+          "package_name": "com.triviantis.camarademitologia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNXCP5qxHGuL3ZvZRu-cR_0Eq1V9tkqWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757616151217:android:8d13328543844a0024f090",
+        "android_client_info": {
+          "package_name": "com.triviantis.camarademundo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNXCP5qxHGuL3ZvZRu-cR_0Eq1V9tkqWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:757616151217:android:8df73a97fe5494f824f090",
+        "android_client_info": {
+          "package_name": "com.triviantis.camaradeselva"
         }
       },
       "oauth_client": [],
