@@ -110,6 +110,18 @@ const camaras = [
     url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradeastronomia",
     imagen: "img/camaras/default.png"
   },
+  {
+    nombre: "Cámara de Religiones",
+    estado: "Activa",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradereligiones",
+    imagen: "img/camaras/default.png"
+  },
+  {
+    nombre: "Cámara de Historia",
+    estado: "Activa",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradehistoria",
+    imagen: "img/camaras/default.png"
+  },
 ];
 
 const grid = document.querySelector(".camaras-grid");
