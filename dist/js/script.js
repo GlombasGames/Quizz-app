@@ -148,21 +148,35 @@ if (grid) {
   });
 }
 
-// Mostrar botón flotante solo al hacer scroll más allá del botón principal en mobile
-const fixedBtn = document.querySelector(".btn-mobile-fixed");
-const triggerBtn = document.querySelector(".hero .btn-download");
+function activarBotonFlotanteSiEsMobile() {
+  const fixedBtn = document.querySelector(".btn-mobile-fixed");
+  const triggerBtn = document.querySelector(".hero .btn-download");
 
-if (fixedBtn && triggerBtn && !isDesktop) {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) {
-        fixedBtn.classList.add("visible");
-      } else {
-        fixedBtn.classList.remove("visible");
-      }
-    },
-    { threshold: 0.1 }
-  );
+  if (!fixedBtn || !triggerBtn) return;
 
-  observer.observe(triggerBtn);
+  const activarObserver = () => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          fixedBtn.classList.add("visible");
+        } else {
+          fixedBtn.classList.remove("visible");
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(triggerBtn);
+  };
+
+  if (window.innerWidth <= 768) {
+    activarObserver();
+  }
 }
+
+// Ejecutar al cargar
+activarBotonFlotanteSiEsMobile();
+
+// Ejecutar al redimensionar
+window.addEventListener("resize", () => {
+  activarBotonFlotanteSiEsMobile();
+});
