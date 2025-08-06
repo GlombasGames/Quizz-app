@@ -10,13 +10,12 @@ body {
   background-color: #0e0e0e;
   color: #f0f0f0;
   line-height: 1.6;
-  display: flex;
-  justify-content: center;
 }
 
-main {
-  width: 100%;
+.container {
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 header {
@@ -28,8 +27,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%;
-  max-width: 1200px;
 }
 
 .logo {
@@ -138,8 +135,6 @@ footer {
   font-size: 0.9rem;
   color: #666;
   background-color: #0e0e0e;
-  width: 100%;
-  max-width: 1200px;
 }
 
 @media (max-width: 768px) {
