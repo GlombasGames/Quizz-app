@@ -117,16 +117,16 @@ const fixedBtn = document.querySelector(".btn-mobile-fixed");
 const triggerBtn = document.querySelector(".hero .btn-download");
 
 if (fixedBtn && triggerBtn && !isDesktop) {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (!entry.isIntersecting) {
-        fixedBtn.classList.add("visible");
-      } else {
-        fixedBtn.classList.remove("visible");
-      }
-    },
-    { threshold: 0.1 }
-  );
+  // const observer = new IntersectionObserver(
+  //   ([entry]) => {
+  //     if (!entry.isIntersecting) {
+  //       fixedBtn.classList.add("visible");
+  //     } else {
+  //       fixedBtn.classList.remove("visible");
+  //     }
+  //   },
+  //   { threshold: 0.1 }
+  // );
 
   observer.observe(triggerBtn);
 }
