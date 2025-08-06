@@ -63,9 +63,11 @@ if (isDesktop) {
 // Placeholder de Cámaras (para desarrollo)
 const camaras = [
   { nombre: "Cámara de Civilizaciones", estado: "Activa" },
-  { nombre: "Cámara de Mitos", estado: "Inactiva" },
+  { nombre: "Cámara de Mitología", estado: "Inactiva" },
   { nombre: "Cámara de Halloween", estado: "Inactiva" },
-  { nombre: "Cámara General", estado: "Activa" },
+  { nombre: "Cámara de Mundo", estado: "Activa" },
+  { nombre: "Cámara de Ciencia", estado: "Inactiva" },
+  { nombre: "Cámara de Cine", estado: "Activa" },
 ];
 
 const grid = document.querySelector(".camaras-grid");
