@@ -2,7 +2,7 @@
   {
     "nombre": "Trivia de la selva",
     "imagenUrl": "./assets/iconoTriviaSelva.png",
-    "url": "https://glombagames.ddns.net/selva",
+    "url": "https://triviantis.com/selva",
     "estado": "",
     "coin": "Escarabajo",
     "triviaName": "selva"
@@ -10,7 +10,7 @@
   {
     "nombre": "Trivia de Películas",
     "imagenUrl": "./assets/triviaDePeliculas.png",
-    "url": "https://glombagames.ddns.net/peliculas",
+    "url": "https://triviantis.com/peliculas",
     "estado": "Próximamente",
     "coin": "Ticket",
     "triviaName": "peliculas"
@@ -18,7 +18,7 @@
   {
     "nombre": "Trivia de Mitologia",
     "imagenUrl": "./assets/triviaDeCivilizaciones.png",
-    "url": "https://glombagames.ddns.net/mitologia",
+    "url": "https://triviantis.com/mitologia",
     "estado": "Próximamente",
     "coin": "Moneda",
     "triviaName": "mitologia"
@@ -26,7 +26,7 @@
   {
     "nombre": "Trivia de Civilizaciones",
     "imagenUrl": "./assets/triviaDeCivilizaciones.png",
-    "url": "https://glombagames.ddns.net/civilizaciones",
+    "url": "https://triviantis.com/civilizaciones",
     "estado": "Próximamente",
     "coin": "Totem",
     "triviaName": "civilizaciones"
@@ -34,7 +34,7 @@
   {
     "nombre": "Trivia de Ciencia",
     "imagenUrl": "./assets/triviaDeCiencia.png",
-    "url": "https://glombagames.ddns.net/ciencia",
+    "url": "https://triviantis.com/ciencia",
     "estado": "Próximamente",
     "coin": "Lupa",
     "triviaName": "ciencia"
@@ -42,7 +42,7 @@
   {
     "nombre": "Trivia de Tecnologia",
     "imagenUrl": "./assets/triviaDeTecnologia.png",
-    "url": "https://glombagames.ddns.net/tecnologia",
+    "url": "https://triviantis.com/tecnologia",
     "estado": "Próximamente",
     "coin": "Chip",
     "triviaName": "tecnologia"
@@ -50,7 +50,7 @@
   {
     "nombre": "Trivia de Historia",
     "imagenUrl": "./assets/triviaDeHistoria.png",
-    "url": "https://glombagames.ddns.net/historia",
+    "url": "https://triviantis.com/historia",
     "estado": "Próximamente",
     "coin": "Libro",
     "triviaName": "historia"
@@ -58,7 +58,7 @@
   {
     "nombre": "Trivia de Geografía",
     "imagenUrl": "./assets/triviaDeGeografia.png",
-    "url": "https://glombagames.ddns.net/geografia",
+    "url": "https://triviantis.com/geografia",
     "estado": "Próximamente",
     "coin": "Mapa",
     "triviaName": "geografia"

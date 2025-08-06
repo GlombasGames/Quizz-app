@@ -13,13 +13,13 @@ triviaFiles.forEach(file => {
 
   // ✅ Modificar capacitor.config.json
   const capacitorConfig = {
-    appId: `com.glombagames.trivia${triviaId}`,
+    appId: `com.triviantis.camarade${triviaId}`,
     appName: triviaNameCapitalized,
     webDir: 'dist',
     bundledWebRuntime: false,
     server: {
       cleartext: false,
-      url: 'https://glombagames.ddns.net/'
+      url: 'https://triviantis.com/'
     }
   };
   fs.writeFileSync(path.join(__dirname, 'capacitor.config.json'), JSON.stringify(capacitorConfig, null, 2));

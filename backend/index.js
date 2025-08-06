@@ -615,7 +615,7 @@ app.post('/api/enviar-notificacion', async (req, res) => {
                     notification: {
                         title: tituloM || "¡Nuevas preguntas disponibles!",
                         body: cuerpoM || "Entra y revisa las nuevas categorías o preguntas.",
-                        image: `https://glombagames.ddns.net/api/${tokenDevice.triviaId}/${tokenDevice.coinName}`//imageUrl, // URL de la imagen
+                        image: `https://triviantis.com/api/${tokenDevice.triviaId}/${tokenDevice.coinName}`//imageUrl, // URL de la imagen
                     },
                     android: {
                         notification: {

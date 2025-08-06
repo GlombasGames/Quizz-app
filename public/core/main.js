@@ -171,7 +171,7 @@ async function aplicarDeltaPendiente() {
   if (deltaGuardado.value) {
     const delta = JSON.parse(deltaGuardado.value);
     aplicarDelta(usuarioActual, delta);
-    const res = await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
+    const res = await fetch('https://triviantis.com/api/syncUserDelta', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nombre: usuarioActual.nombre, delta })
@@ -202,7 +202,7 @@ async function inicializarUsuario() {
     return;
   }
   // 4. Pedimos estado completo al backend
-  const response = await fetch('https://glombagames.ddns.net/api/getUser', {
+  const response = await fetch('https://triviantis.com/api/getUser', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ nombre, password })
@@ -310,7 +310,7 @@ async function iniciarNotificaciones() {
 
     // Enviar el token al servidor
 
-    await fetch('https://glombagames.ddns.net/api/registrar-token', {
+    await fetch('https://triviantis.com/api/registrar-token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -353,7 +353,7 @@ let dataMisiones = {};
 
 async function verificarServidor() {
   try {
-    const response = await fetch('https://glombagames.ddns.net/api/ping', { method: 'GET' });
+    const response = await fetch('https://triviantis.com/api/ping', { method: 'GET' });
     return response.ok; // Devuelve true si el servidor responde correctamente
   } catch (error) {
     console.error('Error al verificar el servidor:', error);
@@ -362,7 +362,7 @@ async function verificarServidor() {
 }
 async function verificarVersion() {
   try {
-    const response = await fetch('https://glombagames.ddns.net/api/version');
+    const response = await fetch('https://triviantis.com/api/version');
     data = await response.json();
     if (data) {
       version = data.version;
@@ -1002,7 +1002,7 @@ function seleccionarItem(index) {
 
       // Intentar abrir la app instalada o redirigir al store
       irATriviaBtn.onclick = async () => {
-        const packageName = `com.glombagames.trivia${trivia.triviaName.toLowerCase()}`; // Nombre del paquete de la app
+        const packageName = `com.triviantis.camarade${trivia.triviaName.toLowerCase()}`; // Nombre del paquete de la app
         console.log(`Intentando abrir la app: ${packageName}`);
         const fallbackUrl = trivia.url; // URL del store o página web
 
@@ -1210,9 +1210,10 @@ function renderLogin() {
       
       <input id="login-nombre" placeholder="Usuario" style="padding: 10px; margin-bottom: 10px; width: 80%; max-width: 300px;" />
       <input id="login-password" type="password" placeholder="Contraseña" style="padding: 10px; margin-bottom: 20px; width: 80%; max-width: 300px;" />
-      
-      <button onclick="loginUsuario()" style="padding: 10px 20px; margin-bottom: 10px;">Entrar</button>
-      <button onclick="crearCuenta()" style="padding: 10px 20px;">Crear cuenta</button>
+      <div style="display: flex; width: 80%; justify-content: space-between; ">
+      <button style="width:45%; height: 70px; color: black;" onclick="crearCuenta()" style="padding: 10px 20px;">Crear cuenta</button>
+      <button style="width:45%; height: 70px; color: black;" onclick="loginUsuario()" style="padding: 10px 20px; margin-bottom: 10px;">Entrar</button>
+      </div>
     </div>
   `;
 }
@@ -1234,7 +1235,7 @@ window.loginUsuario = async function loginUsuario() {
   usuarioActual = { nombre };
 
   // 4. Pedimos estado completo al backend
-  const response = await fetch('https://glombagames.ddns.net/api/getUser', {
+  const response = await fetch('https://triviantis.com/api/getUser', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ nombre, password })
@@ -1284,7 +1285,7 @@ window.crearCuenta = async function crearCuenta() {
 
   console.log("Intentando crear cuenta con:", { nombre, password });
   // Acá irá la lógica para crear usuario en el backend
-  const response = await fetch('https://glombagames.ddns.net/api/createUser', {
+  const response = await fetch('https://triviantis.com/api/createUser', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ nombre, password })
@@ -1338,7 +1339,7 @@ document.addEventListener('resume', async () => {
 
 setInterval(async () => {
   if (Object.keys(batchDelta).length > 0) {
-    const res = await fetch('https://glombagames.ddns.net/api/syncUserDelta', {
+    const res = await fetch('https://triviantis.com/api/syncUserDelta', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nombre: usuarioActual.nombre, delta: batchDelta })

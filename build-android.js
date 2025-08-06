@@ -26,7 +26,7 @@ execSync(`npx cross-env TRIVIA=${triviaId} IS_ANDROID=true webpack --mode produc
 console.log('✅ Webpack compilado correctamente para Android');
 
 // Paso 1: Modificar capacitor.config.json
-const appId = `com.glombagames.trivia${triviaId}`
+const appId = `com.triviantis.camarade${triviaId}`
 const newConfig = {
   appId,
   appName: `Trivia de ${triviaNameCapitalized}`,
