@@ -214,13 +214,8 @@ footer {
   pointer-events: none;
 }
 
-.btn-mobile-fixed.visible {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-}
-
 @media (max-width: 768px) {
+
 
   .btn-mobile-fixed {
     display: block;
