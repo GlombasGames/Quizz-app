@@ -56,8 +56,8 @@ Triviantis no busca héroes. Busca respuestas.
 `;
 
 
-  const p = document.querySelector(".lore .narrativa");
-  if (p) p.textContent = narrativaCompleta;
+const p = document.querySelector(".lore .narrativa");
+if (p) p.textContent = narrativaCompleta;
 
 
 // Cámaras del Compendio
@@ -67,6 +67,12 @@ const camaras = [
     estado: "Activa",
     url: "https://play.google.com/store/apps/details?id=com.triviantis.camarademitologia",
     imagen: "img/camaras/mitologia.png"
+  },
+  {
+    nombre: "Cámara de Religiones",
+    estado: "Activa",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradereligiones",
+    imagen: "img/camaras/default.png"
   },
   {
     nombre: "Cámara de Cine",
@@ -79,6 +85,12 @@ const camaras = [
     estado: "Inactiva",
     url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradeselva",
     imagen: "img/camaras/selva.png"
+  },
+  {
+    nombre: "Cámara de Astronomía",
+    estado: "Activa",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradeastronomia",
+    imagen: "img/camaras/default.png"
   },
   {
     nombre: "Cámara de Mundo",
@@ -102,18 +114,6 @@ const camaras = [
     nombre: "Cámara de Comidas",
     estado: "Inactiva",
     url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradecomidas",
-    imagen: "img/camaras/default.png"
-  },
-  {
-    nombre: "Cámara de Astronomía",
-    estado: "Activa",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradeastronomia",
-    imagen: "img/camaras/default.png"
-  },
-  {
-    nombre: "Cámara de Religiones",
-    estado: "Activa",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradereligiones",
     imagen: "img/camaras/default.png"
   },
   {
