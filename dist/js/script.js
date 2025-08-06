@@ -93,12 +93,11 @@ if (grid) {
   camaras.forEach((c) => {
     const card = document.createElement("a");
     card.className = "camara-card";
-    card.href = c.estado === "Activa" ? c.url : "#";
+    card.href =  c.url ;
     card.target = "_blank";
     card.rel = "noopener noreferrer";
     if (c.estado !== "Activa") {
-      card.style.opacity = "0.5";
-      card.style.pointerEvents = "none";
+      card.style.opacity = "0.7";
     }
 
     card.innerHTML = `
