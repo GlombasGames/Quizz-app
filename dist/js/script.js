@@ -55,10 +55,10 @@ Triviantis no busca héroes. Busca respuestas.
 ¿Estás listo para responder al llamado?
 `;
 
-if (isDesktop) {
+
   const p = document.querySelector(".lore .narrativa");
   if (p) p.textContent = narrativaCompleta;
-}
+
 
 // Cámaras del Compendio
 const camaras = [
@@ -128,5 +128,5 @@ if (fixedBtn && triggerBtn && !isDesktop) {
     { threshold: 0.1 }
   );
 
-  //observer.observe(triggerBtn);
+  observer.observe(triggerBtn);
 }
