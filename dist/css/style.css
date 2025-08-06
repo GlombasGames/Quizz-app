@@ -215,4 +215,7 @@ footer {
     text-decoration: none;
     z-index: 1500;
   }
+  .btn-hide-on-mobile {
+    display: none;
+  }
 }
