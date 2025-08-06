@@ -85,7 +85,31 @@ const camaras = [
     estado: "Activa",
     url: "https://play.google.com/store/apps/details?id=com.triviantis.camarademundo",
     imagen: "img/camaras/mundo.png"
-  }
+  },
+  {
+    nombre: "Cámara de Música",
+    estado: "Inactiva",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camarademusica",
+    imagen: "img/camaras/default.png"
+  },
+  {
+    nombre: "Cámara de Civilizaciones",
+    estado: "Inactiva",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradcivilizaciones",
+    imagen: "img/camaras/default.png"
+  },
+  {
+    nombre: "Cámara de Comidas",
+    estado: "Inactiva",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradecomidas",
+    imagen: "img/camaras/default.png"
+  },
+  {
+    nombre: "Cámara de Astronomía",
+    estado: "Activa",
+    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradeastronomia",
+    imagen: "img/camaras/default.png"
+  },
 ];
 
 const grid = document.querySelector(".camaras-grid");
