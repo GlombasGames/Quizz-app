@@ -89,7 +89,7 @@ header {
 
 section {
   /* padding: 3rem 2rem; */
-  scroll-margin-top: 10vh;
+  /* scroll-margin-top: 10vh; */
   /* Ajustá este valor según el alto real del header fijo */
 }
 
