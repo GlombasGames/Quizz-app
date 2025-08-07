@@ -380,7 +380,7 @@ footer {
   width: 100%;
   height: auto;
   /* ← clave para que no recorte */
-  max-height: 60vh;
+  max-height: 70vh;
   /* ← no supera mitad de pantalla */
   display: block;
   object-fit: contain;
