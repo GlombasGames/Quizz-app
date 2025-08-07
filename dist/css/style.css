@@ -377,7 +377,7 @@ footer {
 }
 
 .feature-media img {
-  width: 70vh;
+  width: 50vh;
   height: auto;
   /* ← clave para que no recorte */
   max-height: 70vh;
