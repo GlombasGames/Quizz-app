@@ -388,24 +388,22 @@ footer {
   }
 }
 
-/* Corte diagonal que escala con el alto disponible (hasta un tope) */
+/* corte diagonal hacia el contenido */
 .feature .feature-media::after {
   content: "";
   position: absolute;
+  right: -1px;
   top: 0;
   bottom: 0;
-  right: -1px;
-  /* Escala con el alto de pantalla; ajustá los límites si querés más/menos */
-  width: clamp(90px, 12vh, 260px);
+  width: 120px;
   background: linear-gradient(135deg, transparent 50%, #151515 50%);
   pointer-events: none;
-  z-index: 1;
 }
 
+/* en .alt el corte va al otro lado */
 .feature.alt .feature-media::after {
   left: -1px;
   right: auto;
-  width: clamp(90px, 12vh, 260px);
   background: linear-gradient(225deg, transparent 50%, #151515 50%);
 }
 
