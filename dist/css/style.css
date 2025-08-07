@@ -261,15 +261,19 @@ footer {
 
 .intro-panels .panel-controls {
   position: absolute;
-  width: 100%;
-  bottom: 2rem;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   z-index: 2;
+  pointer-events: none; /* evita que bloquee clics al panel */
 }
 
 .intro-panels .panel-controls button {
+  pointer-events: auto; /* reactiva clics en los botones */
   background: rgba(255, 221, 87, 0.9);
   border: none;
   padding: 0.8rem 1.2rem;
