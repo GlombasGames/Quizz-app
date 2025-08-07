@@ -435,17 +435,17 @@ footer {
 
 /* Responsive */
 @media (max-width: 980px) {
-
   .feature,
   .feature.alt {
     grid-template-columns: 1fr;
-    /* apila */
+    grid-template-areas:
+      "media"
+      "content"; /* imagen arriba, texto abajo para ambos */
   }
 
   .feature .feature-media::after,
   .feature.alt .feature-media::after {
-    display: none;
-    /* sin diagonal en mobile para legibilidad */
+    display: none; /* sin diagonal en mobile */
   }
 
   .feature-content {
