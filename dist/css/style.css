@@ -89,7 +89,7 @@ header {
 
 section {
   padding: 3rem 2rem;
-  scroll-margin-top: 70px; /* Ajustá este valor según el alto real del header fijo */
+  scroll-margin-top: 80px; /* Ajustá este valor según el alto real del header fijo */
 }
 
 .lore .narrativa {
@@ -193,7 +193,6 @@ footer {
   }
 
   .nav {
-    height: 70px;
     display: none;
     /* Se puede activar como menú hamburguesa en el futuro */
   }
@@ -223,6 +222,7 @@ footer {
 }
 
 .intro-panels {
+  margin-top: 70px;
   position: relative;
   width: 100%;
   height: 50vh;
