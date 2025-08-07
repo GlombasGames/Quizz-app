@@ -346,32 +346,46 @@ footer {
 .feature {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  /* imagen / texto */
+  grid-template-areas: "media content"; /* ← define orden por defecto */
   gap: 0;
   align-items: stretch;
   background: #151515;
   border-radius: 16px;
   overflow: hidden;
   margin: 2rem 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
-/* invertir columnas en la alterna */
+.feature .feature-media { grid-area: media; }
+.feature .feature-content { grid-area: content; }
+
+/* alterna: texto a la izquierda, imagen a la derecha */
 .feature.alt {
   grid-template-columns: 1fr 1.2fr;
-  /* texto / imagen */
+  grid-template-areas: "content media";
 }
 
 .feature-media {
   position: relative;
+  display: flex;
 }
 
 .feature-media img {
   width: 100%;
-  height: 100%;
-  max-height: 50vh; /* 🔹 No supera la mitad de la pantalla en PC */
+  height: auto;        /* ← clave para que no recorte */
+  max-height: 50vh;    /* ← no supera mitad de pantalla */
   display: block;
-  object-fit: cover;
+  object-fit: contain; /* ← no recorta en desktop */
+}
+
+/* En mobile mantenemos “cover” para que llene bien */
+@media (max-width: 980px) {
+  .feature-media img {
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    width: 100%;
+  }
 }
 
 /* corte diagonal hacia el contenido */
