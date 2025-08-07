@@ -345,16 +345,18 @@ footer {
 /* ===== Tarjetas diagonales imagen + texto ===== */
 .feature {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1fr;             /* 50% imagen / 50% texto */
   grid-template-areas: "media content";
-  /* ← define orden por defecto */
   gap: 0;
   align-items: stretch;
   background: #151515;
   border-radius: 16px;
   overflow: hidden;
   margin: 2rem 0;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+
+  max-height: 50vh;                            /* la tarjeta no supera 50% de alto de pantalla */
+  min-height: 320px;                            /* evita que quede muy baja */
 }
 
 .feature .feature-media {
@@ -364,11 +366,15 @@ footer {
 .feature .feature-content {
   grid-area: content;
 }
+.feature .feature-media,
+.feature .feature-content {
+  height: 100%;                                  /* los dos paneles ocupan toda la altura */
+}
 
 /* alterna: texto a la izquierda, imagen a la derecha */
 .feature.alt {
-  grid-template-columns: 1fr 1.2fr;
-  grid-template-areas: "content media";
+  grid-template-columns: 1fr 1fr;               /* también 50/50 en la variante */
+  grid-template-areas: "content media";         /* invierte lados */
 }
 
 .feature-media {
@@ -378,13 +384,9 @@ footer {
 
 .feature-media img {
   width: 100%;
-  height: auto;
-  /* ← clave para que no recorte */
-  max-height: 40vh;
-  /* ← no supera mitad de pantalla */
+  height: 100%;                                  /* ← clave: llena la altura total de la tarjeta */
   display: block;
-  object-fit: contain;
-  /* ← no recorta en desktop */
+  object-fit: cover;                              /* recorta si la proporción no coincide */
 }
 
 /* En mobile mantenemos “cover” para que llene bien */
@@ -451,7 +453,8 @@ footer {
     grid-template-columns: 1fr;
     grid-template-areas:
       "media"
-      "content";
+      "content";      
+    max-height: none;                             /* en mobile no limitamos altura */
     /* imagen arriba, texto abajo para ambos */
   }
 
