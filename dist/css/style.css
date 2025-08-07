@@ -369,6 +369,7 @@ footer {
 .feature-media img {
   width: 100%;
   height: 100%;
+  max-height: 50vh; /* 🔹 No supera la mitad de la pantalla en PC */
   display: block;
   object-fit: cover;
 }
