@@ -277,7 +277,7 @@ footer {
   pointer-events: auto; /* reactiva clics en los botones */
   background: rgba(255, 221, 87, 0.9);
   border: none;
-  padding: 0.8rem 1.2rem;
+  padding: 0.8rem 0.8rem;
   font-size: 1.5rem;
   border-radius: 4px;
   cursor: pointer;
