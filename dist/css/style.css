@@ -268,7 +268,7 @@ footer {
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 0;
   z-index: 2;
   pointer-events: none; /* evita que bloquee clics al panel */
 }
@@ -277,7 +277,7 @@ footer {
   pointer-events: auto; /* reactiva clics en los botones */
   background: rgba(255, 221, 87, 0.9);
   border: none;
-  padding: 0.8rem 0.8rem;
+  padding: 0.8rem 1.2rem;
   font-size: 1.5rem;
   border-radius: 4px;
   cursor: pointer;
