@@ -92,10 +92,9 @@ section {
 }
 
 .lore .narrativa {
-  max-width: 1600px;
+  max-width: 800px;
   margin: 0 auto;
   white-space: pre-line;
-  text-align: center;
 }
 
 .lore h2 {
