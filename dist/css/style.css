@@ -89,6 +89,7 @@ header {
 
 section {
   padding: 3rem 2rem;
+  scroll-margin-top: 80px; /* Ajustá este valor según el alto real del header fijo */
 }
 
 .lore .narrativa {
