@@ -89,8 +89,7 @@ header {
 
 section {
   padding: 3rem 2rem;
-  scroll-margin-top: 80px;
-  /* Ajustá este valor según el alto real del header fijo */
+  scroll-margin-top: 80px; /* Ajustá este valor según el alto real del header fijo */
 }
 
 .lore .narrativa {
@@ -271,13 +270,11 @@ footer {
   justify-content: space-between;
   padding: 0;
   z-index: 2;
-  pointer-events: none;
-  /* evita que bloquee clics al panel */
+  pointer-events: none; /* evita que bloquee clics al panel */
 }
 
 .intro-panels .panel-controls button {
-  pointer-events: auto;
-  /* reactiva clics en los botones */
+  pointer-events: auto; /* reactiva clics en los botones */
   background: rgba(255, 221, 87, 0.9);
   border: none;
   padding: 0.8rem 1.2rem;
@@ -309,33 +306,30 @@ footer {
   background: #ffdd57;
 }
 
-.btn-mobile-fixed {
-  display: block;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background-color: #ffdd57;
-  color: #1c1c1c;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-  z-index: 1500;
-}
 
 @media (max-width: 768px) {
 
-
-  .panel-text {
+  .btn-mobile-fixed {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #ffdd57;
+    color: #1c1c1c;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    z-index: 1500;
+  }
+    .panel-text {
     font-size: 1.2rem;
     padding: 1.5rem;
   }
-
   .intro-panels .panel-controls button {
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
   }
-
   .intro-panels .panel-indicators span {
     width: 8px;
     height: 8px;
