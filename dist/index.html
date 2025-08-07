@@ -10,16 +10,26 @@
 </head>
 
 <body>
+    <!-- Botón flotante solo en mobile -->
     <a href="#compendio" class="btn-mobile-fixed" id="btn-mobile-only">Responder al llamado</a>
+
     <div class="container">
         <header class="header">
             <div class="logo">Triviantis</div>
             <nav class="nav">
                 <ul>
                     <li><a href="#">Inicio</a></li>
-                    <li><a href="#lore">El Origen</a></li>
+                    <li><a href="#novedades">Novedades</a></li>
+                    <li><a href="#rotacion">Rotación del Saber</a></li>
                     <li><a href="#compendio">Compendio</a></li>
+                    <li><a href="#torre-consejo">Torre del Consejo Velado</a></li>
+                    <li><a href="#jerarquias">Jerarquías del Saber</a></li>
+                    <li><a href="#fragmentos-cronica">Fragmentos de Crónica</a></li>
+                    <li><a href="#plaza-velas">Plaza de las Velas</a></li>
+                    <li><a href="#santuario-oraculo">Santuario del Oráculo</a></li>
                     <li><a href="#ecos">Salón de los Ecos</a></li>
+                    <li><a href="#exedra">La Exedra del Encuentro</a></li>
+                    <li><a href="#lore">El Origen</a></li>
                     <li><a href="https://play.google.com/store/apps/dev?id=TU_DEV_ID" class="cta">Triviantis Store</a>
                     </li>
                 </ul>
@@ -27,12 +37,14 @@
         </header>
 
         <main>
+            <!-- Héroe (título corto) -->
             <section id="inicio" class="hero">
                 <h1>Triviantis — La ciudad que responde al saber</h1>
                 <p class="intro-mobile">Jugá. Respondé. Convertite en Triviante.</p>
                 <a href="#compendio" class="btn-download">Responder al llamado</a>
             </section>
-            <!-- Secuencia de paneles narrativos -->
+
+            <!-- Paneles narrativos (carrusel) -->
             <section class="intro-panels">
                 <div class="panel" style="background-image: url('img/paneles/panel1.png');">
                     <div class="panel-text">Cuando el saber ya no alcanza… Triviantis despierta.</div>
@@ -62,34 +74,93 @@
                 <div class="panel-indicators"></div>
             </section>
 
+            <!-- 📣 Novedades -->
+            <section id="novedades">
+                <h2>📣 Novedades de Triviantis</h2>
+                <p>Eventos, aperturas de Cámaras y cambios recientes en el ciclo del saber.</p>
+                <div class="novedades-grid">
+                    <!-- (Opcional) Cards de novedades a futuro -->
+                    <!-- Placeholder simple por ahora -->
+                    <p style="opacity:.7">Pronto: últimas noticias del Consejo Velado y la ciudad.</p>
+                </div>
+            </section>
 
+            <!-- 🔄 Rotación del Saber -->
+            <section id="rotacion">
+                <h2>🔄 Rotación del Saber</h2>
+                <p>Algunas Cámaras están activas y otras aguardan su momento. La rotación define qué fragmentos y cofres
+                    pueden recibirse al responder al Oráculo. Consultá qué está activo ahora antes de entrar a jugar.
+                </p>
+            </section>
+
+            <!-- 📚 Compendio -->
+            <section id="compendio" class="compendio">
+                <h2>📚 Compendio de Triviantis</h2>
+                <p>Explorá las Cámaras activas y las que aguardan despertar. Triviantis se manifiesta en múltiples
+                    formas.</p>
+                <div class="camaras-grid"><!-- Cards generadas por JS --></div>
+            </section>
+
+            <!-- 🗼 Torre del Consejo Velado -->
+            <section id="torre-consejo">
+                <h2>🗼 Torre del Consejo Velado</h2>
+                <p>El Consejo descifra el pulso del Oráculo y emite <strong>Mandatos</strong>: desafíos que honran el
+                    equilibrio del saber. Cumplirlos te acerca al corazón de la ciudad.</p>
+            </section>
+
+            <!-- 📊 Jerarquías del Saber -->
+            <section id="jerarquias">
+                <h2>📊 Jerarquías del Saber</h2>
+                <p>Tu devoción y constancia te elevan: de Aprendiz a Ciudadano, Referente y Sabio. Los rangos reflejan
+                    tu vínculo con el ciclo del conocimiento.</p>
+            </section>
+
+            <!-- 📖 Fragmentos de Crónica -->
+            <section id="fragmentos-cronica">
+                <h2>📖 Fragmentos de Crónica</h2>
+                <p>Son los logros que preserva la ciudad: huellas de tus actos significativos. No son moneda; son
+                    memoria.</p>
+            </section>
+
+            <!-- 🕯️ Plaza de las Velas -->
+            <section id="plaza-velas">
+                <h2>🕯️ Plaza de las Velas</h2>
+                <p>Encendé <strong>Llamas del Vínculo</strong> para otros Triviantes. Compartir el saber mantiene viva
+                    la ciudad y habilita recompensas a quien las recibe.</p>
+            </section>
+
+            <!-- 🛕 Santuario del Oráculo -->
+            <section id="santuario-oraculo">
+                <h2>🛕 Santuario del Oráculo</h2>
+                <p>Podés ofrecer <strong>Tributos</strong> al Oráculo: cofres y membresías que fortalecen tu vínculo
+                    y mejoran tus recompensas diarias.</p>
+            </section>
+
+            <!-- 🥇 Salón de los Ecos -->
+            <section id="ecos" class="ecos">
+                <h2>🥇 Salón de los Ecos</h2>
+                <p>Las huellas del saber no se olvidan. Estos son los Triviantes que han dejado su marca.</p>
+                <div class="ranking-placeholder"><!-- Placeholder de ranking --></div>
+            </section>
+
+            <!-- 🏛️ La Exedra del Encuentro -->
+            <section id="exedra">
+                <h2>🏛️ La Exedra del Encuentro</h2>
+                <p>El espacio de la comunidad. Conversá con otros Triviantes, organizá desafíos y compartí tu nombre
+                    para conectar en el juego.</p>
+                <!-- Botones a futuro: Discord / Foro -->
+                <!-- <a href="#" class="btn-download">Entrar al Discord</a> -->
+            </section>
+
+            <!-- 📜 El Origen (opcional, al final) -->
             <section id="lore" class="lore">
                 <div class="content">
-                    <h2>El Origen</h2>
-                    <p class="narrativa">
-                        <!-- Aquí se insertará desde JS la narrativa completa solo en escritorio -->
-                    </p>
+                    <h2>📜 El Origen</h2>
+                    <p class="narrativa"><!-- Texto se inserta por JS en desktop --></p>
                 </div>
             </section>
 
-            <section id="compendio" class="compendio">
-                <h2>Compendio de Triviantis</h2>
-                <p>Explorá las Cámaras activas y las que aguardan despertar. Triviantis se manifiesta en múltiples
-                    formas.
-                </p>
-                <div class="camaras-grid">
-                    <!-- Aquí se insertarán dinámicamente las cámaras activas/inactivas -->
-                </div>
-            </section>
-
-            <section id="ecos" class="ecos">
-                <h2>Salón de los Ecos</h2>
-                <p>Las huellas del saber no se olvidan. Estos son los Triviantes que han dejado su marca.</p>
-                <div class="ranking-placeholder">
-                    <!-- En futuro: insertar rankings o eventos destacados -->
-                </div>
-            </section>
-
+            <!-- CTA final -->
             <section id="descargar" class="cta-final">
                 <h2>¿Estás listo para responder al llamado?</h2>
                 <a href="#compendio" class="btn-download">Responder al llamado</a>
