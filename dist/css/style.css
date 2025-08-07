@@ -425,12 +425,14 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;   
 }
 
 .feature-content h2 {
   color: #ffdd57;
   font-size: 1.8rem;
   margin-bottom: .75rem;
+  text-align: left;
 }
 
 .feature-content p {
@@ -438,11 +440,12 @@ footer {
   font-size: 1.05rem;
   line-height: 1.7;
   max-width: 60ch;
+  text-align: left;
 }
 
 /* Reutilizamos tu .btn-download como CTA dentro de la tarjeta */
 .feature .btn-download {
-  align-self: flex-start;
+  align-self: center;
   margin-top: 1rem;
 }
 
