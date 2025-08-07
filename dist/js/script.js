@@ -1,6 +1,71 @@
 // Detecta si el dispositivo es de escritorio
 const isDesktop = window.innerWidth >= 1024;
 
+// Carrusel de paneles introductorios
+const panels = document.querySelectorAll('.intro-panels .panel');
+const indicators = document.querySelector('.intro-panels .panel-indicators');
+const prevBtn = document.querySelector('.intro-panels .prev');
+const nextBtn = document.querySelector('.intro-panels .next');
+let currentIndex = 0;
+let autoSlide;
+
+function showPanel(index) {
+  panels.forEach((panel, i) => {
+    panel.classList.remove('active');
+    if (i === index) {
+      panel.classList.add('active');
+    }
+  });
+
+  const dots = indicators.querySelectorAll('span');
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+function createIndicators() {
+  panels.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    indicators.appendChild(dot);
+  });
+}
+
+function nextPanel() {
+  currentIndex = (currentIndex + 1) % panels.length;
+  showPanel(currentIndex);
+}
+
+function prevPanel() {
+  currentIndex = (currentIndex - 1 + panels.length) % panels.length;
+  showPanel(currentIndex);
+}
+
+function startAutoSlide() {
+  autoSlide = setInterval(nextPanel, 8000);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+createIndicators();
+showPanel(currentIndex);
+startAutoSlide();
+
+nextBtn.addEventListener('click', () => {
+  stopAutoSlide();
+  nextPanel();
+  startAutoSlide();
+});
+
+prevBtn.addEventListener('click', () => {
+  stopAutoSlide();
+  prevPanel();
+  startAutoSlide();
+});
+
+
 // Lore completo (sólo para escritorio)
 const narrativaCompleta = `
 Algo comenzó a despertar. Y vos lo sentiste.
