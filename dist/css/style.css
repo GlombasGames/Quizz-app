@@ -532,13 +532,6 @@ footer {
   background-color: #3336ff;
 }
 
-.feature-content-top {
-  padding: 2em 2.2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* alinea a la izquierda en vez de centrar */
-}
 
 @media (max-width: 768px) {
   .community-cta a {
