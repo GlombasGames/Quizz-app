@@ -531,6 +531,7 @@ footer {
   background-color: #3336ff;
 }
 .feature-content-top {
+  padding: 2em 2.2rem;
   align-items: flex-start;
   /* alinea a la izquierda en vez de centrar */
 }
