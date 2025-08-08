@@ -501,7 +501,7 @@ footer {
 .target {
   scroll-margin-top: 80px;
   /* o el valor que uses */
-  height: 20px;
+  /* height: 20px; */
 }
 
 .community-cta {
