@@ -87,7 +87,7 @@ header {
 }
 
 section {
-  scroll-margin-top: 8vh;
+  scroll-margin-top: 80px;
   /* Ajustá este valor según el alto real del header fijo */
 }
 
@@ -492,7 +492,7 @@ footer {
 }
 
 .target {
-  scroll-margin-top: 10vh;
+  scroll-margin-top: 80px;
   /* o el valor que uses */
   height: 20px;
 }
