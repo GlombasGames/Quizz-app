@@ -201,12 +201,21 @@ async function inicializarUsuario() {
     renderLogin();
     return;
   }
-  // 4. Pedimos estado completo al backend
-  const response = await fetch('https://triviantis.com/api/getUser', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ nombre, password })
-  });
+  let response
+  try {
+    // 4. Pedimos estado completo al backend
+      response = await fetch('https://triviantis.com/api/getUser', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre, password })
+    });
+    
+  } catch (error) {
+    console.warn("reboto en el trycatch, PASA");
+    renderLogin();
+    return;
+    
+  }
   if (!response.ok || response.error) {
     console.warn("No se encuentra usuario en DB, se requiere login, PASA");
     renderLogin();
