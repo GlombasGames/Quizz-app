@@ -143,7 +143,7 @@ app.post("/api/getUser", async (req, res) => {
 
     if (usuario.password !== password) {
         console.warn("Contraseña incorrecta para el usuario:", nombre);
-        return res.status(401).json({ error: "Contraseña incorrecta: " + " " + usuario.nombre + ", " + usuario.password + ", " + password });
+        return res.status(401).json({ error: "Contraseña incorrecta: " + " " + usuario });
     }
     delete usuario.password; // No enviar la contraseña al cliente
     res.json(usuario);
