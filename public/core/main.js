@@ -214,10 +214,10 @@ async function inicializarUsuario() {
   if (!response.ok || response.error) {
     console.warn("No se encuentra usuario en DB, se requiere login, PASA");
     renderLogin();
+    console.error("PASA IGUAL DESPUES DEL RETURN");
     return;
   }
   
-  console.error("PASA IGUAL DESPUES DEL RETURN");
   try {
     const userData = await response.json();
     usuarioActual = userData;

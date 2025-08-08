@@ -142,7 +142,7 @@ app.post("/api/getUser", async (req, res) => {
     if (!usuario) {
         return res.status(401).json({ error: "Usuario no existe" });
     }
-
+    
     if (usuario.password !== password) {
         console.warn("Contraseña incorrecta para el usuario:", nombre);
         return res.status(401).json({ error: "Contraseña incorrecta" });
