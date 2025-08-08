@@ -163,6 +163,7 @@ section {
 .cta-final {
   padding: 2rem;
   text-align: center;
+  border-radius: 6px;
   background-color: #1c1c1c;
 }
 
