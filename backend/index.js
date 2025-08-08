@@ -137,13 +137,13 @@ app.post("/api/getUser", async (req, res) => {
     let usuario = await users.findOne({ nombre });
 
     if (!usuario) {
-        console.warn("Usuario no existe:", nombre); 
+        console.warn("Usuario no existe:", nombre);
         return res.status(404).json({ error: "Usuario no existe" });
     }
 
-    if( usuario.password !== password) {
+    if (usuario.password !== password) {
         console.warn("Contraseña incorrecta para el usuario:", nombre);
-        return res.status(401).json({ error: "Contraseña incorrecta" });
+        return res.status(401).json({ error: "Contraseña incorrecta: " + " " + usuario.password + ", " + password });
     }
     delete usuario.password; // No enviar la contraseña al cliente
     res.json(usuario);
