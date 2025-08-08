@@ -496,3 +496,12 @@ footer {
   scroll-margin-top: 10vh; /* o el valor que uses */
   height: 20px;
 }
+
+.community-cta {
+  display: flex;
+
+}
+
+.community-cta a {
+  margin: 0.5rem 0;
+}
