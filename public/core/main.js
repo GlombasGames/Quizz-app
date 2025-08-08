@@ -207,8 +207,7 @@ async function inicializarUsuario() {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ nombre, password })
   });
-  console.log(response.error)
-  if (!response.ok) {
+  if (!response.ok || response.error) {
     console.warn("No se encuentra usuario en DB, se requiere login");
     renderLogin();
     return;
