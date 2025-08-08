@@ -392,12 +392,18 @@ async function cargarDatosJSON() {
       data = JSON.parse(preguntasData.value);
       console.log('Categorías cargadas desde almacenamiento local:', data);
     } else {
-      const res = await fetch('/categorias.json');
-      console.error({res})
+      let res
+      if (isAndroid) {
+        res = await fetch('/categorias.json');
+      } else {
+        res = await fetch(`${triviaName}/categorias.json`);
+      }
+
       if (!res.ok) {
         throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
       }
       data = await res.json();
+      console.error({ data })
       console.log('Categorías cargadas desde el archivo local:', data);
 
       await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
