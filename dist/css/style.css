@@ -492,3 +492,7 @@ footer {
     font-size: 1rem;
   }
 }
+
+.target {
+  height: 20px;
+}
