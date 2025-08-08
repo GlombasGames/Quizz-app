@@ -11,7 +11,7 @@ const serviceAccount = require('./firebase-admin-config.json');
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
 const PORT = 3100;
-const version = '1.3';
+const version = '0.1';
 
 const app = express();
 app.use(cors());
