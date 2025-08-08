@@ -208,7 +208,7 @@ async function inicializarUsuario() {
     body: JSON.stringify({ nombre, password })
   });
   if (!response.ok || response.error) {
-    console.warn("No se encuentra usuario en DB, se requiere login");
+    console.warn("No se encuentra usuario en DB, se requiere login, PASA");
     renderLogin();
     return;
   }
@@ -216,7 +216,7 @@ async function inicializarUsuario() {
   try {
     const userData = await response.json();
     usuarioActual = userData;
-    console.warn("Login existoso:", usuarioActual.nombre);
+    console.warn("Login existoso:ASDASD ", usuarioActual.nombre);
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');

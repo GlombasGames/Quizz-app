@@ -135,12 +135,11 @@ app.post("/api/getUser", async (req, res) => {
     let usuario = await users.findOne({ nombre });
 
     if (!password && usuario) {
-        return res.status(400).json({ ok: true });
+        return res.status(200).json({ ok: true });
     }
 
     // Buscar si ya existe
     if (!usuario) {
-        console.warn("Usuario no existe:", nombre);
         return res.status(401).json({ error: "Usuario no existe" });
     }
 
