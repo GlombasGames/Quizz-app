@@ -161,7 +161,8 @@ function actualizarJugador(path, valor) {
 async function gastarCoin() {
   usuarioActual.intentos -= 1;
   actualizarJugador(`monedas.${triviaName}`, usuarioActual.intentos);
-  usuarioActual.actividadTotal += 1;
+  const base = Number.isFinite(usuarioActual.actividadTotal) ? usuarioActual.actividadTotal : 0;
+  usuarioActual.actividadTotal = base + 1;
   actualizarJugador('actividadTotal', usuarioActual.actividadTotal);
 }
 
