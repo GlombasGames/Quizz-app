@@ -393,14 +393,7 @@ async function cargarDatosJSON() {
       data = JSON.parse(preguntasData.value);
       console.log('Categorías cargadas desde almacenamiento local:', data);
     } else {
-      let res;
-      if (!isAndroid) {
-        res = await fetch(`dist/${triviaName}/categorias.json`);
-        console.log('CARGA NO ANDROID');
-      } else {
-        res = await fetch('/categorias.json');
-        console.log('CARGA ANDROID');
-      }
+      const res = await fetch('/categorias.json');
       if (!res.ok) {
         throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
       }
