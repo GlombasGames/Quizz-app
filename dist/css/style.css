@@ -490,11 +490,6 @@ footer {
   .feature-content p {
     font-size: 1rem;
   }
-
-  .community-cta a {
-    flex: 1 1 40%;
-    /* cada botón ocupa aprox. 40% del ancho en móviles, bajando si no entra */
-  }
 }
 
 .target {
@@ -534,4 +529,10 @@ footer {
 
 .btn-community:hover {
   background-color: #3336ff;
+}
+
+@media (max-width: 768px) {
+  .community-cta a {
+    flex: 1 1 40%; /* cada botón ocupa aprox. 40% del ancho en móviles, bajando si no entra */
+  }
 }
