@@ -92,8 +92,8 @@ section {
   scroll-margin-top: 10vh;
   /* Ajustá este valor según el alto real del header fijo */
 }
-section .feature {
-  scroll-margin-top: 20vh; /* o el valor que uses */
+.feature {
+  scroll-margin-top: 300px; /* o el valor que uses */
 }
 
 .lore .narrativa {
