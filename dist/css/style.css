@@ -223,7 +223,7 @@ footer {
 .intro-panels {
   position: relative;
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   overflow: hidden;
 }
 
@@ -309,6 +309,13 @@ footer {
 
 
 @media (max-width: 980px) {
+
+  .intro-panels {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
 
   .btn-mobile-fixed {
     display: block;
@@ -510,9 +517,11 @@ footer {
 
 .community-cta a {
   margin: 0.5rem;
-  flex: 0 1 auto; /* no se estiran más allá de su ancho natural */
+  flex: 0 1 auto;
+  /* no se estiran más allá de su ancho natural */
   text-align: center;
-  min-width: unset; /* opcional, si querés que el ancho dependa del texto */
+  min-width: unset;
+  /* opcional, si querés que el ancho dependa del texto */
 }
 
 .btn-community {
