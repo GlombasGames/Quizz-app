@@ -197,7 +197,7 @@ async function inicializarUsuario() {
   }
 
   if (!nombre || !password) {
-    console.warn("No hay usuario guardado, se requiere login, CAMBIO");
+    console.warn("No hay usuario guardado, se requiere login");
     renderLogin();
     return;
   }
@@ -210,18 +210,17 @@ async function inicializarUsuario() {
     body: JSON.stringify({ nombre, password })
   });
 
-  
+
   if (!response.ok || response.error) {
-    console.warn("No se encuentra usuario en DB, se requiere login, PASA");
+    console.warn("Usuario no existe");
     renderLogin();
-    console.error("PASA IGUAL DESPUES DEL RETURN");
     return;
   }
-  
+
   try {
     const userData = await response.json();
     usuarioActual = userData;
-    console.warn("Login existoso:ASDASD ", usuarioActual.nombre);
+    console.warn("Login existoso: ", usuarioActual.nombre);
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');
