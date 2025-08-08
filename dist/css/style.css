@@ -222,7 +222,8 @@ footer {
 
 .intro-panels {
   position: relative;
-  width: 100%;
+  width: 90%;
+  margin-left: 10%;
   height: 55vh;
   overflow: hidden;
 }
