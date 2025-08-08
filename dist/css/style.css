@@ -398,7 +398,7 @@ footer {
 }
 
 /* En mobile mantenemos “cover” para que llene bien */
-@media (max-width: 980px) {
+@media (max-width: 768px) {
   .feature-media img {
     height: auto;
     max-height: none;
