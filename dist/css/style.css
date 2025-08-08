@@ -494,6 +494,6 @@ footer {
 }
 
 .target {
-  scroll-margin-top: 80px; /* o el valor que uses */
+  scroll-margin-top: 10vh; /* o el valor que uses */
   height: 20px;
 }
