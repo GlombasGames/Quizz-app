@@ -499,6 +499,7 @@ footer {
 }
 
 .community-cta {
+  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   /* permite que los botones bajen a la siguiente línea */
