@@ -88,7 +88,7 @@ header {
 }
 
 section {
-  /* padding: 3rem 2rem; */
+  margin: 3rem 2rem;
   scroll-margin-top: 8vh;
   /* Ajustá este valor según el alto real del header fijo */
 }
@@ -345,7 +345,8 @@ footer {
 /* ===== Tarjetas diagonales imagen + texto ===== */
 .feature {
   display: grid;
-  grid-template-columns: 1fr 1fr;             /* 50% imagen / 50% texto */
+  grid-template-columns: 1fr 1fr;
+  /* 50% imagen / 50% texto */
   grid-template-areas: "media content";
   gap: 0;
   align-items: stretch;
@@ -353,10 +354,12 @@ footer {
   border-radius: 16px;
   overflow: hidden;
   margin: 2rem 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
 
-  max-height: 50vh;                            /* la tarjeta no supera 50% de alto de pantalla */
-  min-height: 320px;                            /* evita que quede muy baja */
+  max-height: 50vh;
+  /* la tarjeta no supera 50% de alto de pantalla */
+  min-height: 320px;
+  /* evita que quede muy baja */
 }
 
 .feature .feature-media {
@@ -366,15 +369,19 @@ footer {
 .feature .feature-content {
   grid-area: content;
 }
+
 .feature .feature-media,
 .feature .feature-content {
-  height: 100%;                                  /* los dos paneles ocupan toda la altura */
+  height: 100%;
+  /* los dos paneles ocupan toda la altura */
 }
 
 /* alterna: texto a la izquierda, imagen a la derecha */
 .feature.alt {
-  grid-template-columns: 1fr 1fr;               /* también 50/50 en la variante */
-  grid-template-areas: "content media";         /* invierte lados */
+  grid-template-columns: 1fr 1fr;
+  /* también 50/50 en la variante */
+  grid-template-areas: "content media";
+  /* invierte lados */
 }
 
 .feature-media {
@@ -384,10 +391,12 @@ footer {
 
 .feature-media img {
   width: 100%;
-  height: 100%; 
-  max-height: 40vh;                                 /* ← clave: llena la altura total de la tarjeta */
+  height: 100%;
+  max-height: 40vh;
+  /* ← clave: llena la altura total de la tarjeta */
   display: block;
-  object-fit: cover;                              /* recorta si la proporción no coincide */
+  object-fit: cover;
+  /* recorta si la proporción no coincide */
 }
 
 /* En mobile mantenemos “cover” para que llene bien */
@@ -407,7 +416,8 @@ footer {
   right: -1px;
   top: 0;
   bottom: 0;
-  width: clamp(80px, 8vw, 300px);  /* ← escala con ANCHO de pantalla */
+  width: clamp(80px, 8vw, 300px);
+  /* ← escala con ANCHO de pantalla */
   background: linear-gradient(135deg, transparent 50%, #151515 50%);
   pointer-events: none;
 }
@@ -416,7 +426,8 @@ footer {
 .feature.alt .feature-media::after {
   left: -1px;
   right: auto;
-  width: clamp(80px, 8vw, 300px); /* ← igual que arriba */
+  width: clamp(80px, 8vw, 300px);
+  /* ← igual que arriba */
   background: linear-gradient(225deg, transparent 50%, #151515 50%);
 }
 
@@ -425,7 +436,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;   
+  align-items: center;
 }
 
 .feature-content h2 {
@@ -457,8 +468,9 @@ footer {
     grid-template-columns: 1fr;
     grid-template-areas:
       "media"
-      "content";      
-    max-height: none;                             /* en mobile no limitamos altura */
+      "content";
+    max-height: none;
+    /* en mobile no limitamos altura */
     /* imagen arriba, texto abajo para ambos */
   }
 
