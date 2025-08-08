@@ -211,6 +211,7 @@ async function inicializarUsuario() {
   if (!response.ok) {
     console.warn("No se encuentra usuario en DB, se requiere login");
     renderLogin();
+    return;
   }
 
   try {
