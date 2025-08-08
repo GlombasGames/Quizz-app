@@ -396,7 +396,7 @@ async function cargarDatosJSON() {
       if (isAndroid) {
         res = await fetch('/categorias.json');
       } else {
-        res = await fetch(`${triviaName}/categorias.json`);
+        res = await fetch(`../${triviaName}/categorias.json`);
       }
 
       if (!res.ok) {
