@@ -177,7 +177,7 @@ footer {
   background-color: #0e0e0e;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .nav ul {
     flex-direction: column;
     gap: 0.8rem;
@@ -308,7 +308,7 @@ footer {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
 
   .btn-mobile-fixed {
     display: block;
@@ -398,7 +398,7 @@ footer {
 }
 
 /* En mobile mantenemos “cover” para que llene bien */
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .feature-media img {
     height: auto;
     max-height: none;
@@ -459,7 +459,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 980px) {
 
   .feature,
   .feature.alt {
@@ -533,7 +533,7 @@ footer {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .community-cta a {
     flex: 1 1 40%;
     /* cada botón ocupa aprox. 40% del ancho en móviles, bajando si no entra */
