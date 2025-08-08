@@ -197,7 +197,7 @@ async function inicializarUsuario() {
   }
 
   if (!nombre || !password) {
-    console.warn("No hay usuario guardado, se requiere login");
+    console.warn("No hay usuario guardado, se requiere login, CAMBIO");
     renderLogin();
     return;
   }
