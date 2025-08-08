@@ -89,11 +89,8 @@ header {
 
 section {
   /* padding: 3rem 2rem; */
-  scroll-margin-top: 10vh;
+  scroll-margin-top: 5vh;
   /* Ajustá este valor según el alto real del header fijo */
-}
-section #torre-consejo {
-  scroll-margin-top: 300px; /* o el valor que uses */
 }
 
 .lore .narrativa {
