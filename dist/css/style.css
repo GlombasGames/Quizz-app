@@ -509,6 +509,7 @@ footer {
 }
 
 .community-cta a {
+  margin: 0.5rem;
   flex: 0 1 auto; /* no se estiran más allá de su ancho natural */
   text-align: center;
   min-width: unset; /* opcional, si querés que el ancho dependa del texto */
