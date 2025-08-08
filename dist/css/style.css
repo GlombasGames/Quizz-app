@@ -533,7 +533,7 @@ footer {
 }
 .feature-content-top {
   padding: 2em 2.2rem;
-  align-items: flex-start;
+  align-items: center;
   /* alinea a la izquierda en vez de centrar */
 }
 
