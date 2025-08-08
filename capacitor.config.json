@@ -1,6 +1,10 @@
 {
-  "appId": "com.glombagames.triviaselva",
-  "appName": "Trivia de Selva",
-  "webDir": "distAndroid/selva",
-  "bundledWebRuntime": false
+  "appId": "com.triviantis.camaradeselva",
+  "appName": "Selva",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "cleartext": false,
+    "url": "https://triviantis.com/"
+  }
 }

@@ -1171,7 +1171,9 @@ button.btn-volver-cartel {
 .misiones {
   padding: 16px;
 }
-.misiones h2 {
+.misiones h2, p {
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: center;
 }
 .mision {
@@ -1258,4 +1260,18 @@ button.btn-volver-cartel {
 .btn-reclamar:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+/* Estilos para centrar el login */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centrar verticalmente */
+  height: 100vh; /* Usar toda la altura de la pantalla */
+  box-sizing: border-box; /* Incluir padding y border en el tamaño */
+  padding: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  min-height: 500px;
 }
