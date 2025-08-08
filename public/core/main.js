@@ -188,6 +188,7 @@ async function aplicarDeltaPendiente() {
 async function inicializarUsuario() {
   // 1. Recuperar nombre guardado
   let guardado = await Storage.get({ key: 'usuario_nombre' });
+  console.error({ guardado });
   let nombre = null
   let password = null
   if (guardado.value) {
