@@ -505,3 +505,20 @@ footer {
 .community-cta a {
   margin: 0.5rem;
 }
+
+.btn-community {
+  background-color: #5757ff;
+  color: #1c1c1c;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.3s;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.btn-community:hover {
+  background-color: #3336ff;
+}
