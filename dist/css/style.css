@@ -460,7 +460,7 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 980px) {
+@media (max-width: 768px) {
 
   .feature,
   .feature.alt {
