@@ -128,13 +128,17 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.post("/api/getUser", async (req, res) => {
 
     const { nombre, password } = req.body;
-    console.error("getUser", nombre, password);
-    if (!nombre || !password) {
-        return res.status(400).json({ error: "Nombre o contraseña no llegan" });
+    if (!nombre) {
+        return res.status(400).json({ error: "Nombre no llega a getUser" });
+    }
+
+    let usuario = await users.findOne({ nombre });
+
+    if (!password && usuario) {
+        return res.status(400).json({ ok: true });
     }
 
     // Buscar si ya existe
-    let usuario = await users.findOne({ nombre });
     if (!usuario) {
         console.warn("Usuario no existe:", nombre);
         return res.status(404).json({ error: "Usuario no existe" });
