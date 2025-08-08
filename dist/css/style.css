@@ -509,10 +509,9 @@ footer {
 }
 
 .community-cta a {
-  margin: 0.5rem;
-  flex: 1 1 auto;
-  /* ancho flexible */
+  flex: 0 1 auto; /* no se estiran más allá de su ancho natural */
   text-align: center;
+  min-width: unset; /* opcional, si querés que el ancho dependa del texto */
 }
 
 .btn-community {
@@ -535,7 +534,7 @@ footer {
 
 @media (max-width: 980px) {
   .community-cta a {
-    flex: 1 1 40%;
+    flex: 0 1 auto;
     /* cada botón ocupa aprox. 40% del ancho en móviles, bajando si no entra */
     min-width: 150px;
   }
