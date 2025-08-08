@@ -208,9 +208,8 @@ async function inicializarUsuario() {
     body: JSON.stringify({ nombre, password })
   });
   if (!response.ok || response.error) {
-    console.warn("No se encuentra usuario en DB, se requiere login");
     renderLogin();
-    return;
+    throw new Error("No se encuentra usuario en DB, se requiere login");
   }
 
   try {
