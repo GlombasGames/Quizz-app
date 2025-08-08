@@ -91,6 +91,10 @@ section {
   /* Ajustá este valor según el alto real del header fijo */
 }
 
+.lore {
+  padding: 2rem;
+}
+
 .lore .narrativa {
   max-width: 800px;
   margin: 0 auto;
