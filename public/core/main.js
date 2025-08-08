@@ -382,13 +382,25 @@ async function verificarVersion() {
 
 async function cargarDatosJSON() {
   try {
-    console.error({isAndroid})
-    const preguntasData = await Storage.get({ key: 'categorias' });
+    let preguntasData;
+    if (!isAndroid) {
+      preguntasData = await Storage.get({ key: 'categorias' });
+    } else {
+      preguntasData = await Storage.get({ key: 'categorias' });
+    }
+
     if (preguntasData.value) {
       data = JSON.parse(preguntasData.value);
       console.log('Categorías cargadas desde almacenamiento local:', data);
     } else {
-      const res = await fetch('/categorias.json');
+      let res;
+      if (!isAndroid) {
+        res = await fetch(`dist/${triviaName}/categorias.json`);
+        console.log('CARGA NO ANDROID');
+      } else {
+        res = await fetch('/categorias.json');
+        console.log('CARGA ANDROID');
+      }
       if (!res.ok) {
         throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
       }
