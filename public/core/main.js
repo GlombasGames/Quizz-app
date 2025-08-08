@@ -1286,15 +1286,12 @@ window.crearCuenta = async function crearCuenta() {
     alert("Debes completar ambos campos.");
     return;
   }
-
-  console.log("Intentando crear cuenta con:", { nombre, password });
   // 4. comprobamos si el usuario ya existe
   const user = await fetch('https://triviantis.com/api/getUser', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ nombre })
   });
-  console.error({ ACA: user.ok })
   if (user.ok) {
     console.error(`El usuario ya existe`);
     return;
