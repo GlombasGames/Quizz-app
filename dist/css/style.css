@@ -502,6 +502,7 @@ footer {
   padding: 2rem 0;
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
   /* permite que los botones bajen a la siguiente línea */
   justify-content: center;
   /* centra los botones en pantallas grandes y chicas */
@@ -537,5 +538,6 @@ footer {
   .community-cta a {
     flex: 1 1 40%;
     /* cada botón ocupa aprox. 40% del ancho en móviles, bajando si no entra */
+    min-width: 150px;
   }
 }
