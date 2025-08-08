@@ -382,6 +382,7 @@ async function verificarVersion() {
 
 async function cargarDatosJSON() {
   try {
+    console.error({isAndroid})
     const preguntasData = await Storage.get({ key: 'categorias' });
     if (preguntasData.value) {
       data = JSON.parse(preguntasData.value);
