@@ -490,20 +490,33 @@ footer {
   .feature-content p {
     font-size: 1rem;
   }
+
+  .community-cta a {
+    flex: 1 1 40%;
+    /* cada botón ocupa aprox. 40% del ancho en móviles, bajando si no entra */
+  }
 }
 
 .target {
-  scroll-margin-top: 10vh; /* o el valor que uses */
+  scroll-margin-top: 10vh;
+  /* o el valor que uses */
   height: 20px;
 }
 
 .community-cta {
   display: flex;
+  flex-wrap: wrap;
+  /* permite que los botones bajen a la siguiente línea */
+  justify-content: center;
+  /* centra los botones en pantallas grandes y chicas */
 
 }
 
 .community-cta a {
   margin: 0.5rem;
+  flex: 1 1 auto;
+  /* ancho flexible */
+  text-align: center;
 }
 
 .btn-community {
