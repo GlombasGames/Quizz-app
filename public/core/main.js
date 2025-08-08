@@ -403,10 +403,14 @@ async function cargarDatosJSON() {
         throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
       }
       data = await res.json();
-      console.error({ data })
+      console.error({ data });
       console.log('Categorías cargadas desde el archivo local:', data);
-
-      await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
+      if (Object.keys(data).length !== 0) {
+        await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
+      } else{
+        console.log('recargo las categorias forazo en loop')
+        await cargarDatosJSON();
+      }
     }
     // Actualizar las categorías desbloqueadas con las primeras dos categorías del archivo JSON
     const categorias = Object.keys(data);
