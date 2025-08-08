@@ -217,7 +217,7 @@ async function inicializarUsuario() {
   try {
     const userData = await response.json();
     usuarioActual = userData;
-    console.warn("Login existoso:", nombre)
+    console.warn("Login existoso:", usuarioActual.nombre);
   } catch (error) {
     console.error('Error al parsear JSON:', error);
     throw new Error('La respuesta no es un JSON válido.');
