@@ -87,7 +87,6 @@ header {
 }
 
 section {
-  padding: 3rem 2rem;
   scroll-margin-top: 8vh;
   /* Ajustá este valor según el alto real del header fijo */
 }
@@ -431,6 +430,7 @@ footer {
 }
 
 .feature-content {
+  padding: 2rem 2.2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
