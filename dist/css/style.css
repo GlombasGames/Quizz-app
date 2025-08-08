@@ -530,7 +530,7 @@ footer {
 .btn-community:hover {
   background-color: #3336ff;
 }
-.feature-content.top {
+.feature-content-top {
   align-items: flex-start;
   /* alinea a la izquierda en vez de centrar */
 }
