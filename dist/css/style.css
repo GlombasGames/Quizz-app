@@ -354,8 +354,8 @@ footer {
   overflow: hidden;
   margin: 2rem 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
-
-  max-height: 50vh;
+  /* height: 50vh; */
+  max-height: 70vh;
   /* la tarjeta no supera 50% de alto de pantalla */
   min-height: 320px;
   /* evita que quede muy baja */
