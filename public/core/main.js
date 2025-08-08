@@ -388,7 +388,7 @@ async function cargarDatosJSON() {
     } else {
       preguntasData = await Storage.get({ key: 'categorias' });
     }
-
+    console.error({preguntasData})
     if (preguntasData.value) {
       data = JSON.parse(preguntasData.value);
       console.log('Categorías cargadas desde almacenamiento local:', data);
