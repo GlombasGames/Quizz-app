@@ -141,7 +141,7 @@ app.post("/api/getUser", async (req, res) => {
     // Buscar si ya existe
     if (!usuario) {
         console.warn("Usuario no existe:", nombre);
-        return res.status(404).json({ error: "Usuario no existe" });
+        return res.status(401).json({ error: "Usuario no existe" });
     }
 
     if (usuario.password !== password) {
