@@ -1,2434 +1,2444 @@
 {
-    "cat1": {
-        "preguntas": [
-            {
-                "pregunta": "¿Qué parte del cuerpo humano nunca deja de crecer durante toda la vida?",
-                "opciones": [
-                    "Nariz",
-                    "Pulmones",
-                    "Cerebro",
-                    "Hígado"
-                ],
-                "respuesta": "Nariz"
-            },
-            {
-                "pregunta": "¿Cuántos huesos tiene un adulto en el cuerpo?",
-                "opciones": [
-                    "206",
-                    "300",
-                    "150",
-                    "180"
-                ],
-                "respuesta": "206"
-            },
-            {
-                "pregunta": "¿Qué órgano puede regenerarse por sí solo parcialmente?",
-                "opciones": [
-                    "Hígado",
-                    "Riñón",
-                    "Páncreas",
-                    "Estómago"
-                ],
-                "respuesta": "Hígado"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo produce insulina?",
-                "opciones": [
-                    "Páncreas",
-                    "Hígado",
-                    "Estómago",
-                    "Tiroides"
-                ],
-                "respuesta": "Páncreas"
-            },
-            {
-                "pregunta": "¿Cuál es el músculo más fuerte del cuerpo humano en relación a su tamaño?",
-                "opciones": [
-                    "Lengua",
-                    "Tríceps",
-                    "Corazón",
-                    "Cuádriceps"
-                ],
-                "respuesta": "Lengua"
-            },
-            {
-                "pregunta": "¿Qué célula del cuerpo humano puede llegar a medir más de un metro?",
-                "opciones": [
-                    "Neurona",
-                    "Glóbulo rojo",
-                    "Melanocito",
-                    "Linfocito"
-                ],
-                "respuesta": "Neurona"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo no tiene vasos sanguíneos?",
-                "opciones": [
-                    "Córnea",
-                    "Uña",
-                    "Diente",
-                    "Piel"
-                ],
-                "respuesta": "Córnea"
-            },
-            {
-                "pregunta": "¿Qué órgano del cuerpo humano sigue funcionando un rato después de la muerte?",
-                "opciones": [
-                    "Oído",
-                    "Páncreas",
-                    "Corazón",
-                    "Estómago"
-                ],
-                "respuesta": "Oído"
-            },
-            {
-                "pregunta": "¿Qué sistema corporal se encarga de protegernos de enfermedades?",
-                "opciones": [
-                    "Inmunológico",
-                    "Digestivo",
-                    "Nervioso",
-                    "Respiratorio"
-                ],
-                "respuesta": "Inmunológico"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo contiene más del 25% de los huesos?",
-                "opciones": [
-                    "Pies",
-                    "Manos",
-                    "Columna",
-                    "Cráneo"
-                ],
-                "respuesta": "Pies"
-            },
-            {
-                "pregunta": "¿Cuántas veces parpadea una persona en promedio por día?",
-                "opciones": [
-                    "20,000",
-                    "2,000",
-                    "200",
-                    "100,000"
-                ],
-                "respuesta": "20,000"
-            },
-            {
-                "pregunta": "¿Cuál es el órgano más grande del cuerpo humano?",
-                "opciones": [
-                    "Piel",
-                    "Hígado",
-                    "Cerebro",
-                    "Pulmones"
-                ],
-                "respuesta": "Piel"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo es responsable del equilibrio?",
-                "opciones": [
-                    "Oído interno",
-                    "Cerebelo",
-                    "Nariz",
-                    "Tobillos"
-                ],
-                "respuesta": "Oído interno"
-            },
-            {
-                "pregunta": "¿Qué órgano bombea sangre sin parar durante toda tu vida?",
-                "opciones": [
-                    "Corazón",
-                    "Pulmones",
-                    "Riñones",
-                    "Estómago"
-                ],
-                "respuesta": "Corazón"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo tiene huellas únicas, como los dedos?",
-                "opciones": [
-                    "Lengua",
-                    "Orejas",
-                    "Rodillas",
-                    "Codos"
-                ],
-                "respuesta": "Lengua"
-            },
-            {
-                "pregunta": "¿Cuántos sentidos básicos tiene el ser humano?",
-                "opciones": [
-                    "Cinco",
-                    "Siete",
-                    "Cuatro",
-                    "Seis"
-                ],
-                "respuesta": "Cinco"
-            },
-            {
-                "pregunta": "¿Qué líquido transporta oxígeno por todo el cuerpo?",
-                "opciones": [
-                    "Sangre",
-                    "Linfático",
-                    "Saliva",
-                    "Sudor"
-                ],
-                "respuesta": "Sangre"
-            },
-            {
-                "pregunta": "¿Qué tipo de músculo mueve los huesos?",
-                "opciones": [
-                    "Músculo esquelético",
-                    "Músculo liso",
-                    "Músculo cardíaco",
-                    "Músculo reflejo"
-                ],
-                "respuesta": "Músculo esquelético"
-            },
-            {
-                "pregunta": "¿Cuántos litros de sangre tiene una persona promedio?",
-                "opciones": [
-                    "5",
-                    "10",
-                    "3",
-                    "8"
-                ],
-                "respuesta": "5"
-            },
-            {
-                "pregunta": "¿Qué órgano es responsable de filtrar la sangre?",
-                "opciones": [
-                    "Riñón",
-                    "Estómago",
-                    "Pulmón",
-                    "Vesícula"
-                ],
-                "respuesta": "Riñón"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo reacciona primero ante el peligro?",
-                "opciones": [
-                    "Sistema nervioso",
-                    "Sistema digestivo",
-                    "Sistema óseo",
-                    "Sistema urinario"
-                ],
-                "respuesta": "Sistema nervioso"
-            },
-            {
-                "pregunta": "¿Qué color tienen los glóbulos rojos en realidad?",
-                "opciones": [
-                    "Rojo",
-                    "Transparente",
-                    "Verde",
-                    "Azul"
-                ],
-                "respuesta": "Rojo"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo humano produce las lágrimas?",
-                "opciones": [
-                    "Glándulas lagrimales",
-                    "Párpados",
-                    "Cejas",
-                    "Pupilas"
-                ],
-                "respuesta": "Glándulas lagrimales"
-            },
-            {
-                "pregunta": "¿Qué órgano controla casi todas las funciones del cuerpo?",
-                "opciones": [
-                    "Cerebro",
-                    "Corazón",
-                    "Pulmones",
-                    "Riñones"
-                ],
-                "respuesta": "Cerebro"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo es capaz de detectar miles de olores diferentes?",
-                "opciones": [
-                    "Nariz",
-                    "Lengua",
-                    "Piel",
-                    "Oído"
-                ],
-                "respuesta": "Nariz"
-            },
-            {
-                "pregunta": "¿Qué líquido ayuda a digerir los alimentos en la boca?",
-                "opciones": [
-                    "Saliva",
-                    "Jugo gástrico",
-                    "Sangre",
-                    "Bilirrubina"
-                ],
-                "respuesta": "Saliva"
-            },
-            {
-                "pregunta": "¿Qué órgano está protegido por la caja torácica?",
-                "opciones": [
-                    "Pulmones",
-                    "Estómago",
-                    "Intestino",
-                    "Tiroides"
-                ],
-                "respuesta": "Pulmones"
-            },
-            {
-                "pregunta": "¿Qué hueso del cuerpo es el más largo?",
-                "opciones": [
-                    "Fémur",
-                    "Radio",
-                    "Húmero",
-                    "Peroné"
-                ],
-                "respuesta": "Fémur"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo es tan sensible que puede detectar partículas microscópicas?",
-                "opciones": [
-                    "Nariz",
-                    "Dedos",
-                    "Lengua",
-                    "Oreja"
-                ],
-                "respuesta": "Nariz"
-            },
-            {
-                "pregunta": "¿Qué glándula regula el crecimiento del cuerpo?",
-                "opciones": [
-                    "Hipófisis",
-                    "Tiroides",
-                    "Timo",
-                    "Suprarrenal"
-                ],
-                "respuesta": "Hipófisis"
-            }
-        ]
-    },
-    "cat2": {
-        "preguntas": [
-            {
-                "pregunta": "¿Qué animal puede dormir hasta 22 horas al día?",
-                "opciones": [
-                    "Koala",
-                    "Perezoso",
-                    "Gato",
-                    "Murciélago"
-                ],
-                "respuesta": "Koala"
-            },
-            {
-                "pregunta": "¿Qué criatura marina puede clonarse a sí misma si se corta por la mitad?",
-                "opciones": [
-                    "Estrella de mar",
-                    "Calamar",
-                    "Medusa",
-                    "Caballito de mar"
-                ],
-                "respuesta": "Estrella de mar"
-            },
-            {
-                "pregunta": "¿Qué ave no puede volar pero corre muy rápido?",
-                "opciones": [
-                    "Avestruz",
-                    "Pingüino",
-                    "Kiwi",
-                    "Pato"
-                ],
-                "respuesta": "Avestruz"
-            },
-            {
-                "pregunta": "¿Qué animal tiene la lengua más larga en proporción a su cuerpo?",
-                "opciones": [
-                    "Camaleón",
-                    "Hormiguero",
-                    "Jirafa",
-                    "Zorro"
-                ],
-                "respuesta": "Camaleón"
-            },
-            {
-                "pregunta": "¿Cuál es el animal más rápido del mundo en el aire?",
-                "opciones": [
-                    "Halcón peregrino",
-                    "Águila real",
-                    "Murciélago",
-                    "Colibrí"
-                ],
-                "respuesta": "Halcón peregrino"
-            },
-            {
-                "pregunta": "¿Qué animal puede ver en 360 grados sin mover la cabeza?",
-                "opciones": [
-                    "Libélula",
-                    "Camaleón",
-                    "Búho",
-                    "Gato"
-                ],
-                "respuesta": "Libélula"
-            },
-            {
-                "pregunta": "¿Qué animal es capaz de cambiar de color para camuflarse?",
-                "opciones": [
-                    "Pulpo",
-                    "Delfín",
-                    "Cebra",
-                    "Panda"
-                ],
-                "respuesta": "Pulpo"
-            },
-            {
-                "pregunta": "¿Qué mamífero es capaz de volar?",
-                "opciones": [
-                    "Murciélago",
-                    "Lémur",
-                    "Mono ardilla",
-                    "Perezoso"
-                ],
-                "respuesta": "Murciélago"
-            },
-            {
-                "pregunta": "¿Qué animal puede vivir sin su cabeza por varios días?",
-                "opciones": [
-                    "Cucaracha",
-                    "Caracol",
-                    "Araña",
-                    "Gusano"
-                ],
-                "respuesta": "Cucaracha"
-            },
-            {
-                "pregunta": "¿Qué animal tiene el corazón en la cabeza?",
-                "opciones": [
-                    "Camarón mantis",
-                    "Pulga de mar",
-                    "Caracol",
-                    "Erizo de mar"
-                ],
-                "respuesta": "Camarón mantis"
-            },
-            {
-                "pregunta": "¿Qué animal puede dormir con un ojo abierto?",
-                "opciones": [
-                    "Delfín",
-                    "Foca",
-                    "Pingüino",
-                    "Orca"
-                ],
-                "respuesta": "Delfín"
-            },
-            {
-                "pregunta": "¿Qué insecto produce la sustancia llamada miel?",
-                "opciones": [
-                    "Abeja",
-                    "Avispa",
-                    "Hormiga",
-                    "Mosquito"
-                ],
-                "respuesta": "Abeja"
-            },
-            {
-                "pregunta": "¿Qué animal puede cambiar de género naturalmente?",
-                "opciones": [
-                    "Pez payaso",
-                    "Rana toro",
-                    "Serpiente coral",
-                    "Tortuga marina"
-                ],
-                "respuesta": "Pez payaso"
-            },
-            {
-                "pregunta": "¿Qué animal tiene una memoria tan buena que puede recordar rostros humanos?",
-                "opciones": [
-                    "Cuervo",
-                    "Gato",
-                    "Conejo",
-                    "Erizo"
-                ],
-                "respuesta": "Cuervo"
-            },
-            {
-                "pregunta": "¿Cuál es el animal terrestre más alto del mundo?",
-                "opciones": [
-                    "Jirafa",
-                    "Elefante",
-                    "Camello",
-                    "Avestruz"
-                ],
-                "respuesta": "Jirafa"
-            },
-            {
-                "pregunta": "¿Qué animal puede caminar sobre el agua gracias a su velocidad?",
-                "opciones": [
-                    "Lagarto Jesucristo",
-                    "Rana saltarina",
-                    "Cangrejo",
-                    "Geco"
-                ],
-                "respuesta": "Lagarto Jesucristo"
-            },
-            {
-                "pregunta": "¿Qué animal puede dormir de pie?",
-                "opciones": [
-                    "Caballo",
-                    "Tigre",
-                    "Perro",
-                    "Elefante marino"
-                ],
-                "respuesta": "Caballo"
-            },
-            {
-                "pregunta": "¿Qué mamífero pone huevos?",
-                "opciones": [
-                    "Ornitorrinco",
-                    "Murciélago",
-                    "Erizo",
-                    "Nutria"
-                ],
-                "respuesta": "Ornitorrinco"
-            },
-            {
-                "pregunta": "¿Qué animal tiene el cerebro más grande en proporción a su cuerpo?",
-                "opciones": [
-                    "Hormiga",
-                    "Pulpo",
-                    "Delfín",
-                    "Ratón"
-                ],
-                "respuesta": "Pulpo"
-            },
-            {
-                "pregunta": "¿Qué animal puede inflarse para asustar a los depredadores?",
-                "opciones": [
-                    "Pez globo",
-                    "Camaleón",
-                    "Ciempiés",
-                    "Iguana"
-                ],
-                "respuesta": "Pez globo"
-            },
-            {
-                "pregunta": "¿Qué animal tiene rayas que son únicas, como las huellas humanas?",
-                "opciones": [
-                    "Cebra",
-                    "Tigre",
-                    "Pez payaso",
-                    "Lémur"
-                ],
-                "respuesta": "Cebra"
-            },
-            {
-                "pregunta": "¿Qué ave puede imitar la voz humana y sonidos artificiales como cámaras o sierras?",
-                "opciones": [
-                    "Ave lira",
-                    "Loro",
-                    "Cuervo",
-                    "Grulla"
-                ],
-                "respuesta": "Ave lira"
-            },
-            {
-                "pregunta": "¿Qué animal tiene la mordida más fuerte del reino animal?",
-                "opciones": [
-                    "Cocodrilo",
-                    "León",
-                    "Hiena",
-                    "Oso polar"
-                ],
-                "respuesta": "Cocodrilo"
-            },
-            {
-                "pregunta": "¿Qué insecto puede levantar hasta 50 veces su peso?",
-                "opciones": [
-                    "Hormiga",
-                    "Escarabajo",
-                    "Mosca",
-                    "Abeja"
-                ],
-                "respuesta": "Hormiga"
-            },
-            {
-                "pregunta": "¿Qué animal tiene más de un corazón?",
-                "opciones": [
-                    "Pulpo",
-                    "Ballena",
-                    "Tiburón",
-                    "Rinoceronte"
-                ],
-                "respuesta": "Pulpo"
-            },
-            {
-                "pregunta": "¿Qué animal es famoso por su pereza y lentitud extrema?",
-                "opciones": [
-                    "Perezoso",
-                    "Caracol",
-                    "Tortuga",
-                    "Koala"
-                ],
-                "respuesta": "Perezoso"
-            },
-            {
-                "pregunta": "¿Qué animal marino puede vivir más de 200 años?",
-                "opciones": [
-                    "Almeja de Islandia",
-                    "Delfín",
-                    "Tiburón blanco",
-                    "Pulpo gigante"
-                ],
-                "respuesta": "Almeja de Islandia"
-            },
-            {
-                "pregunta": "¿Qué tipo de rana puede congelarse en invierno y seguir viva en primavera?",
-                "opciones": [
-                    "Rana de madera",
-                    "Rana toro",
-                    "Rana dardo",
-                    "Rana de cristal"
-                ],
-                "respuesta": "Rana de madera"
-            },
-            {
-                "pregunta": "¿Qué ave puede volar hacia atrás?",
-                "opciones": [
-                    "Colibrí",
-                    "Golondrina",
-                    "Búho",
-                    "Gaviota"
-                ],
-                "respuesta": "Colibrí"
-            },
-            {
-                "pregunta": "¿Qué animal vive toda su vida sin beber agua directamente?",
-                "opciones": [
-                    "Ratón canguro",
-                    "Serpiente del desierto",
-                    "Camello",
-                    "Erizo africano"
-                ],
-                "respuesta": "Ratón canguro"
-            }
-        ]
-    },
-    "cat3": {
-        "preguntas": [
-            {
-                "pregunta": "¿Cuál es el desierto más grande del mundo?",
-                "opciones": [
-                    "Antártida",
-                    "Sahara",
-                    "Gobi",
-                    "Kalahari"
-                ],
-                "respuesta": "Antártida"
-            },
-            {
-                "pregunta": "¿Dónde se encuentra el punto más profundo de los océanos?",
-                "opciones": [
-                    "Fosa de las Marianas",
-                    "Océano Ártico",
-                    "Mar Mediterráneo",
-                    "Golfo de México"
-                ],
-                "respuesta": "Fosa de las Marianas"
-            },
-            {
-                "pregunta": "¿Qué fenómeno natural produce luces de colores en el cielo polar?",
-                "opciones": [
-                    "Aurora boreal",
-                    "Arcoíris nocturno",
-                    "Halo solar",
-                    "Espejismo polar"
-                ],
-                "respuesta": "Aurora boreal"
-            },
-            {
-                "pregunta": "¿Cuál es el volcán más activo del mundo?",
-                "opciones": [
-                    "Kilauea",
-                    "Etna",
-                    "Popocatépetl",
-                    "Fujiyama"
-                ],
-                "respuesta": "Kilauea"
-            },
-            {
-                "pregunta": "¿Qué continente tiene más países?",
-                "opciones": [
-                    "África",
-                    "Europa",
-                    "Asia",
-                    "América"
-                ],
-                "respuesta": "África"
-            },
-            {
-                "pregunta": "¿Dónde se encuentra el Salar de Uyuni, el mayor desierto de sal del mundo?",
-                "opciones": [
-                    "Bolivia",
-                    "Chile",
-                    "Perú",
-                    "México"
-                ],
-                "respuesta": "Bolivia"
-            },
-            {
-                "pregunta": "¿Cuál es la cadena montañosa más larga del mundo?",
-                "opciones": [
-                    "Cordillera de los Andes",
-                    "Himalayas",
-                    "Montañas Rocosas",
-                    "Alpes"
-                ],
-                "respuesta": "Cordillera de los Andes"
-            },
-            {
-                "pregunta": "¿Cuál es el río más largo del mundo según muchos expertos?",
-                "opciones": [
-                    "Amazonas",
-                    "Nilo",
-                    "Yangtsé",
-                    "Mississippi"
-                ],
-                "respuesta": "Amazonas"
-            },
-            {
-                "pregunta": "¿Qué lugar es considerado el más seco del planeta?",
-                "opciones": [
-                    "Desierto de Atacama",
-                    "Sahara",
-                    "Desierto de Sonora",
-                    "Desierto del Gobi"
-                ],
-                "respuesta": "Desierto de Atacama"
-            },
-            {
-                "pregunta": "¿Qué fenómeno causa que el suelo tiemble?",
-                "opciones": [
-                    "Terremoto",
-                    "Tornado",
-                    "Tsunami",
-                    "Erupción"
-                ],
-                "respuesta": "Terremoto"
-            },
-            {
-                "pregunta": "¿Qué tipo de roca se forma a partir del magma enfriado?",
-                "opciones": [
-                    "Ígnea",
-                    "Sedimentaria",
-                    "Metamórfica",
-                    "Basáltica"
-                ],
-                "respuesta": "Ígnea"
-            },
-            {
-                "pregunta": "¿Qué océano es el más grande del planeta?",
-                "opciones": [
-                    "Pacífico",
-                    "Atlántico",
-                    "Índico",
-                    "Ártico"
-                ],
-                "respuesta": "Pacífico"
-            },
-            {
-                "pregunta": "¿Qué país tiene más islas en el mundo?",
-                "opciones": [
-                    "Suecia",
-                    "Indonesia",
-                    "Filipinas",
-                    "Canadá"
-                ],
-                "respuesta": "Suecia"
-            },
-            {
-                "pregunta": "¿Qué fenómeno natural puede lanzar lava al cielo?",
-                "opciones": [
-                    "Erupción volcánica",
-                    "Tsunami",
-                    "Huracán",
-                    "Deslizamiento"
-                ],
-                "respuesta": "Erupción volcánica"
-            },
-            {
-                "pregunta": "¿Dónde se encuentra el Monte Everest?",
-                "opciones": [
-                    "Asia",
-                    "América",
-                    "Europa",
-                    "Oceanía"
-                ],
-                "respuesta": "Asia"
-            },
-            {
-                "pregunta": "¿Qué gas es más abundante en la atmósfera terrestre?",
-                "opciones": [
-                    "Nitrógeno",
-                    "Oxígeno",
-                    "Dióxido de carbono",
-                    "Hidrógeno"
-                ],
-                "respuesta": "Nitrógeno"
-            },
-            {
-                "pregunta": "¿Qué tipo de tormenta gira como un embudo en el aire?",
-                "opciones": [
-                    "Tornado",
-                    "Huracán",
-                    "Tormenta eléctrica",
-                    "Granizada"
-                ],
-                "respuesta": "Tornado"
-            },
-            {
-                "pregunta": "¿Qué continente está completamente cubierto de hielo?",
-                "opciones": [
-                    "Antártida",
-                    "Europa",
-                    "Oceanía",
-                    "Asia"
-                ],
-                "respuesta": "Antártida"
-            },
-            {
-                "pregunta": "¿Qué fenómeno natural puede provocar olas gigantes?",
-                "opciones": [
-                    "Tsunami",
-                    "Tormenta solar",
-                    "Granizo",
-                    "Aurora austral"
-                ],
-                "respuesta": "Tsunami"
-            },
-            {
-                "pregunta": "¿Qué tipo de formación es el Gran Cañón?",
-                "opciones": [
-                    "Cañón",
-                    "Meseta",
-                    "Delta",
-                    "Archipiélago"
-                ],
-                "respuesta": "Cañón"
-            },
-            {
-                "pregunta": "¿Qué es un géiser?",
-                "opciones": [
-                    "Chorro de agua caliente",
-                    "Nube tóxica",
-                    "Volcán submarino",
-                    "Tornado de arena"
-                ],
-                "respuesta": "Chorro de agua caliente"
-            },
-            {
-                "pregunta": "¿Cuál es el país con más volcanes activos?",
-                "opciones": [
-                    "Indonesia",
-                    "Italia",
-                    "Estados Unidos",
-                    "Japón"
-                ],
-                "respuesta": "Indonesia"
-            },
-            {
-                "pregunta": "¿Qué región del planeta es famosa por sus terremotos frecuentes?",
-                "opciones": [
-                    "Cinturón de fuego del Pacífico",
-                    "Ártico",
-                    "Desierto del Sahara",
-                    "Mediterráneo"
-                ],
-                "respuesta": "Cinturón de fuego del Pacífico"
-            },
-            {
-                "pregunta": "¿Qué tipo de roca se forma por presión y calor?",
-                "opciones": [
-                    "Metamórfica",
-                    "Ígnea",
-                    "Caliza",
-                    "Obsidiana"
-                ],
-                "respuesta": "Metamórfica"
-            },
-            {
-                "pregunta": "¿Qué país tiene la cascada más alta del mundo?",
-                "opciones": [
-                    "Venezuela",
-                    "Brasil",
-                    "Canadá",
-                    "Noruega"
-                ],
-                "respuesta": "Venezuela"
-            },
-            {
-                "pregunta": "¿Qué zona del planeta tiene el mayor número de tormentas eléctricas?",
-                "opciones": [
-                    "África ecuatorial",
-                    "Europa central",
-                    "Australia",
-                    "Norte de Canadá"
-                ],
-                "respuesta": "África ecuatorial"
-            },
-            {
-                "pregunta": "¿Qué fenómeno óptico se ve tras la lluvia y con sol?",
-                "opciones": [
-                    "Arcoíris",
-                    "Halo",
-                    "Neblina",
-                    "Aurora"
-                ],
-                "respuesta": "Arcoíris"
-            },
-            {
-                "pregunta": "¿Qué formación subterránea crece desde el suelo hacia arriba?",
-                "opciones": [
-                    "Estalagmita",
-                    "Estalactita",
-                    "Fumarola",
-                    "Cueva"
-                ],
-                "respuesta": "Estalagmita"
-            },
-            {
-                "pregunta": "¿Qué región del mundo tiene más selvas tropicales?",
-                "opciones": [
-                    "Amazonia",
-                    "África del Norte",
-                    "Europa del Este",
-                    "Asia Central"
-                ],
-                "respuesta": "Amazonia"
-            },
-            {
-                "pregunta": "¿Qué formación geológica se encuentra en el Parque Nacional de Yellowstone?",
-                "opciones": [
-                    "Supervolcán",
-                    "Cordillera",
-                    "Meseta",
-                    "Delta"
-                ],
-                "respuesta": "Supervolcán"
-            }
-        ]
-    },
-    "cat4": {
-        "preguntas": [
-            {
-                "pregunta": "¿Qué planeta es conocido como el planeta rojo?",
-                "opciones": [
-                    "Marte",
-                    "Júpiter",
-                    "Saturno",
-                    "Venus"
-                ],
-                "respuesta": "Marte"
-            },
-            {
-                "pregunta": "¿Cuál fue el primer satélite artificial lanzado al espacio?",
-                "opciones": [
-                    "Sputnik",
-                    "Apolo",
-                    "Hubble",
-                    "Voyager"
-                ],
-                "respuesta": "Sputnik"
-            },
-            {
-                "pregunta": "¿Quién fue el primer ser humano en viajar al espacio?",
-                "opciones": [
-                    "Yuri Gagarin",
-                    "Neil Armstrong",
-                    "Buzz Aldrin",
-                    "Valentina Tereshkova"
-                ],
-                "respuesta": "Yuri Gagarin"
-            },
-            {
-                "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
-                "opciones": [
-                    "Júpiter",
-                    "Saturno",
-                    "Neptuno",
-                    "Urano"
-                ],
-                "respuesta": "Júpiter"
-            },
-            {
-                "pregunta": "¿Qué astro está en el centro del sistema solar?",
-                "opciones": [
-                    "El Sol",
-                    "La Tierra",
-                    "La Luna",
-                    "Saturno"
-                ],
-                "respuesta": "El Sol"
-            },
-            {
-                "pregunta": "¿Cómo se llama el primer humano que caminó en la Luna?",
-                "opciones": [
-                    "Neil Armstrong",
-                    "Buzz Aldrin",
-                    "Michael Collins",
-                    "John Glenn"
-                ],
-                "respuesta": "Neil Armstrong"
-            },
-            {
-                "pregunta": "¿Cuál es el planeta más cercano al Sol?",
-                "opciones": [
-                    "Mercurio",
-                    "Venus",
-                    "Marte",
-                    "La Tierra"
-                ],
-                "respuesta": "Mercurio"
-            },
-            {
-                "pregunta": "¿Qué planeta tiene los anillos más visibles?",
-                "opciones": [
-                    "Saturno",
-                    "Urano",
-                    "Júpiter",
-                    "Neptuno"
-                ],
-                "respuesta": "Saturno"
-            },
-            {
-                "pregunta": "¿Cuál es la Luna más grande del sistema solar?",
-                "opciones": [
-                    "Ganímedes",
-                    "Titán",
-                    "Europa",
-                    "Io"
-                ],
-                "respuesta": "Ganímedes"
-            },
-            {
-                "pregunta": "¿Qué telescopio espacial ha tomado increíbles imágenes del universo desde 1990?",
-                "opciones": [
-                    "Hubble",
-                    "James Webb",
-                    "Voyager",
-                    "Kepler"
-                ],
-                "respuesta": "Hubble"
-            },
-            {
-                "pregunta": "¿Qué planeta gira de lado, como si estuviera acostado?",
-                "opciones": [
-                    "Urano",
-                    "Venus",
-                    "Mercurio",
-                    "Neptuno"
-                ],
-                "respuesta": "Urano"
-            },
-            {
-                "pregunta": "¿Cómo se llama el rover que exploró Marte y cantó 'cumpleaños feliz' solo?",
-                "opciones": [
-                    "Curiosity",
-                    "Spirit",
-                    "Opportunity",
-                    "Sojourner"
-                ],
-                "respuesta": "Curiosity"
-            },
-            {
-                "pregunta": "¿Qué planeta es famoso por sus vientos supersónicos?",
-                "opciones": [
-                    "Neptuno",
-                    "Júpiter",
-                    "Venus",
-                    "Saturno"
-                ],
-                "respuesta": "Neptuno"
-            },
-            {
-                "pregunta": "¿Qué nave espacial viaja más lejos de la Tierra actualmente?",
-                "opciones": [
-                    "Voyager 1",
-                    "New Horizons",
-                    "Pioneer 10",
-                    "Apolo 11"
-                ],
-                "respuesta": "Voyager 1"
-            },
-            {
-                "pregunta": "¿Qué planeta tiene un día más largo que su año?",
-                "opciones": [
-                    "Venus",
-                    "Marte",
-                    "Mercurio",
-                    "Tierra"
-                ],
-                "respuesta": "Venus"
-            },
-            {
-                "pregunta": "¿Qué planeta tiene una gran mancha roja que es una tormenta gigante?",
-                "opciones": [
-                    "Júpiter",
-                    "Saturno",
-                    "Neptuno",
-                    "Urano"
-                ],
-                "respuesta": "Júpiter"
-            },
-            {
-                "pregunta": "¿Cómo se llama la galaxia en la que vivimos?",
-                "opciones": [
-                    "Vía Láctea",
-                    "Andrómeda",
-                    "Centauro A",
-                    "Triángulo"
-                ],
-                "respuesta": "Vía Láctea"
-            },
-            {
-                "pregunta": "¿Qué planeta fue degradado a planeta enano en 2006?",
-                "opciones": [
-                    "Plutón",
-                    "Ceres",
-                    "Haumea",
-                    "Makemake"
-                ],
-                "respuesta": "Plutón"
-            },
-            {
-                "pregunta": "¿Qué misión llevó por primera vez humanos a la Luna?",
-                "opciones": [
-                    "Apolo 11",
-                    "Apolo 13",
-                    "Apolo 10",
-                    "Apolo 8"
-                ],
-                "respuesta": "Apolo 11"
-            },
-            {
-                "pregunta": "¿Qué objeto celeste tiene una cola brillante cuando se acerca al Sol?",
-                "opciones": [
-                    "Cometa",
-                    "Asteroide",
-                    "Planeta",
-                    "Luna"
-                ],
-                "respuesta": "Cometa"
-            },
-            {
-                "pregunta": "¿Cuál es el nombre del gran telescopio espacial lanzado en 2021?",
-                "opciones": [
-                    "James Webb",
-                    "Hubble",
-                    "Kepler",
-                    "Spitzer"
-                ],
-                "respuesta": "James Webb"
-            },
-            {
-                "pregunta": "¿Qué planeta tiene más lunas conocidas?",
-                "opciones": [
-                    "Saturno",
-                    "Júpiter",
-                    "Urano",
-                    "Neptuno"
-                ],
-                "respuesta": "Saturno"
-            },
-            {
-                "pregunta": "¿Qué planeta tiene el año más largo del sistema solar?",
-                "opciones": [
-                    "Neptuno",
-                    "Urano",
-                    "Saturno",
-                    "Plutón"
-                ],
-                "respuesta": "Neptuno"
-            },
-            {
-                "pregunta": "¿Cuál es la forma de la órbita de los planetas alrededor del Sol?",
-                "opciones": [
-                    "Elíptica",
-                    "Circular",
-                    "Cuadrada",
-                    "Recta"
-                ],
-                "respuesta": "Elíptica"
-            },
-            {
-                "pregunta": "¿Qué planeta tiene el color más azul desde el espacio?",
-                "opciones": [
-                    "Tierra",
-                    "Neptuno",
-                    "Urano",
-                    "Venus"
-                ],
-                "respuesta": "Neptuno"
-            },
-            {
-                "pregunta": "¿Cómo se llama la estación espacial que orbita la Tierra?",
-                "opciones": [
-                    "Estación Espacial Internacional",
-                    "Skylab",
-                    "Tiangong",
-                    "ISS-2"
-                ],
-                "respuesta": "Estación Espacial Internacional"
-            },
-            {
-                "pregunta": "¿Cuál es la principal fuerza que mantiene a los planetas girando alrededor del Sol?",
-                "opciones": [
-                    "Gravedad",
-                    "Magnetismo",
-                    "Inercia",
-                    "Fricción"
-                ],
-                "respuesta": "Gravedad"
-            },
-            {
-                "pregunta": "¿Qué se estudia en la astronomía?",
-                "opciones": [
-                    "El universo",
-                    "La medicina",
-                    "Los océanos",
-                    "Los volcanes"
-                ],
-                "respuesta": "El universo"
-            },
-            {
-                "pregunta": "¿Qué nombre recibe una estrella que explota al final de su vida?",
-                "opciones": [
-                    "Supernova",
-                    "Nebulosa",
-                    "Cuásar",
-                    "Cometa"
-                ],
-                "respuesta": "Supernova"
-            },
-            {
-                "pregunta": "¿Qué cuerpo celeste gira alrededor de un planeta?",
-                "opciones": [
-                    "Luna",
-                    "Sol",
-                    "Cometa",
-                    "Asteroide"
-                ],
-                "respuesta": "Luna"
-            }
-        ]
-    },
-    "cat5": {
-        "preguntas": [
-            {
-                "pregunta": "¿Qué provoca que el pan crezca en el horno?",
-                "opciones": [
-                    "Levadura",
-                    "Bicarbonato de sodio",
-                    "Harina integral",
-                    "Aceite de oliva"
-                ],
-                "respuesta": "Levadura"
-            },
-            {
-                "pregunta": "¿Por qué lloramos al cortar una cebolla?",
-                "opciones": [
-                    "Libera un gas que irrita los ojos",
-                    "Su ácido es volátil",
-                    "Tiene aceites que arden",
-                    "Libera vapor caliente"
-                ],
-                "respuesta": "Libera un gas que irrita los ojos"
-            },
-            {
-                "pregunta": "¿Qué ocurre cuando mezclamos vinagre y bicarbonato de sodio?",
-                "opciones": [
-                    "Se libera un gas con burbujas",
-                    "Se enfría la mezcla",
-                    "Cambia de color",
-                    "Se endurece como una piedra"
-                ],
-                "respuesta": "Se libera un gas con burbujas"
-            },
-            {
-                "pregunta": "¿Qué propiedad permite que algunas cosas floten en agua?",
-                "opciones": [
-                    "Densidad",
-                    "Temperatura",
-                    "Color",
-                    "Textura"
-                ],
-                "respuesta": "Densidad"
-            },
-            {
-                "pregunta": "¿Por qué se empaña el espejo del baño al ducharse?",
-                "opciones": [
-                    "Condensación del vapor",
-                    "Falta de ventilación",
-                    "Electricidad estática",
-                    "Reacción química del vidrio"
-                ],
-                "respuesta": "Condensación del vapor"
-            },
-            {
-                "pregunta": "¿Qué gas respiramos en menor cantidad y exhalamos en mayor cantidad?",
-                "opciones": [
-                    "Dióxido de carbono",
-                    "Oxígeno",
-                    "Nitrógeno",
-                    "Helio"
-                ],
-                "respuesta": "Dióxido de carbono"
-            },
-            {
-                "pregunta": "¿Por qué la manteca se derrite fácilmente al dejarla afuera?",
-                "opciones": [
-                    "Tiene bajo punto de fusión",
-                    "Se oxida rápidamente",
-                    "Absorbe humedad del aire",
-                    "Pierde su textura al contacto con la luz"
-                ],
-                "respuesta": "Tiene bajo punto de fusión"
-            },
-            {
-                "pregunta": "¿Qué ocurre si colocás aceite y agua en el mismo vaso?",
-                "opciones": [
-                    "No se mezclan",
-                    "Se evapora el agua",
-                    "El aceite se disuelve",
-                    "Se forma una pasta"
-                ],
-                "respuesta": "No se mezclan"
-            },
-            {
-                "pregunta": "¿Qué función cumple el jabón al lavar los platos?",
-                "opciones": [
-                    "Rompe las moléculas de grasa",
-                    "Calienta el agua",
-                    "Endurece el aceite",
-                    "Evita el mal olor"
-                ],
-                "respuesta": "Rompe las moléculas de grasa"
-            },
-            {
-                "pregunta": "¿Qué efecto tiene la sal sobre el hielo?",
-                "opciones": [
-                    "Baja su punto de congelación",
-                    "Lo endurece más",
-                    "Lo vuelve transparente",
-                    "Lo vuelve pegajoso"
-                ],
-                "respuesta": "Baja su punto de congelación"
-            },
-            {
-                "pregunta": "¿Qué elemento en la pasta dental ayuda a prevenir las caries?",
-                "opciones": [
-                    "Flúor",
-                    "Bicarbonato",
-                    "Mentol",
-                    "Sodio"
-                ],
-                "respuesta": "Flúor"
-            },
-            {
-                "pregunta": "¿Qué fenómeno permite que el café suba por una servilleta de papel?",
-                "opciones": [
-                    "Capilaridad",
-                    "Evaporación",
-                    "Adherencia",
-                    "Presión atmosférica"
-                ],
-                "respuesta": "Capilaridad"
-            },
-            {
-                "pregunta": "¿Qué sucede si dejás una banana pelada mucho tiempo al aire?",
-                "opciones": [
-                    "Se oxida",
-                    "Se deshidrata",
-                    "Se derrite",
-                    "Absorbe CO₂"
-                ],
-                "respuesta": "Se oxida"
-            },
-            {
-                "pregunta": "¿Qué ocurre al agitar una gaseosa cerrada y abrirla enseguida?",
-                "opciones": [
-                    "Sale con fuerza por la presión",
-                    "Pierde todo el sabor",
-                    "Se enfría más rápido",
-                    "Se vuelve más dulce"
-                ],
-                "respuesta": "Sale con fuerza por la presión"
-            },
-            {
-                "pregunta": "¿Qué pasa si frotás un globo en el pelo y lo acercás a papelitos?",
-                "opciones": [
-                    "Los atrae por electricidad estática",
-                    "Los quema con el calor",
-                    "Los empuja con el aire",
-                    "Los humedece por fricción"
-                ],
-                "respuesta": "Los atrae por electricidad estática"
-            },
-            {
-                "pregunta": "¿Por qué se forma espuma cuando lavamos con jabón?",
-                "opciones": [
-                    "Atrapa aire en burbujas",
-                    "Calienta el agua",
-                    "Disuelve el polvo",
-                    "Oxida los metales"
-                ],
-                "respuesta": "Atrapa aire en burbujas"
-            },
-            {
-                "pregunta": "¿Qué pasa si cocinás un huevo?",
-                "opciones": [
-                    "La proteína se coagula",
-                    "Se convierte en gas",
-                    "Pierde calcio",
-                    "Libera CO₂"
-                ],
-                "respuesta": "La proteína se coagula"
-            },
-            {
-                "pregunta": "¿Qué tipo de energía convierte una licuadora al funcionar?",
-                "opciones": [
-                    "Eléctrica en mecánica",
-                    "Térmica en acústica",
-                    "Luminosa en cinética",
-                    "Magnética en solar"
-                ],
-                "respuesta": "Eléctrica en mecánica"
-            },
-            {
-                "pregunta": "¿Qué parte del huevo cambia de color al hervirlo?",
-                "opciones": [
-                    "La clara",
-                    "La yema",
-                    "La cáscara",
-                    "El aire en su interior"
-                ],
-                "respuesta": "La clara"
-            },
-            {
-                "pregunta": "¿Qué reacción ocurre si mezclás jabón y leche con colorante alimentario?",
-                "opciones": [
-                    "Los colores se mueven en patrones",
-                    "El color desaparece",
-                    "La leche se corta",
-                    "El jabón se vuelve sólido"
-                ],
-                "respuesta": "Los colores se mueven en patrones"
-            },
-            {
-                "pregunta": "¿Qué sucede al poner una cuchara metálica caliente en agua fría?",
-                "opciones": [
-                    "La cuchara se enfría",
-                    "El agua hierve",
-                    "La cuchara se agranda",
-                    "Se genera electricidad"
-                ],
-                "respuesta": "La cuchara se enfría"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo usamos para detectar la temperatura de un líquido?",
-                "opciones": [
-                    "La piel",
-                    "La vista",
-                    "Los músculos",
-                    "El olfato"
-                ],
-                "respuesta": "La piel"
-            },
-            {
-                "pregunta": "¿Qué hace que la ropa se seque al colgarla?",
-                "opciones": [
-                    "Evaporación del agua",
-                    "Oxidación del tejido",
-                    "Fricción del viento",
-                    "Absorción de la luz"
-                ],
-                "respuesta": "Evaporación del agua"
-            },
-            {
-                "pregunta": "¿Por qué algunos plásticos se derriten en el microondas?",
-                "opciones": [
-                    "No son aptos para calor",
-                    "Absorben agua",
-                    "Tienen sal",
-                    "Reflejan la luz"
-                ],
-                "respuesta": "No son aptos para calor"
-            },
-            {
-                "pregunta": "¿Qué hay dentro de una pila común?",
-                "opciones": [
-                    "Productos químicos que generan electricidad",
-                    "Agua con azúcar",
-                    "Piedras con cobre",
-                    "Pequeños imanes"
-                ],
-                "respuesta": "Productos químicos que generan electricidad"
-            },
-            {
-                "pregunta": "¿Qué gas sale al encender una vela?",
-                "opciones": [
-                    "Dióxido de carbono",
-                    "Metano",
-                    "Oxígeno puro",
-                    "Ozono"
-                ],
-                "respuesta": "Dióxido de carbono"
-            },
-            {
-                "pregunta": "¿Qué ocurre si ponés una cuchara metálica en el microondas?",
-                "opciones": [
-                    "Puede generar chispas",
-                    "Se cocina más rápido",
-                    "Se vuelve magnética",
-                    "Se enfría rápidamente"
-                ],
-                "respuesta": "Puede generar chispas"
-            },
-            {
-                "pregunta": "¿Qué efecto tiene el vinagre en el sarro del grifo?",
-                "opciones": [
-                    "Lo disuelve",
-                    "Lo endurece",
-                    "Lo pinta",
-                    "Lo hace resbaloso"
-                ],
-                "respuesta": "Lo disuelve"
-            },
-            {
-                "pregunta": "¿Por qué algunas personas flotan más que otras en una pileta?",
-                "opciones": [
-                    "Por su densidad corporal",
-                    "Por su tipo de sangre",
-                    "Por el color de piel",
-                    "Por el ritmo cardíaco"
-                ],
-                "respuesta": "Por su densidad corporal"
-            },
-            {
-                "pregunta": "¿Qué sustancia natural sirve como desodorante casero?",
-                "opciones": [
-                    "Bicarbonato de sodio",
-                    "Azúcar en polvo",
-                    "Vinagre balsámico",
-                    "Leche condensada"
-                ],
-                "respuesta": "Bicarbonato de sodio"
-            }
-        ]
-    },
-    "cat6": {
-        "preguntas": [
-            {
-                "pregunta": "¿Qué significa la palabra 'dinosaurio'?",
-                "opciones": [
-                    "Lagarto terrible",
-                    "Animal antiguo",
-                    "Reptil gigante",
-                    "Monstruo fósil"
-                ],
-                "respuesta": "Lagarto terrible"
-            },
-            {
-                "pregunta": "¿Cuál fue uno de los dinosaurios carnívoros más conocidos?",
-                "opciones": [
-                    "Tyrannosaurus rex",
-                    "Triceratops",
-                    "Brachiosaurus",
-                    "Iguanodon"
-                ],
-                "respuesta": "Tyrannosaurus rex"
-            },
-            {
-                "pregunta": "¿Qué animal actual está más relacionado con los dinosaurios?",
-                "opciones": [
-                    "Aves",
-                    "Cocodrilos",
-                    "Lagartos",
-                    "Tiburones"
-                ],
-                "respuesta": "Aves"
-            },
-            {
-                "pregunta": "¿Qué usaba el Triceratops para defenderse?",
-                "opciones": [
-                    "Cuernos y su gran cabeza",
-                    "Garras afiladas",
-                    "Cola venenosa",
-                    "Velocidad al correr"
-                ],
-                "respuesta": "Cuernos y su gran cabeza"
-            },
-            {
-                "pregunta": "¿Cómo se llama el proceso que convierte restos antiguos en fósiles?",
-                "opciones": [
-                    "Fosilización",
-                    "Mineralización",
-                    "Petrificación",
-                    "Sedimentación"
-                ],
-                "respuesta": "Fosilización"
-            },
-            {
-                "pregunta": "¿Qué característica tenía el Brachiosaurus?",
-                "opciones": [
-                    "Cuello largo para alcanzar hojas altas",
-                    "Colmillos afilados",
-                    "Alas de cuero",
-                    "Escamas brillantes"
-                ],
-                "respuesta": "Cuello largo para alcanzar hojas altas"
-            },
-            {
-                "pregunta": "¿Qué edad tienen aproximadamente los fósiles de dinosaurios?",
-                "opciones": [
-                    "Más de 65 millones de años",
-                    "1 millón de años",
-                    "10 mil años",
-                    "100 mil años"
-                ],
-                "respuesta": "Más de 65 millones de años"
-            },
-            {
-                "pregunta": "¿Qué comía el Stegosaurus?",
-                "opciones": [
-                    "Plantas",
-                    "Carne",
-                    "Huevos",
-                    "Frutas fermentadas"
-                ],
-                "respuesta": "Plantas"
-            },
-            {
-                "pregunta": "¿Cuál es una herramienta clave para estudiar fósiles?",
-                "opciones": [
-                    "Pincel",
-                    "Imán",
-                    "Regla",
-                    "Compás"
-                ],
-                "respuesta": "Pincel"
-            },
-            {
-                "pregunta": "¿Qué parte del cuerpo del T. rex era sorprendentemente pequeña?",
-                "opciones": [
-                    "Sus brazos",
-                    "Su cabeza",
-                    "Sus patas",
-                    "Su cola"
-                ],
-                "respuesta": "Sus brazos"
-            },
-            {
-                "pregunta": "¿Qué evento se cree que causó la extinción de los dinosaurios?",
-                "opciones": [
-                    "Impacto de un asteroide",
-                    "Erupción de todos los volcanes",
-                    "Glaciación total",
-                    "Explosión solar"
-                ],
-                "respuesta": "Impacto de un asteroide"
-            },
-            {
-                "pregunta": "¿Dónde se encuentran fósiles de dinosaurios con más frecuencia?",
-                "opciones": [
-                    "En rocas sedimentarias",
-                    "En cuevas profundas",
-                    "En glaciares",
-                    "En minas de carbón"
-                ],
-                "respuesta": "En rocas sedimentarias"
-            },
-            {
-                "pregunta": "¿Cómo se llama el período más conocido por la abundancia de dinosaurios?",
-                "opciones": [
-                    "Jurásico",
-                    "Cretácico",
-                    "Triásico",
-                    "Paleolítico"
-                ],
-                "respuesta": "Jurásico"
-            },
-            {
-                "pregunta": "¿Cuál fue un dinosaurio acorazado con una maza en la cola?",
-                "opciones": [
-                    "Ankylosaurus",
-                    "Velociraptor",
-                    "Dilophosaurus",
-                    "Pachycephalosaurus"
-                ],
-                "respuesta": "Ankylosaurus"
-            },
-            {
-                "pregunta": "¿Cómo se conservan algunos fósiles en excelente estado?",
-                "opciones": [
-                    "Cubiertos por sedimentos rápidamente",
-                    "Secados al sol",
-                    "Congelados en lava",
-                    "Sumergidos en sal"
-                ],
-                "respuesta": "Cubiertos por sedimentos rápidamente"
-            },
-            {
-                "pregunta": "¿Qué tipo de dinosaurio era el Velociraptor?",
-                "opciones": [
-                    "Carnívoro pequeño y ágil",
-                    "Herbívoro lento",
-                    "Volador con cresta",
-                    "Gigante de cuello largo"
-                ],
-                "respuesta": "Carnívoro pequeño y ágil"
-            },
-            {
-                "pregunta": "¿Qué dinosaurio tenía una cresta en la cabeza que usaba para hacer sonidos?",
-                "opciones": [
-                    "Parasaurolophus",
-                    "Spinosaurus",
-                    "Diplodocus",
-                    "Oviraptor"
-                ],
-                "respuesta": "Parasaurolophus"
-            },
-            {
-                "pregunta": "¿Qué paleontóloga famosa inspiró películas como 'Jurassic Park'?",
-                "opciones": [
-                    "Mary Anning",
-                    "Jane Goodall",
-                    "Marie Curie",
-                    "Rachel Carson"
-                ],
-                "respuesta": "Mary Anning"
-            },
-            {
-                "pregunta": "¿Qué parte de los dinosaurios a veces se encuentra fosilizada además de los huesos?",
-                "opciones": [
-                    "Huellas",
-                    "Pelaje",
-                    "Piel seca",
-                    "Sangre"
-                ],
-                "respuesta": "Huellas"
-            },
-            {
-                "pregunta": "¿Cuál era el depredador marino gigante del tiempo de los dinosaurios?",
-                "opciones": [
-                    "Mosasaurio",
-                    "Megalodón",
-                    "Leviatán",
-                    "Kronosaurio"
-                ],
-                "respuesta": "Mosasaurio"
-            },
-            {
-                "pregunta": "¿Qué dinosaurio tenía muchas placas en su espalda?",
-                "opciones": [
-                    "Stegosaurus",
-                    "Iguanodon",
-                    "Allosaurus",
-                    "Troodon"
-                ],
-                "respuesta": "Stegosaurus"
-            },
-            {
-                "pregunta": "¿Qué tipo de alimentación tenía el Diplodocus?",
-                "opciones": [
-                    "Herbívoro",
-                    "Carnívoro",
-                    "Omnívoro",
-                    "Insectívoro"
-                ],
-                "respuesta": "Herbívoro"
-            },
-            {
-                "pregunta": "¿Cómo se transportan fósiles frágiles desde su hallazgo?",
-                "opciones": [
-                    "En yeso protector",
-                    "En hielo seco",
-                    "En cajas metálicas",
-                    "Suspendidos en aceite"
-                ],
-                "respuesta": "En yeso protector"
-            },
-            {
-                "pregunta": "¿Cuál es una característica del Oviraptor?",
-                "opciones": [
-                    "Cuidaba nidos y huevos",
-                    "Era gigante",
-                    "Tenía armadura",
-                    "Vivía en el agua"
-                ],
-                "respuesta": "Cuidaba nidos y huevos"
-            },
-            {
-                "pregunta": "¿Qué dinosaurio tenía una gran vela ósea en la espalda?",
-                "opciones": [
-                    "Spinosaurus",
-                    "Gallimimus",
-                    "Dryosaurus",
-                    "Plesiosaurio"
-                ],
-                "respuesta": "Spinosaurus"
-            },
-            {
-                "pregunta": "¿Qué se usa para saber la edad de los fósiles?",
-                "opciones": [
-                    "Datación por carbono",
-                    "Tamaño del hueso",
-                    "Color de la roca",
-                    "Peso del fósil"
-                ],
-                "respuesta": "Datación por carbono"
-            },
-            {
-                "pregunta": "¿Cómo se llama el arte de estudiar fósiles?",
-                "opciones": [
-                    "Paleontología",
-                    "Geología",
-                    "Arqueología",
-                    "Biología marina"
-                ],
-                "respuesta": "Paleontología"
-            },
-            {
-                "pregunta": "¿Qué dinosaurio tenía patas como las de un ave?",
-                "opciones": [
-                    "Gallimimus",
-                    "Apatosaurus",
-                    "Styracosaurus",
-                    "Ceratosaurus"
-                ],
-                "respuesta": "Gallimimus"
-            },
-            {
-                "pregunta": "¿Qué criatura voladora vivió en la era de los dinosaurios?",
-                "opciones": [
-                    "Pterodáctilo",
-                    "Fénix",
-                    "Cóndor gigante",
-                    "Pelagornis"
-                ],
-                "respuesta": "Pterodáctilo"
-            },
-            {
-                "pregunta": "¿Qué criatura marina extinta tenía cuello largo y aletas?",
-                "opciones": [
-                    "Plesiosaurio",
-                    "Nautilus",
-                    "Basilosaurio",
-                    "Estegosaurio"
-                ],
-                "respuesta": "Plesiosaurio"
-            }
-        ]
-    },
-    "cat7": {
-        "preguntas": [
-            {
-                "pregunta": "¿Qué invento revolucionó la forma de imprimir libros en el siglo XV?",
-                "opciones": [
-                    "La imprenta",
-                    "La pluma fuente",
-                    "La máquina de escribir",
-                    "El papel reciclado"
-                ],
-                "respuesta": "La imprenta"
-            },
-            {
-                "pregunta": "¿Quién inventó el teléfono?",
-                "opciones": [
-                    "Alexander Graham Bell",
-                    "Thomas Edison",
-                    "Nikola Tesla",
-                    "Benjamin Franklin"
-                ],
-                "respuesta": "Alexander Graham Bell"
-            },
-            {
-                "pregunta": "¿Qué invento permitió el desarrollo de internet tal como lo conocemos?",
-                "opciones": [
-                    "La World Wide Web",
-                    "El módem de disco",
-                    "La radio AM",
-                    "El telégrafo eléctrico"
-                ],
-                "respuesta": "La World Wide Web"
-            },
-            {
-                "pregunta": "¿Cuál fue uno de los primeros medios de transporte motorizado?",
-                "opciones": [
-                    "El automóvil",
-                    "El tren a vapor eléctrico",
-                    "La bicicleta con motor",
-                    "La carreta automatizada"
-                ],
-                "respuesta": "El automóvil"
-            },
-            {
-                "pregunta": "¿Qué invento cambió la forma en que iluminamos nuestras casas?",
-                "opciones": [
-                    "La bombilla eléctrica",
-                    "La lámpara de gas",
-                    "El reflector de aceite",
-                    "La vela de larga duración"
-                ],
-                "respuesta": "La bombilla eléctrica"
-            },
-            {
-                "pregunta": "¿Quién es conocido por inventar la bombilla eléctrica funcional?",
-                "opciones": [
-                    "Thomas Edison",
-                    "Isaac Newton",
-                    "Albert Einstein",
-                    "Guglielmo Marconi"
-                ],
-                "respuesta": "Thomas Edison"
-            },
-            {
-                "pregunta": "¿Qué invento permitió a los humanos volar por primera vez?",
-                "opciones": [
-                    "El avión",
-                    "El paracaídas",
-                    "El dirigible",
-                    "El ala delta"
-                ],
-                "respuesta": "El avión"
-            },
-            {
-                "pregunta": "¿Qué aparato revolucionó la música portátil en los años 80?",
-                "opciones": [
-                    "El walkman",
-                    "El tocadiscos",
-                    "El gramófono",
-                    "La radio de bolsillo"
-                ],
-                "respuesta": "El walkman"
-            },
-            {
-                "pregunta": "¿Qué invento permitió ver imágenes en movimiento desde casa?",
-                "opciones": [
-                    "La televisión",
-                    "El cine mudo",
-                    "El proyector casero",
-                    "El visor óptico"
-                ],
-                "respuesta": "La televisión"
-            },
-            {
-                "pregunta": "¿Qué material ligero y transparente cambió la forma de fabricar ventanas y botellas?",
-                "opciones": [
-                    "El plástico",
-                    "El vidrio soplado",
-                    "La mica",
-                    "El caucho pulido"
-                ],
-                "respuesta": "El plástico"
-            },
-            {
-                "pregunta": "¿Qué invento cambió la forma de conservar los alimentos por más tiempo?",
-                "opciones": [
-                    "La heladera",
-                    "La salazón",
-                    "El tarro hermético",
-                    "La bolsa térmica"
-                ],
-                "respuesta": "La heladera"
-            },
-            {
-                "pregunta": "¿Qué invento permitió la comunicación inalámbrica a larga distancia?",
-                "opciones": [
-                    "La radio",
-                    "La televisión",
-                    "El radar",
-                    "La máquina Morse portátil"
-                ],
-                "respuesta": "La radio"
-            },
-            {
-                "pregunta": "¿Qué dispositivo usamos hoy en día que es descendiente directo del telégrafo?",
-                "opciones": [
-                    "El teléfono móvil",
-                    "El control remoto",
-                    "La calculadora",
-                    "El fax"
-                ],
-                "respuesta": "El teléfono móvil"
-            },
-            {
-                "pregunta": "¿Qué invento ayudó a los científicos a ver células por primera vez?",
-                "opciones": [
-                    "El microscopio",
-                    "La lupa doble",
-                    "El telescopio invertido",
-                    "La lente óptica"
-                ],
-                "respuesta": "El microscopio"
-            },
-            {
-                "pregunta": "¿Qué invento permitió la fotografía digital?",
-                "opciones": [
-                    "El sensor CCD",
-                    "La película de nitrato",
-                    "El papel fotográfico",
-                    "La cámara de placas"
-                ],
-                "respuesta": "El sensor CCD"
-            },
-            {
-                "pregunta": "¿Qué invento utilizamos para calentar comida rápidamente en casa?",
-                "opciones": [
-                    "El microondas",
-                    "La olla eléctrica",
-                    "El horno solar",
-                    "La tostadora de infrarrojos"
-                ],
-                "respuesta": "El microondas"
-            },
-            {
-                "pregunta": "¿Qué invento médico salvó millones de vidas al eliminar enfermedades?",
-                "opciones": [
-                    "Las vacunas",
-                    "El bisturí láser",
-                    "El escáner corporal",
-                    "La silla de partos moderna"
-                ],
-                "respuesta": "Las vacunas"
-            },
-            {
-                "pregunta": "¿Qué invento ayudó a la navegación marítima usando el cielo?",
-                "opciones": [
-                    "El sextante",
-                    "El compás digital",
-                    "El reloj de arena",
-                    "La baliza náutica"
-                ],
-                "respuesta": "El sextante"
-            },
-            {
-                "pregunta": "¿Qué invento permite ver huesos sin abrir el cuerpo?",
-                "opciones": [
-                    "La radiografía",
-                    "El ecógrafo",
-                    "El estetoscopio",
-                    "La resonancia sonora"
-                ],
-                "respuesta": "La radiografía"
-            },
-            {
-                "pregunta": "¿Qué invento revolucionó la forma en que almacenamos y leemos libros?",
-                "opciones": [
-                    "El libro electrónico",
-                    "El microfilm",
-                    "El disquete",
-                    "La hoja laminada"
-                ],
-                "respuesta": "El libro electrónico"
-            },
-            {
-                "pregunta": "¿Qué invento permitió a las personas con problemas de visión leer con facilidad?",
-                "opciones": [
-                    "Los anteojos",
-                    "El filtro de luz",
-                    "La lupa gigante",
-                    "La pantalla brillante"
-                ],
-                "respuesta": "Los anteojos"
-            },
-            {
-                "pregunta": "¿Qué invento es clave en casi todos los aparatos modernos?",
-                "opciones": [
-                    "El microchip",
-                    "El interruptor universal",
-                    "La batería redonda",
-                    "La cuerda de cobre"
-                ],
-                "respuesta": "El microchip"
-            },
-            {
-                "pregunta": "¿Qué invento fue esencial para la comunicación en la Segunda Guerra Mundial?",
-                "opciones": [
-                    "El radar",
-                    "La televisión",
-                    "El GPS",
-                    "El sonar submarino"
-                ],
-                "respuesta": "El radar"
-            },
-            {
-                "pregunta": "¿Qué invento facilitó las operaciones cardíacas complejas?",
-                "opciones": [
-                    "El marcapasos",
-                    "El termómetro digital",
-                    "El estetoscopio electrónico",
-                    "La cánula reguladora"
-                ],
-                "respuesta": "El marcapasos"
-            },
-            {
-                "pregunta": "¿Qué invento común hoy fue inicialmente creado para los soldados en guerra?",
-                "opciones": [
-                    "El duct tape (cinta adhesiva)",
-                    "El cierre mágico",
-                    "La tarjeta de crédito",
-                    "El reloj de pulsera"
-                ],
-                "respuesta": "El duct tape (cinta adhesiva)"
-            },
-            {
-                "pregunta": "¿Qué invento permite cocinar sin fuego directo?",
-                "opciones": [
-                    "La placa de inducción",
-                    "La plancha solar",
-                    "El hervidor sin llama",
-                    "La olla rotativa"
-                ],
-                "respuesta": "La placa de inducción"
-            },
-            {
-                "pregunta": "¿Qué invento permitió enviar imágenes en movimiento por aire?",
-                "opciones": [
-                    "La televisión",
-                    "La radio filmada",
-                    "El video casero",
-                    "El cine portátil"
-                ],
-                "respuesta": "La televisión"
-            },
-            {
-                "pregunta": "¿Qué invento cambió la forma de limpiar pisos en millones de casas?",
-                "opciones": [
-                    "La aspiradora",
-                    "La escoba giratoria",
-                    "El trapeador de presión",
-                    "El rodillo mágico"
-                ],
-                "respuesta": "La aspiradora"
-            },
-            {
-                "pregunta": "¿Qué invento permitió la impresión casera de documentos?",
-                "opciones": [
-                    "La impresora",
-                    "El multicopiador",
-                    "La tipografía personal",
-                    "El fotocopiador manual"
-                ],
-                "respuesta": "La impresora"
-            },
-            {
-                "pregunta": "¿Qué invento te permite llevar mapas sin papel en el bolsillo?",
-                "opciones": [
-                    "El GPS",
-                    "La brújula electrónica",
-                    "La app cartográfica",
-                    "El visor de rutas"
-                ],
-                "respuesta": "El GPS"
-            }
-        ]
-    },
-    "cat8": {
-        "preguntas": [
-            {
-                "pregunta": "¿Qué microorganismo es famoso por causar resfriados comunes?",
-                "opciones": [
-                    "Rinovirus",
-                    "Bacterioide",
-                    "Fungomiceto",
-                    "Protoameba"
-                ],
-                "respuesta": "Rinovirus"
-            },
-            {
-                "pregunta": "¿Qué tipo de partícula se encuentra orbitando el núcleo de un átomo?",
-                "opciones": [
-                    "Electrón",
-                    "Protón",
-                    "Quark",
-                    "Neutrón"
-                ],
-                "respuesta": "Electrón"
-            },
-            {
-                "pregunta": "¿Qué descubrimiento microscópico cambió la medicina para siempre?",
-                "opciones": [
-                    "Las bacterias",
-                    "Los pigmentos ocultos",
-                    "Las ondas beta",
-                    "Las burbujas celulares"
-                ],
-                "respuesta": "Las bacterias"
-            },
-            {
-                "pregunta": "¿Qué usamos para ver cosas muy, muy pequeñas?",
-                "opciones": [
-                    "Microscopio",
-                    "Prisma de aumento",
-                    "Lente cuántica",
-                    "Rayos reflectores"
-                ],
-                "respuesta": "Microscopio"
-            },
-            {
-                "pregunta": "¿Cómo se llaman los pequeños seres que viven en nuestro intestino y nos ayudan a digerir?",
-                "opciones": [
-                    "Microbiota",
-                    "Minivirus",
-                    "Celulitos",
-                    "Organitos"
-                ],
-                "respuesta": "Microbiota"
-            },
-            {
-                "pregunta": "¿Qué partícula tiene carga positiva?",
-                "opciones": [
-                    "Protón",
-                    "Electrón",
-                    "Neutrón",
-                    "Fotón"
-                ],
-                "respuesta": "Protón"
-            },
-            {
-                "pregunta": "¿Qué célula invisible es responsable de defendernos de enfermedades?",
-                "opciones": [
-                    "Glóbulo blanco",
-                    "Glóbulo rojo",
-                    "Plaqueta azul",
-                    "Leucocito pasivo"
-                ],
-                "respuesta": "Glóbulo blanco"
-            },
-            {
-                "pregunta": "¿Qué virus hizo historia en 2020?",
-                "opciones": [
-                    "Coronavirus",
-                    "Retrovirus N",
-                    "Gripe Alfa",
-                    "Microtoxina V"
-                ],
-                "respuesta": "Coronavirus"
-            },
-            {
-                "pregunta": "¿Qué parte del átomo se encuentra en su núcleo?",
-                "opciones": [
-                    "Neutrón",
-                    "Electrón",
-                    "Isótopo",
-                    "Carga orbital"
-                ],
-                "respuesta": "Neutrón"
-            },
-            {
-                "pregunta": "¿Qué nombre recibe la ciencia que estudia los átomos y las moléculas?",
-                "opciones": [
-                    "Química",
-                    "Astrología",
-                    "Microscopía",
-                    "Genética térmica"
-                ],
-                "respuesta": "Química"
-            },
-            {
-                "pregunta": "¿Qué herramienta usan los científicos para estudiar bacterias?",
-                "opciones": [
-                    "Microscopio de luz",
-                    "Detector de campo",
-                    "Gafas infrarrojas",
-                    "Filtro polarizado"
-                ],
-                "respuesta": "Microscopio de luz"
-            },
-            {
-                "pregunta": "¿Cómo se llama la estructura básica de la vida?",
-                "opciones": [
-                    "Célula",
-                    "Átomo vital",
-                    "Molécula viva",
-                    "Núcleo viviente"
-                ],
-                "respuesta": "Célula"
-            },
-            {
-                "pregunta": "¿Qué elemento microscópico transporta oxígeno en la sangre?",
-                "opciones": [
-                    "Glóbulo rojo",
-                    "Proteína L",
-                    "Oxígeno molecular",
-                    "Célula azul"
-                ],
-                "respuesta": "Glóbulo rojo"
-            },
-            {
-                "pregunta": "¿Qué es un virus?",
-                "opciones": [
-                    "Un agente infeccioso microscópico",
-                    "Una bacteria evolucionada",
-                    "Un átomo con vida",
-                    "Un parásito visible"
-                ],
-                "respuesta": "Un agente infeccioso microscópico"
-            },
-            {
-                "pregunta": "¿Qué hacen los anticuerpos en nuestro cuerpo?",
-                "opciones": [
-                    "Defienden contra enfermedades",
-                    "Generan calor",
-                    "Transportan energía",
-                    "Almacenan azúcar"
-                ],
-                "respuesta": "Defienden contra enfermedades"
-            },
-            {
-                "pregunta": "¿Qué parte invisible del cuerpo humano almacena información genética?",
-                "opciones": [
-                    "ADN",
-                    "Hemoglobina",
-                    "Plasma celular",
-                    "Piel interna"
-                ],
-                "respuesta": "ADN"
-            },
-            {
-                "pregunta": "¿Qué gas invisible respiramos para vivir?",
-                "opciones": [
-                    "Oxígeno",
-                    "Dióxido de carbono",
-                    "Nitrógeno puro",
-                    "Helio activo"
-                ],
-                "respuesta": "Oxígeno"
-            },
-            {
-                "pregunta": "¿Qué componente invisible causa que los objetos tengan masa?",
-                "opciones": [
-                    "Campo de Higgs",
-                    "Capa densa",
-                    "Fuerza neutra",
-                    "Onda gravitatoria"
-                ],
-                "respuesta": "Campo de Higgs"
-            },
-            {
-                "pregunta": "¿Qué fuerza invisible nos mantiene pegados al suelo?",
-                "opciones": [
-                    "Gravedad",
-                    "Magnetismo",
-                    "Presión de aire",
-                    "Atracción solar"
-                ],
-                "respuesta": "Gravedad"
-            },
-            {
-                "pregunta": "¿Qué hacen los neutrones en un átomo?",
-                "opciones": [
-                    "Equilibran la carga",
-                    "Giran alrededor",
-                    "Dan energía",
-                    "Forman electrones"
-                ],
-                "respuesta": "Equilibran la carga"
-            },
-            {
-                "pregunta": "¿Qué nombre recibe el conjunto de microorganismos en el cuerpo humano?",
-                "opciones": [
-                    "Microbioma",
-                    "Bioátomos",
-                    "Nanoplancton",
-                    "Germen vital"
-                ],
-                "respuesta": "Microbioma"
-            },
-            {
-                "pregunta": "¿Qué tipo de célula no se puede ver a simple vista?",
-                "opciones": [
-                    "Todas",
-                    "Neuronas",
-                    "Glóbulos blancos",
-                    "Células hepáticas"
-                ],
-                "respuesta": "Todas"
-            },
-            {
-                "pregunta": "¿Qué tipo de luz puede mostrar cosas invisibles al ojo humano?",
-                "opciones": [
-                    "Luz ultravioleta",
-                    "Luz cálida",
-                    "Luz polar",
-                    "Luz rosada"
-                ],
-                "respuesta": "Luz ultravioleta"
-            },
-            {
-                "pregunta": "¿Qué tipo de microbio puede ser útil para hacer yogur?",
-                "opciones": [
-                    "Bacteria",
-                    "Virus modificado",
-                    "Protozoo",
-                    "Hongo de aire"
-                ],
-                "respuesta": "Bacteria"
-            },
-            {
-                "pregunta": "¿Qué órgano tiene células invisibles que transmiten señales eléctricas?",
-                "opciones": [
-                    "El cerebro",
-                    "El estómago",
-                    "El riñón",
-                    "La piel"
-                ],
-                "respuesta": "El cerebro"
-            },
-            {
-                "pregunta": "¿Qué sustancia invisible en la atmósfera nos protege del sol?",
-                "opciones": [
-                    "Capa de ozono",
-                    "Vapor de agua",
-                    "Polvo cósmico",
-                    "Radiación limpia"
-                ],
-                "respuesta": "Capa de ozono"
-            },
-            {
-                "pregunta": "¿Cómo se llama la unidad más pequeña de un elemento químico?",
-                "opciones": [
-                    "Átomo",
-                    "Protón",
-                    "Molécula",
-                    "Cuanto"
-                ],
-                "respuesta": "Átomo"
-            },
-            {
-                "pregunta": "¿Qué parte de la célula contiene el ADN?",
-                "opciones": [
-                    "Núcleo",
-                    "Citoplasma",
-                    "Pared celular",
-                    "Mitocondria externa"
-                ],
-                "respuesta": "Núcleo"
-            },
-            {
-                "pregunta": "¿Qué invención permitió ver lo invisible en los laboratorios?",
-                "opciones": [
-                    "El microscopio",
-                    "El telescopio lunar",
-                    "El caleidoscopio",
-                    "El visualizador 3D"
-                ],
-                "respuesta": "El microscopio"
-            },
-            {
-                "pregunta": "¿Qué tipo de partículas viajan por el aire y pueden causar enfermedades?",
-                "opciones": [
-                    "Virus y bacterias",
-                    "Átomos neutros",
-                    "Iones positivos",
-                    "Polen sin carga"
-                ],
-                "respuesta": "Virus y bacterias"
-            }
-        ]
-    }
+  "Animales": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué animal de la selva ruge tan fuerte que se escucha a kilómetros?",
+        "opciones": [
+          "Pereza",
+          "Tucán",
+          "Mono aullador",
+          "Tapir"
+        ],
+        "respuesta": "Mono aullador"
+      },
+      {
+        "pregunta": "¿Qué ave tiene un pico grande y colorido ideal para la portada de una revista tropical?",
+        "opciones": [
+          "Águila",
+          "Tucán",
+          "Flamenco",
+          "Búho"
+        ],
+        "respuesta": "Tucán"
+      },
+      {
+        "pregunta": "¿Qué mamífero se mueve tan lento que hasta le crecen algas en el pelo?",
+        "opciones": [
+          "Murciélago",
+          "Oso hormiguero",
+          "Capibara",
+          "Perezoso"
+        ],
+        "respuesta": "Perezoso"
+      },
+      {
+        "pregunta": "¿Qué felino es el más grande de América y vive en la selva?",
+        "opciones": [
+          "Jaguar",
+          "Puma",
+          "Gato montés",
+          "Leopardo"
+        ],
+        "respuesta": "Jaguar"
+      },
+      {
+        "pregunta": "¿Qué roedor gigante vive en la selva y le encanta nadar?",
+        "opciones": [
+          "Castor",
+          "Capibara",
+          "Rata",
+          "Nutria"
+        ],
+        "respuesta": "Capibara"
+      },
+      {
+        "pregunta": "¿Qué reptil cambia de color como si tuviera un vestuario mágico?",
+        "opciones": [
+          "Camaleón",
+          "Iguana",
+          "Caimán",
+          "Lagartija"
+        ],
+        "respuesta": "Camaleón"
+      },
+      {
+        "pregunta": "¿Qué ave puede imitar sonidos humanos, como si estuviera en una videollamada?",
+        "opciones": [
+          "Guacamayo",
+          "Búho",
+          "Loro",
+          "Tero"
+        ],
+        "respuesta": "Loro"
+      },
+      {
+        "pregunta": "¿Qué insecto puede cargar cosas más de 50 veces su peso?",
+        "opciones": [
+          "Hormiga",
+          "Avispa",
+          "Cigarra",
+          "Araña"
+        ],
+        "respuesta": "Hormiga"
+      },
+      {
+        "pregunta": "¿Qué pez de la selva da descargas eléctricas?",
+        "opciones": [
+          "Piraña",
+          "Delfín rosado",
+          "Anguila eléctrica",
+          "Bagre"
+        ],
+        "respuesta": "Anguila eléctrica"
+      },
+      {
+        "pregunta": "¿Qué rana de colores intensos es pequeñita pero peligrosa?",
+        "opciones": [
+          "Rana arbórea",
+          "Rana toro",
+          "Rana dardo venenosa",
+          "Ajolote"
+        ],
+        "respuesta": "Rana dardo venenosa"
+      },
+      {
+        "pregunta": "¿Qué animal tiene un hocico largo y come hormigas con la lengua?",
+        "opciones": [
+          "Tamandúa",
+          "Zorro",
+          "Mono",
+          "Jabalí"
+        ],
+        "respuesta": "Tamandúa"
+      },
+      {
+        "pregunta": "¿Qué mamífero vuela y duerme colgado de cabeza en cuevas selváticas?",
+        "opciones": [
+          "Lémur",
+          "Murciélago",
+          "Mono ardilla",
+          "Gato montés"
+        ],
+        "respuesta": "Murciélago"
+      },
+      {
+        "pregunta": "¿Qué felino de la selva tiene nombre de calzado deportivo?",
+        "opciones": [
+          "Tigre",
+          "Puma",
+          "Leopardo",
+          "Guepardo"
+        ],
+        "respuesta": "Puma"
+      },
+      {
+        "pregunta": "¿Qué pez pequeño y feroz tiene dientes tan afilados como cuchillos?",
+        "opciones": [
+          "Piraña",
+          "Mojarra",
+          "Pez espada",
+          "Tetra"
+        ],
+        "respuesta": "Piraña"
+      },
+      {
+        "pregunta": "¿Qué animal de la selva amazónica es parecido a un cerdo pero con trompa?",
+        "opciones": [
+          "Jabalí",
+          "Tapir",
+          "Antílope",
+          "Ñu"
+        ],
+        "respuesta": "Tapir"
+      },
+      {
+        "pregunta": "¿Qué ave tropical vuela en pareja y tiene plumas súper coloridas?",
+        "opciones": [
+          "Tucán",
+          "Colibrí",
+          "Guacamayo",
+          "Águila"
+        ],
+        "respuesta": "Guacamayo"
+      },
+      {
+        "pregunta": "¿Qué mono tiene una cola tan fuerte que puede colgarse solo de ella?",
+        "opciones": [
+          "Mono capuchino",
+          "Mono araña",
+          "Mono titi",
+          "Mono ardilla"
+        ],
+        "respuesta": "Mono araña"
+      },
+      {
+        "pregunta": "¿Qué animal de la selva gira la cabeza casi por completo como en una película de terror?",
+        "opciones": [
+          "Búho",
+          "Zorro",
+          "Murciélago",
+          "Mono"
+        ],
+        "respuesta": "Búho"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene alas coloridas y pasa por una increíble transformación?",
+        "opciones": [
+          "Cigarra",
+          "Mariposa",
+          "Mosquito",
+          "Luciérnaga"
+        ],
+        "respuesta": "Mariposa"
+      },
+      {
+        "pregunta": "¿Qué ave diminuta y veloz revolotea de flor en flor?",
+        "opciones": [
+          "Colibrí",
+          "Pato",
+          "Gorrión",
+          "Canario"
+        ],
+        "respuesta": "Colibrí"
+      },
+      {
+        "pregunta": "¿Qué reptil de la selva vive en el agua y en la tierra y tiene mordida temible?",
+        "opciones": [
+          "Tortuga",
+          "Serpiente",
+          "Caimán",
+          "Iguana"
+        ],
+        "respuesta": "Caimán"
+      },
+      {
+        "pregunta": "¿Qué felino manchado vive en África y Asia, pero también en selvas tropicales?",
+        "opciones": [
+          "Leopardo",
+          "Jaguar",
+          "Tigre",
+          "Guepardo"
+        ],
+        "respuesta": "Leopardo"
+      },
+      {
+        "pregunta": "¿Qué mamífero del Amazonas tiene forma redonda y aletas como remos?",
+        "opciones": [
+          "Nutria",
+          "Delfín rosado",
+          "Manatí",
+          "Bagre gigante"
+        ],
+        "respuesta": "Manatí"
+      },
+      {
+        "pregunta": "¿Qué ave emite gritos fuertes para marcar su territorio en la selva?",
+        "opciones": [
+          "Cóndor",
+          "Águila harpía",
+          "Carancho",
+          "Zorzal"
+        ],
+        "respuesta": "Águila harpía"
+      },
+      {
+        "pregunta": "¿Qué animal de la selva se protege con una armadura natural?",
+        "opciones": [
+          "Tortuga",
+          "Armadillo",
+          "Erizo",
+          "Topo"
+        ],
+        "respuesta": "Armadillo"
+      },
+      {
+        "pregunta": "¿Qué mono tiene una cara negra y pelo blanco que parece una peluca?",
+        "opciones": [
+          "Mono titi",
+          "Mono capuchino",
+          "Mono aullador",
+          "Mono narigudo"
+        ],
+        "respuesta": "Mono capuchino"
+      },
+      {
+        "pregunta": "¿Qué anfibio del Amazonas tiene branquias externas y parece un personaje de fantasía?",
+        "opciones": [
+          "Ajolote",
+          "Salamandra",
+          "Rana arbórea",
+          "Sapo gigante"
+        ],
+        "respuesta": "Ajolote"
+      },
+      {
+        "pregunta": "¿Qué ave pone huevos azules y canta al amanecer en la selva?",
+        "opciones": [
+          "Cacique",
+          "Tucán",
+          "Zorzal",
+          "Canario selvático"
+        ],
+        "respuesta": "Cacique"
+      },
+      {
+        "pregunta": "¿Qué animal es conocido como 'el ingeniero de la selva' por construir diques?",
+        "opciones": [
+          "Nutria",
+          "Castor",
+          "Hormiga",
+          "Tapir"
+        ],
+        "respuesta": "Castor"
+      },
+      {
+        "pregunta": "¿Qué ave nocturna caza en silencio gracias a sus plumas especiales?",
+        "opciones": [
+          "Búho",
+          "Gavilán",
+          "Lechuza",
+          "Cóndor"
+        ],
+        "respuesta": "Lechuza"
+      }
+    ]
+  },
+  "Frutas": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué fruta tropical tiene una corona y se parece a una explosión de sabor?",
+        "opciones": [
+          "Banana",
+          "Papaya",
+          "Piña",
+          "Guayaba"
+        ],
+        "respuesta": "Piña"
+      },
+      {
+        "pregunta": "¿Qué fruta amarilla y alargada es famosa por ser el snack favorito de los monos?",
+        "opciones": [
+          "Mango",
+          "Banana",
+          "Maracuyá",
+          "Aguacate"
+        ],
+        "respuesta": "Banana"
+      },
+      {
+        "pregunta": "¿Qué fruta es redonda, púrpura por fuera y tiene una pulpa blanca muy dulce?",
+        "opciones": [
+          "Mangostán",
+          "Uva",
+          "Guayaba",
+          "Nance"
+        ],
+        "respuesta": "Mangostán"
+      },
+      {
+        "pregunta": "¿Qué fruta tiene una cáscara verde gruesa y su interior se parece a una manteca cremosa?",
+        "opciones": [
+          "Aguacate",
+          "Kiwi",
+          "Papaya",
+          "Pitahaya"
+        ],
+        "respuesta": "Aguacate"
+      },
+      {
+        "pregunta": "¿Qué fruta de la selva tiene pulpa anaranjada y muchas semillas negras?",
+        "opciones": [
+          "Papaya",
+          "Maracuyá",
+          "Pitanga",
+          "Tamarindo"
+        ],
+        "respuesta": "Papaya"
+      },
+      {
+        "pregunta": "¿Qué fruta tiene un sabor agridulce y se usa mucho en jugos tropicales?",
+        "opciones": [
+          "Guayaba",
+          "Carambola",
+          "Maracuyá",
+          "Chirimoya"
+        ],
+        "respuesta": "Maracuyá"
+      },
+      {
+        "pregunta": "¿Qué fruta parece una estrella cuando se corta en rodajas?",
+        "opciones": [
+          "Carambola",
+          "Guayaba",
+          "Pitahaya",
+          "Caimito"
+        ],
+        "respuesta": "Carambola"
+      },
+      {
+        "pregunta": "¿Qué fruta de cáscara espinosa tiene un olor muy fuerte y sabor muy particular?",
+        "opciones": [
+          "Durian",
+          "Mamey",
+          "Lichi",
+          "Mangostán"
+        ],
+        "respuesta": "Durian"
+      },
+      {
+        "pregunta": "¿Qué fruta roja y pequeña se parece a una cereza y crece en climas tropicales?",
+        "opciones": [
+          "Pitanga",
+          "Guinda",
+          "Mora",
+          "Frambuesa"
+        ],
+        "respuesta": "Pitanga"
+      },
+      {
+        "pregunta": "¿Qué fruta parece un cactus por fuera pero es rosa brillante y blanca por dentro?",
+        "opciones": [
+          "Pitahaya",
+          "Papaya",
+          "Níspero",
+          "Guayaba"
+        ],
+        "respuesta": "Pitahaya"
+      },
+      {
+        "pregunta": "¿Qué fruta amazónica es pequeña, redonda y muy ácida, ideal para refrescos?",
+        "opciones": [
+          "Camú camú",
+          "Guaraná",
+          "Caimito",
+          "Noni"
+        ],
+        "respuesta": "Camú camú"
+      },
+      {
+        "pregunta": "¿Qué fruta tropical parece un huevo por dentro y se come con cuchara?",
+        "opciones": [
+          "Chirimoya",
+          "Zapote",
+          "Aguacate",
+          "Tamarindo"
+        ],
+        "respuesta": "Chirimoya"
+      },
+      {
+        "pregunta": "¿Qué fruta amazónica es usada para hacer bebidas energéticas naturales?",
+        "opciones": [
+          "Guaraná",
+          "Mango",
+          "Lima",
+          "Guayaba"
+        ],
+        "respuesta": "Guaraná"
+      },
+      {
+        "pregunta": "¿Qué fruta parece una papa dulce por fuera y tiene pulpa roja o anaranjada?",
+        "opciones": [
+          "Mamey",
+          "Zapote",
+          "Papaya",
+          "Chirimoya"
+        ],
+        "respuesta": "Mamey"
+      },
+      {
+        "pregunta": "¿Qué fruta silvestre tiene una cáscara negra y es muy jugosa por dentro?",
+        "opciones": [
+          "Mora",
+          "Arazá",
+          "Uva silvestre",
+          "Noni"
+        ],
+        "respuesta": "Mora"
+      },
+      {
+        "pregunta": "¿Qué fruta pequeña y redonda tiene fama de ayudar con la digestión?",
+        "opciones": [
+          "Noni",
+          "Pitanga",
+          "Camu camu",
+          "Carambola"
+        ],
+        "respuesta": "Noni"
+      },
+      {
+        "pregunta": "¿Qué fruta tiene una cáscara marrón dura y se bebe su líquido interior?",
+        "opciones": [
+          "Coco",
+          "Mamey",
+          "Tamarindo",
+          "Maracuyá"
+        ],
+        "respuesta": "Coco"
+      },
+      {
+        "pregunta": "¿Qué fruta tropical de la selva tiene una pulpa pegajosa y dulce con muchas fibras?",
+        "opciones": [
+          "Zapote",
+          "Caimito",
+          "Guayaba",
+          "Tamarindo"
+        ],
+        "respuesta": "Zapote"
+      },
+      {
+        "pregunta": "¿Qué fruta pequeña, amarilla y redonda se encuentra en racimos y es muy dulce?",
+        "opciones": [
+          "Nance",
+          "Lima",
+          "Uchuva",
+          "Guinda"
+        ],
+        "respuesta": "Nance"
+      },
+      {
+        "pregunta": "¿Qué fruta se parte sola cuando está madura y tiene semillas negras dentro de una pasta dulce?",
+        "opciones": [
+          "Tamarindo",
+          "Carambola",
+          "Caimito",
+          "Durian"
+        ],
+        "respuesta": "Tamarindo"
+      },
+      {
+        "pregunta": "¿Qué fruta tropical se parece a un tomate por fuera pero es dulce y tropical por dentro?",
+        "opciones": [
+          "Níspero",
+          "Tomate de árbol",
+          "Uchuva",
+          "Pitanga"
+        ],
+        "respuesta": "Tomate de árbol"
+      },
+      {
+        "pregunta": "¿Qué fruta parece una sandía en miniatura y es usada para jugos refrescantes?",
+        "opciones": [
+          "Guayaba",
+          "Caimito",
+          "Arazá",
+          "Nance"
+        ],
+        "respuesta": "Arazá"
+      },
+      {
+        "pregunta": "¿Qué fruta de la selva se puede pelar con la mano y tiene semillas dentro de una pulpa blanca y jugosa?",
+        "opciones": [
+          "Caimito",
+          "Lichi",
+          "Mangostán",
+          "Durian"
+        ],
+        "respuesta": "Caimito"
+      },
+      {
+        "pregunta": "¿Qué fruta silvestre amarilla y envuelta en hojas es muy usada en postres?",
+        "opciones": [
+          "Uchuva",
+          "Pitanga",
+          "Carambola",
+          "Mora"
+        ],
+        "respuesta": "Uchuva"
+      },
+      {
+        "pregunta": "¿Qué fruta de la selva se encuentra en el interior de una vaina marrón y es usada en chocolates?",
+        "opciones": [
+          "Cacao",
+          "Guaraná",
+          "Tamarindo",
+          "Noni"
+        ],
+        "respuesta": "Cacao"
+      },
+      {
+        "pregunta": "¿Qué fruta amazónica tiene muchas vitaminas y se usa para cosmética natural?",
+        "opciones": [
+          "Aguaje",
+          "Guayaba",
+          "Pitanga",
+          "Durian"
+        ],
+        "respuesta": "Aguaje"
+      },
+      {
+        "pregunta": "¿Qué fruta se parte en gajos como una naranja pero es más pequeña y amarga?",
+        "opciones": [
+          "Lima",
+          "Mandarina silvestre",
+          "Camú camú",
+          "Guayaba"
+        ],
+        "respuesta": "Mandarina silvestre"
+      },
+      {
+        "pregunta": "¿Qué fruta tropical tiene una cáscara áspera y verde, con un sabor dulce y perfumado?",
+        "opciones": [
+          "Guanábana",
+          "Mamey",
+          "Pitahaya",
+          "Uva"
+        ],
+        "respuesta": "Guanábana"
+      },
+      {
+        "pregunta": "¿Qué fruta selvática se parece a una nuez gigante y crece en lo alto de un árbol?",
+        "opciones": [
+          "Castaña de Brasil",
+          "Coco",
+          "Cacao",
+          "Uchuva"
+        ],
+        "respuesta": "Castaña de Brasil"
+      },
+      {
+        "pregunta": "¿Qué fruta tropical es rosada por fuera y blanca por dentro, perfecta para smoothies?",
+        "opciones": [
+          "Guayaba",
+          "Lichi",
+          "Papaya",
+          "Mangostán"
+        ],
+        "respuesta": "Guayaba"
+      }
+    ]
+  },
+  "Insectos": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué insecto de la selva es famoso por su luz en la oscuridad?",
+        "opciones": [
+          "Luciérnaga",
+          "Mosquito",
+          "Escarabajo rinoceronte",
+          "Tábano"
+        ],
+        "respuesta": "Luciérnaga"
+      },
+      {
+        "pregunta": "¿Qué insecto cortador vive en colonias y carga hojas más grandes que él?",
+        "opciones": [
+          "Hormiga",
+          "Abeja",
+          "Grillo",
+          "Ciempiés"
+        ],
+        "respuesta": "Hormiga"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene colores brillantes y alas enormes?",
+        "opciones": [
+          "Mariposa",
+          "Avispa",
+          "Cucaracha",
+          "Pulga"
+        ],
+        "respuesta": "Mariposa"
+      },
+      {
+        "pregunta": "¿Qué insecto selvático es un maestro del camuflaje y se confunde con ramas?",
+        "opciones": [
+          "Insecto palo",
+          "Abejorro",
+          "Tábano",
+          "Mantis"
+        ],
+        "respuesta": "Insecto palo"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene un aguijón y produce miel en colmenas?",
+        "opciones": [
+          "Abeja",
+          "Langosta",
+          "Saltamontes",
+          "Chinche"
+        ],
+        "respuesta": "Abeja"
+      },
+      {
+        "pregunta": "¿Qué insecto emite un canto al frotar sus alas o patas?",
+        "opciones": [
+          "Grillo",
+          "Mosca",
+          "Termita",
+          "Mariposa"
+        ],
+        "respuesta": "Grillo"
+      },
+      {
+        "pregunta": "¿Qué insecto saltador puede camuflarse en hojas verdes?",
+        "opciones": [
+          "Saltamontes",
+          "Cucaracha",
+          "Escorpión",
+          "Mantis"
+        ],
+        "respuesta": "Saltamontes"
+      },
+      {
+        "pregunta": "¿Qué insecto selvático puede volar, pero también morder?",
+        "opciones": [
+          "Tábano",
+          "Escarabajo",
+          "Chinche",
+          "Hormiga"
+        ],
+        "respuesta": "Tábano"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva tropical tiene pinzas en la cola y es nocturno?",
+        "opciones": [
+          "Escorpión",
+          "Mariposa",
+          "Lucila",
+          "Abeja"
+        ],
+        "respuesta": "Escorpión"
+      },
+      {
+        "pregunta": "¿Qué insecto de colores metálicos se encuentra en flores y frutas?",
+        "opciones": [
+          "Escarabajo joya",
+          "Mosquito",
+          "Abeja",
+          "Hormiga"
+        ],
+        "respuesta": "Escarabajo joya"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva es temido por sus picaduras dolorosas?",
+        "opciones": [
+          "Avispa",
+          "Luciérnaga",
+          "Mariposa",
+          "Langosta"
+        ],
+        "respuesta": "Avispa"
+      },
+      {
+        "pregunta": "¿Qué insecto de cuerpo largo y muchas patas es veloz en el suelo?",
+        "opciones": [
+          "Ciempiés",
+          "Grillo",
+          "Pulga",
+          "Mosca"
+        ],
+        "respuesta": "Ciempiés"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva produce seda en su etapa de larva?",
+        "opciones": [
+          "Oruga",
+          "Tábano",
+          "Mosquito",
+          "Escorpión"
+        ],
+        "respuesta": "Oruga"
+      },
+      {
+        "pregunta": "¿Qué insecto suele estar en la madera y puede dañar casas y árboles?",
+        "opciones": [
+          "Termita",
+          "Cucaracha",
+          "Saltamontes",
+          "Avispa"
+        ],
+        "respuesta": "Termita"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva puede chupar sangre de humanos y animales?",
+        "opciones": [
+          "Mosquito",
+          "Grillo",
+          "Lucila",
+          "Abeja"
+        ],
+        "respuesta": "Mosquito"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva tiene una armadura brillante y dura?",
+        "opciones": [
+          "Escarabajo rinoceronte",
+          "Pulga",
+          "Mantis",
+          "Tábano"
+        ],
+        "respuesta": "Escarabajo rinoceronte"
+      },
+      {
+        "pregunta": "¿Qué insecto es un cazador veloz que se alimenta de otros insectos?",
+        "opciones": [
+          "Mantis religiosa",
+          "Mosca",
+          "Termita",
+          "Ciempiés"
+        ],
+        "respuesta": "Mantis religiosa"
+      },
+      {
+        "pregunta": "¿Qué insecto puede volar en grupos enormes y arrasar cultivos?",
+        "opciones": [
+          "Langosta",
+          "Saltamontes",
+          "Chinche",
+          "Abeja"
+        ],
+        "respuesta": "Langosta"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene patas muy fuertes para saltar y chillar?",
+        "opciones": [
+          "Chapulín",
+          "Mosca",
+          "Lucila",
+          "Ciempiés"
+        ],
+        "respuesta": "Chapulín"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene un cuerpo pequeño, patas largas y vive en telas?",
+        "opciones": [
+          "Araña",
+          "Hormiga",
+          "Grillo",
+          "Cucaracha"
+        ],
+        "respuesta": "Araña"
+      },
+      {
+        "pregunta": "¿Qué insecto pone sus huevos en agua estancada?",
+        "opciones": [
+          "Mosquito",
+          "Abeja",
+          "Pulga",
+          "Avispa"
+        ],
+        "respuesta": "Mosquito"
+      },
+      {
+        "pregunta": "¿Qué insecto de selva tiene ojos enormes y alas transparentes?",
+        "opciones": [
+          "Libélula",
+          "Escarabajo",
+          "Ciempiés",
+          "Grillo"
+        ],
+        "respuesta": "Libélula"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene un cuerpo peludo y se alimenta del néctar de flores?",
+        "opciones": [
+          "Abejorro",
+          "Cucaracha",
+          "Saltamontes",
+          "Tábano"
+        ],
+        "respuesta": "Abejorro"
+      },
+      {
+        "pregunta": "¿Qué insecto puede meterse en la comida y suele vivir en casas de madera?",
+        "opciones": [
+          "Cucaracha",
+          "Mosca",
+          "Hormiga",
+          "Chapulín"
+        ],
+        "respuesta": "Cucaracha"
+      },
+      {
+        "pregunta": "¿Qué insecto es tan pequeño que se necesita lupa para verlo bien?",
+        "opciones": [
+          "Ácaro",
+          "Tábano",
+          "Oruga",
+          "Libélula"
+        ],
+        "respuesta": "Ácaro"
+      },
+      {
+        "pregunta": "¿Qué insecto de la selva se pega a los animales y se alimenta de su sangre?",
+        "opciones": [
+          "Pulga",
+          "Ciempiés",
+          "Termita",
+          "Mosquito"
+        ],
+        "respuesta": "Pulga"
+      },
+      {
+        "pregunta": "¿Qué insecto forma parte de muchas leyendas por su belleza y colores únicos?",
+        "opciones": [
+          "Mariposa Morpho",
+          "Luciérnaga",
+          "Araña",
+          "Grillo"
+        ],
+        "respuesta": "Mariposa Morpho"
+      },
+      {
+        "pregunta": "¿Qué insecto tiene pinzas grandes al frente y vive en la tierra húmeda?",
+        "opciones": [
+          "Tijereta",
+          "Hormiga",
+          "Cucaracha",
+          "Libélula"
+        ],
+        "respuesta": "Tijereta"
+      },
+      {
+        "pregunta": "¿Qué insecto suele verse flotando sobre charcos y lagunitas?",
+        "opciones": [
+          "Zapatero",
+          "Abeja",
+          "Grillo",
+          "Pulga"
+        ],
+        "respuesta": "Zapatero"
+      },
+      {
+        "pregunta": "¿Qué insecto vuela de noche y se confunde con mariposas?",
+        "opciones": [
+          "Polilla",
+          "Mosquito",
+          "Avispa",
+          "Saltamontes"
+        ],
+        "respuesta": "Polilla"
+      },
+      {
+        "pregunta": "¿Qué insecto vive en la selva y es famoso por tener forma de hoja seca?",
+        "opciones": [
+          "Insecto hoja",
+          "Chapulín",
+          "Mosca",
+          "Escarabajo"
+        ],
+        "respuesta": "Insecto hoja"
+      }
+    ]
+  },
+  "Aves": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué ave colorida de gran pico vive en las selvas tropicales de América Central y del Sur?",
+        "opciones": [
+          "Tucán",
+          "Loro",
+          "Colibrí",
+          "Águila harpía"
+        ],
+        "respuesta": "Tucán"
+      },
+      {
+        "pregunta": "¿Qué ave es famosa por repetir sonidos, incluso voces humanas?",
+        "opciones": [
+          "Loro",
+          "Tucán",
+          "Búho",
+          "Garza"
+        ],
+        "respuesta": "Loro"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva es la más pequeña y puede volar en reversa?",
+        "opciones": [
+          "Colibrí",
+          "Tucán",
+          "Cacatúa",
+          "Cigüeña"
+        ],
+        "respuesta": "Colibrí"
+      },
+      {
+        "pregunta": "¿Qué ave enorme de las selvas sudamericanas es una poderosa cazadora?",
+        "opciones": [
+          "Águila harpía",
+          "Búho real",
+          "Cóndor",
+          "Carancho"
+        ],
+        "respuesta": "Águila harpía"
+      },
+      {
+        "pregunta": "¿Qué ave nocturna vive en la selva y tiene una mirada penetrante?",
+        "opciones": [
+          "Búho",
+          "Garza",
+          "Flamenco",
+          "Tero"
+        ],
+        "respuesta": "Búho"
+      },
+      {
+        "pregunta": "¿Qué ave tropical suele estar en bandadas y tiene plumas de muchos colores?",
+        "opciones": [
+          "Guacamayo",
+          "Pato",
+          "Lechuza",
+          "Pingüino"
+        ],
+        "respuesta": "Guacamayo"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva pone sus huevos en los nidos de otras aves?",
+        "opciones": [
+          "Tordo",
+          "Gavilán",
+          "Gallito de las rocas",
+          "Cacique"
+        ],
+        "respuesta": "Tordo"
+      },
+      {
+        "pregunta": "¿Qué ave de nombre divertido emite un canto agudo y vive en la Amazonía?",
+        "opciones": [
+          "Gallito de las rocas",
+          "Ñandú",
+          "Chajá",
+          "Zorzal"
+        ],
+        "respuesta": "Gallito de las rocas"
+      },
+      {
+        "pregunta": "¿Qué ave selvática es conocida por su cresta punk y sus sonidos fuertes?",
+        "opciones": [
+          "Cacatúa",
+          "Tucán",
+          "Búho",
+          "Loro"
+        ],
+        "respuesta": "Cacatúa"
+      },
+      {
+        "pregunta": "¿Qué ave zancuda puede encontrarse en zonas selváticas húmedas buscando peces?",
+        "opciones": [
+          "Garza",
+          "Cisne",
+          "Gaviota",
+          "Búho"
+        ],
+        "respuesta": "Garza"
+      },
+      {
+        "pregunta": "¿Qué ave tropical se comunica con chillidos y forma parejas de por vida?",
+        "opciones": [
+          "Perico",
+          "Pato silvestre",
+          "Flamenco",
+          "Lechuza"
+        ],
+        "respuesta": "Perico"
+      },
+      {
+        "pregunta": "¿Qué ave del sudeste asiático es muy ruidosa y tiene un pico curvo?",
+        "opciones": [
+          "Cálao",
+          "Loro",
+          "Búho",
+          "Tucán"
+        ],
+        "respuesta": "Cálao"
+      },
+      {
+        "pregunta": "¿Qué ave planea entre los árboles y tiene un canto muy fuerte al amanecer?",
+        "opciones": [
+          "Ave campanera",
+          "Gallo",
+          "Gavilán",
+          "Zorzal"
+        ],
+        "respuesta": "Ave campanera"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva usa sus largas patas para correr en vez de volar?",
+        "opciones": [
+          "Seriema",
+          "Cóndor",
+          "Águila",
+          "Búho real"
+        ],
+        "respuesta": "Seriema"
+      },
+      {
+        "pregunta": "¿Qué ave amazónica tiene un plumaje azul brillante y es muy buscada por su belleza?",
+        "opciones": [
+          "Guacamayo azul",
+          "Loro verde",
+          "Tucán esmeralda",
+          "Cálao real"
+        ],
+        "respuesta": "Guacamayo azul"
+      },
+      {
+        "pregunta": "¿Qué ave sudamericana se camufla perfectamente con los troncos de los árboles?",
+        "opciones": [
+          "Urutaú",
+          "Zorzal",
+          "Flamenco",
+          "Cigüeña"
+        ],
+        "respuesta": "Urutaú"
+      },
+      {
+        "pregunta": "¿Qué ave tropical pone sus huevos en hormigueros abandonados para incubarlos?",
+        "opciones": [
+          "Hoatzin",
+          "Gavilán",
+          "Gorrión",
+          "Cacatúa"
+        ],
+        "respuesta": "Hoatzin"
+      },
+      {
+        "pregunta": "¿Qué ave selvática tiene una especie que canta con sonido de gotas de agua?",
+        "opciones": [
+          "Pájaro campana",
+          "Loro",
+          "Colibrí",
+          "Tordo"
+        ],
+        "respuesta": "Pájaro campana"
+      },
+      {
+        "pregunta": "¿Qué ave andina puede visitarnos en zonas selváticas de altura?",
+        "opciones": [
+          "Cóndor",
+          "Zorzal",
+          "Seriema",
+          "Pingüino"
+        ],
+        "respuesta": "Cóndor"
+      },
+      {
+        "pregunta": "¿Qué ave selvática tiene ojos muy grandes y caza de noche?",
+        "opciones": [
+          "Lechuza",
+          "Garza",
+          "Perico",
+          "Chajá"
+        ],
+        "respuesta": "Lechuza"
+      },
+      {
+        "pregunta": "¿Qué ave vive en los manglares y tiene pico largo para capturar peces?",
+        "opciones": [
+          "Martín pescador",
+          "Tucán",
+          "Cálao",
+          "Loro"
+        ],
+        "respuesta": "Martín pescador"
+      },
+      {
+        "pregunta": "¿Qué ave tiene plumaje negro y rojo intenso y se encuentra en la selva paraguaya?",
+        "opciones": [
+          "Tingazú",
+          "Urutaú",
+          "Guacamayo azul",
+          "Garza blanca"
+        ],
+        "respuesta": "Tingazú"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva emite un canto fuerte al amanecer, como una campana metálica?",
+        "opciones": [
+          "Campanero blanco",
+          "Gallito de las rocas",
+          "Zorzal",
+          "Cacatúa"
+        ],
+        "respuesta": "Campanero blanco"
+      },
+      {
+        "pregunta": "¿Qué ave es famosa por adornar sus nidos con flores o frutas para atraer pareja?",
+        "opciones": [
+          "Ave jardinera",
+          "Búho",
+          "Perico",
+          "Cigüeña"
+        ],
+        "respuesta": "Ave jardinera"
+      },
+      {
+        "pregunta": "¿Qué ave de la selva tiene una cresta y cola larga que usa para mostrar su territorio?",
+        "opciones": [
+          "Ave del paraíso",
+          "Seriema",
+          "Urutaú",
+          "Tucán"
+        ],
+        "respuesta": "Ave del paraíso"
+      },
+      {
+        "pregunta": "¿Qué ave gigante, aunque no vuela, vive cerca de selvas australianas?",
+        "opciones": [
+          "Casuario",
+          "Pingüino",
+          "Cóndor",
+          "Pato real"
+        ],
+        "respuesta": "Casuario"
+      },
+      {
+        "pregunta": "¿Qué ave tropical pone huevos en cavidades de árboles y vive en pareja?",
+        "opciones": [
+          "Carpintero",
+          "Gorrión",
+          "Martín pescador",
+          "Tordo"
+        ],
+        "respuesta": "Carpintero"
+      },
+      {
+        "pregunta": "¿Qué ave de nombre simpático vive en la selva y canta con voz nasal?",
+        "opciones": [
+          "Chinchibí",
+          "Cacique",
+          "Zorzal",
+          "Flamenco"
+        ],
+        "respuesta": "Chinchibí"
+      },
+      {
+        "pregunta": "¿Qué ave de plumaje negro y cresta roja es muy activa en la selva misionera?",
+        "opciones": [
+          "Cacique rojo",
+          "Pájaro campana",
+          "Búho",
+          "Loro gris"
+        ],
+        "respuesta": "Cacique rojo"
+      },
+      {
+        "pregunta": "¿Qué ave se ve como una pelota de plumas y es especialista en camuflaje?",
+        "opciones": [
+          "Nictibio",
+          "Loro",
+          "Perico",
+          "Martín pescador"
+        ],
+        "respuesta": "Nictibio"
+      }
+    ]
+  },
+  "Selvas": {
+    "preguntas": [
+      {
+        "pregunta": "¿Cuál es la selva más grande del mundo?",
+        "opciones": [
+          "Selva del Congo",
+          "Selva de Borneo",
+          "Amazonas",
+          "Taiga"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿En qué continente se encuentra la selva del Congo?",
+        "opciones": [
+          "Asia",
+          "América del Sur",
+          "África",
+          "Oceanía"
+        ],
+        "respuesta": "África"
+      },
+      {
+        "pregunta": "¿Qué país tiene la mayor parte de la selva amazónica?",
+        "opciones": [
+          "Brasil",
+          "Colombia",
+          "Perú",
+          "Venezuela"
+        ],
+        "respuesta": "Brasil"
+      },
+      {
+        "pregunta": "¿Qué selva asiática es hogar del orangután?",
+        "opciones": [
+          "Selva de Borneo",
+          "Selva del Congo",
+          "Amazonas",
+          "Yungas"
+        ],
+        "respuesta": "Selva de Borneo"
+      },
+      {
+        "pregunta": "¿Qué selva sudamericana se extiende por Perú, Bolivia y Argentina?",
+        "opciones": [
+          "Yungas",
+          "Chaco",
+          "Selva de Darién",
+          "Valdiviana"
+        ],
+        "respuesta": "Yungas"
+      },
+      {
+        "pregunta": "¿Cuál es la selva tropical que separa Panamá de Colombia?",
+        "opciones": [
+          "Selva del Darién",
+          "Amazonas",
+          "Chocó",
+          "Mata Atlántica"
+        ],
+        "respuesta": "Selva del Darién"
+      },
+      {
+        "pregunta": "¿Qué selva tropical está en el sudeste de México y Guatemala?",
+        "opciones": [
+          "Selva Lacandona",
+          "Selva de Ituri",
+          "Selva de Borneo",
+          "Amazonas"
+        ],
+        "respuesta": "Selva Lacandona"
+      },
+      {
+        "pregunta": "¿Qué selva se encuentra al sur de Chile y Argentina y es muy lluviosa?",
+        "opciones": [
+          "Selva Valdiviana",
+          "Amazonas",
+          "Yungas",
+          "Chaco húmedo"
+        ],
+        "respuesta": "Selva Valdiviana"
+      },
+      {
+        "pregunta": "¿Qué selva tropical es famosa por su gran biodiversidad y se encuentra en Papúa Nueva Guinea?",
+        "opciones": [
+          "Selva de Nueva Guinea",
+          "Selva del Congo",
+          "Amazonas",
+          "Yungas"
+        ],
+        "respuesta": "Selva de Nueva Guinea"
+      },
+      {
+        "pregunta": "¿Cuál es una de las pocas selvas tropicales de clima templado?",
+        "opciones": [
+          "Selva Valdiviana",
+          "Amazonas",
+          "Selva del Congo",
+          "Selva de Ituri"
+        ],
+        "respuesta": "Selva Valdiviana"
+      },
+      {
+        "pregunta": "¿Qué selva tropical africana es hogar de gorilas y elefantes del bosque?",
+        "opciones": [
+          "Selva de Ituri",
+          "Selva Lacandona",
+          "Yungas",
+          "Amazonas"
+        ],
+        "respuesta": "Selva de Ituri"
+      },
+      {
+        "pregunta": "¿Qué gran selva tropical se encuentra en Madagascar?",
+        "opciones": [
+          "Selva de Atsinanana",
+          "Selva de Borneo",
+          "Selva del Congo",
+          "Amazonas"
+        ],
+        "respuesta": "Selva de Atsinanana"
+      },
+      {
+        "pregunta": "¿Qué selva tropical costera brasileña es muy rica en especies endémicas?",
+        "opciones": [
+          "Mata Atlántica",
+          "Amazonas",
+          "Yungas",
+          "Selva del Darién"
+        ],
+        "respuesta": "Mata Atlántica"
+      },
+      {
+        "pregunta": "¿Qué selva tropical centroamericana es hogar del jaguar y el tapir?",
+        "opciones": [
+          "Selva Maya",
+          "Selva del Congo",
+          "Chaco húmedo",
+          "Valdiviana"
+        ],
+        "respuesta": "Selva Maya"
+      },
+      {
+        "pregunta": "¿Qué selva está muy amenazada por plantaciones de aceite de palma en Asia?",
+        "opciones": [
+          "Selva de Sumatra",
+          "Amazonas",
+          "Selva Valdiviana",
+          "Yungas"
+        ],
+        "respuesta": "Selva de Sumatra"
+      },
+      {
+        "pregunta": "¿En qué selva se encuentra el Parque Nacional Manu, una de las zonas más biodiversas del mundo?",
+        "opciones": [
+          "Selva amazónica del Perú",
+          "Selva del Congo",
+          "Borneo",
+          "Chaco húmedo"
+        ],
+        "respuesta": "Selva amazónica del Perú"
+      },
+      {
+        "pregunta": "¿Qué selva está en el sur de África y es más seca que las otras?",
+        "opciones": [
+          "Selva del Miombo",
+          "Selva del Congo",
+          "Borneo",
+          "Selva Maya"
+        ],
+        "respuesta": "Selva del Miombo"
+      },
+      {
+        "pregunta": "¿Qué selva tropical es hogar del tucán, el perezoso y la anaconda?",
+        "opciones": [
+          "Amazonas",
+          "Selva de Borneo",
+          "Selva del Congo",
+          "Mata Atlántica"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿Qué selva australiana es Patrimonio de la Humanidad por su biodiversidad?",
+        "opciones": [
+          "Daintree",
+          "Yungas",
+          "Amazonas",
+          "Congo"
+        ],
+        "respuesta": "Daintree"
+      },
+      {
+        "pregunta": "¿Qué selva africana forma parte de la cuenca del río Congo?",
+        "opciones": [
+          "Selva del Congo",
+          "Selva de Ituri",
+          "Miombo",
+          "Atsinanana"
+        ],
+        "respuesta": "Selva del Congo"
+      },
+      {
+        "pregunta": "¿Qué selva tropical está amenazada por la minería ilegal y la deforestación en Sudamérica?",
+        "opciones": [
+          "Amazonas",
+          "Yungas",
+          "Selva Maya",
+          "Selva del Miombo"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿Qué selva tropical se encuentra en la isla de Java, Indonesia?",
+        "opciones": [
+          "Selva de Ujung Kulon",
+          "Selva Valdiviana",
+          "Amazonas",
+          "Selva de Ituri"
+        ],
+        "respuesta": "Selva de Ujung Kulon"
+      },
+      {
+        "pregunta": "¿Qué selva tropical africana se encuentra al oeste del continente y es muy densa?",
+        "opciones": [
+          "Selva de África Occidental",
+          "Selva de Sumatra",
+          "Amazonas",
+          "Selva Maya"
+        ],
+        "respuesta": "Selva de África Occidental"
+      },
+      {
+        "pregunta": "¿Qué selva es considerada el 'pulmón del mundo'?",
+        "opciones": [
+          "Amazonas",
+          "Selva del Congo",
+          "Yungas",
+          "Selva Maya"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿Qué país sudamericano tiene selva tropical, andes y desierto en su territorio?",
+        "opciones": [
+          "Perú",
+          "Chile",
+          "Venezuela",
+          "Brasil"
+        ],
+        "respuesta": "Perú"
+      },
+      {
+        "pregunta": "¿Qué selva amazónica boliviana es famosa por sus jaguares y ríos caudalosos?",
+        "opciones": [
+          "Selva del Beni",
+          "Yungas",
+          "Amazonas brasileña",
+          "Chaco"
+        ],
+        "respuesta": "Selva del Beni"
+      },
+      {
+        "pregunta": "¿Qué selva tropical está en peligro por incendios forestales en Brasil?",
+        "opciones": [
+          "Amazonas",
+          "Mata Atlántica",
+          "Selva de Sumatra",
+          "Chaco húmedo"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿Qué selva en Centroamérica conecta América del Norte con América del Sur?",
+        "opciones": [
+          "Selva del Darién",
+          "Selva Maya",
+          "Selva de Borneo",
+          "Yungas"
+        ],
+        "respuesta": "Selva del Darién"
+      },
+      {
+        "pregunta": "¿Qué selva argentina se considera uno de los ecosistemas más diversos del país?",
+        "opciones": [
+          "Yungas",
+          "Selva Valdiviana",
+          "Chaco seco",
+          "Amazonas"
+        ],
+        "respuesta": "Yungas"
+      },
+      {
+        "pregunta": "¿Qué selva del sudeste asiático es compartida por Tailandia, Camboya y Laos?",
+        "opciones": [
+          "Selva del Mekong",
+          "Selva de Borneo",
+          "Selva de Sumatra",
+          "Amazonas"
+        ],
+        "respuesta": "Selva del Mekong"
+      }
+    ]
+  },
+  "Reptiles": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué reptil de la selva cambia de color según su entorno?",
+        "opciones": [
+          "Camaleón",
+          "Iguana",
+          "Boa",
+          "Salamandra"
+        ],
+        "respuesta": "Camaleón"
+      },
+      {
+        "pregunta": "¿Qué anfibio pequeño de colores brillantes es tóxico?",
+        "opciones": [
+          "Rana dardo",
+          "Sapo gigante",
+          "Cecilias",
+          "Tritón"
+        ],
+        "respuesta": "Rana dardo"
+      },
+      {
+        "pregunta": "¿Qué reptil es conocido por su lengua larga y pegajosa para atrapar insectos?",
+        "opciones": [
+          "Camaleón",
+          "Serpiente de árbol",
+          "Tortuga de río",
+          "Rana toro"
+        ],
+        "respuesta": "Camaleón"
+      },
+      {
+        "pregunta": "¿Qué serpiente selvática es famosa por su tamaño y fuerza?",
+        "opciones": [
+          "Anaconda",
+          "Víbora",
+          "Coral",
+          "Cascabel"
+        ],
+        "respuesta": "Anaconda"
+      },
+      {
+        "pregunta": "¿Qué anfibio se hincha para parecer más grande cuando se siente amenazado?",
+        "opciones": [
+          "Sapo",
+          "Tortuga",
+          "Iguana",
+          "Serpiente"
+        ],
+        "respuesta": "Sapo"
+      },
+      {
+        "pregunta": "¿Qué reptil tiene una piel escamosa y suele asolearse en las rocas?",
+        "opciones": [
+          "Iguana",
+          "Salamandra",
+          "Rana",
+          "Camaleón"
+        ],
+        "respuesta": "Iguana"
+      },
+      {
+        "pregunta": "¿Qué rana selvática puede tener un croar tan fuerte como un perro ladrando?",
+        "opciones": [
+          "Rana toro",
+          "Rana de cristal",
+          "Rana dardo",
+          "Rana arborícola"
+        ],
+        "respuesta": "Rana toro"
+      },
+      {
+        "pregunta": "¿Qué reptil de la selva tiene un caparazón y nada en los ríos?",
+        "opciones": [
+          "Tortuga de río",
+          "Serpiente marina",
+          "Iguana",
+          "Caimán"
+        ],
+        "respuesta": "Tortuga de río"
+      },
+      {
+        "pregunta": "¿Qué reptil tiene escamas duras y una cola poderosa para defenderse?",
+        "opciones": [
+          "Caimán",
+          "Serpiente de árbol",
+          "Rana arborícola",
+          "Camaleón"
+        ],
+        "respuesta": "Caimán"
+      },
+      {
+        "pregunta": "¿Qué anfibio tiene el cuerpo transparente y se le ven los órganos?",
+        "opciones": [
+          "Rana de cristal",
+          "Rana toro",
+          "Tritón",
+          "Cecilias"
+        ],
+        "respuesta": "Rana de cristal"
+      },
+      {
+        "pregunta": "¿Qué reptil suele colgarse de las ramas con sus garras fuertes?",
+        "opciones": [
+          "Basilisco",
+          "Salamandra",
+          "Rana",
+          "Tortuga"
+        ],
+        "respuesta": "Basilisco"
+      },
+      {
+        "pregunta": "¿Qué anfibio no tiene patas y parece una lombriz gigante?",
+        "opciones": [
+          "Cecilias",
+          "Salamandra",
+          "Sapo",
+          "Rana toro"
+        ],
+        "respuesta": "Cecilias"
+      },
+      {
+        "pregunta": "¿Qué reptil puede correr sobre el agua a gran velocidad?",
+        "opciones": [
+          "Lagarto Jesucristo",
+          "Camaleón",
+          "Caimán",
+          "Tortuga de río"
+        ],
+        "respuesta": "Lagarto Jesucristo"
+      },
+      {
+        "pregunta": "¿Qué anfibio puede regenerar su cola y patas si las pierde?",
+        "opciones": [
+          "Tritón",
+          "Sapo",
+          "Rana dardo",
+          "Camaleón"
+        ],
+        "respuesta": "Tritón"
+      },
+      {
+        "pregunta": "¿Qué serpiente tiene colores llamativos para advertir que es venenosa?",
+        "opciones": [
+          "Serpiente coral",
+          "Anaconda",
+          "Cobra",
+          "Boa esmeralda"
+        ],
+        "respuesta": "Serpiente coral"
+      },
+      {
+        "pregunta": "¿Qué anfibio pasa parte de su vida en el agua y otra en tierra firme?",
+        "opciones": [
+          "Salamandra",
+          "Rana toro",
+          "Cecilias",
+          "Tortuga de río"
+        ],
+        "respuesta": "Salamandra"
+      },
+      {
+        "pregunta": "¿Qué reptil se enrolla en las ramas y estrangula a su presa?",
+        "opciones": [
+          "Boa constrictora",
+          "Serpiente coral",
+          "Camaleón",
+          "Tritón"
+        ],
+        "respuesta": "Boa constrictora"
+      },
+      {
+        "pregunta": "¿Qué anfibio es capaz de absorber agua a través de su piel?",
+        "opciones": [
+          "Rana",
+          "Iguana",
+          "Caimán",
+          "Camaleón"
+        ],
+        "respuesta": "Rana"
+      },
+      {
+        "pregunta": "¿Qué reptil se entierra en el barro durante la estación seca?",
+        "opciones": [
+          "Tortuga",
+          "Caimán",
+          "Iguana",
+          "Salamandra"
+        ],
+        "respuesta": "Tortuga"
+      },
+      {
+        "pregunta": "¿Qué anfibio emite sonidos para comunicarse y atraer pareja?",
+        "opciones": [
+          "Rana arborícola",
+          "Sapo",
+          "Salamandra",
+          "Cecilias"
+        ],
+        "respuesta": "Rana arborícola"
+      },
+      {
+        "pregunta": "¿Qué reptil tiene escamas verdes brillantes y vive en los árboles?",
+        "opciones": [
+          "Boa esmeralda",
+          "Lagartija",
+          "Caimán",
+          "Camaleón"
+        ],
+        "respuesta": "Boa esmeralda"
+      },
+      {
+        "pregunta": "¿Qué anfibio pone sus huevos sobre las hojas y no en el agua?",
+        "opciones": [
+          "Rana dardo",
+          "Tritón",
+          "Rana toro",
+          "Salamandra"
+        ],
+        "respuesta": "Rana dardo"
+      },
+      {
+        "pregunta": "¿Qué reptil puede inflar su garganta como globo para intimidar?",
+        "opciones": [
+          "Lagarto basilisco",
+          "Caimán",
+          "Iguana",
+          "Boa"
+        ],
+        "respuesta": "Lagarto basilisco"
+      },
+      {
+        "pregunta": "¿Qué anfibio puede trepar superficies lisas gracias a sus patas especiales?",
+        "opciones": [
+          "Rana arborícola",
+          "Sapo",
+          "Tritón",
+          "Serpiente de árbol"
+        ],
+        "respuesta": "Rana arborícola"
+      },
+      {
+        "pregunta": "¿Qué reptil es famoso por su forma triangular en la cabeza?",
+        "opciones": [
+          "Víbora",
+          "Camaleón",
+          "Caimán",
+          "Tortuga"
+        ],
+        "respuesta": "Víbora"
+      },
+      {
+        "pregunta": "¿Qué anfibio puede hacer sonidos como clics o campanitas?",
+        "opciones": [
+          "Rana campanilla",
+          "Salamandra",
+          "Rana toro",
+          "Tritón"
+        ],
+        "respuesta": "Rana campanilla"
+      },
+      {
+        "pregunta": "¿Qué reptil puede nadar y caminar con facilidad gracias a sus patas palmeadas?",
+        "opciones": [
+          "Iguana marina",
+          "Boa",
+          "Caimán",
+          "Camaleón"
+        ],
+        "respuesta": "Iguana marina"
+      },
+      {
+        "pregunta": "¿Qué anfibio pone huevos que los machos cargan en su espalda?",
+        "opciones": [
+          "Rana partera",
+          "Cecilias",
+          "Sapo",
+          "Salamandra"
+        ],
+        "respuesta": "Rana partera"
+      },
+      {
+        "pregunta": "¿Qué reptil parece una serpiente pero tiene patas muy pequeñas?",
+        "opciones": [
+          "Lagarto sin patas",
+          "Caimán bebé",
+          "Boa joven",
+          "Iguana esquelética"
+        ],
+        "respuesta": "Lagarto sin patas"
+      },
+      {
+        "pregunta": "¿Qué anfibio selvático es conocido por su piel que brilla con luz ultravioleta?",
+        "opciones": [
+          "Rana fluorescente",
+          "Sapo",
+          "Tritón",
+          "Rana toro"
+        ],
+        "respuesta": "Rana fluorescente"
+      }
+    ]
+  },
+  "Vegetacion": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué planta trepadora típica de la selva puede cubrir árboles enteros?",
+        "opciones": [
+          "Liana",
+          "Helecho",
+          "Bambú",
+          "Musgo"
+        ],
+        "respuesta": "Liana"
+      },
+      {
+        "pregunta": "¿Qué tipo de árbol puede alcanzar alturas impresionantes en la selva tropical?",
+        "opciones": [
+          "Ceiba",
+          "Mango",
+          "Manzano",
+          "Pino"
+        ],
+        "respuesta": "Ceiba"
+      },
+      {
+        "pregunta": "¿Qué planta carnívora de la selva atrapa insectos con una especie de jarro?",
+        "opciones": [
+          "Nepenthes",
+          "Bromelia",
+          "Orquídea",
+          "Loto"
+        ],
+        "respuesta": "Nepenthes"
+      },
+      {
+        "pregunta": "¿Qué planta de la selva tiene espinas largas y afiladas como defensa natural?",
+        "opciones": [
+          "Acacia",
+          "Palmera",
+          "Bambú",
+          "Girasol"
+        ],
+        "respuesta": "Acacia"
+      },
+      {
+        "pregunta": "¿Qué tipo de hojas tienen muchas plantas de la selva para eliminar el exceso de agua?",
+        "opciones": [
+          "Hojas con punta de goteo",
+          "Hojas rugosas",
+          "Hojas peludas",
+          "Hojas secas"
+        ],
+        "respuesta": "Hojas con punta de goteo"
+      },
+      {
+        "pregunta": "¿Qué planta epífita vive sobre otras plantas sin dañarlas?",
+        "opciones": [
+          "Orquídea",
+          "Liana",
+          "Musgo",
+          "Cactus"
+        ],
+        "respuesta": "Orquídea"
+      },
+      {
+        "pregunta": "¿Qué tipo de vegetación cubre el suelo en muchas selvas y mantiene la humedad?",
+        "opciones": [
+          "Musgo",
+          "Helecho",
+          "Pastizal",
+          "Enredadera"
+        ],
+        "respuesta": "Musgo"
+      },
+      {
+        "pregunta": "¿Qué planta tropical produce una flor gigante que puede oler muy mal?",
+        "opciones": [
+          "Rafflesia",
+          "Lirio",
+          "Maranta",
+          "Caña"
+        ],
+        "respuesta": "Rafflesia"
+      },
+      {
+        "pregunta": "¿Qué especie de árbol produce nueces que comen muchos animales selváticos?",
+        "opciones": [
+          "Castaño del Brasil",
+          "Almendro",
+          "Sauce",
+          "Cedro"
+        ],
+        "respuesta": "Castaño del Brasil"
+      },
+      {
+        "pregunta": "¿Qué tipo de planta crece en espiral alrededor de los troncos de los árboles?",
+        "opciones": [
+          "Enredadera",
+          "Orquídea",
+          "Helecho arborescente",
+          "Cactus liana"
+        ],
+        "respuesta": "Enredadera"
+      },
+      {
+        "pregunta": "¿Qué parte de la vegetación selvática es tan densa que apenas deja pasar la luz?",
+        "opciones": [
+          "Dosel",
+          "Subsuelo",
+          "Raíces",
+          "Tierra vegetal"
+        ],
+        "respuesta": "Dosel"
+      },
+      {
+        "pregunta": "¿Qué árbol amazónico puede 'caminar' moviendo lentamente sus raíces?",
+        "opciones": [
+          "Palmera caminante",
+          "Cedro",
+          "Ciprés",
+          "Ficus gigante"
+        ],
+        "respuesta": "Palmera caminante"
+      },
+      {
+        "pregunta": "¿Qué planta selvática suele almacenar agua en sus hojas formando pequeñas piscinas?",
+        "opciones": [
+          "Bromelia",
+          "Orquídea",
+          "Loto",
+          "Helecho"
+        ],
+        "respuesta": "Bromelia"
+      },
+      {
+        "pregunta": "¿Qué árbol de la selva produce un látex blanco que se usa para hacer caucho?",
+        "opciones": [
+          "Árbol del caucho",
+          "Mimosa",
+          "Acacia",
+          "Manglar"
+        ],
+        "respuesta": "Árbol del caucho"
+      },
+      {
+        "pregunta": "¿Qué tipo de vegetación puede crecer incluso sobre rocas en la selva húmeda?",
+        "opciones": [
+          "Musgo",
+          "Palmera",
+          "Ceiba",
+          "Mangle"
+        ],
+        "respuesta": "Musgo"
+      },
+      {
+        "pregunta": "¿Qué planta de hojas grandes y anchas es común en las selvas tropicales?",
+        "opciones": [
+          "Maranta",
+          "Cactus",
+          "Bambú",
+          "Lavanda"
+        ],
+        "respuesta": "Maranta"
+      },
+      {
+        "pregunta": "¿Qué árbol selvático tiene raíces que parecen patas gigantes?",
+        "opciones": [
+          "Ceiba",
+          "Álamo",
+          "Jacarandá",
+          "Nogal"
+        ],
+        "respuesta": "Ceiba"
+      },
+      {
+        "pregunta": "¿Qué árbol produce frutos comestibles para animales y humanos y crece en la selva?",
+        "opciones": [
+          "Cacao",
+          "Olivo",
+          "Algarrobo",
+          "Cerezo"
+        ],
+        "respuesta": "Cacao"
+      },
+      {
+        "pregunta": "¿Qué planta de la selva es famosa por cerrar sus hojas cuando se la toca?",
+        "opciones": [
+          "Mimosa púdica",
+          "Bambú",
+          "Loto",
+          "Helecho real"
+        ],
+        "respuesta": "Mimosa púdica"
+      },
+      {
+        "pregunta": "¿Qué parte de la vegetación selvática es el hogar principal de muchas especies?",
+        "opciones": [
+          "Dosel",
+          "Raíces",
+          "Suelo",
+          "Subsuelo"
+        ],
+        "respuesta": "Dosel"
+      },
+      {
+        "pregunta": "¿Qué planta selvática es conocida por tener hojas decorativas con manchas o rayas?",
+        "opciones": [
+          "Calatea",
+          "Loto",
+          "Begonia",
+          "Rosa del monte"
+        ],
+        "respuesta": "Calatea"
+      },
+      {
+        "pregunta": "¿Qué tipo de árbol tiene un tronco tan hueco que algunos animales viven dentro?",
+        "opciones": [
+          "Árbol tambor",
+          "Álamo",
+          "Fresno",
+          "Sauce llorón"
+        ],
+        "respuesta": "Árbol tambor"
+      },
+      {
+        "pregunta": "¿Qué planta selvática tiene hojas gigantes que pueden medir más de un metro?",
+        "opciones": [
+          "Anturio gigante",
+          "Bambú dorado",
+          "Espatifilo",
+          "Menta selvática"
+        ],
+        "respuesta": "Anturio gigante"
+      },
+      {
+        "pregunta": "¿Qué planta, a pesar de parecer pequeña, crece muy rápido en la selva húmeda?",
+        "opciones": [
+          "Helecho",
+          "Cactus",
+          "Árnica",
+          "Musgo español"
+        ],
+        "respuesta": "Helecho"
+      },
+      {
+        "pregunta": "¿Qué árbol de la selva tiene una copa tan ancha que forma su propio ecosistema?",
+        "opciones": [
+          "Kapok",
+          "Roble",
+          "Pino",
+          "Olmo"
+        ],
+        "respuesta": "Kapok"
+      },
+      {
+        "pregunta": "¿Qué vegetación forma parte de las raíces aéreas que bajan desde ramas altas?",
+        "opciones": [
+          "Ficus estrangulador",
+          "Álamo blanco",
+          "Helecho volador",
+          "Bambú colgante"
+        ],
+        "respuesta": "Ficus estrangulador"
+      },
+      {
+        "pregunta": "¿Qué planta de la selva tiene espinas y flores rojas que atraen colibríes?",
+        "opciones": [
+          "Erythrina",
+          "Rosal salvaje",
+          "Cactus de selva",
+          "Bugambilia"
+        ],
+        "respuesta": "Erythrina"
+      },
+      {
+        "pregunta": "¿Qué árbol típico de zonas selváticas puede resistir inundaciones prolongadas?",
+        "opciones": [
+          "Mangle rojo",
+          "Teca",
+          "Olivo",
+          "Castaño de indias"
+        ],
+        "respuesta": "Mangle rojo"
+      },
+      {
+        "pregunta": "¿Qué planta selvática crece tan rápido que puede ser usada como cortina natural?",
+        "opciones": [
+          "Bambú",
+          "Girasol",
+          "Lirio",
+          "Tártago"
+        ],
+        "respuesta": "Bambú"
+      },
+      {
+        "pregunta": "¿Qué especie vegetal suele formar alfombras flotantes en lagunas selváticas?",
+        "opciones": [
+          "Lenteja de agua",
+          "Algas marinas",
+          "Nenúfar",
+          "Helecho terrestre"
+        ],
+        "respuesta": "Lenteja de agua"
+      }
+    ]
+  },
+  "Rios": {
+    "preguntas": [
+      {
+        "pregunta": "¿Qué gran río atraviesa la selva amazónica?",
+        "opciones": [
+          "Amazonas",
+          "Nilo",
+          "Yangtsé",
+          "Mississippi"
+        ],
+        "respuesta": "Amazonas"
+      },
+      {
+        "pregunta": "¿Qué río es famoso por sus aguas cristalinas y cinco colores en la selva colombiana?",
+        "opciones": [
+          "Caño Cristales",
+          "Orinoco",
+          "Putumayo",
+          "Tapajós"
+        ],
+        "respuesta": "Caño Cristales"
+      },
+      {
+        "pregunta": "¿Qué río forma parte de la cuenca amazónica y atraviesa Perú?",
+        "opciones": [
+          "Ucayali",
+          "Magdalena",
+          "São Francisco",
+          "Guaporé"
+        ],
+        "respuesta": "Ucayali"
+      },
+      {
+        "pregunta": "¿Qué río africano fluye a través de selvas del Congo?",
+        "opciones": [
+          "Congo",
+          "Níger",
+          "Zambeze",
+          "Senegal"
+        ],
+        "respuesta": "Congo"
+      },
+      {
+        "pregunta": "¿Qué río selvático es hogar de delfines rosados?",
+        "opciones": [
+          "Madeira",
+          "Missouri",
+          "Volga",
+          "Tigre"
+        ],
+        "respuesta": "Madeira"
+      },
+      {
+        "pregunta": "¿Qué río nace en Brasil y desemboca en el Atlántico atravesando selvas?",
+        "opciones": [
+          "Tocantins",
+          "Colorado",
+          "Danubio",
+          "Paraná"
+        ],
+        "respuesta": "Tocantins"
+      },
+      {
+        "pregunta": "¿Qué río selvático forma parte de la frontera entre Colombia y Brasil?",
+        "opciones": [
+          "Vaupés",
+          "Temascaltepec",
+          "Isonza",
+          "Purus"
+        ],
+        "respuesta": "Vaupés"
+      },
+      {
+        "pregunta": "¿Qué río de la selva de Borneo es navegable y hogar de orangutanes?",
+        "opciones": [
+          "Kinabatangan",
+          "Salween",
+          "Sungei",
+          "Chao Phraya"
+        ],
+        "respuesta": "Kinabatangan"
+      },
+      {
+        "pregunta": "¿Qué río atraviesa el Parque Nacional Manu en Perú?",
+        "opciones": [
+          "Manu",
+          "Tigre",
+          "Purus",
+          "Putumayo"
+        ],
+        "respuesta": "Manu"
+      },
+      {
+        "pregunta": "¿Qué río atraviesa la selva guayanesa y tiene espectaculares cataratas?",
+        "opciones": [
+          "Caroní",
+          "Essequibo",
+          "Churún",
+          "Marowijne"
+        ],
+        "respuesta": "Caroní"
+      },
+      {
+        "pregunta": "¿Qué río es famoso por el Salto Ángel en Venezuela?",
+        "opciones": [
+          "Churún",
+          "Xingu",
+          "Congo",
+          "Yukón"
+        ],
+        "respuesta": "Churún"
+      },
+      {
+        "pregunta": "¿Qué río amazónico brasileño tiene aguas negras?",
+        "opciones": [
+          "Negro",
+          "Solimões",
+          "Tapajós",
+          "Guamá"
+        ],
+        "respuesta": "Negro"
+      },
+      {
+        "pregunta": "¿Qué río selvático de África es conocido por sus rápidos y cascadas?",
+        "opciones": [
+          "Lualaba",
+          "Limpopo",
+          "Ebro",
+          "Orange"
+        ],
+        "respuesta": "Lualaba"
+      },
+      {
+        "pregunta": "¿Qué río de la selva amazónica tiene un nombre que suena como un animal?",
+        "opciones": [
+          "Jaguaribe",
+          "Lobo",
+          "Tigre",
+          "Mono"
+        ],
+        "respuesta": "Jaguaribe"
+      },
+      {
+        "pregunta": "¿Qué río selvático de Brasil es uno de los más largos sin represas?",
+        "opciones": [
+          "Xingu",
+          "São Francisco",
+          "Paraná",
+          "Iguaçu"
+        ],
+        "respuesta": "Xingu"
+      },
+      {
+        "pregunta": "¿Qué río pasa por el Parque Nacional Yasuni en Ecuador?",
+        "opciones": [
+          "Napo",
+          "Orinoco",
+          "Purus",
+          "Marañón"
+        ],
+        "respuesta": "Napo"
+      },
+      {
+        "pregunta": "¿Qué río de la selva asiática recorre Tailandia y Laos?",
+        "opciones": [
+          "Mekong",
+          "Ganges",
+          "Irrawaddy",
+          "Indo"
+        ],
+        "respuesta": "Mekong"
+      },
+      {
+        "pregunta": "¿Qué afluente del Amazonas tiene un nombre musical?",
+        "opciones": [
+          "Tambopata",
+          "Melodía",
+          "Samba",
+          "Bombo"
+        ],
+        "respuesta": "Tambopata"
+      },
+      {
+        "pregunta": "¿Qué río atraviesa la selva en el Parque Nacional Madidi en Bolivia?",
+        "opciones": [
+          "Tuichi",
+          "Mamore",
+          "Guayará",
+          "Cochabamba"
+        ],
+        "respuesta": "Tuichi"
+      },
+      {
+        "pregunta": "¿Qué río selvático de Asia es hogar de cocodrilos y tigres?",
+        "opciones": [
+          "Sundarbans",
+          "Chindwin",
+          "Syr Darya",
+          "Ob"
+        ],
+        "respuesta": "Sundarbans"
+      },
+      {
+        "pregunta": "¿Qué río selvático forma parte de la frontera entre Perú y Brasil?",
+        "opciones": [
+          "Yurúa",
+          "Purus",
+          "Amazonas",
+          "Solimões"
+        ],
+        "respuesta": "Yurúa"
+      },
+      {
+        "pregunta": "¿Qué río selvático colombiano alimenta al Amazonas?",
+        "opciones": [
+          "Putumayo",
+          "Meta",
+          "Guaviare",
+          "Sinú"
+        ],
+        "respuesta": "Putumayo"
+      },
+      {
+        "pregunta": "¿Qué río brasileño cruza la selva nacional de Saracá-Taquera?",
+        "opciones": [
+          "Trombetas",
+          "Doce",
+          "Jequitinhonha",
+          "Juruá"
+        ],
+        "respuesta": "Trombetas"
+      },
+      {
+        "pregunta": "¿Qué río africano selvático tiene un nombre parecido al de un tambor?",
+        "opciones": [
+          "Djembe",
+          "Bongó",
+          "Ubangi",
+          "Marimba"
+        ],
+        "respuesta": "Ubangi"
+      },
+      {
+        "pregunta": "¿Qué río fluye por la densa selva del Parque Nacional Gunung Leuser en Indonesia?",
+        "opciones": [
+          "Bohorok",
+          "Sumatra",
+          "Komodo",
+          "Toraja"
+        ],
+        "respuesta": "Bohorok"
+      },
+      {
+        "pregunta": "¿Qué río en la selva del Amazonas peruano se llama igual que un mes?",
+        "opciones": [
+          "Mayo",
+          "Abril",
+          "Julio",
+          "Junio"
+        ],
+        "respuesta": "Mayo"
+      },
+      {
+        "pregunta": "¿Qué río atraviesa la selva del Parque Nacional del Río Plátano en Honduras?",
+        "opciones": [
+          "Plátano",
+          "Coco",
+          "Tocoa",
+          "Ulúa"
+        ],
+        "respuesta": "Plátano"
+      },
+      {
+        "pregunta": "¿Qué río selvático africano se forma por la confluencia de varios ríos menores?",
+        "opciones": [
+          "Kasai",
+          "Ewaso Ng’iro",
+          "Nyabarongo",
+          "Niger"
+        ],
+        "respuesta": "Kasai"
+      },
+      {
+        "pregunta": "¿Qué río selvático se encuentra en la triple frontera de Brasil, Guyana y Venezuela?",
+        "opciones": [
+          "Takutu",
+          "Paraná",
+          "Caribe",
+          "Iguazú"
+        ],
+        "respuesta": "Takutu"
+      },
+      {
+        "pregunta": "¿Qué río selvático es importante para las comunidades indígenas yanomami?",
+        "opciones": [
+          "Mucajaí",
+          "Itaya",
+          "Tefé",
+          "Japurá"
+        ],
+        "respuesta": "Mucajaí"
+      }
+    ]
+  }
 }
