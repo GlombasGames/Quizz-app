@@ -390,7 +390,7 @@ async function cargarDatosJSON() {
     if (preguntasData.value) {
       data = JSON.parse(preguntasData.value);
     }
-    console.log('Categorías OBTENIDAS:', data);
+    console.log('Categorías OBTENIDAS:', data, Object.keys(data).length);
     if (Object.keys(data).length > 0) {
       console.log('Categorías cargadas desde almacenamiento local:', data);
     } else {
