@@ -54,7 +54,6 @@ a:hover {
 #app {
   flex: 1;
   max-width: 600px;
-  margin-left: auto;
   /* Ocupa el espacio restante */
   overflow-y: auto;
   /* Solo este contenedor tiene scroll */

@@ -350,7 +350,7 @@ async function iniciarNotificaciones() {
 
 
 const app = document.getElementById('app');
-
+!isAndroid ? app.style.marginLeft = '25%' : app.style.marginLeft = '0';
 
 let data = {};
 let dataMisiones = {};
