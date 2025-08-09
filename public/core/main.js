@@ -351,6 +351,7 @@ async function iniciarNotificaciones() {
 
 const app = document.getElementById('app');
 !isAndroid ? app.style.marginLeft = '25%' : app.style.marginLeft = '0';
+!isAndroid ? app.style.maxWidth = '50%' : app.style.maxWidth = '100%';
 !isAndroid ? app.style.width = '50%' : app.style.width = '100%';
 
 let data = {};
