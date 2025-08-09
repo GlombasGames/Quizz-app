@@ -391,7 +391,7 @@ async function cargarDatosJSON() {
       data = JSON.parse(preguntasData.value);
     }
     console.log('Categorías OBTENIDAS:', data);
-    if (Object.keys(data).length !== 0) {
+    if (Object.keys(data).length > 0) {
       console.log('Categorías cargadas desde almacenamiento local:', data);
     } else {
       if (isAndroid) {
@@ -405,7 +405,7 @@ async function cargarDatosJSON() {
     }
     data = await res.json();
     console.log('Categorías cargadas desde el archivo local:', data);
-    if (Object.keys(data).length !== 0) {
+    if (Object.keys(data).length > 0) {
       await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
     } else {
       console.log('recargo las categorias forazo en loop')
