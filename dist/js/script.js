@@ -130,61 +130,67 @@ const camaras = [
   {
     nombre: "Cámara de Mitología",
     estado: "Activa",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camarademitologia",
+    url: isDesktop ? "/mitologia/" : "https://play.google.com/store/apps/details?id=com.triviantis.camarademitologia",
     imagen: "img/camaras/mitologia.png"
+  },
+  {
+    nombre: "Cámara de Ciencia",
+    estado: "Activa",
+    url: isDesktop ? "/ciencia/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradeciencia",
+    imagen: "img/camaras/ciencia.png"
   },
   {
     nombre: "Cámara de Religiones",
     estado: "Activa",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradereligiones",
+    url: isDesktop ? "/religiones/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradereligiones",
     imagen: "img/camaras/default.png"
   },
   {
     nombre: "Cámara de Cine",
     estado: "Activa",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradecine",
+    url: isDesktop ? "/peliculas/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradecine",
     imagen: "img/camaras/cine.png"
   },
   {
     nombre: "Cámara de Selva",
     estado: "Inactiva",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradeselva",
+    url: isDesktop ? "/selva/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradeselva",
     imagen: "img/camaras/selva.png"
   },
   {
     nombre: "Cámara de Astronomía",
     estado: "Activa",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradeastronomia",
+    url: isDesktop ? "/astronomia/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradeastronomia",
     imagen: "img/camaras/default.png"
   },
   {
     nombre: "Cámara de Mundo",
     estado: "Activa",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camarademundo",
+    url: isDesktop ? "/mundo/" : "https://play.google.com/store/apps/details?id=com.triviantis.camarademundo",
     imagen: "img/camaras/mundo.png"
   },
   {
     nombre: "Cámara de Música",
     estado: "Inactiva",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camarademusica",
+    url: isDesktop ? "/musica/" : "https://play.google.com/store/apps/details?id=com.triviantis.camarademusica",
     imagen: "img/camaras/default.png"
   },
   {
     nombre: "Cámara de Civilizaciones",
     estado: "Inactiva",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradcivilizaciones",
+    url: isDesktop ? "/civilizaciones/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradcivilizaciones",
     imagen: "img/camaras/default.png"
   },
   {
     nombre: "Cámara de Comidas",
     estado: "Inactiva",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradecomidas",
+    url: isDesktop ? "/comidas/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradecomidas",
     imagen: "img/camaras/default.png"
   },
   {
     nombre: "Cámara de Historia",
     estado: "Activa",
-    url: "https://play.google.com/store/apps/details?id=com.triviantis.camaradehistoria",
+    url: isDesktop ? "/historia/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradehistoria",
     imagen: "img/camaras/default.png"
   },
 ];
@@ -235,6 +241,9 @@ function activarBotonFlotanteSiEsMobile() {
 
   if (window.innerWidth <= 768) {
     activarObserver();
+    isDesktop = false;
+  } else {
+    isDesktop = true;
   }
 }
 
