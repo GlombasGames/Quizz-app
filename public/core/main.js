@@ -253,6 +253,7 @@ let Storage = {
   async get({ key }) {
     try {
       const path = buildPath(key);
+      console.log('Intentando leer archivo en:', path);
       const contenido = await Filesystem.readFile({
         path,
         directory: Directory.Data,
