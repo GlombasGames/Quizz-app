@@ -141,7 +141,7 @@ const camaras = [
   },
   {
     nombre: "Cámara de Religiones",
-    estado: "Activa",
+    estado: "Inactiva",
     url: isDesktop ? "/religiones/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradereligiones",
     imagen: "img/camaras/default.png"
   },
@@ -153,19 +153,19 @@ const camaras = [
   },
   {
     nombre: "Cámara de Selva",
-    estado: "Inactiva",
+    estado: "Activa",
     url: isDesktop ? "/selva/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradeselva",
     imagen: "img/camaras/selva.png"
   },
   {
     nombre: "Cámara de Astronomía",
-    estado: "Activa",
+    estado: "Inactiva",
     url: isDesktop ? "/astronomia/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradeastronomia",
     imagen: "img/camaras/default.png"
   },
   {
     nombre: "Cámara de Mundo",
-    estado: "Activa",
+    estado: "Inactiva",
     url: isDesktop ? "/mundo/" : "https://play.google.com/store/apps/details?id=com.triviantis.camarademundo",
     imagen: "img/camaras/mundo.png"
   },
@@ -189,7 +189,7 @@ const camaras = [
   },
   {
     nombre: "Cámara de Historia",
-    estado: "Activa",
+    estado: "Inactiva",
     url: isDesktop ? "/historia/" : "https://play.google.com/store/apps/details?id=com.triviantis.camaradehistoria",
     imagen: "img/camaras/default.png"
   },
