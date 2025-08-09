@@ -383,75 +383,80 @@ async function verificarVersion() {
 
 async function cargarDatosJSON() {
   try {
-    // ---------- 1) Intento leer desde Storage ----------
+    // ---- Categorías: Storage -> bundle ----
     const guardado = await Storage.get({ key: 'categorias' });
-    const desdeStorage = guardado.value ? JSON.parse(guardado.value) : null;
-    const tieneCategorias = desdeStorage && typeof desdeStorage === 'object' && Object.keys(desdeStorage).length > 0;
+    let desdeStorage = guardado.value ? JSON.parse(guardado.value) : null;
+    let tieneData = desdeStorage && typeof desdeStorage === 'object' && Object.keys(desdeStorage).length > 0;
 
-    if (tieneCategorias) {
-      data = desdeStorage;
-      console.log('[categorias] cargadas desde Storage:', Object.keys(data).length, 'categorías');
-    } else {
-      console.warn('[categorias] Storage vacío o "{}". Voy a buscar archivo del bundle…');
+    if (!tieneData) {
+      // si vino {} o null, limpiar para no perpetuar la nada
+      if (guardado.value) await Storage.remove({ key: 'categorias' });
 
-      // ---------- 2) Si no hay nada útil en Storage, traigo del bundle ----------
-      // Usá SIEMPRE baseURL: en Android => '', en Web => '/<trivia>'
-      const categoriasURL = `${baseURL}/categorias.json`;
-      const res = await fetch(categoriasURL);
-      if (!res.ok) throw new Error(`No pude cargar ${categoriasURL} -> ${res.status}`);
-      const parsed = await res.json();
+      //const url = `${baseURL}/categorias.json`; // funciona en Android y en Web
+      const url = isAndroid
+        ? '/categorias.json'
+        : `/api/categorias.json?triviaId=${encodeURIComponent(triviaName)}`;
 
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`No pude cargar ${url} (${r.status})`);
+      const parsed = await r.json();
       if (!parsed || typeof parsed !== 'object' || Object.keys(parsed).length === 0) {
-        throw new Error('[categorias] El JSON vino vacío ({})');
+        throw new Error('categorias.json vino vacío ({})');
       }
-
-      data = parsed;
-      console.log('[categorias] cargadas desde bundle:', Object.keys(data).length, 'categorías');
-
-      // Solo guardo si hay contenido real (evito persistir "{}")
-      await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
+      await Storage.set({ key: 'categorias', value: JSON.stringify(parsed) });
+      desdeStorage = parsed;
+      tieneData = true;
+      console.log('[categorias] bundle -> Storage:', Object.keys(parsed).length);
+    } else {
+      console.log('[categorias] desde Storage:', Object.keys(desdeStorage).length);
     }
 
-    // ---------- 3) Asegurar desbloqueadas con las 2 primeras ----------
+    // dejar data lista
+    data = desdeStorage;
+
+    // ---- Desbloquear 2 primeras ----
     const categorias = Object.keys(data);
     const primerasDos = categorias.slice(0, 2);
-    const nuevas = primerasDos.filter(cat => !(usuarioActual.desbloqueadas || []).includes(cat));
-    if (nuevas.length) {
-      usuarioActual.desbloqueadas = [...(usuarioActual.desbloqueadas || []), ...nuevas];
+    const desbloq = new Set(usuarioActual.desbloqueadas || []);
+    let huboCambio = false;
+    for (const c of primerasDos) {
+      if (!desbloq.has(c)) { desbloq.add(c); huboCambio = true; }
+    }
+    if (huboCambio) {
+      usuarioActual.desbloqueadas = Array.from(desbloq);
       actualizarJugador('desbloqueadas', usuarioActual.desbloqueadas);
     }
 
-    // ---------- 4) Misiones: Storage -> bundle (con baseURL) ----------
-    const misionesGuardadas = await Storage.get({ key: 'misiones' });
-    if (misionesGuardadas.value) {
-      dataMisiones = JSON.parse(misionesGuardadas.value);
+    // ---- Misiones: Storage -> bundle ----
+    const misGuard = await Storage.get({ key: 'misiones' });
+    if (misGuard.value) {
+      dataMisiones = JSON.parse(misGuard.value);
       console.log('[misiones] desde Storage');
     } else {
-      const misionesURL = `${baseURL}/misiones.json`;
-      const r2 = await fetch(misionesURL);
-      if (!r2.ok) throw new Error(`No pude cargar ${misionesURL} -> ${r2.status}`);
+      const misUrl = `${baseURL}/misiones.json`;
+      const r2 = await fetch(misUrl);
+      if (!r2.ok) throw new Error(`No pude cargar ${misUrl} (${r2.status})`);
       const parsedMis = await r2.json();
-      if (!parsedMis || typeof parsedMis !== 'object') throw new Error('[misiones] JSON inválido');
+      if (!parsedMis || typeof parsedMis !== 'object') throw new Error('misiones.json inválido');
       dataMisiones = parsedMis;
       await Storage.set({ key: 'misiones', value: JSON.stringify(dataMisiones) });
-      console.log('[misiones] desde bundle y guardadas');
+      console.log('[misiones] bundle -> Storage');
     }
 
-    // ---------- 5) Fecha de reinicio ----------
+    // ---- Fecha de reinicio ----
     if (!usuarioActual.fechaReinicio) {
-      const fechaActual = new Date();
-      const nuevaFecha = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000);
-      usuarioActual.fechaReinicio = nuevaFecha.toISOString();
+      const ahora = new Date();
+      const nueva = new Date(ahora.getTime() + 7 * 24 * 60 * 60 * 1000);
+      usuarioActual.fechaReinicio = nueva.toISOString();
       actualizarJugador('fechaReinicio', usuarioActual.fechaReinicio);
-      console.log('[misiones] seteé fechaReinicio ->', usuarioActual.fechaReinicio);
     }
-
   } catch (err) {
-    console.error('cargarDatosJSON() falló:', err);
-    // Si el archivo en Storage está corrupto con "{}", lo limpio para que el próximo intento reintente correctamente.
+    console.error('cargarDatosJSON() error:', err);
+    // si algo quedó corrupto, limpiamos para el próximo intento
     try { await Storage.remove({ key: 'categorias' }); } catch { }
   }
 }
+
 
 function tieneConexion() {
   return navigator.onLine;
