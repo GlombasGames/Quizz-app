@@ -1,5 +1,5 @@
 // Detecta si el dispositivo es de escritorio
-const isDesktop = window.innerWidth >= 1024;
+const isDesktop = window.innerWidth >= 768;
 
 // Carrusel de paneles introductorios
 const panels = document.querySelectorAll('.intro-panels .panel');
