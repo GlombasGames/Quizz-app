@@ -350,9 +350,9 @@ async function iniciarNotificaciones() {
 
 
 const app = document.getElementById('app');
-!isAndroid || window.innerWidth < 600 ? app.style.marginLeft = '25%' : app.style.marginLeft = '0';
-!isAndroid || window.innerWidth < 600 ? app.style.maxWidth = '50%' : app.style.maxWidth = '100%';
-!isAndroid || window.innerWidth < 600 ? app.style.width = '50%' : app.style.width = '100%';
+!isAndroid || window.innerWidth > 600 ? app.style.marginLeft = '25%' : app.style.marginLeft = '0';
+!isAndroid || window.innerWidth > 600 ? app.style.maxWidth = '50%' : app.style.maxWidth = '100%';
+!isAndroid || window.innerWidth > 600 ? app.style.width = '50%' : app.style.width = '100%';
 
 let data = {};
 let dataMisiones = {};
