@@ -382,7 +382,9 @@ async function verificarVersion() {
 
 async function cargarDatosJSON() {
   try {
+
     let preguntasData = await Storage.get({ key: 'categorias' });
+    let res
 
     if (preguntasData.value) {
       data = JSON.parse(preguntasData.value);
@@ -390,25 +392,24 @@ async function cargarDatosJSON() {
     if (Object.keys(data).length !== 0) {
       console.log('Categorías cargadas desde almacenamiento local:', data);
     } else {
-      let res
       if (isAndroid) {
         res = await fetch('/categorias.json');
       } else {
         res = await fetch(`https://triviantis.com/${triviaName}/categorias.json`);
       }
-
-      if (!res.ok) {
-        throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
-      }
-      data = await res.json();
-      console.log('Categorías cargadas desde el archivo local:', data);
-      if (Object.keys(data).length !== 0) {
-        await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
-      } else {
-        console.log('recargo las categorias forazo en loop')
-        await cargarDatosJSON();
-      }
     }
+    if (!res.ok) {
+      throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
+    }
+    data = await res.json();
+    console.log('Categorías cargadas desde el archivo local:', data);
+    if (Object.keys(data).length !== 0) {
+      await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
+    } else {
+      console.log('recargo las categorias forazo en loop')
+      await cargarDatosJSON();
+    }
+
     // Actualizar las categorías desbloqueadas con las primeras dos categorías del archivo JSON
     const categorias = Object.keys(data);
     const primerasCategorias = categorias.slice(0, 2); // Tomar las primeras dos categorías
