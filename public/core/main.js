@@ -367,7 +367,7 @@ async function verificarServidor() {
 async function verificarVersion() {
   try {
     const response = await fetch('https://triviantis.com/api/version');
-    data = await response.json();
+    const data = await response.json();
     if (data) {
       version = data.version;
       console.log('Versión del servidor:', version);
