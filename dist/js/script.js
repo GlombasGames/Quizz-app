@@ -201,7 +201,7 @@ if (grid) {
     const card = document.createElement("a");
     card.className = "camara-card";
     card.href = c.estado === "Activa" ? c.url : "";
-    card.disabled = c.estado !== "Activa";
+    card.style.pointerEvents = c.estado !== "Activa" ? "none" : "auto";
     card.target = "_blank";
     card.rel = "noopener noreferrer";
     if (c.estado !== "Activa") {
