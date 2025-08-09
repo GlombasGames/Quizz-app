@@ -200,7 +200,7 @@ if (grid) {
   camaras.forEach((c) => {
     const card = document.createElement("a");
     card.className = "camara-card";
-    card.href = c.url;
+    card.href = c.estado === "Activa" ? c.url : "#compendio";
     card.target = "_blank";
     card.rel = "noopener noreferrer";
     if (c.estado !== "Activa") {
@@ -211,7 +211,7 @@ if (grid) {
       <div class="card-img" style="background-image: url('${c.imagen}');"></div>
       <div class="card-text">
         <h3>${c.nombre}</h3>
-        <p>${c.estado}</p>
+        <p>${c.estado === "Activa" ? 'Jugar Ahora' : 'Proximamente'}</p>
       </div>
     `;
 
