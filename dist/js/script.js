@@ -204,7 +204,7 @@ if (grid) {
     card.target = "_blank";
     card.rel = "noopener noreferrer";
     if (c.estado !== "Activa") {
-      card.style.opacity = "0.7";
+      card.style.opacity = "0.5";
     }
 
     card.innerHTML = `
