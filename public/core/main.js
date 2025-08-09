@@ -355,6 +355,10 @@ app.style.marginLeft = !isAndroid || window.innerWidth > 600 ? '25%' : '0';
 app.style.maxWidth = !isAndroid || window.innerWidth > 600 ? '50%' : '100%';
 app.style.width = !isAndroid || window.innerWidth > 600 ? '50%' : '100%';
 
+//creare esto solo para ver si se modifica
+const variablePrueba = 'Hola Mundo';
+console.log(variablePrueba);
+
 let data = {};
 let dataMisiones = {};
 
