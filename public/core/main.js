@@ -247,7 +247,7 @@ async function inicializarUsuario() {
   }
 }
 
-const buildPath = (key) => isAndroid ? `${key}.json` : `${triviaName}/${key}.json`;
+const buildPath = (key) => isAndroid ? `${key}.json` : `${key}.json`;
 
 let Storage = {
   async get({ key }) {
