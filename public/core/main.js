@@ -352,7 +352,7 @@ async function iniciarNotificaciones() {
 const app = document.getElementById('app');
 //Cambio la vista segun si es Android o no
 app.style.marginLeft =  window.innerWidth > 600 ? '25%' : '0';
-app.style.flex =  window.innerWidth > 600 ? '0.5' : '1';
+app.style.flex =  window.innerWidth > 600 ? '0.5: 1' : '1';
 
 //creare esto solo para ver si se modifica
 const variablePrueba = 'Hola Mundo';
