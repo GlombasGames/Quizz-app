@@ -200,7 +200,7 @@ if (grid) {
   camaras.forEach((c) => {
     const card = document.createElement("a");
     card.className = "camara-card";
-    card.href = c.estado === "Activa" ? c.url : "#compendio";
+    card.href = c.estado === "Activa" ? c.url : "";
     card.target = "_blank";
     card.rel = "noopener noreferrer";
     if (c.estado !== "Activa") {
