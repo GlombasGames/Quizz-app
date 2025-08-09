@@ -383,75 +383,73 @@ async function verificarVersion() {
 
 async function cargarDatosJSON() {
   try {
+    // ---------- 1) Intento leer desde Storage ----------
+    const guardado = await Storage.get({ key: 'categorias' });
+    const desdeStorage = guardado.value ? JSON.parse(guardado.value) : null;
+    const tieneCategorias = desdeStorage && typeof desdeStorage === 'object' && Object.keys(desdeStorage).length > 0;
 
-    let preguntasData = await Storage.get({ key: 'categorias' });
-    let res
-
-    if (preguntasData.value) {
-      data = JSON.parse(preguntasData.value);
-    }
-    console.log('Categorías OBTENIDAS:', data, Object.keys(data).length);
-    if (Object.keys(data).length > 0) {
-      console.log('Categorías cargadas desde almacenamiento local:', data);
+    if (tieneCategorias) {
+      data = desdeStorage;
+      console.log('[categorias] cargadas desde Storage:', Object.keys(data).length, 'categorías');
     } else {
-      if (isAndroid) {
-        res = await fetch('/categorias.json');
-      } else {
-        res = await fetch(`https://triviantis.com/${triviaName}/categorias.json`);
+      console.warn('[categorias] Storage vacío o "{}". Voy a buscar archivo del bundle…');
+
+      // ---------- 2) Si no hay nada útil en Storage, traigo del bundle ----------
+      // Usá SIEMPRE baseURL: en Android => '', en Web => '/<trivia>'
+      const categoriasURL = `${baseURL}/categorias.json`;
+      const res = await fetch(categoriasURL);
+      if (!res.ok) throw new Error(`No pude cargar ${categoriasURL} -> ${res.status}`);
+      const parsed = await res.json();
+
+      if (!parsed || typeof parsed !== 'object' || Object.keys(parsed).length === 0) {
+        throw new Error('[categorias] El JSON vino vacío ({})');
       }
-    }
-    if (!res.ok) {
-      throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
-    }
-    data = await res.json();
-    console.log('Categorías cargadas desde el archivo local:', data);
-    if (Object.keys(data).length > 0) {
+
+      data = parsed;
+      console.log('[categorias] cargadas desde bundle:', Object.keys(data).length, 'categorías');
+
+      // Solo guardo si hay contenido real (evito persistir "{}")
       await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
-    } else {
-      console.log('recargo las categorias forazo en loop')
-      //await cargarDatosJSON();
     }
 
-    // Actualizar las categorías desbloqueadas con las primeras dos categorías del archivo JSON
+    // ---------- 3) Asegurar desbloqueadas con las 2 primeras ----------
     const categorias = Object.keys(data);
-    const primerasCategorias = categorias.slice(0, 2); // Tomar las primeras dos categorías
-
-    // Fusionar desbloqueadas sin perder las anteriores
-    const nuevasCategorias = primerasCategorias.filter(cat => !usuarioActual.desbloqueadas.includes(cat));
-    if (nuevasCategorias.length > 0) {
-      usuarioActual.desbloqueadas.push(...nuevasCategorias);
-      actualizarJugador("desbloqueadas", usuarioActual.desbloqueadas);
+    const primerasDos = categorias.slice(0, 2);
+    const nuevas = primerasDos.filter(cat => !(usuarioActual.desbloqueadas || []).includes(cat));
+    if (nuevas.length) {
+      usuarioActual.desbloqueadas = [...(usuarioActual.desbloqueadas || []), ...nuevas];
+      actualizarJugador('desbloqueadas', usuarioActual.desbloqueadas);
     }
-    console.log('Categorías desbloqueadas:', usuarioActual.desbloqueadas);
 
-    // Cargar misiones
-    const misionesData = await Storage.get({ key: 'misiones' });
-    if (misionesData.value) {
-      // Recuperar misiones desde el almacenamiento local
-      dataMisiones = JSON.parse(misionesData.value);
-      console.log('Misiones cargadas desde almacenamiento local:', dataMisiones);
+    // ---------- 4) Misiones: Storage -> bundle (con baseURL) ----------
+    const misionesGuardadas = await Storage.get({ key: 'misiones' });
+    if (misionesGuardadas.value) {
+      dataMisiones = JSON.parse(misionesGuardadas.value);
+      console.log('[misiones] desde Storage');
     } else {
-      // Cargar misiones desde el archivo JSON
-      const res = await fetch('/misiones.json');
-      if (!res.ok) {
-        throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
-      }
-      dataMisiones = await res.json();
-      console.log('Misiones cargadas desde el archivo local:', dataMisiones);
-      // Guardar misiones en el almacenamiento local
+      const misionesURL = `${baseURL}/misiones.json`;
+      const r2 = await fetch(misionesURL);
+      if (!r2.ok) throw new Error(`No pude cargar ${misionesURL} -> ${r2.status}`);
+      const parsedMis = await r2.json();
+      if (!parsedMis || typeof parsedMis !== 'object') throw new Error('[misiones] JSON inválido');
+      dataMisiones = parsedMis;
       await Storage.set({ key: 'misiones', value: JSON.stringify(dataMisiones) });
+      console.log('[misiones] desde bundle y guardadas');
     }
-    console.warn('Misiones cargadas:', dataMisiones);
-    // Si fechaReinicio está vacía, calcular una nueva fecha de reinicio
+
+    // ---------- 5) Fecha de reinicio ----------
     if (!usuarioActual.fechaReinicio) {
       const fechaActual = new Date();
-      const nuevaFechaReinicio = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000); // Sumar 7 días
-      usuarioActual.fechaReinicio = nuevaFechaReinicio.toISOString(); // Guardar en formato ISO
+      const nuevaFecha = new Date(fechaActual.getTime() + 7 * 24 * 60 * 60 * 1000);
+      usuarioActual.fechaReinicio = nuevaFecha.toISOString();
       actualizarJugador('fechaReinicio', usuarioActual.fechaReinicio);
-      console.log('Nueva fecha de reinicio calculada:', usuarioActual.fechaReinicio);
+      console.log('[misiones] seteé fechaReinicio ->', usuarioActual.fechaReinicio);
     }
-  } catch (error) {
-    console.error('Error al desbloquear categorias basicas:', error);
+
+  } catch (err) {
+    console.error('cargarDatosJSON() falló:', err);
+    // Si el archivo en Storage está corrupto con "{}", lo limpio para que el próximo intento reintente correctamente.
+    try { await Storage.remove({ key: 'categorias' }); } catch { }
   }
 }
 
