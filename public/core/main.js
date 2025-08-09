@@ -382,14 +382,12 @@ async function verificarVersion() {
 
 async function cargarDatosJSON() {
   try {
-    let preguntasData;
-    if (!isAndroid) {
-      preguntasData = await Storage.get({ key: 'categorias' });
-    } else {
-      preguntasData = await Storage.get({ key: 'categorias' });
-    }
+    let preguntasData = await Storage.get({ key: 'categorias' });
+
     if (preguntasData.value) {
       data = JSON.parse(preguntasData.value);
+    }
+    if (Object.keys(data).length !== 0) {
       console.log('Categorías cargadas desde almacenamiento local:', data);
     } else {
       let res
@@ -403,11 +401,10 @@ async function cargarDatosJSON() {
         throw new Error(`Error al cargar el archivo JSON: ${res.status}`);
       }
       data = await res.json();
-      console.error({ data });
       console.log('Categorías cargadas desde el archivo local:', data);
       if (Object.keys(data).length !== 0) {
         await Storage.set({ key: 'categorias', value: JSON.stringify(data) });
-      } else{
+      } else {
         console.log('recargo las categorias forazo en loop')
         await cargarDatosJSON();
       }
