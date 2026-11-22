@@ -10,7 +10,7 @@ const connectDB = require("./db");
 const serviceAccount = require('./firebase-admin-config.json');
 
 const TOKENS_FILE = path.join(__dirname, 'tokens.json');
-const PORT = 3100;
+const PORT = Number(process.env.PORT || 3100);
 const version = '0.1';
 
 const app = express();

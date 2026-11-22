@@ -1,0 +1,8 @@
+tls:
+  certificates:
+    - certFile: /etc/letsencrypt/live/triviantis.com/fullchain.pem
+      keyFile: /etc/letsencrypt/live/triviantis.com/privkey.pem
+    - certFile: /etc/letsencrypt/live/api.triviantis.com/fullchain.pem
+      keyFile: /etc/letsencrypt/live/api.triviantis.com/privkey.pem
+    - certFile: /etc/letsencrypt/live/img.triviantis.com/fullchain.pem
+      keyFile: /etc/letsencrypt/live/img.triviantis.com/privkey.pem

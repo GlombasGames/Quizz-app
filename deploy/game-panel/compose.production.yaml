@@ -1,0 +1,17 @@
+services:
+  triviantis-backend:
+    labels:
+      - traefik.http.routers.triviantis-api.tls.certresolver=letsencrypt
+
+  triviantis-web:
+    labels:
+      - traefik.http.routers.triviantis-web.tls.certresolver=letsencrypt
+      - traefik.http.routers.triviantis-www.tls.certresolver=letsencrypt
+
+  huertero:
+    labels:
+      - traefik.http.routers.huertero-api.tls.certresolver=letsencrypt
+
+  huertero-images:
+    labels:
+      - traefik.http.routers.huertero-images.tls.certresolver=letsencrypt

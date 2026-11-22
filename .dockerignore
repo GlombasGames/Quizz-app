@@ -1,0 +1,13 @@
+.git
+.github
+node_modules
+npm-debug.log*
+.env
+.env.*
+backend/firebase-admin-config.json
+backend/tokens.json
+android
+android*
+distAndroid
+resources
+.vscode

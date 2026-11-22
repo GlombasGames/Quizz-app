@@ -1,0 +1,28 @@
+FROM node@sha256:2cf067cfed83d5ea958367df9f966191a942351a2df77d6f0193e162b5febfc0
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm ci --omit=dev --no-audit --no-fund \
+    && npm cache clean --force
+
+COPY --chown=10001:10001 backend/index.js backend/db.js ./backend/
+COPY --chown=10001:10001 dist ./dist
+
+RUN groupadd --gid 10001 app \
+    && useradd --uid 10001 --gid 10001 --home-dir /app --no-create-home app \
+    && mkdir -p /app/backend \
+    && chown -R 10001:10001 /app
+
+ENV NODE_ENV=production \
+    PORT=3100 \
+    MONGODB_URI=mongodb://mongo:27017
+
+EXPOSE 3100
+
+HEALTHCHECK --interval=15s --timeout=5s --start-period=25s --retries=5 \
+  CMD ["node", "-e", "fetch('http://127.0.0.1:3100/api/ping').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+
+USER 10001:10001
+
+CMD ["node", "backend/index.js"]
